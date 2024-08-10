@@ -31,6 +31,9 @@ def collect_servers(proxies):
                 ips.add(server)
             except socket.error:
                 domains.add(server)
+    print("所有域名如下:")
+    for domain in domains:
+        print(domain)
     return list(domains), list(ips)
 
 
