@@ -1,4 +1,4 @@
-name: Run renameProxies.py and Upload Output
+name: Run renameProxies.py and Save Output
 
 on:
   push:
@@ -23,8 +23,5 @@ jobs:
     - name: Run renameProxies.py
       run: python3 renameProxies.py
 
-    - name: Upload renameProxies.yaml
-      uses: actions/upload-artifact@v3
-      with:
-        name: renameProxies.yaml
-        path: renameProxies.yaml
+    - name: List files in root directory
+      run: ls -la
