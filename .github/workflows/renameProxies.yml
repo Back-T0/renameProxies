@@ -14,30 +14,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Git 配置
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          git config --global http.proxy  http://127.0.0.1:7890
+          git config --global https.proxy http://127.0.0.1:7890
+
       - name: 检出代码
-        # 使用 GitHub Actions 提供的 checkout 操作来拉取代码
         uses: actions/checkout@v4
 
       - name: 下载 mmdbinspect
-        # 下载 mmdbinspect 的 Debian 安装包
         run: |
           wget https://github.com/maxmind/mmdbinspect/releases/download/v0.2.0/mmdbinspect_0.2.0_linux_amd64.deb
 
       - name: 安装 mmdbinspect
-        # 安装 mmdbinspect
         run: |
           sudo dpkg -i mmdbinspect_0.2.0_linux_amd64.deb
 
       - name: 运行 renameProxies.py
-        # 执行 renameProxies.py 脚本
         run: |
           python renameProxies.py
 
       - name: 上传 renameProxies.yaml
-        # 将生成的 renameProxies.yaml 文件上传到 GitHub 仓库
         run: |
-          git config --global user.email "your-email@example.com"
-          git config --global user.name "your-username"
           git add renameProxies.yaml
           git commit -m "Add renameProxies.yaml"
           git push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
