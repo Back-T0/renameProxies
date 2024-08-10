@@ -10,7 +10,7 @@ from collections import defaultdict
 def fetch_yaml(url):
     response = requests.get(url)
     response.raise_for_status()
-    print("加载文件成功")
+    print(f"文件读取成功: {url}")
     return yaml.safe_load(response.text)
 
 
@@ -61,8 +61,10 @@ def get_nation_info(server, nation_cache):
                 nation = country_info["names"].get("zh-CN", "未知")
                 nation_cache[server] = nation
                 return nation
-    
-    print(f"该域名无法解析, 重命名为未知: {server}")
+
+    # 调试信息
+    print(f"域名 {server} 无法检测, ip为 {ip}")
+
     nation_cache[server] = "未知"
     return "未知"
 
@@ -110,7 +112,7 @@ def save_yaml(proxies, output_file):
 
 
 def main():
-    url = "https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml"
+    url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml"
     yaml_content = fetch_yaml(url)
     proxies = parse_yaml(yaml_content)
 
@@ -120,7 +122,7 @@ def main():
     renamed_proxies = rename_proxies(proxies, nation_cache)
     save_yaml(renamed_proxies, "renameProxies.yaml")
 
-    print("所有节点已重命名, 输出到renameProxies.yaml中")
+    print("所有节点均命名完毕, 已写入 renameProxies.yaml 文件")
 
 
 if __name__ == "__main__":
