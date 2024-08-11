@@ -25,6 +25,10 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
 
+      - name: 下载 geoip 数据库
+        run: |
+          wget https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
+
       - name: 下载 mmdbinspect
         run: |
           wget https://github.com/maxmind/mmdbinspect/releases/download/v0.2.0/mmdbinspect_0.2.0_linux_amd64.deb
