@@ -41,6 +41,11 @@ jobs:
         run: |
           python renameProxies.py
 
+      - name: 删除多余文件
+        run: |
+          sudo rm -f mmdbinspect_0.2.0_linux_amd64.deb
+          sudo rm – f Country.mmdb
+
       - name: 上传 renameProxies.yaml
         run: |
           git pull origin main
