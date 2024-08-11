@@ -21,6 +21,7 @@ jobs:
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
+          git clean -f
 
       - name: 检出代码
         uses: actions/checkout@v4
@@ -39,7 +40,6 @@ jobs:
 
       - name: 上传 renameProxies.yaml
         run: |
-          git clean -f
           git add renameProxies.yaml
           git commit -m "Add renameProxies.yaml"
           git push
