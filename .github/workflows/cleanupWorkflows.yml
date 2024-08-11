@@ -1,0 +1,28 @@
+name: Cleanup old workflows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install GitHub CLI
+      run: |
+        sudo apt-get install -y curl
+        curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+        sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+        sudo apt-get update
+        sudo apt-get install gh
+
+    - name: Authenticate with GitHub CLI
+      run: gh auth login --with-token <<< ${{ secrets.RENAMEPROXIES }}
+
+    - name: Get list of workflow runs
+      run: |
+        gh api repos/:owner/:repo/actions/runs --paginate -q '.workflow_runs[].id' | \
+        xargs -n1 -I {} gh api repos/:owner/:repo/actions/runs/{} -X DELETE
