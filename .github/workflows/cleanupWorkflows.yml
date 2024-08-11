@@ -20,7 +20,7 @@ jobs:
         sudo apt-get install gh
 
     - name: Authenticate with GitHub CLI
-      run: gh auth login --with-token <<< ${{ secrets.RENAMEPROXIES }}
+      run: echo "${{ secrets.RENAMEPROXIES }}" | gh auth login --with-token
 
     - name: Get list of workflow runs
       run: |
