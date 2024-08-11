@@ -1,7 +1,11 @@
-name: Cleanup old workflows
+name: 删除旧的 workflow
 
 on:
   workflow_dispatch:
+
+permissions:
+  contents: write
+  workflows: write
 
 jobs:
   cleanup:
@@ -10,7 +14,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install GitHub CLI
+    - name: 安装 GitHub CLI
       run: |
         sudo apt-get install -y curl
         curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
@@ -19,10 +23,10 @@ jobs:
         sudo apt-get update
         sudo apt-get install gh
 
-    - name: Authenticate with GitHub CLI
+    - name: 授予 GitHub CLI 权限
       run: echo "${{ secrets.RENAMEPROXIES }}" | gh auth login --with-token
 
-    - name: Get list of workflow runs
+    - name: 获取 workflow runs 列表并删除
       run: |
         gh api repos/:owner/:repo/actions/runs --paginate -q '.workflow_runs[].id' | \
         xargs -n1 -I {} gh api repos/:owner/:repo/actions/runs/{} -X DELETE
