@@ -1,32 +1,21 @@
-name: 清除所有 workflows
-
+name: 删除旧的 workflow runs
 on:
   workflow_dispatch:
-
-permissions:
-  contents: write
-  actions: write
+  schedule:
+    - cron: '0 0 1 * *'
+# Run monthly, at 00:00 on the 1st day of month.
 
 jobs:
-  cleanup:
+  del_runs:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: 安装 GitHub CLI
-      run: |
-        sudo apt-get install -y curl
-        curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-        sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/githubcli.list > /dev/null
-        sudo apt-get update
-        sudo apt-get install gh
-
-    - name: 使用 GITHUB_TOKEN 为 GitHub CLI 授权
-      run: echo "${{ secrets.RENAMEPROXIES }}" | gh auth login --with-token
-
-    - name: 获取 workflow runs 列表并删除
-      run: |
-        gh api repos/:owner/:repo/actions/runs --paginate -q '.workflow_runs[].id' | \
-        xargs -I {} gh api repos/:owner/:repo/actions/runs/{} -X DELETE
+      - name: 删除 workflow runs 内容
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.GITHUBTOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 30
+          keep_minimum_runs: 6
