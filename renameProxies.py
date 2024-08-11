@@ -115,7 +115,7 @@ def save_yaml(proxies, output_file):
 
 
 def main():
-    url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml"
+    url = "https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml"
     yaml_content = fetch_yaml(url)
     proxies = parse_yaml(yaml_content)
 
