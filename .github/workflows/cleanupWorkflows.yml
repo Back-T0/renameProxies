@@ -1,4 +1,4 @@
-name: 删除旧的 workflow
+name: 清除所有 workflows
 
 on:
   workflow_dispatch:
@@ -19,14 +19,14 @@ jobs:
         sudo apt-get install -y curl
         curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
         sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/githubcli.list > /dev/null
         sudo apt-get update
         sudo apt-get install gh
 
-    - name: 授予 GitHub CLI 权限
+    - name: 使用 GITHUB_TOKEN 为 GitHub CLI 授权
       run: echo "${{ secrets.RENAMEPROXIES }}" | gh auth login --with-token
 
     - name: 获取 workflow runs 列表并删除
       run: |
         gh api repos/:owner/:repo/actions/runs --paginate -q '.workflow_runs[].id' | \
-        xargs -n1 -I {} gh api repos/:owner/:repo/actions/runs/{} -X DELETE
+        xargs -I {} gh api repos/:owner/:repo/actions/runs/{} -X DELETE
