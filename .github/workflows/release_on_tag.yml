@@ -28,28 +28,13 @@ jobs:
       - name: 编译并发布
         id: build
         run: |
-          dotnet build --no-incremental ; dotnet publish -c Release -r win-x64
-          dotnet build --no-incremental ; dotnet publish -c Release -r win-arm64
           dotnet build --no-incremental ; dotnet publish -c Release -r linux-x64
-          dotnet build --no-incremental ; dotnet publish -c Release -r linux-arm64
 
       - name: 文件移动、重命名
         id: rename
         run: |
           mkdir -p metaST/dest
-          mv metaST/bin/Release/win-x64/publish/metaST.exe   metaST/dest/metaST-win-amd64.exe
-          mv metaST/bin/Release/win-arm64/publish/metaST.exe metaST/dest/metaST-win-arm64.exe
           mv metaST/bin/Release/linux-x64/publish/metaST     metaST/dest/metaST-linux-amd64
-          mv metaST/bin/Release/linux-arm64/publish/metaST   metaST/dest/metaST-linux-arm64
-
-      - name: 文件压缩
-        id: compress
-        run: |
-          cd metaST/dest/
-          7z a -tzip -mx9 -mmt$(nproc) metaST-win-amd64.zip   metaST-win-amd64.exe
-          7z a -tzip -mx9 -mmt$(nproc) metaST-win-arm64.zip   metaST-win-arm64.exe
-          7z a -tzip -mx9 -mmt$(nproc) metaST-linux-amd64.zip metaST-linux-amd64
-          7z a -tzip -mx9 -mmt$(nproc) metaST-linux-arm64.zip metaST-linux-arm64
 
       - name: 发布
         id: create_release
