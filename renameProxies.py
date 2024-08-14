@@ -31,9 +31,6 @@ def collect_servers(proxies):
                 ips.add(server)
             except socket.error:
                 domains.add(server)
-    print("所有域名如下:")
-    for domain in domains:
-        print(domain)
     return list(domains), list(ips)
 
 
@@ -127,7 +124,19 @@ def rename_proxies(proxies, nation_cache):
             # "icon": f"https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/{iso_code}.png"
             "icon": f"https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/{iso_code.lower()}.svg"
         }
+        print(group["name"])
         proxy_groups.append(group)
+
+
+    # 创建手动选择代理组
+    all_proxy_names = [proxy["name"] for proxy in new_proxies]
+    select_group = {
+        "type": "select",
+        "proxies": all_proxy_names,
+        "name": f"手动选择: {len(all_proxy_names)}个",
+        "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png"
+    }
+    proxy_groups.insert(0, select_group)
 
     # 创建自动选择代理组
     all_proxy_names = [proxy["name"] for proxy in new_proxies]
@@ -150,7 +159,7 @@ def rename_proxies(proxies, nation_cache):
     default_group = {
         "type": "select",
         "name": "默认代理",
-        "proxies": [auto_select_group["name"]] + [group["name"] for group in proxy_groups[1:]],
+        "proxies": [auto_select_group["name"]] + [select_group["name"]] + [group["name"] for group in proxy_groups[1:]],
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png"
     }
     proxy_groups.insert(0, default_group)
