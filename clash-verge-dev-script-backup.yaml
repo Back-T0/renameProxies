@@ -1,0 +1,381 @@
+/*
+ * ┌─────────────────────────────────────────────────────┐  
+ * │                       AeraGroup                     │  
+ * └───────┬─────────────────┬───────────────────┬───────┘  
+ *         │                 │                   │          
+ * ┌───────▼───────┐ ┌───────▼──────┐     ┌──────▼───────┐  
+ * │      Ch       │ │      En      │ ... │    Others    │  
+ * └─┬─────┬─────┬─┘ └─┬─────┬───┬──┘     └──────────────┘  
+ *   │ ... │     │     │ ... │   │                          
+ *   ▼     ▼     ▼     ▼     ▼   ▼                          
+ *   Ch1...Ch4 Proxies En1...En4 Proxies                    
+ *                                                          
+ * ┌─────────────────┐ ┌──────┐   ┌────────────┐            
+ * │  DefaultGroup   │ │      │   │            ├────►Ch1    
+ * └─────┬──────────┬┘ │      │   │    Area    ├────►En1    
+ *       │          │  │      │   │    Group   │      .     
+ * ┌─────▼────────┐ │  │      ├───►    Test    │      .     
+ * │    Default   │ │  │      │   │            │      .     
+ * │    Proxies   │ │  │      │   │            ├────►Others1
+ * └───────────┬─┬┘ │  │      │   └────────────┘            
+ *             │ │  │  │      │   ┌────────────┐            
+ * ┌─────────┐ │ │  │  │      │   │            ├────►Ch2    
+ * │AreaGroup◄─┘ │  │  │      │   │            ├────►En2    
+ * └─────────┘   │  │  │      │   │    Area    │      .     
+ *               │  │  │      ├───►   Group    │      .     
+ * ┌─────────────▼┐ │  │      │   │  Fallback  │      .     
+ * │  SelectGroup ◄─┘  │ Auto │   │            ├────►Others2
+ * └───────────┬─┬┘    │ Area │   └────────────┘            
+ *             │ │     │Group │   ┌────────────┐            
+ * ┌─────────┐ │ │     │      │   │            ├────►Ch3    
+ * │AutoGroup│◄┘ │     │      │   │    Area    ├────►En3    
+ * └─────────┘   │     │      │   │   Group    │      .     
+ *               │     │      ├───►  Consistent│      .     
+ *  AllProxies◄──┘     │      │   │            │      .     
+ *                     │      │   │            ├────►Others3
+ *                     │      │   └────────────┘            
+ *                     │      │   ┌────────────┐            
+ *                     │      │   │            ├────►Ch4    
+ *                     │      │   │            ├────►En4    
+ *                     │      ├───►    Area    │      .     
+ *                     │      │   │   Group    │      .     
+ *                     │      │   │ RoundRobin │      .     
+ *                     │      │   │            ├────►Others4
+ *                     └──────┘   └────────────┘            
+ */
+
+// 规则
+const rules = [
+  // 自定义规则
+  "DOMAIN-SUFFIX,v2rayse.com,默认代理", // V2rayse 节点工具
+  "DOMAIN-SUFFIX,limbopro.com,默认代理", // 毒奶导航
+  "DOMAIN-SUFFIX,downloadlynet.ir,DIRECT", // 下载利 网站, 下载破解软件
+  "DOMAIN-SUFFIX,microsofttranslator.com,默认代理", // 微软翻译 有时候会抽风
+  "PROCESS-NAME,WinStore.App.exe,默认代理", // 微软商店 有时候会抽风
+  "DOMAIN-SUFFIX,challenges.cloudflare.com,默认代理", // cloudflare 验证
+
+  //编程相关
+  "DOMAIN-SUFFIX,postman.com,默认代理", // Postman 域名 下载 postman 用
+  "PROCESS-NAME,Postman.exe,默认代理", // Postman 软件
+  "DOMAIN-SUFFIX,mybatis.org,默认代理", // MyBatis 编程相关
+  "DOMAIN-SUFFIX,projectlombok.org,默认代理", // Lombok 编程相关
+  "DOMAIN-SUFFIX,thymeleaf.org,默认代理", // thymeleaf 编程相关
+  "DOMAIN-SUFFIX,flywaydb.org,默认代理", // flywaydb 编程相关
+  "DOMAIN-SUFFIX,red-gate.com,默认代理", // flywaydb 编程相关
+  "DOMAIN-SUFFIX,jquery.com,默认代理", // jquery 编程相关
+  "DOMAIN-SUFFIX,claude.ai,OpenAi服务", // claude 编程相关
+  "DOMAIN-SUFFIX,anthropic.com,OpenAi服务", // claude 编程相关
+
+
+
+  // 规则集
+  "RULE-SET,BanAD常见广告关键字、广告联盟,广告过滤",
+  // "RULE-SET,reject广告域名列表,广告过滤",
+
+  // subdivision 分组规则集
+  "RULE-SET,OpenAi域名列表,OpenAi服务",
+  "DOMAIN-SUFFIX,openai.com,OpenAi服务",
+  "RULE-SET,Spotify声破天域名列表,Spotify服务",
+  "RULE-SET,Microsoft微软域名列表,微软服务",
+  "RULE-SET,ProxyMedia国外媒体列表,国外媒体",
+  // "RULE-SET,iCloud域名列表,苹果服务",
+  // "RULE-SET,apple在中国大陆可直连的域名列表,苹果服务",
+  // "RULE-SET,Telegram使用的IP地址列表,电报消息,no-resolve",
+
+  // 单独域名规则集
+  "RULE-SET,Tencent腾讯域名列表,DIRECT",
+  "RULE-SET,Alibaba阿里域名列表,DIRECT",
+  "RULE-SET,Wechat微信域名列表,DIRECT",
+  "RULE-SET,Baidu百度域名列表,DIRECT",
+  "RULE-SET,Bilibili哔哩哔哩域名列表,DIRECT",
+  "RULE-SET,Google谷歌域名列表,默认代理",
+  "RULE-SET,Github域名列表,默认代理",
+  "RULE-SET,Developer开发者常用域名列表,默认代理",
+  // 这是从上面的 subdivision 分组规则集拿下来的, 如果要分组则放到上面去
+  // "RULE-SET,ProxyMedia国外媒体列表,默认代理",
+  "RULE-SET,iCloud域名列表,默认代理",
+  "RULE-SET,apple在中国大陆可直连的域名列表,默认代理",
+  "RULE-SET,Telegram使用的IP地址列表,默认代理,no-resolve",
+
+  // 百以上规则集
+  "RULE-SET,lancidr局域网IP及保留IP地址列表,DIRECT,no-resolve",
+  "RULE-SET,private私有网络专用域名列表,DIRECT",
+  "RULE-SET,applications需要直连的常见软件列表,DIRECT",
+  "RULE-SET,google在中国大陆可直连的域名列表,DIRECT",
+
+  // // 千以上的规则集
+  // "RULE-SET,tld-not-cn非中国大陆使用的顶级域名列表,默认代理",
+  // "RULE-SET,gfw域名列表,默认代理",
+
+  // // 万以上的规则集
+  // "RULE-SET,direct直连域名列表,DIRECT",
+  // "RULE-SET,cncidr中国大陆IP地址列表,DIRECT,no-resolve",
+  // "RULE-SET,proxy代理域名列表,默认代理",
+
+  // 其他规则
+  "GEOIP,LAN,DIRECT,no-resolve",
+  "GEOIP,CN,DIRECT,no-resolve",
+  "MATCH,漏网之鱼"
+];
+// 国内DNS服务器
+const domesticNameservers = [
+  "https://dns.alidns.com/dns-query", // 阿里云公共DNS
+  "https://doh.pub/dns-query", // 腾讯DNSPod
+  "https://doh.360.cn/dns-query" // 360安全DNS
+];
+// 国外DNS服务器
+const foreignNameservers = [
+  "https://1.1.1.1/dns-query", // Cloudflare(主)
+  "https://1.0.0.1/dns-query", // Cloudflare(备)
+  "https://208.67.222.222/dns-query", // OpenDNS(主)
+  "https://208.67.220.220/dns-query", // OpenDNS(备)
+  "https://194.242.2.2/dns-query", // Mullvad(主)
+  "https://194.242.2.3/dns-query" // Mullvad(备)
+];
+// DNS配置
+const dnsConfig = {
+  "dns": true, "listen": 1053, "ipv6": true, "use-system-hosts": false, "cache-algorithm": "arc", "enhanced-mode": "fake-ip", "fake-ip-range": "198.18.0.1/16",
+  "default-nameserver": ["223.5.5.5", "114.114.114.114", "1.1.1.1", "8.8.8.8"],
+  "nameserver": [...domesticNameservers, ...foreignNameservers],
+  "proxy-server-nameserver": [...domesticNameservers, ...foreignNameservers],
+  "nameserver-policy": {
+    "geosite:private,cn,geolocation-cn": domesticNameservers,
+    "geosite:google,youtube,telegram,gfw,geolocation-!cn": foreignNameservers
+  },
+  "fake-ip-filter": [
+    // 本地主机/设备
+    "+.lan",
+    "+.local",
+    // Windows网络出现小地球图标
+    "+.msftconnecttest.com",
+    "+.msftncsi.com",
+    // QQ快速登录检测失败
+    "localhost.ptlogin2.qq.com",
+    "localhost.sec.qq.com",
+    // 微信快速登录检测失败
+    "localhost.work.weixin.qq.com"
+  ]
+};
+// 规则集类型
+const ruleAnchor = {
+  domain: { "type": "http", "format": "yaml", "interval": 86400, behavior: 'domain' },
+  ipcidr: { "type": "http", "format": "yaml", "interval": 86400, behavior: 'ipcidr' },
+  classical: { "type": "http", "format": "yaml", "interval": 86400, behavior: 'classical' }
+}
+// 规则集配置
+const ruleProviders = {
+  //-------------------------------------------Loyalsoldier 规则集
+  "reject广告域名列表": { ...ruleAnchor.domain, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt", "path": "./rulesets/loyalsoldier/reject.yaml" },
+  "iCloud域名列表": { ...ruleAnchor.domain, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt", "path": "./rulesets/loyalsoldier/icloud.yaml" },
+  "apple在中国大陆可直连的域名列表": { ...ruleAnchor.domain, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt", "path": "./rulesets/loyalsoldier/apple.yaml" },
+  "google在中国大陆可直连的域名列表": { ...ruleAnchor.domain, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt", "path": "./rulesets/loyalsoldier/google.yaml" },
+  "proxy代理域名列表": { ...ruleAnchor.domain, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt", "path": "./rulesets/loyalsoldier/proxy.yaml" },
+  "direct直连域名列表": { ...ruleAnchor.domain, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt", "path": "./rulesets/loyalsoldier/direct.yaml" },
+  "private私有网络专用域名列表": { ...ruleAnchor.domain, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt", "path": "./rulesets/loyalsoldier/private.yaml" },
+  "gfw域名列表": { ...ruleAnchor.domain, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt", "path": "./rulesets/loyalsoldier/gfw.yaml" },
+  "tld-not-cn非中国大陆使用的顶级域名列表": { ...ruleAnchor.domain, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt", "path": "./rulesets/loyalsoldier/tld-not-cn.yaml" },
+  "Telegram使用的IP地址列表": { ...ruleAnchor.ipcidr, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt", "path": "./rulesets/loyalsoldier/telegramcidr.yaml" },
+  "cncidr中国大陆IP地址列表": { ...ruleAnchor.ipcidr, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt", "path": "./rulesets/loyalsoldier/cncidr.yaml" },
+  "lancidr局域网IP及保留IP地址列表": { ...ruleAnchor.ipcidr, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt", "path": "./rulesets/loyalsoldier/lancidr.yaml" },
+  "applications需要直连的常见软件列表": { ...ruleAnchor.classical, "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt", "path": "./rulesets/loyalsoldier/applications.yaml" },
+  //-------------------------------------------Loyalsoldier 规则集 END
+
+  //-------------------------------------------ACL4SSR 规则集
+  // Providers
+  "ProxyMedia国外媒体列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml", "path": "./rulesets/ACL4SSR/ProxyMedia.yaml" },
+  "BanAD常见广告关键字、广告联盟": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml", "path": "./rulesets/ACL4SSR/BanAD.yaml" },
+  // Providers/Ruleset
+  "Microsoft微软域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml", "path": "./rulesets/ACL4SSR/Ruleset/Microsoft.yaml" },
+  "Spotify声破天域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml", "path": "./rulesets/ACL4SSR/Ruleset/Spotify.yaml" },
+  "Developer开发者常用域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Developer.yaml", "path": "./rulesets/ACL4SSR/Ruleset/Developer.yaml" },
+  "Github域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Github.yaml", "path": "./rulesets/ACL4SSR/Ruleset/Github.yaml" },
+  "OpenAi域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml", "path": "./rulesets/ACL4SSR/Ruleset/OpenAi.yaml" },
+  "Tencent腾讯域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Tencent.yaml", "path": "./rulesets/ACL4SSR/Ruleset/Tencent.yaml" },
+  "Baidu百度域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Baidu.yaml", "path": "./rulesets/ACL4SSR/Ruleset/Baidu.yaml" },
+  "Wechat微信域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Wechat.yaml", "path": "./rulesets/ACL4SSR/Ruleset/Wechat.yaml" },
+  "Google谷歌域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml", "path": "./rulesets/ACL4SSR/Ruleset/Google.yaml" },
+  "Bilibili哔哩哔哩域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml", "path": "./rulesets/ACL4SSR/Ruleset/Bilibili.yaml" },
+  "Alibaba阿里域名列表": { ...ruleAnchor.classical, "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Alibaba.yaml", "path": "./rulesets/ACL4SSR/Ruleset/Alibaba.yaml" },
+  //-------------------------------------------ACL4SSR 规则集 END
+};
+
+// 自定义 proxies
+const appendProxies = [
+  // 自定义节点示例用
+  // { "name": "\u2601\ufe0f CFWarp-1", "type": "wireguard", "server": "188.114.98.234", "port": 1387, "ip": "172.16.0.2", "private-key": "uD/yEdig9JGiqRmLkyL+bLoItSe3BiXwP1/zjBO6SW0=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "remote-dns-resolve": false, "udp": true },
+  // { "name": "\u2601\ufe0f CFWarp-2", "type": "wireguard", "server": "188.114.99.137", "port": 1387, "ip": "172.16.0.2", "private-key": "uD/yEdig9JGiqRmLkyL+bLoItSe3BiXwP1/zjBO6SW0=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "remote-dns-resolve": false, "udp": true },
+  // { "name": "\u2601\ufe0f CFWarp-3", "type": "wireguard", "server": "188.114.99.137", "port": 7156, "ip": "172.16.0.2", "private-key": "uD/yEdig9JGiqRmLkyL+bLoItSe3BiXwP1/zjBO6SW0=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "remote-dns-resolve": false, "udp": true },
+  // { "name": "\u2601\ufe0f CFWarp-4", "type": "wireguard", "server": "188.114.97.74", "port": 7156, "ip": "172.16.0.2", "private-key": "uD/yEdig9JGiqRmLkyL+bLoItSe3BiXwP1/zjBO6SW0=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "remote-dns-resolve": false, "udp": true },
+  // { "name": "\u2601\ufe0f CFWarp-5", "type": "wireguard", "server": "188.114.97.74", "port": 1387, "ip": "172.16.0.2", "private-key": "uD/yEdig9JGiqRmLkyL+bLoItSe3BiXwP1/zjBO6SW0=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "remote-dns-resolve": false, "udp": true },
+  // { "name": "\u2601\ufe0f CFWarp-6", "type": "wireguard", "server": "188.114.98.245", "port": 1387, "ip": "172.16.0.2", "private-key": "uD/yEdig9JGiqRmLkyL+bLoItSe3BiXwP1/zjBO6SW0=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "remote-dns-resolve": false, "udp": true },
+  // { "name": "\u2601\ufe0f CFWarp-7", "type": "wireguard", "server": "188.114.98.221", "port": 1387, "ip": "172.16.0.2", "private-key": "uD/yEdig9JGiqRmLkyL+bLoItSe3BiXwP1/zjBO6SW0=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "remote-dns-resolve": false, "udp": true },
+  // { "name": "\u2601\ufe0f CFWarp-8", "type": "wireguard", "server": "162.159.195.156", "port": 7156, "ip": "172.16.0.2", "private-key": "uD/yEdig9JGiqRmLkyL+bLoItSe3BiXwP1/zjBO6SW0=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "remote-dns-resolve": false, "udp": true },
+  // { "name": "\u2601\ufe0f CFWarp-9", "type": "wireguard", "server": "188.114.99.231", "port": 7156, "ip": "172.16.0.2", "private-key": "uD/yEdig9JGiqRmLkyL+bLoItSe3BiXwP1/zjBO6SW0=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "remote-dns-resolve": false, "udp": true },
+  // { "name": "\u2601\ufe0f CFWarp-10", "type": "wireguard", "server": "188.114.99.231", "port": 1387, "ip": "172.16.0.2", "private-key": "uD/yEdig9JGiqRmLkyL+bLoItSe3BiXwP1/zjBO6SW0=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "remote-dns-resolve": false, "udp": true }
+];
+// 自定义 provider
+const baseOfProxyProvider = { type: "http", interval: 3600, "health-check": { enable: true, url: "https://www.google.com/generate_204", interval: 300, } };
+const appendProxiesProvider = {
+  // provider 示例用
+  // PaleGoldenRod: { ...baseOfProxyProvider, url: "https://subs.zeabur.app/clash" },
+  // neko_warp: { ...baseOfProxyProvider, url: "https://neko-warp.nloli.xyz/neko_warp.yaml" }
+}
+// 程序入口
+function main(config) {
+  //-------------------------------------------插入自定义 proxies 和 proxies provider
+  const proxiesCount1 =
+    config?.["proxies"] === "undefined"
+      ? (config = { ...config, "proxies": appendProxies })["proxies"].length
+      : (config.proxies = [...config.proxies, ...appendProxies]).length;
+  const proxiesCount2 =
+    config?.["proxy-providers"] === "undefined"
+      ? (config = { ...config, "proxy-providers": appendProxiesProvider })["proxy-providers"].length
+      : (config["proxy-providers"] = { ...config["proxy-providers"], ...appendProxiesProvider }).length;
+  //-------------------------------------------插入自定义 proxies 和 proxies provider END
+
+
+  //-------------------------------------------空检测
+  if (proxiesCount1 == 0 && proxiesCount2 == 0) {
+    throw new Error("配置文件中未找到任何代理");
+  }
+  // 剔除多余节点
+  const proxies =
+    config.proxies
+      .filter(proxy => !["官网", "暂时", "购买渠道", "IPV6", "国内", "佣金"].some(kw => proxy.name.includes(kw)))
+      .map(p => p.name)
+    ?? config.proxies.map(p => p.name);
+  //-------------------------------------------空检测 END
+
+
+  // 代理组通用配置
+  const baseOfGroup = {
+    "interval": 300,
+    "timeout": 1500,
+    "url": "https://www.google.com/generate_204",
+    // "url": "http://www.gstatic.com/generate_204",
+    "lazy": true,
+    "max-failed-times": 3,
+  };
+
+  //-------------------------------------------节点自动方案
+  const baseOfAutoGroup = { ...baseOfGroup, "proxies": proxies, "include-all-providers": true, "hidden": true };
+  const autoGroup = [
+    { ...baseOfAutoGroup, "name": "延迟选优", "type": "url-test", "tolerance": 100, "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Auto.png" },
+    { ...baseOfAutoGroup, "name": "故障转移", "type": "fallback", "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Speedtest.png" },
+    { ...baseOfAutoGroup, "name": "负载均衡(散列)", "type": "load-balance", "strategy": "consistent-hashing", "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Round_Robin_Alt.png" },
+    { ...baseOfAutoGroup, "name": "负载均衡(轮询)", "type": "load-balance", "strategy": "round-robin", "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Round_Robin.png" }
+  ];
+  const autoGroupList = autoGroup.map(group => group.name);
+  //-------------------------------------------节点自动方案 END
+
+
+  //-------------------------------------------区域分组方案
+  // 筛选含有指定关键字的节点
+  let dividedProxies = []; // 收纳已经分好组的节点
+  let proxiesCountOfArea = 0; // 记录当前分组的节点数目 ⚠️无法计算 provider 中的节点⚠️
+  const nameFilter = regex => {
+    const targetPorxies = proxies.filter(e => regex.test(e));
+    dividedProxies = [...dividedProxies, ...targetPorxies];
+    proxiesCountOfArea = targetPorxies.length;
+    return targetPorxies;
+  }
+  const unDividedProxies = () => {
+    let unDividedproxies = proxies.filter(proxy => !dividedProxies.includes(proxy));
+    proxiesCountOfArea += unDividedproxies.length; // 注意是 +=, 因为 '其他分区' 先执行了一次 nameFilter
+    return unDividedproxies;
+  }
+  // 区域 代理组通用配置
+  const baseOfAreaGroup = {
+    ...baseOfGroup,
+    // "type": "select",
+    // 为每个地区都加上自动分组, 不想加可改成下面 3 种类型之一
+    "type": "url-test",
+    // "type": "fallback",
+    // "type": "load-balance",
+    // 负载均衡策略
+    // "strategy": "round-robin",
+    // "strategy": "consistent-hashing",
+    "include-all-providers": true,
+    "hidden": true
+  };
+
+  let areaGroup = [
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/WARP|Warp/)], "name": "WARP分区: " + proxiesCountOfArea + "个", "filter": "WARP|Warp", "icon": "https://clash-verge-rev.github.io/assets/icons/warp.svg" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/CN|China|中国/)], "name": "中国分区：" + proxiesCountOfArea + "个", "filter": "CN|China|中国", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/CN.png", },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/HK|hk|Hong Kong|HongKong|hongkong|香港/)], "name": "香港分区：" + proxiesCountOfArea + "个", "filter": "HK|hk|Hong Kong|HongKong|hongkong|香港", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/MO|Macao|Macau|澳门/)], "name": "澳门分区：" + proxiesCountOfArea + "个", "filter": "MO|Macao|Macau|澳门", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/MO.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/TW|Taiwan|台湾|新北|彰化/)], "name": "台湾分区：" + proxiesCountOfArea + "个", "filter": "TW|Taiwan|台湾|新北|彰化", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/TW.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/JP|Japan|日本|川日|东京|大阪|泉日|埼玉|沪日|深日/)], "name": "日本分区：" + proxiesCountOfArea + "个", "filter": "JP|Japan|日本|川日|东京|大阪|泉日|埼玉|沪日|深日", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/JP.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/KR|Korea|KOR|首尔|韓|韩国/)], "name": "韩国分区：" + proxiesCountOfArea + "个", "filter": "KR|Korea|KOR|首尔|韓|韩国", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/KR.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/SG|Singapore|新加坡|坡|狮城/)], "name": "新加坡分区：" + proxiesCountOfArea + "个", "filter": "SG|Singapore|新加坡|坡|狮城", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/SG.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/RU|Russia|俄罗斯|莫斯科/)], "name": "俄罗斯分区：" + proxiesCountOfArea + "个", "filter": "RU|Russia|俄罗斯|莫斯科", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/RU.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/US|United States|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥/)], "name": "美国分区：" + proxiesCountOfArea + "个", "filter": "US|United States|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/US.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/UK|GBR|GB|United Kingdom|英国/)], "name": "英国分区：" + proxiesCountOfArea + "个", "filter": "UK|GBR|GB|United Kingdom|英国", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/UK.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/FR|France|法国|巴黎|里昂/)], "name": "法国分区：" + proxiesCountOfArea + "个", "filter": "FR|France|法国|巴黎|里昂", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/FR.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/CA|加拿大/)], "name": "加拿大分区：" + proxiesCountOfArea + "个", "filter": "CA|加拿大", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/CA.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/DE|Germany|德国/)], "name": "德国分区：" + proxiesCountOfArea + "个", "filter": "DE|Germany|德国", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/DE.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/AU|Australia|澳大利亚/)], "name": "澳大利亚分区：" + proxiesCountOfArea + "个", "filter": "AU|Australia|澳大利亚", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/AU.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/TR|Turkey|土耳其/)], "name": "土耳其分区：" + proxiesCountOfArea + "个", "filter": "TR|Turkey|土耳其", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/TR.png" },
+    { ...baseOfAreaGroup, "proxies": [...nameFilter(/🇮🇳|🇦🇺|🇹🇷|🇧🇷|🇦🇷|🇻🇳|印度|土耳其|巴西|阿根廷|越南/), ...unDividedProxies()], "name": "其他分区：" + proxiesCountOfArea + "个", "filter": "🇮🇳|🇦🇺|🇹🇷|🇧🇷|🇦🇷|🇻🇳|印度|土耳其|巴西|阿根廷|越南", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/XD.png" },
+  ];
+
+  // 去掉没有节点的分区
+  areaGroup = areaGroup.filter(group => group.proxies.length > 0);
+  const areaList = areaGroup.map(group => group.name);
+  // 为每个地区都加上自动分组, 不想加下面 6 行删掉
+  // const isHide = true;
+  // const areaGroupTest = areaGroup.map(group => { return { ...group, name: "延迟优选：" + group.name.split("分区")[0], type: "url-test", tolerance: 100, "hidden": isHide } });
+  // const areaGroupFallback = areaGroup.map(group => { return { ...group, name: "故障转移：" + group.name.split("分区")[0], type: "fallback", "hidden": isHide } });
+  // const areaGroupConsistent = areaGroup.map(group => { return { ...group, name: "负载均衡(散列): " + group.name.split("分区")[0], type: "load-balance", strategy: "consistent-hashing", "hidden": isHide } });
+  // const areaGroupRoundRobin = areaGroup.map(group => { return { ...group, name: "负载均衡(轮询): " + group.name.split("分区")[0], type: "load-balance", strategy: "round-robin", "hidden": isHide } });
+  // areaGroup = areaGroup.map(group => { return { ...group, "proxies": ["延迟优选：" + group.name.split("分区")[0], "故障转移：" + group.name.split("分区")[0], "负载均衡(散列): " + group.name.split("分区")[0], "负载均衡(轮询): " + group.name.split("分区")[0], ...group.proxies] } });
+  //-------------------------------------------区域分组方案 END
+
+
+  //-------------------------------------------默认 代理组
+  const nameOfSelect = "节点选择：" + proxies.length + "个";
+  const defaultGroup = [
+    { ...baseOfGroup, "name": "默认代理", "type": "select", "proxies": ["DIRECT", nameOfSelect, ...areaList], "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Proxy.png" },
+    { ...baseOfGroup, "name": nameOfSelect, "type": "select", "proxies": [...autoGroupList, ...proxies], "include-all-providers": true, "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png" },
+    { ...baseOfGroup, "name": "漏网之鱼", "type": "select", "proxies": ["DIRECT", "默认代理", nameOfSelect, ...areaList], "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png" },
+    { ...baseOfGroup, "name": "广告过滤", "type": "select", "proxies": ["REJECT", "REJECT-DROP", "DIRECT"], "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Reject.png" }
+  ];
+  //-------------------------------------------默认 代理组 END
+
+
+  //-------------------------------------------providers 代理组
+  // providers 代理组通用配置
+  const baseOfSubdivisionGroup = {
+    ...baseOfGroup,
+    "type": "select",
+    "proxies": ["DIRECT", "默认代理", nameOfSelect, ...areaList],
+  };
+  const subdivisionGroup = [
+    { ...baseOfSubdivisionGroup, "name": "OpenAi服务", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png" },
+    { ...baseOfSubdivisionGroup, "name": "Spotify服务", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Spotify.png" },
+    { ...baseOfSubdivisionGroup, "name": "国外媒体", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Streaming.png" },
+    { ...baseOfSubdivisionGroup, "name": "微软服务", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Microsoft.png" },
+    // { ...baseOfSubdivisionGroup, "name": "电报消息", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png" },
+    // { ...baseOfSubdivisionGroup, "name": "苹果服务", "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Apple.png" }
+  ];
+  //-------------------------------------------providers 代理组 END
+
+
+  // 覆盖原配置中的代理组
+  config["proxy-groups"] = [
+    ...defaultGroup, ...subdivisionGroup, ...autoGroup, ...areaGroup,
+    // 为每个地区都加上自动分组, 不想加下面 4 行删掉
+    // ...areaGroupTest,
+    // ...areaGroupFallback,
+    // ...areaGroupConsistent,
+    // ...areaGroupRoundRobin
+  ];
+  // 覆盖原配置中的规则
+  config["rule-providers"] = ruleProviders;
+  config["rules"] = rules;
+  // 覆盖原配置中DNS配置
+  config["dns"] = dnsConfig;
+
+  // 返回修改后的配置
+  return config;
+}
