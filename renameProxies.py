@@ -185,7 +185,7 @@ def main():
     renamed_proxies, proxy_groups = rename_proxies(proxies, nation_cache)
     
     # 替换并保存到现有的 text.yaml 文件
-    replace_yaml_sections("template.yaml", renamed_proxies, proxy_groups)
+    replace_yaml_sections("renameProxies.yaml", renamed_proxies, proxy_groups)
 
 
 if __name__ == "__main__":
