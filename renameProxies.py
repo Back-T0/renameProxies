@@ -48,13 +48,11 @@ def get_nation_info(server, nation_cache):
     except socket.error:
         ip = socket.gethostbyname(server)  # 获取域名对应的IP
 
-    # 使用 mmdbinspect 获取国家信息
     result = subprocess.run(
         ["mmdbinspect", "-db", "Country.mmdb", ip], capture_output=True, text=True
     )
     output = yaml.safe_load(result.stdout)
 
-    # 确保解析到正确的国家信息
     if output and isinstance(output, list) and "Records" in output[0]:
         records = output[0]["Records"]
         if records:
@@ -62,14 +60,13 @@ def get_nation_info(server, nation_cache):
             country_info = record.get("country") or record.get("registered_country")
             if country_info:
                 nation = country_info["names"].get("zh-CN", "未知")
-                nation_cache[server] = nation
-                return nation
+                iso_code = country_info.get("iso_code", "未知")
+                nation_cache[server] = (nation, iso_code, 0)
+                return nation_cache[server]
 
-    # 调试信息
     print(f"域名 {server} 无法检测, ip为 {ip}, 查询内容为 {output}")
-
-    nation_cache[server] = "未知"
-    return "未知"
+    nation_cache[server] = ("未知", "未知", 0)
+    return nation_cache[server]
 
 
 # 多线程获取所有服务器的国家信息
@@ -91,27 +88,47 @@ def fetch_all_nations(domains, ips):
     return nation_cache
 
 
-# 重命名代理
+# 重命名代理并创建代理组信息
 def rename_proxies(proxies, nation_cache):
     nation_counter = defaultdict(int)
     new_proxies = []
+    proxy_groups = []
 
     for proxy in proxies:
         server = proxy.get("server")
         if server:
-            nation = nation_cache.get(server, "未知")
+            nation, iso_code, _ = nation_cache.get(server, ("未知", "未知", 0))
             nation_counter[nation] += 1
             new_name = f"{nation}-{nation_counter[nation]}"
             proxy["name"] = new_name
+            nation_cache[server] = (nation, iso_code, nation_counter[nation])
         new_proxies.append(proxy)
 
-    return new_proxies
+    # 创建代理组信息
+    for nation, count in nation_counter.items():
+        iso_code = nation_cache[server][1]
+        group = {
+            "interval": 300,
+            "timeout": 1500,
+            "url": "https://www.google.com/generate_204",
+            "lazy": True,
+            "max-failed-times": 3,
+            "type": "url-test",
+            "include-all-providers": True,
+            "hidden": True,
+            "proxies": [f"{nation}-{i}" for i in range(1, count + 1)],
+            "name": f"{nation}分区: {count}个",
+            "icon": f"https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/{iso_code}.png"
+        }
+        proxy_groups.append(group)
+
+    return new_proxies, proxy_groups
 
 
 # 保存结果到YAML文件
-def save_yaml(proxies, output_file):
+def save_yaml(proxies, proxy_groups, output_file):
     with open(output_file, "w") as file:
-        yaml.dump({"proxies": proxies}, file, allow_unicode=True)
+        yaml.dump({"proxies": proxies, "proxy-groups": proxy_groups}, file, allow_unicode=True)
 
 
 def main():
@@ -122,10 +139,10 @@ def main():
     domains, ips = collect_servers(proxies)
     nation_cache = fetch_all_nations(domains, ips)
 
-    renamed_proxies = rename_proxies(proxies, nation_cache)
-    save_yaml(renamed_proxies, "renameProxies.yaml")
+    renamed_proxies, proxy_groups = rename_proxies(proxies, nation_cache)
+    save_yaml(renamed_proxies, proxy_groups, "renameProxies.yaml")
 
-    print("所有节点均命名完毕, 已写入 renameProxies.yaml 文件")
+    print("所有节点均命名完毕, 代理组已创建并写入 renameProxies.yaml 文件")
 
 
 if __name__ == "__main__":
