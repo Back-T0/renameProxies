@@ -104,9 +104,15 @@ def rename_proxies(proxies, nation_cache):
             nation_cache[server] = (nation, iso_code, nation_counter[nation])
         new_proxies.append(proxy)
 
-    # 创建代理组信息
+    # 创建分区代理组信息
     for nation, count in nation_counter.items():
-        iso_code = nation_cache[server][1]
+        # 通过 nation 找到对应的 iso_code
+        iso_code = None
+        for _, (n, i, _) in nation_cache.items():
+            if n == nation:
+                iso_code = i
+                break
+
         group = {
             "interval": 300,
             "timeout": 1500,
@@ -115,20 +121,57 @@ def rename_proxies(proxies, nation_cache):
             "max-failed-times": 3,
             "type": "url-test",
             "include-all-providers": True,
-            "hidden": True,
+            "hidden": False,
             "proxies": [f"{nation}-{i}" for i in range(1, count + 1)],
             "name": f"{nation}分区: {count}个",
-            "icon": f"https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/{iso_code}.png"
+            # "icon": f"https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/{iso_code}.png"
+            "icon": f"https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/{iso_code.lower()}.svg"
         }
         proxy_groups.append(group)
+
+    # 创建自动选择代理组
+    all_proxy_names = [proxy["name"] for proxy in new_proxies]
+    auto_select_group = {
+        "interval": 300,
+        "timeout": 1500,
+        "url": "https://www.google.com/generate_204",
+        "lazy": True,
+        "max-failed-times": 3,
+        "type": "url-test",
+        "include-all-providers": True,
+        "hidden": False,
+        "proxies": all_proxy_names,
+        "name": f"自动选择: {len(all_proxy_names)}个",
+        "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png"
+    }
+    proxy_groups.insert(0, auto_select_group)
+
+    # 创建默认代理组
+    default_group = {
+        "type": "select",
+        "name": "默认代理",
+        "proxies": [auto_select_group["name"]] + [group["name"] for group in proxy_groups[1:]],
+        "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png"
+    }
+    proxy_groups.insert(0, default_group)
 
     return new_proxies, proxy_groups
 
 
-# 保存结果到YAML文件
-def save_yaml(proxies, proxy_groups, output_file):
-    with open(output_file, "w") as file:
-        yaml.dump({"proxies": proxies, "proxy-groups": proxy_groups}, file, allow_unicode=True)
+# 将新的 proxies 和 proxy-groups 替换到现有的 YAML 文件中
+def replace_yaml_sections(file_path, new_proxies, new_proxy_groups):
+    with open(file_path, "r") as file:
+        yaml_content = yaml.safe_load(file)
+
+    # 替换 proxies 和 proxy-groups 部分
+    yaml_content["proxies"] = new_proxies
+    yaml_content["proxy-groups"] = new_proxy_groups
+
+    # 保存更新后的内容
+    with open(file_path, "w") as file:
+        yaml.dump(yaml_content, file, allow_unicode=True)
+
+    print(f"文件 {file_path} 已成功更新.")
 
 
 def main():
@@ -140,9 +183,9 @@ def main():
     nation_cache = fetch_all_nations(domains, ips)
 
     renamed_proxies, proxy_groups = rename_proxies(proxies, nation_cache)
-    save_yaml(renamed_proxies, proxy_groups, "renameProxies.yaml")
-
-    print("所有节点均命名完毕, 代理组已创建并写入 renameProxies.yaml 文件")
+    
+    # 替换并保存到现有的 text.yaml 文件
+    replace_yaml_sections("template.yaml", renamed_proxies, proxy_groups)
 
 
 if __name__ == "__main__":
