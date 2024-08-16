@@ -17,15 +17,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
       - name: Git配置
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
           git pull
     
-      - name: 检出代码
-        uses: actions/checkout@v4
-
       - name: 下载 geoip 数据库
         run: |
           wget https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
