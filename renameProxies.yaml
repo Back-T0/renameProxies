@@ -5204,10 +5204,11 @@ proxy-groups:
   type: load-balance
   url: https://www.google.com/generate_204
 rules:
+- GEOIP,PRIVATE,DIRECT,no-resolve
 - GEOIP,google,默认代理
 - GEOIP,telegram,默认代理
 - GEOIP,twitter,默认代理
-- GEOIP,CN,DIRECT
+- GEOIP,CN,DIRECT,no-resolve
 - MATCH,默认代理
 secret: ''
 sniffer:
