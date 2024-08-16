@@ -123,7 +123,7 @@ def rename_proxies(proxies, nation_cache):
             "strategy": "round-robin",
             "include-all-providers": True,
             "hidden": False,
-            "filter": nation,
+            "filter": f"(?i){nation}",
             # "proxies": [f"{nation}-{i}" for i in range(1, count + 1)],
             "name": f"{nation}分区: {count}个",
             # "icon": f"https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/{iso_code}.png"
