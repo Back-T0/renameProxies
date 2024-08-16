@@ -123,7 +123,8 @@ def rename_proxies(proxies, nation_cache):
             "strategy": "round-robin",
             "include-all-providers": True,
             "hidden": False,
-            "proxies": [f"{nation}-{i}" for i in range(1, count + 1)],
+            "filter": nation,
+            # "proxies": [f"{nation}-{i}" for i in range(1, count + 1)],
             "name": f"{nation}分区: {count}个",
             # "icon": f"https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/{iso_code}.png"
             "icon": f"https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/{iso_code.lower()}.svg"
