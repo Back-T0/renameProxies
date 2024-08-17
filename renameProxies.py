@@ -62,7 +62,7 @@ def get_nation_info(server, nation_cache):
                 return nation_cache[server]
 
     print(f"域名 {server} 无法检测, ip为 {ip}, 查询内容为 {output}")
-    nation_cache[server] = ("未知", "cn", 0)
+    nation_cache[server] = ("未知", "未知", 0)
     return nation_cache[server]
 
 
@@ -104,7 +104,7 @@ def rename_proxies(proxies, nation_cache):
     # 创建分区代理组信息
     for nation, count in nation_counter.items():
         # 通过 nation 找到对应的 iso_code
-        iso_code = None
+        iso_code = "cn"
         for _, (n, i, _) in nation_cache.items():
             if n == nation:
                 iso_code = i
