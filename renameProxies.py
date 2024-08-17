@@ -158,7 +158,7 @@ def rename_proxies(proxies, nation_cache):
         "hidden": False,
         "include-all": True,
         "name": f"自动选择: {len(all_proxy_names)}个",
-        "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png"
+        "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png"
     }
     proxy_groups.insert(0, auto_select_group)
 
