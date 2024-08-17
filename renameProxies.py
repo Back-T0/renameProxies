@@ -125,7 +125,7 @@ def rename_proxies(proxies, nation_cache):
             "hidden": False,
             "include-all-proxies": True,
             "filter": f"(?i){nation}|{iso_code}|{iso_code.lower()}",
-            "proxies": ["REJECT"],
+            "proxies": ["COMPATIBLE"],
             # "proxies": [f"{nation}-{i}" for i in range(1, count + 1)],
             "name": f"{nation}分区: {count}个",
             # "icon": f"https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/{iso_code}.png"
