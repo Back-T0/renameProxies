@@ -62,7 +62,7 @@ def get_nation_info(server, nation_cache):
                 return nation_cache[server]
 
     print(f"域名 {server} 无法检测, ip为 {ip}, 查询内容为 {output}")
-    nation_cache[server] = ("未知", "未知", 0)
+    nation_cache[server] = ("未知", "cn", 0)
     return nation_cache[server]
 
 
