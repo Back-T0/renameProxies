@@ -57,7 +57,7 @@ def get_nation_info(server, nation_cache):
             country_info = record.get("country") or record.get("registered_country")
             if country_info:
                 nation = country_info["names"].get("zh-CN", "未知")
-                iso_code = country_info.get("iso_code", "未知")
+                iso_code = country_info.get("iso_code", "cn")
                 nation_cache[server] = (nation, iso_code, 0)
                 return nation_cache[server]
 
@@ -94,7 +94,7 @@ def rename_proxies(proxies, nation_cache):
     for proxy in proxies:
         server = proxy.get("server")
         if server:
-            nation, iso_code, _ = nation_cache.get(server, ("未知", "未知", 0))
+            nation, iso_code, _ = nation_cache.get(server, ("未知", "cn", 0))
             nation_counter[nation] += 1
             new_name = f"{nation}-{nation_counter[nation]}"
             proxy["name"] = new_name
