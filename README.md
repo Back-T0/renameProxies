@@ -1,11 +1,17 @@
-geosite 域名查询: https://github.com/v2fly/domain-list-community/tree/master/data
+1. 数据库
+	- 精简简数据库 `wget https://github.com/Loyalsoldier/geoip/releases/latest/download/Country.mmdb -O Country.mmdb` 
+	- 原数据库 `wget https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb -O Country.mmdb`
+	- geosite 域名列表: [https://github.com/v2fly/domain-list-community/tree/master/data](https://github.com/v2fly/domain-list-community/tree/master/data)
+	- GeoIP 第三方: https://github.com/MetaCubeX/meta-rules-dat
 
-geoip Country 数据库: https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
+2. 解析数据库的软件包
+	- 下载软件包 `wget https://github.com/maxmind/mmdbinspect/releases/latest -O mmdbinspect.deb`
+	- 安装软件包 `sudo dpkg -i mmdbinspect.deb`
+	- 使用方法 https://github.com/maxmind/mmdbinspect?tab=readme-ov-file#examples
+	  mmdbinspect -db Country.mmdb 8.217.239.116 36.151.195.51
 
-geoip 数据库调用软件包(现在使用的是v0.2.0): https://github.com/maxmind/mmdbinspect/releases/latest
 
-proxies 来源: https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml
+geoip 配置示例: [快捷配置 - 虚空终端 Docs (metacubex.one)](https://wiki.metacubex.one/example/conf/)
 
-clash 规则参考: https://wiki.metacubex.one/example/conf/#__tabbed_1_1
+配置说明: [策略组配置 - 虚空终端 Docs (metacubex.one)](https://wiki.metacubex.one/config/proxy-groups/)
 
-clash 规则使用的 geoip: https://github.com/MetaCubeX/meta-rules-dat?tab=readme-ov-file 目录: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash
