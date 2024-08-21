@@ -1,28 +1,59 @@
 proxies:
 proxy-groups:
-allow-lan: false
+mixed-port: 7890
+ipv6: true
+allow-lan: true
+unified-delay: false
+tcp-concurrent: true
+external-controller: 127.0.0.1:9090
+external-ui: ui
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+geodata-mode: true
+geox-url:
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb"
+  asn: "https://mirror.ghproxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+find-process-mode: strict
+global-client-fingerprint: chrome
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  skip-domain:
+    - "Mijia Cloud"
+    - "+.push.apple.com"
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack:
+    - "any:53"
+    - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
 dns:
+  dns: true
+  listen: 1053
+  ipv6: true
+  use-system-hosts: false
   cache-algorithm: arc
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
   default-nameserver:
     - 223.5.5.5
     - 114.114.114.114
     - 1.1.1.1
     - 8.8.8.8
-  dns: true
-  enable: true
-  enhanced-mode: fake-ip
-  fake-ip-filter:
-    - +.lan
-    - +.local
-    - +.msftconnecttest.com
-    - +.msftncsi.com
-    - localhost.ptlogin2.qq.com
-    - localhost.sec.qq.com
-    - localhost.work.weixin.qq.com
-  fake-ip-range: 198.18.0.1/16
-  fallback: []
-  ipv6: true
-  listen: 1053
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
@@ -33,18 +64,6 @@ dns:
     - https://208.67.220.220/dns-query
     - https://194.242.2.2/dns-query
     - https://194.242.2.3/dns-query
-  nameserver-policy:
-    geosite:google,youtube,telegram,gfw,geolocation-!cn:
-      - https://1.1.1.1/dns-query
-      - https://1.0.0.1/dns-query
-      - https://208.67.222.222/dns-query
-      - https://208.67.220.220/dns-query
-      - https://194.242.2.2/dns-query
-      - https://194.242.2.3/dns-query
-    geosite:private,cn,geolocation-cn:
-      - https://dns.alidns.com/dns-query
-      - https://doh.pub/dns-query
-      - https://doh.360.cn/dns-query
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
@@ -55,67 +74,28 @@ dns:
     - https://208.67.220.220/dns-query
     - https://194.242.2.2/dns-query
     - https://194.242.2.3/dns-query
-  use-system-hosts: false
-external-controller: 127.0.0.1:9097
-external-ui: ui
-external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
-find-process-mode: strict
-geodata-mode: true
-geox-url:
-  asn: https://mirror.ghproxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
-  geoip: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
-  geosite: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
-  mmdb: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
-global-client-fingerprint: chrome
-ipv6: true
-log-level: info
-mixed-port: 7897
-mode: rule
-port: 7899
-profile:
-  store-fake-ip: true
-  store-selected: true
+  nameserver-policy:
+    geosite:private,cn,geolocation-cn:
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+      - https://doh.360.cn/dns-query
+    geosite:google,youtube,telegram,gfw,geolocation-!cn:
+      - https://1.1.1.1/dns-query
+      - https://1.0.0.1/dns-query
+      - https://208.67.222.222/dns-query
+      - https://208.67.220.220/dns-query
+      - https://194.242.2.2/dns-query
+      - https://194.242.2.3/dns-query
+  fake-ip-filter:
+    - +.lan
+    - +.local
+    - +.msftconnecttest.com
+    - +.msftncsi.com
+    - localhost.ptlogin2.qq.com
+    - localhost.sec.qq.com
+    - localhost.work.weixin.qq.com
+  enable: true
+  fallback: []
 rules:
-  - GEOIP,private,DIRECT,no-resolve
-  - GEOSITE,category-ads-all,REJECT
-  - GEOIP,google,默认代理
-  - GEOIP,telegram,默认代理
-  - GEOIP,twitter,默认代理
-  - GEOSITE,biliintl,默认代理
-  - GEOSITE,github,默认代理
-  - GEOSITE,microsoft,DIRECT
   - GEOIP,CN,DIRECT,no-resolve
   - MATCH,默认代理
-secret: ""
-sniffer:
-  enable: true
-  skip-domain:
-    - +.push.apple.com
-  sniff:
-    HTTP:
-      override-destination: true
-      ports:
-        - 80
-        - 8080-8880
-    QUIC:
-      ports:
-        - 443
-        - 8443
-    TLS:
-      ports:
-        - 443
-        - 8443
-socks-port: 7898
-tcp-concurrent: true
-tun:
-  auto-detect-interface: true
-  auto-redirect: true
-  auto-route: true
-  device: Meta
-  dns-hijack:
-    - any:53
-  enable: true
-  mtu: 1500
-  stack: mixed
-  strict-route: false
-unified-delay: false
