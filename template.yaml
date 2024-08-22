@@ -1,46 +1,26 @@
-proxies:
-proxy-groups:
-mixed-port: 7890
+# clash
+mode: rule
+mixed-port: 7897
+socks-port: 7898
+port: 7899
+allow-lan: false
+log-level: info
 ipv6: true
-allow-lan: true
-unified-delay: false
-tcp-concurrent: true
-external-controller: 127.0.0.1:9090
+external-controller: 127.0.0.1:9097
+secret: ""
 external-ui: ui
-external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+find-process-mode: strict
+tcp-concurrent: true
+unified-delay: false
+
 geodata-mode: true
 geox-url:
-  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
-  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
-  mmdb: "https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb"
+  geoip: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geosite: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb"
   asn: "https://mirror.ghproxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
-find-process-mode: strict
-global-client-fingerprint: chrome
-profile:
-  store-selected: true
-  store-fake-ip: true
-sniffer:
-  enable: true
-  sniff:
-    HTTP:
-      ports: [80, 8080-8880]
-      override-destination: true
-    TLS:
-      ports: [443, 8443]
-    QUIC:
-      ports: [443, 8443]
-  skip-domain:
-    - "Mijia Cloud"
-    - "+.push.apple.com"
-tun:
-  enable: true
-  stack: mixed
-  dns-hijack:
-    - "any:53"
-    - "tcp://any:53"
-  auto-route: true
-  auto-redirect: true
-  auto-detect-interface: true
+
+external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
 dns:
   dns: true
   listen: 1053
@@ -96,6 +76,47 @@ dns:
     - localhost.work.weixin.qq.com
   enable: true
   fallback: []
+global-client-fingerprint: chrome
+profile:
+  store-fake-ip: true
+  store-selected: true
+sniffer:
+  enable: true
+  skip-domain:
+    - Mijia Cloud
+    - +.push.apple.com
+  sniff:
+    HTTP:
+      override-destination: true
+      ports:
+        - 80
+        - 8080-8880
+    QUIC:
+      ports:
+        - 443
+        - 8443
+    TLS:
+      ports:
+        - 443
+        - 8443
+tun:
+  auto-detect-interface: true
+  auto-redirect: true
+  auto-route: true
+  dns-hijack:
+    - any:53
+  enable: true
+  stack: mixed
+  device: Meta
+  strict-route: false
+  mtu: 1500
 rules:
+  - GEOIP,lan,DIRECT,no-resolve
+  - GEOSITE,category-ads-all,REJECT
+  - GEOSITE,github,默认代理
+  - GEOSITE,bing,DIRECT
+  - GEOIP,google,默认代理
+  - GEOIP,telegram,默认代理
+  - GEOIP,twitter,默认代理
   - GEOIP,CN,DIRECT,no-resolve
   - MATCH,默认代理
