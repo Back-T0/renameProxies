@@ -3460,7 +3460,7 @@ proxies:
   type: trojan
   udp: true
 - client-fingerprint: chrome
-  name: 韩国-35
+  name: 加拿大-1
   network: ws
   port: '80'
   server: bestproxy.onecf.eu.org
@@ -3671,7 +3671,7 @@ proxies:
   server: 231103level3.unclemanco.com
   type: ss
   udp: true
-- name: 韩国-36
+- name: 韩国-35
   network: ws
   port: '26658'
   server: 124.80.75.68
@@ -3822,7 +3822,7 @@ proxies:
     headers:
       host: 6cb2aA5E.BpB-woRKEr-pANEL-3GD.PAGEs.dev
     path: /zttOLnmecHBW6WUO
-- name: 韩国-37
+- name: 韩国-36
   network: ws
   port: '25177'
   server: 124.80.20.114
@@ -4770,7 +4770,7 @@ proxy-groups:
   - '手动选择: 400个'
   - '中国分区: 118个'
   - '日本分区: 1个'
-  - '韩国分区: 37个'
+  - '韩国分区: 36个'
   - '新加坡分区: 2个'
   - '香港分区: 4个'
   - '台湾分区: 4个'
@@ -4781,6 +4781,7 @@ proxy-groups:
   - '卢森堡分区: 1个'
   - '德国分区: 2个'
   - '俄罗斯联邦分区: 1个'
+  - '加拿大分区: 1个'
   - '瑞典分区: 3个'
   type: select
 - hidden: false
@@ -4836,7 +4837,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '韩国分区: 37个'
+  name: '韩国分区: 36个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4987,6 +4988,21 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '俄罗斯联邦分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)加拿大|CA|ca
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ca.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '加拿大分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
