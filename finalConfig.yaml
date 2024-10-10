@@ -75,46 +75,64 @@ profile:
   store-selected: true
 proxies:
 - cipher: chacha20-ietf-poly1305
-  name: 印度尼西亚-1
-  password: 29fefcc3-9ae1-4e01-a1d0-534fc1671121
-  port: '40033'
-  server: soonidn.soon.guru
-  type: ss
-- cipher: chacha20-ietf-poly1305
   name: 立陶宛-1
-  password: g9AJsrBPgW4Nhjoy3xCioC
+  password: gDFRe52uiIvVaxqPlqw439
   port: '8080'
-  server: beesyar.org
-  type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 荷兰-1
-  password: OHT1oO1d2IsZM01XZMxiM2
-  port: '17828'
-  server: 195.74.86.176
+  server: 45.87.175.157
   type: ss
 - name: 德国-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 35.159.103.19
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 德国-2
   password: telegram-id-directvpn
   port: '22222'
   server: 63.176.10.111
   sni: trojan.burgerip.co.uk
   type: trojan
+- cipher: aes-256-gcm
+  name: 美国-1
+  password: kDWvXYZoTBcGkC4
+  port: '8882'
+  server: 69.50.92.72
+  type: ss
+- name: 英国-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 3.8.7.195
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 瑞典-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 16.16.72.199
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-256-gcm
+  name: 美国-2
+  password: TEzjfAYq2IjtuoS
+  port: '6679'
+  server: 142.202.49.84
+  type: ss
 - cipher: chacha20-ietf-poly1305
-  name: 澳大利亚-1
-  password: 29fefcc3-9ae1-4e01-a1d0-534fc1671121
-  port: '40011'
-  server: soonfrk.soon.guru
+  name: 立陶宛-2
+  password: gDFRe52uiIvVaxqPlqw439
+  port: '8080'
+  server: 45.87.175.188
   type: ss
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 5个'
-  - '手动选择: 5个'
-  - '印度尼西亚分区: 1个'
-  - '立陶宛分区: 1个'
-  - '荷兰分区: 1个'
-  - '德国分区: 1个'
-  - '澳大利亚分区: 1个'
+  - '自动选择: 8个'
+  - '手动选择: 8个'
+  - '立陶宛分区: 2个'
+  - '德国分区: 2个'
+  - '美国分区: 2个'
+  - '英国分区: 1个'
+  - '瑞典分区: 1个'
   type: select
 - hidden: false
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -123,29 +141,14 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 5个'
+  name: '自动选择: 8个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all: true
-  name: '手动选择: 5个'
+  name: '手动选择: 8个'
   type: select
-- filter: (?i)印度尼西亚|ID|id
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/id.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '印度尼西亚分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
 - filter: (?i)立陶宛|LT|lt
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lt.svg
@@ -154,22 +157,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '立陶宛分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)荷兰|NL|nl
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/nl.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '荷兰分区: 1个'
+  name: '立陶宛分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -184,22 +172,52 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '德国分区: 1个'
+  name: '德国分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)澳大利亚|AU|au
+- filter: (?i)美国|US|us
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/au.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
   include-all-providers: true
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '澳大利亚分区: 1个'
+  name: '美国分区: 2个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)英国|GB|gb
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '英国分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)瑞典|SE|se
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/se.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '瑞典分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
