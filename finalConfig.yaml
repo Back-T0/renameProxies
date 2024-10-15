@@ -1263,7 +1263,7 @@ proxies:
       host: pardazeshvpn-tg103.pages.dev
     path: /Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048
 - cipher: chacha20-ietf-poly1305
-  name: 英国-4
+  name: 未知-1
   password: mps3FwmDjLrWaOVg
   port: '443'
   server: series-a2.samanehha.co
@@ -1874,7 +1874,7 @@ proxies:
     headers:
       host: cm.ylks.xyz
     path: /blue
-- name: 英国-5
+- name: 英国-4
   network: ws
   port: '443'
   server: 217.163.76.84
@@ -2156,7 +2156,7 @@ proxies:
     headers:
       host: cm.ylks.xyz
     path: /blue
-- name: 英国-6
+- name: 英国-5
   network: ws
   port: '443'
   server: 94.247.142.241
@@ -2274,7 +2274,7 @@ proxies:
     headers:
       host: cm.ylks.xyz
     path: /blue
-- name: 英国-7
+- name: 英国-6
   network: ws
   port: '443'
   server: 217.163.76.60
@@ -2428,7 +2428,7 @@ proxies:
     headers:
       host: lm.ylks01.eu.org
     path: /blue
-- name: 英国-8
+- name: 英国-7
   network: ws
   port: '443'
   server: 217.163.76.65
@@ -2799,13 +2799,14 @@ proxy-groups:
   - '香港分区: 3个'
   - '韩国分区: 15个'
   - '法国分区: 7个'
-  - '英国分区: 8个'
+  - '英国分区: 7个'
   - '荷兰分区: 1个'
   - '台湾分区: 3个'
   - '立陶宛分区: 2个'
   - '美国分区: 96个'
   - '德国分区: 2个'
   - '印度分区: 1个'
+  - '未知分区: 1个'
   - '瑞典分区: 3个'
   - '爱尔兰分区: 3个'
   - '意大利分区: 1个'
@@ -2930,7 +2931,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '英国分区: 8个'
+  name: '英国分区: 7个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -3021,6 +3022,21 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '印度分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)未知|cn|cn
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '未知分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
