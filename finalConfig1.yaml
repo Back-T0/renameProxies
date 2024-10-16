@@ -1,0 +1,4490 @@
+allow-lan: false
+dns:
+  cache-algorithm: arc
+  default-nameserver:
+  - 223.5.5.5
+  - 114.114.114.114
+  - 1.1.1.1
+  - 8.8.8.8
+  dns: true
+  enable: true
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+  - +.lan
+  - +.local
+  - +.msftconnecttest.com
+  - +.msftncsi.com
+  - localhost.ptlogin2.qq.com
+  - localhost.sec.qq.com
+  - localhost.work.weixin.qq.com
+  fake-ip-range: 198.18.0.1/16
+  fallback: []
+  ipv6: true
+  listen: 1053
+  nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+  - https://doh.360.cn/dns-query
+  - https://1.1.1.1/dns-query
+  - https://1.0.0.1/dns-query
+  - https://208.67.222.222/dns-query
+  - https://208.67.220.220/dns-query
+  - https://194.242.2.2/dns-query
+  - https://194.242.2.3/dns-query
+  nameserver-policy:
+    geosite:google,youtube,telegram,gfw,geolocation-!cn:
+    - https://1.1.1.1/dns-query
+    - https://1.0.0.1/dns-query
+    - https://208.67.222.222/dns-query
+    - https://208.67.220.220/dns-query
+    - https://194.242.2.2/dns-query
+    - https://194.242.2.3/dns-query
+    geosite:private,cn,geolocation-cn:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - https://doh.360.cn/dns-query
+  proxy-server-nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+  - https://doh.360.cn/dns-query
+  - https://1.1.1.1/dns-query
+  - https://1.0.0.1/dns-query
+  - https://208.67.222.222/dns-query
+  - https://208.67.220.220/dns-query
+  - https://194.242.2.2/dns-query
+  - https://194.242.2.3/dns-query
+  use-system-hosts: false
+external-controller: 127.0.0.1:9097
+external-ui: ui
+external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+find-process-mode: strict
+geodata-mode: true
+geox-url:
+  asn: https://mirror.ghproxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
+  geoip: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
+  geosite: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  mmdb: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+global-client-fingerprint: chrome
+ipv6: true
+log-level: info
+mixed-port: 7897
+mode: rule
+port: 7899
+profile:
+  store-fake-ip: true
+  store-selected: true
+proxies:
+- alterId: -1
+  cipher: chacha20-ietf-poly1305
+  name: 中国-1
+  password: 5409bf78-b122-4b9b-9050-da36576f5bbc
+  port: 34676
+  server: tg_mfbpn03.52cloud.us.kg
+  type: ss
+- alterId: -1
+  client-fingerprint: chrome
+  name: 中国-2
+  port: 7890
+  server: 139.196.12.200
+  skip-cert-verify: true
+  tls: false
+  type: http
+  udp: true
+- alterId: -1
+  client-fingerprint: chrome
+  name: 中国-3
+  port: 7890
+  server: 182.92.216.171
+  skip-cert-verify: true
+  tls: false
+  type: http
+  udp: true
+- alterId: -1
+  cipher: aes-256-cfb
+  name: 中国-4
+  password: hGkQ6915tD
+  port: 15083
+  server: 120.232.81.50
+  tfo: false
+  type: ss
+- client-fingerprint: chrome
+  name: 中国-5
+  port: 7890
+  server: 139.9.45.178
+  skip-cert-verify: true
+  tls: false
+  type: http
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-6
+  password: 151d4e55-c58e-4a93-a524-e4fceda74706
+  port: 31738
+  server: gdcub.yunnode.win
+  type: ss
+- cipher: aes-256-cfb
+  name: 中国-7
+  password: 75ly0yJ90LP5Ural
+  port: 20705
+  server: 221.181.185.71
+  type: ss
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 中国-8
+  port: 40434
+  server: 183.236.51.23
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: 中国-9
+  port: 52112
+  server: 183.236.51.23
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: 中国-10
+  network: tcp
+  port: 52112
+  server: 183.236.51.23
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: 中国-11
+  network: tcp
+  port: 33288
+  server: 183.236.48.161
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: 中国-12
+  network: tcp
+  port: 33288
+  server: 183.236.48.161
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: 中国-13
+  network: tcp
+  port: 33288
+  server: 183.236.48.166
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: 中国-14
+  port: 33288
+  server: 183.236.48.166
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: 中国-15
+  network: tcp
+  port: 33288
+  server: 183.236.48.166
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- cipher: aes-256-cfb
+  name: 中国-16
+  password: f52SZksXnGNfc72Q
+  port: 23382
+  server: 221.181.185.71
+  type: ss
+- name: 中国-17
+  password: 9923bfe0-0fc7-436f-a8ee-89f98025939d
+  port: 53296
+  server: 23489.96110.one
+  skip-cert-verify: true
+  sni: www.icloud.com
+  type: trojan
+  udp: true
+- alterId: -1
+  cipher: aes-128-gcm
+  name: 英国-1
+  password: shadowsocks
+  port: 443
+  server: 212.102.53.198
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 英国-2
+  password: shadowsocks
+  port: 443
+  server: 212.102.53.198
+  tfo: false
+  type: ss
+- name: 英国-3
+  network: ws
+  port: 443
+  server: 94.247.142.241
+  servername: fq521.6789.cloudns.be
+  tls: true
+  type: vless
+  udp: true
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
+  ws-opts:
+    headers:
+      Host: fq521.6789.cloudns.be
+    path: /twitterfreecodessecurity
+- name: 英国-4
+  network: ws
+  port: 443
+  server: 217.163.76.84
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.oracln.fxxn.dedyn.io
+- client-fingerprint: chrome
+  name: 英国-5
+  network: ws
+  port: 443
+  server: 94.247.142.241
+  servername: fq521.6789.cloudns.be
+  tls: true
+  type: vless
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
+  ws-opts:
+    headers:
+      Host: fq521.6789.cloudns.be
+    path: /twitterfreecodessecurity
+- name: 英国-6
+  network: ws
+  port: 443
+  server: 217.163.76.65
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 英国-7
+  network: ws
+  port: 443
+  server: 217.163.76.203
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /blue
+- name: 英国-8
+  network: ws
+  port: 443
+  server: 217.163.76.203
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 英国-9
+  network: ws
+  port: 443
+  server: 217.163.76.203
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 韩国-1
+  network: ws
+  password: auto
+  port: 18078
+  server: 183.98.186.160
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- alterId: 64
+  cipher: auto
+  name: 韩国-2
+  network: ws
+  port: 443
+  server: 27.124.8.205
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.88410527.xyz
+    path: /path/191019072927
+- name: 韩国-3
+  network: ws
+  password: auto
+  port: 13980
+  server: 61.77.217.116
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 韩国-4
+  network: ws
+  port: 443
+  server: 152.67.212.141
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 俄罗斯联邦-1
+  network: ws
+  port: 443
+  server: 31.129.49.103
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 俄罗斯联邦-2
+  network: ws
+  port: 443
+  server: 45.67.215.42
+  servername: ln.ylka.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylka.us.kg
+    path: /?ed=2560
+- name: 俄罗斯联邦-3
+  network: ws
+  port: 443
+  server: 45.67.215.208
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 俄罗斯联邦-4
+  network: ws
+  password: auto
+  port: 443
+  server: 45.67.215.208
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 俄罗斯联邦-5
+  network: ws
+  port: 443
+  server: 45.67.215.144
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 俄罗斯联邦-6
+  network: ws
+  port: 443
+  server: 45.67.215.19
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 俄罗斯联邦-7
+  network: ws
+  port: 443
+  server: 45.67.215.98
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /?proxyip=proxyip.oraclm.fxxm.dedyn.io
+- name: 俄罗斯联邦-8
+  network: ws
+  port: 443
+  server: 45.67.215.42
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 俄罗斯联邦-9
+  network: ws
+  port: 443
+  server: 45.67.215.42
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 俄罗斯联邦-10
+  network: ws
+  port: 443
+  server: 45.67.215.42
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 俄罗斯联邦-11
+  network: ws
+  port: 443
+  server: 45.67.215.19
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 俄罗斯联邦-12
+  network: ws
+  port: 443
+  server: 45.67.215.144
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 俄罗斯联邦-13
+  network: ws
+  port: 443
+  server: 45.67.215.53
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /blue
+- name: 俄罗斯联邦-14
+  network: ws
+  port: 443
+  server: 45.67.215.161
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 俄罗斯联邦-15
+  network: ws
+  port: 443
+  server: 45.67.215.161
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 俄罗斯联邦-16
+  network: ws
+  password: auto
+  port: 443
+  server: 45.67.215.53
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 俄罗斯联邦-17
+  network: ws
+  port: 443
+  server: 45.67.215.99
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /?proxyip=proxyip.oracln.fxxn.dedyn.io
+- name: 俄罗斯联邦-18
+  network: ws
+  port: 443
+  server: 194.35.119.193
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 新加坡-1
+  network: ws
+  port: 443
+  server: 206.238.237.74
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 新加坡-2
+  network: ws
+  port: 443
+  server: 206.238.237.74
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 新加坡-3
+  network: ws
+  port: 443
+  server: 206.238.237.133
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 新加坡-4
+  network: ws
+  port: 443
+  server: 206.238.236.83
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /blue
+- name: 新加坡-5
+  network: ws
+  password: auto
+  port: 443
+  server: 206.238.236.108
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 新加坡-6
+  network: ws
+  port: 443
+  server: 206.238.236.160
+  servername: ln.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.kpcloud.eu.org
+    path: /freecodes
+- name: 新加坡-7
+  network: ws
+  port: 443
+  server: 206.238.236.160
+  servername: ll.kpcloud.eu.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ll.kpcloud.eu.org
+    path: /blue
+- name: 美国-1
+  network: ws
+  port: 80
+  server: 151.101.3.10
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: cefffd1d-cc58-4560-b4d1-44f1af528f30
+  ws-opts:
+    headers:
+      Host: uni.fi
+    path: /?ed=2048
+- alpn:
+  - h2
+  - http/1.1
+  name: 美国-2
+  network: ws
+  port: 80
+  server: 199.232.95.123
+  servername: fastly.com
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: sara193.ir
+    path: /BCXzvAcvSB7JzMWj?ed=2560
+- name: 美国-3
+  network: ws
+  port: 8880
+  server: 104.19.209.229
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
+  ws-opts:
+    headers:
+      Host: late-tooth.granzinhannah.workers.dev
+    path: /?ed=2560
+- alterId: -1
+  cipher: aes-256-gcm
+  name: 美国-4
+  password: zDNVedRFPQexG9v
+  port: 6379
+  server: 69.50.95.179
+  type: ss
+- alterId: -1
+  cipher: aes-256-gcm
+  name: 美国-5
+  password: e4FCWrgpkji3QY
+  port: 9102
+  server: 69.50.92.99
+  type: ss
+- name: 美国-6
+  network: ws
+  port: 2082
+  server: 172.67.153.74
+  servername: node.vauth.workers.dev
+  tls: false
+  type: vless
+  uuid: 0ebb1677-4902-476f-bc03-3e8c7ca6fd21
+  ws-opts:
+    headers:
+      Host: node.vauth.workers.dev
+    path: /?ed=2048
+- alterId: -1
+  cipher: aes-256-gcm
+  name: 美国-7
+  password: Y6R9pAtvxxzmGC
+  port: 3389
+  server: 69.50.95.179
+  type: ss
+- alterId: -1
+  cipher: aes-256-gcm
+  name: 美国-8
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 69.50.92.99
+  type: ss
+- alterId: -1
+  cipher: aes-256-gcm
+  name: 美国-9
+  password: kDWvXYZoTBcGkC4
+  port: 8881
+  server: 69.50.92.99
+  type: ss
+- alterId: 0
+  cipher: aes-256-gcm
+  name: 美国-10
+  password: lGqs95QkFHo2NV
+  port: 5498
+  server: 69.50.95.179
+  skip-cert-verify: true
+  tls: true
+  type: ss
+- alterId: -1
+  cipher: aes-256-gcm
+  name: 美国-11
+  password: Y6R9pAtvxxzmGC
+  port: 5001
+  server: 69.50.95.218
+  type: ss
+- name: 美国-12
+  network: ws
+  port: 80
+  server: 199.232.37.15
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: sara193.ir
+    path: /BCXzvAcvSB7JzMWj?ed=2560
+- name: 美国-13
+  network: ws
+  password: auto
+  port: 80
+  server: 3.101.73.167
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- alterId: -1
+  name: 美国-14
+  network: ws
+  password: auto
+  port: 80
+  server: 3.101.73.167
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 美国-15
+  network: ws
+  port: 2082
+  server: 104.19.58.175
+  servername: ip15.6929198.xyz
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      Host: ip15.6929198.xyz
+    path: /github.com/Alvin9999
+- name: 美国-16
+  network: ws
+  port: 443
+  server: 69.84.182.193
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- alterId: 0
+  cipher: auto
+  name: 美国-17
+  network: ws
+  port: 2095
+  server: 172.64.167.10
+  servername: ip10.6016725.xyz
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: ip10.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: -1
+  cipher: aes-256-gcm
+  name: 美国-18
+  password: g5MeD6Ft3CWlJId
+  port: 5004
+  server: 69.50.93.113
+  type: ss
+- name: 美国-19
+  network: ws
+  port: 443
+  server: 69.84.182.59
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- cipher: aes-256-gcm
+  name: 美国-20
+  password: g5MeD6Ft3CWlJId
+  port: 5004
+  server: 69.50.93.113
+  type: ss
+  udp: true
+- alterId: -1
+  cipher: aes-256-gcm
+  name: 美国-21
+  password: e4FCWrgpkji3QY
+  port: 9101
+  server: 69.50.93.113
+  type: ss
+- name: 美国-22
+  network: ws
+  port: 443
+  server: 69.84.182.251
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-23
+  network: ws
+  password: auto
+  port: 3334
+  server: 23.94.61.36
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-24
+  network: ws
+  port: 443
+  server: 69.84.182.165
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- alterId: 0
+  cipher: auto
+  name: 美国-25
+  network: ws
+  port: 2082
+  server: fbi.gov
+  servername: ip15.6929198.xyz
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      Host: ip15.6929198.xyz
+    path: /github.com/Alvin9999
+- name: 美国-26
+  network: ws
+  port: 443
+  server: 69.84.182.15
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-27
+  network: ws
+  port: 443
+  server: 69.84.182.139
+  servername: ln.ylka.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylka.us.kg
+    path: /?ed=2560
+- name: 美国-28
+  network: ws
+  port: 443
+  server: 69.84.182.192
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /freecodes
+- name: 美国-29
+  network: ws
+  port: 443
+  server: 198.62.62.0
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-30
+  network: ws
+  port: 443
+  server: 69.84.182.33
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-31
+  network: ws
+  port: 443
+  server: 69.84.182.70
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-32
+  network: ws
+  port: 443
+  server: 69.84.182.193
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /blue
+- name: 美国-33
+  network: ws
+  port: 443
+  server: 198.62.62.81
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /blue
+- name: 美国-34
+  network: ws
+  port: 443
+  server: 69.84.182.163
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /blue
+- name: 美国-35
+  network: ws
+  port: 443
+  server: 198.62.62.140
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-36
+  network: ws
+  port: 443
+  server: 69.84.182.172
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /freecodes
+- name: 美国-37
+  network: ws
+  port: 443
+  server: 198.62.62.148
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-38
+  network: ws
+  port: 443
+  server: 216.24.57.239
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-39
+  network: ws
+  port: 443
+  server: 69.84.182.70
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-40
+  network: ws
+  password: auto
+  port: 443
+  server: 216.24.57.36
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-41
+  network: ws
+  port: 443
+  server: 198.62.62.127
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-42
+  network: ws
+  password: auto
+  port: 443
+  server: 192.200.160.168
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-43
+  network: ws
+  password: auto
+  port: 443
+  server: 162.159.152.70
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-44
+  network: ws
+  port: 443
+  server: 69.84.182.179
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /blue
+- alterId: 0
+  cipher: auto
+  name: 美国-45
+  network: ws
+  port: 2095
+  server: fbi.gov
+  servername: ip10.6016725.xyz
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: ip10.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-46
+  network: ws
+  port: 443
+  server: 69.84.182.29
+  servername: ln.ylka.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylka.us.kg
+    path: /?ed=2560
+- name: 美国-47
+  network: ws
+  port: 443
+  server: 69.84.182.178
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 美国-48
+  network: ws
+  port: 443
+  server: 198.62.62.14
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 美国-49
+  network: ws
+  port: 443
+  server: 69.84.182.200
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-50
+  network: ws
+  port: 443
+  server: 216.24.57.24
+  servername: ll.kpcloud.eu.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ll.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-51
+  network: ws
+  port: 443
+  server: 198.62.62.237
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-52
+  network: ws
+  port: 443
+  server: 192.200.160.211
+  servername: ll.kpcloud.eu.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ll.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-53
+  network: ws
+  port: 443
+  server: 69.84.182.70
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-54
+  network: ws
+  port: 443
+  server: 216.24.57.36
+  servername: ll.kpcloud.eu.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ll.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-55
+  network: ws
+  password: auto
+  port: 443
+  server: 216.24.57.171
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- cipher: aes-256-gcm
+  name: 美国-56
+  password: e4FCWrgpkji3QY
+  port: 9101
+  server: 69.50.93.113
+  type: ss
+  udp: true
+- name: 美国-57
+  network: ws
+  port: 443
+  server: 69.84.182.33
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-58
+  network: ws
+  password: auto
+  port: 443
+  server: 192.200.160.81
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-59
+  network: ws
+  port: 443
+  server: 69.84.182.93
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /freecodes
+- name: 美国-60
+  network: ws
+  password: auto
+  port: 443
+  server: 192.200.160.33
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-61
+  network: ws
+  password: auto
+  port: 443
+  server: 162.159.152.66
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-62
+  network: ws
+  port: 443
+  server: 69.84.182.212
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-63
+  network: ws
+  port: 443
+  server: 69.84.182.33
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-64
+  network: ws
+  port: 443
+  server: 198.62.62.183
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-65
+  network: ws
+  port: 443
+  server: 198.62.62.241
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-66
+  network: ws
+  port: 443
+  server: 69.84.182.100
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-67
+  network: ws
+  port: 443
+  server: 192.200.160.44
+  servername: ll.kpcloud.eu.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ll.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-68
+  network: ws
+  port: 443
+  server: 198.62.62.166
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxm.dedyn.io
+- name: 美国-69
+  network: ws
+  port: 443
+  server: 216.24.57.239
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- alterId: -1
+  name: 美国-70
+  network: ws
+  password: auto
+  port: 443
+  server: 162.159.153.105
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /?ed=2560
+- name: 美国-71
+  network: ws
+  port: 443
+  server: 69.84.182.38
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /blue
+- name: 美国-72
+  network: ws
+  port: 443
+  server: 69.84.182.86
+  servername: ln.ylka.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylka.us.kg
+    path: /?ed=2560
+- name: 美国-73
+  network: ws
+  port: 443
+  server: 69.84.182.52
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-74
+  network: ws
+  password: auto
+  port: 443
+  server: 104.19.32.12
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-75
+  network: ws
+  port: 443
+  server: 198.62.62.174
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-76
+  network: ws
+  port: 443
+  server: 216.24.57.59
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /blue
+- name: 美国-77
+  network: ws
+  port: 443
+  server: 69.84.182.192
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-78
+  network: ws
+  port: 443
+  server: 198.62.62.81
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 美国-79
+  network: ws
+  port: 443
+  server: 69.84.182.102
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-80
+  network: ws
+  port: 443
+  server: 198.62.62.52
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-81
+  network: ws
+  port: 443
+  server: 69.84.182.165
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /blue
+- name: 美国-82
+  network: ws
+  port: 443
+  server: 216.24.57.171
+  servername: ll.kpcloud.eu.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ll.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-83
+  network: ws
+  port: 443
+  server: 198.62.62.241
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-84
+  network: ws
+  port: 443
+  server: 69.84.182.192
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-85
+  network: ws
+  port: 443
+  server: 69.84.182.139
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /blue
+- name: 美国-86
+  network: ws
+  port: 443
+  server: 160.79.104.178
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-87
+  network: ws
+  port: 443
+  server: 69.84.182.196
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /blue
+- name: 美国-88
+  network: ws
+  port: 443
+  server: 198.62.62.220
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 美国-89
+  network: ws
+  port: 443
+  server: 198.62.62.251
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-90
+  network: ws
+  port: 443
+  server: 69.84.182.70
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-91
+  network: ws
+  port: 443
+  server: 69.84.182.251
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-92
+  network: ws
+  port: 443
+  server: 69.84.182.178
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /blue
+- name: 美国-93
+  network: ws
+  port: 443
+  server: 198.62.62.237
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxm.dedyn.io
+- name: 美国-94
+  network: ws
+  password: auto
+  port: 443
+  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-95
+  network: ws
+  port: 443
+  server: 69.84.182.97
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-96
+  network: ws
+  port: 443
+  server: 69.84.182.212
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxm.dedyn.io
+- name: 美国-97
+  network: ws
+  port: 443
+  server: 198.62.62.9
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-98
+  network: ws
+  port: 443
+  server: 216.24.57.24
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /blue
+- name: 美国-99
+  network: ws
+  port: 443
+  server: 198.62.62.245
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-100
+  network: ws
+  port: 443
+  server: 69.84.182.178
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-101
+  network: ws
+  port: 443
+  server: 198.62.62.44
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-102
+  network: ws
+  port: 443
+  server: 69.84.182.38
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-103
+  network: ws
+  port: 443
+  server: 198.62.62.77
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-104
+  network: ws
+  port: 443
+  server: 198.62.62.166
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-105
+  network: ws
+  port: 443
+  server: 198.62.62.9
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-106
+  network: ws
+  port: 443
+  server: 198.62.62.13
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxm.dedyn.io
+- name: 美国-107
+  network: ws
+  port: 443
+  server: 69.84.182.97
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-108
+  network: ws
+  port: 443
+  server: 216.24.57.98
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /blue
+- name: 美国-109
+  network: ws
+  port: 443
+  server: 69.84.182.178
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-110
+  network: ws
+  port: 443
+  server: 198.62.62.137
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-111
+  network: ws
+  port: 443
+  server: 69.84.182.97
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- alterId: 0
+  cipher: auto
+  name: 美国-112
+  network: ws
+  port: 2095
+  server: japan.com
+  servername: ip10.6016725.xyz
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: ip10.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-113
+  network: ws
+  port: 443
+  server: 69.84.182.139
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /freecodes
+- name: 美国-114
+  network: ws
+  port: 443
+  server: 69.84.182.139
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxm.dedyn.io
+- name: 美国-115
+  network: ws
+  port: 443
+  server: 198.62.62.22
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-116
+  network: ws
+  port: 443
+  server: 69.84.182.100
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-117
+  network: ws
+  port: 443
+  server: 192.0.54.48
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxm.dedyn.io
+- name: 美国-118
+  network: ws
+  port: 80
+  server: www.speedtest.net
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: b1cc4839-b965-43b2-b0ec-57954749324a
+  ws-opts:
+    headers:
+      Host: shhproxy.com.www.speedtest.net.www.zula.ir.cloudflare.com.developsp.ir.
+    path: /@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy?ed=2560
+- name: 美国-119
+  network: ws
+  port: 443
+  server: 69.84.182.233
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-120
+  network: ws
+  port: 443
+  server: 198.62.62.14
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-121
+  network: ws
+  port: 443
+  server: 198.62.62.10
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /freecodes
+- name: 美国-122
+  network: ws
+  port: 443
+  server: 198.62.62.211
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-123
+  network: ws
+  port: 443
+  server: 69.84.182.178
+  servername: ln.ylka.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylka.us.kg
+    path: /?ed=2560
+- name: 美国-124
+  network: ws
+  port: 443
+  server: 69.84.182.93
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /blue
+- name: 美国-125
+  network: ws
+  port: 443
+  server: 198.62.62.64
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-126
+  network: ws
+  port: 443
+  server: 69.84.182.134
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 美国-127
+  network: ws
+  port: 443
+  server: 69.84.182.59
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-128
+  network: ws
+  port: 443
+  server: 198.62.62.220
+  servername: ln.ylka.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylka.us.kg
+    path: /?ed=2560
+- name: 美国-129
+  network: ws
+  port: 443
+  server: 69.84.182.192
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /blue
+- name: 美国-130
+  network: ws
+  port: 443
+  server: 69.84.182.233
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-131
+  network: ws
+  port: 443
+  server: 198.62.62.14
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /blue
+- name: 美国-132
+  network: ws
+  port: 443
+  server: 216.24.57.239
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 美国-133
+  network: ws
+  port: 443
+  server: 198.62.62.156
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-134
+  network: ws
+  port: 443
+  server: 198.62.62.131
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-135
+  network: ws
+  port: 443
+  server: 69.84.182.110
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /freecodes
+- alterId: 0
+  cipher: auto
+  name: 美国-136
+  network: ws
+  port: 2095
+  server: malaysia.com
+  servername: ip10.6016725.xyz
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: ip10.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-137
+  network: ws
+  port: 443
+  server: 198.62.62.241
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-138
+  network: ws
+  port: 443
+  server: 198.62.62.203
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-139
+  network: ws
+  port: 443
+  server: 198.62.62.174
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-140
+  network: ws
+  port: 443
+  server: 198.62.62.233
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-141
+  network: ws
+  port: 443
+  server: 69.84.182.165
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /freecodes
+- name: 美国-142
+  network: ws
+  port: 443
+  server: 69.84.182.44
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /freecodes
+- name: 美国-143
+  network: ws
+  port: 443
+  server: 69.84.182.97
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-144
+  network: ws
+  port: 443
+  server: 198.62.62.251
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-145
+  network: ws
+  port: 443
+  server: 69.84.182.101
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-146
+  network: ws
+  port: 443
+  server: 69.84.182.172
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-147
+  network: ws
+  port: 443
+  server: 69.84.182.70
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-148
+  network: ws
+  port: 443
+  server: 198.62.62.92
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-149
+  network: ws
+  port: 8443
+  server: www.wto.org
+  servername: ln.ylka.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylka.us.kg
+    path: /?ed=2560
+- name: 美国-150
+  network: ws
+  port: 443
+  server: 198.62.62.186
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-151
+  network: ws
+  port: 443
+  server: 198.62.62.227
+  servername: lm.ylks01.eu.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lm.ylks01.eu.org
+    path: /freecodes
+- name: 美国-152
+  network: ws
+  port: 443
+  server: 198.62.62.140
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-153
+  network: ws
+  password: auto
+  port: 2054
+  server: 45.8.146.85
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-154
+  network: ws
+  port: 443
+  server: 198.62.62.42
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-155
+  network: ws
+  port: 443
+  server: 198.62.62.48
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-156
+  network: ws
+  port: 443
+  server: 69.84.182.100
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-157
+  network: ws
+  port: 443
+  server: 69.84.182.134
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-158
+  network: ws
+  port: 443
+  server: 198.62.62.227
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-159
+  network: ws
+  port: 443
+  server: 198.62.62.91
+  servername: cm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cm.ylks.xyz
+    path: /blue
+- name: 美国-160
+  network: ws
+  port: 443
+  server: 198.62.62.211
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-161
+  network: ws
+  port: 443
+  server: 69.84.182.187
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-162
+  network: ws
+  port: 443
+  server: 198.62.62.91
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /freecodes
+- name: 美国-163
+  network: ws
+  port: 443
+  server: 198.62.62.84
+  servername: ln.ylka.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylka.us.kg
+    path: /?ed=2560
+- name: 美国-164
+  network: ws
+  port: 443
+  server: 69.84.182.58
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-165
+  network: ws
+  port: 443
+  server: 198.62.62.128
+  servername: ln.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-166
+  network: ws
+  port: 443
+  server: 198.62.62.84
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-167
+  network: ws
+  port: 443
+  server: 198.62.62.48
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /blue
+- name: 美国-168
+  network: ws
+  port: 443
+  server: 198.62.62.185
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-169
+  network: ws
+  port: 443
+  server: 69.84.182.39
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-170
+  network: ws
+  port: 443
+  server: 69.84.182.192
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-171
+  network: ws
+  port: 443
+  server: 69.84.182.59
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-172
+  network: ws
+  port: 443
+  server: 69.84.182.104
+  servername: dm.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dm.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxm.dedyn.io
+- name: 美国-173
+  network: ws
+  port: 443
+  server: 198.62.62.84
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-174
+  network: ws
+  port: 443
+  server: 198.62.62.236
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-175
+  network: ws
+  port: 443
+  server: 69.84.182.141
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-176
+  network: ws
+  port: 443
+  server: 198.62.62.48
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-177
+  network: ws
+  port: 443
+  server: 198.62.62.241
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-178
+  network: ws
+  port: 443
+  server: 69.84.182.145
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-179
+  network: ws
+  port: 443
+  server: 198.62.62.176
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-180
+  network: ws
+  port: 443
+  server: 198.62.62.227
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-181
+  network: ws
+  port: 443
+  server: 198.62.62.0
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-182
+  network: ws
+  port: 443
+  server: 69.84.182.163
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- alterId: 0
+  cipher: auto
+  name: 美国-183
+  network: ws
+  port: 80
+  server: 151.101.2.228
+  servername: bRItISh.ovH.55.ISVvpn.UK.
+  skip-cert-verify: true
+  type: vmess
+  uuid: 7f3e901c-76eb-4480-8803-947e4674ecaa
+  ws-opts:
+    headers:
+      HOST: bRItISh.ovH.55.ISVvpn.UK.
+    path: /RACEVPN?telegram-@ISVvpn-telegram-@ISVvpn-telegram-@ISVvpn
+- name: 美国-184
+  network: ws
+  port: 443
+  server: 198.62.62.137
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 美国-185
+  network: ws
+  port: 443
+  server: 216.24.57.59
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 美国-186
+  network: ws
+  port: 443
+  server: 198.62.62.14
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-187
+  network: ws
+  port: 443
+  server: 198.62.62.151
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-188
+  network: ws
+  port: 443
+  server: 198.62.62.170
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /blue
+- name: 美国-189
+  network: ws
+  port: 80
+  server: 204.110.220.254
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-190
+  network: ws
+  port: 443
+  server: 69.84.182.104
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-191
+  network: ws
+  port: 443
+  server: 198.62.62.75
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- alpn:
+  - http/1.1
+  alterId: 0
+  cipher: auto
+  client-fingerprint: chrome
+  name: 美国-192
+  network: ws
+  port: 443
+  server: speedtest.net
+  servername: mehrjavan.ir
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 57727d7d-8873-4000-b3f4-33a93fcfdd51
+  ws-opts:
+    early-data-header-name: Sec-WebSocket-Protocol
+    headers:
+      Host: mehrjavan.ir
+    max_early_data: 2560
+    path: /m28jcoZZUhkqg6pk11
+- name: 美国-193
+  network: ws
+  port: 443
+  server: 69.84.182.176
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-194
+  network: ws
+  port: 443
+  server: 198.62.62.227
+  servername: am.ylks.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: am.ylks.xyz
+    path: /freecodes
+- name: 美国-195
+  network: ws
+  port: 443
+  server: 198.62.62.176
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-196
+  network: ws
+  port: 443
+  server: 198.62.62.233
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 美国-197
+  network: ws
+  port: 443
+  server: 198.62.62.215
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-198
+  network: ws
+  port: 443
+  server: 216.221.214.50
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-199
+  network: ws
+  port: 443
+  server: 69.84.182.247
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-200
+  network: ws
+  port: 443
+  server: 198.62.62.1
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-201
+  network: ws
+  port: 443
+  server: 192.0.54.218
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-202
+  network: ws
+  port: 443
+  server: 198.62.62.39
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-203
+  network: ws
+  port: 443
+  server: 69.84.182.233
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- alterId: 0
+  cipher: auto
+  name: 美国-204
+  network: ws
+  port: 2053
+  server: 1229VM6.nnaotexiongditkgroup.top
+  servername: 1229VM6.nnaotexiongditkgroup.top
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 23de7970-038f-403f-f979-28124f3be02a
+  ws-opts:
+    headers:
+      HOST: 1229VM6.nnaotexiongditkgroup.top
+    path: /1229VM6
+- name: 美国-205
+  network: ws
+  port: 443
+  server: 198.62.62.156
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-206
+  network: ws
+  port: 443
+  server: 198.62.62.161
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-207
+  network: ws
+  port: 443
+  server: 192.200.160.63
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 美国-208
+  network: ws
+  port: 443
+  server: 160.79.105.106
+  servername: ln.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-209
+  network: ws
+  port: 443
+  server: 198.62.62.174
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-210
+  network: ws
+  port: 443
+  server: 198.62.62.233
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-211
+  network: ws
+  port: 443
+  server: 69.84.182.119
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-212
+  network: ws
+  port: 443
+  server: 198.62.62.165
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-213
+  network: ws
+  port: 443
+  server: 198.62.62.185
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-214
+  network: ws
+  port: 443
+  server: 69.84.182.172
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- alterId: 0
+  cipher: auto
+  name: 美国-215
+  network: ws
+  port: 80
+  server: 151.101.2.228
+  servername: bRItISh.ovH.55.ISVvpn.UK.
+  skip-cert-verify: true
+  type: vmess
+  uuid: 7f3e901c-76eb-4480-8803-947e4674ecaa
+  ws-opts:
+    headers:
+      HOST: bRItISh.ovH.55.ISVvpn.UK.
+    path: /RACEVPN?telegram-@ISVvpn-telegram-@ISVvpn-telegram-@ISVvpn
+- name: 美国-216
+  network: ws
+  port: 443
+  server: 198.62.62.236
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-217
+  network: ws
+  port: 443
+  server: 69.84.182.15
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-218
+  network: ws
+  port: 443
+  server: 69.84.182.163
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-219
+  network: ws
+  port: 443
+  server: 198.62.62.28
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-220
+  network: ws
+  port: 443
+  server: 69.84.182.251
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-221
+  network: ws
+  port: 80
+  server: 204.110.220.120
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-222
+  network: ws
+  port: 443
+  server: 198.62.62.48
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-223
+  network: ws
+  port: 80
+  server: 204.110.220.120
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-224
+  network: ws
+  port: 443
+  server: 198.62.62.14
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 美国-225
+  network: ws
+  port: 443
+  server: 216.24.57.29
+  servername: ln.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-226
+  network: ws
+  port: 443
+  server: 216.24.57.239
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-227
+  network: ws
+  port: 443
+  server: 198.62.62.241
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-228
+  network: ws
+  port: 443
+  server: 69.84.182.39
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-229
+  network: ws
+  port: 443
+  server: 198.62.62.131
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-230
+  network: ws
+  port: 443
+  server: 69.84.182.102
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-231
+  network: ws
+  port: 443
+  server: 160.79.105.99
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-232
+  network: ws
+  password: auto
+  port: 443
+  server: 192.236.249.101
+  skip-cert-verify: true
+  sni: tg.cmliussss.us.kg
+  type: trojan
+  ws-opts:
+    headers:
+      Host: tg.cmliussss.us.kg
+    path: /
+- name: 美国-233
+  network: ws
+  port: 443
+  server: 198.62.62.148
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-234
+  network: ws
+  port: 443
+  server: 69.84.182.110
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-235
+  network: ws
+  port: 443
+  server: 69.84.182.134
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 美国-236
+  network: ws
+  port: 80
+  server: 204.110.220.120
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-237
+  network: ws
+  port: 443
+  server: 192.200.160.211
+  servername: ln.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-238
+  network: ws
+  port: 443
+  server: 69.84.182.232
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-239
+  network: ws
+  port: 443
+  server: 69.84.182.84
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-240
+  network: ws
+  port: 443
+  server: 198.62.62.13
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-241
+  network: ws
+  port: 443
+  server: 216.24.57.108
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-242
+  network: ws
+  port: 443
+  server: 216.24.57.129
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-243
+  network: ws
+  port: 443
+  server: 216.24.57.171
+  servername: ln.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-244
+  network: ws
+  port: 443
+  server: 198.62.62.9
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-245
+  network: ws
+  port: 443
+  server: 198.62.62.9
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-246
+  network: ws
+  port: 443
+  server: 198.62.62.92
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-247
+  network: ws
+  port: 443
+  server: 192.0.54.48
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-248
+  network: ws
+  port: 443
+  server: 69.84.182.233
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-249
+  network: ws
+  port: 443
+  server: 69.84.182.44
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-250
+  network: ws
+  port: 80
+  server: 204.110.220.254
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-251
+  network: ws
+  port: 443
+  server: 198.62.62.217
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-252
+  network: ws
+  port: 443
+  server: 69.84.182.187
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-253
+  network: ws
+  port: 443
+  server: 69.84.182.27
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-254
+  network: ws
+  port: 443
+  server: 198.62.62.245
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-255
+  network: ws
+  port: 443
+  server: 69.84.182.97
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-256
+  network: ws
+  port: 443
+  server: 216.221.213.149
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-257
+  network: ws
+  port: 443
+  server: 198.62.62.91
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 美国-258
+  network: ws
+  port: 443
+  server: 69.84.182.127
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-259
+  network: ws
+  port: 443
+  server: 216.24.57.98
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 美国-260
+  network: ws
+  port: 443
+  server: 69.84.182.212
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-261
+  network: ws
+  port: 443
+  server: 216.24.57.171
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-262
+  network: ws
+  port: 443
+  server: 198.62.62.166
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-263
+  network: ws
+  port: 443
+  server: 69.84.182.100
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-264
+  network: ws
+  port: 443
+  server: 198.62.62.84
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- alterId: 0
+  cipher: auto
+  name: 美国-265
+  network: ws
+  port: 2095
+  server: 104.20.25.146
+  servername: ip10.6016725.xyz
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: ip10.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-266
+  network: ws
+  port: 443
+  server: 198.62.62.237
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-267
+  network: ws
+  port: 443
+  server: 69.84.182.127
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-268
+  network: ws
+  port: 443
+  server: 192.200.160.44
+  servername: ln.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-269
+  network: ws
+  port: 443
+  server: 173.249.197.84
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-270
+  network: ws
+  port: 443
+  server: 69.84.182.178
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-271
+  network: ws
+  port: 443
+  server: 198.62.62.91
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-272
+  network: ws
+  port: 443
+  server: 69.84.182.75
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 美国-273
+  network: ws
+  port: 443
+  server: 69.84.182.187
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- name: 美国-274
+  network: ws
+  port: 443
+  server: 198.62.62.237
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /?proxyip=proxyip.us.fxxn.dedyn.io
+- name: 美国-275
+  network: ws
+  port: 443
+  server: 198.62.62.241
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-276
+  network: ws
+  port: 443
+  server: 198.62.62.211
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-277
+  network: ws
+  port: 443
+  server: 173.249.197.84
+  servername: ln.ylks01.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.ylks01.eu.org
+    path: /freecodes
+- alterId: 0
+  cipher: auto
+  name: 美国-278
+  network: ws
+  port: 2095
+  server: 104.26.0.56
+  servername: ip10.6016725.xyz
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: ip10.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-279
+  network: ws
+  port: 443
+  server: 160.79.105.118
+  servername: ln.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: ln.kpcloud.eu.org
+    path: /freecodes
+- name: 美国-280
+  network: ws
+  port: 443
+  server: 198.62.62.15
+  servername: dn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: dn.ylks.xyz
+    path: /freecodes
+- name: 美国-281
+  network: ws
+  port: 443
+  server: 198.62.62.185
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- name: 美国-282
+  network: ws
+  port: 443
+  server: 20.246.127.166
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+- name: 美国-283
+  network: ws
+  port: 443
+  server: 207.174.31.150
+  servername: an.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      Host: an.ylks.xyz
+    path: /freecodes
+- alterId: 0
+  cipher: auto
+  name: 美国-284
+  network: ws
+  port: 2053
+  server: 1229VM6.nnaotexiongditkgroup.top
+  servername: ''
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 23de7970-038f-403f-f979-28124f3be02a
+  ws-opts:
+    headers:
+      Host: 1229VM6.nnaotexiongditkgroup.top
+    path: /1229VM6
+- name: 美国-285
+  network: ws
+  port: 443
+  server: 192.236.249.102
+  servername: cn.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: cn.ylks.xyz
+    path: /freecodes
+proxy-groups:
+- icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
+  name: 默认代理
+  proxies:
+  - '自动选择: 340个'
+  - '手动选择: 340个'
+  - '中国分区: 17个'
+  - '英国分区: 9个'
+  - '韩国分区: 4个'
+  - '俄罗斯联邦分区: 18个'
+  - '新加坡分区: 7个'
+  - '美国分区: 285个'
+  type: select
+- hidden: false
+  icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
+  include-all: true
+  include-all-providers: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '自动选择: 340个'
+  timeout: 1500
+  type: url-test
+  url: https://www.google.com/generate_204
+- icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
+  include-all: true
+  name: '手动选择: 340个'
+  type: select
+- filter: (?i)中国|CN|cn
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '中国分区: 17个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)英国|GB|gb
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '英国分区: 9个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)韩国|KR|kr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kr.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '韩国分区: 4个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)俄罗斯联邦|RU|ru
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ru.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '俄罗斯联邦分区: 18个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)新加坡|SG|sg
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '新加坡分区: 7个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)美国|US|us
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '美国分区: 285个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+rules:
+- GEOIP,lan,DIRECT,no-resolve
+- GEOSITE,category-ads-all,REJECT
+- GEOSITE,github,默认代理
+- GEOSITE,microsoft,DIRECT
+- GEOIP,google,默认代理
+- GEOIP,telegram,默认代理
+- GEOIP,twitter,默认代理
+- GEOIP,CN,DIRECT,no-resolve
+- MATCH,默认代理
+secret: ''
+sniffer:
+  enable: true
+  skip-domain:
+  - +.push.apple.com
+  sniff:
+    HTTP:
+      override-destination: true
+      ports:
+      - 80
+      - 8080-8880
+    QUIC:
+      ports:
+      - 443
+      - 8443
+    TLS:
+      ports:
+      - 443
+      - 8443
+socks-port: 7898
+tcp-concurrent: true
+tun:
+  auto-detect-interface: true
+  auto-redirect: true
+  auto-route: true
+  device: Meta
+  dns-hijack:
+  - any:53
+  enable: true
+  mtu: 1500
+  stack: mixed
+  strict-route: false
+unified-delay: false
