@@ -205,6 +205,20 @@ def main():
     replace_yaml_sections(
         "template.yaml", renamed_proxies, proxy_groups, "finalConfig.yaml"
     )
+    
+    url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml"
+    yaml_content = fetch_yaml(url)
+    proxies = parse_yaml(yaml_content)
+
+    domains, ips = collect_servers(proxies)
+    nation_cache = fetch_all_nations(domains, ips)
+
+    renamed_proxies, proxy_groups = rename_proxies(proxies, nation_cache)
+
+    # 替换并保存到现有的配置文件
+    replace_yaml_sections(
+        "template.yaml", renamed_proxies, proxy_groups, "finalConfig1.yaml"
+    )
 
 
 if __name__ == "__main__":
