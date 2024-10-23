@@ -1229,12 +1229,12 @@ proxies:
   sni: artistic-cat.sheepdog670.boats
   type: trojan
 - alterId: -1
-  name: 土耳其-2
+  name: 未知-1
   password: '3648425794742788096'
   port: 443
   server: artistic-cat.sheepdog670.boats
   type: trojan
-- name: 土耳其-3
+- name: 未知-2
   password: '3648425794742788096'
   port: 443
   server: artistic-cat.sheepdog670.boats
@@ -1242,7 +1242,7 @@ proxies:
   type: trojan
   udp: true
 - alterId: -1
-  name: 土耳其-4
+  name: 土耳其-2
   password: '3648425794742788096'
   port: 443
   server: 202.78.174.87
@@ -1250,7 +1250,7 @@ proxies:
   sni: artistic-cat.sheepdog670.boats
   type: trojan
   udp: true
-- name: 土耳其-5
+- name: 土耳其-3
   password: '3648425794742788096'
   port: 443
   server: 202.78.174.87
@@ -5355,7 +5355,8 @@ proxy-groups:
   - '俄罗斯联邦分区: 15个'
   - '塞舌尔分区: 8个'
   - '新加坡分区: 5个'
-  - '土耳其分区: 5个'
+  - '土耳其分区: 3个'
+  - '未知分区: 2个'
   type: select
 - hidden: false
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -5605,7 +5606,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '土耳其分区: 5个'
+  name: '土耳其分区: 3个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)未知|cn|cn
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '未知分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
