@@ -74,6 +74,20 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
+- cipher: aes-256-cfb
+  name: 日本-1
+  password: amazonskr05
+  port: '443'
+  server: 52.198.168.235
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 日本-2
+  password: amazonskr05
+  port: '443'
+  server: 13.113.17.246
+  tfo: false
+  type: ss
 - alterId: '-1'
   client-fingerprint: chrome
   name: 中国-1
@@ -83,8 +97,21 @@ proxies:
   tls: false
   type: http
   udp: true
+- cipher: aes-256-cfb
+  name: 新加坡-1
+  password: amazonskr05
+  port: '443'
+  server: 47.128.240.40
+  type: ss
+- name: 中国-2
+  password: 5b4becce-5739-483f-97ec-68b81a855d68
+  port: '13030'
+  server: 183.236.51.4
+  skip-cert-verify: true
+  sni: cloudflare.node-ssl.cdn-alibaba.com
+  type: trojan
 - cipher: chacha20-ietf
-  name: 中国-2
+  name: 中国-3
   obfs: plain
   obfs-param: 83e2a40208.microsoft.com
   password: NaikoCloud
@@ -94,128 +121,452 @@ proxies:
   server: dajbxtw.naikonode1.top
   type: ssr
   udp: true
-- name: 德国-1
-  password: telegram-id-directvpn
-  port: '22222'
-  server: 3.77.219.183
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- cipher: aes-256-cfb
-  delay: '798'
-  name: 美国-1
-  password: amazonskr05
-  port: '443'
-  server: 35.86.117.124
-  type: ss
-- name: 德国-2
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 3.120.253.26
-  skip-cert-verify: true
-  sni: trojan.burgerip.co.uk
-  type: trojan
-  udp: true
-- name: 美国-2
+- name: 日本-3
   network: ws
   port: '443'
-  server: 104.19.14.247
-  servername: ay.ylks.xyz
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      host: ay.ylks.xyz
-    path: /?ed=2048
-- name: 美国-3
-  network: ws
-  port: '443'
-  server: 173.245.49.164
-  servername: ly.kpcloud.eu.org
+  server: 160.16.79.228
+  servername: lz.ylks01.eu.org
   tls: true
   type: vless
   uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
   ws-opts:
     headers:
-      host: ly.kpcloud.eu.org
+      host: lz.ylks01.eu.org
+    path: /blue
+- cipher: aes-128-gcm
+  name: 日本-4
+  password: shadowsocks
+  port: '443'
+  server: 149.22.87.241
+  type: ss
+- cipher: aes-128-gcm
+  name: 英国-1
+  password: shadowsocks
+  port: '443'
+  server: 141.98.101.179
+  type: ss
+- delay: '1117'
+  name: 美国-1
+  network: ws
+  port: '80'
+  server: 151.101.3.10
+  type: vless
+  udp: true
+  uuid: cefffd1d-cc58-4560-b4d1-44f1af528f30
+  ws-opts:
+    headers:
+      Host: uni.fi
     path: /?ed=2048
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 加拿大-1
+  password: shadowsocks
+  port: '443'
+  server: 149.22.95.183
+  tfo: false
+  type: ss
+- name: 德国-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 3.79.140.84
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: chacha20-ietf-poly1305
+  name: 英国-2
+  password: mps3FwmDjLrWaOVg
+  port: '443'
+  server: series-a2.samanehha.co
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 英国-3
+  password: mps3FwmDjLrWaOVg
+  port: '443'
+  server: series-a2.varzesh360.co
+  type: ss
+- cipher: aes-128-gcm
+  name: 美国-2
+  password: shadowsocks
+  port: '443'
+  server: 156.146.38.168
+  type: ss
+- name: 台湾-1
+  network: ws
+  port: '12224'
+  server: 59.127.80.162
+  servername: cz.ylks.xyz
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: cz.ylks.xyz
+    path: /blue
+- cipher: aes-256-gcm
+  name: 美国-3
+  password: kDWvXYZoTBcGkC4
+  port: '8882'
+  server: 69.50.92.99
+  type: ss
+- name: 日本-5
+  network: ws
+  password: FLorg
+  port: '443'
+  server: 43.153.175.137
+  sni: trojan.tcorg.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: trojan.tcorg.filegear-sg.me
+    path: /?ed=2048
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 韩国-1
+  password: qwerREWQ@@
+  port: '54345'
+  server: 221.139.79.57
+  tfo: false
+  type: ss
 - name: 美国-4
   network: ws
   port: '443'
-  server: 141.101.123.25
-  servername: ay.ylks.xyz
+  server: 141.101.123.53
+  servername: az.ylks.xyz
   tls: true
   type: vless
   uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
   ws-opts:
     headers:
-      host: ay.ylks.xyz
+      host: az.ylks.xyz
     path: /?ed=2048
 - name: 美国-5
   network: ws
   port: '443'
-  server: 173.245.49.210
-  servername: ly.kpcloud.eu.org
+  server: 141.101.122.230
+  servername: lz.kpcloud.eu.org
   tls: true
   type: vless
   uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
   ws-opts:
     headers:
-      host: ly.kpcloud.eu.org
+      host: lz.kpcloud.eu.org
     path: /?ed=2048
 - name: 美国-6
   network: ws
   port: '443'
-  server: 141.101.121.254
-  servername: ay.ylks.xyz
+  server: 141.101.120.67
+  servername: az.ylks.xyz
   tls: true
   type: vless
   uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
   ws-opts:
     headers:
-      host: ay.ylks.xyz
+      host: az.ylks.xyz
     path: /?ed=2048
 - name: 美国-7
   network: ws
   port: '443'
-  server: 172.64.98.204
-  servername: ay.ylks.xyz
+  server: 104.19.34.35
+  servername: az.ylks.xyz
   tls: true
   type: vless
   uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
   ws-opts:
     headers:
-      host: ay.ylks.xyz
+      host: az.ylks.xyz
     path: /?ed=2048
-- name: 美国-8
+- cipher: aes-256-gcm
+  name: 美国-8
+  password: faBAoD54k87UJG7
+  port: '2376'
+  server: 23.154.136.247
+  type: ss
+- name: 法国-1
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 15.237.13.48
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 美国-9
   network: ws
   port: '443'
-  server: 104.19.66.189
-  servername: ly.kpcloud.eu.org
+  server: 141.101.121.254
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- name: 韩国-2
+  network: ws
+  port: '443'
+  server: 152.70.235.207
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- name: 法国-2
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 15.237.10.138
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 美国-10
+  network: ws
+  port: '443'
+  server: 198.41.214.179
+  servername: lz.kpcloud.eu.org
   tls: true
   type: vless
   uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
   ws-opts:
     headers:
-      host: ly.kpcloud.eu.org
+      host: lz.kpcloud.eu.org
     path: /?ed=2048
-- name: 美国-9
+- name: 美国-11
   network: ws
   port: '443'
-  server: 141.101.122.152
-  servername: ay.ylks.xyz
+  server: 104.19.34.51
+  servername: lz.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: lz.ylks.us.kg
+    path: /?ed=2560
+- cipher: aes-256-gcm
+  name: 美国-12
+  password: TEzjfAYq2IjtuoS
+  port: '6697'
+  server: 142.202.49.74
+  type: ss
+- name: 韩国-3
+  network: ws
+  port: '30012'
+  server: 221.140.109.7
+  servername: lz.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: lz.kpcloud.eu.org
+    path: /blue
+- name: 美国-13
+  network: ws
+  port: '443'
+  server: 173.245.58.94
+  servername: lz.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: lz.kpcloud.eu.org
+    path: /?ed=2048
+- name: 美国-14
+  network: ws
+  port: '443'
+  server: 162.159.192.227
+  servername: lz.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: lz.kpcloud.eu.org
+    path: /?ed=2048
+- name: 美国-15
+  network: ws
+  port: '443'
+  server: 141.101.122.196
+  servername: az.ylks.xyz
   tls: true
   type: vless
   uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
   ws-opts:
     headers:
-      host: ay.ylks.xyz
+      host: az.ylks.xyz
+    path: /?ed=2048
+- name: 美国-16
+  network: ws
+  port: '443'
+  server: 104.19.66.189
+  servername: lz.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: lz.kpcloud.eu.org
+    path: /?ed=2048
+- name: 美国-17
+  network: ws
+  port: '443'
+  server: 172.64.98.204
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- delay: '1581'
+  name: 美国-18
+  network: ws
+  port: '2087'
+  server: 199.34.228.191
+  servername: Sb-1u6.paGEs.dEv
+  tls: true
+  type: vless
+  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
+  ws-opts:
+    headers:
+      Host: Sb-1u6.paGEs.dEv
+    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
+- cipher: aes-256-gcm
+  name: 美国-19
+  password: Y6R9pAtvxxzmGC
+  port: '8888'
+  server: 23.157.40.113
+  type: ss
+- cipher: aes-256-gcm
+  name: 美国-20
+  password: RexnBgU7EV5ADxG
+  port: '7002'
+  server: 23.157.40.113
+  type: ss
+- name: 爱尔兰-1
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 34.246.170.240
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 美国-21
+  network: ws
+  port: '443'
+  server: 173.245.59.50
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- name: 美国-22
+  network: ws
+  port: '443'
+  server: 198.41.196.133
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- cipher: aes-128-gcm
+  name: 美国-23
+  password: shadowsocks
+  port: '443'
+  server: 37.19.198.243
+  type: ss
+- delay: '1671'
+  name: 美国-24
+  network: ws
+  port: '2083'
+  server: 199.34.228.191
+  servername: SB-1U6.PAgeS.dEv
+  tls: true
+  type: vless
+  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
+  ws-opts:
+    headers:
+      Host: SB-1U6.PAgeS.dEv
+    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
+- delay: '1133'
+  name: 美国-25
+  network: ws
+  port: '2087'
+  server: 199.34.228.186
+  servername: Sb-1u6.paGEs.dEv
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
+  ws-opts:
+    headers:
+      Host: Sb-1u6.paGEs.dEv
+    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
+- cipher: aes-256-gcm
+  name: 美国-26
+  password: kDWvXYZoTBcGkC4
+  port: '8882'
+  server: 23.157.40.113
+  type: ss
+- delay: '1181'
+  name: 美国-27
+  network: ws
+  port: '443'
+  server: 199.34.228.186
+  servername: bpB005.paGeS.DEv
+  tls: true
+  type: vless
+  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  ws-opts:
+    headers:
+      Host: bpB005.paGeS.DEv
+    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
+- name: 美国-28
+  network: ws
+  port: '443'
+  server: 173.245.49.235
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- name: 美国-29
+  network: ws
+  port: '443'
+  server: 172.67.166.115
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- name: 美国-30
+  network: ws
+  port: '443'
+  server: 104.16.30.48
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
     path: /?ed=2048
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  name: 美国-10
+  name: 美国-31
   network: ws
   port: '443'
   server: 199.232.5.101
@@ -229,19 +580,95 @@ proxies:
     headers:
       Host: mefa.ir
     path: /H?ed=2560
-- name: 台湾-1
+- client-fingerprint: chrome
+  delay: '884'
+  name: 美国-32
   network: ws
-  port: '12224'
-  server: 59.127.80.162
-  servername: ly.ylks.us.kg
+  port: '443'
+  server: 199.232.5.79
+  servername: mefa.ir
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: mefa.ir
+    path: /H?ed=2560
+- name: 新加坡-2
+  network: ws
+  port: '443'
+  server: 158.178.238.239
+  servername: lz.kpcloud.eu.org
   tls: true
   type: vless
   uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
   ws-opts:
     headers:
-      host: ly.ylks.us.kg
+      host: lz.kpcloud.eu.org
+    path: /?ed=2048
+- cipher: aes-256-gcm
+  name: 美国-33
+  password: cdBIDV42DCwnfIN
+  port: '8118'
+  server: 15.204.87.225
+  type: ss
+- cipher: aes-256-cfb
+  name: 美国-34
+  password: amazonskr05
+  port: '443'
+  server: 52.43.127.109
+  type: ss
+- name: 哈萨克斯坦-1
+  network: ws
+  port: '443'
+  server: 194.76.18.129
+  servername: lz.ylks.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: lz.ylks.us.kg
     path: /?ed=2560
-- name: 美国-11
+- name: 美国-35
+  network: ws
+  port: '443'
+  server: 162.159.248.32
+  servername: lz.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: lz.kpcloud.eu.org
+    path: /?ed=2048
+- name: 美国-36
+  network: ws
+  port: '443'
+  server: 104.19.58.30
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- name: 美国-37
+  network: ws
+  port: '443'
+  server: 188.114.97.61
+  servername: lz.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: lz.kpcloud.eu.org
+    path: /?ed=2048
+- name: 美国-38
   network: ws
   port: '80'
   server: 199.232.37.15
@@ -253,16 +680,103 @@ proxies:
     headers:
       Host: sara193.ir
     path: /BCXzvAcvSB7JzMWj?ed=2560
+- name: 美国-39
+  network: ws
+  port: '443'
+  server: 162.159.240.78
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- name: 美国-40
+  network: ws
+  port: '443'
+  server: 192.200.160.193
+  servername: lz.ylka.us.kg
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: lz.ylka.us.kg
+    path: /?ed=2560
+- cipher: aes-256-gcm
+  name: 美国-41
+  password: Y6R9pAtvxxzmGC
+  port: '5600'
+  server: 23.157.40.113
+  type: ss
+- name: 美国-42
+  network: ws
+  port: '443'
+  server: 162.159.249.57
+  servername: lz.kpcloud.eu.org
+  tls: true
+  type: vless
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      host: lz.kpcloud.eu.org
+    path: /?ed=2048
+- cipher: aes-256-gcm
+  name: 法国-3
+  password: 0lliCPH0Wyhq1ULhJ7Gznu
+  port: '47961'
+  server: 94.228.162.68
+  type: ss
+- name: 美国-43
+  network: ws
+  port: '443'
+  server: 104.22.59.193
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- name: 哥斯达黎加-1
+  network: ws
+  port: '443'
+  server: 190.93.244.221
+  servername: az.ylks.xyz
+  tls: true
+  type: vless
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  ws-opts:
+    headers:
+      host: az.ylks.xyz
+    path: /?ed=2048
+- cipher: aes-256-gcm
+  name: 美国-44
+  password: g5MeD6Ft3CWlJId
+  port: '5004'
+  server: 23.157.40.113
+  type: ss
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 16个'
-  - '手动选择: 16个'
-  - '中国分区: 2个'
-  - '德国分区: 2个'
-  - '美国分区: 11个'
+  - '自动选择: 69个'
+  - '手动选择: 69个'
+  - '日本分区: 5个'
+  - '中国分区: 3个'
+  - '新加坡分区: 2个'
+  - '英国分区: 3个'
+  - '美国分区: 44个'
+  - '加拿大分区: 1个'
+  - '德国分区: 1个'
   - '台湾分区: 1个'
+  - '韩国分区: 3个'
+  - '法国分区: 3个'
+  - '爱尔兰分区: 1个'
+  - '哈萨克斯坦分区: 1个'
+  - '哥斯达黎加分区: 1个'
   type: select
 - hidden: false
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -271,14 +785,29 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 16个'
+  name: '自动选择: 69个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all: true
-  name: '手动选择: 16个'
+  name: '手动选择: 69个'
   type: select
+- filter: (?i)日本|JP|jp
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '日本分区: 5个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
 - filter: (?i)中国|CN|cn
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
@@ -287,22 +816,37 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 2个'
+  name: '中国分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)德国|DE|de
+- filter: (?i)新加坡|SG|sg
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
   include-all-providers: true
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '德国分区: 2个'
+  name: '新加坡分区: 2个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)英国|GB|gb
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '英国分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -317,7 +861,37 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 11个'
+  name: '美国分区: 44个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)加拿大|CA|ca
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ca.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '加拿大分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)德国|DE|de
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '德国分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -333,6 +907,81 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '台湾分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)韩国|KR|kr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kr.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '韩国分区: 3个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)法国|FR|fr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fr.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '法国分区: 3个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)爱尔兰|IE|ie
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ie.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '爱尔兰分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)哈萨克斯坦|KZ|kz
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kz.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '哈萨克斯坦分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)哥斯达黎加|CR|cr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cr.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '哥斯达黎加分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
