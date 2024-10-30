@@ -87,8 +87,55 @@ proxies:
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     path: /linkvws
-- cipher: chacha20-ietf
+- cipher: aes-128-gcm
+  name: 加拿大-2
+  password: shadowsocks
+  port: 443
+  server: 149.22.95.183
+  type: ss
+- alterId: 1
+  cipher: auto
+  name: 瑞士-1
+  network: ws
+  port: 443
+  server: 23.166.88.27
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: 23.166.88.27
+    path: /linkvws
+- alterId: 1
+  cipher: auto
+  name: 瑞士-2
+  network: ws
+  port: 443
+  server: 23.166.88.27
+  servername: 23.166.88.27
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: 23.166.88.27
+    path: /linkvws
+- alterId: 64
+  cipher: auto
   name: 中国-1
+  port: 46665
+  server: 120.232.153.37
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 3ac820af-becb-45d7-9e7a-e33d02961bb3
+- cipher: chacha20-ietf
+  name: 中国-2
   obfs: plain
   obfs-param: 83e2a40208.microsoft.com
   password: NaikoCloud
@@ -98,77 +145,155 @@ proxies:
   server: dajbxtw.naikonode1.top
   type: ssr
   udp: true
-- alterId: 64
+- alterId: 0
   cipher: auto
-  name: 中国-2
-  port: 46665
-  server: 120.232.153.37
+  name: 中国-3
+  network: tcp
+  port: 25006
+  server: b.baodesign.top
   skip-cert-verify: true
   tls: false
   type: vmess
   udp: true
-  uuid: 3ac820af-becb-45d7-9e7a-e33d02961bb3
-- alterId: 64
-  cipher: auto
-  name: 中国-3
-  network: tcp
-  port: 33288
-  server: 183.236.48.161
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- name: 德国-1
+  uuid: ba2e86ee-65fc-4b4e-97c7-165b5b64023b
+- name: 哥斯达黎加-1
   network: ws
-  port: 8443
-  server: 5.104.75.123
-  servername: sB-1U6.PAgeS.deV
-  skip-cert-verify: true
-  tls: true
+  port: 80
+  server: 190.93.247.155
+  skip-cert-verify: false
   type: vless
   udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
+  uuid: a194cf71-ac0f-429f-9ade-c859441e05e0
   ws-opts:
     headers:
-      Host: sB-1U6.PAgeS.deV
-    path: /bdbeqy5r01xte4fl/mtu4ljewms4ymdmumti3?ed=2560
-- name: 德国-2
-  network: ws
-  port: 8443
-  server: 5.104.75.123
-  servername: sB-1U6.PAgeS.deV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAgeS.deV
-    path: /bdbeqy5r01xte4fl/mtu4ljewms4ymdmumti3?ed=2560
-- name: 德国-3
+      Host: Hu2.v2vless.site.
+    path: /vless
+- cipher: aes-256-gcm
+  name: 德国-1
+  password: faBAoD54k87UJG7
+  port: 2376
+  server: 23.157.88.61
+  type: ss
+- alterId: 1
+  cipher: auto
+  name: 德国-2
   network: ws
   port: 443
-  server: 130.162.250.180
-  servername: SB-1u6.PAgeS.Dev
+  server: 23.158.56.39
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: 23.158.56.39
+    path: /linkvws
+- alterId: 1
+  cipher: auto
+  name: 德国-3
+  network: ws
+  port: 443
+  server: 23.158.56.145
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: 23.158.56.145
+    path: /linkvws
+- alterId: 1
+  cipher: auto
+  name: 德国-4
+  network: ws
+  port: 443
+  server: 23.158.56.81
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: 23.158.56.81
+    path: /linkvws
+- alterId: 1
+  cipher: auto
+  name: 德国-5
+  network: ws
+  port: 443
+  server: 23.158.56.39
+  servername: 23.158.56.39
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: 23.158.56.39
+    path: /linkvws
+- name: 法国-1
+  network: ws
+  port: 443
+  server: 141.145.217.226
+  servername: la.ylks01.eu.org
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: la.ylks01.eu.org
+    path: /blue
+- alterId: 1
+  cipher: auto
+  name: 法国-2
+  network: ws
+  port: 443
+  server: 23.162.152.177
+  servername: 23.162.152.177
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: 23.162.152.177
+    path: /linkvws
+- name: 英国-1
+  network: ws
+  port: 443
+  server: 94.247.142.241
+  servername: fq521.6789.cloudns.be
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
   ws-opts:
     headers:
-      Host: SB-1u6.PAgeS.Dev
-    path: /kgin6lazd2ckpj8j/mtu4ljewms4ymdmumti3?ed=2560
-- name: 德国-4
+      Host: fq521.6789.cloudns.be
+    path: /Twitterfreecodes
+- name: 英国-2
   network: ws
-  port: 8443
-  server: 130.61.107.238
-  servername: bpb005.pAges.DEv
+  port: 443
+  server: 94.247.142.241
+  servername: fq521.6789.cloudns.be
+  skip-cert-verify: true
   tls: true
   type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  udp: true
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
   ws-opts:
     headers:
-      Host: bpb005.pAges.DEv
-    path: /oablcsmcwpmbcwbk/mtuyljy3ljiznc40oq
-- name: 英国-1
+      Host: fq521.6789.cloudns.be
+    path: /twitterfreecodessecurity
+- name: 英国-3
   network: ws
   port: 443
   server: 94.247.142.241
@@ -187,7 +312,7 @@ proxies:
   - h2
   - http/1.1
   client-fingerprint: edge
-  name: 英国-2
+  name: 英国-4
   network: ws
   port: 443
   server: 94.247.142.241
@@ -201,34 +326,6 @@ proxies:
     headers:
       Host: fq521.6789.cloudns.be
     path: /twitterfreecodessecurity=tls
-- name: 英国-3
-  network: ws
-  port: 443
-  server: 94.247.142.241
-  servername: fq521.6789.cloudns.be
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  ws-opts:
-    headers:
-      Host: fq521.6789.cloudns.be
-    path: /twitterfreecodessecurity=tls
-- name: 英国-4
-  network: ws
-  port: 443
-  server: 94.247.142.241
-  servername: fq521.6789.cloudns.be
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  ws-opts:
-    headers:
-      Host: fq521.6789.cloudns.be
-    path: /Twitterfreecodes
 - client-fingerprint: chrome
   name: 英国-5
   network: ws
@@ -242,8 +339,20 @@ proxies:
     headers:
       Host: fq521.6789.cloudns.be
     path: /twitterfreecodessecurity
+- name: 英国-6
+  network: ws
+  port: 443
+  server: 94.247.142.241
+  servername: fq521.6789.cloudns.be
+  tls: true
+  type: vless
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
+  ws-opts:
+    headers:
+      Host: fq521.6789.cloudns.be
+    path: /twitterfreecodessecurity=tls
 - client-fingerprint: chrome
-  name: 英国-6
+  name: 英国-7
   network: ws
   port: 443
   server: 94.247.142.241
@@ -257,20 +366,6 @@ proxies:
     headers:
       Host: fq521.6789.cloudns.be
     path: /twitterfreecodessecurity
-- name: 英国-7
-  network: ws
-  port: 443
-  server: 94.247.142.241
-  servername: fq521.6789.cloudns.be
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  ws-opts:
-    headers:
-      Host: fq521.6789.cloudns.be
-    path: /Twitterfreecodes
 - name: 英国-8
   network: ws
   port: 443
@@ -284,20 +379,8 @@ proxies:
   ws-opts:
     headers:
       Host: fq521.6789.cloudns.be
-    path: /twitterfreecodessecurity
+    path: /Twitterfreecodes
 - name: 英国-9
-  network: ws
-  port: 443
-  server: 94.247.142.241
-  servername: fq521.6789.cloudns.be
-  tls: true
-  type: vless
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  ws-opts:
-    headers:
-      Host: fq521.6789.cloudns.be
-    path: /twitterfreecodessecurity=tls
-- name: 英国-10
   network: ws
   port: 443
   server: 94.247.142.241
@@ -310,7 +393,49 @@ proxies:
   ws-opts:
     headers:
       Host: fq521.6789.cloudns.be
-    path: /
+    path: /twitterfreecodessecurity=tls
+- cipher: chacha20-ietf-poly1305
+  name: 英国-10
+  password: rtR4YX74vwqRJu9MGH3e1N3CQdGMWCUFkyLisijiFuvhkU9McV5TpygfkernJ4UQe63JtcDQkrQ9HfchzqQz1kLCnTRor8jg
+  port: 55330
+  server: 107.181.155.244
+  type: ss
+- cipher: aes-128-gcm
+  name: 美国-1
+  password: shadowsocks
+  port: 443
+  server: 212.102.47.131
+  type: ss
+- name: 香港-1
+  network: tcp
+  port: 33032
+  server: 156.254.115.158
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: 72d37e1d-d577-4db3-dc92-3ec65b6d172b
+- cipher: chacha20-ietf-poly1305
+  name: 爱尔兰-1
+  password: 81aBd6IJIgFwT1lqcojSzK
+  port: 20143
+  server: 52.164.203.76
+  type: ss
+- http-opts:
+    headers:
+      Host:
+      - neshan.org
+    method: GET
+    path:
+    - /
+  name: 伊朗-1
+  network: http
+  port: 443
+  server: 185.113.10.235
+  servername: neshan.org
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: f1a495fd-8236-45b7-ae71-4c855ad15367
 - name: 约旦-1
   network: ws
   port: 2096
@@ -323,18 +448,6 @@ proxies:
     headers:
       Host: fq521.6789.cloudns.be
     path: /Twitter苏小柠
-- name: 美国-1
-  network: ws
-  port: 2083
-  server: 103.116.7.67
-  servername: nicorobin.eula.cloudns.org
-  tls: true
-  type: vless
-  uuid: 0d89a36e-36bc-41d2-8bd3-bbd639991f29
-  ws-opts:
-    headers:
-      Host: nicorobin.eula.cloudns.org
-    path: /telegram@linkvws?ed=2048
 - name: 美国-2
   network: ws
   port: 2083
@@ -352,70 +465,6 @@ proxies:
 - name: 美国-3
   network: ws
   port: 2096
-  server: 103.116.7.152
-  servername: nicorobin.eula.cloudns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 0d89a36e-36bc-41d2-8bd3-bbd639991f29
-  ws-opts:
-    headers:
-      Host: nicorobin.eula.cloudns.org
-    path: /?ed=2048
-- name: 美国-4
-  network: ws
-  port: 2096
-  server: 103.116.7.152
-  servername: nicorobin.eula.cloudns.org
-  tls: true
-  type: vless
-  uuid: 0d89a36e-36bc-41d2-8bd3-bbd639991f29
-  ws-opts:
-    headers:
-      Host: nicorobin.eula.cloudns.org
-    path: /?ed=2048
-- name: 日本-1
-  network: ws
-  port: 8443
-  server: 154.92.9.1
-  servername: sB-1U6.PAGes.DeV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAGes.DeV
-    path: /6fzdo6vhq9d4ddj7/mtu4ljewms4ymdmumti3?ed=2560
-- name: 日本-2
-  network: ws
-  port: 443
-  server: 154.92.9.2
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 日本-3
-  network: ws
-  port: 8443
-  server: 154.92.9.2
-  servername: sB-1U6.PAGes.DeV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAGes.DeV
-    path: /6fzdo6vhq9d4ddj7/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-5
-  network: ws
-  port: 2096
   server: 103.116.7.220
   servername: nicorobin.eula.cloudns.org
   tls: true
@@ -425,99 +474,75 @@ proxies:
     headers:
       Host: nicorobin.eula.cloudns.org
     path: /?ed=2048
-- name: 日本-4
+- name: 美国-4
   network: ws
-  port: 2087
-  server: 154.92.9.1
-  servername: Sb-1u6.paGEs.dEv
+  port: 2083
+  server: 103.116.7.67
+  servername: nicorobin.eula.cloudns.org
   tls: true
   type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
+  uuid: 0d89a36e-36bc-41d2-8bd3-bbd639991f29
   ws-opts:
     headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 日本-5
+      Host: nicorobin.eula.cloudns.org
+    path: /telegram@linkvws?ed=2048
+- name: 美国-5
   network: ws
+  port: 2096
+  server: 103.116.7.152
+  servername: nicorobin.eula.cloudns.org
+  tls: true
+  type: vless
+  uuid: 0d89a36e-36bc-41d2-8bd3-bbd639991f29
+  ws-opts:
+    headers:
+      Host: nicorobin.eula.cloudns.org
+    path: /?ed=2048
+- name: 美国-6
+  network: ws
+  port: 2096
+  server: 103.116.7.152
+  servername: nicorobin.eula.cloudns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 0d89a36e-36bc-41d2-8bd3-bbd639991f29
+  ws-opts:
+    headers:
+      Host: nicorobin.eula.cloudns.org
+    path: /?ed=2048
+- cipher: aes-128-gcm
+  name: 日本-1
+  password: shadowsocks
   port: 443
-  server: 154.92.9.1
-  servername: sb-1u6.pageS.Dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sb-1u6.pageS.Dev
-    path: /o56edk55jth9andd/mtu4ljewms4ymdmumti3?ed=2560
+  server: 149.22.87.240
+  type: ss
+- cipher: aes-128-gcm
+  name: 日本-2
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.241
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 立陶宛-1
+  password: cvII85TrW6n0OGyfpHVS1u
+  port: 8080
+  server: 45.87.175.157
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 荷兰-1
+  password: SjdGCHwafjktt1rzpGxTKYTvVBWb8Xa6E5DTr6MzbdHQSwvpLiDczj3n6MBjy2uyFSzgqgvCWsDQmpM4VQzfPzyGYF58wdyD
+  port: 42029
+  server: 208.67.105.196
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 荷兰-2
+  password: 5Au7NhFmcBqMnika4KVk7h4ZdV3wD4hFtJ8PJ3AlHzLeU1chEBaz19a643q7hBPV
+  port: 19175
+  server: ams1.fromblancwithlove.com
+  type: ss
 - name: 俄罗斯联邦-1
-  network: ws
-  port: 443
-  server: 188.42.145.140
-  servername: g1.youyuan.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: f3fcb0be-c785-4791-bd88-335dd20f0c1e
-  ws-opts:
-    headers:
-      Host: g1.youyuan.us.kg
-    path: /
-- name: 俄罗斯联邦-2
-  network: ws
-  port: 443
-  server: 188.42.145.140
-  servername: g1.youyuan.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: f3fcb0be-c785-4791-bd88-335dd20f0c1e
-  ws-opts:
-    headers:
-      Host: g1.youyuan.us.kg
-    path: /?proxyip=proxyip.multacom.fxxk.dedyn.iofp=chromefp=chromefp=chrome
-- name: 俄罗斯联邦-3
-  network: ws
-  port: 443
-  server: 188.42.145.140
-  servername: g1.youyuan.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: f3fcb0be-c785-4791-bd88-335dd20f0c1e
-  ws-opts:
-    headers:
-      Host: g1.youyuan.us.kg
-    path: /
-- name: 俄罗斯联邦-4
-  network: ws
-  port: 443
-  server: 188.42.145.140
-  servername: g1.youyuan.us.kg
-  tls: true
-  type: vless
-  uuid: f3fcb0be-c785-4791-bd88-335dd20f0c1e
-  ws-opts:
-    headers:
-      Host: g1.youyuan.us.kg
-    path: /
-- client-fingerprint: chrome
-  name: 俄罗斯联邦-5
-  network: ws
-  packet-encoding: ''
-  port: 443
-  server: 188.42.145.140
-  servername: g1.youyuan.us.kg
-  tls: true
-  type: vless
-  uuid: f3fcb0be-c785-4791-bd88-335dd20f0c1e
-  ws-opts:
-    headers:
-      Host: g1.youyuan.us.kg
-    path: /?proxyip=proxyip.multacom.fxxk.dedyn.iofp=chromefp=chrome
-- name: 俄罗斯联邦-6
   network: ws
   port: 443
   server: 188.42.145.159
@@ -536,10 +561,8 @@ proxies:
   port: 443
   server: 154.83.2.200
   servername: am-tunnel-6fs.pages.dev
-  skip-cert-verify: true
   tls: true
   type: vless
-  udp: true
   uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
   ws-opts:
     headers:
@@ -547,8 +570,8 @@ proxies:
     path: /
 - name: 塞舌尔-2
   network: ws
-  port: 443
-  server: 154.83.2.200
+  port: 2096
+  server: 154.83.2.54
   servername: am-tunnel-6fs.pages.dev
   skip-cert-verify: true
   tls: true
@@ -564,8 +587,10 @@ proxies:
   port: 443
   server: 154.83.2.200
   servername: am-tunnel-6fs.pages.dev
+  skip-cert-verify: true
   tls: true
   type: vless
+  udp: true
   uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
   ws-opts:
     headers:
@@ -590,10 +615,8 @@ proxies:
   port: 2096
   server: 154.83.2.54
   servername: am-tunnel-6fs.pages.dev
-  skip-cert-verify: true
   tls: true
   type: vless
-  udp: true
   uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
   ws-opts:
     headers:
@@ -613,216 +636,11 @@ proxies:
     headers:
       Host: am-tunnel-6fs.pages.dev
     path: /
-- name: 塞舌尔-7
-  network: ws
-  port: 2096
-  server: 154.83.2.54
-  servername: am-tunnel-6fs.pages.dev
-  tls: true
-  type: vless
-  uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
-  ws-opts:
-    headers:
-      Host: am-tunnel-6fs.pages.dev
-    path: /
-- name: 美国-6
-  network: ws
-  port: 8880
-  server: 104.19.209.229
-  type: vless
-  udp: true
-  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
-  ws-opts:
-    headers:
-      Host: late-tooth.granzinhannah.workers.dev
-    path: /?ed=2560
-- name: 美国-7
-  network: ws
-  port: 80
-  server: 199.232.37.15
-  skip-cert-verify: false
-  type: vless
-  udp: true
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  ws-opts:
-    headers:
-      Host: sara193.ir
-    path: /BCXzvAcvSB7JzMWj?ed=2560
-- name: 美国-8
-  network: ws
-  port: 2083
-  server: 192.0.54.6
-  servername: SB-1U6.PAgeS.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-9
-  network: ws
-  port: 2053
-  server: 45.194.53.13
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-10
-  network: ws
-  port: 443
-  server: 199.34.228.185
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-11
-  network: ws
-  port: 8443
-  server: 66.235.200.146
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-12
-  network: ws
-  port: 2053
-  server: 199.34.228.70
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-13
-  network: ws
-  port: 443
-  server: 199.34.228.171
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-14
-  network: ws
-  port: 443
-  server: 192.0.54.6
-  servername: sb-1u6.pageS.Dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sb-1u6.pageS.Dev
-    path: /o56edk55jth9andd/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-15
-  network: ws
-  port: 2083
-  server: 199.34.228.162
-  servername: SB-1U6.PAgeS.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-16
-  network: ws
-  port: 2053
-  server: 199.34.228.162
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-17
-  network: ws
-  port: 443
-  server: 209.208.227.218
-  servername: sb-1u6.pageS.Dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sb-1u6.pageS.Dev
-    path: /o56edk55jth9andd/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-18
-  network: ws
-  port: 8443
-  server: 199.34.228.164
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-19
-  network: ws
-  port: 443
-  server: 199.34.228.67
-  servername: sb-1u6.pageS.Dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sb-1u6.pageS.Dev
-    path: /o56edk55jth9andd/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-20
-  network: ws
-  port: 8443
-  server: 209.94.90.200
-  servername: sB-1U6.PAgeS.deV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAgeS.deV
-    path: /bdbeqy5r01xte4fl/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-21
-  network: ws
-  port: 8443
-  server: 199.34.228.71
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  name: 美国-22
+  name: 美国-7
   network: ws
   port: 443
   server: 199.232.5.101
@@ -836,1987 +654,30 @@ proxies:
     headers:
       Host: mefa.ir
     path: /H?ed=2560
-- name: 美国-23
+- name: 美国-8
   network: ws
-  port: 2087
-  server: 205.233.181.184
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
+  port: 80
+  server: 199.232.37.15
+  skip-cert-verify: false
   type: vless
   udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   ws-opts:
     headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-24
+      Host: sara193.ir
+    path: /BCXzvAcvSB7JzMWj?ed=2560
+- name: 美国-9
   network: ws
-  port: 8443
-  server: 208.86.168.74
-  servername: sB-1U6.PAgeS.deV
-  tls: true
+  port: 8880
+  server: 104.19.209.229
   type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAgeS.deV
-    path: /bdbeqy5r01xte4fl/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-25
-  network: ws
-  port: 8443
-  server: 199.34.228.161
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-26
-  network: ws
-  port: 8443
-  server: 199.34.228.181
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-27
-  network: ws
-  port: 2053
-  server: 205.233.181.199
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-28
-  network: ws
-  port: 2083
-  server: 199.34.228.65
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-29
-  network: ws
-  port: 443
-  server: 199.34.228.173
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-30
-  network: ws
-  port: 2087
-  server: 192.0.54.6
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-31
-  network: ws
-  port: 443
-  server: 199.34.228.182
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-32
-  network: ws
-  port: 443
-  server: 199.34.228.161
-  servername: sb-1u6.pageS.Dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sb-1u6.pageS.Dev
-    path: /o56edk55jth9andd/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-33
-  network: ws
-  port: 8443
-  server: 199.34.228.170
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-34
-  network: ws
-  port: 2096
-  server: 192.0.54.6
-  servername: Sb-1U6.paGES.deV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-35
-  network: ws
-  port: 2053
-  server: 45.194.53.81
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-36
-  network: ws
-  port: 2083
-  server: 209.208.227.218
-  servername: SB-1U6.PAgeS.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-37
-  network: ws
-  port: 443
-  server: 199.34.228.167
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-38
-  network: ws
-  port: 443
-  server: 199.34.228.162
-  servername: sB-1u6.PagEs.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1u6.PagEs.dEv
-    path: /hnzodogqct9yjjex/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-39
-  network: ws
-  port: 443
-  server: 199.34.228.170
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-40
-  network: ws
-  port: 8443
-  server: 199.34.228.135
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-41
-  network: ws
-  port: 8443
-  server: 199.34.228.167
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-42
-  network: ws
-  port: 2096
-  server: 199.34.228.182
-  servername: Sb-1U6.paGES.deV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-43
-  network: ws
-  port: 2083
-  server: 199.34.228.67
-  servername: SB-1U6.PAgeS.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-44
-  network: ws
-  port: 2083
-  server: 199.34.228.182
-  servername: SB-1U6.PAgeS.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-45
-  network: ws
-  port: 443
-  server: 199.34.228.135
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-46
-  network: ws
-  port: 2083
-  server: 199.34.228.177
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-47
-  network: ws
-  port: 2053
-  server: 199.34.228.161
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-48
-  network: ws
-  port: 2087
-  server: 205.233.181.205
-  servername: Sb-1u6.paGEs.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-49
-  network: ws
-  port: 8443
-  server: 199.34.228.177
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-50
-  network: ws
-  port: 2083
-  server: 209.208.227.150
-  servername: SB-1U6.PAgeS.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-51
-  network: ws
-  port: 443
-  server: 45.194.53.81
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-52
-  network: ws
-  port: 443
-  server: 199.34.228.191
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-53
-  network: ws
-  port: 443
-  server: 199.34.228.168
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-54
-  network: ws
-  port: 2087
-  server: 199.34.228.184
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-55
-  network: ws
-  port: 2087
-  server: 209.94.90.200
-  servername: Sb-1u6.paGEs.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-56
-  network: ws
-  port: 2096
-  server: 45.194.53.81
-  servername: Sb-1U6.paGES.deV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-57
-  network: ws
-  port: 443
-  server: 199.34.228.181
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-58
-  network: ws
-  port: 443
-  server: 209.208.227.150
-  servername: sB-1u6.PagEs.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1u6.PagEs.dEv
-    path: /hnzodogqct9yjjex/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-59
-  network: ws
-  port: 2087
-  server: 199.34.228.182
-  servername: Sb-1u6.paGEs.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-60
-  network: ws
-  port: 2083
-  server: 208.86.168.74
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-61
-  network: ws
-  port: 8443
-  server: 199.34.228.147
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-62
-  network: ws
-  port: 2053
-  server: 199.34.228.70
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-63
-  network: ws
-  port: 2053
-  server: 199.34.228.182
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-64
-  network: ws
-  port: 2053
-  server: 209.208.227.61
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-65
-  network: ws
-  port: 8443
-  server: 66.235.200.146
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-66
-  network: ws
-  port: 2087
-  server: 199.34.228.71
-  servername: Sb-1u6.paGEs.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-67
-  network: ws
-  port: 2083
-  server: 199.34.228.162
-  servername: SB-1U6.PAgeS.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-68
-  network: ws
-  port: 2053
-  server: 45.194.53.13
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-69
-  network: ws
-  port: 2096
-  server: 199.34.228.186
-  servername: Sb-1U6.paGES.deV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-70
-  network: ws
-  port: 2053
-  server: 199.34.228.186
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-71
-  network: ws
-  port: 443
-  server: 104.21.78.221
-  servername: kir-too-kos-o-koon-maman-arzeshi-begoo-jooooooon.pages.dev
-  tls: true
-  type: vless
-  uuid: 79bf326d-93de-494f-a7a1-f9aaa764f86a
-  ws-opts:
-    headers:
-      Host: kir-too-kos-o-koon-maman-arzeshi-begoo-jooooooon.pages.dev
-    path: /
-- name: 美国-72
-  network: ws
-  port: 443
-  server: 199.34.228.185
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-73
-  network: ws
-  port: 2053
-  server: 199.34.228.162
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-74
-  network: ws
-  port: 8443
-  server: 209.94.90.200
-  servername: sB-1U6.PAgeS.deV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAgeS.deV
-    path: /bdbeqy5r01xte4fl/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-75
-  network: ws
-  port: 443
-  server: 199.34.228.171
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-76
-  network: ws
-  port: 2087
-  server: 205.233.181.184
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-77
-  network: ws
-  port: 443
-  server: 199.34.228.67
-  servername: sb-1u6.pageS.Dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sb-1u6.pageS.Dev
-    path: /o56edk55jth9andd/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-78
-  network: ws
-  port: 443
-  server: 199.34.228.173
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-79
-  network: ws
-  port: 443
-  server: 199.34.228.71
-  servername: BPb005.pAgeS.Dev
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-80
-  network: ws
-  port: 443
-  server: 199.34.228.162
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-81
-  network: ws
-  port: 2083
-  server: 199.34.228.65
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-82
-  network: ws
-  port: 8443
-  server: 199.34.228.161
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-83
-  network: ws
-  port: 2053
-  server: 205.233.181.199
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-84
-  network: ws
-  port: 443
-  server: 199.34.228.184
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-85
-  network: ws
-  port: 2096
-  server: 199.34.228.182
-  servername: Sb-1U6.paGES.deV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-86
-  network: ws
-  port: 443
-  server: 199.34.228.182
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-87
-  network: ws
-  port: 443
-  server: 199.34.228.161
-  servername: sb-1u6.pageS.Dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sb-1u6.pageS.Dev
-    path: /o56edk55jth9andd/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-88
-  network: ws
-  port: 443
-  server: 107.174.39.112
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-89
-  network: ws
-  port: 443
-  server: 199.34.228.70
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-90
-  network: ws
-  port: 2053
-  server: 199.34.228.47
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-91
-  network: ws
-  port: 443
-  server: 199.34.228.65
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-92
-  network: ws
-  port: 443
-  server: 199.34.228.162
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-93
-  network: ws
-  port: 443
-  server: 199.34.228.177
-  servername: BPb005.pAgeS.Dev
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-94
-  network: ws
-  port: 443
-  server: 45.154.3.92
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-95
-  network: ws
-  port: 443
-  server: 199.34.228.171
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-96
-  network: ws
-  port: 443
-  server: 199.34.228.173
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-97
-  network: ws
-  port: 443
-  server: 199.34.228.147
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-98
-  network: ws
-  port: 2083
-  server: 199.34.228.161
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-99
-  network: ws
-  port: 443
-  server: 199.34.228.170
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-100
-  network: ws
-  port: 443
-  server: 199.34.228.65
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-101
-  network: ws
-  port: 2083
-  server: 208.86.168.45
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-102
-  network: ws
-  port: 2096
-  server: 199.34.228.182
-  servername: Sb-1U6.paGES.deV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-103
-  network: ws
-  port: 8443
-  server: 199.34.228.135
-  servername: bPb005.paGes.DEV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-104
-  network: ws
-  port: 443
-  server: 199.34.228.168
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-105
-  network: ws
-  port: 443
-  server: 107.174.39.112
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-106
-  network: ws
-  port: 443
-  server: 209.208.227.150
-  servername: sB-1u6.PagEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1u6.PagEs.dEv
-    path: /hnzodogqct9yjjex/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-107
-  network: ws
-  port: 443
-  server: 199.34.228.182
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-108
-  network: ws
-  port: 2053
-  server: 209.208.227.61
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-109
-  network: ws
-  port: 2053
-  server: 205.233.181.199
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-110
-  network: ws
-  port: 2096
-  server: 192.0.54.6
-  servername: Sb-1U6.paGES.deV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-111
-  network: ws
-  port: 2096
-  server: 199.34.228.177
-  servername: Sb-1U6.paGES.deV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-112
-  network: ws
-  port: 443
-  server: 199.34.228.161
-  servername: sb-1u6.pageS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sb-1u6.pageS.Dev
-    path: /o56edk55jth9andd/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-113
-  network: ws
-  port: 8443
-  server: 199.34.228.71
-  servername: bPb005.paGes.DEV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-114
-  network: ws
-  port: 2053
-  server: 199.34.228.70
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-115
-  network: ws
-  port: 8443
-  server: 199.34.228.182
-  servername: bPb005.paGes.DEV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-116
-  network: ws
-  port: 2083
-  server: 208.86.168.178
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-117
-  network: ws
-  port: 443
-  server: 209.208.227.218
-  servername: sb-1u6.pageS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sb-1u6.pageS.Dev
-    path: /o56edk55jth9andd/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-118
-  network: ws
-  port: 2087
-  server: 199.34.228.71
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-119
-  network: ws
-  port: 2087
-  server: 208.86.168.74
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-120
-  network: ws
-  port: 8443
-  server: 208.86.168.210
-  servername: sB-1U6.PAgeS.deV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAgeS.deV
-    path: /bdbeqy5r01xte4fl/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-121
-  network: ws
-  port: 8443
-  server: 66.235.200.146
-  servername: bPb005.paGes.DEV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-122
-  network: ws
-  port: 8443
-  server: 45.194.53.13
-  servername: sB-1U6.PAgeS.deV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAgeS.deV
-    path: /bdbeqy5r01xte4fl/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-123
-  network: ws
-  port: 8443
-  server: 199.34.228.164
-  servername: bPb005.paGes.DEV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-124
-  network: ws
-  port: 2053
-  server: 199.34.228.161
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-125
-  network: ws
-  port: 2083
-  server: 199.34.228.164
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-126
-  network: ws
-  port: 2087
-  server: 209.94.90.200
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-127
-  network: ws
-  port: 2083
-  server: 199.34.228.182
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-128
-  network: ws
-  port: 2087
-  server: 205.233.181.205
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-129
-  network: ws
-  port: 8443
-  server: 199.34.228.169
-  servername: bPb005.paGes.DEV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-130
-  network: ws
-  port: 2096
-  server: 45.194.53.81
-  servername: Sb-1U6.paGES.deV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-131
-  network: ws
-  port: 8443
-  server: 208.86.168.74
-  servername: sB-1U6.PAgeS.deV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAgeS.deV
-    path: /bdbeqy5r01xte4fl/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-132
-  network: ws
-  port: 2083
-  server: 199.34.228.67
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-133
-  network: ws
-  port: 2053
-  server: 199.34.228.174
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-134
-  network: ws
-  port: 2083
-  server: 45.194.53.81
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-135
-  network: ws
-  port: 2053
-  server: 199.34.228.67
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-136
-  network: ws
-  port: 2096
-  server: 209.94.90.200
-  servername: Sb-1U6.paGES.deV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-137
-  network: ws
-  port: 8443
-  server: 209.208.227.218
-  servername: sB-1U6.PAgeS.deV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAgeS.deV
-    path: /bdbeqy5r01xte4fl/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-138
-  network: ws
-  port: 2083
-  server: 209.208.227.218
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-139
-  network: ws
-  port: 2087
-  server: 199.34.228.70
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-140
-  network: ws
-  port: 2053
-  server: 45.194.53.81
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-141
-  network: ws
-  port: 8443
-  server: 199.34.228.161
-  servername: bPb005.paGes.DEV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-142
-  network: ws
-  port: 2083
-  server: 208.86.168.74
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-143
-  network: ws
-  port: 8443
-  server: 199.34.228.178
-  servername: bPb005.paGes.DEV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-144
-  network: ws
-  port: 2087
-  server: 192.0.54.6
-  servername: Sb-1u6.paGEs.dEv
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-145
-  network: ws
-  port: 2053
-  server: 45.194.53.13
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-146
-  network: ws
-  port: 443
-  server: 107.174.39.112
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-147
-  network: ws
-  port: 2087
-  server: 192.0.54.6
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-148
-  network: ws
-  port: 2083
-  server: 199.34.228.65
-  servername: SB-1U6.PAgeS.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-149
-  network: ws
-  port: 2083
-  server: 199.34.228.177
-  servername: SB-1U6.PAgeS.dEv
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-150
-  network: ws
-  port: 2087
-  server: 205.233.181.184
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-151
-  network: ws
-  port: 2053
-  server: 199.34.228.182
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-152
-  network: ws
-  port: 2053
-  server: 199.34.228.182
-  servername: SB-1U6.PAgEs.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-153
-  network: ws
-  port: 2087
-  server: 208.86.168.45
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-154
-  network: ws
-  port: 2087
-  server: 199.34.228.182
-  servername: Sb-1u6.paGEs.dEv
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-155
-  network: ws
-  port: 2087
-  server: 199.34.228.184
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-156
-  network: ws
-  port: 2087
-  server: 199.34.228.184
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-157
-  network: ws
-  port: 2087
-  server: 199.34.228.182
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-158
-  network: ws
-  port: 2083
-  server: 199.34.228.177
-  servername: SB-1U6.PAgeS.dEv
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-159
-  network: ws
-  port: 443
-  server: 66.235.200.146
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-160
-  network: ws
-  port: 443
-  server: 45.154.3.92
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-161
-  network: ws
-  port: 2053
-  server: 45.194.53.13
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-162
-  network: ws
-  port: 443
-  server: 199.34.228.65
-  servername: bpB005.paGeS.DEv
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-163
-  network: ws
-  port: 2087
-  server: 199.34.228.182
-  servername: Sb-1u6.paGEs.dEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-164
-  network: ws
-  port: 2053
-  server: 199.34.228.182
-  servername: SB-1U6.PAgEs.dev
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-165
-  network: ws
-  port: 2083
-  server: 199.34.228.65
-  servername: SB-1U6.PAgeS.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: SB-1U6.PAgeS.dEv
-    path: /urenftuu3z1kqryb/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-166
-  network: ws
-  port: 2087
-  server: 205.233.181.184
-  servername: Sb-1u6.paGEs.dEv
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: Sb-1u6.paGEs.dEv
-    path: /pc0cypuups4meoks/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-167
-  network: ws
-  port: 8443
-  server: 199.34.228.47
-  servername: sB-1U6.PAgeS.deV
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
-  ws-opts:
-    headers:
-      Host: sB-1U6.PAgeS.deV
-    path: /bdbeqy5r01xte4fl/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-168
-  network: ws
-  port: 443
-  server: 199.34.228.184
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-169
-  network: ws
-  port: 443
-  server: 199.34.228.162
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-170
-  network: ws
-  port: 443
-  server: 199.34.228.70
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-171
-  network: ws
-  port: 443
-  server: 199.34.228.70
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-172
-  network: ws
-  port: 443
-  server: 199.34.228.70
-  servername: BPb005.pAgeS.Dev
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-173
-  network: ws
-  port: 443
-  server: 199.34.228.184
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
   udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
   ws-opts:
     headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-174
+      Host: late-tooth.granzinhannah.workers.dev
+    path: /?ed=2560
+- name: 美国-10
   network: ws
   port: 443
   server: 172.66.47.66
@@ -2828,73 +689,240 @@ proxies:
     headers:
       Host: pardazeshvpn-tg86.pages.dev
     path: /telegram:@pardazeshvpn-telegram:@pardazeshvpn-telegram:@pardazeshvpn-telegram:@pardazeshvpn-telegram:@pardazeshvpn-telegram:@pardazeshvpn-telegram:@pardazeshvpn-telegram:@pardazeshvpn-telegram:@pardazeshvpn-telegram:@pardazeshvpn-telegram:@pardazeshvpn?ed=2048
-- name: 美国-175
+- name: 美国-11
+  network: ws
+  port: 80
+  server: 167.82.30.71
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: samane.ir
+    path: /4u7lAS4nPLtz0xPz?ed=2560
+- cipher: chacha20-ietf-poly1305
+  name: 美国-12
+  password: rZv1$9veNc
+  port: 9366
+  server: 150.241.95.62
+  type: ss
+- name: 美国-13
+  network: ws
+  port: 80
+  server: 199.232.37.15
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: sara193.ir
+    path: /BCXzvAcvSB7JzMWj?ed=2560
+- alterId: 0
+  cipher: auto
+  name: 美国-14
+  network: ws
+  port: 2086
+  server: cdn1.bpcdn.cc
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: aaa1b350-15f7-4837-9a08-2129ff9c6d1e
+  ws-opts:
+    headers:
+      Host: hkrg0nf30ik5piq1zr.lovebaipiao.com
+    path: /
+- alpn:
+  - http/1.1
+  client-fingerprint: random
+  name: 美国-15
   network: ws
   port: 443
-  server: 199.34.228.65
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
+  server: 172.67.73.237
+  servername: yelaor39jfaan.thelastronin.cloudns.org
+  skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  uuid: 263f4c03-183a-4062-98c7-d42d4b2de9d7
   ws-opts:
     headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-176
+      Host: yelan.thelastronin.cloudns.org
+    path: /VLESS/jp-full.privateip.net
+- cipher: aes-128-gcm
+  name: 美国-16
+  password: shadowsocks
+  port: 443
+  server: 156.146.38.168
+  type: ss
+- name: 美国-17
+  network: ws
+  port: 80
+  server: www.speedtest.net
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: 7d2dfb7a-2ecc-4448-bcbe-245a2092fe85
+  ws-opts:
+    headers:
+      Host: www.speedtest.net.nl1.70.18.432.20.20.20.20.ir.xn--g28h.dns-dynamic.net.
+    path: /Telegram-Xv2ry2?ed
+- cipher: aes-128-gcm
+  name: 美国-18
+  password: shadowsocks
+  port: 443
+  server: 37.19.198.160
+  type: ss
+- cipher: aes-256-gcm
+  name: 美国-19
+  password: g5MeD6Ft3CWlJId
+  port: 5004
+  server: 142.202.48.105
+  type: ss
+- cipher: aes-128-gcm
+  name: 美国-20
+  password: shadowsocks
+  port: 443
+  server: 37.19.198.243
+  type: ss
+- cipher: aes-256-gcm
+  name: 美国-21
+  password: PCnnH6SQSnfoS27
+  port: 8090
+  server: 38.121.43.204
+  type: ss
+- alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  name: 美国-22
   network: ws
   port: 443
-  server: 199.34.228.65
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
+  server: www.speedtest.net
+  servername: CCOnfIGPlUS.SPDTest.ggFf.NET
+  skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   ws-opts:
     headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-177
+      Host: cconfigplus.spdtest.ggff.net
+    path: /W5V92vB3BQrJH2yY?ed=2560
+- alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  name: 美国-23
   network: ws
-  port: 2053
-  server: 205.233.181.174
-  servername: SB-1U6.PAgEs.dev
+  port: 443
+  server: 104.17.234.128
+  servername: join.bede.VPNCUSTOMIZE.www.speedtest.net.Abrha.co.za
+  skip-cert-verify: false
   tls: true
   type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
+  udp: true
+  uuid: 1ad95b6a-8dca-4773-8947-eedf49fdc4c1
   ws-opts:
     headers:
-      Host: SB-1U6.PAgEs.dev
-    path: /fltcxoo6grqvat6v/mtu4ljewms4ymdmumti3?ed=2560
-- name: 美国-178
+      Host: join.bede.vpncustomize.www.speedtest.net.Abrha.co.za
+    path: /Telegram,VPNCUSTOMIZE?ed=8080
+- cipher: aes-256-gcm
+  name: 美国-24
+  password: Y6R9pAtvxxzmGC
+  port: 5000
+  server: 38.110.1.107
+  type: ss
+- cipher: aes-256-gcm
+  name: 美国-25
+  password: cdBIDV42DCwnfIN
+  port: 8118
+  server: 38.121.43.204
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 美国-26
+  password: flj72wu+&R
+  port: 42445
+  server: 150.241.95.62
+  type: ss
+- name: 美国-27
   network: ws
-  port: 2096
-  server: 205.233.181.174
-  servername: Sb-1U6.paGES.deV
-  tls: true
-  type: vless
-  uuid: fca01448-d84a-436e-9aec-3be1ebdfb350
+  password: auto
+  port: 443
+  server: 159.246.55.132
+  skip-cert-verify: true
+  sni: vip.123789.pp.ua
+  type: trojan
   ws-opts:
     headers:
-      Host: Sb-1U6.paGES.deV
-    path: /s6rb9yyj3qaak606/mtu4ljewms4ymdmumti3?ed=2560
+      Host: vip.123789.pp.ua
+    path: /
+- cipher: aes-256-gcm
+  name: 美国-28
+  password: faBAoD54k87UJG7
+  port: 2375
+  server: 38.110.1.107
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 美国-29
+  password: 76dze09gQEvqS_jOuo
+  port: 3913
+  server: 144.202.112.106
+  type: ss
+- cipher: aes-256-gcm
+  name: 美国-30
+  password: Y6R9pAtvxxzmGC
+  port: 5000
+  server: 23.150.152.41
+  type: ss
+- alterId: 1
+  cipher: auto
+  name: 美国-31
+  network: ws
+  port: 443
+  server: 38.99.82.187
+  servername: 38.99.82.187
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: 38.99.82.187
+    path: /linkvws
+- name: 越南-1
+  password: 94d219c9-1afc-4d42-b090-8b3794764380
+  port: 443
+  server: 36.50.134.29
+  skip-cert-verify: true
+  type: trojan
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 215个'
-  - '手动选择: 215个'
-  - '加拿大分区: 1个'
+  - '自动选择: 73个'
+  - '手动选择: 73个'
+  - '加拿大分区: 2个'
+  - '瑞士分区: 2个'
   - '中国分区: 3个'
-  - '德国分区: 4个'
+  - '哥斯达黎加分区: 1个'
+  - '德国分区: 5个'
+  - '法国分区: 2个'
   - '英国分区: 10个'
+  - '美国分区: 31个'
+  - '香港分区: 1个'
+  - '爱尔兰分区: 1个'
+  - '伊朗分区: 1个'
   - '约旦分区: 1个'
-  - '美国分区: 178个'
-  - '日本分区: 5个'
-  - '俄罗斯联邦分区: 6个'
-  - '塞舌尔分区: 7个'
+  - '日本分区: 2个'
+  - '立陶宛分区: 1个'
+  - '荷兰分区: 2个'
+  - '俄罗斯联邦分区: 1个'
+  - '塞舌尔分区: 6个'
+  - '越南分区: 1个'
   type: select
 - hidden: false
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -2903,13 +931,13 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 215个'
+  name: '自动选择: 73个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all: true
-  name: '手动选择: 215个'
+  name: '手动选择: 73个'
   type: select
 - filter: (?i)加拿大|CA|ca
   hidden: false
@@ -2919,7 +947,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '加拿大分区: 1个'
+  name: '加拿大分区: 2个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)瑞士|CH|ch
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ch.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '瑞士分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2941,6 +984,21 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
+- filter: (?i)哥斯达黎加|CR|cr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cr.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '哥斯达黎加分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
 - filter: (?i)德国|DE|de
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
@@ -2949,7 +1007,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '德国分区: 4个'
+  name: '德国分区: 5个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)法国|FR|fr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fr.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '法国分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2971,6 +1044,66 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
+- filter: (?i)美国|US|us
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '美国分区: 31个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)香港|HK|hk
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '香港分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)爱尔兰|IE|ie
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ie.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '爱尔兰分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)伊朗|IR|ir
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ir.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '伊朗分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
 - filter: (?i)约旦|JO|jo
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jo.svg
@@ -2986,21 +1119,6 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)美国|US|us
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '美国分区: 178个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
 - filter: (?i)日本|JP|jp
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
@@ -3009,7 +1127,37 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '日本分区: 5个'
+  name: '日本分区: 2个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)立陶宛|LT|lt
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lt.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '立陶宛分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)荷兰|NL|nl
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/nl.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '荷兰分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -3024,7 +1172,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '俄罗斯联邦分区: 6个'
+  name: '俄罗斯联邦分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -3039,7 +1187,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '塞舌尔分区: 7个'
+  name: '塞舌尔分区: 6个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)越南|VN|vn
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/vn.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '越南分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
