@@ -74,25 +74,6 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  name: 阿联酋-1
-  network: ws
-  port: 2053
-  server: m3.jadidistorefandogh.ir
-  servername: my.jadidistorefandogh.ir
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 1873b7c8-8341-4759-be82-139037d5c198
-  ws-opts:
-    headers:
-      Host: my.jadidistorefandogh.ir
-    path: /digikala.com/login/?ed=2560
 - cipher: aes-128-gcm
   name: 加拿大-1
   password: shadowsocks
@@ -112,25 +93,17 @@ proxies:
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     path: /linkvws
-- cipher: chacha20-ietf
-  name: 中国-1
-  obfs: plain
-  obfs-param: 83e2a40208.microsoft.com
-  password: NaikoCloud
-  port: 15504
-  protocol: auth_aes128_md5
-  protocol-param: 40208:yYyiNvXTethxtYP7
-  server: dajbxtw.naikonode1.top
-  type: ssr
-  udp: true
-- alterId: 0
+- alterId: 64
   cipher: auto
-  name: 中国-2
-  port: 25006
-  server: b.baodesign.top
+  name: 中国-1
+  network: tcp
+  port: 51002
+  server: 183.236.51.23
+  skip-cert-verify: true
   tls: false
   type: vmess
-  uuid: ba2e86ee-65fc-4b4e-97c7-165b5b64023b
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - name: 哥斯达黎加-1
   network: ws
   port: 80
@@ -159,6 +132,21 @@ proxies:
     headers:
       Host: 23.162.152.177
     path: /linkvws
+- alterId: 1
+  cipher: auto
+  name: 法国-2
+  network: ws
+  port: 443
+  server: 23.162.152.177
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: 23.162.152.177
+    path: /linkvws
 - cipher: aes-128-gcm
   name: 美国-1
   password: shadowsocks
@@ -178,7 +166,7 @@ proxies:
   ws-opts:
     headers:
       Host: fq521.6789.cloudns.be
-    path: /Twitterfreecodes
+    path: /twitterfreecodessecurityfp=chrome
 - name: 英国-2
   network: ws
   port: 443
@@ -192,7 +180,7 @@ proxies:
   ws-opts:
     headers:
       Host: fq521.6789.cloudns.be
-    path: /twitterfreecodessecurity=tls
+    path: /Twitterfreecodes
 - name: 英国-3
   network: ws
   port: 443
@@ -206,67 +194,8 @@ proxies:
   ws-opts:
     headers:
       Host: fq521.6789.cloudns.be
-    path: /twitterfreecodessecurity
-- client-fingerprint: chrome
-  name: 英国-4
-  network: ws
-  port: 443
-  server: 94.247.142.241
-  servername: fq521.6789.cloudns.be
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  ws-opts:
-    headers:
-      Host: fq521.6789.cloudns.be
-    path: /twitterfreecodessecurity
-- name: 英国-5
-  network: ws
-  port: 443
-  server: 94.247.142.241
-  servername: fq521.6789.cloudns.be
-  tls: true
-  type: vless
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  ws-opts:
-    headers:
-      Host: fq521.6789.cloudns.be
     path: /twitterfreecodessecurity=tls
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: edge
-  name: 英国-6
-  network: ws
-  port: 443
-  server: 94.247.142.241
-  servername: fq521.6789.cloudns.be
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  ws-opts:
-    headers:
-      Host: fq521.6789.cloudns.be
-    path: /twitterfreecodessecurity=tls
-- client-fingerprint: chrome
-  name: 英国-7
-  network: ws
-  port: 443
-  server: 94.247.142.241
-  servername: fq521.6789.cloudns.be
-  tls: true
-  type: vless
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  ws-opts:
-    headers:
-      Host: fq521.6789.cloudns.be
-    path: /twitterfreecodessecurity
-- name: 英国-8
+- name: 英国-4
   network: ws
   port: 443
   server: 94.247.142.241
@@ -280,7 +209,7 @@ proxies:
     headers:
       Host: fq521.6789.cloudns.be
     path: /Twitterfreecodes
-- name: 英国-9
+- name: 英国-5
   network: ws
   port: 443
   server: 94.247.142.241
@@ -293,19 +222,82 @@ proxies:
   ws-opts:
     headers:
       Host: fq521.6789.cloudns.be
-    path: /twitterfreecodessecurityfp=chrome
+    path: /twitterfreecodessecurity
+- client-fingerprint: chrome
+  name: 英国-6
+  network: ws
+  port: 443
+  server: 94.247.142.241
+  servername: fq521.6789.cloudns.be
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
+  ws-opts:
+    headers:
+      Host: fq521.6789.cloudns.be
+    path: /twitterfreecodessecurity
+- name: 英国-7
+  network: ws
+  port: 443
+  server: 94.247.142.241
+  servername: fq521.6789.cloudns.be
+  tls: true
+  type: vless
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
+  ws-opts:
+    headers:
+      Host: fq521.6789.cloudns.be
+    path: /twitterfreecodessecurity=tls
+- client-fingerprint: chrome
+  name: 英国-8
+  network: ws
+  port: 443
+  server: 94.247.142.241
+  servername: fq521.6789.cloudns.be
+  tls: true
+  type: vless
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
+  ws-opts:
+    headers:
+      Host: fq521.6789.cloudns.be
+    path: /twitterfreecodessecurity
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: edge
+  name: 英国-9
+  network: ws
+  port: 443
+  server: 94.247.142.241
+  servername: fq521.6789.cloudns.be
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
+  ws-opts:
+    headers:
+      Host: fq521.6789.cloudns.be
+    path: /twitterfreecodessecurity=tls
 - cipher: chacha20-ietf-poly1305
   name: 爱尔兰-1
   password: 81aBd6IJIgFwT1lqcojSzK
   port: 20143
   server: 52.164.203.76
   type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 印度-1
-  password: vZr8MlUXUihNEndqIpjDxQdSeqi37FbgoHBmQ1syy6ZjkbBn
-  port: 51348
-  server: 103.174.86.113
-  type: ss
+- name: 伊朗-1
+  network: ws
+  port: 35208
+  server: 2.189.130.90
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: 173a3cf8-a87b-4e07-93cb-6a683712d13e
+  ws-opts:
+    path: /
 - name: 约旦-1
   network: ws
   port: 2096
@@ -322,40 +314,62 @@ proxies:
   name: 日本-1
   password: shadowsocks
   port: 443
-  server: 149.22.87.241
-  type: ss
-- cipher: aes-128-gcm
-  name: 日本-2
-  password: shadowsocks
-  port: 443
   server: 149.22.87.240
   type: ss
 - cipher: chacha20-ietf-poly1305
   name: 荷兰-1
-  password: 5Au7NhFmcBqMnika4KVk7h4ZdV3wD4hFtJ8PJ3AlHzLeU1chEBaz19a643q7hBPV
-  port: 19175
-  server: 79.127.239.84
+  password: SjdGCHwafjktt1rzpGxTKYTvVBWb8Xa6E5DTr6MzbdHQSwvpLiDczj3n6MBjy2uyFSzgqgvCWsDQmpM4VQzfPzyGYF58wdyD
+  port: 42029
+  server: 208.67.105.196
   type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 荷兰-2
-  password: 5Au7NhFmcBqMnika4KVk7h4ZdV3wD4hFtJ8PJ3AlHzLeU1chEBaz19a643q7hBPV
-  port: 19175
-  server: ams1.fromblancwithlove.com
-  type: ss
-- name: 俄罗斯联邦-1
+- alterId: 0
+  cipher: auto
+  name: 俄罗斯联邦-1
   network: ws
-  port: 443
-  server: 188.42.145.159
-  servername: VIrgiNiavPn-nL.pagEs.dEv
+  port: 8080
+  server: n002.kovmk.website
+  servername: n002.kovmk.website
   skip-cert-verify: true
   tls: true
-  type: vless
+  type: vmess
   udp: true
-  uuid: 54ef4ecf-ff37-436a-be13-95c8a8a1114d
+  uuid: 6dde3b3f-0a00-448a-a406-26d0960d1655
   ws-opts:
     headers:
-      Host: VIrgiNiavPn-nL.pagEs.dEv
-    path: /security=tls
+      Host: daohang.kovmk.website
+    path: /xyz
+- alterId: 0
+  cipher: auto
+  name: 俄罗斯联邦-2
+  network: ws
+  port: 8080
+  server: n001.kovmk.website
+  servername: n001.kovmk.website
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 92f1932f-ee19-464f-900c-93df90df830d
+  ws-opts:
+    headers:
+      Host: daohang.kovmk.website
+    path: /xyz
+- alterId: 0
+  cipher: auto
+  name: 俄罗斯联邦-3
+  network: ws
+  port: 8080
+  server: m003.mmzhk.website
+  servername: m003.mmzhk.website
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 6dde3b3f-0a00-448a-a406-26d0960d1655
+  ws-opts:
+    headers:
+      Host: daohang.mmzhk.website
+    path: /xyz
 - name: 塞舌尔-1
   network: ws
   port: 2096
@@ -389,8 +403,10 @@ proxies:
   port: 2096
   server: 154.83.2.54
   servername: am-tunnel-6fs.pages.dev
+  skip-cert-verify: true
   tls: true
   type: vless
+  udp: true
   uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
   ws-opts:
     headers:
@@ -401,10 +417,8 @@ proxies:
   port: 2096
   server: 154.83.2.54
   servername: am-tunnel-6fs.pages.dev
-  skip-cert-verify: true
   tls: true
   type: vless
-  udp: true
   uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
   ws-opts:
     headers:
@@ -424,44 +438,27 @@ proxies:
     path: /servernett
 - name: 美国-2
   network: ws
-  port: 8880
-  server: 104.19.209.229
-  type: vless
-  udp: true
-  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
-  ws-opts:
-    headers:
-      Host: late-tooth.granzinhannah.workers.dev
-    path: /?ed=2560
-- cipher: chacha20-ietf-poly1305
-  name: 美国-3
-  password: flj72wu+&R
-  port: 42445
-  server: 150.241.95.62
-  type: ss
-- cipher: aes-128-gcm
-  name: 美国-4
-  password: shadowsocks
-  port: 443
-  server: 156.146.38.168
-  type: ss
-- name: 美国-5
-  network: ws
   port: 80
-  server: 199.232.37.15
+  server: 167.82.30.71
   skip-cert-verify: false
   type: vless
   udp: true
   uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   ws-opts:
     headers:
-      Host: sara193.ir
-    path: /BCXzvAcvSB7JzMWj?ed=2560
+      Host: samane.ir
+    path: /4u7lAS4nPLtz0xPz?ed=2560
+- cipher: chacha20-ietf-poly1305
+  name: 美国-3
+  password: flj72wu+&R
+  port: 42445
+  server: 150.241.95.62
+  type: ss
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  name: 美国-6
+  name: 美国-4
   network: ws
   port: 443
   server: 199.232.5.101
@@ -475,6 +472,24 @@ proxies:
     headers:
       Host: mefa.ir
     path: /H?ed=2560
+- name: 美国-5
+  network: ws
+  port: 80
+  server: 199.232.37.15
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: sara193.ir
+    path: /BCXzvAcvSB7JzMWj?ed=2560
+- cipher: aes-128-gcm
+  name: 美国-6
+  password: shadowsocks
+  port: 443
+  server: 156.146.38.168
+  type: ss
 - name: 美国-7
   network: ws
   port: 80
@@ -487,11 +502,34 @@ proxies:
     headers:
       Host: sara193.ir
     path: /BCXzvAcvSB7JzMWj?ed=2560
+- cipher: aes-256-gcm
+  name: 美国-8
+  password: Y6R9pAtvxxzmGC
+  port: 5000
+  server: 38.110.1.107
+  type: ss
+- name: 美国-9
+  network: ws
+  port: 8880
+  server: 104.19.209.229
+  type: vless
+  udp: true
+  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
+  ws-opts:
+    headers:
+      Host: late-tooth.granzinhannah.workers.dev
+    path: /?ed=2560
+- cipher: aes-256-gcm
+  name: 美国-10
+  password: Y6R9pAtvxxzmGC
+  port: 3389
+  server: 23.134.94.168
+  type: ss
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  name: 美国-8
+  name: 美国-11
   network: ws
   port: 443
   server: www.speedtest.net
@@ -505,45 +543,7 @@ proxies:
     headers:
       Host: cconfigplus.spdtest.ggff.net
     path: /W5V92vB3BQrJH2yY?ed=2560
-- cipher: aes-256-gcm
-  name: 美国-9
-  password: Y6R9pAtvxxzmGC
-  port: 3389
-  server: 23.134.94.168
-  type: ss
-- cipher: aes-256-gcm
-  name: 美国-10
-  password: Y6R9pAtvxxzmGC
-  port: 5000
-  server: 38.110.1.107
-  type: ss
-- name: 美国-11
-  password: wkmY1R4EcP
-  port: 443
-  server: 216.128.147.13
-  skip-cert-verify: true
-  sni: z-v2-003274.kailib.com
-  type: trojan
-  udp: false
-- cipher: aes-256-gcm
-  name: 美国-12
-  password: g5MeD6Ft3CWlJId
-  port: 5004
-  server: 142.202.48.105
-  type: ss
-- name: 美国-13
-  network: ws
-  port: 80
-  server: 167.82.30.71
-  skip-cert-verify: false
-  type: vless
-  udp: true
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  ws-opts:
-    headers:
-      Host: samane.ir
-    path: /4u7lAS4nPLtz0xPz?ed=2560
-- name: 美国-14
+- name: 美国-12
   network: ws
   password: auto
   port: 443
@@ -555,15 +555,9 @@ proxies:
     headers:
       Host: vip.123789.pp.ua
     path: /
-- cipher: aes-256-gcm
-  name: 美国-15
-  password: PCnnH6SQSnfoS27
-  port: 8090
-  server: 38.121.43.204
-  type: ss
 - alterId: 0
   cipher: auto
-  name: 美国-16
+  name: 美国-13
   network: ws
   port: 443
   server: 104.19.72.200
@@ -577,83 +571,133 @@ proxies:
     headers:
       Host: sjuzius.zdzdzd.xyz
     path: /juzi
-- alterId: 0
-  cipher: auto
-  name: 美国-17
+- name: 美国-14
   network: ws
-  port: 443
-  server: 69.50.93.90
-  skip-cert-verify: true
-  tls: true
-  type: vmess
+  port: 80
+  server: 151.101.2.165
+  skip-cert-verify: false
+  type: vless
   udp: true
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  uuid: 4639cda7-0742-4bcd-ab1e-b7c879c2189c
   ws-opts:
     headers:
-      Host: 69.50.93.90
-    path: /linkvws
-- alterId: 0
-  cipher: auto
-  name: 美国-18
+      Host: que4.ir
+    path: /v2pedia?ed=2048
+- alpn:
+  - http/1.1
+  client-fingerprint: random
+  name: 美国-15
   network: ws
   port: 443
-  server: 69.50.93.90
-  skip-cert-verify: true
+  server: 172.67.39.222
+  servername: yelafohfh9f9ufun.thelastronin.cloudns.org
+  skip-cert-verify: false
   tls: true
-  type: vmess
+  type: vless
   udp: true
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  uuid: eb64ed2c-46b3-4f67-b64d-5832cb810c65
   ws-opts:
-    path: /linkvws
-- client-fingerprint: chrome
+    headers:
+      Host: yelan.thelastronin.cloudns.org
+    path: /VLESS/nl-full.privateip.net
+- name: 美国-16
+  network: ws
+  port: 8443
+  server: 104.21.69.44
+  servername: ggho.pages.dev.
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 17fafaf9-7402-40eb-87ae-a75944c84c52
+  ws-opts:
+    headers:
+      Host: ggho.pages.dev.
+    path: /Telegram-@V2ray_Alpha/?ed=2048
+- name: 美国-17
+  network: ws
+  port: 8880
+  server: 104.20.19.168
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
+  ws-opts:
+    headers:
+      Host: late-tooth.granzinhannah.workers.dev
+    path: /?ed=2048
+- name: 美国-18
+  network: ws
+  port: 8880
+  server: 104.20.71.132
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
+  ws-opts:
+    headers:
+      Host: late-tooth.granzinhannah.workers.dev
+    path: /Telegram@Linkvws?ed=2560
+- alpn:
+  - http/1.1
+  alterId: 0
+  cipher: auto
   name: 美国-19
   network: ws
   port: 443
-  server: hajlab.ucdavis.edu
-  servername: hajlab.ucdavis.edu
-  skip-cert-verify: false
+  server: www.baldengineer.com
+  servername: yen63jj36j3jfflan.thelastronin.cloudns.org
+  skip-cert-verify: true
   tls: true
-  type: vless
+  type: vmess
   udp: true
-  uuid: 9e8aad0e-5ba2-4005-b5fb-03521dc00345
+  uuid: f584de15-2034-4170-a723-f48c2bae5e0f
   ws-opts:
     headers:
-      Host: wWw.SpEeDtEsT.NeT.ZuLa.aIr.IkCoSaLeS.iR.D662599.v03.TzZLiMitTNeW.NeT
-    path: /
-- client-fingerprint: chrome
-  name: 美国-20
+      Host: yelan.thelastronin.cloudns.org
+    path: /linkws/afrhms16v.bestxray.buzz
+- name: 美国-20
   network: ws
-  port: 443
-  server: hajlab.ucdavis.edu
-  servername: hajlab.ucdavis.edu
+  port: 2095
+  server: www.speedtest.net
   skip-cert-verify: false
-  tls: true
   type: vless
   udp: true
-  uuid: 9e8aad0e-5ba2-4005-b5fb-03521dc00345
+  uuid: a70e1ca7-0cfa-5d07-b068-ca7657f9aba8
   ws-opts:
     headers:
-      Host: wWw.SpEeDtEsT.NeT.ZuLa.aIr.IkCoSaLeS.iR.D662599.v10.TzZLiMitTNeW.NeT
-    path: /
+      Host: www.digikala.com.joinTelegram.mosiv2.fi3.vless.Sitespeedtest.net.
+    path: /join-@mosiv2-@mosiv2-?ed=2048
+- name: 美国-21
+  network: ws
+  port: 2052
+  server: www.speedtest.net
+  skip-cert-verify: false
+  type: vless
+  udp: true
+  uuid: bd51708b-07de-561f-9053-d2e90ca4ee20
+  ws-opts:
+    headers:
+      Host: www.digikala.com.joinTelegram.mosiv2.pl1.vless.Sitespeedtest.net.
+    path: /join-@mosiv2-@mosiv2-?ed=2048
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
   - '自动选择: 49个'
   - '手动选择: 49个'
-  - '阿联酋分区: 1个'
   - '加拿大分区: 2个'
-  - '中国分区: 2个'
+  - '中国分区: 1个'
   - '哥斯达黎加分区: 1个'
-  - '法国分区: 1个'
-  - '美国分区: 20个'
+  - '法国分区: 2个'
+  - '美国分区: 21个'
   - '英国分区: 9个'
   - '爱尔兰分区: 1个'
-  - '印度分区: 1个'
+  - '伊朗分区: 1个'
   - '约旦分区: 1个'
-  - '日本分区: 2个'
-  - '荷兰分区: 2个'
-  - '俄罗斯联邦分区: 1个'
+  - '日本分区: 1个'
+  - '荷兰分区: 1个'
+  - '俄罗斯联邦分区: 3个'
   - '塞舌尔分区: 4个'
   - '瑞典分区: 1个'
   type: select
@@ -672,21 +716,6 @@ proxy-groups:
   include-all: true
   name: '手动选择: 49个'
   type: select
-- filter: (?i)阿联酋|AE|ae
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ae.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '阿联酋分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
 - filter: (?i)加拿大|CA|ca
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ca.svg
@@ -710,7 +739,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 2个'
+  name: '中国分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -740,7 +769,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '法国分区: 1个'
+  name: '法国分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -755,7 +784,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 20个'
+  name: '美国分区: 21个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -792,15 +821,15 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)印度|IN|in
+- filter: (?i)伊朗|IR|ir
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/in.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ir.svg
   include-all-providers: true
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '印度分区: 1个'
+  name: '伊朗分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -830,7 +859,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '日本分区: 2个'
+  name: '日本分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -845,7 +874,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '荷兰分区: 2个'
+  name: '荷兰分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -860,7 +889,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '俄罗斯联邦分区: 1个'
+  name: '俄罗斯联邦分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
