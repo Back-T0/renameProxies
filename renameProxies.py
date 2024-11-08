@@ -182,7 +182,7 @@ def rename_proxies(proxies, nation_cache):
     default_group = {
         "type": "select",
         "name": "默认代理",
-        "proxies": [item["name"] for item in proxy_groups],
+        "proxies": []+[item["name"] for item in proxy_groups],
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png",
     }
     proxy_groups.insert(0, default_group)
