@@ -144,8 +144,25 @@ def rename_proxies(proxies, nation_cache):
     }
     proxy_groups.insert(0, select_group)
 
+    # 创建自动选择代理组(国外)
+    overseas_group_name = [item for item in all_proxy_names if not any(keyword in item for keyword in ["中国","香港"])]
+    auto_select_group_exp = {
+        "interval": 300,
+        "timeout": 1500,
+        "url": "https://www.google.com/generate_204",
+        "lazy": True,
+        "max-failed-times": 3,
+        "type": "url-test",
+        "include-all-providers": True,
+        "hidden": False,
+        "proxies": overseas_group_name,
+        "name": f"自动选择(国外): {len(overseas_group_name)}个",
+        "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png",
+    }
+    proxy_groups.insert(0, auto_select_group_exp)
+
+
     # 创建自动选择代理组
-    all_proxy_names = [proxy["name"] for proxy in new_proxies]
     auto_select_group = {
         "interval": 300,
         "timeout": 1500,
@@ -167,7 +184,7 @@ def rename_proxies(proxies, nation_cache):
         "name": "默认代理",
         "proxies": [auto_select_group["name"]]
         + [select_group["name"]]
-        + [group["name"] for group in proxy_groups[2:]],
+        + [group["name"] for group in proxy_groups[3:]],
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png",
     }
     proxy_groups.insert(0, default_group)
