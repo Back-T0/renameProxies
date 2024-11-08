@@ -728,323 +728,361 @@ proxies:
     headers:
       Host: edgetunnel.2424014450.workers.dev
     path: /proxyIP=proxyip.oracle.fxxk.dedyn.io
-proxy-groups: &id001
+proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
-  proxies: *id001
+  proxies:
+  - &id001
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
+    include-all: true
+    include-all-providers: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '自动选择: 53个'
+    timeout: 1500
+    type: url-test
+    url: https://www.google.com/generate_204
+  - &id002
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
+    include-all-providers: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '自动选择(国外): 46个'
+    proxies:
+    - 日本-1
+    - 新加坡-1
+    - 新加坡-2
+    - 韩国-1
+    - 美国-1
+    - 韩国-2
+    - 韩国-3
+    - 美国-2
+    - 韩国-4
+    - 韩国-5
+    - 韩国-6
+    - 韩国-7
+    - 韩国-8
+    - 韩国-9
+    - 英国-1
+    - 韩国-10
+    - 德国-1
+    - 韩国-11
+    - 德国-2
+    - 德国-3
+    - 瑞士-1
+    - 美国-3
+    - 韩国-12
+    - 荷兰-1
+    - 德国-4
+    - 新加坡-3
+    - 加拿大-1
+    - 西班牙-1
+    - 瑞典-1
+    - 法国-1
+    - 立陶宛-1
+    - 英国-2
+    - 德国-5
+    - 英国-3
+    - 美国-4
+    - 韩国-13
+    - 美国-5
+    - 美国-6
+    - 爱尔兰-1
+    - 韩国-14
+    - 韩国-15
+    - 韩国-16
+    - 韩国-17
+    - 瑞典-2
+    - 美国-7
+    - 美国-8
+    timeout: 1500
+    type: url-test
+    url: https://www.google.com/generate_204
+  - &id003
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
+    include-all: true
+    name: '手动选择: 53个'
+    type: select
+  - &id004
+    filter: (?i)日本|JP|jp
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '日本分区: 1个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id005
+    filter: (?i)香港|HK|hk
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '香港分区: 2个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id006
+    filter: (?i)新加坡|SG|sg
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '新加坡分区: 3个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id007
+    filter: (?i)中国|CN|cn
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '中国分区: 5个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id008
+    filter: (?i)韩国|KR|kr
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kr.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '韩国分区: 17个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id009
+    filter: (?i)美国|US|us
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '美国分区: 8个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id010
+    filter: (?i)英国|GB|gb
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '英国分区: 3个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id011
+    filter: (?i)德国|DE|de
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '德国分区: 5个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id012
+    filter: (?i)瑞士|CH|ch
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ch.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '瑞士分区: 1个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id013
+    filter: (?i)荷兰|NL|nl
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/nl.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '荷兰分区: 1个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id014
+    filter: (?i)加拿大|CA|ca
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ca.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '加拿大分区: 1个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id015
+    filter: (?i)西班牙|ES|es
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/es.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '西班牙分区: 1个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id016
+    filter: (?i)瑞典|SE|se
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/se.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '瑞典分区: 2个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id017
+    filter: (?i)法国|FR|fr
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fr.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '法国分区: 1个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id018
+    filter: (?i)立陶宛|LT|lt
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lt.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '立陶宛分区: 1个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
+  - &id019
+    filter: (?i)爱尔兰|IE|ie
+    hidden: false
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ie.svg
+    include-all-providers: true
+    include-all-proxies: true
+    interval: 300
+    lazy: true
+    max-failed-times: 3
+    name: '爱尔兰分区: 1个'
+    proxies:
+    - COMPATIBLE
+    strategy: round-robin
+    timeout: 1500
+    type: load-balance
+    url: https://www.google.com/generate_204
   type: select
-- hidden: false
-  icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
-  include-all: true
-  include-all-providers: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '自动选择: 53个'
-  timeout: 1500
-  type: url-test
-  url: https://www.google.com/generate_204
-- hidden: false
-  icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
-  include-all-providers: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '自动选择(国外): 46个'
-  proxies:
-  - 日本-1
-  - 新加坡-1
-  - 新加坡-2
-  - 韩国-1
-  - 美国-1
-  - 韩国-2
-  - 韩国-3
-  - 美国-2
-  - 韩国-4
-  - 韩国-5
-  - 韩国-6
-  - 韩国-7
-  - 韩国-8
-  - 韩国-9
-  - 英国-1
-  - 韩国-10
-  - 德国-1
-  - 韩国-11
-  - 德国-2
-  - 德国-3
-  - 瑞士-1
-  - 美国-3
-  - 韩国-12
-  - 荷兰-1
-  - 德国-4
-  - 新加坡-3
-  - 加拿大-1
-  - 西班牙-1
-  - 瑞典-1
-  - 法国-1
-  - 立陶宛-1
-  - 英国-2
-  - 德国-5
-  - 英国-3
-  - 美国-4
-  - 韩国-13
-  - 美国-5
-  - 美国-6
-  - 爱尔兰-1
-  - 韩国-14
-  - 韩国-15
-  - 韩国-16
-  - 韩国-17
-  - 瑞典-2
-  - 美国-7
-  - 美国-8
-  timeout: 1500
-  type: url-test
-  url: https://www.google.com/generate_204
-- icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
-  include-all: true
-  name: '手动选择: 53个'
-  type: select
-- filter: (?i)日本|JP|jp
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '日本分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)香港|HK|hk
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '香港分区: 2个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)新加坡|SG|sg
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '新加坡分区: 3个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)中国|CN|cn
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '中国分区: 5个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)韩国|KR|kr
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kr.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '韩国分区: 17个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)美国|US|us
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '美国分区: 8个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)英国|GB|gb
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '英国分区: 3个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)德国|DE|de
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '德国分区: 5个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)瑞士|CH|ch
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ch.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '瑞士分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)荷兰|NL|nl
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/nl.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '荷兰分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)加拿大|CA|ca
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ca.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '加拿大分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)西班牙|ES|es
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/es.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '西班牙分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)瑞典|SE|se
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/se.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '瑞典分区: 2个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)法国|FR|fr
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fr.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '法国分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)立陶宛|LT|lt
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lt.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '立陶宛分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)爱尔兰|IE|ie
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ie.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '爱尔兰分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
+- *id001
+- *id002
+- *id003
+- *id004
+- *id005
+- *id006
+- *id007
+- *id008
+- *id009
+- *id010
+- *id011
+- *id012
+- *id013
+- *id014
+- *id015
+- *id016
+- *id017
+- *id018
+- *id019
 rules:
 - GEOIP,lan,DIRECT,no-resolve
 - GEOSITE,category-ads-all,REJECT
