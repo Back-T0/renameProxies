@@ -145,7 +145,11 @@ def rename_proxies(proxies, nation_cache):
     proxy_groups.insert(0, select_group)
 
     # 创建自动选择代理组(国外)
-    overseas_group_name = [item for item in all_proxy_names if not any(keyword in item for keyword in ["中国","香港"])]
+    overseas_group_name = [
+        item
+        for item in all_proxy_names
+        if not any(keyword in item for keyword in ["中国", "香港"])
+    ]
     auto_select_group_exp = {
         "interval": 300,
         "timeout": 1500,
@@ -154,13 +158,33 @@ def rename_proxies(proxies, nation_cache):
         "max-failed-times": 3,
         "type": "url-test",
         "include-all-providers": True,
-        "hidden": False,
+        "hidden": True,
         "proxies": overseas_group_name,
         "name": f"自动选择(国外): {len(overseas_group_name)}个",
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png",
     }
     proxy_groups.insert(0, auto_select_group_exp)
 
+    # 创建自动选择代理组(国内)
+    domestic_group_name = [
+        item
+        for item in all_proxy_names
+        if any(keyword in item for keyword in ["中国", "香港"])
+    ]
+    auto_select_group_exp = {
+        "interval": 300,
+        "timeout": 1500,
+        "url": "https://www.google.com/generate_204",
+        "lazy": True,
+        "max-failed-times": 3,
+        "type": "url-test",
+        "include-all-providers": True,
+        "hidden": True,
+        "proxies": domestic_group_name,
+        "name": f"自动选择(国内): {len(domestic_group_name)}个",
+        "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png",
+    }
+    proxy_groups.insert(0, auto_select_group_exp)
 
     # 创建自动选择代理组
     auto_select_group = {
@@ -182,7 +206,7 @@ def rename_proxies(proxies, nation_cache):
     default_group = {
         "type": "select",
         "name": "默认代理",
-        "proxies": []+[item["name"] for item in proxy_groups],
+        "proxies": [item["name"] for item in proxy_groups],
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png",
     }
     proxy_groups.insert(0, default_group)
@@ -220,7 +244,7 @@ def main():
     replace_yaml_sections(
         "template.yaml", renamed_proxies, proxy_groups, "finalConfig.yaml"
     )
-    
+
     url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml"
     yaml_content = fetch_yaml(url)
     proxies = parse_yaml(yaml_content)
