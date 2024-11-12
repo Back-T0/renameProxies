@@ -74,7 +74,21 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- name: 保加利亚-1
+- client-fingerprint: chrome
+  name: 保加利亚-1
+  network: ws
+  port: 11211
+  server: 77.77.25.122
+  servername: vless.ifx.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
+- name: 保加利亚-2
   network: ws
   port: 11211
   server: 77.77.25.122
@@ -93,51 +107,24 @@ proxies:
   port: 443
   server: 149.22.95.183
   type: ss
+  udp: true
 - cipher: aes-128-gcm
   name: 加拿大-2
   password: shadowsocks
   port: 443
   server: 149.22.95.183
   type: ss
-  udp: true
 - cipher: aes-128-gcm
   name: 加拿大-3
   password: shadowsocks
   port: 443
   server: 149.22.95.183
   type: ss
-- alterId: 0
-  cipher: auto
-  name: 加拿大-4
-  network: ws
-  port: 443
-  server: 23.162.200.227
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    path: /linkvws
-- alterId: 0
-  cipher: auto
-  name: 加拿大-5
-  network: ws
-  port: 443
-  server: 23.162.200.227
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: 23.162.200.227
-    path: /linkvws
 - alterId: 64
   cipher: auto
   name: 中国-1
   network: tcp
-  port: 46602
+  port: 51704
   server: 183.236.51.23
   skip-cert-verify: true
   tls: false
@@ -156,67 +143,15 @@ proxies:
   cipher: auto
   name: 中国-3
   network: tcp
-  port: 51704
+  port: 46602
   server: 183.236.51.23
   skip-cert-verify: true
   tls: false
   type: vmess
   udp: true
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- name: 捷克-1
-  network: ws
-  port: 8000
-  server: 194.87.11.56
-  servername: vless.ifx.us.kg
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- name: 德国-1
-  network: ws
-  port: 8080
-  server: 91.107.191.214
-  servername: vless.ifx.us.kg
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- name: 德国-2
-  network: ws
-  port: 8080
-  server: 176.9.50.58
-  servername: vless.ifx.us.kg
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- name: 德国-3
-  network: ws
-  port: 8080
-  server: 91.107.140.10
-  servername: vless.ifx.us.kg
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
 - client-fingerprint: chrome
-  name: 德国-4
+  name: 德国-1
   network: ws
   port: 2003
   server: 152.53.13.241
@@ -230,7 +165,7 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 德国-5
+- name: 德国-2
   network: ws
   port: 2003
   server: 152.53.13.241
@@ -243,10 +178,10 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 德国-6
+- name: 德国-3
   network: ws
   port: 8080
-  server: 213.139.72.80
+  server: 176.9.50.58
   servername: vless.ifx.us.kg
   tls: true
   type: vless
@@ -257,6 +192,13 @@ proxies:
       Host: vless.ifx.us.kg
     path: /?ed=2560
 - name: 法国-1
+  password: telegram-id-privatevpns
+  port: 22222
+  server: 15.188.212.240
+  skip-cert-verify: true
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 法国-2
   network: ws
   port: 2501
   server: 77.221.152.41
@@ -269,7 +211,7 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 法国-2
+- name: 法国-3
   network: ws
   port: 2501
   server: 77.221.152.41
@@ -314,6 +256,34 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
+- client-fingerprint: chrome
+  name: 伊朗-1
+  network: ws
+  port: 52418
+  server: 2.189.104.10
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: c31d6b4e-6105-4197-c94d-c45bce6c23a2
+  ws-opts:
+    path: /
+- client-fingerprint: chrome
+  name: 伊朗-2
+  network: ws
+  port: 59058
+  server: 2.189.130.90
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 4748c66f-6fd4-48ca-d64d-164af297af09
+  ws-opts:
+    path: /
+- name: 日本-1
+  password: an70aOaIjcCF43gOlSB6eKER53Z38DYDx8l9RCSCpYTwXS3pueyAqyFZx2zDNA
+  port: 443
+  server: plowman.meijireform.com
+  skip-cert-verify: false
+  type: trojan
 - name: 美国-4
   network: ws
   port: 443
@@ -328,34 +298,7 @@ proxies:
     headers:
       Host: Falcunargo.net
     path: /5Ve373mPjKg4vceF?ed
-- name: 韩国-1
-  network: ws
-  port: 33890
-  server: 221.166.163.61
-  servername: vless.ifx.us.kg
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
 - name: 荷兰-1
-  network: ws
-  port: 2501
-  server: 194.246.81.62
-  servername: vless.ifx.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- name: 荷兰-2
   network: ws
   port: 2501
   server: 89.110.102.115
@@ -370,22 +313,7 @@ proxies:
       Host: vless.ifx.us.kg
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 荷兰-3
-  network: ws
-  port: 2501
-  server: 194.246.81.62
-  servername: vless.ifx.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 荷兰-4
+  name: 荷兰-2
   network: ws
   port: 2501
   server: 89.110.102.115
@@ -427,13 +355,11 @@ proxies:
     headers:
       Host: VIrgiNiavPn-nL.pagEs.dEv
     path: /security=tls
-- client-fingerprint: chrome
-  name: 俄罗斯联邦-1
+- name: 俄罗斯联邦-1
   network: ws
   port: 8080
   server: 91.219.150.221
   servername: vless.ifx.us.kg
-  skip-cert-verify: false
   tls: true
   type: vless
   udp: true
@@ -442,12 +368,13 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 俄罗斯联邦-2
+- client-fingerprint: chrome
+  name: 俄罗斯联邦-2
   network: ws
   port: 8080
   server: 91.219.150.221
   servername: vless.ifx.us.kg
-  skip-cert-verify: true
+  skip-cert-verify: false
   tls: true
   type: vless
   udp: true
@@ -474,6 +401,7 @@ proxies:
   port: 8080
   server: 91.219.150.221
   servername: vless.ifx.us.kg
+  skip-cert-verify: true
   tls: true
   type: vless
   udp: true
@@ -496,21 +424,51 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560fp=chrome
-- name: 瑞典-1
+- alterId: 0
+  cipher: auto
+  name: 瑞典-1
   network: ws
-  port: 2501
-  server: 95.164.51.24
-  servername: vless.ifx.us.kg
+  port: 443
+  server: 185.146.173.59
+  servername: obdii.cfd
+  skip-cert-verify: true
   tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
   ws-opts:
     headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
+      Host: obdii.cfd
+    path: /linkws
 - client-fingerprint: chrome
   name: 瑞典-2
+  network: ws
+  port: 8080
+  server: 185.146.173.58
+  servername: lc73.lebasnoo.ir.
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: b69b17b9-4074-4316-9d80-103433d6bfe4
+  ws-opts:
+    headers:
+      Host: lc73.lebasnoo.ir.
+    path: /servernett
+- client-fingerprint: chrome
+  name: 瑞典-3
+  network: ws
+  port: 80
+  server: 185.146.173.58
+  servername: lc74.lebasnoo.ir.
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: ab8a989e-ccce-4e0d-9aa7-8ae87928858c
+  ws-opts:
+    headers:
+      Host: lc74.lebasnoo.ir.
+    path: /servernett
+- client-fingerprint: chrome
+  name: 瑞典-4
   network: ws
   port: 2501
   server: 95.164.51.24
@@ -518,13 +476,25 @@ proxies:
   skip-cert-verify: false
   tls: true
   type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
+- name: 瑞典-5
+  network: ws
+  port: 2501
+  server: 95.164.51.24
+  servername: vless.ifx.us.kg
+  tls: true
+  type: vless
   udp: true
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   ws-opts:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 瑞典-3
+- name: 瑞典-6
   network: ws
   port: 2501
   server: 95.164.51.24
@@ -538,7 +508,7 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 瑞典-4
+- name: 瑞典-7
   network: ws
   port: 2501
   server: 95.164.51.24
@@ -551,7 +521,7 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 瑞典-5
+- name: 瑞典-8
   network: ws
   port: 8080
   server: 185.146.173.58
@@ -577,7 +547,69 @@ proxies:
     headers:
       Host: bpB005.paGeS.DEv
     path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-5
+- cipher: chacha20-ietf-poly1305
+  name: 土耳其-1
+  password: wZZkAbTeHLw8AKN9mrpEz0FKWMCV6YW9b6888k2cqTl10PhT
+  port: 51348
+  server: 5.188.36.93
+  type: ss
+- client-fingerprint: chrome
+  name: 美国-5
+  network: ws
+  port: 80
+  server: 167.82.30.71
+  servername: samane.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: samane.ir
+    path: /4u7lAS4nPLtz0xPz?ed=2560
+- client-fingerprint: chrome
+  name: 美国-6
+  network: ws
+  port: 587
+  server: 150.136.230.175
+  servername: vless.ifx.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-7
+  network: ws
+  port: 8080
+  server: 5.161.222.137
+  servername: vless.ifx.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
+- alterId: 0
+  cipher: auto
+  name: 美国-8
+  network: ws
+  port: 443
+  server: obdii.cfd
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: obdii.cfd
+    path: /linkws
+- name: 美国-9
   network: ws
   port: 443
   server: 151.101.130.228
@@ -594,7 +626,7 @@ proxies:
 - alpn:
   - http/1.1
   client-fingerprint: randomized
-  name: 美国-6
+  name: 美国-10
   network: ws
   port: 443
   server: 151.101.130.228
@@ -608,36 +640,23 @@ proxies:
     headers:
       Host: Falcunargo.net
     path: /Telegram@V2ray_Alpha/?ed=2087
-- client-fingerprint: chrome
-  name: 美国-7
+- alterId: 0
+  cipher: auto
+  name: 美国-11
   network: ws
-  port: 80
-  server: 167.82.30.71
-  servername: samane.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  port: 443
+  server: speedtest.net
+  servername: mehrjavan.ir
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 57727d7d-8873-4000-b3f4-33a93fcfdd51
   ws-opts:
     headers:
-      Host: samane.ir
-    path: /4u7lAS4nPLtz0xPz?ed=2560
-- client-fingerprint: ios
-  name: 美国-8
-  network: ws
-  port: 80
-  server: 167.82.30.71
-  servername: samane.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  ws-opts:
-    headers:
-      Host: samane.ir
-    path: /4u7lAS4nPLtz0xPz?ed=2560
+      Host: mehrjavan.ir
+    path: /m28jcoZZUhkqg6pk11
 - client-fingerprint: chrome
-  name: 美国-9
+  name: 美国-12
   network: ws
   port: 443
   server: 199.232.5.79
@@ -651,7 +670,21 @@ proxies:
     headers:
       Host: mefa.ir
     path: /H?ed=2560
-- name: 美国-10
+- alterId: 0
+  cipher: auto
+  name: 美国-13
+  network: ws
+  port: 2087
+  server: www.speedtest.net
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 1d01e6ae-0d97-4a9f-af23-8d754085a94f
+  ws-opts:
+    headers:
+      Host: OfFeR.MirAclestORy.tOP.
+    path: /
+- name: 美国-14
   network: ws
   port: 80
   server: 167.82.30.71
@@ -663,54 +696,20 @@ proxies:
     headers:
       Host: samane.ir
     path: /4u7lAS4nPLtz0xPz?ed=2560
-- client-fingerprint: chromefp=chrome
-  name: 美国-11
-  network: ws
-  port: 80
-  server: 167.82.30.71
-  servername: samane.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  ws-opts:
-    headers:
-      Host: samane.ir
-    path: /4u7lAS4nPLtz0xPz?ed=2560fp=chromefp=chrome
-- name: 美国-12
-  network: ws
-  port: 80
-  server: 167.82.30.71
-  servername: samane.ir
-  skip-cert-verify: true
-  type: vless
-  udp: true
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  ws-opts:
-    headers:
-      Host: samane.ir
-    path: /4u7lAS4nPLtz0xPz?ed=2560fp=ios
 - cipher: aes-128-gcm
-  name: 美国-13
-  password: shadowsocks
-  port: 443
-  server: 156.146.38.168
-  type: ss
-- cipher: aes-128-gcm
-  name: 美国-14
-  password: shadowsocks
-  port: 443
-  server: 156.146.38.168
-  type: ss
-- alterId: -1
-  cipher: aes-128-gcm
   name: 美国-15
   password: shadowsocks
   port: 443
-  server: 37.19.198.160
+  server: 156.146.38.168
+  type: ss
+- cipher: aes-128-gcm
+  name: 美国-16
+  password: shadowsocks
+  port: 443
+  server: 156.146.38.168
   type: ss
 - client-fingerprint: chrome
-  name: 美国-16
+  name: 美国-17
   network: ws
   port: 80
   server: 167.82.30.71
@@ -723,8 +722,28 @@ proxies:
     headers:
       Host: samane.ir
     path: /4u7lAS4nPLtz0xPz?ed=2560fp=chrome
+- alterId: -1
+  cipher: aes-128-gcm
+  name: 美国-18
+  password: shadowsocks
+  port: 443
+  server: 37.19.198.160
+  type: ss
+- name: 美国-19
+  network: ws
+  port: 80
+  server: 167.82.30.71
+  servername: samane.ir
+  skip-cert-verify: true
+  type: vless
+  udp: true
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: samane.ir
+    path: /4u7lAS4nPLtz0xPz?ed=2560fp=ios
 - client-fingerprint: chrome
-  name: 美国-17
+  name: 美国-20
   network: ws
   port: 443
   server: 199.232.5.79
@@ -738,47 +757,7 @@ proxies:
     headers:
       Host: mefa.ir
     path: /H?ed=2560
-- alterId: -1
-  cipher: aes-128-gcm
-  name: 美国-18
-  password: shadowsocks
-  port: 443
-  server: 156.146.38.168
-  type: ss
-- cipher: aes-128-gcm
-  name: 美国-19
-  password: shadowsocks
-  port: 443
-  server: 156.146.38.168
-  type: ss
-  udp: true
-- client-fingerprint: chrome
-  name: 美国-20
-  network: ws
-  port: 80
-  server: 167.82.30.71
-  servername: samane.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  ws-opts:
-    headers:
-      Host: samane.ir
-    path: /4u7lAS4nPLtz0xPz?ed=2560fp=chromefp=chrome
-- cipher: aes-128-gcm
-  name: 美国-21
-  password: shadowsocks
-  port: 443
-  server: 37.19.198.160
-  type: ss
-- cipher: aes-128-gcm
-  name: 美国-22
-  password: shadowsocks
-  port: 443
-  server: 37.19.198.160
-  type: ss
-- name: 美国-23
+- name: 美国-21
   network: ws
   port: 80
   server: 167.82.30.71
@@ -792,28 +771,53 @@ proxies:
       Host: samane.ir
     path: /4u7lAS4nPLtz0xPz?ed=2560fp=chromefp=chromefp=chromefp=chrome
 - cipher: aes-128-gcm
-  name: 美国-24
+  name: 美国-22
+  password: shadowsocks
+  port: 443
+  server: 156.146.38.168
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 美国-23
   password: shadowsocks
   port: 443
   server: 37.19.198.160
   type: ss
-  udp: true
-- client-fingerprint: chrome
-  name: 美国-25
+- client-fingerprint: chromefp=chrome
+  name: 美国-24
   network: ws
-  port: 443
-  server: 199.232.5.101
-  servername: mefa.ir
-  skip-cert-verify: true
-  tls: true
+  port: 80
+  server: 167.82.30.71
+  servername: samane.ir
+  skip-cert-verify: false
+  tls: false
   type: vless
-  udp: true
   uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   ws-opts:
     headers:
-      Host: mefa.ir
-    path: /H?ed=2560
-- name: 美国-26
+      Host: samane.ir
+    path: /4u7lAS4nPLtz0xPz?ed=2560fp=chromefp=chrome
+- client-fingerprint: chrome
+  name: 美国-25
+  network: ws
+  port: 80
+  server: 167.82.30.71
+  servername: samane.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: samane.ir
+    path: /4u7lAS4nPLtz0xPz?ed=2560fp=chromefp=chrome
+- cipher: aes-128-gcm
+  name: 美国-26
+  password: shadowsocks
+  port: 443
+  server: 37.19.198.160
+  type: ss
+- name: 美国-27
   network: ws
   port: 443
   server: 199.34.228.168
@@ -827,21 +831,6 @@ proxies:
     headers:
       Host: bpB005.paGeS.DEv
     path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- client-fingerprint: chrome
-  name: 美国-27
-  network: ws
-  port: 443
-  server: 199.232.5.101
-  servername: mefa.ir
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  ws-opts:
-    headers:
-      Host: mefa.ir
-    path: /H?ed=2560
 - name: 美国-28
   network: ws
   port: 443
@@ -856,20 +845,6 @@ proxies:
     path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
 - name: 美国-29
   network: ws
-  port: 8443
-  server: 199.34.228.182
-  servername: bPb005.paGes.DEV
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /Telegram@V2ray_Alpha/?ed=2560
-- name: 美国-30
-  network: ws
   port: 443
   server: 199.34.228.182
   servername: bpB005.paGeS.DEv
@@ -882,19 +857,34 @@ proxies:
     headers:
       Host: bpB005.paGeS.DEv
     path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-31
+- name: 美国-30
   network: ws
-  port: 80
-  server: 167.82.30.71
-  servername: samane.ir
-  skip-cert-verify: true
+  port: 8443
+  server: 199.34.228.182
+  servername: bPb005.paGes.DEV
+  skip-cert-verify: false
+  tls: true
   type: vless
   udp: true
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
   ws-opts:
     headers:
-      Host: samane.ir
-    path: /4u7lAS4nPLtz0xPz?ed=2560fp=chromefp=chrome
+      Host: bPb005.paGes.DEV
+    path: /Telegram@V2ray_Alpha/?ed=2560
+- name: 美国-31
+  network: ws
+  port: 443
+  server: 199.34.228.171
+  servername: bpB005.paGeS.DEv
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  ws-opts:
+    headers:
+      Host: bpB005.paGeS.DEv
+    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
 - name: 美国-32
   network: ws
   port: 8443
@@ -909,19 +899,33 @@ proxies:
     path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
 - name: 美国-33
   network: ws
+  port: 80
+  server: 167.82.30.71
+  servername: samane.ir
+  skip-cert-verify: true
+  type: vless
+  udp: true
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: samane.ir
+    path: /4u7lAS4nPLtz0xPz?ed=2560fp=chromefp=chrome
+- client-fingerprint: chrome
+  name: 美国-34
+  network: ws
   port: 443
-  server: 199.34.228.171
-  servername: bpB005.paGeS.DEv
+  server: 199.232.5.101
+  servername: mefa.ir
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   ws-opts:
     headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-34
+      Host: mefa.ir
+    path: /H?ed=2560
+- name: 美国-35
   network: ws
   port: 8443
   server: 199.34.228.71
@@ -935,7 +939,7 @@ proxies:
     headers:
       Host: bPb005.paGes.DEV
     path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-35
+- name: 美国-36
   network: ws
   port: 2096
   server: 199.34.228.171
@@ -949,7 +953,7 @@ proxies:
     headers:
       Host: Bpb005.pageS.dev
     path: /hzhfpw9gkziupyad/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-36
+- name: 美国-37
   network: ws
   port: 443
   server: 199.34.228.173
@@ -961,49 +965,14 @@ proxies:
     headers:
       Host: bpB005.paGeS.DEv
     path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-37
-  network: ws
+- alterId: -1
+  cipher: aes-128-gcm
+  name: 美国-38
+  password: shadowsocks
   port: 443
-  server: 199.34.228.167
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-38
-  network: ws
-  port: 443
-  server: 199.34.228.135
-  servername: bpB005.paGeS.DEv
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bpB005.paGeS.DEv
-    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
+  server: 156.146.38.168
+  type: ss
 - name: 美国-39
-  network: ws
-  port: 443
-  server: 69.84.182.177
-  servername: lp.ylka.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lp.ylka.us.kg
-    path: /?ed=2560
-- name: 美国-40
   network: ws
   port: 443
   server: 199.34.228.181
@@ -1017,24 +986,11 @@ proxies:
     headers:
       Host: bpB005.paGeS.DEv
     path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-41
-  network: ws
-  port: 587
-  server: 150.136.230.175
-  servername: vless.ifx.us.kg
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- name: 美国-42
+- name: 美国-40
   network: ws
   port: 443
-  server: 199.34.228.162
-  servername: BPb005.pAgeS.Dev
+  server: 199.34.228.167
+  servername: bpB005.paGeS.DEv
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1042,8 +998,36 @@ proxies:
   uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
   ws-opts:
     headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
+      Host: bpB005.paGeS.DEv
+    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
+- name: 美国-41
+  network: ws
+  port: 443
+  server: 199.34.228.135
+  servername: bpB005.paGeS.DEv
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  ws-opts:
+    headers:
+      Host: bpB005.paGeS.DEv
+    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
+- name: 美国-42
+  network: ws
+  port: 443
+  server: 69.84.182.177
+  servername: lp.ylka.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  ws-opts:
+    headers:
+      Host: lp.ylka.us.kg
+    path: /?ed=2560
 - name: 美国-43
   network: ws
   port: 587
@@ -1057,7 +1041,61 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 美国-44
+- client-fingerprint: chrome
+  name: 美国-44
+  network: ws
+  port: 443
+  server: 199.232.5.101
+  servername: mefa.ir
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: mefa.ir
+    path: /H?ed=2560
+- name: 美国-45
+  network: ws
+  port: 587
+  server: 150.136.230.175
+  servername: vless.ifx.us.kg
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
+- name: 美国-46
+  network: ws
+  port: 8443
+  server: 66.235.200.146
+  servername: bPb005.paGes.DEV
+  tls: true
+  type: vless
+  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  ws-opts:
+    headers:
+      Host: bPb005.paGes.DEV
+    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
+- name: 美国-47
+  network: ws
+  port: 443
+  server: 199.34.228.162
+  servername: BPb005.pAgeS.Dev
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  ws-opts:
+    headers:
+      Host: BPb005.pAgeS.Dev
+    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
+- name: 美国-48
   network: ws
   password: bpb-trojan
   port: 443
@@ -1070,7 +1108,7 @@ proxies:
     headers:
       Host: mindrOOm-5cz.pAgEs.dEV
     path: /trC8BM8bTsAF0AnLYL?ed=2560
-- name: 美国-45
+- name: 美国-49
   network: ws
   password: bpb-trojan
   port: 443
@@ -1082,7 +1120,7 @@ proxies:
     headers:
       Host: mindrOOm-5cz.pAgEs.dEV
     path: /trC8BM8bTsAF0AnLYL
-- name: 美国-46
+- name: 美国-50
   network: ws
   port: 8080
   server: 5.161.222.137
@@ -1095,7 +1133,7 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 美国-47
+- name: 美国-51
   network: ws
   password: bpb-trojan
   port: 443
@@ -1107,58 +1145,6 @@ proxies:
     headers:
       Host: mindrOOm-5cz.pAgEs.dEV
     path: /trC8BM8bTsAF0AnLYL
-- name: 美国-48
-  network: ws
-  port: 8443
-  server: 66.235.200.146
-  servername: bPb005.paGes.DEV
-  tls: true
-  type: vless
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
-  ws-opts:
-    headers:
-      Host: bPb005.paGes.DEV
-    path: /fxhhv799mihz1xxp/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-49
-  network: ws
-  password: bpb-trojan
-  port: 443
-  server: 104.18.37.111
-  skip-cert-verify: true
-  sni: mindrOOm-5cz.pAgEs.dEV
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: mindrOOm-5cz.pAgEs.dEV
-    path: /trC8BM8bTsAF0AnLYL?ed=2560
-- name: 美国-50
-  network: ws
-  port: 587
-  server: 172.232.23.86
-  servername: vless.ifx.us.kg
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- alterId: -1
-  name: 美国-51
-  network: ws
-  password: bpb-trojan
-  port: 443
-  server: 104.18.37.111
-  skip-cert-verify: true
-  sni: mindrOOm-5cz.pAgEs.dEV
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: mindrOOm-5cz.pAgEs.dEV
-    path: /trC8BM8bTsAF0AnLYL?ed=2560
 - name: 美国-52
   network: ws
   password: bpb-trojan
@@ -1175,7 +1161,7 @@ proxies:
 - name: 美国-53
   network: ws
   port: 443
-  server: 199.34.228.177
+  server: 199.34.228.162
   servername: BPb005.pAgeS.Dev
   skip-cert-verify: true
   tls: true
@@ -1188,18 +1174,17 @@ proxies:
     path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
 - name: 美国-54
   network: ws
-  port: 443
-  server: 199.34.228.71
-  servername: BPb005.pAgeS.Dev
-  skip-cert-verify: true
+  port: 587
+  server: 172.232.23.86
+  servername: vless.ifx.us.kg
   tls: true
   type: vless
   udp: true
-  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   ws-opts:
     headers:
-      Host: BPb005.pAgeS.Dev
-    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
 - name: 美国-55
   network: ws
   port: 443
@@ -1214,10 +1199,37 @@ proxies:
     headers:
       Host: BPb005.pAgeS.Dev
     path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-56
+- alterId: -1
+  name: 美国-56
+  network: ws
+  password: bpb-trojan
+  port: 443
+  server: 104.18.37.111
+  skip-cert-verify: true
+  sni: mindrOOm-5cz.pAgEs.dEV
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: mindrOOm-5cz.pAgEs.dEV
+    path: /trC8BM8bTsAF0AnLYL?ed=2560
+- name: 美国-57
+  network: ws
+  password: bpb-trojan
+  port: 443
+  server: 104.18.37.111
+  skip-cert-verify: true
+  sni: mindrOOm-5cz.pAgEs.dEV
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: mindrOOm-5cz.pAgEs.dEV
+    path: /trC8BM8bTsAF0AnLYL?ed=2560
+- name: 美国-58
   network: ws
   port: 443
-  server: 199.34.228.162
+  server: 199.34.228.177
   servername: BPb005.pAgeS.Dev
   skip-cert-verify: true
   tls: true
@@ -1228,21 +1240,21 @@ proxies:
     headers:
       Host: BPb005.pAgeS.Dev
     path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- alterId: -1
-  name: 美国-57
+- name: 美国-59
   network: ws
-  password: bpb-trojan
   port: 443
-  server: 172.64.150.145
+  server: 199.34.228.71
+  servername: BPb005.pAgeS.Dev
   skip-cert-verify: true
-  sni: mindrOOm-5cz.pAgEs.dEV
-  type: trojan
+  tls: true
+  type: vless
   udp: true
+  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
   ws-opts:
     headers:
-      Host: mindrOOm-5cz.pAgEs.dEV
-    path: /trC8BM8bTsAF0AnLYL?ed=2560
-- name: 美国-58
+      Host: BPb005.pAgeS.Dev
+    path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
+- name: 美国-60
   network: ws
   port: 443
   server: 199.34.228.70
@@ -1256,20 +1268,21 @@ proxies:
     headers:
       Host: BPb005.pAgeS.Dev
     path: /81eqvt6gwdd8gwo8/mtuyljy3ljiznc40oq
-- name: 美国-59
+- alterId: -1
+  name: 美国-61
   network: ws
-  port: 587
-  server: 172.232.23.86
-  servername: vless.ifx.us.kg
-  tls: true
-  type: vless
+  password: bpb-trojan
+  port: 443
+  server: 172.64.150.145
+  skip-cert-verify: true
+  sni: mindrOOm-5cz.pAgEs.dEV
+  type: trojan
   udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   ws-opts:
     headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- name: 美国-60
+      Host: mindrOOm-5cz.pAgEs.dEV
+    path: /trC8BM8bTsAF0AnLYL?ed=2560
+- name: 美国-62
   network: ws
   port: 443
   server: 107.174.39.112
@@ -1283,7 +1296,20 @@ proxies:
     headers:
       Host: bpB005.paGeS.DEv
     path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
-- name: 美国-61
+- name: 美国-63
+  network: ws
+  port: 587
+  server: 172.232.23.86
+  servername: vless.ifx.us.kg
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
+- name: 美国-64
   network: ws
   port: 443
   server: 107.174.39.112
@@ -1299,24 +1325,25 @@ proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 98个'
+  - '自动选择: 101个'
   - '自动选择(国内): 3个'
-  - '自动选择(国外): 95个'
-  - '手动选择: 98个'
-  - '保加利亚分区: 1个'
-  - '加拿大分区: 5个'
+  - '自动选择(国外): 98个'
+  - '手动选择: 101个'
+  - '保加利亚分区: 2个'
+  - '加拿大分区: 3个'
   - '中国分区: 3个'
-  - '捷克分区: 1个'
-  - '德国分区: 6个'
-  - '法国分区: 2个'
-  - '美国分区: 61个'
+  - '德国分区: 3个'
+  - '法国分区: 3个'
+  - '美国分区: 64个'
   - '英国分区: 1个'
-  - '韩国分区: 1个'
-  - '荷兰分区: 4个'
+  - '伊朗分区: 2个'
+  - '日本分区: 1个'
+  - '荷兰分区: 2个'
   - '卢森堡分区: 2个'
   - '俄罗斯联邦分区: 5个'
-  - '瑞典分区: 5个'
+  - '瑞典分区: 8个'
   - '斯洛文尼亚分区: 1个'
+  - '土耳其分区: 1个'
   type: select
 - hidden: false
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -1325,7 +1352,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 98个'
+  name: '自动选择: 101个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -1349,33 +1376,29 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 95个'
+  name: '自动选择(国外): 98个'
   proxies:
   - 保加利亚-1
+  - 保加利亚-2
   - 加拿大-1
   - 加拿大-2
   - 加拿大-3
-  - 加拿大-4
-  - 加拿大-5
-  - 捷克-1
   - 德国-1
   - 德国-2
   - 德国-3
-  - 德国-4
-  - 德国-5
-  - 德国-6
   - 法国-1
   - 法国-2
+  - 法国-3
   - 美国-1
   - 美国-2
   - 美国-3
   - 英国-1
+  - 伊朗-1
+  - 伊朗-2
+  - 日本-1
   - 美国-4
-  - 韩国-1
   - 荷兰-1
   - 荷兰-2
-  - 荷兰-3
-  - 荷兰-4
   - 卢森堡-1
   - 卢森堡-2
   - 俄罗斯联邦-1
@@ -1388,7 +1411,11 @@ proxy-groups:
   - 瑞典-3
   - 瑞典-4
   - 瑞典-5
+  - 瑞典-6
+  - 瑞典-7
+  - 瑞典-8
   - 斯洛文尼亚-1
+  - 土耳其-1
   - 美国-5
   - 美国-6
   - 美国-7
@@ -1446,12 +1473,15 @@ proxy-groups:
   - 美国-59
   - 美国-60
   - 美国-61
+  - 美国-62
+  - 美国-63
+  - 美国-64
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all: true
-  name: '手动选择: 98个'
+  name: '手动选择: 101个'
   type: select
 - filter: (?i)保加利亚|BG|bg
   hidden: false
@@ -1461,7 +1491,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '保加利亚分区: 1个'
+  name: '保加利亚分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1476,7 +1506,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '加拿大分区: 5个'
+  name: '加拿大分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1498,21 +1528,6 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)捷克|CZ|cz
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cz.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '捷克分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
 - filter: (?i)德国|DE|de
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
@@ -1521,7 +1536,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '德国分区: 6个'
+  name: '德国分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1536,7 +1551,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '法国分区: 2个'
+  name: '法国分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1551,7 +1566,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 61个'
+  name: '美国分区: 64个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1573,15 +1588,30 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)韩国|KR|kr
+- filter: (?i)伊朗|IR|ir
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kr.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ir.svg
   include-all-providers: true
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '韩国分区: 1个'
+  name: '伊朗分区: 2个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)日本|JP|jp
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '日本分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1596,7 +1626,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '荷兰分区: 4个'
+  name: '荷兰分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1641,7 +1671,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '瑞典分区: 5个'
+  name: '瑞典分区: 8个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1657,6 +1687,21 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '斯洛文尼亚分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)土耳其|TR|tr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/tr.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '土耳其分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
