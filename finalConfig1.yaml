@@ -399,7 +399,7 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 俄罗斯联邦-1
+- name: 卢森堡-1
   network: ws
   port: 443
   server: 188.42.145.159
@@ -413,7 +413,7 @@ proxies:
     headers:
       Host: VIrgiNiavPn-nL.pagEs.dEv
     path: /
-- name: 俄罗斯联邦-2
+- name: 卢森堡-2
   network: ws
   port: 443
   server: 188.42.145.159
@@ -428,7 +428,7 @@ proxies:
       Host: VIrgiNiavPn-nL.pagEs.dEv
     path: /security=tls
 - client-fingerprint: chrome
-  name: 俄罗斯联邦-3
+  name: 俄罗斯联邦-1
   network: ws
   port: 8080
   server: 91.219.150.221
@@ -442,7 +442,7 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- name: 俄罗斯联邦-4
+- name: 俄罗斯联邦-2
   network: ws
   port: 8080
   server: 91.219.150.221
@@ -456,33 +456,33 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
+- name: 俄罗斯联邦-3
+  network: ws
+  port: 8080
+  server: 91.219.150.221
+  servername: vless.ifx.us.kg
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
+- name: 俄罗斯联邦-4
+  network: ws
+  port: 8080
+  server: 91.219.150.221
+  servername: vless.ifx.us.kg
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
 - name: 俄罗斯联邦-5
-  network: ws
-  port: 8080
-  server: 91.219.150.221
-  servername: vless.ifx.us.kg
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- name: 俄罗斯联邦-6
-  network: ws
-  port: 8080
-  server: 91.219.150.221
-  servername: vless.ifx.us.kg
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- name: 俄罗斯联邦-7
   network: ws
   port: 8080
   server: 91.219.150.221
@@ -1313,7 +1313,8 @@ proxy-groups:
   - '英国分区: 1个'
   - '韩国分区: 1个'
   - '荷兰分区: 4个'
-  - '俄罗斯联邦分区: 7个'
+  - '卢森堡分区: 2个'
+  - '俄罗斯联邦分区: 5个'
   - '瑞典分区: 5个'
   - '斯洛文尼亚分区: 1个'
   type: select
@@ -1375,13 +1376,13 @@ proxy-groups:
   - 荷兰-2
   - 荷兰-3
   - 荷兰-4
+  - 卢森堡-1
+  - 卢森堡-2
   - 俄罗斯联邦-1
   - 俄罗斯联邦-2
   - 俄罗斯联邦-3
   - 俄罗斯联邦-4
   - 俄罗斯联邦-5
-  - 俄罗斯联邦-6
-  - 俄罗斯联邦-7
   - 瑞典-1
   - 瑞典-2
   - 瑞典-3
@@ -1602,6 +1603,21 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
+- filter: (?i)卢森堡|LU|lu
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lu.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '卢森堡分区: 2个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
 - filter: (?i)俄罗斯联邦|RU|ru
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ru.svg
@@ -1610,7 +1626,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '俄罗斯联邦分区: 7个'
+  name: '俄罗斯联邦分区: 5个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
