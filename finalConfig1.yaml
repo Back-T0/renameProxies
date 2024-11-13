@@ -1163,7 +1163,7 @@ proxies:
       Host: abc.vpneee.top
     path: /YnqGMcAt/
 - client-fingerprint: chrome
-  name: 美国-46
+  name: 未知-1
   network: ws
   port: 443
   server: dpbum.whmvmkwuey.store
@@ -1179,7 +1179,7 @@ proxies:
     path: /
 - alterId: 0
   cipher: auto
-  name: 美国-47
+  name: 美国-46
   network: ws
   port: 443
   server: 188.114.97.2
@@ -1195,7 +1195,7 @@ proxies:
     path: /linkws
 - alterId: 0
   cipher: auto
-  name: 美国-48
+  name: 美国-47
   network: ws
   port: 443
   server: 188.114.96.3
@@ -1210,7 +1210,7 @@ proxies:
     path: /linkws
 - alterId: 0
   cipher: auto
-  name: 美国-49
+  name: 美国-48
   network: ws
   port: 443
   server: 188.114.97.2
@@ -1225,7 +1225,7 @@ proxies:
     path: /linkws
 - alterId: 0
   cipher: auto
-  name: 美国-50
+  name: 美国-49
   network: ws
   port: 443
   server: 172.67.175.56
@@ -1252,7 +1252,7 @@ proxy-groups:
   - '哥斯达黎加分区: 1个'
   - '德国分区: 3个'
   - '法国分区: 1个'
-  - '美国分区: 50个'
+  - '美国分区: 49个'
   - '英国分区: 2个'
   - '香港分区: 2个'
   - '日本分区: 1个'
@@ -1260,6 +1260,7 @@ proxy-groups:
   - '荷兰分区: 5个'
   - '卢森堡分区: 3个'
   - '瑞典分区: 6个'
+  - '未知分区: 1个'
   type: select
 - hidden: false
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -1367,11 +1368,11 @@ proxy-groups:
   - 美国-43
   - 美国-44
   - 美国-45
+  - 未知-1
   - 美国-46
   - 美国-47
   - 美国-48
   - 美国-49
-  - 美国-50
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -1492,7 +1493,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 50个'
+  name: '美国分区: 49个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1598,6 +1599,21 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '瑞典分区: 6个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)未知|cn|cn
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '未知分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
