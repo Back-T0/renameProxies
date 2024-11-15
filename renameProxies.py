@@ -121,7 +121,7 @@ def rename_proxies(proxies, nation_cache):
             "type": "load-balance",
             # "strategy": "consistent-hashing",
             "strategy": "round-robin",
-            "include-all-providers": True,
+            "include-all-providers": False,
             "hidden": False,
             "include-all-proxies": True,
             "filter": f"(?i){nation}|{iso_code}|{iso_code.lower()}",
