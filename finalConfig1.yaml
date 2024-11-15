@@ -62,7 +62,7 @@ geodata-mode: true
 geox-url:
   asn: https://mirror.ghproxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
   geoip: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
-  geosite: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  geosite: https://mirror.ghproxy.com/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/download/latest/geosite.dat
   mmdb: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
 global-client-fingerprint: chrome
 ipv6: true
@@ -94,15 +94,24 @@ proxies:
     headers:
       Host: juzi8186.5112233.xyz
     path: /?ed=2560
-- cipher: aes-128-gcm
-  name: 加拿大-1
-  password: shadowsocks
-  port: 443
-  server: 149.22.95.183
-  type: ss
 - alterId: 0
   cipher: auto
-  name: 加拿大-2
+  name: 奥地利-2
+  network: ws
+  port: 443
+  server: 212.183.88.77
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- alterId: 0
+  cipher: auto
+  name: 加拿大-1
   network: ws
   port: 443
   server: 23.162.200.227
@@ -123,20 +132,15 @@ proxies:
   tls: false
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- alterId: 0
+- alterId: 64
   cipher: auto
   name: 中国-2
-  network: ws
-  port: 33202
-  server: yd2.ainivp.com
+  port: 52112
+  server: 183.236.51.23
   skip-cert-verify: false
-  tls: true
+  tls: false
   type: vmess
-  uuid: 9204afcd-023e-781f-1abc-c12efccd1344
-  ws-opts:
-    headers:
-      Host: yd2.ainivp.com
-    path: /ray
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - alterId: 0
   cipher: auto
   name: 中国-3
@@ -186,8 +190,15 @@ proxies:
     headers:
       Host: late-tooth.granzinhannah.workers.dev
     path: /@AZARBAYJAB1@AZARBAYJAB1?ed=2560
+- name: 德国-1
+  password: telegram-id-privatevpns
+  port: 22222
+  server: 3.127.197.237
+  skip-cert-verify: true
+  sni: trojan.burgerip.co.uk
+  type: trojan
 - client-fingerprint: chrome
-  name: 德国-1
+  name: 德国-2
   network: ws
   port: 2003
   server: 152.53.13.241
@@ -201,7 +212,7 @@ proxies:
       Host: vless.ifx.us.kg
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 德国-2
+  name: 德国-3
   network: ws
   port: 2003
   server: 152.53.13.241
@@ -215,8 +226,51 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /ProxyIP=ProxyIP.US.fxxk.dedyn.io
+- alterId: 0
+  cipher: auto
+  name: 德国-4
+  network: ws
+  port: 443
+  server: 80.158.63.104
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- name: 法国-1
+  password: telegram-id-directvpn
+  port: 22222
+  server: 13.36.216.142
+  skip-cert-verify: true
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 法国-2
+  network: tcp
+  port: 8080
+  server: 95.182.98.207
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 55d021c0-53fa-488a-b223-d4a49aa8f2f2
+- name: 法国-3
+  network: ws
+  port: 22222
+  server: 13.37.253.85
+  servername: telegram-channel-vlessconfig.sohala.uk
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
+  ws-opts:
+    headers:
+      Host: telegram-channel-vlessconfig.sohala.uk
+    path: /telegram-channel-vlessconfig-ws
 - client-fingerprint: chrome
-  name: 法国-1
+  name: 法国-4
   network: ws
   port: 2501
   server: 77.221.152.41
@@ -229,15 +283,6 @@ proxies:
     headers:
       Host: vless.ifx.us.kg
     path: /?ed=2560
-- alterId: 0
-  cipher: auto
-  name: 英国-1
-  port: 8080
-  server: 185.189.58.195
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 8e2cca59-dac2-59c2-8396-8345a37e6ccd
 - client-fingerprint: chrome
   name: 香港-1
   network: ws
@@ -267,20 +312,41 @@ proxies:
     headers:
       Host: juzi8186.5112233.xyz
     path: /?ed=2560fp=random
-- client-fingerprint: chrome
-  name: 印度-1
+- name: 伊朗-1
   network: ws
-  port: 443
-  server: 129.154.46.115
-  servername: ap.ylks.xyz
+  port: 52418
+  server: 2.189.104.10
   skip-cert-verify: false
-  tls: true
+  tls: false
   type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  uuid: c31d6b4e-6105-4197-c94d-c45bce6c23a2
+  ws-opts:
+    path: /
+- alpn:
+  - h3%2Ch2
+  client-fingerprint: firefox
+  name: 伊朗-2
+  network: ws
+  port: 59058
+  server: 2.189.130.90
+  servername: 2.189.130.90
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 4748c66f-6fd4-48ca-d64d-164af297af09
   ws-opts:
     headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
+      Host: 2.189.130.90
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 伊朗-3
+  port: 5115
+  server: 185.49.231.102
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 48a00d77-ecef-4ea9-8d60-c7ea8ea0ea09
 - client-fingerprint: chrome
   name: 美国-1
   network: ws
@@ -296,49 +362,99 @@ proxies:
     headers:
       Host: Falcunargo.net
     path: /5Ve373mPjKg4vceF?ed
-- client-fingerprint: chrome
-  name: 日本-1
-  network: ws
-  port: 443
-  server: 217.142.243.226
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
+- alterId: 0
+  cipher: auto
   name: 韩国-1
   network: ws
-  port: 14985
-  server: 61.81.181.169
-  servername: lp.kpcloud.eu.org
-  skip-cert-verify: false
+  port: 18050
+  server: 119.195.219.150
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
   tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
   ws-opts:
     headers:
-      Host: lp.kpcloud.eu.org
-    path: /?ed=2560
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- alterId: 0
+  cipher: auto
+  name: 韩国-2
+  network: ws
+  port: 17443
+  server: 211.248.216.119
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- alterId: 0
+  cipher: auto
+  name: 韩国-3
+  network: ws
+  port: 30012
+  server: 219.249.161.98
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- alterId: 0
+  cipher: auto
+  name: 哈萨克斯坦-1
+  network: ws
+  port: 443
+  server: 194.76.18.113
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
 - cipher: chacha20-ietf-poly1305
   name: 立陶宛-1
+  password: 4a2rfixophdjffa8KVA4Aa
+  port: 8080
+  server: 45.87.175.181
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 立陶宛-2
+  password: cvII85TrW6n0OGyfpHVS1u
+  port: 8080
+  server: 45.87.175.157
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 立陶宛-3
+  password: 4a2rfixophdjffa8KVA4Aa
+  port: 8080
+  server: beesyar.org
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 立陶宛-4
   password: 4a2rfixophdjffa8KVA4Aa
   port: 8080
   server: 45.87.175.192
   type: ss
 - cipher: chacha20-ietf-poly1305
-  name: 立陶宛-2
+  name: 立陶宛-5
   password: 1RWwXhwfAB5gAEozU4G2Pg
   port: 8080
   server: 45.87.175.178
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
-  name: 立陶宛-3
+  name: 立陶宛-6
   password: cvII85TrW6n0OGyfpHVS1u
   port: 8080
   server: 45.87.175.178
@@ -372,9 +488,29 @@ proxies:
   ws-opts:
     headers:
       Host: vless.ifx.us.kg
-    path: /?ed=2560
+    path: /?ed=2560fp=chrome
 - client-fingerprint: chrome
+  name: 摩尔多瓦-2
+  network: ws
+  port: 2003
+  server: 95.164.22.239
+  servername: vless.ifx.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
+- cipher: chacha20-ietf-poly1305
   name: 荷兰-1
+  password: 7kJQs2RYHhViTYWaf1RobB
+  port: 7749
+  server: 77.246.97.187
+  type: ss
+- client-fingerprint: chrome
+  name: 荷兰-2
   network: ws
   port: 3001
   server: 2.58.56.31
@@ -388,55 +524,10 @@ proxies:
       Host: vless.ifx.us.kg
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 荷兰-2
+  name: 荷兰-3
   network: ws
   port: 2501
   server: 194.246.81.62
-  servername: vless.ifx.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- alterId: 0
-  cipher: auto
-  name: 荷兰-3
-  network: ws
-  port: 443
-  server: 45.149.12.84
-  skip-cert-verify: false
-  tls: true
-  type: vmess
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws#@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1/?ed=2560
-- client-fingerprint: chrome
-  name: 俄罗斯联邦-1
-  network: ws
-  port: 49660
-  server: 77.232.134.222
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: a69cd24c-eef6-4613-bc30-46a37f42dcb7
-  ws-opts:
-    path: /
-- cipher: aes-256-gcm
-  name: 俄罗斯联邦-2
-  password: b12360f4-33ba-4c9b-ae0c-3da5f8c6ed05
-  port: 19994
-  server: 45.142.246.232
-  type: ss
-- client-fingerprint: chrome
-  name: 俄罗斯联邦-3
-  network: ws
-  port: 8080
-  server: 91.219.150.221
   servername: vless.ifx.us.kg
   skip-cert-verify: false
   tls: true
@@ -452,15 +543,20 @@ proxies:
   port: 443
   server: 188.42.145.159
   servername: VIrgiNiavPn-nL.pagEs.dEv
-  skip-cert-verify: true
+  skip-cert-verify: false
   tls: true
   type: vless
-  udp: true
   uuid: 54ef4ecf-ff37-436a-be13-95c8a8a1114d
   ws-opts:
     headers:
       Host: VIrgiNiavPn-nL.pagEs.dEv
     path: /
+- cipher: aes-256-gcm
+  name: 俄罗斯联邦-1
+  password: b12360f4-33ba-4c9b-ae0c-3da5f8c6ed05
+  port: 19994
+  server: 45.142.246.232
+  type: ss
 - client-fingerprint: chrome
   name: 卢森堡-3
   network: ws
@@ -477,7 +573,42 @@ proxies:
       Host: g1.youyuan.us.kg
     path: /?proxyip=proxyip.multacom.fxxk.dedyn.io
 - client-fingerprint: chrome
-  name: 瑞典-1
+  name: 俄罗斯联邦-2
+  network: ws
+  port: 8080
+  server: 91.219.150.221
+  servername: vless.ifx.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560
+- name: 瑞典-1
+  password: telegram-id-privatevpns
+  port: 22222
+  server: 16.171.73.217
+  skip-cert-verify: true
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- client-fingerprint: chrome
+  name: 瑞典-2
+  network: ws
+  port: 8080
+  server: 185.146.173.63
+  servername: 1i5.diginoshops10.ir
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  uuid: 925b31c8-73d3-44d4-e087-af7b7ff7e490
+  ws-opts:
+    headers:
+      Host: 1i5.diginoshops10.ir
+    path: /Fox?ed=2048fp=chrome
+- client-fingerprint: chrome
+  name: 瑞典-3
   network: ws
   port: 2501
   server: 95.164.51.24
@@ -492,22 +623,7 @@ proxies:
       Host: vless.ifx.us.kg
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 瑞典-2
-  network: ws
-  port: 8080
-  server: 13.53.117.221
-  servername: vless.ifx.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: vless.ifx.us.kg
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 瑞典-3
+  name: 瑞典-4
   network: ws
   port: 8080
   server: 185.146.173.63
@@ -521,8 +637,22 @@ proxies:
     headers:
       Host: 1i5.diginoshops10.ir
     path: /Fox?ed=2048
-- client-fingerprint: chrome
-  name: 美国-2
+- alterId: 0
+  cipher: auto
+  name: 瑞典-5
+  network: ws
+  port: 443
+  server: 129.151.204.91
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- name: 美国-2
   network: ws
   port: 80
   server: 167.82.30.71
@@ -535,46 +665,171 @@ proxies:
     headers:
       Host: samane.ir
     path: /4u7lAS4nPLtz0xPz?ed=2560
-- client-fingerprint: chrome
-  name: 瑞典-4
-  network: tcp
-  port: 8443
-  server: 150.241.83.80
-  servername: yyyyyyyu.v2ryng01.ru
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 5a64a684-7c96-42b4-b066-8ec3a138998a
-- client-fingerprint: chrome
-  name: 美国-3
+- name: 美国-3
   network: ws
   port: 443
-  server: 20.36.131.211
-  servername: ap.ylks.xyz
+  server: 104.18.93.27
+  servername: mahdiv2.pages.dev
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  uuid: 0d836bdb-adbc-4863-8c56-dc662e7f6919
   ws-opts:
     headers:
-      Host: ap.ylks.xyz
+      Host: mahdiv2.pages.dev
+    path: /TELEGRAM-MARAMBASHI_MARAMBASHI/?ed=2560
+- name: 美国-4
+  network: ws
+  port: 2082
+  server: 104.17.148.22
+  servername: www.speedtest.net.zula.ir.Shad.ir.sHaparak.ir.torob.com.namaSha.com.namnak.com.filiMo.com.Rokna.net.teleweBion.com.iraNikala.toP.
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 27f2618e-19c1-4271-8ec5-020714d1cbd9
+  ws-opts:
+    headers:
+      Host: www.speedtest.net.zula.ir.Shad.ir.sHaparak.ir.torob.com.namaSha.com.namnak.com.filiMo.com.Rokna.net.teleweBion.com.iraNikala.toP.
+    path: /@spikevpn-@spikevpn-@spikevpn-@spikevpn-@spikevpn?ed=1024
+- name: 美国-5
+  network: ws
+  port: 8080
+  server: www.speedtest.net
+  servername: test.flnsho.store.
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 3dfd29a4-b84c-4448-9a91-1df9a9a45f0a
+  ws-opts:
+    headers:
+      Host: test.flnsho.store.
+    path: /G/b4t6hy5n/?ed=80120
+- name: 美国-6
+  network: ws
+  port: 80
+  server: 151.101.192.155
+  servername: Siperspdservicefree.com
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d50c705a-6e3f-4d41-8f8e-81c1676abed0
+  ws-opts:
+    headers:
+      Host: Siperspdservicefree.com
+    path: /Channel,SPDNET,SPDNET?ed=1024
+- name: 美国-7
+  network: ws
+  port: 80
+  server: 151.101.2.216
+  servername: speedtestv2.com
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: fe3c9447-a656-4010-d4a3-77f406ac4aaf
+  ws-opts:
+    headers:
+      Host: speedtestv2.com
+    path: /@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY-@PQV2RAY?ed=2048
+- name: 美国-8
+  network: ws
+  port: 80
+  server: ipcloudflaretamiz.fastly80-2.hosting-ip.com
+  servername: vipfast_7.com
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: ffe42010-fe17-47c5-b0e2-c508156a1c8b
+  ws-opts:
+    headers:
+      Host: vipfast_7.com
     path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-4
+- name: 美国-9
+  network: ws
+  port: 80
+  server: 151.101.2.219
+  servername: EleNa-PuTin.cOm
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 01a02f23-2b46-5456-9892-dd49a8d79ac2
+  ws-opts:
+    headers:
+      Host: EleNa-PuTin.cOm
+    path: /
+- alpn:
+  - h2%2Chttp%2F1.1
+  client-fingerprint: ios
+  name: 美国-10
+  network: ws
+  port: 8080
+  server: 104.17.147.22
+  servername: test.flnsho.store.
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 3dfd29a4-b84c-4448-9a91-1df9a9a45f0a
+  ws-opts:
+    headers:
+      Host: test.flnsho.store.
+    path: /G/b4t6hy5n/?ed=80120
+- alpn:
+  - http%2F1.1
+  client-fingerprint: android
+  name: 美国-11
   network: ws
   port: 443
-  server: 48.217.34.120
-  servername: lp.kpcloud.eu.org
+  server: 162.159.129.60
+  servername: x123456789000qwertyuioplkjhgfszxcvmagrehfcgryaegcfsetetrcih.xn--6bi8548mabeaana921b9b830dbbb0nn92a.xn--6bi8548mabeaana921b9b830dbbb0nn92a.x123456789000qwertyuioplkjhgfszxcvbnmagrehfcgryaegcfsetetrcih.speedtest.netafwe4654hr4f54h98rthr.wi0.ip-dynamic.org
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  uuid: 7d2dfb7a-2ecc-4448-bcbe-245a2092fe85
   ws-opts:
     headers:
-      Host: lp.kpcloud.eu.org
-    path: /?ed=2048
+      Host: x123456789000qwertyuioplkjhgfszxcvmagrehfcgryaegcfsetetrcih.xn--6bi8548mabeaana921b9b830dbbb0nn92a.xn--6bi8548mabeaana921b9b830dbbb0nn92a.x123456789000qwertyuioplkjhgfszxcvbnmagrehfcgryaegcfsetetrcih.speedtest.netafwe4654hr4f54h98rthr.wi0.ip-dynamic.org
+    path: /Telegram-Xv2ry2-8?ed=512
+- alpn:
+  - h3%2Ch2%2Chttp%2F1.1
+  client-fingerprint: chrome
+  name: 美国-12
+  network: ws
+  port: 587
+  server: 157.254.227.37
+  servername: vless.ifx.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: vless.ifx.us.kg
+    path: /?ed=2560fp=chrome
+- name: 美国-13
+  network: ws
+  password: bpb-trojan
+  port: 443
+  server: 104.18.37.111
+  skip-cert-verify: true
+  sni: mindrOOm-5cz.pAgEs.dEV
+  type: trojan
+  ws-opts:
+    headers:
+      Host: mindrOOm-5cz.pAgEs.dEV
+    path: /trC8BM8bTsAF0AnLYL
+- name: 美国-14
+  network: ws
+  password: bpb-trojan
+  port: 443
+  server: 172.64.150.145
+  skip-cert-verify: true
+  sni: mindrOOm-5cz.pAgEs.dEV
+  type: trojan
+  ws-opts:
+    headers:
+      Host: mindrOOm-5cz.pAgEs.dEV
+    path: /trC8BM8bTsAF0AnLYL
 - client-fingerprint: chrome
-  name: 美国-5
+  name: 美国-15
   network: ws
   port: 443
   server: 151.101.130.228
@@ -591,7 +846,7 @@ proxies:
 - alpn:
   - http/1.1
   client-fingerprint: chrome
-  name: 美国-6
+  name: 美国-16
   network: ws
   port: 443
   server: 151.101.130.228
@@ -608,7 +863,7 @@ proxies:
 - alpn:
   - http/1.1
   client-fingerprint: chrome
-  name: 美国-7
+  name: 美国-17
   network: ws
   port: 443
   server: 151.101.130.228
@@ -623,83 +878,21 @@ proxies:
       Host: Falcunargo.net
     path: /Telegram@V2ray_Alpha/?ed=2087fp=randomized
 - client-fingerprint: chrome
-  name: 美国-8
+  name: 美国-18
   network: ws
   port: 80
-  server: 151.101.3.8
-  servername: barkatc1.ir
+  server: 167.82.30.71
+  servername: samane.ir
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: 319bccc4-4cba-4cc3-a768-799a5c6e2ac2
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   ws-opts:
     headers:
-      Host: barkatc1.ir
-    path: /Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray?ed=2048
+      Host: samane.ir
+    path: /4u7lAS4nPLtz0xPz?ed=2560
 - client-fingerprint: chrome
-  name: 美国-9
-  network: ws
-  port: 443
-  server: 162.159.129.60
-  servername: x123456789000qwertyuioplkjhgfszxcvmagrehfcgryaegcfsetetrcih.xn--6bi8548mabeaana921b9b830dbbb0nn92a.xn--6bi8548mabeaana921b9b830dbbb0nn92a.x123456789000qwertyuioplkjhgfszxcvbnmagrehfcgryaegcfsetetrcih.speedtest.netafwe4654hr4f54h98rthr.wi0.ip-dynamic.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 7d2dfb7a-2ecc-4448-bcbe-245a2092fe85
-  ws-opts:
-    headers:
-      Host: x123456789000qwertyuioplkjhgfszxcvmagrehfcgryaegcfsetetrcih.xn--6bi8548mabeaana921b9b830dbbb0nn92a.xn--6bi8548mabeaana921b9b830dbbb0nn92a.x123456789000qwertyuioplkjhgfszxcvbnmagrehfcgryaegcfsetetrcih.speedtest.netafwe4654hr4f54h98rthr.wi0.ip-dynamic.org
-    path: /Telegram-Xv2ry2-8?ed=512
-- client-fingerprint: chrome
-  name: 美国-10
-  network: ws
-  port: 8443
-  server: funnelytics.io
-  servername: join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 694bc934-818f-4040-a30d-5642dec7495f
-  ws-opts:
-    headers:
-      Host: join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de
-    path: /Telegram,VPNCUSTOMIZE?ed=2480
-- cipher: aes-128-gcm
-  name: 美国-11
-  password: shadowsocks
-  port: 443
-  server: 156.146.38.168
-  type: ss
-- client-fingerprint: chrome
-  name: 美国-12
-  network: ws
-  port: 443
-  server: 104.18.93.27
-  servername: mahdiv2.pages.dev
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 0d836bdb-adbc-4863-8c56-dc662e7f6919
-  ws-opts:
-    headers:
-      Host: mahdiv2.pages.dev
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-13
-  network: ws
-  port: 80
-  server: 151.101.3.8
-  servername: barkatc2.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: ca6718bd-f089-4eab-a660-ae9c1dc6e254
-  ws-opts:
-    headers:
-      Host: barkatc2.ir
-    path: /Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray?ed=2048
-- client-fingerprint: chrome
-  name: 美国-14
+  name: 美国-19
   network: ws
   port: 80
   server: 162.159.129.60
@@ -714,64 +907,7 @@ proxies:
       Host: www.speedtest.net.nl1.78.18.432.20.20.20.20.ir.xn--g28h.dns-dynamic.net.
     path: /Telegram-Xv2ry2?ed=512
 - client-fingerprint: chrome
-  name: 美国-15
-  network: ws
-  port: 443
-  server: www.speedtest.net
-  servername: x123456789000qwertyuioplkjhgfszxcvmagrehfcgryaegcfsetetrcih.xn--6bi8548mabeaana921b9b830dbbb0nn92a.xn--6bi8548mabeaana921b9b830dbbb0nn92a.x123456789000qwertyuioplkjhgfszxcvbnmagrehfcgryaegcfsetetrcih.speedtest.netafwe4654hr4f54h98rthr.wi0.ip-dynamic.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 7d2dfb7a-2ecc-4448-bcbe-245a2092fe85
-  ws-opts:
-    headers:
-      Host: x123456789000qwertyuioplkjhgfszxcvmagrehfcgryaegcfsetetrcih.xn--6bi8548mabeaana921b9b830dbbb0nn92a.xn--6bi8548mabeaana921b9b830dbbb0nn92a.x123456789000qwertyuioplkjhgfszxcvbnmagrehfcgryaegcfsetetrcih.speedtest.netafwe4654hr4f54h98rthr.wi0.ip-dynamic.org
-    path: /Telegram-Xv2ry2-8?ed=512
-- alterId: 0
-  cipher: auto
-  name: 美国-16
-  network: ws
-  port: 443
-  server: 172.67.71.160
-  servername: obdii.cfd
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws
-- client-fingerprint: chrome
-  name: 美国-17
-  network: ws
-  port: 2082
-  server: 104.17.148.22
-  servername: www.speedtest.net.zula.ir.Shad.ir.sHaparak.ir.torob.com.namaSha.com.namnak.com.filiMo.com.Rokna.net.teleweBion.com.iraNikala.toP.
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 882841d6-2d95-45a8-f982-b42b3b92b77f
-  ws-opts:
-    headers:
-      Host: www.speedtest.net.zula.ir.Shad.ir.sHaparak.ir.torob.com.namaSha.com.namnak.com.filiMo.com.Rokna.net.teleweBion.com.iraNikala.toP.
-    path: /@spikevpn-@spikevpn-@spikevpn-@spikevpn-@spikevpn?ed=1024
-- client-fingerprint: chrome
-  name: 美国-18
-  network: ws
-  port: 443
-  server: 35.196.72.166
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-19
+  name: 美国-20
   network: ws
   port: 80
   server: 167.82.30.71
@@ -785,57 +921,10 @@ proxies:
     headers:
       Host: samane.ir
     path: /4u7lAS4nPLtz0xPz?ed=2560fp=ios
-- client-fingerprint: chrome
-  name: 美国-20
-  network: ws
-  port: 443
-  server: 104.16.46.140
-  servername: lp.kpcloud.eu.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lp.kpcloud.eu.org
-    path: /?ed=2048
-- client-fingerprint: chrome
+- alpn:
+  - http/1.1
+  client-fingerprint: chrome
   name: 美国-21
-  network: ws
-  port: 443
-  server: 162.159.152.202
-  servername: lo.ylka.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lo.ylka.us.kg
-    path: /?ed=2560
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  name: 美国-22
-  network: ws
-  port: 8443
-  server: funnelytics.io
-  servername: join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 694bc934-818f-4040-a30d-5642dec7495f
-  ws-opts:
-    headers:
-      Host: join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de
-    path: /Telegram,VPNCUSTOMIZE?ed=2480
-- alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  name: 美国-23
   network: ws
   port: 80
   server: 162.159.129.60
@@ -850,106 +939,48 @@ proxies:
       Host: www.speedtest.net.nl1.78.18.432.20.20.20.20.ir.xn--g28h.dns-dynamic.net.
     path: /Telegram-Xv2ry2?ed=512
 - client-fingerprint: chrome
-  name: 美国-24
+  name: 美国-22
   network: ws
   port: 443
-  server: 104.19.255.175
-  servername: lp.kpcloud.eu.org
+  server: 162.159.129.60
+  servername: x123456789000qwertyuioplkjhgfszxcvmagrehfcgryaegcfsetetrcih.xn--6bi8548mabeaana921b9b830dbbb0nn92a.xn--6bi8548mabeaana921b9b830dbbb0nn92a.x123456789000qwertyuioplkjhgfszxcvbnmagrehfcgryaegcfsetetrcih.speedtest.netafwe4654hr4f54h98rthr.wi0.ip-dynamic.org
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  uuid: 7d2dfb7a-2ecc-4448-bcbe-245a2092fe85
   ws-opts:
     headers:
-      Host: lp.kpcloud.eu.org
-    path: /?ed=2048
-- name: 美国-25
-  network: ws
-  password: bpb-trojan
-  port: 443
-  server: 172.64.150.145
-  skip-cert-verify: true
-  sni: mindrOOm-5cz.pAgEs.dEV
-  type: trojan
-  ws-opts:
-    headers:
-      Host: mindrOOm-5cz.pAgEs.dEV
-    path: /trC8BM8bTsAF0AnLYL
+      Host: x123456789000qwertyuioplkjhgfszxcvmagrehfcgryaegcfsetetrcih.xn--6bi8548mabeaana921b9b830dbbb0nn92a.xn--6bi8548mabeaana921b9b830dbbb0nn92a.x123456789000qwertyuioplkjhgfszxcvbnmagrehfcgryaegcfsetetrcih.speedtest.netafwe4654hr4f54h98rthr.wi0.ip-dynamic.org
+    path: /Telegram-Xv2ry2-8?ed=512
 - client-fingerprint: chrome
-  name: 美国-26
+  name: 美国-23
   network: ws
   port: 443
-  server: 173.245.49.46
-  servername: ap.ylks.xyz
+  server: 104.18.93.27
+  servername: mahdiv2.pages.dev
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  uuid: 0d836bdb-adbc-4863-8c56-dc662e7f6919
   ws-opts:
     headers:
-      Host: ap.ylks.xyz
+      Host: mahdiv2.pages.dev
     path: /?ed=2048
 - client-fingerprint: chrome
-  name: 美国-27
-  network: ws
-  port: 443
-  server: 173.245.49.106
-  servername: ap.ylks.xyz
+  name: 瑞典-6
+  network: tcp
+  port: 8443
+  server: 150.241.83.80
+  servername: yyyyyyyu.v2ryng01.ru
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-28
-  network: ws
-  port: 443
-  server: 141.101.121.253
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-29
-  network: ws
-  port: 443
-  server: 172.212.108.47
-  servername: cp.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: cp.ylks.xyz
-    path: /blue
-- client-fingerprint: chrome
-  name: 美国-30
-  network: ws
-  port: 443
-  server: 173.245.49.10
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
+  uuid: 5a64a684-7c96-42b4-b066-8ec3a138998a
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  name: 美国-31
+  name: 美国-24
   network: ws
   port: 80
   server: 104.19.48.236
@@ -964,191 +995,7 @@ proxies:
       Host: v2ra1.ecrgpk.workers.dev
     path: /@VPNHTTPInjectorfree
 - client-fingerprint: chrome
-  name: 美国-32
-  network: ws
-  port: 443
-  server: 104.19.89.86
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-33
-  network: ws
-  port: 443
-  server: 162.159.3.130
-  servername: lp.kpcloud.eu.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lp.kpcloud.eu.org
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-34
-  network: ws
-  port: 443
-  server: 141.101.123.69
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-35
-  network: ws
-  port: 443
-  server: 198.41.205.184
-  servername: lp.kpcloud.eu.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lp.kpcloud.eu.org
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-36
-  network: ws
-  port: 443
-  server: 172.67.41.53
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-37
-  network: ws
-  port: 443
-  server: 173.245.49.56
-  servername: lp.kpcloud.eu.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lp.kpcloud.eu.org
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-38
-  network: ws
-  port: 443
-  server: 198.41.216.227
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-39
-  network: ws
-  port: 443
-  server: 173.245.49.128
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-40
-  network: ws
-  port: 443
-  server: 104.19.250.58
-  servername: lp.kpcloud.eu.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lp.kpcloud.eu.org
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-41
-  network: ws
-  port: 443
-  server: 69.84.182.177
-  servername: lp.ylka.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lp.ylka.us.kg
-    path: /?ed=2560
-- alterId: 0
-  cipher: auto
-  name: 美国-42
-  network: ws
-  port: 443
-  server: 188.114.97.2
-  skip-cert-verify: false
-  tls: true
-  type: vmess
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws
-- client-fingerprint: chrome
-  name: 美国-43
-  network: ws
-  port: 443
-  server: 141.101.120.13
-  servername: lp.kpcloud.eu.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lp.kpcloud.eu.org
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-44
-  network: ws
-  port: 443
-  server: www.rxhomeo.in
-  servername: kbe6j36j36jafka.lastronin.cloudns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 0792bb58-36ac-451e-a629-e363e53da93b
-  ws-opts:
-    headers:
-      Host: kafka.lastronin.cloudns.org
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-45
+  name: 美国-25
   network: ws
   port: 443
   server: 199.232.5.79
@@ -1163,13 +1010,28 @@ proxies:
       Host: mefa.ir
     path: /H?ed=2560
 - cipher: chacha20-ietf-poly1305
-  name: 美国-46
+  name: 美国-26
   password: 5cp9Z3iWnJZ2
   port: 443
   server: 205.134.180.150
   type: ss
 - client-fingerprint: chrome
-  name: 美国-47
+  name: 美国-27
+  network: ws
+  port: 443
+  server: www.rxhomeo.in
+  servername: kbe6j36j36jafka.lastronin.cloudns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 0792bb58-36ac-451e-a629-e363e53da93b
+  ws-opts:
+    headers:
+      Host: kafka.lastronin.cloudns.org
+    path: /?ed=2048
+- client-fingerprint: chrome
+  name: 美国-28
   network: ws
   port: 587
   server: 157.254.227.37
@@ -1184,50 +1046,7 @@ proxies:
       Host: vless.ifx.us.kg
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 美国-48
-  network: ws
-  port: 443
-  server: 69.84.182.234
-  servername: lo.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lo.ylks.us.kg
-    path: /?ed=2560
-- alterId: 0
-  cipher: auto
-  name: 美国-49
-  network: ws
-  port: 443
-  server: 104.26.0.95
-  skip-cert-verify: false
-  tls: true
-  type: vmess
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws
-- client-fingerprint: chrome
-  name: 美国-50
-  network: ws
-  port: 443
-  server: 162.159.44.53
-  servername: lp.kpcloud.eu.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lp.kpcloud.eu.org
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-51
+  name: 美国-29
   network: ws
   port: 443
   server: 198.62.62.185
@@ -1242,119 +1061,7 @@ proxies:
       Host: lu.ylks01.eu.org
     path: /blue
 - client-fingerprint: chrome
-  name: 美国-52
-  network: ws
-  port: 443
-  server: 172.64.158.206
-  servername: cp.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: cp.ylks.xyz
-    path: /blue
-- client-fingerprint: chrome
-  name: 美国-53
-  network: ws
-  port: 443
-  server: 162.159.249.246
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-54
-  network: ws
-  port: 443
-  server: 172.64.104.187
-  servername: ap.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-55
-  network: ws
-  port: 443
-  server: 141.101.121.159
-  servername: cp.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: cp.ylks.xyz
-    path: /blue
-- client-fingerprint: chrome
-  name: 美国-56
-  network: ws
-  port: 443
-  server: 104.22.22.158
-  servername: cp.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: cp.ylks.xyz
-    path: /blue
-- client-fingerprint: chrome
-  name: 美国-57
-  network: ws
-  port: 443
-  server: 69.84.182.177
-  servername: lp.ylka.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lp.ylka.us.kg
-    path: /ProxyIP=ProxyIP.US.fxxk.dedyn.io
-- client-fingerprint: chrome
-  name: 美国-58
-  network: ws
-  port: 443
-  server: 173.245.49.35
-  servername: cp.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: cp.ylks.xyz
-    path: /blue
-- client-fingerprint: chrome
-  name: 美国-59
-  network: ws
-  port: 443
-  server: cf.hughhad.us.kg
-  servername: Cf.HuGHhaD.uS.KG
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  ws-opts:
-    path: /
-- client-fingerprint: chrome
-  name: 美国-60
+  name: 美国-30
   network: ws
   port: 443
   server: 188.114.99.237
@@ -1369,37 +1076,20 @@ proxies:
       Host: shirvanoo.hooplnqpb.ir
     path: /?ed=2048/sinabigo-sinabigo
 - client-fingerprint: chrome
-  name: 美国-61
+  name: 美国-31
   network: ws
   port: 443
-  server: 198.62.62.170
-  servername: ap.ylks.xyz
+  server: cf.hughhad.us.kg
+  servername: Cf.HuGHhaD.uS.KG
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /blue
+    path: /
 - client-fingerprint: chrome
-  name: 美国-62
-  network: ws
-  port: 443
-  server: 69.84.182.39
-  servername: ap.ylks.xyz
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /blue
-- client-fingerprint: chrome
-  name: 美国-63
+  name: 美国-32
   network: ws
   port: 443
   server: 198.62.62.84
@@ -1414,99 +1104,7 @@ proxies:
       Host: as.ylks.xyz
     path: /blue
 - client-fingerprint: chrome
-  name: 美国-64
-  network: ws
-  port: 443
-  server: 69.84.182.140
-  servername: ap.ylks.xyz
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  ws-opts:
-    headers:
-      Host: ap.ylks.xyz
-    path: /blue
-- client-fingerprint: chrome
-  name: 美国-65
-  network: ws
-  port: 443
-  server: 173.245.49.15
-  servername: cp.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: cp.ylks.xyz
-    path: /blue
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  name: 美国-66
-  network: ws
-  port: 443
-  server: 151.101.194.133
-  servername: mio.splashthat.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2e27f295-cf36-4dea-9300-fc6dbe042871
-  ws-opts:
-    headers:
-      Host: 5776.ir
-    path: /VLESS?ed=2048
-- client-fingerprint: chrome
-  name: 美国-67
-  network: ws
-  port: 443
-  server: 104.19.98.12
-  servername: cp.ylks.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: cp.ylks.xyz
-    path: /blue
-- client-fingerprint: chrome
-  name: 美国-68
-  network: ws
-  port: 443
-  server: 198.62.62.176
-  servername: dp.ylks.xyz
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: dp.ylks.xyz
-    path: /?proxyip=proxyip.us.fxxp.dedyp.io
-- client-fingerprint: chrome
-  name: 美国-69
-  network: ws
-  port: 443
-  server: 69.84.182.234
-  servername: lo.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: lo.ylks.us.kg
-    path: /ProxyIP=ProxyIP.US.fxxk.dedyn.io
-- client-fingerprint: chrome
-  name: 美国-70
+  name: 美国-33
   network: ws
   port: 443
   server: 69.84.182.138
@@ -1521,7 +1119,7 @@ proxies:
       Host: lu.ylks01.eu.org
     path: /blue
 - client-fingerprint: chrome
-  name: 美国-71
+  name: 美国-34
   network: ws
   port: 443
   server: cf.hughhad.us.kg
@@ -1535,22 +1133,7 @@ proxies:
       Host: Cf.HuGHhaD.uS.KG
     path: /
 - client-fingerprint: chrome
-  name: 美国-72
-  network: ws
-  port: 443
-  server: 69.84.182.127
-  servername: dp.ylks.xyz
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  ws-opts:
-    headers:
-      Host: dp.ylks.xyz
-    path: /blue
-- client-fingerprint: chrome
-  name: 美国-73
+  name: 美国-35
   network: ws
   port: 443
   server: 198.62.62.236
@@ -1564,64 +1147,122 @@ proxies:
     headers:
       Host: as.ylks.xyz
     path: /freecodes
-- client-fingerprint: chrome
-  name: 美国-74
+- alterId: 0
+  cipher: auto
+  name: 美国-36
   network: ws
   port: 443
-  server: 69.84.182.41
-  servername: ap.ylks.xyz
+  server: 20.246.127.166
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
   skip-cert-verify: true
   tls: true
-  type: vless
-  udp: true
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
   ws-opts:
     headers:
-      Host: ap.ylks.xyz
-    path: /blue
-- alpn:
-  - ''
-  client-fingerprint: chrome
-  name: 美国-75
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- alterId: 0
+  cipher: auto
+  name: 美国-37
   network: ws
-  port: 80
-  server: isvvpn.fastly80.hosting-ip.com
-  servername: 5776.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 2e27f295-cf36-4dea-9300-fc6dbe042871
+  port: 17524
+  server: 172.245.68.220
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
   ws-opts:
     headers:
-      Host: 5776.ir
-    path: /VLESS?ed=80
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- alterId: 0
+  cipher: auto
+  name: 美国-38
+  network: ws
+  port: 443
+  server: 192.236.249.103
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- alterId: 0
+  cipher: auto
+  name: 美国-39
+  network: ws
+  port: 443
+  server: 192.0.54.172
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- alterId: 0
+  cipher: auto
+  name: 美国-40
+  network: ws
+  port: 443
+  server: 216.24.57.171
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
+- alterId: 0
+  cipher: auto
+  name: 美国-41
+  network: ws
+  port: 443
+  server: 216.221.214.50
+  servername: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: 2022585a-86a7-4231-b3a0-eeda14f77f4d.8f18237c-8e5f-4ffb-a434-1b2948c87be3.ddnsfree.com
+    path: /obdii.cfd:443/linkws
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 110个'
+  - '自动选择: 89个'
   - '自动选择(国内): 5个'
-  - '自动选择(国外): 105个'
-  - '手动选择: 110个'
+  - '自动选择(国外): 84个'
+  - '手动选择: 89个'
   - '亚美尼亚分区: 1个'
-  - '奥地利分区: 1个'
-  - '加拿大分区: 2个'
+  - '奥地利分区: 2个'
+  - '加拿大分区: 1个'
   - '中国分区: 3个'
   - '哥斯达黎加分区: 2个'
-  - '德国分区: 2个'
-  - '法国分区: 1个'
-  - '英国分区: 1个'
+  - '德国分区: 4个'
+  - '法国分区: 4个'
   - '香港分区: 2个'
-  - '印度分区: 1个'
-  - '美国分区: 75个'
-  - '日本分区: 1个'
-  - '韩国分区: 1个'
-  - '立陶宛分区: 3个'
+  - '伊朗分区: 3个'
+  - '美国分区: 41个'
+  - '韩国分区: 3个'
+  - '哈萨克斯坦分区: 1个'
+  - '立陶宛分区: 6个'
   - '卢森堡分区: 3个'
-  - '摩尔多瓦分区: 1个'
+  - '摩尔多瓦分区: 2个'
   - '荷兰分区: 3个'
-  - '俄罗斯联邦分区: 3个'
-  - '瑞典分区: 4个'
+  - '俄罗斯联邦分区: 2个'
+  - '瑞典分区: 6个'
   type: select
 - hidden: false
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -1630,7 +1271,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 110个'
+  name: '自动选择: 89个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -1656,40 +1297,52 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 105个'
+  name: '自动选择(国外): 84个'
   proxies:
   - 亚美尼亚-1
   - 奥地利-1
+  - 奥地利-2
   - 加拿大-1
-  - 加拿大-2
   - 哥斯达黎加-1
   - 哥斯达黎加-2
   - 德国-1
   - 德国-2
+  - 德国-3
+  - 德国-4
   - 法国-1
-  - 英国-1
-  - 印度-1
+  - 法国-2
+  - 法国-3
+  - 法国-4
+  - 伊朗-1
+  - 伊朗-2
+  - 伊朗-3
   - 美国-1
-  - 日本-1
   - 韩国-1
+  - 韩国-2
+  - 韩国-3
+  - 哈萨克斯坦-1
   - 立陶宛-1
   - 立陶宛-2
   - 立陶宛-3
+  - 立陶宛-4
+  - 立陶宛-5
+  - 立陶宛-6
   - 卢森堡-1
   - 摩尔多瓦-1
+  - 摩尔多瓦-2
   - 荷兰-1
   - 荷兰-2
   - 荷兰-3
-  - 俄罗斯联邦-1
-  - 俄罗斯联邦-2
-  - 俄罗斯联邦-3
   - 卢森堡-2
+  - 俄罗斯联邦-1
   - 卢森堡-3
+  - 俄罗斯联邦-2
   - 瑞典-1
   - 瑞典-2
   - 瑞典-3
-  - 美国-2
   - 瑞典-4
+  - 瑞典-5
+  - 美国-2
   - 美国-3
   - 美国-4
   - 美国-5
@@ -1711,6 +1364,7 @@ proxy-groups:
   - 美国-21
   - 美国-22
   - 美国-23
+  - 瑞典-6
   - 美国-24
   - 美国-25
   - 美国-26
@@ -1729,46 +1383,12 @@ proxy-groups:
   - 美国-39
   - 美国-40
   - 美国-41
-  - 美国-42
-  - 美国-43
-  - 美国-44
-  - 美国-45
-  - 美国-46
-  - 美国-47
-  - 美国-48
-  - 美国-49
-  - 美国-50
-  - 美国-51
-  - 美国-52
-  - 美国-53
-  - 美国-54
-  - 美国-55
-  - 美国-56
-  - 美国-57
-  - 美国-58
-  - 美国-59
-  - 美国-60
-  - 美国-61
-  - 美国-62
-  - 美国-63
-  - 美国-64
-  - 美国-65
-  - 美国-66
-  - 美国-67
-  - 美国-68
-  - 美国-69
-  - 美国-70
-  - 美国-71
-  - 美国-72
-  - 美国-73
-  - 美国-74
-  - 美国-75
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all: true
-  name: '手动选择: 110个'
+  name: '手动选择: 89个'
   type: select
 - filter: (?i)亚美尼亚|AM|am
   hidden: false
@@ -1793,7 +1413,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '奥地利分区: 1个'
+  name: '奥地利分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1808,7 +1428,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '加拿大分区: 2个'
+  name: '加拿大分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1853,7 +1473,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '德国分区: 2个'
+  name: '德国分区: 4个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1868,22 +1488,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '法国分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)英国|GB|gb
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '英国分区: 1个'
+  name: '法国分区: 4个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1905,15 +1510,15 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)印度|IN|in
+- filter: (?i)伊朗|IR|ir
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/in.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ir.svg
   include-all-providers: true
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '印度分区: 1个'
+  name: '伊朗分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1928,22 +1533,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 75个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)日本|JP|jp
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
-  include-all-providers: true
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '日本分区: 1个'
+  name: '美国分区: 41个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1958,7 +1548,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '韩国分区: 1个'
+  name: '韩国分区: 3个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)哈萨克斯坦|KZ|kz
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kz.svg
+  include-all-providers: true
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '哈萨克斯坦分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1973,7 +1578,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '立陶宛分区: 3个'
+  name: '立陶宛分区: 6个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2003,7 +1608,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '摩尔多瓦分区: 1个'
+  name: '摩尔多瓦分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2033,7 +1638,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '俄罗斯联邦分区: 3个'
+  name: '俄罗斯联邦分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2048,7 +1653,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '瑞典分区: 4个'
+  name: '瑞典分区: 6个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
