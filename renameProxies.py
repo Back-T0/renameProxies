@@ -138,7 +138,7 @@ def rename_proxies(proxies, nation_cache):
     all_proxy_names = [proxy["name"] for proxy in new_proxies]
     select_group = {
         "type": "select",
-        "include-all": True,
+        "include-all-proxies": True,
         "name": f"手动选择: {len(all_proxy_names)}个",
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png",
     }
@@ -194,9 +194,9 @@ def rename_proxies(proxies, nation_cache):
         "lazy": True,
         "max-failed-times": 3,
         "type": "url-test",
-        "include-all-providers": True,
+        "include-all-providers": False,
         "hidden": False,
-        "include-all": True,
+        "include-all-proxies": True,
         "name": f"自动选择: {len(all_proxy_names)}个",
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png",
     }
