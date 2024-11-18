@@ -195,7 +195,7 @@ def rename_proxies(proxies, nation_cache):
         "max-failed-times": 3,
         "type": "url-test",
         "include-all-providers": False,
-        "hidden": False,
+        "hidden": True,
         "include-all-proxies": True,
         "name": f"自动选择: {len(all_proxy_names)}个",
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png",
