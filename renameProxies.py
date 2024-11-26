@@ -159,8 +159,8 @@ def rename_proxies(proxies, nation_cache):
         "type": "url-test",
         "include-all-providers": False,
         "hidden": True,
-        "proxies": overseas_group_name + ["COMPATIBLE"],
         "name": f"自动选择(国外): {len(overseas_group_name)}个",
+        "proxies": overseas_group_name + ["COMPATIBLE"],
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png",
     }
     proxy_groups.insert(0, auto_select_group_exp)
@@ -180,8 +180,8 @@ def rename_proxies(proxies, nation_cache):
         "type": "url-test",
         "include-all-providers": False,
         "hidden": True,
-        "proxies": domestic_group_name,
         "name": f"自动选择(国内): {len(domestic_group_name)}个",
+        "proxies": domestic_group_name + ["COMPATIBLE"],
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png",
     }
     proxy_groups.insert(0, auto_select_group_exp)
