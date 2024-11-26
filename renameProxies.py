@@ -159,7 +159,7 @@ def rename_proxies(proxies, nation_cache):
         "type": "url-test",
         "include-all-providers": False,
         "hidden": True,
-        "proxies": [overseas_group_name,"COMPATIBLE"]
+        "proxies": [...overseas_group_name,"COMPATIBLE"]
         "name": f"自动选择(国外): {len(overseas_group_name)}个",
         "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png",
     }
