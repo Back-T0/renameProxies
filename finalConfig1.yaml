@@ -77,25 +77,27 @@ proxies:
 - alterId: 64
   cipher: auto
   name: 中国-1
-  port: 45402
-  server: 183.236.48.158
-  skip-cert-verify: true
+  port: 41490
+  server: 183.236.48.143
+  skip-cert-verify: false
   tls: false
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- name: 中国-2
-  network: ws
-  port: 443
-  server: 103.44.255.81
-  servername: v2.yunchun.top
+- alterId: 0
+  cipher: auto
+  name: 中国-2
+  port: 62506
+  server: fiwejniavzoj.xn--fiqs8sjz2bull.com
   skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  ws-opts:
-    headers:
-      Host: v2.yunchun.top
-    path: /?ed=2048security=tls
+  tls: false
+  type: vmess
+  uuid: 7ad8da0c-fda5-416b-9e72-47cc68313ffe
+- cipher: chacha20-ietf-poly1305
+  name: 未知-1
+  password: 09833a6f-4d46-426e-87fe-7793a5489f84
+  port: 54006
+  server: h-k04.loveroise.com
+  type: ss
 - alterId: 64
   cipher: auto
   name: 中国-3
@@ -106,57 +108,11 @@ proxies:
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - cipher: chacha20-ietf-poly1305
-  name: 未知-1
-  password: 09833a6f-4d46-426e-87fe-7793a5489f84
-  port: 54006
-  server: h-k04.loveroise.com
-  type: ss
-- cipher: chacha20-ietf-poly1305
   name: 未知-2
   password: 09833a6f-4d46-426e-87fe-7793a5489f84
-  port: 54004
-  server: h-k03.loveroise.com
+  port: 54010
+  server: k-r02.loveroise.com
   type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 未知-3
-  password: 09833a6f-4d46-426e-87fe-7793a5489f84
-  port: 54096
-  server: j-p01.loveroise.com
-  type: ss
-- alpn:
-  - h2
-  - http%2F1.1
-  client-fingerprint: chrome
-  name: 哥斯达黎加-1
-  network: ws
-  port: 443
-  server: 190.93.245.137
-  servername: Ruc80.TehrANsiMAn.co.UK.
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 4ffdc80c-65f3-4684-bdb5-951d27867f40
-  ws-opts:
-    headers:
-      Host: Ruc80.TehrANsiMAn.co.UK.
-    path: /?ed=2560
-- alterId: 0
-  cipher: auto
-  http-opts:
-    headers:
-      Host:
-      - Telewebion.com
-    method: GET
-    path:
-    - /
-  name: 伊朗-1
-  network: http
-  port: 40804
-  server: 188.121.122.89
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 6e61b771-f2c2-40e1-9725-6cad0065a264
 - name: 美国-1
   network: ws
   port: 443
@@ -172,13 +128,13 @@ proxies:
     path: /ws/?ed=2048
 - cipher: chacha20-ietf-poly1305
   name: 立陶宛-1
-  password: 1RWwXhwfAB5gAEozU4G2Pg
+  password: 4a2rfixophdjffa8KVA4Aa
   port: 8080
   server: 45.87.175.164
   type: ss
 - cipher: chacha20-ietf-poly1305
   name: 立陶宛-2
-  password: 4a2rfixophdjffa8KVA4Aa
+  password: 1RWwXhwfAB5gAEozU4G2Pg
   port: 8080
   server: 45.87.175.164
   type: ss
@@ -188,1277 +144,27 @@ proxies:
   port: 8080
   server: 45.87.175.164
   type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 挪威-1
+  password: 95JrBoQ4TdkeYgPzeDHVju
+  port: 60356
+  server: 51.13.114.127
+  type: ss
+- cipher: chacha20-ietf
+  name: 塞舌尔-1
+  password: asd123456
+  port: 8388
+  server: 154.197.98.64
+  type: ss
+- name: 土耳其-1
+  network: tcp
+  port: 8443
+  server: 212.98.224.229
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: ddcdd97d-7854-498d-8a37-f8bc03e7b72c
 - name: 美国-2
-  network: ws
-  port: 2052
-  server: 130.250.137.5
-  servername: shy-paper-dec6.congcong1412243609.workers.dev
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 17b42a04-83b8-4b93-b9f3-285d256d87d8
-  ws-opts:
-    headers:
-      Host: shy-paper-dec6.congcong1412243609.workers.dev
-    path: /?ed=2560&proxyip=proxyip.us.fxxk.dedyn.io
-- name: 美国-3
-  network: ws
-  port: 2052
-  server: 192.200.160.86
-  servername: shy-paper-dec6.congcong1412243609.workers.dev
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 17b42a04-83b8-4b93-b9f3-285d256d87d8
-  ws-opts:
-    headers:
-      Host: shy-paper-dec6.congcong1412243609.workers.dev
-    path: /?ed=2560&proxyip=proxyip.us.fxxk.dedyn.io
-- client-fingerprint: qq
-  name: 美国-4
-  network: ws
-  port: 443
-  server: 199.232.255.25
-  servername: TEHRANARGO.cc
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  uuid: 4822eda6-e0a4-5952-944d-79a93594b7d5
-  ws-opts:
-    headers:
-      Host: TEHRANARGO.cc
-    path: /Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO?ed=2560
-- name: 美国-5
-  network: ws
-  port: 80
-  server: join.VPNCUSTOMIZE.com
-  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: dfc1a9ab-6241-4b73-92f7-b299fc6b7751
-  ws-opts:
-    headers:
-      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
-    path: /xmlrpc.php?ed=1080
-- client-fingerprint: random
-  name: 美国-6
-  network: ws
-  port: 2053
-  server: 205.233.181.36
-  servername: rix.tgzdyz2.top
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: b9dad5ed-74da-4a43-8145-90d06df1f890
-  ws-opts:
-    headers:
-      Host: rix.tgzdyz2.top
-    path: /?ed=2560
-- alterId: 0
-  cipher: auto
-  name: 美国-7
-  network: ws
-  port: 2095
-  server: 104.18.114.38
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- name: 美国-8
-  network: ws
-  port: 80
-  server: 104.26.13.101
-  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: dfc1a9ab-6241-4b73-92f7-b299fc6b7751
-  ws-opts:
-    headers:
-      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
-    path: /xmlrpc.php?ed=1080
-- name: 美国-9
-  network: ws
-  port: 443
-  server: 69.84.182.101
-  servername: vbbb.ylks2024.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 71ed6628-5870-4d19-8a52-f2a3ba3d4898
-  ws-opts:
-    headers:
-      Host: vbbb.ylks2024.us.kg
-    path: /youlingkaishi
-- alterId: 0
-  cipher: auto
-  name: 美国-10
-  network: ws
-  port: 2095
-  server: 104.18.114.13
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  name: 美国-11
-  network: ws
-  port: 80
-  server: unlimiteddev.fastly80-3.hosting-ip.com
-  servername: UNLIMITEDDEV.channel-telegram-1.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 8a874add-2e56-4e63-ee91-4b12fe600993
-  ws-opts:
-    headers:
-      Host: UNLIMITEDDEV.channel-telegram-1.ir
-    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
-- name: 美国-12
-  network: ws
-  port: 80
-  server: join.VPNCUSTOMIZE.com
-  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: dfc1a9ab-6241-4b73-92f7-b299fc6b7751
-  ws-opts:
-    headers:
-      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
-    path: /xmlrpc.php?ed=1080&id=dfc1a9ab-6241-4b73-92f7-b299fc6b7751
-- alterId: 0
-  cipher: auto
-  name: 美国-13
-  network: ws
-  port: 2095
-  server: 104.18.114.36
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-14
-  network: ws
-  port: 2095
-  server: 104.18.114.14
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-15
-  network: ws
-  port: 2095
-  server: 104.18.114.71
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-16
-  network: ws
-  port: 2095
-  server: 162.159.45.28
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-17
-  network: ws
-  port: 2095
-  server: 104.18.114.120
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-18
-  network: ws
-  port: 2095
-  server: 104.18.114.107
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-19
-  network: ws
-  port: 2095
-  server: 104.18.114.40
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-20
-  network: ws
-  port: 2095
-  server: 104.18.114.161
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-21
-  network: ws
-  port: 2095
-  server: 104.18.114.30
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-22
-  network: ws
-  port: 2095
-  server: 104.18.114.74
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-23
-  network: ws
-  port: 2095
-  server: 104.18.114.11
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-24
-  network: ws
-  port: 2095
-  server: 104.18.114.20
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-25
-  network: ws
-  port: 2095
-  server: 104.18.114.44
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-26
-  network: ws
-  port: 2095
-  server: 104.18.114.70
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-27
-  network: ws
-  port: 2095
-  server: 104.18.114.53
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-28
-  network: ws
-  port: 2095
-  server: 104.18.114.172
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-29
-  network: ws
-  port: 2095
-  server: 104.18.114.4
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-30
-  network: ws
-  port: 2095
-  server: 104.18.114.89
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-31
-  network: ws
-  port: 2095
-  server: 104.18.114.5
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- name: 美国-32
-  network: ws
-  port: 80
-  server: visa.org
-  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: dfc1a9ab-6241-4b73-92f7-b299fc6b7751
-  ws-opts:
-    headers:
-      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
-    path: /xmlrpc.php?ed=1080&id=dfc1a9ab-6241-4b73-92f7-b299fc6b7751
-- alterId: 0
-  cipher: auto
-  name: 美国-33
-  network: ws
-  port: 2095
-  server: 104.18.114.16
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-34
-  network: ws
-  port: 2095
-  server: 104.18.114.171
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-35
-  network: ws
-  port: 2095
-  server: 104.18.114.15
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-36
-  network: ws
-  port: 2095
-  server: 104.18.114.66
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-37
-  network: ws
-  port: 2095
-  server: 104.21.238.163
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-38
-  network: ws
-  port: 2095
-  server: 104.18.114.129
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-39
-  network: ws
-  port: 2095
-  server: 104.18.114.7
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-40
-  network: ws
-  port: 2095
-  server: 162.159.45.53
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-41
-  network: ws
-  port: 2095
-  server: 104.18.114.27
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-42
-  network: ws
-  port: 2095
-  server: 162.159.45.63
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-43
-  network: ws
-  port: 2095
-  server: 162.159.45.219
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alpn:
-  - http%2F1.1
-  client-fingerprint: edge
-  name: 美国-44
-  network: ws
-  port: 80
-  server: 104.21.81.174
-  servername: DaWn-lAKE-d5E3.WocoYA4320.wOrkERs.DeV
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 23b3cbba-e6ac-485a-9481-342a0415eab9
-  ws-opts:
-    headers:
-      Host: DaWn-lAKE-d5E3.WocoYA4320.wOrkERs.DeV
-    path: /wP3dwCyRAVyMJFfW?ed=2560
-- alterId: 0
-  cipher: auto
-  name: 美国-45
-  network: ws
-  port: 2095
-  server: 104.18.114.105
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-46
-  network: ws
-  port: 2095
-  server: 104.18.114.122
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-47
-  network: ws
-  port: 2095
-  server: 162.159.45.167
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alpn:
-  - h2
-  - http%2F1.1
-  client-fingerprint: firefox
-  name: 美国-48
-  network: ws
-  port: 80
-  server: 104.18.26.94
-  servername: esetsecuritylicense.wixel67553.workers.dev
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 097e2594-dbbb-4a36-a5c7-6b8c8893c611
-  ws-opts:
-    headers:
-      Host: esetsecuritylicense.wixel67553.workers.dev
-    path: /TELEGRAM-MARAMBASHI-MARAMBASHI/?ed=2048
-- alterId: 0
-  cipher: auto
-  name: 美国-49
-  network: ws
-  port: 2095
-  server: 104.18.114.152
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-50
-  network: ws
-  port: 2095
-  server: 104.26.0.52
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-51
-  network: ws
-  port: 2095
-  server: 104.26.0.36
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- client-fingerprint: chrome
-  name: 美国-52
-  network: ws
-  port: 80
-  server: 199.232.8.123
-  servername: IRANINGOAT2.IR
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: d578322a-266b-479d-9eda-f1b41324e721
-  ws-opts:
-    headers:
-      Host: IRANINGOAT2.IR
-    path: /RsAMasAPMX5yb1YZ?ed=2560fp=chrome
-- alterId: 0
-  cipher: auto
-  name: 美国-53
-  network: ws
-  port: 2095
-  server: 104.18.114.63
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- name: 美国-54
-  network: ws
-  port: 80
-  server: 198.41.218.111
-  servername: OlD-disk-EFCd.JojAhoF109.WorKerS.DEv
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 76b3cbba-e6ac-485a-9481-336a0415eab9
-  ws-opts:
-    headers:
-      Host: OlD-disk-EFCd.JojAhoF109.WorKerS.DEv
-    path: /odHGn0T9HGFXsTlN?ed=2560
-- alterId: 0
-  cipher: auto
-  name: 美国-55
-  network: ws
-  port: 2095
-  server: 104.18.114.18
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-56
-  network: ws
-  port: 2095
-  server: 104.18.114.162
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-57
-  network: ws
-  port: 2095
-  server: 104.18.114.175
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-58
-  network: ws
-  port: 2095
-  server: 104.26.0.88
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-59
-  network: ws
-  port: 2095
-  server: 162.159.45.208
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-60
-  network: ws
-  port: 2095
-  server: 104.18.114.139
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-61
-  network: ws
-  port: 2095
-  server: 104.26.0.105
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-62
-  network: ws
-  port: 2095
-  server: 104.18.114.137
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-63
-  network: ws
-  port: 2095
-  server: 104.18.114.100
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-64
-  network: ws
-  port: 2095
-  server: 104.18.114.130
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-65
-  network: ws
-  port: 2095
-  server: 104.18.114.183
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-66
-  network: ws
-  port: 2095
-  server: 104.18.114.160
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-67
-  network: ws
-  port: 2095
-  server: 104.18.114.79
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-68
-  network: ws
-  port: 2095
-  server: 104.18.114.178
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-69
-  network: ws
-  port: 2095
-  server: 104.18.114.103
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-70
-  network: ws
-  port: 2095
-  server: 162.159.45.195
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-71
-  network: ws
-  port: 2095
-  server: 104.18.114.168
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-72
-  network: ws
-  port: 2095
-  server: 104.26.0.64
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-73
-  network: ws
-  port: 2095
-  server: 104.26.0.60
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-74
-  network: ws
-  port: 2095
-  server: 104.18.114.192
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-75
-  network: ws
-  port: 2095
-  server: 104.18.114.219
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-76
-  network: ws
-  port: 2095
-  server: 162.159.45.137
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-77
-  network: ws
-  port: 2086
-  server: 162.159.45.219
-  servername: p13.613055.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: bc65fac2-7dc7-426f-acdd-0779a5035bde
-  ws-opts:
-    headers:
-      Host: p13.613055.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-78
-  network: ws
-  port: 2095
-  server: 104.18.114.132
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-79
-  network: ws
-  port: 2095
-  server: 104.26.0.70
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-80
-  network: ws
-  port: 2095
-  server: 104.18.114.148
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-81
-  network: ws
-  port: 2095
-  server: 104.26.0.133
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-82
-  network: ws
-  port: 2095
-  server: 104.18.114.138
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- name: 美国-83
   network: ws
   port: 8880
   server: 104.16.30.34
@@ -1472,391 +178,159 @@ proxies:
     headers:
       Host: worker-bitter-tooth-2833.geyoleg265.workers.dev
     path: /TELEGRAM-MARAMBASHI/?ed=2048
-- alterId: 0
-  cipher: auto
-  name: 美国-84
-  network: ws
-  port: 2095
-  server: 104.26.0.154
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-85
-  network: ws
-  port: 2095
-  server: 104.26.0.85
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-86
-  network: ws
-  port: 2095
-  server: 104.18.114.158
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-87
-  network: ws
-  port: 2095
-  server: 104.18.114.123
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-88
-  network: ws
-  port: 2095
-  server: 104.18.114.32
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-89
-  network: ws
-  port: 2095
-  server: 104.26.0.114
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-90
-  network: ws
-  port: 2095
-  server: 104.18.114.104
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-91
-  network: ws
-  port: 2095
-  server: 104.18.114.109
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-92
-  network: ws
-  port: 2095
-  server: 104.18.114.101
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-93
-  network: ws
-  port: 2095
-  server: 162.159.45.238
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-94
-  network: ws
-  port: 2095
-  server: 104.18.114.176
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-95
-  network: ws
-  port: 2095
-  server: 104.18.114.149
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-96
-  network: ws
-  port: 2095
-  server: 104.18.114.154
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-97
-  network: ws
-  port: 2095
-  server: 104.18.114.135
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-98
-  network: ws
-  port: 2095
-  server: 104.18.114.225
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- name: 美国-99
+- name: 美国-3
   network: ws
   port: 80
-  server: 162.159.142.65
-  servername: sUB.veBoBE2961.WoRKeRs.dev
+  server: 162.159.153.2
+  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: dfc1a9ab-6241-4b73-92f7-b299fc6b7751
+  ws-opts:
+    headers:
+      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
+    path: /xmlrpc.php?ed=1080
+- name: 美国-4
+  network: ws
+  port: 80
+  server: join.VPNCUSTOMIZE.com
+  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: dfc1a9ab-6241-4b73-92f7-b299fc6b7751
+  ws-opts:
+    headers:
+      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
+    path: /xmlrpc.php?ed=1080
+- name: 美国-5
+  network: ws
+  port: 80
+  server: join.VPNCUSTOMIZE.com
+  servername: csgo.mozilla.5.0.xn--2b5baaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.ajab.iP-ddns.com
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 19d13bed-b8c5-4443-920e-12f833fed576
+  ws-opts:
+    headers:
+      Host: csgo.mozilla.5.0.xn--2b5baaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.ajab.iP-ddns.com
+    path: /xmlrpc.php/Telegram,VPNCUSTOMIZE,Telegram,VPNCUSTOMIZE,Telegram,VPNCUSTOMIZE?ed=1080
+- name: 美国-6
+  network: ws
+  port: 80
+  server: 198.41.218.111
+  servername: OlD-disk-EFCd.JojAhoF109.WorKerS.DEv
   skip-cert-verify: true
   tls: false
   type: vless
   udp: true
-  uuid: d663fecc-1f02-4e9e-8157-c33cdb30da23
+  uuid: 76b3cbba-e6ac-485a-9481-336a0415eab9
   ws-opts:
     headers:
-      Host: sUB.veBoBE2961.WoRKeRs.dev
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 美国-100
-  network: ws
-  port: 2095
-  server: 104.26.0.143
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
+      Host: OlD-disk-EFCd.JojAhoF109.WorKerS.DEv
+    path: /odHGn0T9HGFXsTlN?ed=2560
 - alpn:
-  - h3
   - h2
-  - http/1.1
-  client-fingerprint: chrome
-  name: 美国-101
+  - http%2F1.1
+  client-fingerprint: firefox
+  name: 美国-7
   network: ws
   port: 80
-  server: 151.101.0.155
-  servername: UNLIMITEDDEV.channel-telegram-1.ir
+  server: 104.18.26.94
+  servername: esetsecuritylicense.wixel67553.workers.dev
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: 8a874add-2e56-4e63-ee91-4b12fe600993
+  uuid: 097e2594-dbbb-4a36-a5c7-6b8c8893c611
   ws-opts:
     headers:
-      Host: UNLIMITEDDEV.channel-telegram-1.ir
-    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
-- alterId: 0
-  cipher: auto
-  name: 美国-102
+      Host: esetsecuritylicense.wixel67553.workers.dev
+    path: /TELEGRAM-MARAMBASHI-MARAMBASHI/?ed=2048
+- alpn:
+  - http%2F1.1
+  client-fingerprint: edge
+  name: 美国-8
   network: ws
-  port: 2095
-  server: 104.18.114.180
-  servername: c16.6016725.xyz
+  port: 80
+  server: 104.21.81.174
+  servername: DaWn-lAKE-d5E3.WocoYA4320.wOrkERs.DeV
   skip-cert-verify: false
   tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  type: vless
+  uuid: 23b3cbba-e6ac-485a-9481-342a0415eab9
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-103
+      Host: DaWn-lAKE-d5E3.WocoYA4320.wOrkERs.DeV
+    path: /wP3dwCyRAVyMJFfW?ed=2560
+- name: 美国-9
   network: ws
-  port: 2095
-  server: 104.18.114.215
-  servername: c16.6016725.xyz
+  port: 80
+  server: join.vpncustomize.com
+  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
   skip-cert-verify: false
   tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  type: vless
+  uuid: dfc1a9ab-6241-4b73-92f7-b299fc6b7751
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-104
+      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
+    path: /xmlrpc.php?ed=1080
+- name: 美国-10
   network: ws
-  port: 2095
-  server: 104.18.114.226
-  servername: c16.6016725.xyz
+  port: 80
+  server: visa.org
+  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
   skip-cert-verify: false
   tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  type: vless
+  uuid: dfc1a9ab-6241-4b73-92f7-b299fc6b7751
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-105
+      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
+    path: /xmlrpc.php?ed=1080&id=dfc1a9ab-6241-4b73-92f7-b299fc6b7751
+- name: 美国-11
   network: ws
-  port: 2095
-  server: 104.18.114.136
-  servername: c16.6016725.xyz
+  port: 80
+  server: 104.26.13.101
+  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
   skip-cert-verify: false
   tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  type: vless
+  uuid: dfc1a9ab-6241-4b73-92f7-b299fc6b7751
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-106
+      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
+    path: /xmlrpc.php?ed=1080
+- name: 美国-12
   network: ws
-  port: 2095
-  server: 104.18.114.232
-  servername: c16.6016725.xyz
+  port: 8080
+  server: 104.17.76.220
+  servername: cdn-allxn--b6gaceuorg.l4o117en.workers.dev
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: aa2dc840-be38-4b4d-a002-ba234999fd55
+  ws-opts:
+    headers:
+      Host: cdn-allxn--b6gaceuorg.l4o117en.workers.dev
+    path: /
+- name: 美国-13
+  network: ws
+  port: 80
+  server: join.VPNCUSTOMIZE.com
+  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
   skip-cert-verify: false
   tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  type: vless
+  uuid: dfc1a9ab-6241-4b73-92f7-b299fc6b7751
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 美国-107
-  network: ws
-  port: 2095
-  server: 104.18.114.250
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- name: 美国-108
+      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch.
+    path: /xmlrpc.php?ed=1080&id=dfc1a9ab-6241-4b73-92f7-b299fc6b7751
+- name: 美国-14
   network: ws
   port: 8880
   server: 162.159.83.112
@@ -1870,66 +344,7 @@ proxies:
     headers:
       Host: falcunargo-channel.be3374a836.workers.Dev
     path: /?ed=2048
-- name: 美国-109
-  network: ws
-  port: 8880
-  server: 172.67.195.126
-  servername: falcunargo-telegram.384f2ed785.workers.Dev
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 44ab0683-1a75-4859-88ce-ef9ffea53c91
-  ws-opts:
-    headers:
-      Host: falcunargo-telegram.384f2ed785.workers.Dev
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 美国-110
-  network: ws
-  port: 2095
-  server: 104.18.114.214
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- name: 美国-111
-  network: ws
-  port: 80
-  server: 151.101.194.165
-  servername: servicefree.vip.no.tlswehoock.ir.
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: a7c3d528-549c-4d29-b93a-7a68970a0c2e
-  ws-opts:
-    headers:
-      Host: servicefree.vip.no.tlswehoock.ir.
-    path: /SPdnet?ed=2048
-- alterId: 0
-  cipher: auto
-  name: 美国-112
-  network: ws
-  port: 2095
-  server: 104.18.114.119
-  servername: c16.6016725.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
-  ws-opts:
-    headers:
-      Host: c16.6016725.xyz
-    path: /github.com/Alvin9999
-- name: 美国-113
+- name: 美国-15
   network: ws
   port: 8080
   server: 104.17.74.34
@@ -1943,13 +358,95 @@ proxies:
     headers:
       Host: extERnAlnEt.EXTeRNAL-net.WorKers.DeV
     path: /dcjNLZe6XRpnDatU/OC4yMTkuNDIuNzI=
+- client-fingerprint: chrome
+  name: 美国-16
+  network: ws
+  port: 80
+  server: 199.232.8.123
+  servername: IRANINGOAT2.IR
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d578322a-266b-479d-9eda-f1b41324e721
+  ws-opts:
+    headers:
+      Host: IRANINGOAT2.IR
+    path: /RsAMasAPMX5yb1YZ?ed=2560fp=chrome
+- client-fingerprint: qq
+  name: 美国-17
+  network: ws
+  port: 443
+  server: 199.232.255.25
+  servername: TEHRANARGO.cc
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: 4822eda6-e0a4-5952-944d-79a93594b7d5
+  ws-opts:
+    headers:
+      Host: TEHRANARGO.cc
+    path: /Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO-Telegram,@TEHRANARGO?ed=2560
+- name: 美国-18
+  network: ws
+  port: 80
+  server: 104.16.58.162
+  servername: worker-winter-meadow-e881.test55.workers.dev
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: a2056696-90fc-4e0a-b7c8-e85ce9f96d18
+  ws-opts:
+    headers:
+      Host: worker-winter-meadow-e881.test55.workers.dev
+    path: /
+- name: 美国-19
+  network: ws
+  port: 80
+  server: 162.159.142.65
+  servername: sUB.veBoBE2961.WoRKeRs.dev
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: d663fecc-1f02-4e9e-8157-c33cdb30da23
+  ws-opts:
+    headers:
+      Host: sUB.veBoBE2961.WoRKeRs.dev
+    path: /
+- name: 美国-20
+  network: ws
+  port: 8880
+  server: 172.67.195.126
+  servername: falcunargo-telegram.384f2ed785.workers.Dev
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 44ab0683-1a75-4859-88ce-ef9ffea53c91
+  ws-opts:
+    headers:
+      Host: falcunargo-telegram.384f2ed785.workers.Dev
+    path: /
+- name: 美国-21
+  network: ws
+  port: 2086
+  server: 104.18.10.128
+  servername: v2raynselling.kir-rasol-kir.workers.dev
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d345d11e-c424-4583-b36e-527ab1f0afa4
+  ws-opts:
+    headers:
+      Host: v2raynselling.kir-rasol-kir.workers.dev
+    path: /
 - alterId: 0
   cipher: auto
-  name: 美国-114
+  name: 美国-22
   network: ws
   port: 2095
-  server: 104.18.114.200
-  servername: c16.6016725.xyz
+  server: 162.159.45.108
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
   type: vmess
@@ -1957,15 +454,1469 @@ proxies:
   uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-23
+  network: ws
+  port: 443
+  server: 172.66.47.97
+  servername: 3.sleepzzzz.cloudns.be
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: ad966d2b-5d1a-4f03-9956-5cbd024a238a
+  ws-opts:
+    headers:
+      Host: 3.sleepzzzz.cloudns.be
+    path: /?ed=2560
+- name: 美国-24
+  network: ws
+  port: 443
+  server: 172.66.44.159
+  servername: 3.sleepzzzz.cloudns.be
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: ad966d2b-5d1a-4f03-9956-5cbd024a238a
+  ws-opts:
+    headers:
+      Host: 3.sleepzzzz.cloudns.be
+    path: /?ed=2560
+- alterId: 0
+  cipher: auto
+  name: 美国-25
+  network: ws
+  port: 2095
+  server: 104.18.114.120
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-26
+  network: ws
+  port: 2095
+  server: 104.18.114.216
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-27
+  network: ws
+  port: 443
+  server: 172.66.47.181
+  servername: v2nGfaSt-Jcr.pagEs.Dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: v2nGfaSt-Jcr.pagEs.Dev
+    path: /iGEuUkpVCbbe4l6w?ed=2560
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: 16000vless
+  name: 美国-28
+  network: grpc
+  port: 443
+  server: 162.159.40.140
+  servername: vg.nimaempire.cfd
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 84e62ef1-a715-4729-91a5-55df6f370458
+- alterId: 0
+  cipher: auto
+  name: 美国-29
+  network: ws
+  port: 2095
+  server: 104.18.114.84
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-30
+  network: ws
+  port: 2095
+  server: 104.18.114.240
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-31
+  network: ws
+  port: 2095
+  server: 104.18.114.49
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-32
+  network: ws
+  port: 2095
+  server: 104.18.114.225
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-33
+  network: ws
+  port: 2095
+  server: 104.18.114.248
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-34
+  network: ws
+  port: 2095
+  server: 104.18.114.33
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-35
+  network: ws
+  port: 2095
+  server: 104.18.114.48
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-36
+  network: ws
+  port: 2095
+  server: 104.18.114.12
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-37
+  network: ws
+  port: 2095
+  server: 104.18.114.193
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-38
+  network: ws
+  port: 2095
+  server: 104.18.114.118
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  name: 美国-39
+  network: ws
+  port: 80
+  server: unlimiteddev.fastly80-3.hosting-ip.com
+  servername: UNLIMITEDDEV.channel-telegram-1.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 3641adbd-9aff-42cb-9bee-654b6ebf5831
+  ws-opts:
+    headers:
+      Host: UNLIMITEDDEV.channel-telegram-1.ir
+    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
+- alterId: 0
+  cipher: auto
+  name: 美国-40
+  network: ws
+  port: 2095
+  server: 104.18.114.65
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-41
+  network: ws
+  port: 2095
+  server: 104.18.114.99
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-42
+  network: ws
+  port: 2095
+  server: 104.18.114.67
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-43
+  network: ws
+  port: 2095
+  server: 104.18.114.34
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-44
+  network: ws
+  port: 2095
+  server: 104.18.114.78
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-45
+  network: ws
+  port: 2095
+  server: 104.18.114.186
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-46
+  network: ws
+  port: 2095
+  server: 162.159.45.100
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-47
+  network: ws
+  port: 2095
+  server: 104.18.114.246
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-48
+  network: ws
+  port: 2095
+  server: 104.18.114.187
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-49
+  network: ws
+  port: 2095
+  server: 104.18.114.106
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-50
+  network: ws
+  port: 2095
+  server: 104.18.114.144
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-51
+  network: ws
+  port: 2095
+  server: 104.18.114.156
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-52
+  network: ws
+  port: 2095
+  server: 104.18.114.151
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-53
+  network: ws
+  port: 2095
+  server: 104.18.114.140
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-54
+  network: ws
+  port: 2095
+  server: 104.18.114.22
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-55
+  network: ws
+  port: 80
+  server: 151.101.3.8
+  servername: Tehranc1.Org
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 0132f1cf-f66c-4252-a052-3aa4edade4ec
+  ws-opts:
+    headers:
+      Host: Tehranc1.Org
+    path: /Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray?ed=443
+- alterId: 0
+  cipher: auto
+  name: 美国-56
+  network: ws
+  port: 2095
+  server: 162.159.45.194
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-57
+  network: ws
+  port: 2095
+  server: 104.18.114.115
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-58
+  network: ws
+  port: 2095
+  server: 104.18.114.91
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-59
+  network: ws
+  port: 2095
+  server: 104.18.114.121
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-60
+  network: ws
+  port: 2095
+  server: 104.18.114.236
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-61
+  network: ws
+  port: 2095
+  server: 104.18.114.220
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-62
+  network: ws
+  port: 2095
+  server: 104.18.114.30
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-63
+  network: ws
+  port: 2095
+  server: 104.18.114.25
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-64
+  network: ws
+  port: 2095
+  server: 104.18.114.209
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-65
+  network: ws
+  port: 2095
+  server: 104.18.114.239
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-66
+  network: ws
+  port: 2095
+  server: 104.18.114.17
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-67
+  network: ws
+  port: 2095
+  server: 104.18.114.235
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-68
+  network: ws
+  port: 2095
+  server: 104.18.114.182
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-69
+  network: ws
+  port: 2095
+  server: 104.18.114.64
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-70
+  network: ws
+  port: 2095
+  server: 104.18.114.75
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-71
+  network: ws
+  port: 2095
+  server: 104.18.114.138
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-72
+  network: ws
+  port: 2095
+  server: 104.18.114.127
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-73
+  network: ws
+  port: 2095
+  server: 104.18.114.96
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-74
+  network: ws
+  port: 2095
+  server: 104.18.114.87
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-75
+  network: ws
+  port: 2095
+  server: 104.18.114.201
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-76
+  network: ws
+  port: 2095
+  server: 104.18.114.136
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-77
+  network: ws
+  port: 2095
+  server: 104.18.114.197
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-78
+  network: ws
+  port: 2095
+  server: 104.18.114.2
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-79
+  network: ws
+  port: 2095
+  server: 104.18.114.112
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-80
+  network: ws
+  port: 443
+  server: hajlab.ucdavis.edu
+  servername: hajlab.ucdavis.edu
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: b005ca35-199f-42fe-855c-75b86b0c2fc6
+  ws-opts:
+    headers:
+      Host: joinshhproxybedeeeee.ir
+    path: /@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy?ed=2048
+- alterId: 0
+  cipher: auto
+  name: 美国-81
+  network: ws
+  port: 2095
+  server: 104.18.114.131
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-82
+  network: ws
+  port: 2095
+  server: 104.18.114.189
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-83
+  network: ws
+  port: 2095
+  server: 162.159.45.124
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-84
+  network: ws
+  port: 2095
+  server: 104.18.114.24
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-85
+  network: ws
+  port: 2095
+  server: 104.18.114.72
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-86
+  network: ws
+  port: 2095
+  server: 104.18.114.145
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-87
+  network: ws
+  port: 2095
+  server: 104.18.114.108
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-88
+  network: ws
+  port: 2095
+  server: 104.18.114.155
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-89
+  network: ws
+  port: 2095
+  server: 104.18.114.46
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-90
+  network: ws
+  port: 2095
+  server: 162.159.45.165
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-91
+  network: ws
+  port: 2095
+  server: 104.18.114.167
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-92
+  network: ws
+  port: 2095
+  server: 104.18.114.88
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-93
+  network: ws
+  port: 2095
+  server: 104.18.114.164
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-94
+  network: ws
+  port: 2052
+  server: 104.16.215.113
+  servername: 21tg.459tj345.workers.dev
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 33039dbe-8889-42f1-9aeb-ecfbfa2a1640
+  ws-opts:
+    headers:
+      Host: 21tg.459tj345.workers.dev
+    path: /?ed=2560
+- alterId: 0
+  cipher: auto
+  name: 美国-95
+  network: ws
+  port: 2095
+  server: 104.18.114.45
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-96
+  network: ws
+  port: 2095
+  server: 104.18.114.242
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-97
+  network: ws
+  port: 2095
+  server: 104.18.114.41
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-98
+  network: ws
+  port: 2095
+  server: 162.159.45.128
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-99
+  network: ws
+  port: 2095
+  server: 104.18.114.170
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-100
+  network: ws
+  port: 2095
+  server: 162.159.45.115
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-101
+  network: ws
+  port: 2095
+  server: 104.18.114.190
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-102
+  network: ws
+  port: 2095
+  server: 104.18.114.204
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-103
+  network: ws
+  port: 2095
+  server: 104.18.114.128
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-104
+  network: ws
+  port: 2095
+  server: 104.18.114.173
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-105
+  network: ws
+  port: 2095
+  server: 104.18.114.207
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-106
+  network: ws
+  port: 2095
+  server: 104.18.114.36
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-107
+  network: ws
+  port: 2095
+  server: 162.159.45.181
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-108
+  network: ws
+  port: 2095
+  server: 104.18.114.86
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-109
+  network: ws
+  port: 2095
+  server: 104.18.114.180
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-110
+  network: ws
+  port: 2095
+  server: 104.18.114.37
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-111
+  network: ws
+  port: 2095
+  server: 104.18.114.159
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-112
+  network: ws
+  port: 2095
+  server: 104.18.114.223
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-113
+  network: ws
+  port: 2095
+  server: 104.18.114.52
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-114
+  network: ws
+  port: 2095
+  server: 104.18.114.224
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
     path: /github.com/Alvin9999
 - alterId: 0
   cipher: auto
   name: 美国-115
   network: ws
   port: 2095
-  server: 104.18.114.179
-  servername: c16.6016725.xyz
+  server: 104.18.114.194
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
   type: vmess
@@ -1973,15 +1924,15 @@ proxies:
   uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
+      Host: c17.6016725.xyz
     path: /github.com/Alvin9999
 - alterId: 0
   cipher: auto
   name: 美国-116
   network: ws
   port: 2095
-  server: 104.18.114.222
-  servername: c16.6016725.xyz
+  server: 162.159.45.231
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
   type: vmess
@@ -1989,15 +1940,15 @@ proxies:
   uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
+      Host: c17.6016725.xyz
     path: /github.com/Alvin9999
 - alterId: 0
   cipher: auto
   name: 美国-117
   network: ws
   port: 2095
-  server: 104.18.114.203
-  servername: c16.6016725.xyz
+  server: 104.18.114.191
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
   type: vmess
@@ -2005,15 +1956,15 @@ proxies:
   uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
+      Host: c17.6016725.xyz
     path: /github.com/Alvin9999
 - alterId: 0
   cipher: auto
   name: 美国-118
   network: ws
   port: 2095
-  server: 104.18.114.249
-  servername: c16.6016725.xyz
+  server: 104.18.114.237
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
   type: vmess
@@ -2021,54 +1972,63 @@ proxies:
   uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
+      Host: c17.6016725.xyz
     path: /github.com/Alvin9999
-- name: 美国-119
+- alterId: 0
+  cipher: auto
+  name: 美国-119
   network: ws
-  port: 8080
-  server: 104.18.165.78
-  servername: JOiNMAiN.MRaLPHa-Vpn.CoM.
+  port: 2095
+  server: 104.18.114.146
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
-  type: vless
-  uuid: 6fb569bc-73ae-4e89-cb25-0e8b4d107aab
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: JOiNMAiN.MRaLPHa-Vpn.CoM.
-    path: /TELEGRAM-@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray?ed=8880
-- name: 美国-120
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-120
   network: ws
-  port: 8080
-  server: 104.18.165.203
-  servername: JOiNMAiN.MRaLPHa-Vpn.CoM.
+  port: 2095
+  server: 104.18.114.195
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
-  type: vless
-  uuid: 6fb569bc-73ae-4e89-cb25-0e8b4d107aab
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: JOiNMAiN.MRaLPHa-Vpn.CoM.
-    path: /TELEGRAM-@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray?ed=8880
-- name: 美国-121
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-121
   network: ws
-  port: 8080
-  server: 104.18.165.147
-  servername: JOiNMAiN.MRaLPHa-Vpn.CoM.
+  port: 2095
+  server: 104.18.114.113
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
-  type: vless
-  uuid: 6fb569bc-73ae-4e89-cb25-0e8b4d107aab
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: JOiNMAiN.MRaLPHa-Vpn.CoM.
-    path: /TELEGRAM-@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray,@MainV2-ray?ed=8880
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
 - alterId: 0
   cipher: auto
   name: 美国-122
   network: ws
   port: 2095
-  server: 104.26.0.239
-  servername: c16.6016725.xyz
+  server: 104.18.114.35
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
   type: vmess
@@ -2076,31 +2036,31 @@ proxies:
   uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
+      Host: c17.6016725.xyz
     path: /github.com/Alvin9999
 - alterId: 0
   cipher: auto
   name: 美国-123
   network: ws
-  port: 8880
-  server: 104.26.0.3
-  servername: m13.106778.xyz
+  port: 2095
+  server: 104.18.114.26
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
   type: vmess
   udp: true
-  uuid: 90f8f4dc-8092-4355-9047-05f506f5e9ab
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: m13.106778.xyz
+      Host: c17.6016725.xyz
     path: /github.com/Alvin9999
 - alterId: 0
   cipher: auto
   name: 美国-124
   network: ws
   port: 2095
-  server: 104.26.0.242
-  servername: c16.6016725.xyz
+  server: 104.18.114.3
+  servername: c17.6016725.xyz
   skip-cert-verify: false
   tls: false
   type: vmess
@@ -2108,40 +2068,1396 @@ proxies:
   uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
   ws-opts:
     headers:
-      Host: c16.6016725.xyz
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-125
+  network: ws
+  port: 2095
+  server: 104.18.114.90
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  name: 美国-126
+  network: ws
+  port: 443
+  server: clearcreditrepair.com
+  servername: zmaoz.faculty.ucdavis.edu.
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: aa6f3d6e-f835-46ab-e35e-71828493ec4f
+  ws-opts:
+    headers:
+      Host: www.meloammn.ir
+    path: /melo/ws?e/---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net/---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Netd=2048
+- alterId: 0
+  cipher: auto
+  name: 美国-127
+  network: ws
+  port: 2095
+  server: 104.18.114.114
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-128
+  network: ws
+  port: 2095
+  server: 104.26.0.150
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-129
+  network: ws
+  port: 2095
+  server: 104.18.114.95
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-130
+  network: ws
+  port: 2095
+  server: 162.159.45.137
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-131
+  network: ws
+  port: 2095
+  server: 162.159.45.16
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-132
+  network: ws
+  port: 2095
+  server: 162.159.45.2
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-133
+  network: ws
+  port: 2095
+  server: 104.18.114.61
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-134
+  network: ws
+  port: 2095
+  server: 104.18.114.29
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-135
+  network: ws
+  port: 2095
+  server: 104.18.114.157
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-136
+  network: ws
+  port: 2095
+  server: 162.159.45.218
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-137
+  network: ws
+  port: 2095
+  server: 104.18.114.147
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-138
+  network: ws
+  port: 2095
+  server: 104.18.114.227
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-139
+  network: ws
+  port: 2095
+  server: 104.18.114.130
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- name: 美国-140
+  network: ws
+  port: 443
+  server: 104.17.147.22
+  servername: 12863995741163367406554084809141.v2line.net
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 357027be-f167-41c3-a878-aa64f6284761
+  ws-opts:
+    headers:
+      Host: 12863995741163367406554084809141.v2line.net
+    path: /v2line-paris-france-vl-ws-tls-advanced
+- alterId: 0
+  cipher: auto
+  name: 美国-141
+  network: ws
+  port: 2095
+  server: 104.26.0.142
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-142
+  network: ws
+  port: 2095
+  server: 104.18.114.28
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-143
+  network: ws
+  port: 2095
+  server: 104.18.114.163
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-144
+  network: ws
+  port: 2095
+  server: 104.18.114.98
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-145
+  network: ws
+  port: 2095
+  server: 104.18.114.229
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-146
+  network: ws
+  port: 2095
+  server: 104.26.0.208
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-147
+  network: ws
+  port: 2095
+  server: 104.18.114.76
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-148
+  network: ws
+  port: 2095
+  server: 104.18.114.124
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-149
+  network: ws
+  port: 2095
+  server: 104.18.114.68
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-150
+  network: ws
+  port: 2095
+  server: 104.18.114.142
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-151
+  network: ws
+  port: 2095
+  server: 104.18.114.85
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-152
+  network: ws
+  port: 2095
+  server: 104.26.0.96
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-153
+  network: ws
+  port: 2095
+  server: 104.18.114.6
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-154
+  network: ws
+  port: 2095
+  server: 104.18.114.92
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-155
+  network: ws
+  port: 2095
+  server: 162.159.45.63
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-156
+  network: ws
+  port: 2095
+  server: 104.18.114.199
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-157
+  network: ws
+  port: 2095
+  server: 104.18.114.245
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-158
+  network: ws
+  port: 2095
+  server: 104.18.114.109
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-159
+  network: ws
+  port: 2095
+  server: 104.18.114.117
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-160
+  network: ws
+  port: 2095
+  server: 162.159.45.238
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-161
+  network: ws
+  port: 2095
+  server: 104.26.0.196
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-162
+  network: ws
+  port: 2095
+  server: 104.18.114.169
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-163
+  network: ws
+  port: 2095
+  server: 104.26.0.131
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-164
+  network: ws
+  port: 2095
+  server: 104.18.114.206
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-165
+  network: ws
+  port: 2095
+  server: 104.18.114.211
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-166
+  network: ws
+  port: 2095
+  server: 104.26.0.6
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- client-fingerprint: chrome
+  name: 美国-167
+  network: ws
+  port: 443
+  server: 162.159.46.68
+  servername: 3.sleepzzzz.cloudns.be
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ad966d2b-5d1a-4f03-9956-5cbd024a238a
+  ws-opts:
+    headers:
+      Host: 3.sleepzzzz.cloudns.be
+    path: /?ed=2560
+- alterId: 0
+  cipher: auto
+  name: 美国-168
+  network: ws
+  port: 2095
+  server: 104.26.0.166
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-169
+  network: ws
+  port: 2095
+  server: 104.18.114.208
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-170
+  network: ws
+  port: 2095
+  server: 104.18.114.93
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-171
+  network: ws
+  port: 2095
+  server: 104.18.114.196
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-172
+  network: ws
+  port: 2095
+  server: 104.18.114.119
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-173
+  network: ws
+  port: 2095
+  server: 104.18.114.97
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-174
+  network: ws
+  port: 2095
+  server: 104.18.114.200
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-175
+  network: ws
+  port: 2095
+  server: 104.18.114.137
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-176
+  network: ws
+  port: 2095
+  server: 104.18.114.234
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-177
+  network: ws
+  port: 2095
+  server: 104.26.0.78
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-178
+  network: ws
+  port: 2095
+  server: 162.159.45.77
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-179
+  network: ws
+  port: 2095
+  server: 104.18.114.198
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-180
+  network: ws
+  port: 2095
+  server: 104.18.114.210
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-181
+  network: ws
+  port: 2095
+  server: 162.159.45.141
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-182
+  network: ws
+  port: 2095
+  server: 104.18.114.21
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
     path: /github.com/Alvin9999
 - alpn:
   - h3
   - h2
-  - http%2F1.1
+  - http/1.1
   client-fingerprint: chrome
-  name: 美国-125
+  name: 美国-183
   network: ws
-  port: 80
-  server: 104.17.234.12
-  servername: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.unlimiteddev-vpn.com.
+  port: 443
+  server: 172.66.168.194
+  servername: Fr-fReeVmeSS.PriVAteIp.NeT
   skip-cert-verify: false
-  tls: false
+  tls: true
   type: vless
-  uuid: 8a874add-2e56-4e63-ee91-4b12fe600993
+  uuid: d3d60116-3eed-4de5-9096-317b1c08873e
   ws-opts:
     headers:
-      Host: csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.unlimiteddev-vpn.com.
-    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed
+      Host: Fr-fReeVmeSS.PriVAteIp.NeT
+    path: /VLESS
+- alterId: 0
+  cipher: auto
+  name: 美国-184
+  network: ws
+  port: 2095
+  server: 104.18.114.56
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-185
+  network: ws
+  port: 2095
+  server: 104.18.114.110
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-186
+  network: ws
+  port: 2095
+  server: 162.159.45.183
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-187
+  network: ws
+  port: 2095
+  server: 104.18.114.238
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-188
+  network: ws
+  port: 2095
+  server: 104.18.114.83
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- client-fingerprint: chrome
+  name: 美国-189
+  network: ws
+  port: 443
+  server: 162.159.14.221
+  servername: fc.nimaempire.cfd
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 84e62ef1-a715-4729-91a5-55df6f370458
+  ws-opts:
+    headers:
+      Host: fc.nimaempire.cfd
+    path: /vlws
+- alterId: 0
+  cipher: auto
+  name: 美国-190
+  network: ws
+  port: 2095
+  server: 104.18.114.174
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-191
+  network: ws
+  port: 2095
+  server: 104.18.114.135
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-192
+  network: ws
+  port: 2095
+  server: 104.26.0.237
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-193
+  network: ws
+  port: 2095
+  server: 104.26.0.90
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-194
+  network: ws
+  port: 2095
+  server: 104.26.0.129
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-195
+  network: ws
+  port: 2095
+  server: 104.26.0.223
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-196
+  network: ws
+  port: 2095
+  server: 104.26.0.40
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-197
+  network: ws
+  port: 2095
+  server: 104.26.0.76
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-198
+  network: ws
+  port: 2095
+  server: 104.26.0.14
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-199
+  network: ws
+  port: 2095
+  server: 104.26.0.151
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-200
+  network: ws
+  port: 2095
+  server: 104.26.0.13
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-201
+  network: ws
+  port: 2095
+  server: 104.26.0.139
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-202
+  network: ws
+  port: 2095
+  server: 104.26.0.59
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-203
+  network: ws
+  port: 2095
+  server: 104.26.0.49
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-204
+  network: ws
+  port: 2095
+  server: 104.26.0.241
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-205
+  network: ws
+  port: 2095
+  server: 104.26.0.41
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-206
+  network: ws
+  port: 2095
+  server: 104.26.0.102
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-207
+  network: ws
+  port: 2095
+  server: 104.26.0.211
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-208
+  network: ws
+  port: 2095
+  server: 104.26.0.140
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-209
+  network: ws
+  port: 2095
+  server: 104.26.0.107
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-210
+  network: ws
+  port: 2095
+  server: 104.26.0.244
+  servername: c17.6016725.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      Host: c17.6016725.xyz
+    path: /github.com/Alvin9999
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 136个'
+  - '自动选择: 221个'
   - '自动选择(国内): 3个'
-  - '自动选择(国外): 133个'
-  - '手动选择: 136个'
+  - '自动选择(国外): 218个'
+  - '手动选择: 221个'
   - '中国分区: 3个'
-  - '未知分区: 3个'
-  - '哥斯达黎加分区: 1个'
-  - '伊朗分区: 1个'
-  - '美国分区: 125个'
+  - '未知分区: 2个'
+  - '美国分区: 210个'
   - '立陶宛分区: 3个'
+  - '挪威分区: 1个'
+  - '塞舌尔分区: 1个'
+  - '土耳其分区: 1个'
   type: select
 - hidden: true
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -2150,7 +3466,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 136个'
+  name: '自动选择: 221个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -2175,17 +3491,17 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 133个'
+  name: '自动选择(国外): 218个'
   proxies:
   - 未知-1
   - 未知-2
-  - 未知-3
-  - 哥斯达黎加-1
-  - 伊朗-1
   - 美国-1
   - 立陶宛-1
   - 立陶宛-2
   - 立陶宛-3
+  - 挪威-1
+  - 塞舌尔-1
+  - 土耳其-1
   - 美国-2
   - 美国-3
   - 美国-4
@@ -2310,13 +3626,98 @@ proxy-groups:
   - 美国-123
   - 美国-124
   - 美国-125
+  - 美国-126
+  - 美国-127
+  - 美国-128
+  - 美国-129
+  - 美国-130
+  - 美国-131
+  - 美国-132
+  - 美国-133
+  - 美国-134
+  - 美国-135
+  - 美国-136
+  - 美国-137
+  - 美国-138
+  - 美国-139
+  - 美国-140
+  - 美国-141
+  - 美国-142
+  - 美国-143
+  - 美国-144
+  - 美国-145
+  - 美国-146
+  - 美国-147
+  - 美国-148
+  - 美国-149
+  - 美国-150
+  - 美国-151
+  - 美国-152
+  - 美国-153
+  - 美国-154
+  - 美国-155
+  - 美国-156
+  - 美国-157
+  - 美国-158
+  - 美国-159
+  - 美国-160
+  - 美国-161
+  - 美国-162
+  - 美国-163
+  - 美国-164
+  - 美国-165
+  - 美国-166
+  - 美国-167
+  - 美国-168
+  - 美国-169
+  - 美国-170
+  - 美国-171
+  - 美国-172
+  - 美国-173
+  - 美国-174
+  - 美国-175
+  - 美国-176
+  - 美国-177
+  - 美国-178
+  - 美国-179
+  - 美国-180
+  - 美国-181
+  - 美国-182
+  - 美国-183
+  - 美国-184
+  - 美国-185
+  - 美国-186
+  - 美国-187
+  - 美国-188
+  - 美国-189
+  - 美国-190
+  - 美国-191
+  - 美国-192
+  - 美国-193
+  - 美国-194
+  - 美国-195
+  - 美国-196
+  - 美国-197
+  - 美国-198
+  - 美国-199
+  - 美国-200
+  - 美国-201
+  - 美国-202
+  - 美国-203
+  - 美国-204
+  - 美国-205
+  - 美国-206
+  - 美国-207
+  - 美国-208
+  - 美国-209
+  - 美国-210
   - COMPATIBLE
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 136个'
+  name: '手动选择: 221个'
   type: select
 - filter: (?i)中国|CN|cn
   hidden: false
@@ -2341,37 +3742,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '未知分区: 3个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)哥斯达黎加|CR|cr
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cr.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '哥斯达黎加分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)伊朗|IR|ir
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ir.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '伊朗分区: 1个'
+  name: '未知分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2386,7 +3757,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 125个'
+  name: '美国分区: 210个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2402,6 +3773,51 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '立陶宛分区: 3个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)挪威|NO|no
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/no.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '挪威分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)塞舌尔|SC|sc
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sc.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '塞舌尔分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)土耳其|TR|tr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/tr.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '土耳其分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
