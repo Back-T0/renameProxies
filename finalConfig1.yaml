@@ -74,32 +74,18 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- name: 澳大利亚-1
+- alterId: 0
+  cipher: auto
+  name: 加拿大-1
   network: ws
-  port: 443
-  server: 168.138.13.201
-  servername: rix.tgzdyz2.top
+  port: 20503
+  server: 50.114.177.154
   skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: b9dad5ed-74da-4a43-8145-90d06df1f890
+  tls: false
+  type: vmess
+  uuid: 7c1ca55f-a56c-4253-ac9b-a3904046c173
   ws-opts:
-    headers:
-      Host: rix.tgzdyz2.top
-    path: /?ed=2560
-- name: 澳大利亚-2
-  network: ws
-  port: 443
-  server: 152.67.112.71
-  servername: rix.tgzdyz2.top
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: b9dad5ed-74da-4a43-8145-90d06df1f890
-  ws-opts:
-    headers:
-      Host: rix.tgzdyz2.top
-    path: /?ed=2560
+    path: /
 - alterId: 64
   cipher: auto
   name: 中国-1
@@ -112,299 +98,165 @@ proxies:
 - alterId: 64
   cipher: auto
   name: 中国-2
+  port: 41020
+  server: 183.236.51.23
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: 中国-3
   port: 40002
   server: 183.236.48.163
   skip-cert-verify: false
   tls: false
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
-  name: 爱沙尼亚-1
-  network: ws
-  port: 443
-  server: 45.80.108.253
-  servername: mmdserver.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
-  ws-opts:
-    headers:
-      Host: mmdserver.us.kg
-    path: /?ed=2048
-- name: 法国-1
-  network: ws
-  port: 80
-  server: 92.222.181.77
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: f4859fc9-dc44-11ee-b9ba-00505603e70d
-  ws-opts:
-    headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-    path: /websocket
 - alterId: 0
   cipher: auto
   name: 香港-1
-  network: ws
-  port: 3456
-  server: 8.218.102.83
-  servername: argo9.zjccc.nyc.mn
-  skip-cert-verify: false
+  port: 40380
+  server: zfa04.333210.xyz
+  skip-cert-verify: true
   tls: true
   type: vmess
-  uuid: f20e6bda-c007-4ff9-be3d-0aaf125bc63a
-  ws-opts:
+  udp: true
+  uuid: 13364789-a8b2-4bcd-8df7-a794fb6f87e5
+- http-opts:
     headers:
-      Host: argo9.zjccc.nyc.mn
-    path: /serv00?ed=2048
-- name: 日本-1
-  network: ws
-  port: 443
-  server: 141.147.147.180
-  servername: rix.tgzdyz2.top
+      Host:
+      - Telewebion.com
+    method: GET
+    path:
+    - /
+  name: 德国-1
+  network: http
+  port: 19984
+  server: 188.245.215.46
+  servername: Telewebion.com
   skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 13e15bfe-73f7-4bfe-a386-136451137fc3
+- cipher: chacha20-ietf-poly1305
+  name: 德国-2
+  password: Yeud3qg58vv3mgu/SIW/2cIphtimMYsTHGBI1jAKF/A=
+  port: 443
+  server: 3.v2.a.www.speedtest.net.2.op.jahesh-tolid.website
+  type: ss
+- client-fingerprint: chrome
+  name: 德国-3
+  network: tcp
+  port: 8443
+  server: 89.187.169.71
+  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  skip-cert-verify: true
   tls: true
   type: vless
-  uuid: b9dad5ed-74da-4a43-8145-90d06df1f890
-  ws-opts:
-    headers:
-      Host: rix.tgzdyz2.top
-    path: /?ed=2560
+  uuid: 6ff213b8-ccc7-4b5a-b4aa-37f7b792a1f1
+- name: 香港-2
+  port: 4000
+  server: hk9.ftq.ink
+  tls: true
+  type: http
+- name: 香港-3
+  password: aa6ddd2f-d1cf-4a52-ba1b-2640c41a7856
+  port: 45181
+  server: 43.198.96.173
+  skip-cert-verify: true
+  sni: de1.bilibili.com
+  type: trojan
 - alterId: 0
   cipher: auto
-  name: 日本-2
-  network: ws
-  port: 443
-  server: 43.207.78.212
-  servername: argo9.zjccc.nyc.mn
-  skip-cert-verify: false
+  name: 香港-4
+  port: 40380
+  server: 91.199.84.112
+  servername: zfa04.333210.xyz
+  skip-cert-verify: true
   tls: true
   type: vmess
-  uuid: f20e6bda-c007-4ff9-be3d-0aaf125bc63a
-  ws-opts:
-    headers:
-      Host: argo9.zjccc.nyc.mn
-    path: /serv00?ed=2048
+  uuid: 13364789-a8b2-4bcd-8df7-a794fb6f87e5
 - cipher: aes-256-cfb
   name: 韩国-1
   password: amazonskr05
   port: 443
-  server: 3.38.103.161
+  server: 43.200.1.13
   type: ss
 - cipher: aes-256-cfb
   name: 韩国-2
   password: amazonskr05
   port: 443
-  server: 3.38.182.255
+  server: 43.201.116.143
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 立陶宛-1
+  password: 1RWwXhwfAB5gAEozU4G2Pg
+  port: 8080
+  server: 45.87.175.164
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 拉脱维亚-1
+  password: f8f7aCzcPKbsF8p3
+  port: 990
+  server: 46.183.217.232
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 挪威-1
+  password: xjzsiMfTByKjA9URbdXWNp
+  port: 32091
+  server: 51.120.1.158
   type: ss
 - cipher: aes-256-cfb
-  name: 韩国-3
-  password: amazonskr05
-  port: 443
-  server: 3.38.212.48
+  name: 波兰-1
+  password: FG5ddLsMPbV5CutE
+  port: 9050
+  server: 217.30.10.18
   type: ss
-- cipher: aes-256-cfb
-  name: 韩国-4
-  password: amazonskr05
-  port: 443
-  server: 52.79.248.193
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-5
-  password: amazonskr05
-  port: 443
-  server: 15.165.76.242
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-6
-  password: amazonskr05
-  port: 443
-  server: 43.203.122.162
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-7
-  password: amazonskr05
-  port: 443
-  server: 3.34.255.220
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-8
-  password: amazonskr05
-  port: 443
-  server: 43.203.141.93
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-9
-  password: amazonskr05
-  port: 443
-  server: 3.38.193.1
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-10
-  password: amazonskr05
-  port: 443
-  server: 54.180.232.93
-  type: ss
-- name: 韩国-11
-  network: ws
-  port: 443
-  server: 132.145.94.80
-  servername: rix.tgzdyz2.top
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: b9dad5ed-74da-4a43-8145-90d06df1f890
-  ws-opts:
-    headers:
-      Host: rix.tgzdyz2.top
-    path: /?ed=2560
-- name: 韩国-12
-  network: ws
-  port: 443
-  server: 138.2.123.70
-  servername: rix.tgzdyz2.top
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: b9dad5ed-74da-4a43-8145-90d06df1f890
-  ws-opts:
-    headers:
-      Host: rix.tgzdyz2.top
-    path: /?ed=2560
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
-  name: 俄罗斯联邦-1
-  network: ws
-  port: 443
-  server: 46.254.92.33
-  servername: mmdserver.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
-  ws-opts:
-    headers:
-      Host: mmdserver.us.kg
-    path: /?ed=2048
-- cipher: aes-256-cfb
+  udp: true
+- cipher: rc4-md5
   name: 新加坡-1
-  password: amazonskr05
-  port: 443
-  server: 3.1.79.116
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 68.183.227.45
   type: ss
 - alterId: 0
   cipher: auto
   name: 新加坡-2
   network: ws
-  port: 443
-  server: 3.0.50.69
-  servername: argo9.zjccc.nyc.mn
+  port: 2087
+  server: 206.238.237.86
+  servername: argo12.zjccc.nyc.mn
   skip-cert-verify: false
   tls: true
   type: vmess
-  uuid: f20e6bda-c007-4ff9-be3d-0aaf125bc63a
+  uuid: 19e06438-ea22-4478-b420-c3105bd493bb
   ws-opts:
     headers:
-      Host: argo9.zjccc.nyc.mn
+      Host: argo12.zjccc.nyc.mn
     path: /serv00?ed=2048
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
-  name: 斯洛文尼亚-1
-  network: ws
-  port: 443
-  server: 92.60.74.100
-  servername: mmdserver.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
-  ws-opts:
-    headers:
-      Host: mmdserver.us.kg
-    path: /?ed=2048
 - cipher: aes-256-cfb
   name: 美国-1
   password: amazonskr05
   port: 443
-  server: 54.191.252.235
+  server: 54.218.229.170
   type: ss
 - cipher: aes-256-cfb
   name: 美国-2
   password: amazonskr05
   port: 443
-  server: 54.201.174.149
+  server: 44.243.243.198
   type: ss
 - cipher: aes-256-cfb
   name: 美国-3
   password: amazonskr05
   port: 443
-  server: 34.222.132.123
+  server: 35.94.51.2
   type: ss
-- cipher: aes-256-cfb
-  name: 美国-4
-  password: amazonskr05
-  port: 443
-  server: 52.12.174.108
-  type: ss
-- cipher: aes-256-cfb
-  name: 美国-5
-  password: amazonskr05
-  port: 443
-  server: 52.41.180.11
-  type: ss
-- name: 美国-6
-  network: ws
-  port: 80
-  server: 104.24.20.150
-  servername: little-grass-d3f7az.cijof58321.workers.dev
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 442ac940-bbdd-4044-9b2c-e4e53cbe0055
-  ws-opts:
-    headers:
-      Host: little-grass-d3f7az.cijof58321.workers.dev
-    path: /?ed=2560
-- name: 美国-7
-  network: ws
-  port: 2086
-  server: 104.16.140.135
-  servername: b4f0b859-super-smoke-7916.bouncy-vulture1054.workers.dev
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 31348b17-4ab2-40c0-b79e-c81032331d30
-  ws-opts:
-    headers:
-      Host: b4f0b859-super-smoke-7916.bouncy-vulture1054.workers.dev
-    path: /tsgg0FHbT55sIEXC?ed=2560
-- cipher: aes-128-cfb
-  name: 美国-8
-  obfs: http_post
-  obfs-param: ''
-  password: +asd6a5s5df+
-  port: 443
-  protocol: auth_aes128_md5
-  protocol-param: ''
-  server: nsus3.irundns.net
-  type: ssr
 - grpc-opts:
-    grpc-mode: gun
+    grpc-mode: multi
     grpc-service-name: swordnewnew
-  name: 美国-9
+  name: 美国-4
   network: grpc
   port: 443
   server: cf.cishanjichang.me
@@ -413,107 +265,142 @@ proxies:
   tls: true
   type: vless
   uuid: 89b90001-4206-4871-a99d-1744d48f215b
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
+- name: 美国-5
+  network: ws
+  port: 8080
+  server: 172.67.163.189
+  servername: stArt.siTEG52770.WorKeRS.deV
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: dc580147-c87c-4527-bf90-192eb1cf62d1
+  ws-opts:
+    headers:
+      Host: stArt.siTEG52770.WorKeRS.deV
+    path: /V7zmCPZUuL2T1r5r/MC4wLjAuMA==?ed=2560
+- cipher: aes-128-cfb
+  name: 美国-6
+  obfs: http_post
+  obfs-param: ''
+  password: +asd6a5s5df+
+  port: 443
+  protocol: auth_aes128_md5
+  protocol-param: ''
+  server: nsus3.irundns.net
+  type: ssr
+- client-fingerprint: firefox
+  name: 美国-7
+  network: ws
+  port: 443
+  server: 199.232.125.55
+  servername: joinbede-ELiV2RAY.info
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: 8f90c65d-b352-496d-a9d1-7e914199c658
+  ws-opts:
+    headers:
+      Host: joinbede-ELiV2RAY.info
+    path: /
+- client-fingerprint: random
+  name: 美国-8
+  network: ws
+  port: 2083
+  server: 104.26.5.157
+  servername: 3-fs4f6s46.huangyurong.cfd
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  ws-opts:
+    headers:
+      Host: 3-fs4f6s46.huangyurong.cfd
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 美国-9
+  network: ws
+  port: 2083
+  server: 104.26.4.157
+  servername: 3-fs4f6s46.huangyurong.cfd
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  ws-opts:
+    headers:
+      Host: 3-fs4f6s46.huangyurong.cfd
+    path: /?ed=2560
+- client-fingerprint: random
   name: 美国-10
   network: ws
-  port: 443
-  server: 192.0.54.235
-  servername: mmdserver.us.kg
+  port: 2083
+  server: 172.67.75.52
+  servername: 3-fs4f6s46.huangyurong.cfd
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
   ws-opts:
     headers:
-      Host: mmdserver.us.kg
-    path: /?ed=2048
-- name: 美国-11
+      Host: 3-fs4f6s46.huangyurong.cfd
+    path: /?ed=2560
+- client-fingerprint: qq
+  name: 美国-11
   network: ws
-  port: 8080
-  server: 188.114.97.3
-  servername: ShaHrAmcOnfIgWoRKERcjsA9898.CoNfIGshaHrAmcOnfIg.woRKeRs.dev
-  skip-cert-verify: false
-  tls: false
+  port: 443
+  server: 199.232.125.50
+  servername: ELI-V2-RAY.COM
+  skip-cert-verify: true
+  tls: true
   type: vless
-  uuid: 260c4900-69a9-465c-8c3a-272eb1b4ec00
+  uuid: e9f6766e-b137-5a7d-97d7-373ef67e46b2
   ws-opts:
     headers:
-      Host: ShaHrAmcOnfIgWoRKERcjsA9898.CoNfIGshaHrAmcOnfIg.woRKeRs.dev
-    path: /0URHFxBSQcqVmgqm
-- cipher: rc4-md5
+      Host: ELI-V2-RAY.COM
+    path: /
+- client-fingerprint: random
   name: 美国-12
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 79.110.53.169
-  type: ss
-  udp: true
-- name: 美国-13
   network: ws
-  port: 443
-  server: 132.226.114.74
-  servername: rix.tgzdyz2.top
+  port: 2087
+  server: 172.67.71.122
+  servername: 3-fs4f6s46.huangyurong.cfd
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: b9dad5ed-74da-4a43-8145-90d06df1f890
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
   ws-opts:
     headers:
-      Host: rix.tgzdyz2.top
+      Host: 3-fs4f6s46.huangyurong.cfd
     path: /?ed=2560
-- name: 美国-14
+- client-fingerprint: random
+  name: 美国-13
   network: ws
-  port: 80
-  server: speedtest.net
-  servername: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
+  port: 2087
+  server: 104.26.4.57
+  servername: 3-fs4f6s46.huangyurong.cfd
   skip-cert-verify: false
-  tls: false
+  tls: true
   type: vless
-  uuid: bbcc6a4f-de43-4599-b48f-42a8cf994324
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
   ws-opts:
     headers:
-      Host: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
-    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
+      Host: 3-fs4f6s46.huangyurong.cfd
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 美国-14
+  network: ws
+  port: 8443
+  server: 104.26.12.140
+  servername: 3-fs4f6s46.huangyurong.cfd
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  ws-opts:
+    headers:
+      Host: 3-fs4f6s46.huangyurong.cfd
+    path: /?ed=2560
 - name: 美国-15
-  network: ws
-  port: 443
-  server: 129.213.136.180
-  servername: rix.tgzdyz2.top
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: b9dad5ed-74da-4a43-8145-90d06df1f890
-  ws-opts:
-    headers:
-      Host: rix.tgzdyz2.top
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 美国-16
-  obfs: plain
-  obfs-param: ''
-  password: amazonskr05
-  port: 443
-  protocol: origin
-  protocol-param: ''
-  server: 52.41.180.11
-  type: ssr
-- name: 美国-17
-  network: ws
-  port: 443
-  server: 141.148.187.195
-  servername: rix.tgzdyz2.top
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: b9dad5ed-74da-4a43-8145-90d06df1f890
-  ws-opts:
-    headers:
-      Host: rix.tgzdyz2.top
-    path: /?ed=2560
-- name: 美国-18
   network: ws
   port: 80
   server: 151.101.64.155
@@ -526,87 +413,413 @@ proxies:
     headers:
       Host: iranvpn.com.
     path: /?ed=1024
-- name: 美国-19
+- client-fingerprint: random
+  name: 美国-16
   network: ws
-  port: 80
-  server: 151.101.130.133
-  servername: fatmelo.com
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 82fc176f-7cc7-40a1-e1ec-af2298e23eab
-  ws-opts:
-    headers:
-      Host: fatmelo.com
-    path: /olem/ws?e@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn-d=2048
-- name: 美国-20
-  network: ws
-  port: 2053
-  server: 205.233.181.36
-  servername: rix.tgzdyz2.top
+  port: 2087
+  server: 104.26.5.57
+  servername: 3-fs4f6s46.huangyurong.cfd
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: b9dad5ed-74da-4a43-8145-90d06df1f890
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
   ws-opts:
     headers:
-      Host: rix.tgzdyz2.top
+      Host: 3-fs4f6s46.huangyurong.cfd
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 美国-17
+  network: ws
+  port: 8443
+  server: 172.67.75.194
+  servername: 3-fs4f6s46.huangyurong.cfd
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  ws-opts:
+    headers:
+      Host: 3-fs4f6s46.huangyurong.cfd
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 美国-18
+  network: ws
+  port: 8443
+  server: 104.26.13.140
+  servername: 3-fs4f6s46.huangyurong.cfd
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  ws-opts:
+    headers:
+      Host: 3-fs4f6s46.huangyurong.cfd
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 美国-19
+  network: ws
+  port: 8443
+  server: 172.64.146.66
+  servername: 3-fs4f6s46.huangyurong.cfd
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  ws-opts:
+    headers:
+      Host: 3-fs4f6s46.huangyurong.cfd
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 美国-20
+  network: ws
+  port: 8443
+  server: 104.18.41.190
+  servername: 3-fs4f6s46.huangyurong.cfd
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  ws-opts:
+    headers:
+      Host: 3-fs4f6s46.huangyurong.cfd
+    path: /?ed=2560
+- client-fingerprint: qq
+  name: 美国-21
+  network: ws
+  port: 443
+  server: 199.232.125.44
+  servername: ELiV2--ELENA.COM
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: 8f6f8193-0f0b-5933-9346-718542befff9
+  ws-opts:
+    headers:
+      Host: ELiV2--ELENA.COM
+    path: /
+- client-fingerprint: qq
+  name: 美国-22
+  network: ws
+  port: 443
+  server: 199.232.125.43
+  servername: ELI-V2-RAY.COM
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: ec1540bf-39b1-5901-bc00-4aa9c81e27af
+  ws-opts:
+    headers:
+      Host: ELI-V2-RAY.COM
+    path: /
+- client-fingerprint: qq
+  name: 美国-23
+  network: ws
+  port: 443
+  server: 199.232.125.55
+  servername: 0-ELiV2RAY.COM
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: 9a3d1319-e75c-46a6-994a-58fac1b86907
+  ws-opts:
+    headers:
+      Host: 0-ELiV2RAY.COM
     path: /
 - alterId: 0
   cipher: auto
-  name: 美国-21
+  name: 美国-24
   network: ws
-  port: 60002
-  server: 89.213.182.246
-  servername: argo9.zjccc.nyc.mn
+  port: 2086
+  server: 104.21.238.215
+  servername: a10.164748.xyz
   skip-cert-verify: false
-  tls: true
+  tls: false
   type: vmess
-  uuid: f20e6bda-c007-4ff9-be3d-0aaf125bc63a
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
   ws-opts:
     headers:
-      Host: argo9.zjccc.nyc.mn
-    path: /serv00?ed=2048
-- name: 美国-22
+      Host: a10.164748.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-25
+  network: ws
+  port: 2086
+  server: 104.21.238.128
+  servername: a10.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: a10.164748.xyz
+    path: /github.com/Alvin9999
+- name: 美国-26
   network: ws
   port: 80
-  server: ISVvpn.fastly80-2.hosting-ip.com
-  servername: 5774.ir
+  server: 170.114.45.6
+  servername: paid.free.pranithsandaruwan.shop
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: d74acf2c-2148-4343-891c-627c4b5d690b
+  uuid: 24e01a84-4864-40e4-abc4-2dc0432d68d4
   ws-opts:
     headers:
-      Host: 5774.ir
-    path: /VLESS?ed=80
-- name: 越南-1
-  password: 94d219c9-1afc-4d42-b090-8b3794764380
+      Host: paid.free.pranithsandaruwan.shop
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 美国-27
+  network: ws
+  port: 2086
+  server: 104.21.238.20
+  servername: m10.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: m10.164748.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-28
+  network: ws
+  port: 2086
+  server: 104.21.238.133
+  servername: p7.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: p7.164748.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-29
+  network: ws
+  port: 2086
+  server: 104.21.238.156
+  servername: p7.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: p7.164748.xyz
+    path: /github.com/Alvin9999
+- name: 美国-30
+  network: ws
+  port: 80
+  server: speedtest.net
+  servername: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: bd2c5ea2-47a0-4892-8202-2b4fea3151d0
+  ws-opts:
+    headers:
+      Host: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
+    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
+- alterId: 64
+  cipher: auto
+  name: 美国-31
+  network: ws
+  port: 30000
+  server: 107.167.30.126
+  servername: www.83645422.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  uuid: 57f93e92-ebb9-4f16-9bdc-8225d2010995
+  ws-opts:
+    headers:
+      Host: www.83645422.xyz
+    path: /path/240811062813
+- alterId: 0
+  cipher: auto
+  name: 美国-32
+  network: ws
+  port: 2086
+  server: 162.159.45.194
+  servername: a21.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: a21.164748.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-33
+  network: ws
+  port: 2086
+  server: 104.26.0.80
+  servername: p7.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: p7.164748.xyz
+    path: /github.com/Alvin9999
+- name: 美国-34
+  network: ws
+  port: 80
+  server: 151.101.3.8
+  servername: www.x-ui.com
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 5e32df7f-dbf7-5bb8-8a37-c189e11365e6
+  ws-opts:
+    headers:
+      Host: www.x-ui.com
+    path: /vless?ed=1048
+- alterId: 0
+  cipher: auto
+  name: 美国-35
+  network: ws
+  port: 2086
+  server: 104.26.0.12
+  servername: m10.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: m10.164748.xyz
+    path: /github.com/Alvin9999
+- name: 美国-36
+  network: ws
+  port: 80
+  server: 151.101.193.6
+  servername: TEHRANARGO.COM
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: c55ceb81-ded6-5f51-b960-08223fecb4dd
+  ws-opts:
+    headers:
+      Host: TEHRANARGO.COM
+    path: /@TEHRANARGO-|-@TEHRANARGO-|-@TEHRANARGO-|-@TEHRANARGO-|-@TEHRANARGO-|-@TEHRANARGO-|-@TEHRANARGO-|-@TEHRANARGO-|-@TEHRANARGO-|-@TEHRANARGO-|-@TEHRANARGO?ed=2560
+- alterId: 0
+  cipher: auto
+  name: 美国-37
+  network: ws
+  port: 2086
+  server: 104.26.0.27
+  servername: p7.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: p7.164748.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-38
+  network: ws
+  port: 2086
+  server: 104.26.0.87
+  servername: a10.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: a10.164748.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-39
+  network: ws
+  port: 2086
+  server: 104.26.0.226
+  servername: p7.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: p7.164748.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-40
+  network: ws
+  port: 2086
+  server: 104.26.0.8
+  servername: w19.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: w19.164748.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 美国-41
+  network: ws
+  port: 2086
+  server: 104.26.0.195
+  servername: a21.164748.xyz
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  ws-opts:
+    headers:
+      Host: a21.164748.xyz
+    path: /github.com/Alvin9999
+- name: 南非-1
+  network: ws
   port: 443
-  server: 160.30.21.105
-  skip-cert-verify: true
-  sni: std1.loadingip.com
-  type: trojan
+  server: 160.123.255.213
+  servername: vdc.bgm2024.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  ws-opts:
+    headers:
+      Host: vdc.bgm2024.us.kg
+    path: /?ed=2560
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 48个'
-  - '自动选择(国内): 3个'
-  - '自动选择(国外): 45个'
-  - '手动选择: 48个'
-  - '澳大利亚分区: 2个'
-  - '中国分区: 2个'
-  - '爱沙尼亚分区: 1个'
-  - '法国分区: 1个'
-  - '香港分区: 1个'
-  - '日本分区: 2个'
-  - '韩国分区: 12个'
-  - '俄罗斯联邦分区: 1个'
+  - '自动选择: 61个'
+  - '自动选择(国内): 7个'
+  - '自动选择(国外): 54个'
+  - '手动选择: 61个'
+  - '加拿大分区: 1个'
+  - '中国分区: 3个'
+  - '香港分区: 4个'
+  - '德国分区: 3个'
+  - '韩国分区: 2个'
+  - '立陶宛分区: 1个'
+  - '拉脱维亚分区: 1个'
+  - '挪威分区: 1个'
+  - '波兰分区: 1个'
   - '新加坡分区: 2个'
-  - '斯洛文尼亚分区: 1个'
-  - '美国分区: 22个'
-  - '越南分区: 1个'
+  - '美国分区: 41个'
+  - '南非分区: 1个'
   type: select
 - hidden: true
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -615,7 +828,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 48个'
+  name: '自动选择: 61个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -625,11 +838,15 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 3个'
+  name: '自动选择(国内): 7个'
   proxies:
   - 中国-1
   - 中国-2
+  - 中国-3
   - 香港-1
+  - 香港-2
+  - 香港-3
+  - 香港-4
   - COMPATIBLE
   timeout: 1500
   type: url-test
@@ -640,30 +857,20 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 45个'
+  name: '自动选择(国外): 54个'
   proxies:
-  - 澳大利亚-1
-  - 澳大利亚-2
-  - 爱沙尼亚-1
-  - 法国-1
-  - 日本-1
-  - 日本-2
+  - 加拿大-1
+  - 德国-1
+  - 德国-2
+  - 德国-3
   - 韩国-1
   - 韩国-2
-  - 韩国-3
-  - 韩国-4
-  - 韩国-5
-  - 韩国-6
-  - 韩国-7
-  - 韩国-8
-  - 韩国-9
-  - 韩国-10
-  - 韩国-11
-  - 韩国-12
-  - 俄罗斯联邦-1
+  - 立陶宛-1
+  - 拉脱维亚-1
+  - 挪威-1
+  - 波兰-1
   - 新加坡-1
   - 新加坡-2
-  - 斯洛文尼亚-1
   - 美国-1
   - 美国-2
   - 美国-3
@@ -686,24 +893,43 @@ proxy-groups:
   - 美国-20
   - 美国-21
   - 美国-22
-  - 越南-1
+  - 美国-23
+  - 美国-24
+  - 美国-25
+  - 美国-26
+  - 美国-27
+  - 美国-28
+  - 美国-29
+  - 美国-30
+  - 美国-31
+  - 美国-32
+  - 美国-33
+  - 美国-34
+  - 美国-35
+  - 美国-36
+  - 美国-37
+  - 美国-38
+  - 美国-39
+  - 美国-40
+  - 美国-41
+  - 南非-1
   - COMPATIBLE
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 48个'
+  name: '手动选择: 61个'
   type: select
-- filter: (?i)澳大利亚|AU|au
+- filter: (?i)加拿大|CA|ca
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/au.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ca.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '澳大利亚分区: 2个'
+  name: '加拿大分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -718,37 +944,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 2个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)爱沙尼亚|EE|ee
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ee.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '爱沙尼亚分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)法国|FR|fr
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fr.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '法国分区: 1个'
+  name: '中国分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -763,22 +959,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '香港分区: 1个'
+  name: '香港分区: 4个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)日本|JP|jp
+- filter: (?i)德国|DE|de
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '日本分区: 2个'
+  name: '德国分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -793,22 +989,67 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '韩国分区: 12个'
+  name: '韩国分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)俄罗斯联邦|RU|ru
+- filter: (?i)立陶宛|LT|lt
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ru.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lt.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '俄罗斯联邦分区: 1个'
+  name: '立陶宛分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)拉脱维亚|LV|lv
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lv.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '拉脱维亚分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)挪威|NO|no
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/no.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '挪威分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)波兰|PL|pl
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pl.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '波兰分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -830,21 +1071,6 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)斯洛文尼亚|SI|si
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/si.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '斯洛文尼亚分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
 - filter: (?i)美国|US|us
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
@@ -853,22 +1079,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 22个'
+  name: '美国分区: 41个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)越南|VN|vn
+- filter: (?i)南非|ZA|za
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/vn.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/za.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '越南分区: 1个'
+  name: '南非分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
