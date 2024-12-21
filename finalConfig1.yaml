@@ -74,21 +74,6 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- cipher: aes-256-cfb
-  name: 比利时-1
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 192.71.249.71
-  type: ss
-- alterId: 0
-  cipher: auto
-  name: 巴西-1
-  port: 8080
-  server: vm.v2ray.com.br
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 7bc1cddb-e8a0-4742-8a15-4221c481e01f
 - cipher: chacha20-ietf-poly1305
   name: 瑞士-1
   password: fMcrsQuZhCNiHBmXT80AhQ3mPK5alh/iLuDz4pILlYU=
@@ -97,10 +82,38 @@ proxies:
   type: ss
 - name: 中国-1
   password: QwwHvrnN
-  port: 36442
-  server: 223.113.54.145
+  port: 34185
+  server: 36.151.192.201
   skip-cert-verify: true
   type: trojan
+- client-fingerprint: random
+  name: 哥斯达黎加-1
+  network: ws
+  port: 443
+  server: 190.93.246.124
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 哥斯达黎加-2
+  network: ws
+  port: 443
+  server: 190.93.246.128
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
 - http-opts:
     headers:
       Host:
@@ -117,42 +130,43 @@ proxies:
   tls: false
   type: vless
   uuid: 13e15bfe-73f7-4bfe-a386-136451137fc3
-- alterId: 0
-  cipher: auto
-  name: 德国-2
-  port: 44484
-  server: 78.47.102.195
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  uuid: 8a2ce574-2b74-4f10-a28e-b6d852e3f725
-- cipher: aes-128-gcm
-  name: 英国-1
-  password: shadowsocks
+- name: 英国-1
+  password: 419298f0-bf0c-11ef-bc6c-1239d0255272
   port: 443
-  server: 212.102.53.197
-  type: ss
-- cipher: aes-128-gcm
-  name: 英国-2
-  password: shadowsocks
-  port: 443
-  server: uk-dc1.yangon.club
-  type: ss
+  server: 51.38.65.155
+  skip-cert-verify: true
+  sni: speedtest.net
+  type: trojan
+- name: 香港-1
+  port: 4000
+  server: hk9.ftq.ink
+  tls: true
+  type: http
 - cipher: aes-256-cfb
-  name: 危地马拉-1
-  obfs: plain
-  obfs-param: ''
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  protocol: origin
-  protocol-param: ''
-  server: 170.80.111.5
-  type: ssr
+  name: 日本-1
+  password: amazonskr05
+  port: 443
+  server: 13.114.67.166
+  type: ss
+- client-fingerprint: randomized
+  name: 美国-1
+  network: ws
+  port: 443
+  server: zmaoz.faculty.ucdavis.edu
+  servername: zmaoz.faculty.ucdavis.edu
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 4108d6ca-bcb5-46c8-9347-8cd7f2ee245a
+  ws-opts:
+    headers:
+      Host: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
+    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  name: 美国-1
+  name: 美国-2
   network: ws
   port: 443
   server: zmaoz.faculty.ucdavis.edu
@@ -165,117 +179,145 @@ proxies:
     headers:
       Host: fonmelo.com
     path: /olem/ws?ed=4096
-- client-fingerprint: randomized
-  name: 美国-2
-  network: ws
+- cipher: aes-256-cfb
+  name: 韩国-1
+  password: amazonskr05
   port: 443
-  server: zmaoz.faculty.ucdavis.edu
-  servername: zmaoz.faculty.ucdavis.edu
+  server: 43.203.243.93
+  type: ss
+- name: 摩尔多瓦-1
+  network: tcp
+  port: 443
+  server: 185.235.243.133
+  servername: tr-s.xor-vpn.ru
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 5ca4947a-3a0e-458e-9701-11e6805dae8f
-  ws-opts:
-    headers:
-      Host: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
-    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
-- name: 哈萨克斯坦-1
-  network: ws
-  password: tg-fq521free
-  port: 443
-  server: 194.76.18.129
-  skip-cert-verify: true
-  sni: torjan.xn--xhq44j.eu.org
-  type: trojan
-  ws-opts:
-    headers:
-      Host: torjan.xn--xhq44j.eu.org
-    path: /
-- cipher: chacha20-ietf-poly1305
-  name: 立陶宛-1
-  password: cvII85TrW6n0OGyfpHVS1u
-  port: 8080
-  server: 45.87.175.181
-  type: ss
+  uuid: 64a1796c-95f8-40e4-9a56-825823212648
 - cipher: aes-128-gcm
   name: 荷兰-1
   password: shadowsocks
   port: 443
   server: 149.34.244.82
   type: ss
-- cipher: aes-128-gcm
-  name: 荷兰-2
-  password: shadowsocks
-  port: 443
-  server: 149.34.244.77
-  type: ss
 - cipher: aes-256-cfb
-  name: 波兰-1
-  password: UkXRsXvR6buDMG2Y
-  port: 9001
-  server: 217.30.10.18
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  name: 波兰-2
-  password: c3NtHJ5ujV2tGDfj
-  port: 9084
-  server: 217.30.10.18
-  type: ss
-- name: 俄罗斯联邦-1
-  network: ws
-  password: tg-fq521free
+  name: 美国-3
+  password: amazonskr05
   port: 443
-  server: 45.67.215.95
-  skip-cert-verify: true
-  sni: torjan.xn--xhq44j.eu.org
-  type: trojan
-  ws-opts:
-    headers:
-      Host: torjan.xn--xhq44j.eu.org
-    path: /
+  server: 52.32.68.164
+  type: ss
 - alpn:
-  - h3
   - h2
   - http/1.1
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: Telegramjoin:@V2Ray_Rolly-Telegramjoin:@V2Ray_Rolly-Telegramjoin:@V2Ray_Rolly-Telegramjoin:@V2Ray_Rolly-Telegramjoin:@V2Ray_Rolly-Telegramjoin:@V2Ray_Rolly-Telegramjoin:@V2Ray_Rolly-Telegramjoin:@V2Ray_Rolly-Telegramjoin:@V2Ray_Rolly-Telegramjoin:@V2Ray_Rolly-Telegramjoin:@V2Ray_Rolly-
-  name: 瑞典-1
-  network: grpc
-  port: 2053
-  server: 185.146.173.185
-  servername: Ehhdheh.vshsbsbb-jzjsjb-vdhsh-mahdi-irancel.ir
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 97be46fc-0356-4594-858b-d36fc90bf413
-- cipher: chacha20-ietf-poly1305
-  name: 德国-3
-  password: O4D8WTvkvIALxm+8sIH2rgpXizdNVcqjbcN0O1Rl9KQ=
-  port: 10851
-  server: 109.120.138.94
-  type: ss
-- cipher: aes-256-cfb
-  name: 斯洛伐克-1
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 196.245.151.50
-  type: ss
-- name: 美国-3
+  client-fingerprint: randomized
+  name: 美国-4
   network: ws
   port: 8080
-  server: xn--b6gac.eu.org
-  servername: wwwvisacomsg.mshcgb8q.workers.dev
+  server: 162.159.153.4
+  servername: 4322B5E3-biTteR-DUsT-B2AA.johnsnowhID.WORKERS.dEV
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: 464d644c-9c10-4c02-9117-4c75b0c347cd
+  uuid: 98de2525-fa3f-4d4d-adfc-393e1a605dcb
   ws-opts:
     headers:
-      Host: wwwvisacomsg.mshcgb8q.workers.dev
-    path: /ProxyIP=ProxyIP.US.fxxk.dedyn.io
-- name: 美国-4
+      Host: 4322B5E3-biTteR-DUsT-B2AA.johnsnowhID.WORKERS.dEV
+    path: /M4dyOvr7OtznwQso?ed=2560
+- name: 美国-5
+  network: ws
+  port: 2086
+  server: 104.21.64.1
+  servername: 07fd36f0-yuv2ray3131331456346534643.cocefob714.workers.dev
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 7320522d-56c1-4e35-9fa7-88a151d76828
+  ws-opts:
+    headers:
+      Host: 07fd36f0-yuv2ray3131331456346534643.cocefob714.workers.dev
+    path: /DdAtLiofda1FCcda?ed=2560
+- client-fingerprint: random
+  name: 美国-6
+  network: ws
+  port: 443
+  server: 188.114.97.158
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- name: 美国-7
+  network: ws
+  port: 443
+  server: 162.159.44.205
+  servername: freedom-1rj.pages.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 2928d83a-ca75-4d52-b437-fa78c7601378
+  ws-opts:
+    headers:
+      Host: freedom-1rj.pages.dev
+    path: /freedom-1rj.pages.dev/?ed=2560
+- client-fingerprint: chrome
+  name: 美国-8
+  network: ws
+  port: 443
+  server: 172.66.44.109
+  servername: meti-u9d.pages.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 1187ba87-8ebc-4a07-aa89-b331ed2cb356
+  ws-opts:
+    headers:
+      Host: meti-u9d.pages.dev
+    path: /Telegram@V2ray_Alpha/?ed=2560
+- client-fingerprint: random
+  name: 美国-9
+  network: ws
+  port: 443
+  server: 104.24.139.27
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- name: 美国-10
+  network: ws
+  port: 8080
+  server: 162.159.135.115
+  servername: cdn-allxn--b6gaceuorg.l4o117en.workers.dev
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: aa2dc840-be38-4b4d-a002-ba234999fd55
+  ws-opts:
+    headers:
+      Host: cdn-allxn--b6gaceuorg.l4o117en.workers.dev
+    path: /
+- name: 美国-11
+  network: ws
+  port: 443
+  server: 104.22.73.111
+  servername: freedom-1rj.pages.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 2928d83a-ca75-4d52-b437-fa78c7601378
+  ws-opts:
+    headers:
+      Host: freedom-1rj.pages.dev
+    path: /freedom-1rj.pages.dev/?ed=2560
+- name: 美国-12
   network: ws
   port: 443
   server: 199.232.125.43
@@ -288,37 +330,245 @@ proxies:
     headers:
       Host: ELI-V2-RAY.COM
     path: /
-- name: 美国-5
+- client-fingerprint: random
+  name: 美国-13
   network: ws
-  password: tg-fq521free
   port: 443
-  server: 216.24.57.30
+  server: 104.16.60.155
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-14
+  network: ws
+  port: 443
+  server: 172.66.47.147
+  servername: meti-u9d.pages.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 1187ba87-8ebc-4a07-aa89-b331ed2cb356
+  ws-opts:
+    headers:
+      Host: meti-u9d.pages.dev
+    path: /Telegram@V2ray_Alpha/?ed=2560
+- client-fingerprint: random
+  name: 美国-15
+  network: ws
+  port: 443
+  server: 188.114.96.128
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- name: 美国-16
+  network: ws
+  port: 8880
+  server: 172.67.187.219
+  servername: worker-late-feather-d436.wedome3486.workers.DEV
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: a61fc8cb-0012-4c4b-aa5e-d1c623ae8092
+  ws-opts:
+    headers:
+      Host: worker-late-feather-d436.wedome3486.workers.DEV
+    path: /
+- name: 美国-17
+  network: ws
+  password: UipJV58NIw
+  port: 443
+  server: 104.26.9.227
   skip-cert-verify: true
-  sni: torjan.xn--xhq44j.eu.org
+  sni: t2.rtx.al
   type: trojan
   ws-opts:
     headers:
-      Host: torjan.xn--xhq44j.eu.org
-    path: /
-- cipher: chacha20-ietf-poly1305
-  name: 美国-6
-  password: 4p8Xip5R50r2guWgrffLUg
-  port: 36325
-  server: 3.147.48.100
-  type: ss
-- name: 美国-7
+      Host: t2.rtx.al
+    path: /cfiiib
+- client-fingerprint: random
+  name: 美国-18
   network: ws
-  password: tg-fq521free
   port: 443
-  server: 198.62.62.67
-  skip-cert-verify: true
-  sni: torjan.xn--xhq44j.eu.org
-  type: trojan
+  server: 104.16.250.188
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
   ws-opts:
     headers:
-      Host: torjan.xn--xhq44j.eu.org
-    path: /
-- name: 美国-8
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  name: 美国-19
+  network: ws
+  port: 2083
+  server: 104.18.39.232
+  servername: ArGodev11222.PaGes.Dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: ArGodev11222.PaGes.Dev
+    path: /iEKjUnufUjeTiIrt?ed=2560
+- client-fingerprint: random
+  name: 美国-20
+  network: ws
+  port: 443
+  server: 104.16.59.58
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 美国-21
+  network: ws
+  port: 443
+  server: 172.64.160.120
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 美国-22
+  network: ws
+  port: 443
+  server: 104.16.123.68
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- name: 美国-23
+  network: ws
+  port: 443
+  server: 172.66.44.233
+  servername: aksnmaioas.pages.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 38720105-063f-40f5-a5eb-f3198b9b617d
+  ws-opts:
+    headers:
+      Host: aksnmaioas.pages.dev
+    path: /?ed=2048
+- client-fingerprint: chrome
+  name: 美国-24
+  network: ws
+  port: 443
+  server: 172.66.44.223
+  servername: cfpage-39t.pages.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: bba5ce00-09e4-4fce-8d26-35db5b4e38d4
+  ws-opts:
+    headers:
+      Host: cfpage-39t.pages.dev
+    path: /Telegram@V2ray_Alpha/?ed=2560
+- client-fingerprint: chrome
+  name: 美国-25
+  network: ws
+  port: 443
+  server: 172.66.47.33
+  servername: cfpage-39t.pages.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: bba5ce00-09e4-4fce-8d26-35db5b4e38d4
+  ws-opts:
+    headers:
+      Host: cfpage-39t.pages.dev
+    path: /Telegram@V2ray_Alpha/?ed=2560
+- client-fingerprint: random
+  name: 美国-26
+  network: ws
+  port: 443
+  server: 104.24.136.104
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 美国-27
+  network: ws
+  port: 443
+  server: 104.24.186.216
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 美国-28
+  network: ws
+  port: 443
+  server: 104.24.49.64
+  servername: lhxt.xiaomi.win
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 31f81de4-c0c3-4aa0-9b1d-dea8906a2ed1
+  ws-opts:
+    headers:
+      Host: lhxt.xiaomi.win
+    path: /?ed=2560
+- alterId: 0
+  cipher: auto
+  name: 美国-29
+  network: ws
+  port: 8443
+  server: www.visa.com.tw
+  servername: jk.htg8866.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  uuid: 6e064e59-b61c-4b9d-9455-7f143df84ec0
+  ws-opts:
+    headers:
+      Host: jk.htg8866.us.kg
+    path: /65hsr6
+- name: 美国-30
   network: ws
   port: 80
   server: speedtest.net
@@ -326,82 +576,44 @@ proxies:
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: 5ca4947a-3a0e-458e-9701-11e6805dae8f
+  uuid: 4108d6ca-bcb5-46c8-9347-8cd7f2ee245a
   ws-opts:
     headers:
       Host: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
     path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
-- name: 美国-9
-  password: Julius
-  port: 443
-  server: 104.219.41.229
-  skip-cert-verify: true
-  sni: miami.juliusnet.com
-  type: trojan
-- name: 美国-10
+- alterId: 0
+  cipher: auto
+  name: 美国-31
   network: ws
-  port: 22222
-  server: 98.85.198.21
-  servername: telegram-channel-vlessconfig.sohala.uk
+  port: 80
+  server: upos-sz-mirrorcf1ov.bilivideo.com
   skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
+  tls: false
+  type: vmess
+  uuid: 74133cf5-3e95-4f79-8379-7977f94c493a
   ws-opts:
     headers:
-      Host: telegram-channel-vlessconfig.sohala.uk
-    path: /telegram-channel-vlessconfig-ws
-- alpn:
-  - h2
-  - http/1.1
-  name: 美国-11
-  network: tcp
-  port: 443
-  server: 147135001178.sec22org.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: e20ebe01-1815-4c09-8e77-fb2f168263ce
-- alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  name: 美国-12
-  network: ws
-  port: 443
-  server: 172.67.160.44
-  servername: de.bolagskontaktstockholm.se
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  uuid: 1aae9657-c653-495d-e8ad-8ca52916cea8
-  ws-opts:
-    headers:
-      Host: de.bolagskontaktstockholm.se
-    path: /ws
+      Host: argo9.zjccc.nyc.mn
+    path: /74133cf5-3e95-4f79-8379-7977f94c493a-vm?ed=2048
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 31个'
-  - '自动选择(国内): 1个'
-  - '自动选择(国外): 30个'
-  - '手动选择: 31个'
-  - '比利时分区: 1个'
-  - '巴西分区: 1个'
+  - '自动选择: 42个'
+  - '自动选择(国内): 2个'
+  - '自动选择(国外): 40个'
+  - '手动选择: 42个'
   - '瑞士分区: 1个'
   - '中国分区: 1个'
-  - '德国分区: 3个'
-  - '英国分区: 2个'
-  - '危地马拉分区: 1个'
-  - '美国分区: 12个'
-  - '哈萨克斯坦分区: 1个'
-  - '立陶宛分区: 1个'
-  - '荷兰分区: 2个'
-  - '波兰分区: 2个'
-  - '俄罗斯联邦分区: 1个'
-  - '瑞典分区: 1个'
-  - '斯洛伐克分区: 1个'
+  - '哥斯达黎加分区: 2个'
+  - '德国分区: 1个'
+  - '英国分区: 1个'
+  - '香港分区: 1个'
+  - '日本分区: 1个'
+  - '美国分区: 31个'
+  - '韩国分区: 1个'
+  - '摩尔多瓦分区: 1个'
+  - '荷兰分区: 1个'
   type: select
 - hidden: true
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -410,7 +622,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 31个'
+  name: '自动选择: 42个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -420,9 +632,10 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 1个'
+  name: '自动选择(国内): 2个'
   proxies:
   - 中国-1
+  - 香港-1
   - COMPATIBLE
   timeout: 1500
   type: url-test
@@ -433,28 +646,19 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 30个'
+  name: '自动选择(国外): 40个'
   proxies:
-  - 比利时-1
-  - 巴西-1
   - 瑞士-1
+  - 哥斯达黎加-1
+  - 哥斯达黎加-2
   - 德国-1
-  - 德国-2
   - 英国-1
-  - 英国-2
-  - 危地马拉-1
+  - 日本-1
   - 美国-1
   - 美国-2
-  - 哈萨克斯坦-1
-  - 立陶宛-1
+  - 韩国-1
+  - 摩尔多瓦-1
   - 荷兰-1
-  - 荷兰-2
-  - 波兰-1
-  - 波兰-2
-  - 俄罗斯联邦-1
-  - 瑞典-1
-  - 德国-3
-  - 斯洛伐克-1
   - 美国-3
   - 美国-4
   - 美国-5
@@ -465,44 +669,33 @@ proxy-groups:
   - 美国-10
   - 美国-11
   - 美国-12
+  - 美国-13
+  - 美国-14
+  - 美国-15
+  - 美国-16
+  - 美国-17
+  - 美国-18
+  - 美国-19
+  - 美国-20
+  - 美国-21
+  - 美国-22
+  - 美国-23
+  - 美国-24
+  - 美国-25
+  - 美国-26
+  - 美国-27
+  - 美国-28
+  - 美国-29
+  - 美国-30
+  - 美国-31
   - COMPATIBLE
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 31个'
+  name: '手动选择: 42个'
   type: select
-- filter: (?i)比利时|BE|be
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/be.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '比利时分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)巴西|BR|br
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/br.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '巴西分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
 - filter: (?i)瑞士|CH|ch
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ch.svg
@@ -533,6 +726,21 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
+- filter: (?i)哥斯达黎加|CR|cr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cr.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '哥斯达黎加分区: 2个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
 - filter: (?i)德国|DE|de
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
@@ -541,7 +749,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '德国分区: 3个'
+  name: '德国分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -556,22 +764,37 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '英国分区: 2个'
+  name: '英国分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)危地马拉|GT|gt
+- filter: (?i)香港|HK|hk
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gt.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '危地马拉分区: 1个'
+  name: '香港分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)日本|JP|jp
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '日本分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -586,37 +809,37 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 12个'
+  name: '美国分区: 31个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)哈萨克斯坦|KZ|kz
+- filter: (?i)韩国|KR|kr
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kz.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kr.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '哈萨克斯坦分区: 1个'
+  name: '韩国分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)立陶宛|LT|lt
+- filter: (?i)摩尔多瓦|MD|md
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lt.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/md.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '立陶宛分区: 1个'
+  name: '摩尔多瓦分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -631,67 +854,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '荷兰分区: 2个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)波兰|PL|pl
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pl.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '波兰分区: 2个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)俄罗斯联邦|RU|ru
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ru.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '俄罗斯联邦分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)瑞典|SE|se
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/se.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '瑞典分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)斯洛伐克|SK|sk
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sk.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '斯洛伐克分区: 1个'
+  name: '荷兰分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
