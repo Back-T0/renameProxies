@@ -75,16 +75,33 @@ profile:
   store-selected: true
 proxies:
 - cipher: aes-256-cfb
+  client-fingerprint: chrome
   name: 日本-1
   password: amazonskr05
   port: '443'
-  server: 18.181.152.92
+  server: 18.181.162.137
+  tfo: false
   type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 香港-1
+  password: qwerREWQ@@
+  port: '4231'
+  server: 112.213.102.228
+  tfo: false
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-1
+  password: 14a0e970-8446-43fd-96f1-aabc2478d5e2
+  port: '34338'
+  server: gy.666666222.shop
+  type: ss
+  udp: true
 - cipher: aes-256-cfb
   name: 日本-2
   password: amazonskr05
   port: '443'
-  server: 54.178.84.59
+  server: 18.181.152.92
   type: ss
 - cipher: aes-256-cfb
   name: 台湾-1
@@ -93,22 +110,58 @@ proxies:
   server: 185.189.160.98
   type: ss
 - cipher: aes-256-cfb
-  name: 新加坡-1
+  name: 日本-3
   password: amazonskr05
   port: '443'
-  server: 13.250.27.88
+  server: 3.113.31.223
   type: ss
-- cipher: aes-256-cfb
-  name: 新加坡-2
-  password: amazonskr05
+- cipher: chacha20-ietf-poly1305
+  name: 中国-2
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41143'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- name: 香港-2
+  network: ws
   port: '443'
-  server: 13.250.115.217
+  server: 47.243.171.8
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=47.243.171.8:443
+- cipher: chacha20-ietf-poly1305
+  name: 中国-3
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31243'
+  server: free.2apzhfa.xyz
   type: ss
+  udp: true
+- name: 香港-3
+  network: ws
+  port: '443'
+  server: 43.128.26.74
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=43.128.26.74:443
 - cipher: aes-256-cfb
   name: 韩国-1
   password: qwerREWQ@@
-  port: '33551'
-  server: 125.141.26.12
+  port: '21215'
+  server: 125.141.26.10
   type: ss
 - cipher: aes-256-cfb
   name: 韩国-2
@@ -117,53 +170,52 @@ proxies:
   server: 221.150.109.90
   type: ss
 - cipher: aes-256-cfb
-  name: 新加坡-3
+  name: 新加坡-1
   password: amazonskr05
   port: '443'
-  server: 52.221.190.255
+  server: 13.212.194.118
   type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-4
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41243'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
 - cipher: aes-256-cfb
   name: 韩国-3
+  password: qwerREWQ@@
+  port: '33551'
+  server: 125.141.26.12
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-5
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31245'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-6
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41141'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-7
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31143'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 韩国-4
   password: qwerREWQ@@
   port: '21215'
   server: p228.panda004.net
   type: ss
-- auth: a01ffde4-0cf0-4378-a554-765c4e6f2024
-  down: '1024'
-  name: 美国-1
-  password: a01ffde4-0cf0-4378-a554-765c4e6f2024
-  port: '25999'
-  server: uszl1.stardad.lol
-  skip-cert-verify: true
-  sni: https://bing.com
-  type: hysteria2
-  udp: true
-  up: '1024'
-- cipher: aes-256-cfb
-  name: 韩国-4
-  password: qwerREWQ@@
-  port: '57884'
-  server: 125.141.31.72
-  type: ss
-- auth: b159ac71-2038-423f-b79a-8c6ab5a9b684
-  down: '15'
-  name: 俄罗斯联邦-1
-  obfs: salamander
-  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
-  password: b159ac71-2038-423f-b79a-8c6ab5a9b684
-  port: '28153'
-  server: 194.87.69.244
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '15'
-- cipher: aes-256-cfb
-  name: 日本-3
-  password: amazonskr05
-  port: '443'
-  server: 54.178.191.236
-  type: ss
-- name: 香港-1
+- name: 香港-4
   network: ws
   port: '30002'
   server: 43.135.44.101
@@ -177,102 +229,177 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560
+- auth: 5ccfb8ee-8533-42c9-a641-9add4cd6d701
+  down: '1024'
+  name: 香港-5
+  password: 5ccfb8ee-8533-42c9-a641-9add4cd6d701
+  port: '24976'
+  server: hkzl2.stardad.lol
+  skip-cert-verify: true
+  sni: https://bing.com
+  type: hysteria2
+  udp: true
+  up: '1024'
 - cipher: aes-256-cfb
   name: 韩国-5
+  password: qwerREWQ@@
+  port: '41748'
+  server: p230.panda004.net
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-8
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31141'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 日本-4
+  password: amazonskr05
+  port: '443'
+  server: 52.194.212.235
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-9
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41245'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- alpn:
+  - h2
+  - http/1.1
+  name: 美国-1
+  network: ws
+  port: '80'
+  server: 167.82.85.155
+  servername: teleirani.ir
+  tls: false
+  type: vless
+  uuid: 253ef561-9e57-4336-befd-878ddd30df01
+  ws-opts:
+    headers:
+      host: teleirani.ir
+    path: /?ed=2048
+- cipher: aes-256-cfb
+  name: 新加坡-2
+  password: amazonskr05
+  port: '443'
+  server: 122.248.193.242
+  type: ss
+- cipher: aes-128-gcm
+  name: 中国-10
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '565'
+  server: cnexhk.nesx.xyz
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-11
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31171'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-2
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31121'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-12
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41241'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-13
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31175'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 中国-14
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '565'
+  server: cnrefhk2.exitlag.xyz
+  type: ss
+- auth: d65cc190-6140-46eb-a62e-59826f81a2f4
+  down: '1024'
+  name: 日本-5
+  password: d65cc190-6140-46eb-a62e-59826f81a2f4
+  port: '48512'
+  server: jpzl2.stardad.lol
+  skip-cert-verify: true
+  sni: https://bing.com
+  type: hysteria2
+  udp: true
+  up: '1024'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-3
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31107'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 2ba077f8-9732-4eb3-9f16-df4d31b85d0f
+  down: '100'
+  name: 德国-1
+  obfs: salamander
+  obfs-password: M2UyNTc5OWUwYjkyM2Q2OQ==
+  password: 2ba077f8-9732-4eb3-9f16-df4d31b85d0f
+  port: '3942'
+  server: 5.39.252.204
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '100'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-15
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41173'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-16
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31173'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 韩国-6
   password: qwerREWQ@@
   port: '51219'
   server: 125.141.31.103
   type: ss
 - cipher: aes-256-cfb
-  name: 韩国-6
+  name: 韩国-7
   password: qwerREWQ@@
-  port: '19533'
-  server: 203.234.238.140
+  port: '3231'
+  server: 210.217.18.70
   type: ss
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-2
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31124'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-2
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31107'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-3
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31159'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- cipher: aes-128-gcm
+  name: 中国-17
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '564'
+  server: rcgm.exitlag.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
   name: 美国-4
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31117'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-3
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31126'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-5
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31122'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-4
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31116'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-5
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31157'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-6
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
   port: '31121'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
@@ -280,53 +407,92 @@ proxies:
   udp: true
   up: '10000'
 - cipher: aes-256-cfb
-  name: 韩国-7
+  client-fingerprint: chrome
+  name: 韩国-8
+  password: qwerREWQ@@
+  port: '2105'
+  server: 218.234.149.9
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  name: 韩国-9
+  password: qwerREWQ@@
+  port: '19533'
+  server: 203.234.238.140
+  type: ss
+- cipher: aes-256-cfb
+  name: 韩国-10
+  password: qwerREWQ@@
+  port: '59974'
+  server: 210.217.18.69
+  type: ss
+- cipher: aes-256-cfb
+  name: 韩国-11
+  password: qwerREWQ@@
+  port: '57884'
+  server: 125.141.31.72
+  type: ss
+- cipher: aes-256-cfb
+  name: 韩国-12
   password: qwerREWQ@@
   port: '59974'
   server: p241.panda004.net
   type: ss
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-7
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31161'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
   udp: true
-  up: '10000'
-- auth: 480f124a-6732-4f14-8a29-d99a7951cf55
-  down: '15'
-  name: 俄罗斯联邦-2
-  obfs: salamander
-  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
-  password: 480f124a-6732-4f14-8a29-d99a7951cf55
-  port: '28153'
-  server: 176.32.39.181
-  skip-cert-verify: true
-  type: hysteria2
+- cipher: chacha20-ietf-poly1305
+  name: 中国-18
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41115'
+  server: free.6vczxw.xyz
+  type: ss
   udp: true
-  up: '15'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- alterId: '64'
+  cipher: auto
+  name: 中国-19
+  network: tcp
+  port: '54882'
+  server: 183.236.48.163
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 台湾-6
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31105'
+  name: 美国-5
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31122'
   server: cucc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- cipher: aes-256-cfb
-  name: 韩国-8
-  password: qwerREWQ@@
-  port: '59974'
-  server: 210.217.18.69
+- cipher: chacha20-ietf-poly1305
+  name: 中国-20
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41171'
+  server: free.6vczxw.xyz
   type: ss
-- name: 韩国-9
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-6
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31116'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: rc4-md5
+  name: 英国-1
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 169.150.210.233
+  type: ss
+- name: 台湾-2
   network: ws
-  port: '14985'
-  server: 61.81.181.169
+  port: '81'
+  server: 210.61.97.241
   servername: dsb.ylks.us.kg
   skip-cert-verify: true
   tls: true
@@ -337,49 +503,376 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560
-- cipher: rc4-md5
-  name: 美国-8
-  password: 14fFPrbezE3HDZzsMOr6
-  port: '8080'
-  server: 107.155.57.11
-  type: ss
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 台湾-7
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31105'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-9
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31125'
+  name: 美国-7
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31161'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- cipher: chacha20-ietf-poly1305
+  name: 中国-21
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41175'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-22
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31721'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 台湾-8
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31124'
+  name: 美国-8
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31159'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-9
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31126'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-10
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31152'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-11
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31129'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-23
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31115'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: rc4-md5
+  name: 美国-12
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 107.155.57.11
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-13
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31151'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-24
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31113'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 韩国-13
+  password: amazonskr05
+  port: '443'
+  server: 43.203.122.162
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-14
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31119'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-25
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41721'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-15
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31104'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 韩国-14
+  password: qwerREWQ@@
+  port: '25415'
+  server: 168.126.234.232
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-26
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31371'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-16
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31158'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-17
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31126'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-27
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41311'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-28
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31311'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-18
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31126'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-29
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31241'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-19
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31123'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-30
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41341'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-20
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31157'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-31
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31111'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-21
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31151'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 韩国-15
+  password: qwerREWQ@@
+  port: '40915'
+  server: 168.126.234.233
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-32
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31341'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-22
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31159'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-33
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41111'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 中国-34
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '568'
+  server: aisalayer-a.upperlay.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-23
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31159'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-35
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41113'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-24
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31157'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: rc4-md5
+  name: 英国-2
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 146.70.61.18
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-25
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31158'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-26
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31105'
   server: cucc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
 - cipher: aes-256-cfb
-  name: 韩国-10
-  password: amazonskr05
-  port: '443'
-  server: 43.203.127.152
+  name: 韩国-16
+  password: qwerREWQ@@
+  port: '25730'
+  server: 168.126.234.230
   type: ss
-- name: 韩国-11
+- cipher: aes-128-gcm
+  name: 中国-36
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '565'
+  server: cmlayer2.exitlag.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-27
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31104'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: e5788a31-3eb4-42b0-a745-98949f6239c3
+  down: '100'
+  name: 俄罗斯联邦-1
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: e5788a31-3eb4-42b0-a745-98949f6239c3
+  port: '28153'
+  server: 176.32.39.181
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '100'
+- cipher: aes-128-gcm
+  name: 中国-37
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '566'
+  server: cminit.exitlag.xyz
+  type: ss
+- name: 香港-6
+  port: '4000'
+  server: ftq.ink
+  tls: true
+  type: http
+- name: 韩国-17
   network: ws
   port: '50000'
   server: 14.39.254.65
@@ -394,359 +887,42 @@ proxies:
       host: dsb.ylks.us.kg
     path: /?ed=2560&proxyip=14.39.254.65:50000
 - cipher: rc4-md5
-  name: 美国-10
+  name: 美国-28
   password: 14fFPrbezE3HDZzsMOr6
   port: '8080'
   server: 23.251.121.242
   type: ss
-- cipher: aes-256-cfb
-  name: 韩国-12
-  password: qwerREWQ@@
-  port: '43249'
-  server: 222.112.15.140
+- cipher: chacha20-ietf
+  name: 美国-29
+  password: asd123456
+  port: '8388'
+  server: 137.175.113.192
   type: ss
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 美国-11
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+  name: 美国-30
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
   port: '31123'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-9
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31158'
   server: cucc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 46ba740a-062b-421c-b5d7-66f84d5bb381
-  down: '100'
-  name: 俄罗斯联邦-3
-  obfs: salamander
-  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
-  password: 46ba740a-062b-421c-b5d7-66f84d5bb381
-  port: '6814'
-  server: 194.87.68.115
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '100'
-- cipher: aes-256-cfb
-  name: 日本-4
-  password: amazonskr05
-  port: '443'
-  server: 54.248.142.136
-  type: ss
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-12
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31158'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-10
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31106'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-13
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31129'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: rc4-md5
-  name: 英国-1
-  password: 14fFPrbezE3HDZzsMOr6
-  port: '8080'
-  server: 146.70.61.18
-  type: ss
-- name: 韩国-13
-  network: ws
-  port: '587'
-  server: 140.238.2.81
-  servername: a.mifeng.us.kg
-  skip-cert-verify: false
+- name: 香港-7
+  port: '4000'
+  server: hk9.ftq.ink
   tls: true
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: a.mifeng.us.kg
-    path: /?ed=2560
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-14
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31104'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 韩国-14
-  network: ws
-  port: '443'
-  server: 129.154.207.203
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=129.154.207.203:443
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-11
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31120'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-12
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31125'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 韩国-15
-  password: qwerREWQ@@
-  port: '3231'
-  server: 210.217.18.70
-  type: ss
-- auth: 0946c625-b8c2-4bc3-9b4c-8d142b2b63fa
-  down: '15'
-  name: 德国-1
-  obfs: salamander
-  obfs-password: M2UyNTc5OWUwYjkyM2Q2OQ==
-  password: 0946c625-b8c2-4bc3-9b4c-8d142b2b63fa
-  port: '3942'
-  server: 5.39.252.204
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '15'
-- cipher: aes-256-cfb
-  name: 韩国-16
-  password: qwerREWQ@@
-  port: '43249'
-  server: p234.panda004.net
-  type: ss
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-15
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31157'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-13
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31112'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-14
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31154'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-128-cfb
-  name: 美国-16
-  password: shadowsocks
-  port: '443'
-  server: 184.170.241.194
-  type: ss
-- name: 韩国-17
-  network: ws
-  port: '20443'
-  server: 106.240.1.52
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=106.240.1.52:20443
-- auth: f93ec4d6-b50a-42ee-92c0-e6de8b83770b
-  down: '1024'
-  name: 日本-5
-  password: f93ec4d6-b50a-42ee-92c0-e6de8b83770b
-  port: '48512'
-  server: jpzl2.stardad.lol
-  skip-cert-verify: true
-  sni: https://bing.com
-  type: hysteria2
-  udp: true
-  up: '1024'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-17
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31120'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
+  type: http
 - cipher: aes-256-cfb
   name: 韩国-18
   password: qwerREWQ@@
-  port: '40915'
-  server: 168.126.234.233
+  port: '40244'
+  server: p229.panda004.net
   type: ss
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-15
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31119'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-16
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31158'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-18
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31114'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-17
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31129'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 日本-6
-  password: amazonskr05
-  port: '443'
-  server: 13.115.231.64
-  type: ss
-- name: 香港-2
-  network: ws
-  port: '443'
-  server: 43.128.26.74
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=43.128.26.74:443
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-19
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31119'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 美国-20
-  password: amazonskr05
-  port: '443'
-  server: 35.92.45.179
-  type: ss
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-18
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31101'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-19
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31103'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-20
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31155'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 34ed7f56-6e06-4128-a5eb-1e85083572e1
+- auth: d448cf53-d806-4c48-b81e-80d43e820d79
   down: '1024'
   name: 韩国-19
-  password: 34ed7f56-6e06-4128-a5eb-1e85083572e1
+  password: d448cf53-d806-4c48-b81e-80d43e820d79
   port: '23656'
   server: kr.stardad.lol
   skip-cert-verify: true
@@ -754,78 +930,105 @@ proxies:
   type: hysteria2
   udp: true
   up: '1024'
-- cipher: aes-256-cfb
-  name: 美国-21
-  password: amazonskr05
-  port: '443'
-  server: 35.85.33.177
-  type: ss
-- name: 俄罗斯联邦-4
-  network: ws
-  port: '443'
-  server: 45.67.215.99
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 台湾-21
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31126'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 香港-3
-  network: ws
-  port: '443'
-  server: 47.243.171.8
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=47.243.171.8:443
-- name: 美国-22
-  network: ws
-  port: '443'
-  server: 160.79.104.54
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-23
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31155'
+  name: 美国-31
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31105'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- name: 南非-1
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-32
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31101'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-33
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31124'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-34
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31112'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-38
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41371'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-35
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31122'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-36
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31124'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-37
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31117'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  sni: apple.com
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-39
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31313'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-38
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31124'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 韩国-20
   network: ws
-  port: '443'
-  server: 160.123.255.23
+  port: '14985'
+  server: 61.81.181.169
   servername: dsb.ylks.us.kg
   skip-cert-verify: true
   tls: true
@@ -836,37 +1039,44 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 台湾-22
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31153'
+  name: 美国-39
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31152'
   server: cucc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- cipher: chacha20-ietf-poly1305
+  name: 中国-40
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41731'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 台湾-23
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31110'
+  name: 美国-40
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31107'
   server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 台湾-24
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31117'
+  name: 美国-41
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31123'
   server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- name: 新加坡-4
+- name: 新加坡-3
   network: ws
   port: '10010'
   server: 158.178.228.8
@@ -880,27 +1090,526 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 美国-24
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31101'
+  name: 美国-42
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31119'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-41
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41313'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-43
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31112'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-44
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31113'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- auth: 015322ea-6674-4900-94f3-e71a2d47fcff
+  down: '100'
+  name: 香港-8
+  obfs: salamander
+  obfs-password: YzcwOTNlODc4NDIzMWMyMg==
+  password: 015322ea-6674-4900-94f3-e71a2d47fcff
+  port: '32902'
+  server: 212.192.12.70
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '100'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 美国-25
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+  name: 美国-45
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31129'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 台湾-3
+  password: 338b9800-fb4d-4934-8425-388f6d4342f5
+  port: '2002'
+  server: tw2.akebi.cc
+  skip-cert-verify: false
+  sni: hk03.akebi.cc
+  type: hysteria2
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-46
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31111'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-47
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31122'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-48
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31117'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-128-gcm
+  name: 中国-42
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '563'
+  server: rcgm.exitlag.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-49
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31161'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-50
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31125'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-128-gcm
+  name: 中国-43
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '570'
+  server: aisalayer-b.upperlay.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-51
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31101'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-128-gcm
+  name: 中国-44
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '564'
+  server: cnrefhk2.exitlag.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-52
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31121'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 新加坡-4
+  password: amazonskr05
+  port: '443'
+  server: 54.151.194.129
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-53
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31106'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-54
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31119'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-55
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31125'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-56
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31104'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 韩国-21
+  network: ws
+  port: '20443'
+  server: 106.240.1.52
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=106.240.1.52:20443
+- cipher: aes-128-gcm
+  name: 中国-45
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '569'
+  server: aisalayer-b.upperlay.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-57
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31128'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 日本-6
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: '443'
+  server: tw01.trojanyyds.xyz
+  skip-cert-verify: false
+  sni: tw01.trojanyyds.xyz
+  type: trojan
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-58
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31116'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-59
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31155'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-60
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31120'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-46
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31641'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-47
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41641'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-61
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31158'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-62
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31128'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 美国-63
+  password: amazonskr05
+  port: '443'
+  server: 34.211.229.86
+  type: ss
+- name: 韩国-22
+  network: ws
+  port: '443'
+  server: 129.154.207.203
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=129.154.207.203:443
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-64
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31151'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-65
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31120'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-66
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31110'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-128-gcm
+  name: 中国-48
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '564'
+  server: cmlayer2.exitlag.xyz
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-49
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41411'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-67
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31110'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-50
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31411'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 美国-68
+  password: amazonskr05
+  port: '443'
+  server: 35.161.59.194
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-69
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
   port: '31128'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- name: 美国-26
+- cipher: chacha20-ietf
+  name: 新加坡-5
+  password: asd123456
+  port: '8388'
+  server: 103.36.91.32
+  type: ss
+- cipher: aes-128-cfb
+  name: 美国-70
+  password: shadowsocks
+  port: '443'
+  server: 184.170.241.194
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-71
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31157'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-72
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31105'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-73
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31127'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-51
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41211'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 中国-52
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '565'
+  server: cminit.exitlag.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-74
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31127'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 美国-75
+  password: amazonskr05
+  port: '443'
+  server: 34.219.132.251
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-76
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31154'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-77
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31120'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 5ccfb8ee-8533-42c9-a641-9add4cd6d701
+  down: '1024'
+  name: 美国-78
+  password: 5ccfb8ee-8533-42c9-a641-9add4cd6d701
+  port: '25999'
+  server: uszl1.stardad.lol
+  skip-cert-verify: true
+  sni: https://bing.com
+  type: hysteria2
+  udp: true
+  up: '1024'
+- cipher: chacha20-ietf-poly1305
+  name: 英国-3
+  password: mps3FwmDjLrWaOVg
+  port: '443'
+  server: series-a2.samanehha.co
+  type: ss
+- name: 美国-79
+  network: ws
+  port: '443'
+  server: 160.79.105.221
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-80
   network: ws
   port: '443'
   server: 160.79.104.84
@@ -914,12 +1623,226 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560&proxyip=160.79.104.84:443
-- cipher: aes-256-cfb
-  name: 韩国-20
-  password: qwerREWQ@@
-  port: '25415'
-  server: 168.126.234.232
+- name: 美国-81
+  network: ws
+  port: '443'
+  server: 160.79.105.155
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-82
+  network: ws
+  port: '443'
+  server: 160.79.105.51
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560
+- cipher: rc4-md5
+  name: 新加坡-6
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 68.183.227.45
   type: ss
+- cipher: aes-256-cfb
+  name: 美国-83
+  password: amazonskr05
+  port: '443'
+  server: 54.202.77.81
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-53
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31211'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- name: 南非-1
+  network: ws
+  port: '443'
+  server: 160.123.255.23
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560
+- name: 哈萨克斯坦-1
+  network: ws
+  port: '443'
+  server: 194.76.18.10
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 美国-84
+  password: amazonskr05
+  port: '443'
+  server: 35.91.128.246
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-85
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31153'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 美国-86
+  network: ws
+  port: '443'
+  server: 160.79.105.26
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=160.79.105.26:443
+- name: 新加坡-7
+  network: ws
+  port: '443'
+  server: 206.238.236.156
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560
+- cipher: chacha20-ietf-poly1305
+  name: 英国-4
+  password: mps3FwmDjLrWaOVg
+  port: '443'
+  server: series-a2.varzesh360.co
+  type: ss
+- name: 俄罗斯联邦-2
+  network: ws
+  port: '443'
+  server: 45.67.215.48
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=45.67.215.48:443
+- cipher: aes-256-gcm
+  name: 美国-87
+  password: pKEW8JPByTVTLtM
+  port: '443'
+  server: 38.110.1.46
+  type: ss
+- cipher: aes-256-gcm
+  name: 美国-88
+  password: KixLvKzwjekG00rm
+  port: '8080'
+  server: 38.110.1.46
+  type: ss
+- name: 俄罗斯联邦-3
+  network: ws
+  port: '443'
+  server: 45.67.215.178
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-89
+  network: ws
+  port: '443'
+  server: 150.230.42.80
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-90
+  network: ws
+  port: '37190'
+  server: 104.168.43.27
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560
+- name: 美国-91
+  network: ws
+  port: '443'
+  server: 160.79.105.99
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 美国-92
+  password: amazonskr05
+  port: '443'
+  server: 54.69.180.74
+  type: ss
+- name: 日本-7
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: '443'
+  server: hk03.trojanyyds.xyz
+  skip-cert-verify: false
+  sni: hk03.trojanyyds.xyz
+  type: trojan
 - name: 南非-2
   network: ws
   port: '443'
@@ -934,18 +1857,430 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560&proxyip=160.123.255.172:443
-- cipher: rc4-md5
-  name: 新加坡-5
-  password: 14fFPrbezE3HDZzsMOr6
-  port: '8080'
-  server: 68.183.227.45
+- name: 德国-2
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 18.196.171.212
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-93
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31101'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-gcm
+  name: 美国-94
+  password: KixLvKzwjekG00rm
+  port: '5500'
+  server: 38.110.1.46
   type: ss
 - cipher: chacha20-ietf-poly1305
-  name: 美国-27
-  password: f8f7aCzcPKbsF8p3
-  port: '990'
-  server: 64.74.163.130
+  name: 中国-54
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41215'
+  server: free.6vczxw.xyz
   type: ss
+  udp: true
+- name: 美国-95
+  network: ws
+  port: '443'
+  server: 160.79.105.62
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-96
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31113'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-97
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31155'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 美国-98
+  network: ws
+  port: '443'
+  server: 216.221.210.185
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560
+- name: 南非-3
+  network: ws
+  port: '443'
+  server: 160.123.255.121
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560
+- name: 南非-4
+  network: ws
+  port: '443'
+  server: 160.123.255.20
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560
+- cipher: aes-256-gcm
+  name: 俄罗斯联邦-4
+  password: dongtaiwang.com
+  port: '23456'
+  server: 185.22.155.228
+  type: ss
+- name: 美国-99
+  network: ws
+  port: '443'
+  server: 152.67.231.219
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=152.67.231.219:443
+- cipher: chacha20-ietf-poly1305
+  name: 中国-55
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31215'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- name: 俄罗斯联邦-5
+  network: ws
+  port: '443'
+  server: 45.67.215.99
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560
+- cipher: aes-256-gcm
+  name: 美国-100
+  password: faBAoD54k87UJG7
+  port: '2376'
+  server: 38.110.1.46
+  type: ss
+- name: 美国-101
+  network: ws
+  port: '443'
+  server: 160.79.104.54
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-102
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31113'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: e5788a31-3eb4-42b0-a745-98949f6239c3
+  down: '100'
+  name: 美国-103
+  obfs: salamander
+  obfs-password: MzU2MTQ1ZGUyYmNjNWEyOA==
+  password: e5788a31-3eb4-42b0-a745-98949f6239c3
+  port: '28153'
+  server: 166.88.182.223
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '100'
+- name: 美国-104
+  network: ws
+  port: '3306'
+  server: 23.94.255.55
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=23.94.255.55:3306
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-105
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31154'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 南非-5
+  network: ws
+  port: '443'
+  server: 160.123.255.100
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=160.123.255.100:443
+- cipher: chacha20-ietf-poly1305
+  name: 巴林-1
+  password: Bog0ELmMM9DSxDdQ
+  port: '443'
+  server: 15.184.102.35
+  type: ss
+- name: 日本-8
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: '443'
+  server: sg02.trojanyyds.xyz
+  skip-cert-verify: false
+  sni: sg02.trojanyyds.xyz
+  type: trojan
+- name: 美国-106
+  network: ws
+  port: '443'
+  server: 63.141.128.99
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-107
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31111'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 美国-108
+  network: ws
+  port: '443'
+  server: 160.79.104.76
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=160.79.104.76:443
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-109
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31153'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-56
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41213'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- name: 美国-110
+  network: ws
+  port: '18446'
+  server: 154.17.21.134
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560
+- alterId: '64'
+  cipher: auto
+  name: 中国-57
+  network: tcp
+  port: '52112'
+  server: 183.236.51.23
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- cipher: aes-128-gcm
+  name: 中国-58
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '563'
+  server: cmthkd-d.net-lag.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-111
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31155'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- alterId: '64'
+  cipher: auto
+  name: 中国-59
+  port: '34493'
+  server: 120.198.71.214
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-112
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31112'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 日本-9
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: '443'
+  server: sg01.trojanyyds.xyz
+  skip-cert-verify: false
+  sni: sg01.trojanyyds.xyz
+  type: trojan
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 俄罗斯联邦-6
+  port: '443'
+  reality-opts:
+    public-key: NsRSWMDMKxVFiry3uRJB8tG5rG8LdIJqTJvHK0Uc6Gw
+    short-id: EeEFB5bF
+  server: 185.40.153.191
+  servername: vk.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 71b60539-19bf-4282-b09f-7596ffc3cc8b
+- alterId: '0'
+  cipher: auto
+  name: 中国-60
+  network: ws
+  port: '25216'
+  server: cm.awslcn.info
+  tls: false
+  type: vmess
+  uuid: 243eab52-9ac1-405c-887c-eb112c0985b8
+  ws-opts:
+    headers:
+      Host: cm.awslcn.info
+    path: /
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-113
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31154'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 法国-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 13.38.243.121
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-256-cfb
+  name: 波兰-1
+  password: fG2artUmHfNT2cX7
+  port: '9018'
+  server: 217.30.10.18
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-114
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31152'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-61
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31213'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
 - http-opts:
     headers:
       Host:
@@ -962,10 +2297,10 @@ proxies:
   tls: false
   type: vless
   uuid: 677a41e5-dbe6-429b-8f91-cc014b1ae1bd
-- name: 美国-28
+- name: 美国-115
   network: ws
   port: '443'
-  server: 160.79.105.221
+  server: 130.250.137.170
   servername: dsb.ylks.us.kg
   skip-cert-verify: true
   tls: true
@@ -976,41 +2311,53 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- alterId: '0'
+  cipher: auto
+  name: 俄罗斯联邦-7
+  network: ws
+  port: '40552'
+  server: 176.32.39.181
+  tls: false
+  type: vmess
+  udp: true
+  uuid: ea9d118e-4402-46cf-9ec1-08623681913e
+  ws-opts:
+    path: /
+- cipher: aes-256-gcm
+  name: 美国-116
+  password: FoOiGlkAA9yPEGP
+  port: '7307'
+  server: 38.110.1.46
+  type: ss
+- cipher: aes-256-cfb
+  name: 美国-117
+  password: amazonskr05
+  port: '443'
+  server: 35.85.36.208
+  type: ss
+- cipher: aes-128-gcm
+  name: 中国-62
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '565'
+  server: cmthkd-d.net-lag.xyz
+  type: ss
+- cipher: aes-128-gcm
+  name: 中国-63
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '572'
+  server: usastart-a.upperlay.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 台湾-25
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+  name: 美国-118
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
   port: '31111'
-  server: cucc.abyssvpn.com
+  server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-29
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31127'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 美国-30
-  network: ws
-  port: '443'
-  server: 150.230.42.80
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 美国-31
+- name: 美国-119
   network: ws
   port: '443'
   server: 192.9.157.76
@@ -1024,240 +2371,32 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560
-- auth: 349faaa2-f810-40d2-bf25-0ddacbce6e82
-  down: '100'
-  name: 加拿大-1
-  obfs: salamander
-  obfs-password: OWVjYWI5MTVlMDJjYWZkNQ==
-  password: 349faaa2-f810-40d2-bf25-0ddacbce6e82
-  port: '22234'
-  server: 141.195.112.167
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '100'
-- name: 美国-32
-  network: ws
-  port: '443'
-  server: 216.221.210.185
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 美国-33
-  network: ws
-  port: '443'
-  server: 160.79.105.62
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 美国-34
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31110'
-  server: cmcc.abyssvpn.com
+  name: 美国-120
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31117'
+  server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- cipher: aes-256-cfb
-  name: 韩国-21
-  password: qwerREWQ@@
-  port: '33551'
-  server: p227.panda004.net
-  type: ss
-- name: 南非-3
-  network: ws
-  port: '443'
-  server: 160.123.255.100
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=160.123.255.100:443
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 美国-35
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31111'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 美国-36
-  network: ws
-  port: '443'
-  server: 160.79.105.51
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- auth: 362069da-5bb8-451f-9c7b-1b00b4348a98
-  down: '15'
-  name: 香港-4
-  obfs: salamander
-  obfs-password: YzcwOTNlODc4NDIzMWMyMg==
-  password: 362069da-5bb8-451f-9c7b-1b00b4348a98
-  port: '32902'
-  server: 212.192.12.70
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '15'
-- name: 美国-37
-  network: ws
-  port: '37190'
-  server: 104.168.43.27
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 波兰-1
-  password: f63gg8EruDnUrmz4
-  port: '9010'
-  server: 217.30.10.18
-  type: ss
-- name: 俄罗斯联邦-5
-  network: ws
-  port: '443'
-  server: 45.67.215.48
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=45.67.215.48:443
-- name: 美国-38
-  network: ws
-  port: '443'
-  server: 160.79.105.12
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-26
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31107'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 新加坡-6
-  network: ws
-  port: '443'
-  server: 206.238.236.108
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=206.238.236.108:443
-- auth: f93ec4d6-b50a-42ee-92c0-e6de8b83770b
-  down: '1024'
-  name: 香港-5
-  password: f93ec4d6-b50a-42ee-92c0-e6de8b83770b
-  port: '24976'
-  server: hkzl2.stardad.lol
-  skip-cert-verify: true
-  sni: https://bing.com
-  type: hysteria2
-  udp: true
-  up: '1024'
-- cipher: chacha20-ietf-poly1305
-  name: 阿联酋-1
-  password: u17T3BvpYaaiuW2c
-  port: '443'
-  server: 40.172.156.142
-  type: ss
 - cipher: aes-256-cfb
   name: 波兰-2
-  password: f8npKgNzdkss2ytn
-  port: '9088'
+  password: gYCYXfkUQEs2TaJQ
+  port: '9038'
   server: 217.30.10.18
   type: ss
-  udp: true
-- alterId: '0'
-  cipher: auto
-  name: 俄罗斯联邦-6
-  network: ws
-  port: '45751'
-  server: 194.87.68.115
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 828497f6-44b3-4281-8122-3ca7c903a9a9
-  ws-opts:
-    path: /
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-27
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31155'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: chacha20-ietf-poly1305
-  name: 德国-2
-  password: NChVdloynewtqS0847jui6PQejHLO3gUuw1tnUmYVPI=
-  port: '55098'
-  server: 77.105.147.212
+- cipher: aes-256-gcm
+  name: 美国-121
+  password: Y6R9pAtvxxzmGC
+  port: '5000'
+  server: 38.110.1.46
   type: ss
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 美国-39
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+  name: 美国-122
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
   port: '31153'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
@@ -1265,162 +2404,113 @@ proxies:
   udp: true
   up: '10000'
 - cipher: chacha20-ietf-poly1305
-  name: 摩尔多瓦-1
-  password: yMX9WGPgUEcRZmlaa0YHHC
-  port: '23492'
-  server: 103.106.1.92
+  name: 中国-64
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41221'
+  server: free.6vczxw.xyz
   type: ss
-- name: 美国-40
-  network: ws
-  port: '8443'
-  server: 144.24.20.92
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
   udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- cipher: chacha20-ietf-poly1305
-  name: 英国-2
-  password: mps3FwmDjLrWaOVg
-  port: '443'
-  server: 35.177.231.62
-  type: ss
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
   down: '10000'
-  name: 台湾-28
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
+  name: 美国-123
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31116'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-124
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31106'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-125
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
   port: '31125'
   server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- alterId: '0'
-  cipher: auto
-  name: 俄罗斯联邦-7
-  network: ws
-  port: '45751'
-  server: 195.58.49.50
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 016c0e7b-506e-4ced-ad74-0722e41bf52e
-  ws-opts:
-    path: /
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-29
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31161'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 美国-41
-  network: ws
-  port: '3306'
-  server: 23.94.255.55
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=23.94.255.55:3306
-- name: 美国-42
-  network: ws
-  port: '18446'
-  server: 154.17.21.134
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- alterId: '64'
-  cipher: auto
-  name: 中国-1
-  port: '53002'
-  server: 183.236.51.23
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- name: 台湾-30
-  network: ws
-  port: '81'
-  server: 210.61.97.241
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 日本-7
-  network: ws
-  port: '443'
-  server: 64.110.104.30
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=64.110.104.30:443
-- name: 美国-43
-  network: ws
-  port: '443'
-  server: 160.79.104.76
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=160.79.104.76:443
-- alterId: '0'
-  cipher: auto
-  name: 俄罗斯联邦-8
-  network: ws
-  port: '45751'
-  server: 195.58.49.42
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 0d82ca88-d7a6-4d6b-a7aa-ef5e42819c4d
-  ws-opts:
-    path: /
-- cipher: aes-256-cfb
-  name: 韩国-22
-  password: qwerREWQ@@
-  port: '25730'
-  server: 168.126.234.230
+- cipher: chacha20-ietf-poly1305
+  name: 中国-65
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31145'
+  server: free.2apzhfa.xyz
   type: ss
-- name: 美国-44
+  udp: true
+- cipher: aes-128-gcm
+  name: 中国-66
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '574'
+  server: usastart-a.upperlay.xyz
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-67
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41145'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 德国-3
+  password: NChVdloynewtqS0847jui6PQejHLO3gUuw1tnUmYVPI=
+  port: '55098'
+  server: 77.105.147.212
+  type: ss
+- cipher: aes-256-cfb
+  name: 美国-126
+  password: amazonskr05
+  port: '443'
+  server: 35.85.33.177
+  type: ss
+- name: 日本-10
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: '443'
+  server: us01.trojanyyds.xyz
+  skip-cert-verify: false
+  sni: us01.trojanyyds.xyz
+  type: trojan
+- cipher: aes-256-gcm
+  name: 美国-127
+  password: PCnnH6SQSnfoS27
+  port: '8091'
+  server: 38.110.1.46
+  type: ss
+- cipher: aes-128-gcm
+  name: 中国-68
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '567'
+  server: cminit.exitlag.xyz
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 阿联酋-1
+  password: u17T3BvpYaaiuW2c
+  port: '443'
+  server: 40.172.156.142
+  type: ss
+- cipher: aes-256-cfb
+  name: 美国-128
+  password: amazonskr05
+  port: '443'
+  server: 54.244.200.142
+  type: ss
+- name: 日本-11
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: '443'
+  server: 74.226.136.204
+  skip-cert-verify: true
+  sni: us01.trojanyyds.xyz
+  type: trojan
+- name: 美国-129
   network: ws
   port: '8443'
   server: 129.146.171.186
@@ -1434,7 +2524,220 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560&proxyip=proxyip.us.fxxk.dedyn.io
-- name: 香港-6
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-130
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31129'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-128-gcm
+  name: 中国-69
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '571'
+  server: cntwlayer1.labexit.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-131
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31107'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-132
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31161'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- alterId: '0'
+  cipher: auto
+  name: 俄罗斯联邦-8
+  network: ws
+  port: '45751'
+  server: 194.87.69.52
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 71ef4a75-7eb0-46f5-8ac0-8b8fd71d7873
+  ws-opts:
+    path: /
+- cipher: chacha20-ietf-poly1305
+  name: 中国-70
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41441'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 波兰-3
+  password: f63gg8EruDnUrmz4
+  port: '9010'
+  server: 217.30.10.18
+  type: ss
+- cipher: aes-256-gcm
+  name: 美国-133
+  password: zDNVedRFPQexG9v
+  port: '6379'
+  server: 38.110.1.46
+  type: ss
+- name: 瑞典-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 51.21.89.123
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-128-gcm
+  name: 中国-71
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '571'
+  server: usastart-a.upperlay.xyz
+  type: ss
+- name: 日本-12
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: '443'
+  server: us02.trojanyyds.xyz
+  skip-cert-verify: false
+  sni: us02.trojanyyds.xyz
+  type: trojan
+- alterId: '0'
+  cipher: auto
+  name: 俄罗斯联邦-9
+  network: ws
+  port: '45751'
+  server: 194.87.69.244
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 015322ea-6674-4900-94f3-e71a2d47fcff
+  ws-opts:
+    path: /
+- name: 日本-13
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: '443'
+  server: my01.trojanyyds.xyz
+  skip-cert-verify: false
+  sni: my01.trojanyyds.xyz
+  type: trojan
+- alterId: '0'
+  cipher: auto
+  name: 俄罗斯联邦-10
+  network: ws
+  port: '45751'
+  server: 194.87.68.115
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 2ba077f8-9732-4eb3-9f16-df4d31b85d0f
+  ws-opts:
+    path: /
+- cipher: aes-256-cfb
+  name: 新加坡-8
+  password: amazonskr05
+  port: '443'
+  server: 54.179.186.199
+  type: ss
+- cipher: 2022-blake3-aes-256-gcm
+  name: 德国-4
+  password: TczN1j63KbLamEeXYjNQj7d7I/UPhOZWpJ5qBoI/f10=:NMZX2WajjShpecWvxU5TIsPQGJEaC1rF9zCBsA3thJg=
+  port: '22301'
+  server: 23.88.39.22
+  type: ss
+- name: 荷兰-2
+  port: '2198'
+  server: 185.236.233.136
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 838f5273-5d2d-4630-a0f5-9cc8e4aef4d6
+- cipher: chacha20-ietf-poly1305
+  name: 德国-5
+  password: LuxyNetBot
+  port: '443'
+  server: 23.88.37.31
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 荷兰-3
+  password: nq96KftrZAj3LuFQESqmn44Mo5oCuo2cipoEsae25mrmHG2oJ4VT37scBfVBpN5DWtUELZutVhhXs8Le5B8fZ9hLn9ytwvbf
+  port: '42501'
+  server: 208.67.105.87
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-134
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31103'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-72
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41219'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-73
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31219'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 中国-74
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '570'
+  server: aisalayer-a.upperlay.xyz
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-75
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31441'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- name: 新加坡-9
+  network: ws
+  port: '443'
+  server: 206.238.236.108
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=206.238.236.108:443
+- cipher: chacha20-ietf-poly1305
+  name: 中国-76
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31271'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-77
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41741'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- name: 香港-9
   network: ws
   port: '443'
   server: 47.57.245.232
@@ -1450,132 +2753,137 @@ proxies:
     path: /?ed=2560
 - alterId: '0'
   cipher: auto
-  name: 俄罗斯联邦-9
+  name: 俄罗斯联邦-11
   network: ws
   port: '45751'
-  server: 194.87.69.52
+  server: 195.58.49.42
   tls: false
   type: vmess
   udp: true
-  uuid: 2ba077f8-9732-4eb3-9f16-df4d31b85d0f
+  uuid: 362069da-5bb8-451f-9c7b-1b00b4348a98
   ws-opts:
     path: /
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-31
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31120'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: chacha20-ietf-poly1305
-  name: 阿联酋-2
-  password: u17T3BvpYaaiuW2c
-  port: '443'
-  server: 51.112.59.15
-  type: ss
-- name: 美国-45
-  network: ws
-  port: '443'
-  server: 160.79.105.99
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- alterId: '0'
+- alterId: '64'
   cipher: auto
-  name: 俄罗斯联邦-10
-  network: ws
-  port: '40552'
-  server: 176.32.39.181
+  name: 中国-78
+  port: '41020'
+  server: 183.236.51.23
+  skip-cert-verify: false
   tls: false
   type: vmess
-  udp: true
-  uuid: 02c09035-56d8-4baa-9c0a-63cf58ec5bb6
-  ws-opts:
-    path: /
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-32
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31123'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 韩国-23
-  network: ws
-  port: '443'
-  server: 144.24.78.162
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=144.24.78.162:443
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-33
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31119'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - cipher: aes-256-cfb
-  name: 波兰-3
-  password: TPqX8edgbAURcAMb
-  port: '9079'
-  server: 217.30.10.18
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  name: 美国-46
+  name: 美国-135
   password: amazonskr05
   port: '443'
-  server: 34.222.132.123
+  server: 34.222.136.128
   type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 中国-79
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41271'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- alterId: '0'
+  cipher: auto
+  name: 日本-14
+  network: ws
+  port: '443'
+  server: oci.cbu.net
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 87ae2ebc-3e45-33d9-8ed3-61a337d88888
+  ws-opts:
+    path: /
+- cipher: chacha20-ietf-poly1305
+  name: 中国-80
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31741'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- name: 日本-15
+  network: ws
+  port: '443'
+  server: 64.110.104.30
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=64.110.104.30:443
 - cipher: chacha20-ietf-poly1305
   name: 拉脱维亚-1
   password: f8f7aCzcPKbsF8p3
   port: '990'
   server: 46.183.217.232
   type: ss
-- name: 韩国-24
+- cipher: chacha20-ietf-poly1305
+  name: 中国-81
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31217'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 中国-82
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '567'
+  server: aisalayer-a.upperlay.xyz
+  type: ss
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-136
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31106'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 波兰-4
+  password: FAdUvMJUq5vDgKEq
+  port: '9006'
+  server: 217.30.10.18
+  type: ss
+- name: 爱尔兰-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 52.30.22.44
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-137
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31102'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- alterId: '0'
+  cipher: auto
+  name: 美国-138
   network: ws
   port: '443'
-  server: 149.129.8.215
-  servername: dsb.ylks.us.kg
+  server: hms02opi.fxiaomi.sbs
   skip-cert-verify: true
   tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  type: vmess
+  uuid: 6c168fcc-2231-4f3b-8c1e-f6391692df4a
   ws-opts:
     headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=149.129.8.215:443
-- cipher: 2022-blake3-aes-256-gcm
-  name: 德国-3
-  password: TczN1j63KbLamEeXYjNQj7d7I/UPhOZWpJ5qBoI/f10=:NMZX2WajjShpecWvxU5TIsPQGJEaC1rF9zCBsA3thJg=
-  port: '22301'
-  server: 23.88.39.22
-  type: ss
-- name: 瑞典-1
+      host: hms02.fxiaomi.sbs
+    path: /link
+- name: 瑞典-2
   network: ws
   port: '2501'
   server: 95.164.51.24
@@ -1588,123 +2896,51 @@ proxies:
     headers:
       Host: a.mifeng.us.kg
     path: /?ed=2560
-- name: 台湾-34
-  network: ws
-  port: '443'
-  server: 103.137.63.3
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- auth: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  down: '10000'
-  name: 台湾-35
-  password: 41f8e6cc-3e70-48b3-b8b7-c65ac4d824de
-  port: '31128'
-  server: bgp.abyssvpn.com
+- cipher: aes-256-cfb
+  name: 波兰-5
+  password: JdmRK9gMEqFgs8nP
+  port: '9003'
+  server: 217.30.10.18
+  type: ss
+- auth: e5788a31-3eb4-42b0-a745-98949f6239c3
+  down: '100'
+  name: 俄罗斯联邦-12
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: e5788a31-3eb4-42b0-a745-98949f6239c3
+  port: '6814'
+  server: 194.87.68.115
   skip-cert-verify: true
   type: hysteria2
   udp: true
-  up: '10000'
-- name: 英国-3
-  network: ws
-  port: '587'
-  server: 8.208.94.35
-  servername: a.mifeng.us.kg
+  up: '100'
+- cipher: chacha20-ietf-poly1305
+  name: 中国-83
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41217'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- name: 日本-16
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: '443'
+  server: in01.trojanyyds.xyz
   skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: a.mifeng.us.kg
-    path: /?ed=2560
-- alterId: '0'
-  cipher: auto
-  name: 芬兰-1
-  port: '13364'
-  server: 95.216.160.100
-  tls: false
-  type: vmess
-  uuid: c72a8fa3-4483-4f0d-a6d1-9422456c6813
-- name: 英国-4
-  network: ws
-  port: '2053'
-  server: 143.47.243.144
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=proxyip.oracle.fxxk.dedyn.io
-- name: 美国-47
-  network: ws
-  port: '443'
-  server: 47.253.223.200
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- alterId: '64'
-  cipher: auto
-  name: 丹麦-1
-  port: '49020'
-  server: 193.29.107.234
-  tls: false
-  type: vmess
-  uuid: 2e967dd5-8d24-4099-a901-412dcb4024fd
-- name: 德国-4
-  network: ws
-  port: '443'
-  server: 130.61.23.77
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=130.61.23.77:443
-- alterId: '0'
-  name: 德国-5
-  password: '3723507166611775488'
-  port: '443'
-  server: pleased-slug.boa152.lol
-  skip-cert-verify: true
-  sni: pleased-slug.boa152.lol
-  tls: true
+  sni: in01.trojanyyds.xyz
   type: trojan
-  udp: true
-- name: 西班牙-1
+- name: 美国-139
   network: ws
-  port: '8080'
-  server: 94.250.246.200
-  servername: a.mifeng.us.kg
-  skip-cert-verify: false
+  port: '443'
+  server: 129.80.222.224
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
   tls: true
   type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      Host: a.mifeng.us.kg
+      Host: dsb.ylks.us.kg
     path: /?ed=2560
 - name: 捷克-1
   network: ws
@@ -1719,10 +2955,49 @@ proxies:
     headers:
       Host: a.mifeng.us.kg
     path: /?ed=2560
-- name: 美国-48
+- alterId: '0'
+  cipher: auto
+  name: 美国-140
+  network: ws
+  port: '40552'
+  server: 166.88.182.223
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 7f43d6e9-f7c7-4cdc-b87d-34b683cf191a
+  ws-opts:
+    path: /
+- cipher: chacha20-ietf-poly1305
+  name: 中国-84
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31511'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- name: 美国-141
   network: ws
   port: '443'
-  server: 129.213.136.180
+  server: 129.159.84.71
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=129.159.84.71:443
+- name: 美国-142
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 54.197.202.96
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 美国-143
+  network: ws
+  port: '443'
+  server: 47.253.223.200
   servername: dsb.ylks.us.kg
   skip-cert-verify: true
   tls: true
@@ -1733,10 +3008,10 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560
-- name: 瑞士-1
+- name: 英国-5
   network: ws
-  port: '8443'
-  server: 140.238.218.65
+  port: '2053'
+  server: 143.47.243.144
   servername: dsb.ylks.us.kg
   skip-cert-verify: true
   tls: true
@@ -1761,93 +3036,36 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560
-- name: 德国-6
+- name: 英国-6
   network: ws
-  port: '443'
-  server: 130.61.39.13
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=130.61.39.13:443
-- name: 瑞士-2
-  network: ws
-  port: '8443'
-  server: 140.238.173.181
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=proxyip.oracle.fxxk.dedyn.io
-- name: 日本-8
-  network: ws
-  port: '8443'
-  server: 138.2.36.157
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=proxyip.jp.fxxk.dedyn.io
-- name: 瑞士-3
-  network: ws
-  port: '443'
-  server: 140.238.212.95
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=140.238.212.95:443
-- name: 美国-49
-  network: ws
-  port: '443'
-  server: 129.80.222.224
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 阿联酋-3
-  port: '443'
-  reality-opts:
-    public-key: ljzfoaXVBSNu3tw58-B0WNViso1aA9JSCX9GUcMDu0k
-    short-id: 4048A3da
-  server: 181.215.205.99
-  servername: adobe.com
+  port: '587'
+  server: 8.208.94.35
+  servername: a.mifeng.us.kg
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 71b60539-19bf-4282-b09f-7596ffc3cc8b
-- name: 法国-1
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /?ed=2560
+- name: 西班牙-1
   network: ws
-  port: '8443'
-  server: 141.145.205.115
+  port: '8080'
+  server: 94.250.246.200
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /?ed=2560
+- name: 香港-10
+  network: ws
+  port: '12345'
+  server: 42.98.167.229
   servername: dsb.ylks.us.kg
   skip-cert-verify: true
   tls: true
@@ -1858,21 +3076,34 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560
-- name: 法国-2
-  network: ws
-  port: '443'
-  server: 129.151.254.48
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
+- cipher: chacha20-ietf-poly1305
+  name: 中国-85
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31471'
+  server: free.2apzhfa.xyz
+  type: ss
   udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 瑞典-2
+- alterId: '0'
+  cipher: auto
+  name: 香港-11
+  port: '27512'
+  server: 103.149.183.178
+  tls: false
+  type: vmess
+  uuid: 96d38683-0817-4d91-bffa-6f03df18d9dc
+- cipher: aes-128-gcm
+  name: 中国-86
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '575'
+  server: usastart-a.upperlay.xyz
+  type: ss
+- cipher: aes-128-gcm
+  name: 中国-87
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '631'
+  server: neweur.upperlay.xyz
+  type: ss
+- name: 瑞典-3
   network: ws
   port: '8443'
   server: 129.151.198.3
@@ -1886,10 +3117,37 @@ proxies:
     headers:
       host: dsb.ylks.us.kg
     path: /?ed=2560&proxyip=proxyip.oracle.fxxk.dedyn.io
+- cipher: chacha20-ietf-poly1305
+  name: 中国-88
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31571'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 中国-89
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '570'
+  server: neweur.upperlay.xyz
+  type: ss
+- name: 瑞士-1
+  network: ws
+  port: '8443'
+  server: 140.238.218.65
+  servername: dsb.ylks.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: dsb.ylks.us.kg
+    path: /?ed=2560&proxyip=proxyip.oracle.fxxk.dedyn.io
 - name: 意大利-1
   network: ws
   port: '8443'
-  server: 158.180.230.4
+  server: 204.216.216.148
   servername: dsb.ylks.us.kg
   skip-cert-verify: true
   tls: true
@@ -1898,124 +3156,127 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: dsb.ylks.us.kg
+      Host: dsb.ylks.us.kg
     path: /?ed=2560
-- name: 美国-50
-  network: ws
+- cipher: chacha20-ietf-poly1305
+  name: 中国-90
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41611'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-91
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41511'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-92
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41571'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-93
+  password: b98dd15e-e13b-4317-b890-48f851d0fe9c
+  port: '41471'
+  server: free.6vczxw.xyz
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 中国-94
+  password: 639f0d74-a5d1-4eff-b560-2bf076f316b7
+  port: '31611'
+  server: free.2apzhfa.xyz
+  type: ss
+  udp: true
+- name: 捷克-2
+  network: tcp
+  password: '3723507166611775488'
   port: '443'
-  server: 129.159.84.71
-  servername: dsb.ylks.us.kg
+  server: social-bream.boa152.lol
   skip-cert-verify: true
-  tls: true
-  type: vless
+  sni: social-bream.boa152.lol
+  type: trojan
   udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=129.159.84.71:443
-- name: 意大利-2
-  network: ws
-  port: '2053'
-  server: 158.180.230.4
-  servername: dsb.ylks.us.kg
+- auth: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  down: '10000'
+  name: 美国-144
+  password: 0e69c18e-f529-4203-a770-256f31f9c0ee
+  port: '31200'
+  server: bgp.abyssvpn.com
   skip-cert-verify: true
-  tls: true
-  type: vless
+  type: hysteria2
   udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=proxyip.oracle.fxxk.dedyn.io
-- name: 法国-3
-  network: ws
-  port: '8443'
-  server: 129.151.225.228
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=proxyip.oracle.fxxk.dedyn.io
-- name: 瑞典-3
-  network: ws
+  up: '10000'
+- name: 日本-17
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
   port: '443'
-  server: 129.151.204.91
-  servername: dsb.ylks.us.kg
+  server: uk01.trojanyyds.xyz
+  skip-cert-verify: false
+  sni: uk01.trojanyyds.xyz
+  type: trojan
+- auth: 34ed7f56-6e06-4128-a5eb-1e85083572e1
+  down: '1024'
+  name: 新加坡-10
+  password: 34ed7f56-6e06-4128-a5eb-1e85083572e1
+  port: '35781'
+  server: sgzl1.stardad.lol
   skip-cert-verify: true
-  tls: true
-  type: vless
+  sni: https://bing.com
+  type: hysteria2
   udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 法国-4
-  network: ws
-  port: '2053'
-  server: 129.151.225.228
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=proxyip.oracle.fxxk.dedyn.io
+  up: '1024'
 - alterId: '0'
   cipher: auto
-  name: 俄罗斯联邦-11
+  name: 美国-145
   network: ws
-  port: '45751'
-  server: 194.87.69.56
-  tls: false
+  port: '443'
+  server: 172.67.164.232
+  skip-cert-verify: true
+  tls: true
   type: vmess
-  udp: true
-  uuid: 96260b89-2b77-49a9-a042-6002ccafb80b
+  uuid: 33f6d8b0-81f8-4fce-b3df-79dc8fd6d8c5
   ws-opts:
-    path: /
+    headers:
+      host: 33.bycf.us.kg
+    path: /rongseven?ed=2048
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 181个'
-  - '自动选择(国内): 7个'
-  - '自动选择(国外): 174个'
-  - '手动选择: 181个'
-  - '日本分区: 8个'
-  - '台湾分区: 35个'
-  - '新加坡分区: 6个'
-  - '韩国分区: 24个'
-  - '美国分区: 50个'
-  - '俄罗斯联邦分区: 11个'
-  - '香港分区: 6个'
-  - '英国分区: 4个'
-  - '德国分区: 6个'
-  - '南非分区: 3个'
-  - '荷兰分区: 1个'
-  - '加拿大分区: 1个'
-  - '波兰分区: 3个'
-  - '阿联酋分区: 3个'
-  - '摩尔多瓦分区: 1个'
-  - '中国分区: 1个'
-  - '拉脱维亚分区: 1个'
+  - '自动选择: 353个'
+  - '自动选择(国内): 105个'
+  - '自动选择(国外): 248个'
+  - '手动选择: 353个'
+  - '日本分区: 17个'
+  - '香港分区: 11个'
+  - '中国分区: 94个'
+  - '台湾分区: 3个'
+  - '韩国分区: 22个'
+  - '新加坡分区: 10个'
+  - '美国分区: 145个'
+  - '德国分区: 5个'
+  - '英国分区: 6个'
+  - '俄罗斯联邦分区: 12个'
+  - '南非分区: 5个'
+  - '哈萨克斯坦分区: 1个'
+  - '巴林分区: 1个'
+  - '法国分区: 1个'
+  - '波兰分区: 5个'
+  - '荷兰分区: 3个'
+  - '阿联酋分区: 1个'
   - '瑞典分区: 3个'
-  - '芬兰分区: 1个'
-  - '丹麦分区: 1个'
-  - '西班牙分区: 1个'
-  - '捷克分区: 1个'
-  - '瑞士分区: 3个'
+  - '拉脱维亚分区: 1个'
+  - '爱尔兰分区: 1个'
+  - '捷克分区: 2个'
   - '马来西亚分区: 1个'
-  - '法国分区: 4个'
-  - '意大利分区: 2个'
+  - '西班牙分区: 1个'
+  - '瑞士分区: 1个'
+  - '意大利分区: 1个'
   type: select
 - hidden: true
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -2024,7 +3285,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 181个'
+  name: '自动选择: 353个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -2034,15 +3295,113 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 7个'
+  name: '自动选择(国内): 105个'
   proxies:
   - 香港-1
+  - 中国-1
+  - 中国-2
   - 香港-2
+  - 中国-3
   - 香港-3
+  - 中国-4
+  - 中国-5
+  - 中国-6
+  - 中国-7
   - 香港-4
   - 香港-5
-  - 中国-1
+  - 中国-8
+  - 中国-9
+  - 中国-10
+  - 中国-11
+  - 中国-12
+  - 中国-13
+  - 中国-14
+  - 中国-15
+  - 中国-16
+  - 中国-17
+  - 中国-18
+  - 中国-19
+  - 中国-20
+  - 中国-21
+  - 中国-22
+  - 中国-23
+  - 中国-24
+  - 中国-25
+  - 中国-26
+  - 中国-27
+  - 中国-28
+  - 中国-29
+  - 中国-30
+  - 中国-31
+  - 中国-32
+  - 中国-33
+  - 中国-34
+  - 中国-35
+  - 中国-36
+  - 中国-37
   - 香港-6
+  - 香港-7
+  - 中国-38
+  - 中国-39
+  - 中国-40
+  - 中国-41
+  - 香港-8
+  - 中国-42
+  - 中国-43
+  - 中国-44
+  - 中国-45
+  - 中国-46
+  - 中国-47
+  - 中国-48
+  - 中国-49
+  - 中国-50
+  - 中国-51
+  - 中国-52
+  - 中国-53
+  - 中国-54
+  - 中国-55
+  - 中国-56
+  - 中国-57
+  - 中国-58
+  - 中国-59
+  - 中国-60
+  - 中国-61
+  - 中国-62
+  - 中国-63
+  - 中国-64
+  - 中国-65
+  - 中国-66
+  - 中国-67
+  - 中国-68
+  - 中国-69
+  - 中国-70
+  - 中国-71
+  - 中国-72
+  - 中国-73
+  - 中国-74
+  - 中国-75
+  - 中国-76
+  - 中国-77
+  - 香港-9
+  - 中国-78
+  - 中国-79
+  - 中国-80
+  - 中国-81
+  - 中国-82
+  - 中国-83
+  - 中国-84
+  - 香港-10
+  - 中国-85
+  - 香港-11
+  - 中国-86
+  - 中国-87
+  - 中国-88
+  - 中国-89
+  - 中国-90
+  - 中国-91
+  - 中国-92
+  - 中国-93
+  - 中国-94
   - COMPATIBLE
   timeout: 1500
   type: url-test
@@ -2053,189 +3412,263 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 174个'
+  name: '自动选择(国外): 248个'
   proxies:
   - 日本-1
   - 日本-2
   - 台湾-1
-  - 新加坡-1
-  - 新加坡-2
+  - 日本-3
   - 韩国-1
   - 韩国-2
-  - 新加坡-3
+  - 新加坡-1
   - 韩国-3
-  - 美国-1
   - 韩国-4
-  - 俄罗斯联邦-1
-  - 日本-3
   - 韩国-5
-  - 韩国-6
+  - 日本-4
+  - 美国-1
+  - 新加坡-2
   - 美国-2
-  - 台湾-2
+  - 日本-5
   - 美国-3
-  - 美国-4
-  - 台湾-3
-  - 美国-5
-  - 台湾-4
-  - 台湾-5
-  - 美国-6
+  - 德国-1
+  - 韩国-6
   - 韩国-7
-  - 美国-7
-  - 俄罗斯联邦-2
-  - 台湾-6
+  - 美国-4
   - 韩国-8
   - 韩国-9
-  - 美国-8
-  - 台湾-7
-  - 美国-9
-  - 台湾-8
   - 韩国-10
   - 韩国-11
-  - 美国-10
   - 韩国-12
-  - 美国-11
-  - 台湾-9
-  - 俄罗斯联邦-3
-  - 日本-4
-  - 美国-12
-  - 台湾-10
-  - 美国-13
+  - 美国-5
+  - 美国-6
   - 英国-1
+  - 台湾-2
+  - 美国-7
+  - 美国-8
+  - 美国-9
+  - 美国-10
+  - 美国-11
+  - 美国-12
+  - 美国-13
   - 韩国-13
   - 美国-14
-  - 韩国-14
-  - 台湾-11
-  - 台湾-12
-  - 韩国-15
-  - 德国-1
-  - 韩国-16
   - 美国-15
-  - 台湾-13
-  - 台湾-14
+  - 韩国-14
   - 美国-16
-  - 韩国-17
-  - 日本-5
   - 美国-17
-  - 韩国-18
-  - 台湾-15
-  - 台湾-16
   - 美国-18
-  - 台湾-17
-  - 日本-6
   - 美国-19
   - 美国-20
-  - 台湾-18
-  - 台湾-19
-  - 台湾-20
-  - 韩国-19
   - 美国-21
-  - 俄罗斯联邦-4
-  - 台湾-21
+  - 韩国-15
   - 美国-22
   - 美国-23
-  - 南非-1
-  - 台湾-22
-  - 台湾-23
-  - 台湾-24
-  - 新加坡-4
   - 美国-24
+  - 英国-2
   - 美国-25
   - 美国-26
-  - 韩国-20
-  - 南非-2
-  - 新加坡-5
+  - 韩国-16
   - 美国-27
-  - 荷兰-1
+  - 俄罗斯联邦-1
+  - 韩国-17
   - 美国-28
-  - 台湾-25
   - 美国-29
   - 美国-30
+  - 韩国-18
+  - 韩国-19
   - 美国-31
-  - 加拿大-1
   - 美国-32
   - 美国-33
   - 美国-34
-  - 韩国-21
-  - 南非-3
   - 美国-35
   - 美国-36
   - 美国-37
-  - 波兰-1
-  - 俄罗斯联邦-5
   - 美国-38
-  - 台湾-26
-  - 新加坡-6
-  - 阿联酋-1
-  - 波兰-2
-  - 俄罗斯联邦-6
-  - 台湾-27
-  - 德国-2
+  - 韩国-20
   - 美国-39
-  - 摩尔多瓦-1
   - 美国-40
-  - 英国-2
-  - 台湾-28
-  - 俄罗斯联邦-7
-  - 台湾-29
   - 美国-41
+  - 新加坡-3
   - 美国-42
-  - 台湾-30
-  - 日本-7
   - 美国-43
-  - 俄罗斯联邦-8
-  - 韩国-22
   - 美国-44
-  - 俄罗斯联邦-9
-  - 台湾-31
-  - 阿联酋-2
   - 美国-45
-  - 俄罗斯联邦-10
-  - 台湾-32
-  - 韩国-23
-  - 台湾-33
-  - 波兰-3
+  - 台湾-3
   - 美国-46
-  - 拉脱维亚-1
-  - 韩国-24
-  - 德国-3
-  - 瑞典-1
-  - 台湾-34
-  - 台湾-35
-  - 英国-3
-  - 芬兰-1
-  - 英国-4
   - 美国-47
-  - 丹麦-1
-  - 德国-4
-  - 德国-5
-  - 西班牙-1
-  - 捷克-1
   - 美国-48
-  - 瑞士-1
-  - 马来西亚-1
-  - 德国-6
-  - 瑞士-2
-  - 日本-8
-  - 瑞士-3
   - 美国-49
-  - 阿联酋-3
-  - 法国-1
-  - 法国-2
-  - 瑞典-2
-  - 意大利-1
   - 美国-50
-  - 意大利-2
-  - 法国-3
-  - 瑞典-3
-  - 法国-4
+  - 美国-51
+  - 美国-52
+  - 新加坡-4
+  - 美国-53
+  - 美国-54
+  - 美国-55
+  - 美国-56
+  - 韩国-21
+  - 美国-57
+  - 日本-6
+  - 美国-58
+  - 美国-59
+  - 美国-60
+  - 美国-61
+  - 美国-62
+  - 美国-63
+  - 韩国-22
+  - 美国-64
+  - 美国-65
+  - 美国-66
+  - 美国-67
+  - 美国-68
+  - 美国-69
+  - 新加坡-5
+  - 美国-70
+  - 美国-71
+  - 美国-72
+  - 美国-73
+  - 美国-74
+  - 美国-75
+  - 美国-76
+  - 美国-77
+  - 美国-78
+  - 英国-3
+  - 美国-79
+  - 美国-80
+  - 美国-81
+  - 美国-82
+  - 新加坡-6
+  - 美国-83
+  - 南非-1
+  - 哈萨克斯坦-1
+  - 美国-84
+  - 美国-85
+  - 美国-86
+  - 新加坡-7
+  - 英国-4
+  - 俄罗斯联邦-2
+  - 美国-87
+  - 美国-88
+  - 俄罗斯联邦-3
+  - 美国-89
+  - 美国-90
+  - 美国-91
+  - 美国-92
+  - 日本-7
+  - 南非-2
+  - 德国-2
+  - 美国-93
+  - 美国-94
+  - 美国-95
+  - 美国-96
+  - 美国-97
+  - 美国-98
+  - 南非-3
+  - 南非-4
+  - 俄罗斯联邦-4
+  - 美国-99
+  - 俄罗斯联邦-5
+  - 美国-100
+  - 美国-101
+  - 美国-102
+  - 美国-103
+  - 美国-104
+  - 美国-105
+  - 南非-5
+  - 巴林-1
+  - 日本-8
+  - 美国-106
+  - 美国-107
+  - 美国-108
+  - 美国-109
+  - 美国-110
+  - 美国-111
+  - 美国-112
+  - 日本-9
+  - 俄罗斯联邦-6
+  - 美国-113
+  - 法国-1
+  - 波兰-1
+  - 美国-114
+  - 荷兰-1
+  - 美国-115
+  - 俄罗斯联邦-7
+  - 美国-116
+  - 美国-117
+  - 美国-118
+  - 美国-119
+  - 美国-120
+  - 波兰-2
+  - 美国-121
+  - 美国-122
+  - 美国-123
+  - 美国-124
+  - 美国-125
+  - 德国-3
+  - 美国-126
+  - 日本-10
+  - 美国-127
+  - 阿联酋-1
+  - 美国-128
+  - 日本-11
+  - 美国-129
+  - 美国-130
+  - 美国-131
+  - 美国-132
+  - 俄罗斯联邦-8
+  - 波兰-3
+  - 美国-133
+  - 瑞典-1
+  - 日本-12
+  - 俄罗斯联邦-9
+  - 日本-13
+  - 俄罗斯联邦-10
+  - 新加坡-8
+  - 德国-4
+  - 荷兰-2
+  - 德国-5
+  - 荷兰-3
+  - 美国-134
+  - 新加坡-9
   - 俄罗斯联邦-11
+  - 美国-135
+  - 日本-14
+  - 日本-15
+  - 拉脱维亚-1
+  - 美国-136
+  - 波兰-4
+  - 爱尔兰-1
+  - 美国-137
+  - 美国-138
+  - 瑞典-2
+  - 波兰-5
+  - 俄罗斯联邦-12
+  - 日本-16
+  - 美国-139
+  - 捷克-1
+  - 美国-140
+  - 美国-141
+  - 美国-142
+  - 美国-143
+  - 英国-5
+  - 马来西亚-1
+  - 英国-6
+  - 西班牙-1
+  - 瑞典-3
+  - 瑞士-1
+  - 意大利-1
+  - 捷克-2
+  - 美国-144
+  - 日本-17
+  - 新加坡-10
+  - 美国-145
   - COMPATIBLE
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 181个'
+  name: '手动选择: 353个'
   type: select
 - filter: (?i)日本|JP|jp
   hidden: false
@@ -2245,82 +3678,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '日本分区: 8个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)台湾|TW|tw
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/tw.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '台湾分区: 35个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)新加坡|SG|sg
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '新加坡分区: 6个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)韩国|KR|kr
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kr.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '韩国分区: 24个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)美国|US|us
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '美国分区: 50个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)俄罗斯联邦|RU|ru
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ru.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '俄罗斯联邦分区: 11个'
+  name: '日本分区: 17个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2335,127 +3693,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '香港分区: 6个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)英国|GB|gb
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '英国分区: 4个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)德国|DE|de
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '德国分区: 6个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)南非|ZA|za
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/za.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '南非分区: 3个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)荷兰|NL|nl
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/nl.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '荷兰分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)加拿大|CA|ca
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ca.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '加拿大分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)波兰|PL|pl
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pl.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '波兰分区: 3个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)阿联酋|AE|ae
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ae.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '阿联酋分区: 3个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)摩尔多瓦|MD|md
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/md.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '摩尔多瓦分区: 1个'
+  name: '香港分区: 11个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2470,22 +3708,217 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 1个'
+  name: '中国分区: 94个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)拉脱维亚|LV|lv
+- filter: (?i)台湾|TW|tw
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lv.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/tw.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '拉脱维亚分区: 1个'
+  name: '台湾分区: 3个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)韩国|KR|kr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kr.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '韩国分区: 22个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)新加坡|SG|sg
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '新加坡分区: 10个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)美国|US|us
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '美国分区: 145个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)德国|DE|de
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '德国分区: 5个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)英国|GB|gb
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '英国分区: 6个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)俄罗斯联邦|RU|ru
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ru.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '俄罗斯联邦分区: 12个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)南非|ZA|za
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/za.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '南非分区: 5个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)哈萨克斯坦|KZ|kz
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kz.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '哈萨克斯坦分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)巴林|BH|bh
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/bh.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '巴林分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)法国|FR|fr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fr.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '法国分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)波兰|PL|pl
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pl.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '波兰分区: 5个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)荷兰|NL|nl
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/nl.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '荷兰分区: 3个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)阿联酋|AE|ae
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ae.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '阿联酋分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2507,45 +3940,30 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)芬兰|FI|fi
+- filter: (?i)拉脱维亚|LV|lv
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fi.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lv.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '芬兰分区: 1个'
+  name: '拉脱维亚分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)丹麦|DK|dk
+- filter: (?i)爱尔兰|IE|ie
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/dk.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ie.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '丹麦分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)西班牙|ES|es
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/es.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '西班牙分区: 1个'
+  name: '爱尔兰分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2560,22 +3978,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '捷克分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)瑞士|CH|ch
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ch.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '瑞士分区: 3个'
+  name: '捷克分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2597,15 +4000,30 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)法国|FR|fr
+- filter: (?i)西班牙|ES|es
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fr.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/es.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '法国分区: 4个'
+  name: '西班牙分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)瑞士|CH|ch
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ch.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '瑞士分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -2620,7 +4038,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '意大利分区: 2个'
+  name: '意大利分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
