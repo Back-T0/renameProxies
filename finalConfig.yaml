@@ -74,12 +74,16 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- cipher: chacha20-ietf
-  name: 新加坡-1
-  password: asd123456
-  port: '8388'
-  server: 103.36.90.195
-  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-1
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31112'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
 - cipher: aes-256-cfb
   client-fingerprint: chrome
   name: 香港-1
@@ -88,22 +92,6 @@ proxies:
   server: 112.213.102.228
   tfo: false
   type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-1
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31112'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 台湾-1
-  password: qwerREWQ@@
-  port: '64759'
-  server: 185.189.160.98
-  type: ss
 - cipher: aes-256-cfb
   name: 日本-1
   password: amazonskr05
@@ -111,123 +99,52 @@ proxies:
   server: 52.68.44.53
   type: ss
 - cipher: aes-256-cfb
+  client-fingerprint: chrome
   name: 日本-2
   password: amazonskr05
   port: '443'
-  server: 54.238.219.226
+  server: 3.112.236.3
+  tfo: false
+  type: ss
+- name: 台湾-1
+  password: 338b9800-fb4d-4934-8425-388f6d4342f5
+  port: '2002'
+  server: tw2.akebi.cc
+  skip-cert-verify: false
+  sni: hk03.akebi.cc
+  type: hysteria2
+- cipher: aes-256-cfb
+  name: 韩国-1
+  password: qwerREWQ@@
+  port: '40244'
+  server: 125.141.26.14
   type: ss
 - cipher: aes-256-cfb
-  name: 新加坡-2
-  password: amazonskr05
-  port: '443'
-  server: 122.248.193.242
-  type: ss
-- cipher: aes-256-cfb
-  name: 日本-3
-  password: amazonskr05
-  port: '443'
-  server: 54.178.84.59
-  type: ss
-- cipher: aes-256-cfb
-  name: 新加坡-3
-  password: amazonskr05
-  port: '443'
-  server: 13.250.115.217
-  type: ss
-- cipher: aes-256-cfb
-  name: 日本-4
-  password: amazonskr05
-  port: '443'
-  server: 54.248.142.136
-  type: ss
-- cipher: aes-256-cfb
-  name: 新加坡-4
+  name: 新加坡-1
   password: amazonskr05
   port: '443'
   server: 13.212.194.118
   type: ss
 - cipher: aes-256-cfb
-  name: 韩国-1
-  password: qwerREWQ@@
-  port: '41748'
-  server: 221.150.109.90
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-2
-  password: qwerREWQ@@
-  port: '40244'
-  server: 125.141.26.14
-  type: ss
-- name: 香港-2
-  network: ws
-  port: '35500'
-  server: 61.239.234.5
-  servername: uxc.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560
-- cipher: aes-256-cfb
   client-fingerprint: chrome
-  name: 韩国-3
+  name: 韩国-2
   password: qwerREWQ@@
   port: '40244'
   server: p229.panda004.net
   tfo: false
   type: ss
 - cipher: aes-256-cfb
-  name: 日本-5
-  password: amazonskr05
-  port: '443'
-  server: 3.113.31.223
-  type: ss
-- cipher: chacha20-ietf
-  name: 新加坡-5
-  password: asd123456
-  port: '8388'
-  server: 202.162.109.169
-  type: ss
-- name: 香港-3
-  network: ws
-  port: '30002'
-  server: 43.135.44.101
-  servername: uxc.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560&proxyip=43.135.44.101:30002
-- cipher: aes-128-gcm
-  name: 中国-1
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '563'
-  server: shcmzz1hk.upperlay.xyz
+  name: 韩国-3
+  password: qwerREWQ@@
+  port: '41748'
+  server: p230.panda004.net
   type: ss
 - cipher: aes-256-cfb
-  name: 日本-6
-  password: amazonskr05
-  port: '443'
-  server: 43.207.232.228
+  name: 韩国-4
+  password: qwerREWQ@@
+  port: '41748'
+  server: 221.150.109.90
   type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-1
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31116'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
 - auth: 2ba077f8-9732-4eb3-9f16-df4d31b85d0f
   down: '100'
   name: 德国-1
@@ -240,72 +157,17 @@ proxies:
   type: hysteria2
   udp: true
   up: '100'
-- alterId: '0'
-  cipher: auto
-  name: 中国-2
-  network: tcp
-  port: '60066'
-  server: hk0067.alibabaokz.com
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 38571ca6-6692-4559-b901-0bc5826b7661
-- alpn:
-  - h2
-  - http/1.1
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
   name: 美国-2
-  network: ws
-  port: '80'
-  server: 167.82.85.155
-  servername: teleirani.ir
-  tls: false
-  type: vless
-  uuid: 253ef561-9e57-4336-befd-878ddd30df01
-  ws-opts:
-    headers:
-      host: teleirani.ir
-    path: /?ed=2048
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-2
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31152'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 韩国-4
-  password: qwerREWQ@@
-  port: '2105'
-  server: 218.234.149.9
-  tfo: false
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-2
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31151'
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31161'
   server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- cipher: chacha20-ietf-poly1305
-  name: 中国-3
-  password: 99301d55-a41f-4919-986b-1435996533aa
-  port: '20001'
-  server: 183.233.187.157
-  type: ss
-- cipher: aes-128-gcm
-  name: 中国-4
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '565'
-  server: cnexhk.nesx.xyz
-  type: ss
-- name: 台湾-3
+- name: 台湾-2
   network: ws
   port: '81'
   server: 210.61.97.241
@@ -319,38 +181,7 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 台湾-4
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31125'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: d448cf53-d806-4c48-b81e-80d43e820d79
-  down: '1024'
-  name: 日本-7
-  password: d448cf53-d806-4c48-b81e-80d43e820d79
-  port: '48512'
-  server: jpzl2.stardad.lol
-  skip-cert-verify: true
-  sni: https://bing.com
-  type: hysteria2
-  udp: true
-  up: '1024'
-- alterId: '64'
-  cipher: auto
-  name: 中国-5
-  network: tcp
-  port: '54882'
-  server: 183.236.48.163
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- name: 新加坡-6
+- name: 新加坡-2
   network: ws
   port: '443'
   server: 43.156.181.203
@@ -364,96 +195,38 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
   name: 美国-3
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31151'
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31159'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
 - cipher: aes-256-cfb
+  client-fingerprint: chrome
   name: 韩国-5
   password: qwerREWQ@@
-  port: '3231'
-  server: 210.217.18.70
+  port: '2105'
+  server: 218.234.149.9
+  tfo: false
   type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 越南-3
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31126'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 韩国-6
-  password: qwerREWQ@@
-  port: '59974'
-  server: 210.217.18.69
-  type: ss
-- cipher: rc4-md5
-  name: 英国-1
-  password: 14fFPrbezE3HDZzsMOr6
-  port: '8080'
-  server: 169.150.210.233
-  type: ss
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-4
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31129'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 台湾-5
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31105'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 台湾-6
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31116'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 韩国-7
-  password: qwerREWQ@@
-  port: '40915'
-  server: 168.126.234.233
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-8
-  password: qwerREWQ@@
-  port: '3231'
-  server: p239.panda004.net
-  type: ss
-- cipher: rc4-md5
   name: 美国-4
-  password: 14fFPrbezE3HDZzsMOr6
-  port: '8080'
-  server: 107.155.57.11
-  type: ss
-- auth: d65cc190-6140-46eb-a62e-59826f81a2f4
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31123'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 34ed7f56-6e06-4128-a5eb-1e85083572e1
   down: '1024'
-  name: 香港-4
-  password: d65cc190-6140-46eb-a62e-59826f81a2f4
+  name: 香港-2
+  password: 34ed7f56-6e06-4128-a5eb-1e85083572e1
   port: '24976'
   server: hkzl2.stardad.lol
   skip-cert-verify: true
@@ -461,314 +234,190 @@ proxies:
   type: hysteria2
   udp: true
   up: '1024'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 台湾-7
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31124'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 台湾-8
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31129'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-5
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31159'
+  name: 台湾-3
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31152'
   server: cucc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+- name: 香港-3
+  port: '4000'
+  server: hk9.ftq.ink
+  tls: true
+  type: http
+- cipher: rc4-md5
+  name: 英国-1
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 146.70.61.18
+  type: ss
+- alterId: '64'
+  cipher: auto
+  name: 中国-1
+  port: '54104'
+  server: 183.236.51.23
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 台湾-9
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31159'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-10
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31104'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-6
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31105'
+  name: 台湾-4
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31125'
   server: cucc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
   name: 美国-5
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31129'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 美国-6
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31157'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 美国-7
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31123'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-8
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31126'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-7
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31151'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 韩国-9
-  password: amazonskr05
-  port: '443'
-  server: 43.203.127.152
-  type: ss
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 美国-9
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31159'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-10
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
   port: '31158'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 台湾-11
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31121'
-  server: bgp.abyssvpn.com
+- alterId: '0'
+  cipher: auto
+  name: 中国-2
+  network: tcp
+  port: '60066'
+  server: hk0067.alibabaokz.com
   skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+  tls: false
+  type: vmess
+  uuid: 38571ca6-6692-4559-b901-0bc5826b7661
+- alterId: '64'
+  cipher: auto
+  name: 中国-3
+  port: '41020'
+  server: 183.236.51.23
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 美国-11
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31105'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-12
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31104'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-12
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+  name: 美国-6
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
   port: '31152'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-8
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31111'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 香港-5
-  port: '4000'
-  server: ftq.ink
-  tls: true
-  type: http
-- name: 香港-6
-  port: '4000'
-  server: hk9.ftq.ink
-  tls: true
-  type: http
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-9
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31122'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-13
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31157'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-10
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31113'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: rc4-md5
-  name: 美国-13
-  password: 14fFPrbezE3HDZzsMOr6
-  port: '8080'
-  server: 23.251.121.242
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-14
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31101'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-11
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31101'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-14
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31122'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 韩国-10
-  password: qwerREWQ@@
-  port: '25730'
-  server: 168.126.234.230
+- cipher: chacha20-ietf-poly1305
+  name: 中国-4
+  password: 571fcb13-34f4-46d7-9155-27424052c325
+  port: '34338'
+  server: gy.666666222.shop
   type: ss
-- cipher: aes-128-gcm
-  name: 中国-6
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '564'
-  server: cmthkd-d.net-lag.xyz
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-15
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31161'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
   udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 美国-15
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+  name: 美国-7
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
   port: '31124'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 美国-16
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31122'
+  name: 美国-8
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31117'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 越南-12
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+  name: 台湾-5
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31124'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-9
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31107'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 韩国-6
+  password: qwerREWQ@@
+  port: '3231'
+  server: p239.panda004.net
+  type: ss
+- auth: d65cc190-6140-46eb-a62e-59826f81a2f4
+  down: '1024'
+  name: 美国-10
+  password: d65cc190-6140-46eb-a62e-59826f81a2f4
+  port: '25999'
+  server: uszl1.stardad.lol
+  skip-cert-verify: true
+  sni: https://bing.com
+  type: hysteria2
+  udp: true
+  up: '1024'
+- name: 香港-4
+  port: '4000'
+  server: ftq.ink
+  tls: true
+  type: http
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 台湾-6
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31116'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 韩国-7
+  password: qwerREWQ@@
+  port: '43249'
+  server: p234.panda004.net
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-11
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31112'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 韩国-8
+  password: amazonskr05
+  port: '443'
+  server: 43.203.127.152
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 台湾-7
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
   port: '31117'
   server: cucc.abyssvpn.com
   skip-cert-verify: true
@@ -776,62 +425,23 @@ proxies:
   type: hysteria2
   udp: true
   up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 越南-13
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31125'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-16
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31117'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 美国-17
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+  name: 美国-12
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
   port: '31111'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 美国-18
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31114'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- alterId: '64'
-  cipher: auto
-  name: 中国-7
-  port: '41020'
-  server: 183.236.51.23
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - cipher: rc4-md5
   name: 英国-2
   password: 14fFPrbezE3HDZzsMOr6
   port: '8080'
-  server: 146.70.61.18
+  server: 169.150.210.233
   type: ss
-- name: 韩国-11
+- name: 韩国-9
   network: ws
   port: '443'
   server: 132.145.94.80
@@ -845,123 +455,146 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 台湾-17
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31112'
+  name: 美国-13
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31124'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 台湾-8
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31106'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-14
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31126'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-128-gcm
+  name: 中国-5
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '566'
+  server: aisalayer-a.upperlay.xyz
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 台湾-9
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31126'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: rc4-md5
+  name: 美国-15
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 107.155.57.11
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-16
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31129'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-17
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31123'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- client-fingerprint: chrome
+  name: 美国-18
+  network: ws
+  port: '8880'
+  server: 172.64.146.118
+  servername: config-proxy-vl.telegram-config-proxy.workers.dev
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vless
+  uuid: 25af9eb2-3310-4f2b-bc82-ebea62ba7906
+  ws-opts:
+    headers:
+      Host: config-proxy-vl.telegram-config-proxy.workers.dev
+    path: /?ed=2560
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-19
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31119'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 法国-1
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 51.15.15.82
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-20
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31101'
   server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
 - cipher: aes-256-cfb
-  name: 韩国-12
-  password: qwerREWQ@@
-  port: '25415'
-  server: 168.126.234.232
+  name: 美国-21
+  password: amazonskr05
+  port: '443'
+  server: 34.219.132.251
   type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- cipher: aes-256-cfb
+  name: 美国-22
+  password: amazonskr05
+  port: '443'
+  server: 54.245.207.144
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 台湾-18
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31113'
+  name: 美国-23
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31153'
   server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 美国-19
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31121'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-14
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31116'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-128-gcm
-  name: 中国-8
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '565'
-  server: cmthkd-d.net-lag.xyz
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-20
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31152'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 美国-21
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31113'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-15
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31157'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 美国-22
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31125'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-23
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31117'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-16
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31107'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
   name: 美国-24
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31161'
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31104'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
@@ -969,332 +602,202 @@ proxies:
   up: '10000'
 - cipher: aes-256-cfb
   name: 美国-25
-  password: qwerREWQ@@
-  port: '4231'
-  server: 108.181.1.245
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-26
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31107'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-128-gcm
-  name: 中国-9
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '570'
-  server: aisalayer-b.upperlay.xyz
-  type: ss
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-17
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31121'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 美国-27
-  password: qwerREWQ@@
-  port: '55194'
-  server: 199.119.200.67
-  type: ss
-- cipher: aes-128-gcm
-  name: 中国-10
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '562'
-  server: shcmzz1hk.upperlay.xyz
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-18
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31106'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 台湾-19
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31123'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-128-gcm
-  name: 中国-11
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '569'
-  server: aisalayer-b.upperlay.xyz
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-28
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31112'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-20
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31154'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: a01ffde4-0cf0-4378-a554-765c4e6f2024
-  down: '1024'
-  name: 美国-29
-  password: a01ffde4-0cf0-4378-a554-765c4e6f2024
-  port: '25999'
-  server: uszl1.stardad.lol
-  skip-cert-verify: true
-  sni: https://bing.com
-  type: hysteria2
-  udp: true
-  up: '1024'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-19
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31123'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-21
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31106'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-128-gcm
-  name: 中国-12
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '564'
-  server: cmlayer2.exitlag.xyz
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-22
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31155'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 美国-30
-  password: amazonskr05
-  port: '443'
-  server: 35.91.128.246
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-31
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31119'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-32
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31106'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 韩国-13
-  network: ws
-  port: '20443'
-  server: 106.240.1.52
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 美国-33
   password: amazonskr05
   port: '443'
   server: 35.93.31.33
   type: ss
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 越南-20
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31154'
-  server: cucc.abyssvpn.com
+  name: 美国-26
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31155'
+  server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- client-fingerprint: chrome
+  name: 美国-27
+  network: ws
+  port: '80'
+  server: 104.16.76.55
+  servername: patient-shadow-baf1-ppal03.hohel98085.workers.dev
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vless
+  uuid: 5d8bc42a-d345-4bd3-a844-4b90afc44670
+  ws-opts:
+    headers:
+      Host: patient-shadow-baf1-ppal03.hohel98085.workers.dev
+    path: /?ed=2560
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 美国-34
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+  name: 美国-28
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
   port: '31120'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- cipher: aes-256-cfb
+  name: 日本-3
+  password: amazonskr05
+  port: '443'
+  server: 43.207.232.228
+  type: ss
+- client-fingerprint: chrome
+  name: 美国-29
+  network: ws
+  port: '80'
+  server: 104.16.178.96
+  servername: sweet-glade-2430-ppal03.xasev15708.workers.dev
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vless
+  uuid: b8a0fe1a-fbea-4572-a878-20b7f7c98636
+  ws-opts:
+    headers:
+      Host: sweet-glade-2430-ppal03.xasev15708.workers.dev
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 韩国-10
+  password: qwerREWQ@@
+  port: '43249'
+  server: 222.112.15.140
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 立陶宛-1
+  password: cvII85TrW6n0OGyfpHVS1u
+  port: '8080'
+  server: 45.87.175.181
+  type: ss
+- cipher: aes-256-cfb
+  name: 韩国-11
+  password: qwerREWQ@@
+  port: '40915'
+  server: 168.126.234.233
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 越南-21
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31158'
+  name: 台湾-10
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31119'
   server: cucc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- name: 美国-30
+  network: ws
+  port: '8080'
+  server: 104.18.28.181
+  servername: shuige2.ywfmu-qx.workers.dev
+  tls: false
+  type: vless
+  uuid: 99678074-122c-46db-97fc-80b604c20158
+  ws-opts:
+    headers:
+      host: shuige2.ywfmu-qx.workers.dev
+    path: /?ed=2048
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 台湾-23
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31158'
+  name: 美国-31
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31152'
   server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-35
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31155'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 015322ea-6674-4900-94f3-e71a2d47fcff
-  down: '100'
-  name: 香港-7
-  obfs: salamander
-  obfs-password: YzcwOTNlODc4NDIzMWMyMg==
-  password: 015322ea-6674-4900-94f3-e71a2d47fcff
-  port: '32902'
-  server: 212.192.12.70
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '100'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-36
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31128'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-22
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31128'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
 - cipher: aes-256-cfb
-  name: 美国-37
+  name: 美国-32
+  password: amazonskr05
+  port: '443'
+  server: 35.91.128.246
+  type: ss
+- cipher: aes-256-cfb
+  name: 美国-33
   password: amazonskr05
   port: '443'
   server: 35.85.36.208
   type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-23
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31110'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 台湾-24
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31128'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-128-gcm
-  name: 中国-13
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '564'
-  server: cnexhk.nesx.xyz
+- cipher: aes-256-cfb
+  name: 美国-34
+  password: amazonskr05
+  port: '443'
+  server: 34.213.242.165
   type: ss
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+- cipher: aes-256-cfb
+  name: 美国-35
+  password: amazonskr05
+  port: '443'
+  server: 54.202.77.81
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 美国-38
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31110'
+  name: 美国-36
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31128'
   server: cmcc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+- cipher: aes-256-cfb
+  name: 新加坡-3
+  password: amazonskr05
+  port: '443'
+  server: 122.248.193.242
+  type: ss
+- cipher: rc4-md5
+  name: 美国-37
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 23.251.121.242
+  type: ss
+- cipher: rc4-md5
+  name: 美国-38
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 194.5.215.59
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 台湾-25
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+  name: 台湾-11
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
   port: '31127'
-  server: bgp.abyssvpn.com
+  server: cucc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- cipher: chacha20-ietf-poly1305
-  name: 英国-3
-  password: mps3FwmDjLrWaOVg
-  port: '443'
-  server: series-a2.varzesh360.co
+- cipher: aes-256-gcm
+  name: 美国-39
+  password: 4281147c9qhXaGdSUJ1at
+  port: '8854'
+  server: 45.85.1.180
   type: ss
-- cipher: aes-256-cfb
-  name: 韩国-14
-  password: amazonskr05
-  port: '443'
-  server: 3.35.206.24
+- alterId: '0'
+  cipher: auto
+  http-opts:
+    method: GET
+    path:
+    - /
+  name: 美国-40
+  network: http
+  port: '2082'
+  server: 147.182.215.158
+  tls: false
+  type: vmess
+  uuid: 9211eba6-22f8-4a44-8aba-b3e15d7edfbe
+- cipher: rc4-md5
+  name: 新加坡-4
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 68.183.227.45
   type: ss
 - name: 德国-2
   password: telegram-id-privatevpns
@@ -1302,854 +805,22 @@ proxies:
   server: 52.59.79.198
   sni: trojan.burgerip.co.uk
   type: trojan
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-26
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31120'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-128-gcm
-  name: 英国-4
-  password: shadowsocks
-  port: '443'
-  server: 212.102.53.197
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-15
-  password: amazonskr05
-  port: '443'
-  server: 3.38.212.48
-  type: ss
-- cipher: aes-128-cfb
-  name: 美国-39
-  obfs: plain
-  obfs-param: ''
-  password: shadowsocks
-  port: '443'
-  protocol: origin
-  protocol-param: ''
-  server: 184.170.241.194
-  type: ssr
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-40
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31154'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
 - name: 德国-3
-  password: telegram-id-privatevpns
+  password: telegram-id-directvpn
   port: '22222'
-  server: 63.176.68.187
+  server: 18.193.180.96
   sni: trojan.burgerip.co.uk
   type: trojan
-- alterId: '0'
-  cipher: auto
-  http-opts:
-    method: GET
-    path:
-    - /
-  name: 美国-41
-  network: http
-  port: '2082'
-  server: 147.182.215.158
-  tls: false
-  type: vmess
-  uuid: 9211eba6-22f8-4a44-8aba-b3e15d7edfbe
-- cipher: aes-256-cfb
-  name: 美国-42
-  password: amazonskr05
-  port: '443'
-  server: 54.186.92.34
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 越南-24
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+  name: 台湾-12
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
   port: '31155'
   server: cucc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-25
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31127'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-128-cfb
-  name: 美国-43
-  password: shadowsocks
-  port: '443'
-  server: 184.170.241.194
-  type: ss
-- cipher: rc4-md5
-  name: 新加坡-7
-  password: 14fFPrbezE3HDZzsMOr6
-  port: '8080'
-  server: 68.183.227.45
-  type: ss
-- cipher: aes-256-cfb
-  name: 美国-44
-  password: amazonskr05
-  port: '443'
-  server: 54.200.223.152
-  type: ss
-- cipher: aes-256-cfb
-  name: 美国-45
-  password: amazonskr05
-  port: '443'
-  server: 54.245.207.144
-  type: ss
-- name: 德国-4
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 63.176.0.62
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-26
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31103'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 南非-1
-  network: ws
-  port: '443'
-  server: 160.123.255.23
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560
-- cipher: aes-256-gcm
-  name: 美国-46
-  password: KixLvKzwjekG00rm
-  port: '5500'
-  server: 38.110.1.46
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-27
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31101'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-gcm
-  name: 美国-47
-  password: faBAoD54k87UJG7
-  port: '2376'
-  server: 38.110.1.46
-  type: ss
-- name: 美国-48
-  network: ws
-  port: '2083'
-  server: 135.84.74.254
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 新加坡-8
-  network: ws
-  port: '2096'
-  server: 206.238.236.187
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-49
-  network: ws
-  port: '443'
-  server: 216.221.210.185
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 香港-8
-  network: ws
-  port: '2087'
-  server: 154.211.8.98
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 美国-50
-  password: amazonskr05
-  port: '443'
-  server: 34.219.132.251
-  type: ss
-- name: 美国-51
-  network: ws
-  port: '2096'
-  server: 135.84.64.77
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-52
-  network: ws
-  port: '8443'
-  server: 108.165.152.82
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-53
-  network: ws
-  port: '443'
-  server: 160.79.105.221
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560
-- cipher: aes-256-gcm
-  name: 美国-54
-  password: Y6R9pAtvxxzmGC
-  port: '5000'
-  server: 38.110.1.46
-  type: ss
-- name: 香港-9
-  network: ws
-  port: '2087'
-  server: 154.211.8.227
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-55
-  network: ws
-  port: '2053'
-  server: 216.24.57.1
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 香港-10
-  network: ws
-  port: '2096'
-  server: 154.211.8.47
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 新加坡-9
-  network: ws
-  port: '2083'
-  server: 206.238.237.146
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 哈萨克斯坦-1
-  network: ws
-  port: '443'
-  server: 194.76.18.10
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 美国-56
-  network: ws
-  port: '443'
-  server: 103.116.7.230
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-57
-  network: ws
-  port: '443'
-  server: 103.116.7.248
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-gcm
-  name: 美国-58
-  password: PCnnH6SQSnfoS27
-  port: '8091'
-  server: 38.110.1.46
-  type: ss
-- name: 美国-59
-  network: ws
-  port: '2083'
-  server: 108.165.152.78
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: rc4-md5
-  name: 美国-60
-  password: 14fFPrbezE3HDZzsMOr6
-  port: '8080'
-  server: 194.5.215.59
-  type: ss
-- name: 美国-61
-  network: ws
-  port: '443'
-  server: 152.67.231.219
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=152.67.231.219:443
-- name: 美国-62
-  network: ws
-  port: '2083'
-  server: 103.116.7.103
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-63
-  network: ws
-  port: '443'
-  server: 108.165.152.207
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 香港-11
-  network: ws
-  port: '2096'
-  server: 154.211.8.12
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-64
-  network: ws
-  port: '443'
-  server: 108.165.152.219
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-gcm
-  name: 美国-65
-  password: pKEW8JPByTVTLtM
-  port: '443'
-  server: 38.110.1.46
-  type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 越南-27
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31153'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 俄罗斯联邦-1
-  network: ws
-  port: '443'
-  server: 45.67.215.178
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560
-- cipher: aes-128-gcm
-  name: 中国-14
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '569'
-  server: aisalayer-a.upperlay.xyz
-  type: ss
-- name: 美国-66
-  network: ws
-  port: '2096'
-  server: 103.116.7.220
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 香港-12
-  network: ws
-  port: '2083'
-  server: 154.211.8.18
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-67
-  network: ws
-  port: '2087'
-  server: 103.116.7.100
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 新加坡-10
-  network: ws
-  port: '2087'
-  server: 206.238.237.86
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 俄罗斯联邦-2
-  network: ws
-  port: '443'
-  server: 45.67.215.48
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=45.67.215.48:443
-- name: 新加坡-11
-  network: ws
-  port: '2083'
-  server: 206.238.236.251
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-68
-  network: ws
-  port: '2087'
-  server: 108.165.152.98
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 香港-13
-  network: ws
-  port: '2053'
-  server: 154.211.8.152
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 新加坡-12
-  network: ws
-  port: '443'
-  server: 206.238.236.156
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 美国-69
-  network: ws
-  port: '2096'
-  server: 103.116.7.152
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-gcm
-  name: 美国-70
-  password: zDNVedRFPQexG9v
-  port: '6379'
-  server: 38.110.1.46
-  type: ss
-- name: 新加坡-13
-  network: ws
-  port: '2087'
-  server: 206.238.237.92
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-71
-  network: ws
-  port: '2096'
-  server: 108.165.152.252
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- auth: 5ccfb8ee-8533-42c9-a641-9add4cd6d701
-  down: '1024'
-  name: 韩国-16
-  password: 5ccfb8ee-8533-42c9-a641-9add4cd6d701
-  port: '23656'
-  server: kr.stardad.lol
-  skip-cert-verify: true
-  sni: https://bing.com
-  type: hysteria2
-  udp: true
-  up: '1024'
-- name: 法国-1
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 35.181.193.45
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- cipher: chacha20-ietf-poly1305
-  name: 美国-72
-  password: f8f7aCzcPKbsF8p3
-  port: '990'
-  server: 64.74.163.130
-  type: ss
-- name: 新加坡-14
-  network: ws
-  port: '443'
-  server: 206.238.237.212
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 南非-2
-  network: ws
-  port: '443'
-  server: 160.123.255.121
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 美国-73
-  network: ws
-  port: '2083'
-  server: 103.116.7.67
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 法国-2
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 51.44.102.206
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- cipher: aes-256-cfb
-  name: 美国-74
-  password: amazonskr05
-  port: '443'
-  server: 35.92.45.179
-  type: ss
-- name: 美国-75
-  network: ws
-  port: '2083'
-  server: 108.165.152.91
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-76
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31153'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 南非-3
-  network: ws
-  port: '443'
-  server: 160.123.255.20
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 新加坡-15
-  network: ws
-  port: '2087'
-  server: 206.238.236.90
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 新加坡-16
-  network: ws
-  port: '2087'
-  server: 92.243.75.49
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 香港-14
-  network: ws
-  port: '2087'
-  server: 154.211.8.109
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-77
-  network: ws
-  port: '443'
-  server: 63.141.128.99
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560
 - http-opts:
     headers:
       Host:
@@ -2166,186 +837,94 @@ proxies:
   tls: false
   type: vless
   uuid: 677a41e5-dbe6-429b-8f91-cc014b1ae1bd
-- name: 新加坡-17
-  network: ws
-  port: '8443'
-  server: 206.238.236.253
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 新加坡-18
-  network: ws
-  port: '8443'
-  server: 92.243.74.2
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: chacha20-ietf-poly1305
-  name: 巴林-1
-  password: Bog0ELmMM9DSxDdQ
-  port: '443'
-  server: series-a2-me.varzesh360.co
-  type: ss
-- name: 香港-15
-  network: ws
-  port: '2083'
-  server: 154.211.8.84
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-78
-  network: ws
-  port: '8443'
-  server: 104.129.166.131
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-79
-  network: ws
-  port: '18446'
-  server: 154.17.21.134
-  servername: uxc.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560
-- name: 英国-5
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 18.169.36.63
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- name: 德国-5
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 3.125.249.20
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- name: 美国-80
-  network: ws
-  port: '2083'
-  server: 103.116.7.133
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-81
-  network: ws
-  port: '443'
-  server: 103.116.7.189
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 香港-16
-  network: ws
-  port: '443'
-  server: 154.211.8.155
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 美国-82
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31127'
-  server: cmcc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
 - cipher: aes-256-cfb
-  name: 美国-83
+  name: 韩国-12
   password: amazonskr05
   port: '443'
-  server: 34.211.229.86
+  server: 52.79.73.137
   type: ss
-- name: 法国-3
+- name: 德国-4
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 18.192.248.24
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-256-gcm
+  name: 俄罗斯联邦-1
+  password: dongtaiwang.com
+  port: '23456'
+  server: 185.22.155.228
+  type: ss
+- cipher: aes-128-cfb
+  name: 美国-41
+  password: shadowsocks
+  port: '443'
+  server: 184.170.241.194
+  type: ss
+- cipher: aes-256-cfb
+  name: 美国-42
+  password: amazonskr05
+  port: '443'
+  server: 54.186.92.34
+  type: ss
+- name: 美国-43
+  network: ws
+  port: '2087'
+  server: 103.116.7.100
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 香港-5
+  network: ws
+  port: '2087'
+  server: 154.211.8.109
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-128-cfb
+  name: 美国-44
+  obfs: plain
+  obfs-param: ''
+  password: shadowsocks
+  port: '443'
+  protocol: origin
+  protocol-param: ''
+  server: 184.170.241.194
+  type: ssr
+- alterId: '64'
+  cipher: auto
+  name: 中国-6
+  network: tcp
+  port: '40972'
+  server: 120.232.153.63
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: 770ee730-2450-4e3c-a6c6-3932bd32afbd
+- name: 法国-2
   password: telegram-id-privatevpns
   port: '22222'
   server: 51.44.100.147
   sni: trojan.burgerip.co.uk
   type: trojan
-- name: 美国-84
-  network: ws
-  port: '443'
-  server: 160.79.104.76
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560&proxyip=160.79.104.76:443
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-28
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31153'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 香港-17
+- name: 新加坡-5
   network: ws
   port: '2096'
-  server: 154.211.8.220
+  server: 206.238.236.187
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2356,16 +935,10 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 美国-85
-  password: amazonskr05
-  port: '443'
-  server: 52.32.68.164
-  type: ss
-- name: 香港-18
+- name: 香港-6
   network: ws
-  port: '2096'
-  server: 154.211.8.150
+  port: '2083'
+  server: 154.211.8.18
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2376,7 +949,7 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 韩国-17
+- name: 韩国-13
   network: ws
   port: '443'
   server: 129.154.207.203
@@ -2390,10 +963,10 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 美国-86
+- name: 新加坡-6
   network: ws
-  port: '8443'
-  server: 167.68.4.131
+  port: '2083'
+  server: 206.238.237.146
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2404,24 +977,10 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 美国-87
-  network: ws
-  port: '443'
-  server: 103.116.7.235
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-88
+- name: 美国-45
   network: ws
   port: '2087'
-  server: 161.145.150.26
+  server: 108.165.152.98
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2432,7 +991,510 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 新加坡-19
+- cipher: aes-256-cfb
+  name: 美国-46
+  password: amazonskr05
+  port: '443'
+  server: 35.85.33.177
+  type: ss
+- name: 美国-47
+  network: ws
+  port: '2053'
+  server: 216.24.57.1
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 韩国-14
+  password: qwerREWQ@@
+  port: '25415'
+  server: 168.126.234.232
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-48
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31154'
+  server: cmcc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 美国-49
+  network: ws
+  port: '443'
+  server: 103.116.7.248
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-50
+  network: ws
+  port: '2096'
+  server: 135.84.64.77
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-51
+  network: ws
+  port: '2096'
+  server: 103.116.7.220
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-52
+  network: ws
+  port: '2096'
+  server: 108.165.152.252
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 新加坡-7
+  network: ws
+  port: '443'
+  server: 206.238.237.212
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-53
+  network: ws
+  port: '443'
+  server: 108.165.152.207
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- cipher: chacha20-ietf-poly1305
+  name: 荷兰-2
+  password: nq96KftrZAj3LuFQESqmn44Mo5oCuo2cipoEsae25mrmHG2oJ4VT37scBfVBpN5DWtUELZutVhhXs8Le5B8fZ9hLn9ytwvbf
+  port: '42501'
+  server: 208.67.105.87
+  type: ss
+- client-fingerprint: chrome
+  name: 美国-54
+  network: ws
+  port: '8080'
+  server: 104.21.40.164
+  servername: workerr.hashdiler.workers.dev
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vless
+  uuid: 636b1684-b26c-4a9c-bc6e-8e1197a36d74
+  ws-opts:
+    headers:
+      Host: workerr.hashdiler.workers.dev
+    path: /?ed=2048
+- cipher: chacha20-ietf-poly1305
+  name: 美国-55
+  password: f8f7aCzcPKbsF8p3
+  port: '990'
+  server: 64.74.163.130
+  type: ss
+- name: 美国-56
+  network: ws
+  port: '2083'
+  server: 103.116.7.67
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 香港-7
+  network: ws
+  port: '2096'
+  server: 154.211.8.47
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 英国-3
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 18.132.163.143
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 英国-4
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 3.10.106.168
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 美国-57
+  network: ws
+  port: '2083'
+  server: 108.165.152.91
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 美国-58
+  password: amazonskr05
+  port: '443'
+  server: 35.92.45.179
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-59
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31111'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 香港-8
+  network: ws
+  port: '2096'
+  server: 154.211.8.220
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 英国-5
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 18.169.36.63
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-256-cfb
+  name: 美国-60
+  password: amazonskr05
+  port: '443'
+  server: 52.89.164.115
+  type: ss
+- client-fingerprint: chrome
+  name: 美国-61
+  network: ws
+  port: '80'
+  server: 188.114.97.1
+  servername: biTter-DArkNEsS-3199.wAKoCi1200.WorkERS.dEv
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vless
+  uuid: 90b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: biTter-DArkNEsS-3199.wAKoCi1200.WorkERS.dEv
+    path: /09EpH4tzdpaF2F6Q?ed=2560
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-62
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31116'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 香港-9
+  network: ws
+  port: '2087'
+  server: 154.211.8.227
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-63
+  network: ws
+  port: '2083'
+  server: 103.116.7.133
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 美国-64
+  password: amazonskr05
+  port: '443'
+  server: 54.69.180.74
+  type: ss
+- name: 美国-65
+  network: ws
+  port: '8443'
+  server: 104.129.166.131
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 瑞典-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 16.171.105.47
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 瑞典-2
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 51.21.36.226
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 美国-66
+  network: ws
+  port: '2083'
+  server: 103.116.7.103
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-67
+  network: ws
+  port: '2096'
+  server: 103.116.7.152
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 爱尔兰-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 34.242.67.151
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- client-fingerprint: chrome
+  name: 美国-68
+  network: ws
+  port: '8080'
+  server: 172.67.163.189
+  servername: stArt.siTEG52770.WorKeRS.deV
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vless
+  uuid: dc580147-c87c-4527-bf90-192eb1cf62d1
+  ws-opts:
+    headers:
+      Host: stArt.siTEG52770.WorKeRS.deV
+    path: /V7zmCPZUuL2T1r5r/MC4wLjAuMA==?ed=2560
+- cipher: aes-256-cfb
+  name: 韩国-15
+  password: amazonskr05
+  port: '443'
+  server: 3.35.206.24
+  type: ss
+- name: 爱尔兰-2
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 34.254.137.107
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 瑞典-3
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 13.49.147.7
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 爱尔兰-3
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 52.16.234.23
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 瑞典-4
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 16.16.242.27
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 法国-3
+  network: ws
+  port: '80'
+  server: 151.101.120.121
+  servername: JOIN.vmessorg.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.vmessorg.DDNS1-IP.nEt
+  tls: false
+  type: vless
+  uuid: 0cd2e1d0-bccb-45b1-afe3-6bf19e28a4eb
+  ws-opts:
+    headers:
+      host: JOIN.vmessorg.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.vmessorg.DDNS1-IP.nEt
+    path: '@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg?ed=2480'
+- name: 美国-69
+  network: ws
+  port: '2083'
+  server: 135.84.74.254
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-70
+  network: ws
+  port: '8443'
+  server: 108.165.152.82
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-71
+  network: ws
+  port: '443'
+  server: 103.116.7.189
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-72
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31155'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- cipher: aes-256-cfb
+  name: 波兰-1
+  password: UTJA57ypk2XKQpnm
+  port: '9033'
+  server: 217.30.10.18
+  type: ss
+- name: 新加坡-8
+  network: ws
+  port: '8443'
+  server: 92.243.74.2
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 爱尔兰-4
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 54.216.42.168
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-256-cfb
+  name: 英国-6
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 62.100.205.48
+  type: ss
+- name: 新加坡-9
   network: ws
   port: '8443'
   server: 92.243.74.239
@@ -2446,34 +1508,16 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 美国-89
-  password: amazonskr05
-  port: '443'
-  server: 34.219.80.203
-  type: ss
-- name: 英国-6
-  password: telegram-id-directvpn
+- name: 爱尔兰-5
+  password: telegram-id-privatevpns
   port: '22222'
-  server: 35.176.141.111
+  server: 54.216.28.94
   sni: trojan.burgerip.co.uk
   type: trojan
-- alterId: '0'
-  cipher: auto
-  name: 俄罗斯联邦-3
+- name: 新加坡-10
   network: ws
-  port: '45751'
-  server: 195.58.49.42
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 7f1f6b5e-86df-4f6a-a5d2-e49b7dae59fb
-  ws-opts:
-    path: /
-- name: 美国-90
-  network: ws
-  port: '2096'
-  server: 108.165.152.204
+  port: '2083'
+  server: 206.238.236.251
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2485,86 +1529,12 @@ proxies:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
 - cipher: aes-256-cfb
-  name: 英国-7
-  password: f8f7aCzcPKbsF8p3
-  port: '989'
-  server: 62.100.205.48
-  type: ss
-- name: 香港-19
-  network: ws
-  port: '443'
-  server: 154.211.8.90
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 爱沙尼亚-1
-  password: f8f7aCzcPKbsF8p3
-  port: '989'
-  server: 185.193.49.88
-  type: ss
-- cipher: aes-128-gcm
-  name: 中国-15
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '571'
-  server: cntwlayer1.labexit.xyz
-  type: ss
-- name: 美国-91
-  network: ws
-  port: '2087'
-  server: 108.165.152.59
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 波兰-1
-  password: p9z5BVADH2YFs3MN
-  port: '9040'
+  name: 波兰-2
+  password: fG2artUmHfNT2cX7
+  port: '9018'
   server: 217.30.10.18
   type: ss
-- name: 香港-20
-  network: ws
-  port: '443'
-  server: 154.211.8.240
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 日本-8
-  network: ws
-  port: '443'
-  server: 217.142.243.226
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 新加坡-20
+- name: 新加坡-11
   network: ws
   port: '2096'
   server: 206.238.236.8
@@ -2578,28 +1548,10 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 美国-92
-  password: amazonskr05
-  port: '443'
-  server: 54.202.77.81
-  type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 摩尔多瓦-1
-  password: yMX9WGPgUEcRZmlaa0YHHC
-  port: '23492'
-  server: 103.106.1.92
-  type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 阿联酋-1
-  password: u17T3BvpYaaiuW2c
-  port: '443'
-  server: 40.172.144.210
-  type: ss
-- name: 香港-21
+- name: 香港-10
   network: ws
-  port: '8443'
-  server: 154.211.8.209
+  port: '2087'
+  server: 154.211.8.98
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2610,19 +1562,247 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 法国-4
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 13.38.254.180
-  sni: trojan.burgerip.co.uk
-  type: trojan
+- name: 香港-11
+  network: ws
+  port: '443'
+  server: 154.211.8.240
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 香港-12
+  network: ws
+  port: '2083'
+  server: 154.218.15.250
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-73
+  network: ws
+  port: '443'
+  server: 103.116.7.230
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
 - cipher: aes-256-cfb
-  name: 波兰-2
-  password: 9XwYyZsK8SNzQDtY
-  port: '9059'
+  name: 波兰-3
+  password: f8npKgNzdkss2ytn
+  port: '9088'
   server: 217.30.10.18
   type: ss
-- name: 韩国-18
+- name: 美国-74
+  network: ws
+  port: '443'
+  server: 103.116.7.235
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-75
+  network: ws
+  port: '2087'
+  server: 161.145.150.26
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 新加坡-12
+  network: ws
+  port: '2087'
+  server: 206.238.237.92
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- cipher: chacha20-ietf-poly1305
+  name: 挪威-1
+  password: M7x1mGNOwhPiRB9jSxZJNy
+  port: '6870'
+  server: 51.13.182.236
+  type: ss
+- name: 香港-13
+  network: ws
+  port: '2053'
+  server: 154.211.8.152
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-76
+  network: ws
+  port: '2052'
+  server: 104.17.147.22
+  servername: freev2rng---freev2rng---freev2rng---freev2rng---freev2rng.s88p4jh.workers.dev
+  tls: false
+  type: vless
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: freev2rng---freev2rng---freev2rng---freev2rng---freev2rng.s88p4jh.workers.dev
+    path: /WG9SqpThFFMyTenz?ed=2560
+- name: 美国-77
+  network: ws
+  port: '2087'
+  server: 108.165.152.59
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-78
+  network: ws
+  port: '8880'
+  server: 216.24.57.130
+  servername: mohsenfitshr.wibibin259.workers.dev
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vless
+  uuid: 1b6ae0f5-01dc-4b96-bca9-31c672dcf0aa
+  ws-opts:
+    headers:
+      Host: mohsenfitshr.wibibin259.workers.dev
+    path: /
+- cipher: aes-256-cfb
+  name: 波兰-4
+  password: cp8pRSUAyLhTfVWH
+  port: '9064'
+  server: 217.30.10.18
+  type: ss
+- cipher: aes-256-cfb
+  name: 波兰-5
+  password: rpgbNnU9rDDU4aWZ
+  port: '9094'
+  server: 217.30.10.18
+  type: ss
+- name: 英国-7
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 35.176.141.111
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 香港-14
+  network: ws
+  port: '2096'
+  server: 154.211.8.12
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 波兰-6
+  password: XPtzA9sCug3SPR4c
+  port: '9025'
+  server: 217.30.10.18
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 台湾-13
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31151'
+  server: cucc.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 英国-8
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 13.43.18.60
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- client-fingerprint: chrome
+  name: 美国-79
+  network: ws
+  port: '2082'
+  server: 104.18.14.19
+  servername: 13tg.jpl8xmqb.workers.dev
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vless
+  uuid: 131387aa-4b2a-43aa-bf7c-d94306ba55fb
+  ws-opts:
+    headers:
+      Host: 13tg.jpl8xmqb.workers.dev
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 波兰-7
+  password: BNmAXXxAHYpTRdzu
+  port: '9020'
+  server: 217.30.10.18
+  type: ss
+- name: 新加坡-13
+  network: ws
+  port: '2087'
+  server: 92.243.75.49
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 韩国-16
   network: ws
   port: '443'
   server: 158.180.65.145
@@ -2636,7 +1816,84 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 香港-22
+- name: 美国-80
+  network: ws
+  port: '443'
+  server: 108.165.152.219
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 新加坡-14
+  network: ws
+  port: '2087'
+  server: 206.238.236.90
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 日本-4
+  network: ws
+  port: '443'
+  server: 217.142.243.226
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-81
+  network: ws
+  port: '2083'
+  server: 108.165.152.78
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- alpn:
+  - h2
+  - http/1.1
+  name: 美国-82
+  network: ws
+  port: '80'
+  server: 167.82.85.155
+  servername: teleirani.ir
+  tls: false
+  type: vless
+  uuid: 253ef561-9e57-4336-befd-878ddd30df01
+  ws-opts:
+    headers:
+      host: teleirani.ir
+    path: /?ed=2048
+- cipher: aes-128-gcm
+  name: 中国-7
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '630'
+  server: neweur.upperlay.xyz
+  type: ss
+- name: 香港-15
   network: ws
   port: '443'
   server: aliyun.2096.us.kg
@@ -2651,113 +1908,31 @@ proxies:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
 - cipher: aes-256-cfb
-  name: 波兰-3
-  password: UkXRsXvR6buDMG2Y
-  port: '9001'
+  name: 波兰-8
+  password: f63gg8EruDnUrmz4
+  port: '9010'
   server: 217.30.10.18
   type: ss
-- name: 美国-93
-  network: ws
-  port: '443'
-  server: 129.146.46.164
-  servername: uxc.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 越南-28
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31124'
+  name: 台湾-14
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31129'
   server: cucc.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- name: 美国-94
-  network: ws
-  port: '443'
-  server: 91.149.239.145
-  servername: uxc.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560&proxyip=91.149.239.145:443
-- name: 英国-8
-  password: telegram-id-directvpn
-  port: '22222'
-  server: 18.132.163.143
-  sni: trojan.burgerip.co.uk
-  type: trojan
 - cipher: aes-256-cfb
-  name: 美国-95
-  password: amazonskr05
-  port: '443'
-  server: 35.85.33.177
-  type: ss
-- name: 瑞典-1
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 13.51.88.59
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-29
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31161'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 爱尔兰-1
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 34.242.67.151
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- name: 中国-16
-  network: ws
-  port: '443'
-  server: 156.230.12.71
-  servername: uxc.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560&proxyip=156.230.12.71:443
-- name: 爱尔兰-2
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 34.249.240.107
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- cipher: aes-256-cfb
-  name: 波兰-4
-  password: ZET59LF6DvCC8KVt
-  port: '9005'
+  name: 波兰-9
+  password: 9XwYyZsK8SNzQDtY
+  port: '9059'
   server: 217.30.10.18
   type: ss
-- name: 香港-23
+- name: 香港-16
   network: ws
-  port: '2083'
-  server: 154.218.15.250
+  port: '443'
+  server: 154.211.8.155
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2768,129 +1943,45 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 台湾-29
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31111'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-30
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31126'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 台湾-31
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31107'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- name: 日本-9
-  network: ws
-  port: '443'
-  server: 168.138.46.67
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-32
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31119'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: chacha20-ietf-poly1305
-  name: 阿联酋-2
-  password: u17T3BvpYaaiuW2c
-  port: '443'
-  server: 40.172.89.209
+- cipher: 2022-blake3-aes-256-gcm
+  name: 德国-5
+  password: TczN1j63KbLamEeXYjNQj7d7I/UPhOZWpJ5qBoI/f10=:NMZX2WajjShpecWvxU5TIsPQGJEaC1rF9zCBsA3thJg=
+  port: '22301'
+  server: 23.88.39.22
   type: ss
-- name: 瑞典-2
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 13.49.147.7
-  sni: trojan.burgerip.co.uk
-  type: trojan
 - cipher: aes-256-cfb
-  name: 美国-96
-  password: amazonskr05
-  port: '443'
-  server: 34.213.242.165
+  name: 波兰-10
+  password: TPqX8edgbAURcAMb
+  port: '9079'
+  server: 217.30.10.18
   type: ss
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 美国-97
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31103'
-  server: cmcc.abyssvpn.com
+  name: 美国-83
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31122'
+  server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
-- cipher: aes-256-gcm
-  name: 美国-98
-  password: KixLvKzwjekG00rm
-  port: '8080'
-  server: 38.110.1.46
+- cipher: aes-256-cfb
+  name: 波兰-11
+  password: QWDDvVE9npNurQfA
+  port: '9026'
+  server: 217.30.10.18
   type: ss
 - cipher: chacha20-ietf-poly1305
-  name: 中国-17
+  name: 中国-8
   password: f5136746-de79-46d0-b3be-d15d9992fa07
   port: '18769'
   server: zx3.1010520.xyz
   type: ss
   udp: true
-- cipher: aes-128-gcm
-  name: 中国-18
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '633'
-  server: neweur.upperlay.xyz
-  type: ss
-- cipher: aes-256-cfb
-  name: 法国-5
-  password: f8f7aCzcPKbsF8p3
-  port: '989'
-  server: 51.15.15.82
-  type: ss
-- cipher: aes-128-gcm
-  name: 中国-19
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '563'
-  server: cmrefhk1.exitlag.xyz
-  type: ss
-- cipher: aes-128-gcm
-  name: 中国-20
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '631'
-  server: neweur.upperlay.xyz
-  type: ss
-- name: 新加坡-21
+- name: 新加坡-15
   network: ws
-  port: '2083'
-  server: 27.50.48.189
+  port: '443'
+  server: 27.50.48.204
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2901,32 +1992,32 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
+- cipher: aes-256-cfb
+  name: 波兰-12
+  password: EXN3S3eQpjE7EJu8
+  port: '9027'
+  server: 217.30.10.18
+  type: ss
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
   down: '10000'
-  name: 越南-30
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31104'
-  server: cucc.abyssvpn.com
+  name: 美国-84
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31151'
+  server: bgp.abyssvpn.com
   skip-cert-verify: true
   type: hysteria2
   udp: true
   up: '10000'
 - cipher: aes-128-gcm
-  name: 中国-21
+  name: 中国-9
   password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '572'
+  port: '575'
   server: usastart-a.upperlay.xyz
   type: ss
-- cipher: aes-256-cfb
-  name: 波兰-5
-  password: GA9KzeEgvfxNrgmM
-  port: '9019'
-  server: 217.30.10.18
-  type: ss
-- name: 新加坡-22
+- name: 波兰-13
   network: ws
   port: '443'
-  server: 27.50.49.208
+  server: 91.239.148.133
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2937,7 +2028,7 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 新加坡-23
+- name: 新加坡-16
   network: ws
   port: '2083'
   server: 27.50.49.154
@@ -2951,7 +2042,60 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 新加坡-24
+- name: 新加坡-17
+  network: ws
+  port: '443'
+  server: 27.50.49.208
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 爱尔兰-6
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 34.249.240.107
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-128-gcm
+  name: 中国-10
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '573'
+  server: usastart-a.upperlay.xyz
+  type: ss
+- name: 新加坡-18
+  network: ws
+  port: '2083'
+  server: 27.50.48.189
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- cipher: chacha20-ietf-poly1305
+  name: 立陶宛-2
+  password: 4a2rfixophdjffa8KVA4Aa
+  port: '8080'
+  server: beesyar.org
+  type: ss
+- name: 波兰-14
+  password: '3723507166611775488'
+  port: '443'
+  server: holy-seahorse.boa152.lol
+  skip-cert-verify: true
+  sni: holy-seahorse.boa152.lol
+  type: trojan
+- name: 新加坡-19
   network: ws
   port: '8443'
   server: 27.50.49.242
@@ -2965,109 +2109,13 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-128-gcm
-  name: 中国-22
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '573'
-  server: usastart-a.upperlay.xyz
-  type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 德国-6
-  password: LuxyNetBot
-  port: '443'
-  server: apple.slumbo.com
-  type: ss
-- name: 新加坡-25
-  network: ws
-  port: '443'
-  server: 8.222.165.104
-  servername: uxc.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560&proxyip=8.222.165.104:443
-- name: 新加坡-26
-  network: ws
-  port: '2087'
-  server: 27.50.48.18
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-128-gcm
-  name: 中国-23
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '574'
-  server: usastart-a.upperlay.xyz
-  type: ss
-- name: 新加坡-27
-  network: ws
-  port: '2096'
-  server: 27.50.49.188
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
 - cipher: aes-256-cfb
-  name: 美国-99
+  name: 美国-85
   password: amazonskr05
   port: '443'
-  server: 35.88.126.102
+  server: 34.211.229.86
   type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 德国-7
-  password: NChVdloynewtqS0847jui6PQejHLO3gUuw1tnUmYVPI=
-  port: '55098'
-  server: 77.105.147.212
-  type: ss
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-31
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31120'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: 2022-blake3-aes-256-gcm
-  name: 德国-8
-  password: TczN1j63KbLamEeXYjNQj7d7I/UPhOZWpJ5qBoI/f10=:NMZX2WajjShpecWvxU5TIsPQGJEaC1rF9zCBsA3thJg=
-  port: '22301'
-  server: 23.88.39.22
-  type: ss
-- name: 新加坡-28
-  network: ws
-  port: '2083'
-  server: 27.50.48.61
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 新加坡-29
+- name: 新加坡-20
   network: ws
   port: '2087'
   server: 27.50.48.115
@@ -3082,178 +2130,15 @@ proxies:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
 - cipher: aes-128-gcm
-  name: 中国-24
+  name: 中国-11
   password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '571'
+  port: '572'
   server: usastart-a.upperlay.xyz
   type: ss
-- name: 新加坡-30
-  network: ws
-  port: '443'
-  server: 27.50.48.204
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- alterId: '0'
-  cipher: auto
-  name: 俄罗斯联邦-4
-  network: ws
-  port: '45751'
-  server: 195.58.49.50
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 1f338fc8-c224-4972-ae64-1f0c2931553e
-  ws-opts:
-    path: /
-- cipher: aes-256-cfb
-  name: 波兰-6
-  password: S7KwUu7yBy58S3Ga
-  port: '9042'
-  server: 217.30.10.18
-  type: ss
-- name: 荷兰-2
-  network: tcp
-  password: '3723507166611775488'
-  port: '443'
-  server: 5.189.203.38
-  skip-cert-verify: true
-  sni: sacred-guppy.boa152.lol
-  type: trojan
-  udp: true
-- http-opts:
-    headers:
-      Host:
-      - speedtest.net
-    method: GET
-    path:
-    - /
-  name: 德国-9
-  network: http
-  port: '80'
-  server: 2na9noed62ec.dopraxrocks.com
-  servername: speedtest.net
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 5c4f6ca8-b824-48de-8f33-ec3c9eda1c5e
-- alterId: '0'
-  cipher: auto
-  name: 美国-100
-  network: ws
-  port: '443'
-  server: hms02opi.fxiaomi.sbs
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  uuid: 6c168fcc-2231-4f3b-8c1e-f6391692df4a
-  ws-opts:
-    headers:
-      Host: hms02.fxiaomi.sbs
-    path: /link
-- name: 美国-101
-  password: telegram-id-directvpn
-  port: '22222'
-  server: 3.139.17.81
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- name: 波兰-7
-  network: ws
-  port: '443'
-  server: 91.239.148.133
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- alterId: '64'
-  cipher: auto
-  name: 中国-25
-  port: '52908'
-  server: 120.234.102.229
-  tls: false
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- name: 瑞典-3
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 16.171.105.47
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- name: 新加坡-31
+- name: 新加坡-21
   network: ws
   port: '2087'
-  server: 27.50.49.209
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-102
-  network: ws
-  port: '443'
-  server: 160.79.105.72
-  servername: uxc.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      host: uxc.vs2024.us.kg
-    path: /uxc.vs2024.us.kg
-- auth: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  down: '10000'
-  name: 越南-32
-  password: dd0fabc6-c6c5-493c-992e-fb83587a93d8
-  port: '31119'
-  server: cucc.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: aes-256-cfb
-  name: 波兰-8
-  password: FG5ddLsMPbV5CutE
-  port: '9050'
-  server: 217.30.10.18
-  type: ss
-- name: 新加坡-32
-  network: ws
-  port: '2083'
-  server: 27.50.49.47
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 波兰-9
-  network: ws
-  port: '13019'
-  server: 45.85.210.210
+  server: 27.50.48.18
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -3265,44 +2150,103 @@ proxies:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
 - cipher: chacha20-ietf-poly1305
-  name: 英国-9
-  password: mps3FwmDjLrWaOVg
+  name: 德国-6
+  password: LuxyNetBot
   port: '443'
-  server: series-a2.samanehha.co
+  server: 23.88.37.31
   type: ss
+- name: 新加坡-22
+  network: ws
+  port: '2083'
+  server: 27.50.48.61
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- auth: 772a076a-f5b6-4c37-908e-69be284ee198
+  down: '10000'
+  name: 美国-86
+  password: 772a076a-f5b6-4c37-908e-69be284ee198
+  port: '31121'
+  server: bgp.abyssvpn.com
+  skip-cert-verify: true
+  type: hysteria2
+  udp: true
+  up: '10000'
+- name: 新加坡-23
+  network: ws
+  port: '2096'
+  server: 27.50.49.188
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
 - cipher: chacha20-ietf-poly1305
   name: 拉脱维亚-1
   password: f8f7aCzcPKbsF8p3
   port: '990'
   server: 46.183.217.232
   type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 德国-10
-  password: LuxyNetBot
-  port: '443'
-  server: 23.88.37.31
-  type: ss
-- name: 美国-103
-  password: telegram-id-directvpn
-  port: '22222'
-  server: 54.156.50.138
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- name: 未知-1
+- name: 美国-87
   network: ws
-  port: '443'
-  server: uxc.vs2024.us.kg
-  servername: uxc.vs2024.us.kg
+  port: '8443'
+  server: 167.68.4.131
+  servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
   ws-opts:
     headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560&proxyip=proxyip.fxxk.dedyn.io
-- name: 波兰-10
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 荷兰-3
+  network: tcp
+  password: '3723507166611775488'
+  port: '443'
+  server: concrete-buzzard.boa152.lol
+  skip-cert-verify: true
+  sni: concrete-buzzard.boa152.lol
+  type: trojan
+  udp: true
+- cipher: aes-128-gcm
+  name: 中国-12
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '574'
+  server: usastart-a.upperlay.xyz
+  type: ss
+- cipher: aes-256-cfb
+  name: 爱沙尼亚-1
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 185.193.49.88
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 西班牙-1
+  password: f8f7aCzcPKbsF8p3
+  port: '990'
+  server: 45.154.206.192
+  type: ss
+- name: 美国-88
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 3.139.17.81
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 波兰-15
   network: ws
   port: '25463'
   server: 45.85.210.234
@@ -3316,63 +2260,26 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- auth: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  down: '10000'
-  name: 台湾-33
-  password: 8377de1d-9549-4cb6-a257-281e5b8ac9c3
-  port: '31200'
-  server: bgp.abyssvpn.com
-  skip-cert-verify: true
-  type: hysteria2
-  udp: true
-  up: '10000'
-- cipher: chacha20-ietf-poly1305
-  name: 荷兰-3
-  password: nq96KftrZAj3LuFQESqmn44Mo5oCuo2cipoEsae25mrmHG2oJ4VT37scBfVBpN5DWtUELZutVhhXs8Le5B8fZ9hLn9ytwvbf
-  port: '42501'
-  server: 208.67.105.87
-  type: ss
-- cipher: aes-256-cfb
-  name: 波兰-11
-  password: rNBfNuuANFCAk7KB
-  port: '9056'
-  server: 217.30.10.18
-  type: ss
-- name: 英国-10
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 3.10.106.168
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- cipher: aes-256-cfb
-  name: 美国-104
-  password: amazonskr05
-  port: '443'
-  server: 54.244.200.142
-  type: ss
-- name: 瑞典-4
-  network: ws
-  port: '2501'
-  server: 95.164.51.24
-  servername: a.mifeng.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
+- http-opts:
     headers:
-      Host: a.mifeng.us.kg
-    path: /?ed=2560
-- name: 加拿大-1
-  password: telegram-id-directvpn
-  port: '22222'
-  server: 35.182.49.98
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- name: 新加坡-33
+      Host:
+      - speedtest.net
+    method: GET
+    path:
+    - /
+  name: 德国-7
+  network: http
+  port: '80'
+  server: 2na9noed62ec.dopraxrocks.com
+  servername: speedtest.net
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 5c4f6ca8-b824-48de-8f33-ec3c9eda1c5e
+- name: 香港-17
   network: ws
-  port: '8443'
-  server: 27.50.49.224
+  port: '2096'
+  server: 154.211.8.150
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -3383,88 +2290,75 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 加拿大-2
+- alterId: '64'
+  cipher: auto
+  name: 中国-13
+  network: tcp
+  port: '56601'
+  server: 183.236.51.23
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- name: 新加坡-24
+  network: ws
+  port: '8443'
+  server: 206.238.236.253
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-89
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 3.131.48.154
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- alterId: '0'
+  cipher: auto
+  name: 美国-90
+  network: ws
+  port: '443'
+  server: hms02opi.fxiaomi.sbs
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 6c168fcc-2231-4f3b-8c1e-f6391692df4a
+  ws-opts:
+    headers:
+      Host: hms02.fxiaomi.sbs
+    path: /link
+- client-fingerprint: random
+  name: 荷兰-4
+  port: '15891'
+  reality-opts:
+    public-key: 4FNDHgDP2lnetuRioH6DsE9kMnDyhkJ2NHLMpZgyci0
+    short-id: 10f1
+  server: 174.138.13.224
+  servername: ftp.debian.org
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: ae2228d1-9b8f-4914-9e0a-68a115f8dbe1
+- name: 加拿大-1
   password: telegram-id-directvpn
   port: '22222'
   server: 99.79.138.143
   sni: trojan.burgerip.co.uk
   type: trojan
-- cipher: aes-256-cfb
-  name: 波兰-12
-  password: f8npKgNzdkss2ytn
-  port: '9088'
-  server: 217.30.10.18
-  type: ss
-- name: 爱尔兰-3
+- name: 加拿大-2
   password: telegram-id-directvpn
   port: '22222'
-  server: 52.16.234.23
+  server: 35.182.49.98
   sni: trojan.burgerip.co.uk
   type: trojan
-- name: 荷兰-4
-  network: tcp
-  password: '3723507166611775488'
-  port: '443'
-  server: concrete-buzzard.boa152.lol
-  skip-cert-verify: true
-  sni: concrete-buzzard.boa152.lol
-  type: trojan
-  udp: true
-- name: 波兰-13
-  network: ws
-  port: '18556'
-  server: 185.144.245.62
-  servername: cvl.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
-  ws-opts:
-    headers:
-      host: cvl.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-105
-  network: ws
-  port: '443'
-  server: 129.80.222.224
-  servername: dsb.ylks.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: dsb.ylks.us.kg
-    path: /?ed=2560
-- name: 英国-11
-  network: ws
-  port: '587'
-  server: 8.208.94.35
-  servername: a.mifeng.us.kg
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: a.mifeng.us.kg
-    path: /?ed=2560
-- cipher: chacha20-ietf-poly1305
-  name: 阿联酋-3
-  password: u17T3BvpYaaiuW2c
-  port: '443'
-  server: series-a2-mec.varzesh360.co
-  type: ss
-- name: 波兰-14
-  password: '3723507166611775488'
-  port: '443'
-  server: holy-seahorse.boa152.lol
-  skip-cert-verify: true
-  sni: holy-seahorse.boa152.lol
-  type: trojan
-- name: 波兰-15
+- name: 波兰-16
   network: ws
   port: '10913'
   server: 45.85.210.217
@@ -3478,10 +2372,23 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 波兰-16
+- name: 瑞典-5
   network: ws
-  port: '443'
-  server: 185.188.147.79
+  port: '2501'
+  server: 95.164.51.24
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /?ed=2560
+- name: 波兰-17
+  network: ws
+  port: '18556'
+  server: 185.144.245.62
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -3492,19 +2399,7 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 美国-106
-  network: ws
-  port: '80'
-  server: 151.101.2.219
-  servername: WHALEV2R.IR
-  tls: false
-  type: vless
-  uuid: c377239e-d3a0-49a6-ebd9-997d7733da65
-  ws-opts:
-    headers:
-      host: WHALEV2R.IR
-    path: '@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam?ed=2048'
-- name: 波兰-17
+- name: 波兰-18
   network: ws
   port: '34130'
   server: 45.85.210.193
@@ -3518,32 +2413,10 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 美国-107
-  password: Julius
-  port: '443'
-  server: 193.106.248.196
-  skip-cert-verify: true
-  sni: miami.juliusnet.com
-  type: trojan
-  udp: true
-- name: 瑞士-1
+- name: 香港-18
   network: ws
-  port: '2053'
-  server: 140.238.173.181
-  servername: uxc.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560&proxyip=proxyip.oracle.fxxk.dedyn.io
-- name: 新加坡-34
-  network: ws
-  port: '2096'
-  server: 27.50.49.179
+  port: '2083'
+  server: 154.211.8.84
   servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -3554,27 +2427,125 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 美国-108
-  password: amazonskr05
-  port: '443'
-  server: 54.69.180.74
+- cipher: 2022-blake3-aes-256-gcm
+  name: 德国-8
+  password: LHA8mRPN3ZoV8QnLmjfpueT1fJKGYIzt+oGmTfqouRw=:cWb/TYEyxC9G/hoWZ25CfQhPK5jFfO2a9JJvXvdIX6c=
+  port: '39477'
+  server: 188.245.81.145
   type: ss
-- name: 美国-109
+- alterId: '64'
+  cipher: auto
+  name: 中国-14
+  network: tcp
+  port: '40565'
+  server: 120.232.153.63
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- name: 波兰-19
   network: ws
-  port: '443'
-  server: 47.253.223.200
-  servername: uxc.vs2024.us.kg
+  port: '13019'
+  server: 45.85.210.210
+  servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
   ws-opts:
     headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560&proxyip=47.253.223.200:443
-- name: 西班牙-1
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 英国-9
+  network: ws
+  port: '587'
+  server: 8.208.94.35
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /?ed=2560
+- alterId: '0'
+  cipher: auto
+  name: 中国-15
+  network: ws
+  port: '25256'
+  server: us1.awslcn.info
+  tls: false
+  type: vmess
+  uuid: 243eab52-9ac1-405c-887c-eb112c0985b8
+  ws-opts:
+    headers:
+      Host: us1.awslcn.info
+    path: /
+- cipher: aes-128-gcm
+  name: 中国-16
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '571'
+  server: usastart-a.upperlay.xyz
+  type: ss
+- name: 美国-91
+  network: tcp
+  password: 023f7aa2-d079-40d8-a730-c681947f10bb
+  port: '8848'
+  server: 107.175.70.80
+  skip-cert-verify: true
+  sni: 107.175.70.80
+  type: trojan
+  udp: true
+- name: 新加坡-25
+  network: ws
+  port: '2087'
+  server: 27.50.49.209
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- cipher: chacha20-ietf-poly1305
+  name: 中国-17
+  password: e1c77eb5-eacd-4afd-8da3-9fd2c1d3b499
+  port: '45719'
+  server: zx3.1010520.xyz
+  type: ss
+- name: 波兰-20
+  network: ws
+  port: '443'
+  server: 185.188.147.79
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- alterId: '0'
+  cipher: auto
+  name: 中国-18
+  network: ws
+  port: '25216'
+  server: cm.awslcn.info
+  tls: false
+  type: vmess
+  uuid: 243eab52-9ac1-405c-887c-eb112c0985b8
+  ws-opts:
+    headers:
+      Host: cm.awslcn.info
+    path: /
+- name: 西班牙-2
   network: ws
   port: '8080'
   server: 94.250.246.200
@@ -3587,65 +2558,68 @@ proxies:
     headers:
       Host: a.mifeng.us.kg
     path: /?ed=2560
-- name: 美国-110
-  network: ws
-  port: '80'
-  server: 151.101.194.219
-  servername: WHALEV2R.IR
-  tls: false
-  type: vless
-  uuid: c377239e-d3a0-49a6-ebd9-997d7733da65
-  ws-opts:
-    headers:
-      host: WHALEV2R.IR
-    path: '@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam/@XpnTeam?ed=2048'
-- name: 爱尔兰-4
+- name: 美国-92
   password: telegram-id-directvpn
   port: '22222'
-  server: 34.254.137.107
+  server: 54.156.50.138
   sni: trojan.burgerip.co.uk
   type: trojan
-- cipher: chacha20-ietf-poly1305
-  name: 波兰-18
-  password: o1WWniuLrY7MnWf9R57rLT
-  port: '443'
-  server: 77.83.246.74
-  type: ss
-- cipher: aes-128-gcm
-  name: 中国-26
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '563'
-  server: cnexhk.nesx.xyz
-  type: ss
-- name: 美国-111
+- client-fingerprint: chrome
+  name: 瑞士-1
   network: ws
-  port: '8443'
-  server: 129.146.171.186
-  servername: uxc.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
+  port: '80'
+  server: 185.18.250.12
+  servername: ana-SErVICe.xAbjCDZ.wORkErs.deV
+  skip-cert-verify: false
+  tfo: false
+  tls: false
   type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   ws-opts:
     headers:
-      host: uxc.vs2024.us.kg
-    path: /uxc.vs2024.us.kg
-- name: 瑞典-5
-  network: ws
-  port: '8443'
-  server: 129.151.198.3
-  servername: uxc.vs2024.us.kg
+      Host: ana-SErVICe.xAbjCDZ.wORkErs.deV
+    path: /1Y6MN5DFV8zB82Ai?ed=2560
+- auth: 015322ea-6674-4900-94f3-e71a2d47fcff
+  down: '100'
+  name: 香港-19
+  obfs: salamander
+  obfs-password: YzcwOTNlODc4NDIzMWMyMg==
+  password: 015322ea-6674-4900-94f3-e71a2d47fcff
+  port: '32902'
+  server: 212.192.12.70
   skip-cert-verify: true
-  tls: true
-  type: vless
+  type: hysteria2
   udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  up: '100'
+- client-fingerprint: chrome
+  name: 美国-93
+  network: ws
+  port: '8880'
+  server: 172.67.195.126
+  servername: falcunargo-telegram.384f2ed785.workers.Dev
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vless
+  uuid: 44ab0683-1a75-4859-88ce-ef9ffea53c91
   ws-opts:
     headers:
-      host: uxc.vs2024.us.kg
-    path: /?ed=2560&proxyip=proxyip.oracle.fxxk.dedyn.io
-- name: 波兰-19
+      Host: falcunargo-telegram.384f2ed785.workers.Dev
+    path: /
+- alterId: '0'
+  cipher: auto
+  name: 中国-19
+  network: ws
+  port: '25216'
+  server: cm1.awslcn.info
+  tls: false
+  type: vmess
+  uuid: 243eab52-9ac1-405c-887c-eb112c0985b8
+  ws-opts:
+    headers:
+      Host: cm1.awslcn.info
+    path: /
+- name: 波兰-21
   network: ws
   port: '443'
   server: 185.238.74.193
@@ -3659,41 +2633,58 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- name: 意大利-1
+- name: 新加坡-26
   network: ws
-  port: '8443'
-  server: 204.216.216.148
-  servername: dsb.ylks.us.kg
+  port: '2096'
+  server: 27.50.49.179
+  servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
   ws-opts:
     headers:
-      Host: dsb.ylks.us.kg
+      host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-128-gcm
-  name: 中国-27
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '570'
-  server: neweur.upperlay.xyz
-  type: ss
-- alterId: '0'
-  cipher: auto
-  name: 美国-112
-  network: ws
+- name: 捷克-1
+  network: tcp
+  password: '3723507166611775488'
   port: '443'
-  server: 172.67.164.232
+  server: social-bream.boa152.lol
+  skip-cert-verify: true
+  sni: social-bream.boa152.lol
+  type: trojan
+  udp: true
+- name: 新加坡-27
+  network: ws
+  port: '2083'
+  server: 27.50.49.47
+  servername: cvl.esslh.filegear-sg.me
   skip-cert-verify: true
   tls: true
-  type: vmess
-  uuid: 33f6d8b0-81f8-4fce-b3df-79dc8fd6d8c5
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
   ws-opts:
     headers:
-      host: 33.bycf.us.kg
-    path: /rongseven?ed=2048
-- name: 波兰-20
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 新加坡-28
+  network: ws
+  port: '8443'
+  server: 27.50.49.224
+  servername: cvl.esslh.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c797aa8a-c03d-48da-9ad4-c9774b14bed2
+  ws-opts:
+    headers:
+      host: cvl.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 波兰-22
   network: ws
   port: '443'
   server: 45.144.48.122
@@ -3707,42 +2698,43 @@ proxies:
     headers:
       host: cvl.esslh.filegear-sg.me
     path: /?ed=2560
+- cipher: aes-128-gcm
+  name: 中国-20
+  password: 88430607-f080-4816-b2e5-1a47e193a057
+  port: '633'
+  server: neweur.upperlay.xyz
+  type: ss
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 368个'
-  - '自动选择(国内): 50个'
-  - '自动选择(国外): 318个'
-  - '手动选择: 368个'
-  - '新加坡分区: 34个'
-  - '香港分区: 23个'
-  - '越南分区: 32个'
-  - '台湾分区: 33个'
-  - '日本分区: 9个'
-  - '韩国分区: 18个'
-  - '中国分区: 27个'
-  - '美国分区: 112个'
-  - '德国分区: 10个'
-  - '英国分区: 11个'
-  - '南非分区: 3个'
-  - '哈萨克斯坦分区: 1个'
-  - '俄罗斯联邦分区: 4个'
-  - '法国分区: 5个'
+  - '自动选择: 263个'
+  - '自动选择(国内): 39个'
+  - '自动选择(国外): 224个'
+  - '手动选择: 263个'
+  - '美国分区: 93个'
+  - '香港分区: 19个'
+  - '日本分区: 4个'
+  - '台湾分区: 14个'
+  - '韩国分区: 16个'
+  - '新加坡分区: 28个'
+  - '德国分区: 8个'
+  - '英国分区: 9个'
+  - '中国分区: 20个'
+  - '法国分区: 3个'
+  - '立陶宛分区: 2个'
   - '荷兰分区: 4个'
-  - '巴林分区: 1个'
-  - '爱沙尼亚分区: 1个'
-  - '波兰分区: 20个'
-  - '摩尔多瓦分区: 1个'
-  - '阿联酋分区: 3个'
+  - '俄罗斯联邦分区: 1个'
   - '瑞典分区: 5个'
-  - '爱尔兰分区: 4个'
+  - '爱尔兰分区: 6个'
+  - '波兰分区: 22个'
+  - '挪威分区: 1个'
   - '拉脱维亚分区: 1个'
-  - '未知分区: 1个'
+  - '爱沙尼亚分区: 1个'
+  - '西班牙分区: 2个'
   - '加拿大分区: 2个'
   - '瑞士分区: 1个'
-  - '西班牙分区: 1个'
-  - '意大利分区: 1个'
+  - '捷克分区: 1个'
   type: select
 - hidden: true
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -3751,7 +2743,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 368个'
+  name: '自动选择: 263个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -3761,7 +2753,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 50个'
+  name: '自动选择(国内): 39个'
   proxies:
   - 香港-1
   - 香港-2
@@ -3770,49 +2762,38 @@ proxy-groups:
   - 中国-2
   - 中国-3
   - 中国-4
-  - 中国-5
   - 香港-4
+  - 中国-5
   - 香港-5
-  - 香港-6
   - 中国-6
+  - 香港-6
+  - 香港-7
+  - 香港-8
+  - 香港-9
+  - 香港-10
+  - 香港-11
+  - 香港-12
+  - 香港-13
+  - 香港-14
   - 中国-7
+  - 香港-15
+  - 香港-16
   - 中国-8
   - 中国-9
   - 中国-10
   - 中国-11
   - 中国-12
-  - 香港-7
-  - 中国-13
-  - 香港-8
-  - 香港-9
-  - 香港-10
-  - 香港-11
-  - 中国-14
-  - 香港-12
-  - 香港-13
-  - 香港-14
-  - 香港-15
-  - 香港-16
   - 香港-17
+  - 中国-13
   - 香港-18
-  - 香港-19
+  - 中国-14
   - 中国-15
-  - 香港-20
-  - 香港-21
-  - 香港-22
   - 中国-16
-  - 香港-23
   - 中国-17
   - 中国-18
+  - 香港-19
   - 中国-19
   - 中国-20
-  - 中国-21
-  - 中国-22
-  - 中国-23
-  - 中国-24
-  - 中国-25
-  - 中国-26
-  - 中国-27
   - COMPATIBLE
   timeout: 1500
   type: url-test
@@ -3823,343 +2804,249 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 318个'
+  name: '自动选择(国外): 224个'
   proxies:
-  - 新加坡-1
-  - 越南-1
-  - 台湾-1
+  - 美国-1
   - 日本-1
   - 日本-2
-  - 新加坡-2
-  - 日本-3
-  - 新加坡-3
-  - 日本-4
-  - 新加坡-4
+  - 台湾-1
   - 韩国-1
+  - 新加坡-1
   - 韩国-2
   - 韩国-3
-  - 日本-5
-  - 新加坡-5
-  - 日本-6
-  - 美国-1
+  - 韩国-4
   - 德国-1
   - 美国-2
-  - 越南-2
-  - 韩国-4
   - 台湾-2
-  - 台湾-3
-  - 台湾-4
-  - 日本-7
-  - 新加坡-6
+  - 新加坡-2
   - 美国-3
   - 韩国-5
-  - 越南-3
-  - 韩国-6
-  - 英国-1
-  - 越南-4
-  - 台湾-5
-  - 台湾-6
-  - 韩国-7
-  - 韩国-8
   - 美国-4
-  - 台湾-7
-  - 台湾-8
-  - 越南-5
-  - 台湾-9
-  - 台湾-10
-  - 越南-6
+  - 台湾-3
+  - 英国-1
+  - 台湾-4
   - 美国-5
   - 美国-6
   - 美国-7
   - 美国-8
-  - 越南-7
-  - 韩国-9
+  - 台湾-5
   - 美国-9
+  - 韩国-6
   - 美国-10
-  - 台湾-11
+  - 台湾-6
+  - 韩国-7
   - 美国-11
+  - 韩国-8
+  - 台湾-7
   - 美国-12
-  - 台湾-12
-  - 越南-8
-  - 越南-9
-  - 台湾-13
-  - 越南-10
+  - 英国-2
+  - 韩国-9
   - 美国-13
+  - 台湾-8
   - 美国-14
-  - 越南-11
-  - 台湾-14
-  - 韩国-10
-  - 台湾-15
+  - 台湾-9
   - 美国-15
   - 美国-16
-  - 越南-12
-  - 越南-13
-  - 台湾-16
   - 美国-17
   - 美国-18
-  - 英国-2
-  - 韩国-11
-  - 台湾-17
-  - 韩国-12
-  - 台湾-18
   - 美国-19
-  - 越南-14
+  - 法国-1
   - 美国-20
   - 美国-21
-  - 越南-15
   - 美国-22
   - 美国-23
-  - 越南-16
   - 美国-24
   - 美国-25
   - 美国-26
-  - 越南-17
   - 美国-27
-  - 越南-18
-  - 台湾-19
   - 美国-28
-  - 台湾-20
+  - 日本-3
   - 美国-29
-  - 越南-19
-  - 台湾-21
-  - 台湾-22
+  - 韩国-10
+  - 立陶宛-1
+  - 韩国-11
+  - 台湾-10
   - 美国-30
   - 美国-31
   - 美国-32
-  - 韩国-13
   - 美国-33
-  - 越南-20
   - 美国-34
-  - 越南-21
-  - 台湾-23
   - 美国-35
   - 美国-36
-  - 越南-22
+  - 新加坡-3
   - 美国-37
-  - 越南-23
-  - 台湾-24
   - 美国-38
-  - 台湾-25
-  - 英国-3
-  - 韩国-14
-  - 德国-2
-  - 台湾-26
-  - 英国-4
-  - 韩国-15
+  - 台湾-11
   - 美国-39
   - 美国-40
+  - 新加坡-4
+  - 德国-2
   - 德国-3
+  - 台湾-12
+  - 荷兰-1
+  - 韩国-12
+  - 德国-4
+  - 俄罗斯联邦-1
   - 美国-41
   - 美国-42
-  - 越南-24
-  - 越南-25
   - 美国-43
-  - 新加坡-7
   - 美国-44
+  - 法国-2
+  - 新加坡-5
+  - 韩国-13
+  - 新加坡-6
   - 美国-45
-  - 德国-4
-  - 越南-26
-  - 南非-1
   - 美国-46
-  - 台湾-27
   - 美国-47
+  - 韩国-14
   - 美国-48
-  - 新加坡-8
   - 美国-49
   - 美国-50
   - 美国-51
   - 美国-52
+  - 新加坡-7
   - 美国-53
+  - 荷兰-2
   - 美国-54
   - 美国-55
-  - 新加坡-9
-  - 哈萨克斯坦-1
   - 美国-56
+  - 英国-3
+  - 英国-4
   - 美国-57
   - 美国-58
   - 美国-59
+  - 英国-5
   - 美国-60
   - 美国-61
   - 美国-62
   - 美国-63
   - 美国-64
   - 美国-65
-  - 越南-27
-  - 俄罗斯联邦-1
+  - 瑞典-1
+  - 瑞典-2
   - 美国-66
   - 美国-67
-  - 新加坡-10
-  - 俄罗斯联邦-2
-  - 新加坡-11
+  - 爱尔兰-1
   - 美国-68
-  - 新加坡-12
+  - 韩国-15
+  - 爱尔兰-2
+  - 瑞典-3
+  - 爱尔兰-3
+  - 瑞典-4
+  - 法国-3
   - 美国-69
   - 美国-70
-  - 新加坡-13
   - 美国-71
-  - 韩国-16
-  - 法国-1
   - 美国-72
-  - 新加坡-14
-  - 南非-2
+  - 波兰-1
+  - 新加坡-8
+  - 爱尔兰-4
+  - 英国-6
+  - 新加坡-9
+  - 爱尔兰-5
+  - 新加坡-10
+  - 波兰-2
+  - 新加坡-11
   - 美国-73
-  - 法国-2
+  - 波兰-3
   - 美国-74
   - 美国-75
+  - 新加坡-12
+  - 挪威-1
   - 美国-76
-  - 南非-3
-  - 新加坡-15
-  - 新加坡-16
   - 美国-77
-  - 荷兰-1
-  - 新加坡-17
-  - 新加坡-18
-  - 巴林-1
   - 美国-78
+  - 波兰-4
+  - 波兰-5
+  - 英国-7
+  - 波兰-6
+  - 台湾-13
+  - 英国-8
   - 美国-79
-  - 英国-5
-  - 德国-5
+  - 波兰-7
+  - 新加坡-13
+  - 韩国-16
   - 美国-80
+  - 新加坡-14
+  - 日本-4
   - 美国-81
   - 美国-82
-  - 美国-83
-  - 法国-3
-  - 美国-84
-  - 台湾-28
-  - 美国-85
-  - 韩国-17
-  - 美国-86
-  - 美国-87
-  - 美国-88
-  - 新加坡-19
-  - 美国-89
-  - 英国-6
-  - 俄罗斯联邦-3
-  - 美国-90
-  - 英国-7
-  - 爱沙尼亚-1
-  - 美国-91
-  - 波兰-1
-  - 日本-8
-  - 新加坡-20
-  - 美国-92
-  - 摩尔多瓦-1
-  - 阿联酋-1
-  - 法国-4
-  - 波兰-2
-  - 韩国-18
-  - 波兰-3
-  - 美国-93
-  - 越南-28
-  - 美国-94
-  - 英国-8
-  - 美国-95
-  - 瑞典-1
-  - 越南-29
-  - 爱尔兰-1
-  - 爱尔兰-2
-  - 波兰-4
-  - 台湾-29
-  - 台湾-30
-  - 台湾-31
-  - 日本-9
-  - 台湾-32
-  - 阿联酋-2
-  - 瑞典-2
-  - 美国-96
-  - 美国-97
-  - 美国-98
-  - 法国-5
-  - 新加坡-21
-  - 越南-30
-  - 波兰-5
-  - 新加坡-22
-  - 新加坡-23
-  - 新加坡-24
-  - 德国-6
-  - 新加坡-25
-  - 新加坡-26
-  - 新加坡-27
-  - 美国-99
-  - 德国-7
-  - 越南-31
-  - 德国-8
-  - 新加坡-28
-  - 新加坡-29
-  - 新加坡-30
-  - 俄罗斯联邦-4
-  - 波兰-6
-  - 荷兰-2
-  - 德国-9
-  - 美国-100
-  - 美国-101
-  - 波兰-7
-  - 瑞典-3
-  - 新加坡-31
-  - 美国-102
-  - 越南-32
   - 波兰-8
-  - 新加坡-32
+  - 台湾-14
   - 波兰-9
-  - 英国-9
-  - 拉脱维亚-1
-  - 德国-10
-  - 美国-103
-  - 未知-1
+  - 德国-5
   - 波兰-10
-  - 台湾-33
-  - 荷兰-3
+  - 美国-83
   - 波兰-11
-  - 英国-10
-  - 美国-104
-  - 瑞典-4
-  - 加拿大-1
-  - 新加坡-33
-  - 加拿大-2
+  - 新加坡-15
   - 波兰-12
-  - 爱尔兰-3
-  - 荷兰-4
+  - 美国-84
   - 波兰-13
-  - 美国-105
-  - 英国-11
-  - 阿联酋-3
+  - 新加坡-16
+  - 新加坡-17
+  - 爱尔兰-6
+  - 新加坡-18
+  - 立陶宛-2
   - 波兰-14
-  - 波兰-15
-  - 波兰-16
-  - 美国-106
-  - 波兰-17
-  - 美国-107
-  - 瑞士-1
-  - 新加坡-34
-  - 美国-108
-  - 美国-109
+  - 新加坡-19
+  - 美国-85
+  - 新加坡-20
+  - 新加坡-21
+  - 德国-6
+  - 新加坡-22
+  - 美国-86
+  - 新加坡-23
+  - 拉脱维亚-1
+  - 美国-87
+  - 荷兰-3
+  - 爱沙尼亚-1
   - 西班牙-1
-  - 美国-110
-  - 爱尔兰-4
-  - 波兰-18
-  - 美国-111
+  - 美国-88
+  - 波兰-15
+  - 德国-7
+  - 新加坡-24
+  - 美国-89
+  - 美国-90
+  - 荷兰-4
+  - 加拿大-1
+  - 加拿大-2
+  - 波兰-16
   - 瑞典-5
+  - 波兰-17
+  - 波兰-18
+  - 德国-8
   - 波兰-19
-  - 意大利-1
-  - 美国-112
+  - 英国-9
+  - 美国-91
+  - 新加坡-25
   - 波兰-20
+  - 西班牙-2
+  - 美国-92
+  - 瑞士-1
+  - 美国-93
+  - 波兰-21
+  - 新加坡-26
+  - 捷克-1
+  - 新加坡-27
+  - 新加坡-28
+  - 波兰-22
   - COMPATIBLE
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 368个'
+  name: '手动选择: 263个'
   type: select
-- filter: (?i)新加坡|SG|sg
+- filter: (?i)美国|US|us
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '新加坡分区: 34个'
+  name: '美国分区: 93个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4174,37 +3061,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '香港分区: 23个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)越南|VN|vn
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/vn.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '越南分区: 32个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)台湾|TW|tw
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/tw.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '台湾分区: 33个'
+  name: '香港分区: 19个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4219,7 +3076,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '日本分区: 9个'
+  name: '日本分区: 4个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)台湾|TW|tw
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/tw.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '台湾分区: 14个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4234,37 +3106,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '韩国分区: 18个'
+  name: '韩国分区: 16个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)中国|CN|cn
+- filter: (?i)新加坡|SG|sg
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 27个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)美国|US|us
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '美国分区: 112个'
+  name: '新加坡分区: 28个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4279,7 +3136,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '德国分区: 10个'
+  name: '德国分区: 8个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4294,52 +3151,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '英国分区: 11个'
+  name: '英国分区: 9个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)南非|ZA|za
+- filter: (?i)中国|CN|cn
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/za.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '南非分区: 3个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)哈萨克斯坦|KZ|kz
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kz.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '哈萨克斯坦分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)俄罗斯联邦|RU|ru
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ru.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '俄罗斯联邦分区: 4个'
+  name: '中国分区: 20个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4354,7 +3181,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '法国分区: 5个'
+  name: '法国分区: 3个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)立陶宛|LT|lt
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lt.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '立陶宛分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4376,75 +3218,15 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)巴林|BH|bh
+- filter: (?i)俄罗斯联邦|RU|ru
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/bh.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ru.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '巴林分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)爱沙尼亚|EE|ee
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ee.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '爱沙尼亚分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)波兰|PL|pl
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pl.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '波兰分区: 20个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)摩尔多瓦|MD|md
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/md.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '摩尔多瓦分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)阿联酋|AE|ae
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ae.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '阿联酋分区: 3个'
+  name: '俄罗斯联邦分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4474,7 +3256,37 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '爱尔兰分区: 4个'
+  name: '爱尔兰分区: 6个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)波兰|PL|pl
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pl.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '波兰分区: 22个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)挪威|NO|no
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/no.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '挪威分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4496,15 +3308,30 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)未知|cn|cn
+- filter: (?i)爱沙尼亚|EE|ee
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ee.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '未知分区: 1个'
+  name: '爱沙尼亚分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)西班牙|ES|es
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/es.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '西班牙分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4541,30 +3368,15 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)西班牙|ES|es
+- filter: (?i)捷克|CZ|cz
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/es.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cz.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '西班牙分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)意大利|IT|it
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/it.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '意大利分区: 1个'
+  name: '捷克分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
