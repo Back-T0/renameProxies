@@ -74,97 +74,98 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- cipher: aes-256-gcm
+- name: 亚美尼亚-1
+  network: ws
+  password: SSorg
+  port: 2083
+  server: 188.164.159.91
+  skip-cert-verify: false
+  sni: sstjj.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: sstjj.esslh.filegear-sg.me
+    path: /
+- alterId: 1
+  cipher: auto
+  name: 澳大利亚-1
+  network: ws
+  port: 443
+  server: 172.105.172.209
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: 172.105.172.209
+    path: /linkvws
+- alterId: 64
+  cipher: auto
   name: 中国-1
-  password: b6b2c224-9845-4ad6-b33f-d46a46a72768
-  port: 10022
-  server: hdhdaswjp.cfprefer1.xyz
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  name: 中国-2
-  password: b6b2c224-9845-4ad6-b33f-d46a46a72768
-  port: 10041
-  server: hdhdaswjp.cfprefer1.xyz
-  type: ss
-  udp: true
-- name: 中国-3
+  port: 54104
+  server: 183.236.51.23
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- name: 中国-2
   password: 7daf833c-37b9-4afc-8495-96590f03f781
   port: 21332
   server: 120.232.217.96
   skip-cert-verify: true
   sni: 120.232.217.96
   type: trojan
-- alterId: 64
-  cipher: auto
-  name: 中国-4
-  port: 56601
-  server: 183.236.51.23
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- http-opts:
+- name: 中国-3
+  password: lovemm.23
+  port: 22889
+  server: 42.192.52.227
+  type: socks5
+  username: zeaslity
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  http-opts:
     headers:
       Host:
-      - fast.com
+      - m-net.speedtestcustom.com
     method: GET
     path:
     - /
-  name: 伊朗-1
+  name: 德国-1
   network: http
-  port: 33410
-  server: p2.daryashopvip.site
-  servername: fast.com
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 3398ed24-c8dc-4c10-b998-56f607aa0db5
-- http-opts:
-    headers:
-      Host:
-      - fast.com
-    method: GET
-    path:
-    - /
-  name: 伊朗-2
-  network: http
-  port: 443
-  server: p1.daryashopvip.site
-  servername: fast.com
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 944c6cec-9763-4852-bb7c-023ca7d8603d
-- http-opts:
-    headers:
-      Host:
-      - fast.com
-    method: GET
-    path:
-    - /
-  name: 伊朗-3
-  network: http
-  port: 34854
-  server: p3.daryashopvip.site
-  servername: fast.com
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 9ef8c0be-084c-4c57-bdba-ac888a5f3ade
-- name: 日本-1
-  network: ws
-  port: 443
-  server: 34.146.42.164
-  servername: jp.liulisanwan.cn
+  port: 45908
+  server: 209.38.213.114
+  servername: tunnel-pro.yoooka.lol
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 75c4925b-0afb-478e-b474-eb83411341a1
+  uuid: b2705a86-7b78-4f59-9205-3a16062b8018
+- name: 法国-1
+  network: ws
+  password: SSorg
+  port: 8443
+  server: 88.218.78.95
+  skip-cert-verify: false
+  sni: sstjj.esslh.filegear-sg.me
+  type: trojan
   ws-opts:
     headers:
-      Host: jp.liulisanwan.cn
+      Host: sstjj.esslh.filegear-sg.me
+    path: /
+- name: 美国-1
+  network: ws
+  password: SSorg
+  port: 2083
+  server: 103.116.7.103
+  skip-cert-verify: false
+  sni: sstjj.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: sstjj.esslh.filegear-sg.me
     path: /
 - http-opts:
     headers:
@@ -182,33 +183,49 @@ proxies:
   tls: false
   type: vless
   uuid: 677a41e5-dbe6-429b-8f91-cc014b1ae1bd
-- cipher: chacha20-ietf-poly1305
-  name: 波兰-1
-  password: LH7TX6NsaRk2OKp2ukNQQK
-  port: 443
-  server: 77.83.246.74
-  type: ss
+- name: 荷兰-2
+  network: ws
+  password: SSorg
+  port: 8443
+  server: 185.204.109.190
+  skip-cert-verify: false
+  sni: sstjj.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: sstjj.esslh.filegear-sg.me
+    path: /
 - cipher: aes-256-gcm
   name: 俄罗斯联邦-1
-  password: 478f9fdd437325da
+  password: 76f22412bc0dbdf6
   port: 16112
-  server: 195.133.52.149
+  server: 185.22.153.14
   type: ss
   udp: true
-- cipher: aes-256-gcm
-  name: 俄罗斯联邦-2
-  password: df14ff552867fbf9
-  port: 16112
-  server: 195.133.53.79
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  name: 俄罗斯联邦-3
-  password: 2a117bd4077d9a53
-  port: 16112
-  server: 45.8.158.238
-  type: ss
-  udp: true
+- name: 塞舌尔-1
+  network: ws
+  password: SSorg
+  port: 443
+  server: 154.197.64.67
+  skip-cert-verify: false
+  sni: sstjj.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: sstjj.esslh.filegear-sg.me
+    path: /
+- name: 塞舌尔-2
+  network: ws
+  password: SSorg
+  port: 8443
+  server: 154.197.64.248
+  skip-cert-verify: false
+  sni: sstjj.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: sstjj.esslh.filegear-sg.me
+    path: /
 - name: 瑞典-1
   network: ws
   port: 2501
@@ -222,14 +239,32 @@ proxies:
     headers:
       Host: a.mifeng.us.kg
     path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 新加坡-1
-  password: amazonskr05
+- name: 新加坡-1
+  network: ws
+  password: SSorg
   port: 443
-  server: 47.129.162.86
-  type: ss
-  udp: true
-- name: 美国-1
+  server: 206.238.236.134
+  skip-cert-verify: false
+  sni: sstjj.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: sstjj.esslh.filegear-sg.me
+    path: /
+- name: 土耳其-1
+  network: ws
+  port: 2501
+  server: 95.164.116.22
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /?ed=2560
+- name: 美国-2
   network: ws
   port: 80
   server: 167.82.0.147
@@ -242,7 +277,7 @@ proxies:
     headers:
       Host: edge.validbv3528.ir
     path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-2
+- name: 美国-3
   network: ws
   port: 80
   server: 167.82.0.37
@@ -259,23 +294,10 @@ proxies:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  name: 美国-3
+  name: 美国-4
   network: ws
   port: 80
   server: 151.101.194.133
-  servername: teleirani.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 253ef561-9e57-4336-befd-878ddd30df01
-  ws-opts:
-    headers:
-      Host: teleirani.ir
-    path: /?ed=2048
-- name: 美国-4
-  network: ws
-  port: 80
-  server: 167.82.1.102
   servername: teleirani.ir
   skip-cert-verify: false
   tls: false
@@ -305,6 +327,19 @@ proxies:
 - name: 美国-6
   network: ws
   port: 80
+  server: 167.82.1.102
+  servername: teleirani.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 253ef561-9e57-4336-befd-878ddd30df01
+  ws-opts:
+    headers:
+      Host: teleirani.ir
+    path: /?ed=2048
+- name: 美国-7
+  network: ws
+  port: 80
   server: 167.82.0.141
   servername: edge.validbv3528.ir
   skip-cert-verify: false
@@ -315,10 +350,10 @@ proxies:
     headers:
       Host: edge.validbv3528.ir
     path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-7
+- name: 美国-8
   network: ws
   port: 80
-  server: 167.82.1.103
+  server: 167.82.0.103
   servername: edge.validbv3528.ir
   skip-cert-verify: false
   tls: false
@@ -327,12 +362,12 @@ proxies:
   ws-opts:
     headers:
       Host: edge.validbv3528.ir
-    path: /?ed=2560
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: random
-  name: 美国-8
+  name: 美国-9
   network: ws
   port: 80
   server: 167.82.1.119
@@ -345,33 +380,7 @@ proxies:
     headers:
       Host: teleirani.ir
     path: /?ed=2048
-- name: 美国-9
-  network: ws
-  port: 80
-  server: 167.82.0.103
-  servername: edge.validbv3528.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
-  ws-opts:
-    headers:
-      Host: edge.validbv3528.ir
-    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
 - name: 美国-10
-  network: ws
-  port: 80
-  server: 167.82.0.1
-  servername: edge.validbv3528.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
-  ws-opts:
-    headers:
-      Host: edge.validbv3528.ir
-    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayja1?ed=2560
-- name: 美国-11
   network: ws
   port: 80
   server: 167.82.0.46
@@ -384,7 +393,7 @@ proxies:
     headers:
       Host: edge.validbv3528.ir
     path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-12
+- name: 美国-11
   network: ws
   port: 80
   server: 167.82.0.9
@@ -397,7 +406,7 @@ proxies:
     headers:
       Host: edge.validbv3528.ir
     path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-13
+- name: 美国-12
   network: ws
   port: 80
   server: 167.82.0.14
@@ -410,10 +419,23 @@ proxies:
     headers:
       Host: edge.validbv3528.ir
     path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
+- name: 美国-13
+  network: ws
+  port: 80
+  server: 167.82.0.1
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayja1?ed=2560
 - name: 美国-14
   network: ws
   port: 80
-  server: 167.82.0.103
+  server: 167.82.1.103
   servername: edge.validbv3528.ir
   skip-cert-verify: false
   tls: false
@@ -422,112 +444,8 @@ proxies:
   ws-opts:
     headers:
       Host: edge.validbv3528.ir
-    path: /
+    path: /?ed=2560
 - name: 美国-15
-  network: ws
-  port: 80
-  server: 167.82.69.101
-  servername: edge.validbv3528.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
-  ws-opts:
-    headers:
-      Host: edge.validbv3528.ir
-    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-16
-  network: ws
-  port: 80
-  server: 167.82.65.8
-  servername: edge.validbv3528.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
-  ws-opts:
-    headers:
-      Host: edge.validbv3528.ir
-    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-17
-  network: ws
-  port: 80
-  server: 167.82.71.3
-  servername: edge.validbv3528.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
-  ws-opts:
-    headers:
-      Host: edge.validbv3528.ir
-    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-18
-  network: ws
-  port: 80
-  server: 167.82.72.38
-  servername: edge.validbv3528.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
-  ws-opts:
-    headers:
-      Host: edge.validbv3528.ir
-    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-19
-  network: ws
-  port: 80
-  server: 167.82.65.80
-  servername: edge.validbv3528.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
-  ws-opts:
-    headers:
-      Host: edge.validbv3528.ir
-    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-20
-  network: ws
-  port: 80
-  server: 167.82.65.71
-  servername: edge.validbv3528.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
-  ws-opts:
-    headers:
-      Host: edge.validbv3528.ir
-    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-21
-  network: ws
-  port: 80
-  server: 167.82.70.214
-  servername: edge.validbv3528.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
-  ws-opts:
-    headers:
-      Host: edge.validbv3528.ir
-    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
-- name: 美国-22
-  network: ws
-  port: 80
-  server: 167.82.0.47
-  servername: teleirani.ir
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 253ef561-9e57-4336-befd-878ddd30df01
-  ws-opts:
-    headers:
-      Host: teleirani.ir
-    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1?ed=2560
-- name: 美国-23
   network: ws
   port: 80
   server: 167.82.0.242
@@ -540,7 +458,7 @@ proxies:
     headers:
       Host: teleirani.ir
     path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1?ed=2560
-- name: 美国-24
+- name: 美国-16
   network: ws
   port: 80
   server: 167.82.0.226
@@ -553,10 +471,10 @@ proxies:
     headers:
       Host: teleirani.ir
     path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1?ed=2560
-- name: 美国-25
+- name: 美国-17
   network: ws
   port: 80
-  server: 167.82.66.165
+  server: 167.82.0.47
   servername: teleirani.ir
   skip-cert-verify: false
   tls: false
@@ -566,7 +484,20 @@ proxies:
     headers:
       Host: teleirani.ir
     path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1?ed=2560
-- name: 美国-26
+- name: 美国-18
+  network: ws
+  port: 80
+  server: 167.82.0.103
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /
+- name: 美国-19
   network: ws
   port: 80
   server: 167.82.1.121
@@ -579,7 +510,7 @@ proxies:
     headers:
       Host: teleirani.ir
     path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1?ed=2560
-- name: 美国-27
+- name: 美国-20
   network: ws
   port: 80
   server: 167.82.72.38
@@ -591,29 +522,60 @@ proxies:
   ws-opts:
     headers:
       Host: edge.validbv3528.ir
-    path: /
-- cipher: aes-256-cfb
-  name: 美国-28
-  password: amazonskr05
-  port: 443
-  server: 35.88.145.21
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  name: 美国-29
-  password: amazonskr05
-  port: 443
-  server: 35.91.157.153
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  name: 美国-30
-  password: amazonskr05
-  port: 443
-  server: 35.90.11.23
-  type: ss
-  udp: true
-- name: 美国-31
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
+- name: 美国-21
+  network: ws
+  port: 80
+  server: 167.82.66.165
+  servername: teleirani.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 253ef561-9e57-4336-befd-878ddd30df01
+  ws-opts:
+    headers:
+      Host: teleirani.ir
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1?ed=2560
+- name: 美国-22
+  network: ws
+  port: 80
+  server: 167.82.65.71
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
+- name: 美国-23
+  network: ws
+  port: 80
+  server: 167.82.71.3
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
+- name: 美国-24
+  network: ws
+  port: 80
+  server: 167.82.70.214
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
+- name: 美国-25
   network: ws
   port: 80
   server: 198.41.216.118
@@ -626,27 +588,20 @@ proxies:
     headers:
       Host: a.mifeng.us.kg
     path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
-- cipher: aes-256-cfb
-  name: 美国-32
-  password: amazonskr05
-  port: 443
-  server: 35.94.25.109
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  name: 美国-33
-  password: amazonskr05
-  port: 443
-  server: 35.94.145.100
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  name: 美国-34
-  password: amazonskr05
-  port: 443
-  server: 35.93.248.193
-  type: ss
-- name: 美国-35
+- name: 美国-26
+  network: ws
+  port: 80
+  server: 167.82.65.80
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
+- name: 美国-27
   network: ws
   port: 80
   server: 151.101.3.8
@@ -659,35 +614,20 @@ proxies:
     headers:
       Host: 49.org
     path: /telegram-v2safee,telegram-v2safee,telegram-v2safee,telegram-v2safee,telegram-v2safee,telegram-v2safee,telegram-v2safee,telegram-v2safee,telegram-v2safee,telegram-v2safee,telegram-v2safee,telegram-v2safee?ed=2095
-- cipher: aes-256-cfb
-  name: 美国-36
-  password: amazonskr05
-  port: 443
-  server: 35.85.54.63
-  type: ss
-  udp: true
-- name: 美国-37
-  port: 30944
-  server: 107.172.157.148
+- name: 美国-28
+  network: ws
+  port: 80
+  server: 167.82.72.38
+  servername: edge.validbv3528.ir
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: 819664e1-26f2-49db-8025-b18adee8fd2c
-- client-fingerprint: chrome
-  name: 美国-38
-  network: ws
-  port: 443
-  server: fishlab.ucdavis.edu
-  servername: fishlab.ucdavis.edu
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 57624c33-1ab8-405e-9358-03bec36f0642
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
   ws-opts:
     headers:
-      Host: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
-    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
-- name: 美国-39
+      Host: edge.validbv3528.ir
+    path: /
+- name: 美国-29
   network: ws
   port: 80
   server: 151.101.3.8
@@ -700,34 +640,7 @@ proxies:
     headers:
       Host: VpnWedbaz-VpnWedbaz.SS
     path: /@VpnWedbaz-----@VpnWedbaz?ed=2560
-- name: 美国-40
-  network: ws
-  port: 80
-  server: NUFiLTER.fastly80.hosting-ip.com
-  servername: Germany2-nufilter.com
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 1917caae-f3d3-47d6-bfaa-d863a9ee941e
-  ws-opts:
-    headers:
-      Host: Germany2-nufilter.com
-    path: /telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER?ed=888
-- client-fingerprint: chrome
-  name: 美国-41
-  network: ws
-  port: 443
-  server: bestcf.liuli3wan2.me
-  servername: orsj1.1541241.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: e042ac3d-6de5-49c6-984c-beaf976f8242
-  ws-opts:
-    headers:
-      Host: orsj1.1541241.xyz
-    path: /ymmzws
-- name: 美国-42
+- name: 美国-30
   network: ws
   port: 443
   server: 198.41.192.239
@@ -740,21 +653,7 @@ proxies:
     headers:
       Host: usb.warpo.me
     path: /bing
-- client-fingerprint: ios
-  name: 美国-43
-  network: ws
-  port: 2052
-  server: bbq2.kuailejc.xyz
-  servername: dddomg.kuailejc.xyz
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 6657eaa4-6e21-4fd1-9a7f-157b23236aa4
-  ws-opts:
-    headers:
-      Host: dddomg.kuailejc.xyz
-    path: /kuaile2024
-- name: 美国-44
+- name: 美国-31
   network: ws
   port: 443
   server: 141.101.123.208
@@ -767,23 +666,251 @@ proxies:
     headers:
       Host: usa.warpo.me
     path: /bing
+- name: 美国-32
+  network: ws
+  port: 80
+  server: 167.82.0.242
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
+- alterId: 0
+  cipher: auto
+  name: 美国-33
+  network: ws
+  port: 443
+  server: 199.232.214.133
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: e5852393-ca52-4c90-a237-d63cbbb57f21
+  ws-opts:
+    headers:
+      Host: loki.oracle
+    path: /farcry?ed=2560
+- name: 美国-34
+  network: ws
+  password: SSorg
+  port: 2096
+  server: 108.165.152.29
+  skip-cert-verify: false
+  sni: sstjj.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: sstjj.esslh.filegear-sg.me
+    path: /
+- name: 美国-35
+  network: ws
+  password: SSorg
+  port: 2083
+  server: 108.165.152.80
+  skip-cert-verify: false
+  sni: sstjj.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: sstjj.esslh.filegear-sg.me
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 美国-36
+  network: ws
+  port: 80
+  server: 151.101.2.216
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: c69f3029-ae1e-45ca-aa08-70970f14dfd2
+  ws-opts:
+    headers:
+      Host: telegram-ISVvpn.ir
+    path: /racevpn
+- name: 美国-37
+  network: ws
+  port: 80
+  server: 167.82.0.0
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /
+- name: 美国-38
+  network: ws
+  port: 80
+  server: 167.82.65.119
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
+- client-fingerprint: chrome
+  name: 美国-39
+  network: ws
+  port: 443
+  server: 151.101.130.133
+  servername: www.sunshinecity.co.jp
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 81e5d802-a1ad-4639-9ea0-f2ad4265effb
+  ws-opts:
+    headers:
+      Host: externalch.org
+    path: /---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net?ed=2048
+- name: 美国-40
+  network: ws
+  port: 80
+  server: 151.101.3.8
+  servername: External_Net.org
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 81e5d802-a1ad-4639-9ea0-f2ad4265effb
+  ws-opts:
+    headers:
+      Host: External_Net.org
+    path: /
+- name: 美国-41
+  network: ws
+  port: 80
+  server: 167.82.1.136
+  servername: teleirani.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 253ef561-9e57-4336-befd-878ddd30df01
+  ws-opts:
+    headers:
+      Host: teleirani.ir
+    path: /?ed=2048
+- name: 美国-42
+  network: ws
+  port: 80
+  server: 167.82.1.111
+  servername: teleirani.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 253ef561-9e57-4336-befd-878ddd30df01
+  ws-opts:
+    headers:
+      Host: teleirani.ir
+    path: /?ed=2048
+- name: 美国-43
+  network: ws
+  port: 80
+  server: 173.245.49.53
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
+- name: 美国-44
+  network: ws
+  port: 80
+  server: 103.21.244.190
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
+- name: 美国-45
+  network: ws
+  port: 80
+  server: speedtest.net
+  servername: foffmelo.com
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: fddedb06-250c-46e1-eca7-5df2e361192f
+  ws-opts:
+    headers:
+      Host: foffmelo.com
+    path: /olem/ws?ed=1024
+- cipher: aes-256-cfb
+  name: 美国-46
+  password: amazonskr05
+  port: 443
+  server: 35.89.145.123
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 美国-47
+  password: amazonskr05
+  port: 443
+  server: 35.94.52.140
+  type: ss
+  udp: true
+- name: 美国-48
+  network: ws
+  port: 443
+  server: 154.17.229.206
+  servername: dousa.monv.me
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: f232ea17-b79f-4e64-d130-d3ce92b8e5b1
+  ws-opts:
+    headers:
+      Host: dousa.monv.me
+    path: /bing
+- alterId: 0
+  cipher: auto
+  name: 美国-49
+  network: ws
+  port: 8443
+  server: ff.kncc2.top
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 89c344f2-096c-445c-b629-9b15152f38e7
+  ws-opts:
+    headers:
+      Host: ff.kncc2.top
+    path: /89c344f2
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 59个'
-  - '自动选择(国内): 4个'
-  - '自动选择(国外): 55个'
-  - '手动选择: 59个'
-  - '中国分区: 4个'
-  - '伊朗分区: 3个'
-  - '日本分区: 1个'
-  - '荷兰分区: 1个'
-  - '波兰分区: 1个'
-  - '俄罗斯联邦分区: 3个'
+  - '自动选择: 64个'
+  - '自动选择(国内): 3个'
+  - '自动选择(国外): 61个'
+  - '手动选择: 64个'
+  - '亚美尼亚分区: 1个'
+  - '澳大利亚分区: 1个'
+  - '中国分区: 3个'
+  - '德国分区: 1个'
+  - '法国分区: 1个'
+  - '美国分区: 49个'
+  - '荷兰分区: 2个'
+  - '俄罗斯联邦分区: 1个'
+  - '塞舌尔分区: 2个'
   - '瑞典分区: 1个'
   - '新加坡分区: 1个'
-  - '美国分区: 44个'
+  - '土耳其分区: 1个'
   type: select
 - hidden: true
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -792,7 +919,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 59个'
+  name: '自动选择: 64个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -802,12 +929,11 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 4个'
+  name: '自动选择(国内): 3个'
   proxies:
   - 中国-1
   - 中国-2
   - 中国-3
-  - 中国-4
   - COMPATIBLE
   timeout: 1500
   type: url-test
@@ -818,20 +944,21 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 55个'
+  name: '自动选择(国外): 61个'
   proxies:
-  - 伊朗-1
-  - 伊朗-2
-  - 伊朗-3
-  - 日本-1
+  - 亚美尼亚-1
+  - 澳大利亚-1
+  - 德国-1
+  - 法国-1
+  - 美国-1
   - 荷兰-1
-  - 波兰-1
+  - 荷兰-2
   - 俄罗斯联邦-1
-  - 俄罗斯联邦-2
-  - 俄罗斯联邦-3
+  - 塞舌尔-1
+  - 塞舌尔-2
   - 瑞典-1
   - 新加坡-1
-  - 美国-1
+  - 土耳其-1
   - 美国-2
   - 美国-3
   - 美国-4
@@ -875,14 +1002,49 @@ proxy-groups:
   - 美国-42
   - 美国-43
   - 美国-44
+  - 美国-45
+  - 美国-46
+  - 美国-47
+  - 美国-48
+  - 美国-49
   - COMPATIBLE
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 59个'
+  name: '手动选择: 64个'
   type: select
+- filter: (?i)亚美尼亚|AM|am
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/am.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '亚美尼亚分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)澳大利亚|AU|au
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/au.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '澳大利亚分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
 - filter: (?i)中国|CN|cn
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
@@ -891,37 +1053,52 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 4个'
+  name: '中国分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)伊朗|IR|ir
+- filter: (?i)德国|DE|de
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ir.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '伊朗分区: 3个'
+  name: '德国分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)日本|JP|jp
+- filter: (?i)法国|FR|fr
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fr.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '日本分区: 1个'
+  name: '法国分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)美国|US|us
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '美国分区: 49个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -936,22 +1113,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '荷兰分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)波兰|PL|pl
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pl.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '波兰分区: 1个'
+  name: '荷兰分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -966,7 +1128,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '俄罗斯联邦分区: 3个'
+  name: '俄罗斯联邦分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)塞舌尔|SC|sc
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sc.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '塞舌尔分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1003,15 +1180,15 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)美国|US|us
+- filter: (?i)土耳其|TR|tr
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/tr.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 44个'
+  name: '土耳其分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
