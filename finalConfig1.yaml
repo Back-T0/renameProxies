@@ -74,13 +74,12 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- cipher: chacha20-ietf-poly1305
-  name: 新加坡-1
-  password: 3FB23A19-9424-40C7-9139-3540228283FA
-  port: 40005
-  server: sgp.fastsoonlink.com
+- cipher: aes-256-cfb
+  name: 芬兰-1
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 37.143.129.230
   type: ss
-  udp: true
 - name: 中国-1
   password: phXKwfrd
   port: 36442
@@ -88,18 +87,85 @@ proxies:
   skip-cert-verify: true
   type: trojan
 - name: 中国-2
+  password: 0bc68743-cff8-4730-9818-9d8192ee335c
+  port: 16233
+  server: 120.232.217.96
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+- name: 中国-3
+  password: 0bc68743-cff8-4730-9818-9d8192ee335c
+  port: 21146
+  server: 120.232.217.96
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+- name: 中国-4
+  password: 0bc68743-cff8-4730-9818-9d8192ee335c
+  port: 47479
+  server: 120.232.217.96
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+- name: 中国-5
   port: 53221
   server: jsxzcm.concubine.top
   skip-cert-verify: false
   tls: false
   type: vless
   uuid: 26c320f1-5b23-478c-f873-b1779bbcf055
-- name: 中国-3
-  password: lovemm.23
-  port: 22889
-  server: 42.192.52.227
-  type: socks5
-  username: zeaslity
+- cipher: chacha20-ietf-poly1305
+  name: 新加坡-1
+  password: 3FB23A19-9424-40C7-9139-3540228283FA
+  port: 40005
+  server: sgp.fastsoonlink.com
+  type: ss
+  udp: true
+- name: 中国-6
+  password: 0bc68743-cff8-4730-9818-9d8192ee335c
+  port: 21142
+  server: 120.232.217.96
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+- name: 中国-7
+  password: 0bc68743-cff8-4730-9818-9d8192ee335c
+  port: 39431
+  server: 120.232.217.96
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+- alterId: 2
+  cipher: auto
+  name: 中国-8
+  network: ws
+  port: 22643
+  server: tk.hzlt.tkddns.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 98e96c9f-4bb3-39d4-9a2c-fac04257f7c7
+  ws-opts:
+    headers:
+      Host: zxjp-c.tkong.cc
+    path: /
+- http-opts:
+    headers:
+      Host:
+      - Speedtest.net
+    method: GET
+    path:
+    - /
+  name: 德国-1
+  network: http
+  port: 1010
+  server: 159.69.35.198
+  servername: Speedtest.net
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d2ab7136-f995-40b8-8b59-4f2ef0c5d590
 - http-opts:
     headers:
       Host:
@@ -107,7 +173,7 @@ proxies:
     method: GET
     path:
     - /
-  name: 德国-1
+  name: 德国-2
   network: http
   port: 80
   server: 2na9noed62ec.dopraxrocks.com
@@ -116,19 +182,6 @@ proxies:
   tls: false
   type: vless
   uuid: 01b12c3c-4d96-45c3-88ef-f1360804d7b0
-- name: 德国-2
-  network: ws
-  port: 2053
-  server: tify-binex-join.espikernajafi.ir
-  servername: chess.com
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: a6394e36-aa83-4613-f5af-9cb14d9488d5
-  ws-opts:
-    headers:
-      Host: chess.com
-    path: /telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY?ed=2560
 - alpn:
   - h3
   - h2
@@ -147,6 +200,37 @@ proxies:
     headers:
       Host: hozori.ir
     path: /fasffasfsA
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  name: 德国-4
+  network: ws
+  port: 443
+  server: hozori.ir
+  servername: hozori.ir
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 743a9ecc-095b-47bf-8d08-8a51acac0eb2
+  ws-opts:
+    headers:
+      Host: hozori.ir
+    path: /fasffasfsA
+- name: 西班牙-1
+  network: ws
+  port: 8080
+  server: 94.250.246.200
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /?ed=2560
 - http-opts:
     headers:
       Host:
@@ -179,54 +263,16 @@ proxies:
   protocol-param: ''
   server: 62.100.205.48
   type: ssr
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 香港-1
-  network: ws
-  port: 443
-  server: 13.75.45.129
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 香港-2
-  network: ws
-  port: 39584
-  server: 185.213.62.199
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 香港-3
-  network: ws
-  port: 2083
-  server: 154.218.15.250
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 英国-3
+  obfs: plain
+  obfs-param: ''
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  protocol: origin
+  protocol-param: ''
+  server: 77.72.5.113
+  type: ssr
 - alpn:
   - http/1.1
   name: 美国-1
@@ -242,22 +288,61 @@ proxies:
     headers:
       Host: amedo.esslh.filegear-sg.me
     path: /?ed=2560
+- name: 印度-1
+  password: '3648425794742788096'
+  port: 443
+  server: 5.8.35.208
+  skip-cert-verify: false
+  sni: loving-boa.treefrog761.one
+  type: trojan
 - http-opts:
     headers:
       Host:
-      - fast.com
+      - Fast.com
     method: GET
     path:
     - /
   name: 伊朗-1
   network: http
-  port: 443
-  server: p1.daryashopvip.site
-  servername: fast.com
+  port: 28505
+  server: 185.155.72.100
+  servername: Fast.com
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: 944c6cec-9763-4852-bb7c-023ca7d8603d
+  uuid: f1e481af-4fd4-40ce-aedc-9a5529c10e8a
+- http-opts:
+    headers:
+      Host:
+      - Fast.com
+    method: GET
+    path:
+    - /
+  name: 伊朗-2
+  network: http
+  port: 17160
+  server: 84.47.233.101
+  servername: Fast.com
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 88bc3858-b31c-4a1d-9f17-9c485ae404b1
+- http-opts:
+    headers:
+      Host:
+      - Fast.com
+    method: GET
+    path:
+    - /
+  name: 伊朗-3
+  network: http
+  port: 17160
+  server: ne2sr.blushop1403.info
+  servername: Fast.com
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 88bc3858-b31c-4a1d-9f17-9c485ae404b1
 - http-opts:
     headers:
       Host:
@@ -265,7 +350,7 @@ proxies:
     method: GET
     path:
     - /
-  name: 伊朗-2
+  name: 伊朗-4
   network: http
   port: 34854
   server: p3.daryashopvip.site
@@ -281,34 +366,24 @@ proxies:
     method: GET
     path:
     - /
-  name: 伊朗-3
+  name: 伊朗-5
   network: http
-  port: 33410
-  server: p2.daryashopvip.site
+  port: 443
+  server: p1.daryashopvip.site
   servername: fast.com
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: 3398ed24-c8dc-4c10-b998-56f607aa0db5
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 美国-2
-  network: ws
-  port: 2083
-  server: 103.116.7.103
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
+  uuid: 944c6cec-9763-4852-bb7c-023ca7d8603d
+- cipher: aes-256-cfb
+  name: 日本-1
+  password: amazonskr05
+  port: 443
+  server: 18.182.5.141
+  type: ss
 - alpn:
   - http/1.1
-  name: 美国-3
+  name: 美国-2
   network: ws
   port: 2083
   server: 103.116.7.67
@@ -323,10 +398,23 @@ proxies:
     path: /?ed=2560
 - alpn:
   - http/1.1
-  name: 美国-4
+  name: 美国-3
   network: ws
   port: 2083
   server: 103.116.7.133
+  servername: amedo.esslh.filegear-sg.me
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 70186b61-319d-42f2-9807-7df9594aa385
+  ws-opts:
+    headers:
+      Host: amedo.esslh.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-4
+  network: ws
+  port: 443
+  server: 103.116.7.248
   servername: amedo.esslh.filegear-sg.me
   skip-cert-verify: false
   tls: true
@@ -348,89 +436,70 @@ proxies:
   ws-opts:
     headers:
       Host: amedo.esslh.filegear-sg.me
-    path: /?ed=2560
+    path: /
 - cipher: aes-256-cfb
   name: 韩国-1
-  password: amazonskr05
-  port: 443
-  server: 43.203.242.247
+  password: qwerREWQ@@
+  port: 15041
+  server: p239.panda004.net
   type: ss
 - cipher: aes-256-cfb
   name: 韩国-2
   password: qwerREWQ@@
-  port: 4410
-  server: 222.112.15.140
+  port: 38370
+  server: 221.150.109.19
   type: ss
 - cipher: aes-256-cfb
   name: 韩国-3
   password: qwerREWQ@@
-  port: 5412
-  server: 27.255.82.23
+  port: 61238
+  server: p231.panda004.net
+  type: ss
+- cipher: aes-256-cfb
+  name: 韩国-4
+  password: qwerREWQ@@
+  port: 21238
+  server: p230.panda004.net
+  type: ss
+- cipher: aes-256-cfb
+  name: 韩国-5
+  password: qwerREWQ@@
+  port: 38370
+  server: p236.panda004.net
+  type: ss
+- cipher: aes-256-cfb
+  name: 韩国-6
+  password: qwerREWQ@@
+  port: 6072
+  server: p226.panda004.net
+  type: ss
+- cipher: aes-256-cfb
+  name: 韩国-7
+  password: qwerREWQ@@
+  port: 51633
+  server: 211.178.105.134
   type: ss
 - alpn:
-  - h3
-  client-fingerprint: random
-  name: 韩国-4
-  network: ws
-  port: 443
-  server: 3.38.250.62
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
+  - http/1.1
   name: 波兰-1
-  network: ws
-  port: 10913
-  server: 45.85.210.217
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 波兰-2
-  network: ws
-  port: 25463
-  server: 45.85.210.234
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 波兰-3
   network: ws
   port: 18556
   server: 185.144.245.62
-  servername: v.aivpn.filegear-sg.me
+  servername: amedo.esslh.filegear-sg.me
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
+  uuid: 70186b61-319d-42f2-9807-7df9594aa385
   ws-opts:
     headers:
-      Host: v.aivpn.filegear-sg.me
+      Host: amedo.esslh.filegear-sg.me
     path: /?ed=2560
+- cipher: chacha20-ietf
+  name: 香港-1
+  password: asd123456
+  port: 8388
+  server: 154.197.26.237
+  type: ss
 - name: 瑞典-1
   network: ws
   port: 2501
@@ -457,328 +526,143 @@ proxies:
     headers:
       Host: amedo.esslh.filegear-sg.me
     path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 新加坡-3
+- name: 美国-6
+  port: 10
+  server: 5.78.53.195
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 44a463d5-56db-456e-8d15-40f93f04c1f3
+- name: 美国-7
+  network: ws
+  port: 80
+  server: 151.101.64.223
+  servername: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: ed549170-b8f1-490e-85c4-6679e2cbcd54
+  ws-opts:
+    headers:
+      Host: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
+    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
+- name: 美国-8
   network: ws
   port: 8443
-  server: 92.243.74.239
-  servername: v.aivpn.filegear-sg.me
+  server: hhdffdff1.haibucuo.xyz
+  servername: mg1.haibucuo.xyz
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
+  uuid: ac8d581d-7142-4ccd-9b8a-522e5ff4f8f3
   ws-opts:
     headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
+      Host: mg1.haibucuo.xyz
+    path: /?ed=2048
 - alpn:
-  - h3
-  client-fingerprint: random
-  name: 新加坡-4
-  network: ws
-  port: 2087
-  server: 92.243.75.49
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 新加坡-5
-  network: ws
-  port: 2087
-  server: 206.238.236.90
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 新加坡-6
-  network: ws
-  port: 2096
-  server: 206.238.236.187
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 新加坡-7
-  network: ws
-  port: 2083
-  server: 27.50.48.126
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 新加坡-8
-  network: ws
-  port: 2083
-  server: 27.50.49.154
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 新加坡-9
-  network: ws
-  port: 2083
-  server: 27.50.49.231
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 新加坡-10
-  network: ws
-  port: 2087
-  server: 206.238.237.81
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 新加坡-11
-  network: ws
-  port: 2096
-  server: 27.50.49.188
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 新加坡-12
-  network: ws
-  port: 443
-  server: 27.50.48.21
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 美国-6
-  network: ws
-  port: 55892
-  server: 154.23.244.23
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 香港-4
-  network: ws
-  port: 8443
-  server: 91.217.139.227
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 美国-7
-  network: ws
-  port: 8443
-  server: 104.129.166.131
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 美国-8
-  network: ws
-  port: 2087
-  server: 108.165.152.25
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
+  - http/1.1
   name: 美国-9
   network: ws
-  port: 2083
-  server: 108.165.152.202
-  servername: v.aivpn.filegear-sg.me
+  port: 443
+  server: 172.64.35.250
+  servername: 1ppw2j.alligator27.com
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
+  uuid: 1a0cee63-0a22-42bf-8feb-1596fbfb57a5
   ws-opts:
     headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 美国-10
-  network: ws
-  port: 2053
-  server: 108.165.152.67
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 美国-11
-  network: ws
-  port: 2087
-  server: 209.94.90.87
-  servername: v.aivpn.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
-  ws-opts:
-    headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 美国-12
+      Host: 1ppw2j.alligator27.com
+    path: /wss
+- name: 美国-10
   network: ws
   port: 8443
-  server: 160.79.104.131
-  servername: v.aivpn.filegear-sg.me
+  server: hhdffdff2.haibucuo.xyz
+  servername: xg1.haibucuo.xyz
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
+  uuid: ac8d581d-7142-4ccd-9b8a-522e5ff4f8f3
   ws-opts:
     headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - h3
-  client-fingerprint: random
-  name: 美国-13
+      Host: xg1.haibucuo.xyz
+    path: /?ed=2048
+- name: 美国-11
   network: ws
-  port: 2053
-  server: 108.165.152.241
-  servername: v.aivpn.filegear-sg.me
+  port: 8443
+  server: hhdffdff4.haibucuo.xyz
+  servername: xg1.haibucuo.xyz
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 211bbb0b-70a7-4792-ad04-cb6e599d2b9e
+  uuid: ac8d581d-7142-4ccd-9b8a-522e5ff4f8f3
   ws-opts:
     headers:
-      Host: v.aivpn.filegear-sg.me
-    path: /?ed=2560
+      Host: xg1.haibucuo.xyz
+    path: /?ed=2048
+- alpn:
+  - http/1.1
+  name: 美国-12
+  network: ws
+  port: 443
+  server: 172.64.35.157
+  servername: fuftrt.parscodes.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: f4229cf4-142d-4065-8bf9-14089acf0715
+  ws-opts:
+    headers:
+      Host: fuftrt.parscodes.com
+    path: /wss
+- name: 美国-13
+  network: ws
+  port: 8443
+  server: hhdffdff1.haibucuo.xyz
+  servername: xg1.haibucuo.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: ac8d581d-7142-4ccd-9b8a-522e5ff4f8f3
+  ws-opts:
+    headers:
+      Host: xg1.haibucuo.xyz
+    path: /?ed=2048
+- name: 美国-14
+  network: ws
+  port: 8443
+  server: hhdffdff3.haibucuo.xyz
+  servername: xg1.haibucuo.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: ac8d581d-7142-4ccd-9b8a-522e5ff4f8f3
+  ws-opts:
+    headers:
+      Host: xg1.haibucuo.xyz
+    path: /?ed=2048
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 49个'
-  - '自动选择(国内): 7个'
+  - '自动选择: 51个'
+  - '自动选择(国内): 9个'
   - '自动选择(国外): 42个'
-  - '手动选择: 49个'
-  - '新加坡分区: 12个'
-  - '中国分区: 3个'
-  - '德国分区: 3个'
+  - '手动选择: 51个'
+  - '芬兰分区: 1个'
+  - '中国分区: 8个'
+  - '新加坡分区: 2个'
+  - '德国分区: 4个'
+  - '西班牙分区: 1个'
   - '法国分区: 1个'
-  - '英国分区: 2个'
-  - '香港分区: 4个'
-  - '美国分区: 13个'
-  - '伊朗分区: 3个'
-  - '韩国分区: 4个'
-  - '波兰分区: 3个'
+  - '英国分区: 3个'
+  - '美国分区: 14个'
+  - '印度分区: 1个'
+  - '伊朗分区: 5个'
+  - '日本分区: 1个'
+  - '韩国分区: 7个'
+  - '波兰分区: 1个'
+  - '香港分区: 1个'
   - '瑞典分区: 1个'
   type: select
 - hidden: true
@@ -788,7 +672,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 49个'
+  name: '自动选择: 51个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -798,15 +682,17 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 7个'
+  name: '自动选择(国内): 9个'
   proxies:
   - 中国-1
   - 中国-2
   - 中国-3
+  - 中国-4
+  - 中国-5
+  - 中国-6
+  - 中国-7
+  - 中国-8
   - 香港-1
-  - 香港-2
-  - 香港-3
-  - 香港-4
   - COMPATIBLE
   timeout: 1500
   type: url-test
@@ -819,17 +705,25 @@ proxy-groups:
   max-failed-times: 3
   name: '自动选择(国外): 42个'
   proxies:
+  - 芬兰-1
   - 新加坡-1
   - 德国-1
   - 德国-2
   - 德国-3
+  - 德国-4
+  - 西班牙-1
   - 法国-1
   - 英国-1
   - 英国-2
+  - 英国-3
   - 美国-1
+  - 印度-1
   - 伊朗-1
   - 伊朗-2
   - 伊朗-3
+  - 伊朗-4
+  - 伊朗-5
+  - 日本-1
   - 美国-2
   - 美国-3
   - 美国-4
@@ -838,21 +732,12 @@ proxy-groups:
   - 韩国-2
   - 韩国-3
   - 韩国-4
+  - 韩国-5
+  - 韩国-6
+  - 韩国-7
   - 波兰-1
-  - 波兰-2
-  - 波兰-3
   - 瑞典-1
   - 新加坡-2
-  - 新加坡-3
-  - 新加坡-4
-  - 新加坡-5
-  - 新加坡-6
-  - 新加坡-7
-  - 新加坡-8
-  - 新加坡-9
-  - 新加坡-10
-  - 新加坡-11
-  - 新加坡-12
   - 美国-6
   - 美国-7
   - 美国-8
@@ -861,23 +746,24 @@ proxy-groups:
   - 美国-11
   - 美国-12
   - 美国-13
+  - 美国-14
   - COMPATIBLE
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 49个'
+  name: '手动选择: 51个'
   type: select
-- filter: (?i)新加坡|SG|sg
+- filter: (?i)芬兰|FI|fi
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fi.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '新加坡分区: 12个'
+  name: '芬兰分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -892,7 +778,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 3个'
+  name: '中国分区: 8个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)新加坡|SG|sg
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '新加坡分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -907,7 +808,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '德国分区: 3个'
+  name: '德国分区: 4个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)西班牙|ES|es
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/es.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '西班牙分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -937,22 +853,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '英国分区: 2个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)香港|HK|hk
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '香港分区: 4个'
+  name: '英国分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -967,7 +868,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 13个'
+  name: '美国分区: 14个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)印度|IN|in
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/in.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '印度分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -982,7 +898,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '伊朗分区: 3个'
+  name: '伊朗分区: 5个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)日本|JP|jp
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '日本分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -997,7 +928,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '韩国分区: 4个'
+  name: '韩国分区: 7个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -1012,7 +943,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '波兰分区: 3个'
+  name: '波兰分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)香港|HK|hk
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '香港分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
