@@ -74,12 +74,6 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- cipher: aes-256-cfb
-  name: 芬兰-1
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 37.143.129.230
-  type: ss
 - name: 中国-1
   password: phXKwfrd
   port: 36442
@@ -88,46 +82,36 @@ proxies:
   type: trojan
 - name: 中国-2
   password: 0bc68743-cff8-4730-9818-9d8192ee335c
-  port: 16233
+  port: 21142
   server: 120.232.217.96
   skip-cert-verify: true
   type: trojan
-  udp: true
 - name: 中国-3
+  password: 0bc68743-cff8-4730-9818-9d8192ee335c
+  port: 47479
+  server: 120.232.217.96
+  skip-cert-verify: true
+  type: trojan
+- name: 中国-4
   password: 0bc68743-cff8-4730-9818-9d8192ee335c
   port: 21146
   server: 120.232.217.96
   skip-cert-verify: true
   type: trojan
   udp: true
-- name: 中国-4
-  password: 0bc68743-cff8-4730-9818-9d8192ee335c
-  port: 47479
-  server: 120.232.217.96
-  skip-cert-verify: true
-  type: trojan
-  udp: true
 - name: 中国-5
-  port: 53221
-  server: jsxzcm.concubine.top
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 26c320f1-5b23-478c-f873-b1779bbcf055
-- cipher: chacha20-ietf-poly1305
-  name: 新加坡-1
-  password: 3FB23A19-9424-40C7-9139-3540228283FA
-  port: 40005
-  server: sgp.fastsoonlink.com
-  type: ss
-  udp: true
-- name: 中国-6
   password: 0bc68743-cff8-4730-9818-9d8192ee335c
-  port: 21142
+  port: 16233
   server: 120.232.217.96
   skip-cert-verify: true
   type: trojan
   udp: true
+- cipher: aes-256-gcm
+  name: 中国-6
+  password: HEFXL9QGFUT6ET4L
+  port: 18013
+  server: 8tv68qhq.slashdevslashnetslashtun.net
+  type: ss
 - name: 中国-7
   password: 0bc68743-cff8-4730-9818-9d8192ee335c
   port: 39431
@@ -135,9 +119,21 @@ proxies:
   skip-cert-verify: true
   type: trojan
   udp: true
+- cipher: aes-256-gcm
+  name: 中国-8
+  password: BUP3OYED8WELSLPM
+  port: 16004
+  server: w72tapyb.slashdevslashnetslashtun.net
+  type: ss
+- cipher: aes-256-gcm
+  name: 中国-9
+  password: H5IGGU6EPG7XR7X4
+  port: 16014
+  server: ti3hyra4.slashdevslashnetslashtun.net
+  type: ss
 - alterId: 2
   cipher: auto
-  name: 中国-8
+  name: 中国-10
   network: ws
   port: 22643
   server: tk.hzlt.tkddns.xyz
@@ -150,6 +146,13 @@ proxies:
     headers:
       Host: zxjp-c.tkong.cc
     path: /
+- cipher: chacha20-ietf-poly1305
+  name: 新加坡-1
+  password: 3FB23A19-9424-40C7-9139-3540228283FA
+  port: 40005
+  server: sgp.fastsoonlink.com
+  type: ss
+  udp: true
 - http-opts:
     headers:
       Host:
@@ -190,16 +193,16 @@ proxies:
   name: 德国-3
   network: ws
   port: 443
-  server: 188.245.241.172
-  servername: hozori.ir
+  server: 159.69.103.177
+  servername: dd4.trackid.ir
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 743a9ecc-095b-47bf-8d08-8a51acac0eb2
+  uuid: bf2434c2-2200-4c3e-a5dc-6f9aadd4fcd4
   ws-opts:
     headers:
-      Host: hozori.ir
-    path: /fasffasfsA
+      Host: dd4.trackid.ir
+    path: /
 - alpn:
   - h3
   - h2
@@ -208,16 +211,34 @@ proxies:
   name: 德国-4
   network: ws
   port: 443
-  server: hozori.ir
-  servername: hozori.ir
+  server: 159.69.103.177
+  servername: ad4.transitkala.com
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 743a9ecc-095b-47bf-8d08-8a51acac0eb2
+  uuid: c8aa52f3-dea3-4a84-b8d8-87938c1dd177
   ws-opts:
     headers:
-      Host: hozori.ir
-    path: /fasffasfsA
+      Host: ad4.transitkala.com
+    path: /
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  name: 爱沙尼亚-1
+  network: ws
+  port: 443
+  server: 45.80.108.253
+  servername: mmdserver.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
+  ws-opts:
+    headers:
+      Host: mmdserver.us.kg
+    path: /?ed=2048
 - name: 西班牙-1
   network: ws
   port: 8080
@@ -247,47 +268,11 @@ proxies:
   tls: false
   type: vless
   uuid: ebc5660f-bb9b-415c-94ab-d3630189ceb9
-- cipher: aes-256-cfb
-  name: 英国-1
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 62.100.205.48
-  type: ss
-- cipher: aes-256-cfb
-  name: 英国-2
-  obfs: plain
-  obfs-param: ''
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  protocol: origin
-  protocol-param: ''
-  server: 62.100.205.48
-  type: ssr
-- cipher: aes-256-cfb
-  name: 英国-3
-  obfs: plain
-  obfs-param: ''
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  protocol: origin
-  protocol-param: ''
-  server: 77.72.5.113
-  type: ssr
-- alpn:
-  - http/1.1
-  name: 美国-1
-  network: ws
-  port: 2087
-  server: 154.211.8.227
-  servername: amedo.esslh.filegear-sg.me
-  skip-cert-verify: false
+- name: 香港-1
+  port: 4000
+  server: hk9.ftq.ink
   tls: true
-  type: vless
-  uuid: 70186b61-319d-42f2-9807-7df9594aa385
-  ws-opts:
-    headers:
-      Host: amedo.esslh.filegear-sg.me
-    path: /?ed=2560
+  type: http
 - name: 印度-1
   password: '3648425794742788096'
   port: 443
@@ -314,19 +299,19 @@ proxies:
 - http-opts:
     headers:
       Host:
-      - Fast.com
+      - TABRIZ.NET
     method: GET
     path:
     - /
   name: 伊朗-2
   network: http
-  port: 17160
-  server: 84.47.233.101
-  servername: Fast.com
+  port: 443
+  server: 185.113.10.254
+  servername: TABRIZ.NET
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: 88bc3858-b31c-4a1d-9f17-9c485ae404b1
+  uuid: eb26d3db-71f7-4569-8404-f35b61c09fb0
 - http-opts:
     headers:
       Host:
@@ -336,170 +321,130 @@ proxies:
     - /
   name: 伊朗-3
   network: http
-  port: 17160
-  server: ne2sr.blushop1403.info
+  port: 28505
+  server: ver2.tcod008.info
   servername: Fast.com
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: 88bc3858-b31c-4a1d-9f17-9c485ae404b1
-- http-opts:
-    headers:
-      Host:
-      - fast.com
-    method: GET
-    path:
-    - /
-  name: 伊朗-4
-  network: http
-  port: 34854
-  server: p3.daryashopvip.site
-  servername: fast.com
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 9ef8c0be-084c-4c57-bdba-ac888a5f3ade
-- http-opts:
-    headers:
-      Host:
-      - fast.com
-    method: GET
-    path:
-    - /
-  name: 伊朗-5
-  network: http
+  uuid: f1e481af-4fd4-40ce-aedc-9a5529c10e8a
+- name: 日本-1
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
   port: 443
-  server: p1.daryashopvip.site
-  servername: fast.com
+  server: sg02.trojanyyds.xyz
   skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 944c6cec-9763-4852-bb7c-023ca7d8603d
-- cipher: aes-256-cfb
-  name: 日本-1
-  password: amazonskr05
+  type: trojan
+- name: 日本-2
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
   port: 443
-  server: 18.182.5.141
-  type: ss
-- alpn:
-  - http/1.1
-  name: 美国-2
-  network: ws
-  port: 2083
-  server: 103.116.7.67
-  servername: amedo.esslh.filegear-sg.me
+  server: tw01.trojanyyds.xyz
   skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 70186b61-319d-42f2-9807-7df9594aa385
-  ws-opts:
-    headers:
-      Host: amedo.esslh.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - http/1.1
-  name: 美国-3
-  network: ws
-  port: 2083
-  server: 103.116.7.133
-  servername: amedo.esslh.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 70186b61-319d-42f2-9807-7df9594aa385
-  ws-opts:
-    headers:
-      Host: amedo.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-4
-  network: ws
+  sni: tw01.trojanyyds.xyz
+  type: trojan
+- name: 日本-3
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
   port: 443
-  server: 103.116.7.248
-  servername: amedo.esslh.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 70186b61-319d-42f2-9807-7df9594aa385
-  ws-opts:
-    headers:
-      Host: amedo.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-5
-  network: ws
+  server: 74.226.136.204
+  skip-cert-verify: true
+  sni: tw01.trojanyyds.xyz
+  type: trojan
+- name: 日本-4
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
   port: 443
-  server: 103.116.7.248
-  servername: amedo.esslh.filegear-sg.me
+  server: 74.226.136.204
   skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 70186b61-319d-42f2-9807-7df9594aa385
-  ws-opts:
-    headers:
-      Host: amedo.esslh.filegear-sg.me
-    path: /
+  sni: hk03.trojanyyds.xyz
+  type: trojan
+- name: 日本-5
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: 443
+  server: 74.226.136.204
+  skip-cert-verify: false
+  sni: sg01.trojanyyds.xyz
+  type: trojan
+- name: 日本-6
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: 443
+  server: 74.226.136.204
+  skip-cert-verify: false
+  sni: us01.trojanyyds.xyz
+  type: trojan
+- name: 日本-7
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: 443
+  server: 74.226.136.204
+  skip-cert-verify: true
+  sni: sg02.trojanyyds.xyz
+  type: trojan
+- name: 日本-8
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: 443
+  server: 74.226.136.204
+  skip-cert-verify: true
+  sni: in01.trojanyyds.xyz
+  type: trojan
+- name: 日本-9
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: 443
+  server: us01.trojanyyds.xyz
+  skip-cert-verify: false
+  sni: us01.trojanyyds.xyz
+  type: trojan
+- name: 日本-10
+  password: 243eab52-9ac1-405c-887c-eb112c0985b8
+  port: 443
+  server: in01.trojanyyds.xyz
+  skip-cert-verify: false
+  sni: in01.trojanyyds.xyz
+  type: trojan
 - cipher: aes-256-cfb
   name: 韩国-1
   password: qwerREWQ@@
-  port: 15041
-  server: p239.panda004.net
+  port: 27973
+  server: 221.168.44.72
   type: ss
-- cipher: aes-256-cfb
-  name: 韩国-2
-  password: qwerREWQ@@
-  port: 38370
-  server: 221.150.109.19
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-3
-  password: qwerREWQ@@
-  port: 61238
-  server: p231.panda004.net
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-4
-  password: qwerREWQ@@
-  port: 21238
-  server: p230.panda004.net
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-5
-  password: qwerREWQ@@
-  port: 38370
-  server: p236.panda004.net
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-6
-  password: qwerREWQ@@
-  port: 6072
-  server: p226.panda004.net
-  type: ss
-- cipher: aes-256-cfb
-  name: 韩国-7
-  password: qwerREWQ@@
-  port: 51633
-  server: 211.178.105.134
-  type: ss
-- alpn:
-  - http/1.1
-  name: 波兰-1
+- name: 荷兰-1
   network: ws
-  port: 18556
-  server: 185.144.245.62
-  servername: amedo.esslh.filegear-sg.me
+  password: Aimer
+  port: 8443
+  server: 185.204.109.190
+  skip-cert-verify: false
+  sni: ameqo.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: ameqo.esslh.filegear-sg.me
+    path: /
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  name: 俄罗斯联邦-1
+  network: ws
+  port: 443
+  server: 46.254.92.33
+  servername: mmdserver.us.kg
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 70186b61-319d-42f2-9807-7df9594aa385
+  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
   ws-opts:
     headers:
-      Host: amedo.esslh.filegear-sg.me
-    path: /?ed=2560
-- cipher: chacha20-ietf
-  name: 香港-1
-  password: asd123456
-  port: 8388
-  server: 154.197.26.237
-  type: ss
+      Host: mmdserver.us.kg
+    path: /?ed=2048
+- name: 塞舌尔-1
+  network: ws
+  password: Aimer
+  port: 2053
+  server: 154.197.64.166
+  skip-cert-verify: false
+  sni: ameqo.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: ameqo.esslh.filegear-sg.me
+    path: /
 - name: 瑞典-1
   network: ws
   port: 2501
@@ -515,155 +460,358 @@ proxies:
     path: /?ed=2560
 - name: 新加坡-2
   network: ws
+  password: Aimer
   port: 2083
-  server: 27.50.48.61
-  servername: amedo.esslh.filegear-sg.me
+  server: 27.50.48.189
+  skip-cert-verify: false
+  sni: ameqo.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: ameqo.esslh.filegear-sg.me
+    path: /
+- name: 新加坡-3
+  network: ws
+  password: Aimer
+  port: 443
+  server: 206.238.236.134
+  skip-cert-verify: false
+  sni: ameqo.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: ameqo.esslh.filegear-sg.me
+    path: /
+- name: 美国-1
+  port: 443
+  server: 147135010103.sec19org.com
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 70186b61-319d-42f2-9807-7df9594aa385
-  ws-opts:
+  uuid: 3b9bc773-05eb-4d5f-8c1f-57342c0c4f40
+- http-opts:
     headers:
-      Host: amedo.esslh.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-6
-  port: 10
-  server: 5.78.53.195
+      Host:
+      - speedtest.net
+    method: GET
+    path:
+    - /
+  name: 伊朗-4
+  network: http
+  port: 2053
+  server: iri.ginuerzht.ir
+  servername: speedtest.net
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: 44a463d5-56db-456e-8d15-40f93f04c1f3
+  uuid: 50b2eb48-6e11-43cb-d6cf-f4aa900d37dd
+- name: 美国-2
+  network: ws
+  password: Aimer
+  port: 2053
+  server: 108.165.152.104
+  skip-cert-verify: false
+  sni: ameqo.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: ameqo.esslh.filegear-sg.me
+    path: /
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  name: 美国-3
+  network: ws
+  port: 443
+  server: 192.0.54.235
+  servername: mmdserver.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
+  ws-opts:
+    headers:
+      Host: mmdserver.us.kg
+    path: /?ed=2048
+- name: 美国-4
+  network: ws
+  password: Aimer
+  port: 2083
+  server: 198.62.62.192
+  skip-cert-verify: false
+  sni: ameqo.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: ameqo.esslh.filegear-sg.me
+    path: /
+- name: 美国-5
+  network: ws
+  password: Aimer
+  port: 2083
+  server: 108.165.152.80
+  skip-cert-verify: false
+  sni: ameqo.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: ameqo.esslh.filegear-sg.me
+    path: /
+- name: 美国-6
+  port: 443
+  server: 135.148.211.8
+  servername: 147135010103.sec19org.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: 3b9bc773-05eb-4d5f-8c1f-57342c0c4f40
 - name: 美国-7
   network: ws
+  port: 443
+  server: hajlab.ucdavis.edu
+  servername: hajlab.ucdavis.edu
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 5e0b7166-3098-489a-95ea-b0ddd04942fe
+  ws-opts:
+    headers:
+      Host: joinxvproxybedee.ir
+    path: /@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy?ed=2048
+- name: 美国-8
+  network: ws
   port: 80
-  server: 151.101.64.223
-  servername: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
+  server: 151.101.128.155
+  servername: J.Dev
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: ed549170-b8f1-490e-85c4-6679e2cbcd54
+  uuid: 8f13868d-9036-45c1-a72f-897f836bfd50
   ws-opts:
     headers:
-      Host: JOIN.unlimiteddev.4.4.4.4.wWw.CloudFlare.cOm.wWw.SpeedTeSt.cOm.Home.iRan.0.0.0.0.Hide.my.IP.xXx.333.22.1.CDN.Free.unlimiteddev.DDNS1-IP.nEt
-    path: /@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev?ed=2480
-- name: 美国-8
+      Host: J.Dev
+    path: /Telegram-Channel:@Hqv2RayNG-----@Hqv2RayNG-----@Hqv2RayNG-----@Hqv2RayNG-----@Hqv2RayNG-----@Hqv2RayNG-----@Hqv2RayNG-----@Hqv2RayNG-----@Hqv2RayNG-----@Hqv2RayNG?ed=2560
+- name: 美国-9
   network: ws
-  port: 8443
-  server: hhdffdff1.haibucuo.xyz
-  servername: mg1.haibucuo.xyz
+  port: 80
+  server: 167.82.1.103
+  servername: edge.validbv3528.ir
   skip-cert-verify: false
-  tls: true
+  tls: false
   type: vless
-  uuid: ac8d581d-7142-4ccd-9b8a-522e5ff4f8f3
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
   ws-opts:
     headers:
-      Host: mg1.haibucuo.xyz
-    path: /?ed=2048
-- alpn:
-  - http/1.1
-  name: 美国-9
-  network: ws
+      Host: edge.validbv3528.ir
+    path: /
+- cipher: aes-256-cfb
+  name: 美国-10
+  password: amazonskr05
   port: 443
-  server: 172.64.35.250
-  servername: 1ppw2j.alligator27.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 1a0cee63-0a22-42bf-8feb-1596fbfb57a5
-  ws-opts:
-    headers:
-      Host: 1ppw2j.alligator27.com
-    path: /wss
-- name: 美国-10
-  network: ws
-  port: 8443
-  server: hhdffdff2.haibucuo.xyz
-  servername: xg1.haibucuo.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: ac8d581d-7142-4ccd-9b8a-522e5ff4f8f3
-  ws-opts:
-    headers:
-      Host: xg1.haibucuo.xyz
-    path: /?ed=2048
-- name: 美国-11
-  network: ws
-  port: 8443
-  server: hhdffdff4.haibucuo.xyz
-  servername: xg1.haibucuo.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: ac8d581d-7142-4ccd-9b8a-522e5ff4f8f3
-  ws-opts:
-    headers:
-      Host: xg1.haibucuo.xyz
-    path: /?ed=2048
-- alpn:
-  - http/1.1
+  server: 52.41.3.89
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 美国-11
+  password: amazonskr05
+  port: 443
+  server: 35.161.80.111
+  type: ss
+- cipher: aes-256-cfb
   name: 美国-12
-  network: ws
+  password: amazonskr05
   port: 443
-  server: 172.64.35.157
-  servername: fuftrt.parscodes.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: f4229cf4-142d-4065-8bf9-14089acf0715
-  ws-opts:
-    headers:
-      Host: fuftrt.parscodes.com
-    path: /wss
+  server: 34.222.159.211
+  type: ss
+  udp: true
 - name: 美国-13
   network: ws
-  port: 8443
-  server: hhdffdff1.haibucuo.xyz
-  servername: xg1.haibucuo.xyz
+  port: 80
+  server: 198.41.199.226
+  servername: a.mifeng.us.kg
   skip-cert-verify: false
-  tls: true
+  tls: false
   type: vless
-  uuid: ac8d581d-7142-4ccd-9b8a-522e5ff4f8f3
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   ws-opts:
     headers:
-      Host: xg1.haibucuo.xyz
-    path: /?ed=2048
+      Host: a.mifeng.us.kg
+    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
 - name: 美国-14
   network: ws
-  port: 8443
-  server: hhdffdff3.haibucuo.xyz
-  servername: xg1.haibucuo.xyz
+  port: 80
+  server: 198.41.198.40
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
+- name: 美国-15
+  network: ws
+  port: 80
+  server: 141.101.122.107
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
+- name: 美国-16
+  network: ws
+  port: 80
+  server: 198.41.205.44
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
+- cipher: aes-256-cfb
+  name: 美国-17
+  password: amazonskr05
+  port: 443
+  server: 34.222.155.226
+  type: ss
+- name: 美国-18
+  network: ws
+  port: 80
+  server: 198.41.201.163
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
+- cipher: aes-256-cfb
+  name: 美国-19
+  password: amazonskr05
+  port: 443
+  server: 54.191.43.163
+  type: ss
+  udp: true
+- name: 美国-20
+  network: ws
+  port: 80
+  server: 198.41.209.27
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
+- name: 美国-21
+  network: ws
+  password: Aimer
+  port: 2096
+  server: 104.19.107.190
+  skip-cert-verify: false
+  sni: ameqo.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: ameqo.esslh.filegear-sg.me
+    path: /
+- cipher: aes-256-cfb
+  name: 美国-22
+  obfs: plain
+  obfs-param: ''
+  password: amazonskr05
+  port: 443
+  protocol: origin
+  protocol-param: ''
+  server: 34.222.159.211
+  type: ssr
+- name: 美国-23
+  network: ws
+  port: 443
+  server: 141.101.123.208
+  servername: usa.warpo.me
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: ac8d581d-7142-4ccd-9b8a-522e5ff4f8f3
+  uuid: 8e63cfe4-8855-4334-9619-a5d403bf2b8e
   ws-opts:
     headers:
-      Host: xg1.haibucuo.xyz
-    path: /?ed=2048
+      Host: usa.warpo.me
+    path: /bing
+- cipher: chacha20-ietf
+  name: 美国-24
+  obfs: plain
+  obfs-param: ''
+  password: asd123456
+  port: 8388
+  protocol: origin
+  protocol-param: ''
+  server: 137.175.113.192
+  type: ssr
+- name: 美国-25
+  network: ws
+  password: Aimer
+  port: 2087
+  server: 209.94.90.87
+  skip-cert-verify: false
+  sni: ameqo.esslh.filegear-sg.me
+  type: trojan
+  ws-opts:
+    headers:
+      Host: ameqo.esslh.filegear-sg.me
+    path: /
+- name: 南非-1
+  network: ws
+  port: 443
+  server: 160.123.255.159
+  servername: dse.bgm2024.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dse.bgm2024.us.kg
+    path: /?ed=2560
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 51个'
-  - '自动选择(国内): 9个'
-  - '自动选择(国外): 42个'
-  - '手动选择: 51个'
-  - '芬兰分区: 1个'
-  - '中国分区: 8个'
-  - '新加坡分区: 2个'
+  - '自动选择: 67个'
+  - '自动选择(国内): 11个'
+  - '自动选择(国外): 56个'
+  - '手动选择: 67个'
+  - '中国分区: 10个'
+  - '新加坡分区: 3个'
   - '德国分区: 4个'
+  - '爱沙尼亚分区: 1个'
   - '西班牙分区: 1个'
   - '法国分区: 1个'
-  - '英国分区: 3个'
-  - '美国分区: 14个'
-  - '印度分区: 1个'
-  - '伊朗分区: 5个'
-  - '日本分区: 1个'
-  - '韩国分区: 7个'
-  - '波兰分区: 1个'
   - '香港分区: 1个'
+  - '印度分区: 1个'
+  - '伊朗分区: 4个'
+  - '日本分区: 10个'
+  - '韩国分区: 1个'
+  - '荷兰分区: 1个'
+  - '俄罗斯联邦分区: 1个'
+  - '塞舌尔分区: 1个'
   - '瑞典分区: 1个'
+  - '美国分区: 25个'
+  - '南非分区: 1个'
   type: select
 - hidden: true
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -672,7 +820,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 51个'
+  name: '自动选择: 67个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -682,7 +830,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 9个'
+  name: '自动选择(国内): 11个'
   proxies:
   - 中国-1
   - 中国-2
@@ -692,6 +840,8 @@ proxy-groups:
   - 中国-6
   - 中国-7
   - 中国-8
+  - 中国-9
+  - 中国-10
   - 香港-1
   - COMPATIBLE
   timeout: 1500
@@ -703,41 +853,43 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 42个'
+  name: '自动选择(国外): 56个'
   proxies:
-  - 芬兰-1
   - 新加坡-1
   - 德国-1
   - 德国-2
   - 德国-3
   - 德国-4
+  - 爱沙尼亚-1
   - 西班牙-1
   - 法国-1
-  - 英国-1
-  - 英国-2
-  - 英国-3
-  - 美国-1
   - 印度-1
   - 伊朗-1
   - 伊朗-2
   - 伊朗-3
-  - 伊朗-4
-  - 伊朗-5
   - 日本-1
+  - 日本-2
+  - 日本-3
+  - 日本-4
+  - 日本-5
+  - 日本-6
+  - 日本-7
+  - 日本-8
+  - 日本-9
+  - 日本-10
+  - 韩国-1
+  - 荷兰-1
+  - 俄罗斯联邦-1
+  - 塞舌尔-1
+  - 瑞典-1
+  - 新加坡-2
+  - 新加坡-3
+  - 美国-1
+  - 伊朗-4
   - 美国-2
   - 美国-3
   - 美国-4
   - 美国-5
-  - 韩国-1
-  - 韩国-2
-  - 韩国-3
-  - 韩国-4
-  - 韩国-5
-  - 韩国-6
-  - 韩国-7
-  - 波兰-1
-  - 瑞典-1
-  - 新加坡-2
   - 美国-6
   - 美国-7
   - 美国-8
@@ -747,29 +899,26 @@ proxy-groups:
   - 美国-12
   - 美国-13
   - 美国-14
+  - 美国-15
+  - 美国-16
+  - 美国-17
+  - 美国-18
+  - 美国-19
+  - 美国-20
+  - 美国-21
+  - 美国-22
+  - 美国-23
+  - 美国-24
+  - 美国-25
+  - 南非-1
   - COMPATIBLE
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 51个'
+  name: '手动选择: 67个'
   type: select
-- filter: (?i)芬兰|FI|fi
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fi.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '芬兰分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
 - filter: (?i)中国|CN|cn
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
@@ -778,7 +927,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 8个'
+  name: '中国分区: 10个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -793,7 +942,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '新加坡分区: 2个'
+  name: '新加坡分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -809,6 +958,21 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '德国分区: 4个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)爱沙尼亚|EE|ee
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ee.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '爱沙尼亚分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -845,30 +1009,15 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)英国|GB|gb
+- filter: (?i)香港|HK|hk
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '英国分区: 3个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)美国|US|us
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '美国分区: 14个'
+  name: '香港分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -898,7 +1047,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '伊朗分区: 5个'
+  name: '伊朗分区: 4个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -913,7 +1062,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '日本分区: 1个'
+  name: '日本分区: 10个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -928,37 +1077,52 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '韩国分区: 7个'
+  name: '韩国分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)波兰|PL|pl
+- filter: (?i)荷兰|NL|nl
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pl.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/nl.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '波兰分区: 1个'
+  name: '荷兰分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)香港|HK|hk
+- filter: (?i)俄罗斯联邦|RU|ru
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ru.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '香港分区: 1个'
+  name: '俄罗斯联邦分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)塞舌尔|SC|sc
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sc.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '塞舌尔分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -974,6 +1138,36 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '瑞典分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)美国|US|us
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '美国分区: 25个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)南非|ZA|za
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/za.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '南非分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
