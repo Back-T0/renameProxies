@@ -74,8 +74,22 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
+- name: 中国-1
+  network: ws
+  port: 443
+  server: 103.44.255.81
+  servername: dse.bgm2024.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dse.bgm2024.us.kg
+    path: /?ed=2560
 - cipher: aes-256-cfb
-  name: 中国-1
+  name: 中国-2
   password: hGkQ6915tD
   port: 16088
   server: 120.232.81.50
@@ -83,7 +97,7 @@ proxies:
   udp: true
 - alterId: 64
   cipher: auto
-  name: 中国-2
+  name: 中国-3
   port: 48109
   server: 183.236.51.23
   skip-cert-verify: false
@@ -93,7 +107,7 @@ proxies:
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - alterId: 64
   cipher: auto
-  name: 中国-3
+  name: 中国-4
   port: 51037
   server: 183.236.51.23
   skip-cert-verify: true
@@ -103,7 +117,7 @@ proxies:
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - alterId: 2
   cipher: auto
-  name: 中国-4
+  name: 中国-5
   network: ws
   port: 22641
   server: tk.hzlt.tkddns.xyz
@@ -118,7 +132,7 @@ proxies:
     path: /
 - alterId: 2
   cipher: auto
-  name: 中国-5
+  name: 中国-6
   network: ws
   port: 22642
   server: tk.hzlt.tkddns.xyz
@@ -131,16 +145,20 @@ proxies:
     headers:
       Host: zxjp-b.tkong.cc
     path: /
-- alterId: 64
-  cipher: auto
-  name: 中国-6
-  port: 45402
-  server: 183.236.48.158
+- name: 西班牙-1
+  network: ws
+  port: 8080
+  server: 94.250.246.200
+  servername: a.mifeng.us.kg
   skip-cert-verify: false
-  tls: false
-  type: vmess
+  tls: true
+  type: vless
   udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /?ed=2560
 - http-opts:
     headers:
       Host:
@@ -190,14 +208,7 @@ proxies:
   sni: us01.trojanyyds.xyz
   type: trojan
   udp: true
-- cipher: chacha20-ietf
-  name: 日本-4
-  password: asd123456
-  port: 8388
-  server: 107.148.6.121
-  type: ss
-  udp: true
-- name: 日本-5
+- name: 日本-4
   password: jehOWFQKcP
   port: 443
   server: 3-112-210-66.nip.io
@@ -285,6 +296,20 @@ proxies:
   sni: sg.235261.xyz
   type: trojan
   udp: true
+- name: 土耳其-1
+  network: ws
+  port: 2501
+  server: 95.164.116.22
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /?ed=2560
 - alpn:
   - h3
   - h2
@@ -309,6 +334,133 @@ proxies:
   uuid: 225a19c0-2f15-4de7-9658-5ffcff656aac
 - name: 美国-1
   network: ws
+  port: 80
+  server: 167.82.0.226
+  servername: teleirani.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: 253ef561-9e57-4336-befd-878ddd30df01
+  ws-opts:
+    headers:
+      Host: teleirani.ir
+    path: /
+- name: 美国-2
+  network: ws
+  port: 2082
+  server: www.visa.com
+  servername: 0113.edwv8ve3.workers.dev
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: 26842241-856f-45f2-b33c-b58e66f36fb8
+  ws-opts:
+    headers:
+      Host: 0113.edwv8ve3.workers.dev
+    path: /?ed=2560
+- name: 美国-3
+  network: ws
+  port: 80
+  server: 167.82.1.103
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /?ed=2560
+- name: 美国-4
+  network: ws
+  port: 80
+  server: 167.82.0.0
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /Telegram@V2ray_Alpha/?ed=2560
+- name: 美国-5
+  network: ws
+  port: 80
+  server: 167.82.105.140
+  servername: edge.validbv3528.ir
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: edge.validbv3528.ir
+    path: /vless-ws/@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayjab1@Azarbayja1/?ed=2560
+- name: 美国-6
+  network: ws
+  port: 80
+  server: NUFiLTER.fastly80-3.hosting-ip.com
+  servername: Germany2-1nufilter.coM
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: 226aec61-4299-4ab4-b494-55b15cadf6f9
+  ws-opts:
+    headers:
+      Host: Germany2-1nufilter.coM
+    path: /telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER?ed=8080
+- name: 美国-7
+  network: ws
+  port: 443
+  server: 172.82.16.99
+  servername: dse.bgm2024.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: dse.bgm2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: firefox
+  name: 美国-8
+  network: ws
+  port: 443
+  server: 151.101.130.133
+  servername: www.sunshinecity.co.jp
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: a133b68b-c47b-40a4-8189-d7f5036c28d7
+  ws-opts:
+    headers:
+      Host: externalch.org
+    path: /---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net?ed=2048
+- name: 美国-9
+  network: ws
+  port: 80
+  server: 151.101.3.8
+  servername: External_Net.org
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: a133b68b-c47b-40a4-8189-d7f5036c28d7
+  ws-opts:
+    headers:
+      Host: External_Net.org
+    path: /
+- name: 美国-10
+  network: ws
   port: 443
   server: 192.0.54.235
   servername: mmdserver.us.kg
@@ -321,7 +473,7 @@ proxies:
     headers:
       Host: mmdserver.us.kg
     path: /?ed=2048
-- name: 美国-2
+- name: 美国-11
   network: ws
   port: 443
   server: 198.62.62.13
@@ -335,7 +487,7 @@ proxies:
     headers:
       Host: dse.bgm2024.us.kg
     path: /?ed=2560
-- name: 美国-3
+- name: 美国-12
   network: ws
   port: 443
   server: 160.79.104.231
@@ -349,43 +501,26 @@ proxies:
     headers:
       Host: dse.bgm2024.us.kg
     path: /?ed=2560
-- name: 美国-4
-  password: vZl3dFcxdE
-  port: 443
-  server: 18-189-26-136.nip.io
-  skip-cert-verify: false
-  sni: 18-189-26-136.nip.io
-  type: trojan
-  udp: true
-- alpn:
-  - h2
-  - http/1.1
-  name: 美国-5
-  port: 443
-  server: 147135004002.sec20org.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 54694a33-a8dc-47dd-bc38-acd3971e0055
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 27个'
+  - '自动选择: 35个'
   - '自动选择(国内): 6个'
-  - '自动选择(国外): 21个'
-  - '手动选择: 27个'
+  - '自动选择(国外): 29个'
+  - '手动选择: 35个'
   - '中国分区: 6个'
+  - '西班牙分区: 1个'
   - '法国分区: 1个'
   - '印度分区: 1个'
-  - '日本分区: 5个'
+  - '日本分区: 4个'
   - '韩国分区: 4个'
   - '俄罗斯联邦分区: 2个'
   - '瑞典分区: 1个'
   - '新加坡分区: 1个'
+  - '土耳其分区: 1个'
   - '英国分区: 1个'
-  - '美国分区: 5个'
+  - '美国分区: 12个'
   type: select
 - hidden: true
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -394,7 +529,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 27个'
+  name: '自动选择: 35个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -422,15 +557,15 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 21个'
+  name: '自动选择(国外): 29个'
   proxies:
+  - 西班牙-1
   - 法国-1
   - 印度-1
   - 日本-1
   - 日本-2
   - 日本-3
   - 日本-4
-  - 日本-5
   - 韩国-1
   - 韩国-2
   - 韩国-3
@@ -439,19 +574,27 @@ proxy-groups:
   - 俄罗斯联邦-2
   - 瑞典-1
   - 新加坡-1
+  - 土耳其-1
   - 英国-1
   - 美国-1
   - 美国-2
   - 美国-3
   - 美国-4
   - 美国-5
+  - 美国-6
+  - 美国-7
+  - 美国-8
+  - 美国-9
+  - 美国-10
+  - 美国-11
+  - 美国-12
   - COMPATIBLE
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 27个'
+  name: '手动选择: 35个'
   type: select
 - filter: (?i)中国|CN|cn
   hidden: false
@@ -462,6 +605,21 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '中国分区: 6个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)西班牙|ES|es
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/es.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '西班牙分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -506,7 +664,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '日本分区: 5个'
+  name: '日本分区: 4个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -573,6 +731,21 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
+- filter: (?i)土耳其|TR|tr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/tr.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '土耳其分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
 - filter: (?i)英国|GB|gb
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
@@ -596,7 +769,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 5个'
+  name: '美国分区: 12个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
