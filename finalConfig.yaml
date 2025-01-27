@@ -3372,7 +3372,7 @@ proxies:
   sni: in-bengal.treefrog761.one
   type: trojan
 - client-fingerprint: chrome
-  name: 韩国-16
+  name: 未知-1
   password: '3763495894587285504'
   port: '443'
   server: great-octopus.goat627.mom
@@ -3881,7 +3881,7 @@ proxies:
   skip-cert-verify: true
   type: hysteria2
   up: '1'
-- name: 韩国-17
+- name: 韩国-16
   password: '3763495894587285504'
   port: '443'
   server: 3.34.53.0
@@ -5953,7 +5953,7 @@ proxy-groups:
   - '中国分区: 32个'
   - '日本分区: 17个'
   - '新加坡分区: 50个'
-  - '韩国分区: 17个'
+  - '韩国分区: 16个'
   - '美国分区: 111个'
   - '英国分区: 16个'
   - '立陶宛分区: 13个'
@@ -5974,6 +5974,7 @@ proxy-groups:
   - '哈萨克斯坦分区: 1个'
   - '新西兰分区: 1个'
   - '巴西分区: 8个'
+  - '未知分区: 1个'
   - '爱尔兰分区: 2个'
   - '塞浦路斯分区: 3个'
   - '意大利分区: 2个'
@@ -6332,7 +6333,7 @@ proxy-groups:
   - 美国-38
   - 美国-39
   - 德国-5
-  - 韩国-16
+  - 未知-1
   - 德国-6
   - 塞舌尔-12
   - 美国-40
@@ -6375,7 +6376,7 @@ proxy-groups:
   - 新加坡-39
   - 美国-55
   - 德国-12
-  - 韩国-17
+  - 韩国-16
   - 美国-56
   - 瑞典-3
   - 瑞典-4
@@ -6609,7 +6610,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '韩国分区: 17个'
+  name: '韩国分区: 16个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -6910,6 +6911,21 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '巴西分区: 8个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)未知|cn|cn
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '未知分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
