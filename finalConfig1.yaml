@@ -272,7 +272,7 @@ proxies:
   server: 54.213.131.250
   type: ss
 - cipher: rc4-md5
-  name: 中国-3
+  name: 德国-1
   obfs: plain
   obfs-param: cd2b692902.6602b8463464108506.microsoft.com
   password: ENZ52K
@@ -283,7 +283,7 @@ proxies:
   type: ssr
 - alterId: 2
   cipher: auto
-  name: 中国-4
+  name: 中国-3
   network: ws
   port: 22642
   server: tk.hzlt.tkddns.xyz
@@ -344,7 +344,7 @@ proxies:
   server: 13.209.84.81
   type: ss
 - cipher: rc4-md5
-  name: 中国-5
+  name: 中国-4
   obfs: plain
   obfs-param: cd2b692902.6602b8463464108506.microsoft.com
   password: ENZ52K
@@ -361,7 +361,7 @@ proxies:
   type: ss
 - alterId: 2
   cipher: auto
-  name: 中国-6
+  name: 中国-5
   network: ws
   port: 22643
   server: tk.hzlt.tkddns.xyz
@@ -409,14 +409,14 @@ proxies:
   port: 443
   server: 54.188.6.37
   type: ss
-- name: 中国-7
+- name: 中国-6
   password: 20a84ebf-9341-4f5f-8245-3975e2fdeee5
   port: 21019
   server: 219.135.231.205
   skip-cert-verify: true
   type: trojan
 - cipher: rc4-md5
-  name: 中国-8
+  name: 中国-7
   obfs: plain
   obfs-param: cd2b692902.6602b8463464108506.microsoft.com
   password: ENZ52K
@@ -442,14 +442,15 @@ proxy-groups:
   name: 默认代理
   proxies:
   - '自动选择: 51个'
-  - '自动选择(国内): 8个'
-  - '自动选择(国外): 43个'
+  - '自动选择(国内): 7个'
+  - '自动选择(国外): 44个'
   - '手动选择: 51个'
   - '新加坡分区: 10个'
   - '美国分区: 18个'
   - '俄罗斯联邦分区: 1个'
-  - '中国分区: 8个'
+  - '中国分区: 7个'
   - '日本分区: 7个'
+  - '德国分区: 1个'
   - '韩国分区: 6个'
   - '荷兰分区: 1个'
   type: select
@@ -470,7 +471,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 8个'
+  name: '自动选择(国内): 7个'
   proxies:
   - 中国-1
   - 中国-2
@@ -479,7 +480,6 @@ proxy-groups:
   - 中国-5
   - 中国-6
   - 中国-7
-  - 中国-8
   - COMPATIBLE
   timeout: 1500
   type: url-test
@@ -490,7 +490,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 43个'
+  name: '自动选择(国外): 44个'
   proxies:
   - 新加坡-1
   - 新加坡-2
@@ -518,6 +518,7 @@ proxy-groups:
   - 美国-6
   - 美国-7
   - 美国-8
+  - 德国-1
   - 美国-9
   - 韩国-1
   - 韩国-2
@@ -596,7 +597,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 8个'
+  name: '中国分区: 7个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -612,6 +613,21 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '日本分区: 7个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)德国|DE|de
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/de.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '德国分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
