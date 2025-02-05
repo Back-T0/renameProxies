@@ -10,8 +10,9 @@ from collections import defaultdict
 def fetch_yaml(url):
     response = requests.get(url)
     response.raise_for_status()
+    yaml_text = re.sub(r'!\<str\>\s*', '', response.text)
     print(f"文件读取成功: {url}")
-    return yaml.load(response.text, Loader=yaml.FullLoader)
+    return yaml.load(yaml_text, Loader=yaml.FullLoader)
 
 
 # 解析YAML文件
