@@ -11,7 +11,7 @@ def fetch_yaml(url):
     response = requests.get(url)
     response.raise_for_status()
     print(f"文件读取成功: {url}")
-    return yaml.safe_load(response.text)
+    return yaml.safe_load(response.text, Loader=yaml.FullLoader)
 
 
 # 解析YAML文件
