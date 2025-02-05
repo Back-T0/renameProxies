@@ -245,7 +245,7 @@ def main():
         "template.yaml", renamed_proxies, proxy_groups, "finalConfig.yaml"
     )
 
-    url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml"
+    url = "https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml"
     yaml_content = fetch_yaml(url)
     proxies = parse_yaml(yaml_content)
 
