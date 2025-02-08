@@ -74,53 +74,65 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
+- cipher: rc4-md5
+  name: 中国-1
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40200'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 1.link-hub.blog
+  type: ssr
+- cipher: rc4-md5
+  name: 中国-2
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40239'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 3.link-hub.click
+  type: ssr
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 中国-3
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40202'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 1.link-hub.blog
+  type: ssr
 - cipher: aes-256-cfb
+  client-fingerprint: chrome
   name: 日本-1
   password: amazonskr05
   port: '443'
-  server: 18.183.142.200
+  server: 54.250.166.85
   type: ss
-- name: 中国-1
-  network: ws
-  port: '443'
-  server: 103.44.255.81
-  servername: zz.bgm2024.us.kg
-  tls: true
-  type: vless
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: zz.bgm2024.us.kg
-    path: /?ed=2560
+- cipher: rc4-md5
+  name: 中国-4
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40238'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 3.link-hub.click
+  type: ssr
 - cipher: aes-256-cfb
+  client-fingerprint: chrome
+  country: 🇸🇬SG
+  delay: '461'
   name: 新加坡-1
   password: amazonskr05
   port: '443'
-  server: 13.229.229.102
+  server: 13.229.128.74
   type: ss
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 新加坡-2
-  password: amazonskr05
-  port: '443'
-  server: 13.250.112.201
-  type: ss
-- name: 香港-1
-  network: ws
-  port: '444'
-  server: 103.30.76.210
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
 - client-fingerprint: chrome
-  name: 香港-2
+  name: 香港-1
   network: ws
   port: '36822'
   server: 59.149.77.122
@@ -134,19 +146,62 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- cipher: rc4-md5
+- cipher: aes-256-cfb
   client-fingerprint: chrome
-  name: 中国-2
-  obfs: plain
-  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
-  password: ENZ52K
-  port: '40209'
-  protocol: auth_aes128_md5
-  protocol-param: 92902:pFWGOQ
-  server: 1.link-hub.blog
-  type: ssr
+  name: 新加坡-2
+  password: amazonskr05
+  port: '443'
+  server: 13.250.112.201
+  type: ss
+- cipher: aes-256-cfb
+  name: 新加坡-3
+  password: amazonskr05
+  port: '443'
+  server: 18.136.211.144
+  type: ss
+- cipher: chacha20-ietf
+  name: 香港-2
+  password: asd123456
+  port: '8388'
+  server: 194.41.59.80
+  type: ss
+- cipher: aes-256-cfb
+  name: 新加坡-4
+  password: amazonskr05
+  port: '443'
+  server: 18.141.177.51
+  type: ss
 - client-fingerprint: chrome
   name: 香港-3
+  network: ws
+  port: '444'
+  server: 103.30.76.210
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-1
+  password: sysadmin.sysadmin
+  port: '443'
+  server: 107.172.5.215
+  skip-cert-verify: true
+  tfo: false
+  type: hysteria2
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 日本-2
+  password: amazonskr05
+  port: '443'
+  server: 54.168.25.210
+  type: ss
+- client-fingerprint: chrome
+  name: 香港-4
   network: ws
   port: '58443'
   server: 58.176.10.111
@@ -160,19 +215,38 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
+- cipher: chacha20-ietf-poly1305
+  name: 台湾-1
+  password: c7d336c7-68f2-48ae-8a87-afba84860ad5
+  port: '30443'
+  server: tw1.ydso.xyz
+  type: ss
+- name: 美国-2
+  obfs: salamander
+  obfs-password: cd29099d
+  password: 9bb452b106ffc217
+  port: '443'
+  server: 207.148.22.93
+  skip-cert-verify: true
+  tfo: false
+  type: hysteria2
+- name: 香港-5
+  network: ws
+  port: '443'
+  server: 219.76.13.180
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
 - cipher: rc4-md5
   client-fingerprint: chrome
-  name: 中国-3
-  obfs: plain
-  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
-  password: ENZ52K
-  port: '40207'
-  protocol: auth_aes128_md5
-  protocol-param: 92902:pFWGOQ
-  server: 1.link-hub.blog
-  type: ssr
-- cipher: rc4-md5
-  name: 中国-4
+  name: 中国-5
   obfs: plain
   obfs-param: cd2b692902.6602b8463464108506.microsoft.com
   password: ENZ52K
@@ -181,153 +255,18 @@ proxies:
   protocol-param: 92902:pFWGOQ
   server: 2.hublink.pro
   type: ssr
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 日本-3
+  password: amazonskr05
+  port: '443'
+  server: 18.183.142.200
+  type: ss
 - client-fingerprint: chrome
-  name: 台湾-1
+  name: 中国-6
   network: ws
   port: '443'
-  server: 35.234.3.153
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 香港-4
-  network: ws
-  port: '443'
-  server: 58.176.95.46
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  country: 🇸🇬SG
-  delay: '461'
-  name: 新加坡-3
-  password: amazonskr05
-  port: '443'
-  server: 13.229.128.74
-  type: ss
-- name: 台湾-2
-  network: ws
-  password: Aimer
-  port: '443'
-  server: 35.234.3.153
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-1
-  network: ws
-  port: '19014'
-  server: 59.23.141.222
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 日本-2
-  password: amazonskr05
-  port: '443'
-  server: 54.249.170.37
-  type: ss
-- name: 韩国-2
-  network: ws
-  port: '50000'
-  server: 218.152.197.93
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-3
-  network: ws
-  port: '50000'
-  server: 59.7.61.67
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-4
-  network: ws
-  port: '17100'
-  server: 210.222.30.180
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-5
-  network: ws
-  port: '50000'
-  server: 125.128.227.141
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 韩国-6
-  network: ws
-  port: '20003'
-  server: 146.56.155.102
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 新加坡-4
-  password: amazonskr05
-  port: '443'
-  server: 13.212.249.95
-  type: ss
-- cipher: chacha20-ietf-poly1305
-  client-fingerprint: chrome
-  name: 中国-5
-  password: c7d336c7-68f2-48ae-8a87-afba84860ad5
-  port: '30002'
-  server: gdgs.tarioblink.me
-  type: ss
-- name: 韩国-7
-  network: ws
-  port: '30012'
-  server: 118.47.65.248
+  server: 103.44.255.81
   servername: zz.bgm2024.us.kg
   tls: true
   type: vless
@@ -336,10 +275,11 @@ proxies:
     headers:
       Host: zz.bgm2024.us.kg
     path: /?ed=2560
-- name: 韩国-8
+- client-fingerprint: chrome
+  name: 香港-6
   network: ws
-  port: '12408'
-  server: 121.173.188.183
+  port: '8888'
+  server: 101.32.40.116
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
@@ -348,18 +288,86 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 韩国-9
-  network: ws
-  port: '50000'
-  server: 183.102.181.112
-  servername: ngedc.ambercc.filegear-sg.me
+- client-fingerprint: chrome
+  disable-sni: true
+  name: 中国-7
+  network: tcp
+  port: '46029'
+  server: jsxzcm.concubine.top
+  servername: ''
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  uuid: 1d0926e1-9fd3-4a48-8dd5-fa73928723f9
+- client-fingerprint: chrome
+  name: 美国-3
+  obfs: salamander
+  obfs-password: 13f7ba5f
+  password: 4e9ee29b39a28277
+  port: '443'
+  server: 66.135.11.68
+  skip-cert-verify: true
+  sni: 66.135.11.68
+  tfo: false
+  type: hysteria2
+- cipher: aes-256-cfb
+  name: 日本-4
+  password: amazonskr05
+  port: '443'
+  server: 3.112.151.97
+  type: ss
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 中国-8
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40206'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 2.hublink.pro
+  type: ssr
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: JoinBadeChannel@antimeli
+  name: 荷兰-1
+  network: grpc
+  port: '8443'
+  reality-opts:
+    public-key: Paai0w6bHcKmaZzm8Sljt8uKydSYX5h1t3G_Y3T-Rm0
+    short-id: f74b9234
+  server: 188.227.84.54
+  servername: www.speedtest.net
+  skip-cert-verify: false
   tls: true
   type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
+  uuid: 79e1374d-7f94-4da6-97ad-5ce28a5d393e
+- auth: 462a8e99-f369-469d-bd5b-ffbb9c3e5c7e
+  client-fingerprint: chrome
+  down: '1000'
+  name: 印度-1
+  password: 462a8e99-f369-469d-bd5b-ffbb9c3e5c7e
+  port: '2052'
+  server: yd1.xiaofeixia.cyou
+  skip-cert-verify: true
+  sni: yd1.xiaofeixia.cyou
+  type: hysteria2
+  udp: true
+  up: '1000'
+- cipher: chacha20
+  client-fingerprint: chrome
+  name: 中国-9
+  password: sJMdcI7NPj
+  port: '9005'
+  server: 14.18.253.178
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 韩国-1
+  password: amazonskr05
+  port: '443'
+  server: 43.203.206.63
+  type: ss
 - client-fingerprint: chrome
   name: 新加坡-5
   network: ws
@@ -375,6 +383,291 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
+- alpn:
+  - h3
+  auth-str: dongtaiwang.com
+  auth_str: dongtaiwang.com
+  client-fingerprint: chrome
+  down: 55 Mbps
+  name: 俄罗斯联邦-1
+  obfs: dongtaiwang.com
+  port: '15424'
+  ports: 30000-40000
+  server: 185.22.155.71
+  skip-cert-verify: true
+  sni: www.bing.com
+  type: hysteria
+  up: 11 Mbps
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 韩国-2
+  password: amazonskr05
+  port: '443'
+  server: 54.180.248.97
+  type: ss
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray
+  name: 德国-1
+  network: grpc
+  port: '2083'
+  reality-opts:
+    public-key: wOmjhFY8A0ePI29U00Ic3VTgYZGSe8iY8bu7QlYpiRU
+    short-id: 73e4feeb0580
+  server: 49.13.192.48
+  servername: www.cdn77.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 50809112-690a-4ba4-bd99-99400122a587
+- client-fingerprint: chrome
+  name: 香港-7
+  network: ws
+  password: Aimer
+  port: '58443'
+  server: 58.176.10.111
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: rc4-md5
+  name: 英国-1
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 169.150.210.233
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 韩国-3
+  password: amazonskr05
+  port: '443'
+  server: 13.125.215.15
+  type: ss
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 美国-4
+  password: 14fFPrbezE3HDZzsMOr6
+  port: '8080'
+  server: 107.155.57.11
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 韩国-4
+  password: amazonskr05
+  port: '443'
+  server: 43.201.102.200
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 中国-10
+  password: c7d336c7-68f2-48ae-8a87-afba84860ad5
+  port: '30002'
+  server: gdgs.tarioblink.me
+  type: ss
+- client-fingerprint: chrome
+  name: 韩国-5
+  network: ws
+  password: Aimer
+  port: '20003'
+  server: 146.56.155.102
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 韩国-6
+  password: amazonskr05
+  port: '443'
+  server: 52.79.249.199
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 韩国-7
+  password: amazonskr05
+  port: '443'
+  server: 3.34.123.239
+  type: ss
+- client-fingerprint: chrome
+  name: 韩国-8
+  network: ws
+  port: '20003'
+  server: 146.56.155.102
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 韩国-9
+  network: ws
+  port: '30012'
+  server: 211.218.223.130
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-5
+  obfs: salamander
+  obfs-password: 4b817757
+  password: 1f17cdf0578a2860
+  port: '443'
+  server: 45.76.0.86
+  skip-cert-verify: true
+  sni: 45.76.0.86
+  tfo: false
+  type: hysteria2
+- client-fingerprint: chrome
+  name: 韩国-10
+  network: ws
+  password: Aimer
+  port: '19014'
+  server: 59.23.141.222
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 韩国-11
+  network: ws
+  port: '30012'
+  server: 118.47.65.248
+  servername: zz.bgm2024.us.kg
+  tls: true
+  type: vless
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: zz.bgm2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 韩国-12
+  network: ws
+  port: '21273'
+  server: 211.199.36.227
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 韩国-13
+  network: ws
+  password: Aimer
+  port: '50000'
+  server: 183.102.181.112
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: chacha20-ietf-poly1305
+  name: 法国-1
+  password: QCXDxuDlTTMD7jtgHUjIoj
+  port: '8080'
+  server: 45.158.171.146
+  type: ss
+- client-fingerprint: chrome
+  name: 韩国-14
+  network: ws
+  password: Aimer
+  port: '50000'
+  server: 218.152.197.93
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 韩国-15
+  network: ws
+  port: '50000'
+  server: 183.102.181.112
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 香港-8
+  port: '4000'
+  server: ftq.ink
+  sni: ftq.ink
+  tls: true
+  type: http
+- client-fingerprint: chrome
+  name: 韩国-16
+  network: ws
+  port: '50000'
+  server: 218.152.197.93
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 韩国-17
+  network: ws
+  port: '19014'
+  server: 59.23.141.222
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 韩国-18
+  network: ws
+  password: Aimer
+  port: '12601'
+  server: 210.103.48.53
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
 - client-fingerprint: chrome
   name: 新加坡-6
   network: ws
@@ -389,19 +682,10 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 俄罗斯联邦-1
-  password: dongtaiwang.com
-  port: '50717'
-  server: 46.17.41.189
-  skip-cert-verify: true
-  sni: www.bing.com
-  tfo: false
-  type: hysteria2
-- client-fingerprint: chrome
-  name: 韩国-10
+  name: 韩国-19
   network: ws
-  port: '12462'
-  server: 59.22.140.62
+  port: '12408'
+  server: 121.173.188.183
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
@@ -410,7 +694,34 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 韩国-11
+- client-fingerprint: chrome
+  name: 韩国-20
+  network: ws
+  port: '29798'
+  server: 119.202.158.65
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 韩国-21
+  network: ws
+  port: '17100'
+  server: 210.222.30.180
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 韩国-22
   network: ws
   password: Aimer
   port: '17100'
@@ -423,166 +734,14 @@ proxies:
     headers:
       Host: ngepo.ambercc.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 韩国-12
-  password: amazonskr05
-  port: '443'
-  server: 43.203.206.63
-  type: ss
 - client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: Tok
-  name: 德国-1
-  network: grpc
-  port: '4793'
-  reality-opts:
-    public-key: IfTrRXLeimq41Lwj2HqGHda1O9kI6OLt7T4yxTklciw
-    short-id: 64176758f3181759
-  server: 139.59.204.182
-  servername: refersion.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: bdd996f7-7197-4d62-9836-eec4dbe3e961
-- client-fingerprint: chrome
-  name: 韩国-13
+  name: 韩国-23
   network: ws
-  port: '12462'
-  server: 220.117.126.46
+  port: '32444'
+  server: 121.176.175.54
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-14
-  network: ws
-  password: Aimer
-  port: '20003'
-  server: 146.56.155.102
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-15
-  network: ws
-  password: Aimer
-  port: '12601'
-  server: 210.103.48.53
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-16
-  network: ws
-  port: '18008'
-  server: 112.160.39.91
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-17
-  network: ws
-  password: Aimer
-  port: '50000'
-  server: 221.149.132.232
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-18
-  network: ws
-  port: '21273'
-  server: 211.199.36.227
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-19
-  network: ws
-  password: Aimer
-  port: '50000'
-  server: 183.102.181.112
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-20
-  network: ws
-  password: Aimer
-  port: '50000'
-  server: 59.7.61.67
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-21
-  network: ws
-  password: Aimer
-  port: '50000'
-  server: 59.1.59.225
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-22
-  network: ws
-  port: '19222'
-  server: 175.201.220.169
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-23
-  network: ws
-  port: '50000'
-  server: 59.1.59.225
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
   uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
@@ -592,7 +751,7 @@ proxies:
   name: 韩国-24
   network: ws
   port: '50000'
-  server: 210.183.11.2
+  server: 125.128.227.141
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
@@ -601,7 +760,21 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 韩国-25
+- client-fingerprint: chrome
+  name: 韩国-25
+  network: ws
+  port: '12462'
+  server: 59.22.140.62
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 韩国-26
   network: ws
   port: '587'
   server: 140.238.2.81
@@ -615,10 +788,10 @@ proxies:
       Host: a.mifeng.us.kg
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 韩国-26
+  name: 韩国-27
   network: ws
-  port: '32444'
-  server: 121.176.175.54
+  port: '12462'
+  server: 220.117.126.46
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
@@ -628,116 +801,36 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - cipher: rc4-md5
-  name: 美国-1
-  password: 14fFPrbezE3HDZzsMOr6
-  port: '8080'
-  server: 107.155.57.11
-  type: ss
-- name: 香港-5
-  network: ws
-  password: Aimer
-  port: '58443'
-  server: 58.176.10.111
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
+  client-fingerprint: chrome
+  name: 中国-11
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40208'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 2.hublink.pro
+  type: ssr
 - client-fingerprint: chrome
-  name: 韩国-27
+  name: 韩国-28
   network: ws
-  port: '50000'
-  server: 221.149.132.232
+  port: '19222'
+  server: 175.201.220.169
   servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
   tls: true
   type: vless
+  udp: true
   uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 美国-2
-  password: sysadmin.sysadmin
-  port: '443'
-  server: 192.227.231.142
-  skip-cert-verify: true
-  tfo: false
-  type: hysteria2
-- alpn:
-  - h3
-  auth-str: dongtaiwang.com
-  auth_str: dongtaiwang.com
-  client-fingerprint: chrome
-  down: 55 Mbps
-  name: 俄罗斯联邦-2
-  obfs: dongtaiwang.com
-  port: '15424'
-  ports: 30000-40000
-  server: 185.22.155.71
-  skip-cert-verify: true
-  sni: www.bing.com
-  type: hysteria
-  up: 11 Mbps
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 日本-3
-  password: amazonskr05
-  port: '443'
-  server: 54.168.25.210
-  type: ss
-- client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray
-  name: 德国-2
-  network: grpc
-  port: '2083'
-  reality-opts:
-    public-key: SAeP7A2HlP9QndrqUydIxf8LQc0dqnXxTDORbINMKh0
-    short-id: 0c2cffaec6
-  server: 167.235.71.117
-  servername: www.cdn77.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: fce9d0ed-0d9f-4fae-8ea3-a82a3c29dae7
-- client-fingerprint: chrome
-  name: 香港-6
-  port: '4000'
-  server: ftq.ink
-  sni: ftq.ink
-  tls: true
-  type: http
-- client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: Tok
-  name: 荷兰-1
-  network: grpc
-  port: '4793'
-  reality-opts:
-    public-key: IfTrRXLeimq41Lwj2HqGHda1O9kI6OLt7T4yxTklciw
-    short-id: 64176758f3181759
-  server: 24.144.78.124
-  servername: refersion.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: bdd996f7-7197-4d62-9836-eec4dbe3e961
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 韩国-28
-  password: amazonskr05
-  port: '443'
-  server: 13.125.215.15
-  type: ss
-- client-fingerprint: chrome
   name: 韩国-29
   network: ws
-  port: '12601'
-  server: 210.103.48.53
+  port: '18008'
+  server: 112.160.39.91
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
@@ -749,23 +842,20 @@ proxies:
 - client-fingerprint: chrome
   name: 韩国-30
   network: ws
-  port: '29798'
-  server: 119.202.158.65
-  servername: ngedc.ambercc.filegear-sg.me
+  port: '30012'
+  server: 211.105.35.130
+  servername: re.vs2024.us.kg
+  skip-cert-verify: true
   tls: true
   type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  udp: true
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
   ws-opts:
     headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
+      Host: re.vs2024.us.kg
+    path: /?ed=2560&proxyip=211.105.35.130:30012
+- client-fingerprint: chrome
   name: 韩国-31
-  password: amazonskr05
-  port: '443'
-  server: 43.201.102.200
-  type: ss
-- name: 韩国-32
   network: ws
   port: '50000'
   server: 220.125.26.232
@@ -774,266 +864,22 @@ proxies:
   tls: true
   type: vless
   udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-33
-  network: ws
-  password: Aimer
-  port: '19014'
-  server: 59.23.141.222
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 新加坡-7
-  password: '3774827088566296576'
-  port: '443'
-  server: exotic-bengal.treefrog761.one
-  skip-cert-verify: true
-  sni: exotic-bengal.treefrog761.one
-  type: trojan
-- cipher: aes-128-gcm
-  name: 荷兰-2
-  password: shadowsocks
-  port: '443'
-  server: 149.34.244.82
-  type: ss
-- client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: '@UCIRANIR@U@UCIRANIRCIRANIR@UCIRANIR'
-  name: 越南-1
-  network: grpc
-  port: '27773'
-  server: 103.149.87.86
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: e6892923-ce95-447a-8973-f30e473cc96e
-- client-fingerprint: chrome
-  name: 美国-3
-  obfs: salamander
-  obfs-password: 4b817757
-  password: 1f17cdf0578a2860
-  port: '443'
-  server: 45.76.0.86
-  skip-cert-verify: true
-  sni: 45.76.0.86
-  tfo: false
-  type: hysteria2
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 美国-4
-  password: amazonskr05
-  port: '443'
-  server: 52.40.94.174
-  type: ss
-- client-fingerprint: chrome
-  down: '1'
-  name: 德国-3
-  obfs: salamander
-  obfs-password: M2UyNTc5OWUwYjkyM2Q2OQ==
-  password: 1cc59a3a-9625-40f7-b0e6-e233286ae82d
-  port: '31639'
-  server: 185.121.134.12
-  skip-cert-verify: true
-  type: hysteria2
-  up: '1'
-- name: 韩国-34
-  network: ws
-  password: Aimer
-  port: '50000'
-  server: 218.152.197.93
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 美国-5
-  password: amazonskr05
-  port: '443'
-  server: 34.211.228.158
-  type: ss
-- name: 美国-6
-  network: ws
-  port: '8080'
-  server: 104.18.28.181
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 99678074-122c-46db-97fc-80b604c20158
-  ws-opts:
-    headers:
-      Host: shuige2.ywfmu-qx.workers.dev
-    path: /?ed=2048
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 美国-7
-  password: amazonskr05
-  port: '443'
-  server: 35.94.55.129
-  type: ss
-- client-fingerprint: chrome
-  name: 韩国-35
-  network: ws
-  port: '38520'
-  server: 121.144.225.213
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
   uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - cipher: rc4-md5
-  name: 中国-6
+  client-fingerprint: chrome
+  name: 中国-12
   obfs: plain
   obfs-param: cd2b692902.6602b8463464108506.microsoft.com
   password: ENZ52K
-  port: '40206'
+  port: '40255'
   protocol: auth_aes128_md5
   protocol-param: 92902:pFWGOQ
-  server: 2.hublink.pro
+  server: 3.link-hub.click
   type: ssr
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 韩国-36
-  password: amazonskr05
-  port: '443'
-  server: 3.34.123.239
-  type: ss
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 美国-8
-  password: amazonskr05
-  port: '443'
-  server: 35.162.245.105
-  type: ss
-- name: 香港-7
-  network: ws
-  port: '8888'
-  server: 101.32.40.116
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 美国-9
-  password: amazonskr05
-  port: '443'
-  server: 34.219.5.41
-  type: ss
-- client-fingerprint: chrome
-  name: 香港-8
-  network: ws
-  port: '2087'
-  server: 43.198.207.3
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 香港-9
-  network: ws
-  port: '2087'
-  server: 43.198.104.113
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-37
-  network: ws
-  password: Aimer
-  port: '50000'
-  server: 220.125.26.232
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 韩国-38
-  password: amazonskr05
-  port: '443'
-  server: 54.180.248.97
-  type: ss
-- alpn:
-  - h3
-  auth-str: dongtaiwang.com
-  auth_str: dongtaiwang.com
-  client-fingerprint: chrome
-  down: 55 Mbps
-  name: 美国-10
-  port: '38670'
-  ports: 10000-20000
-  server: 208.87.243.151
-  skip-cert-verify: true
-  sni: www.bing.com
-  type: hysteria
-  up: 11 Mbps
-- client-fingerprint: chrome
-  name: 新加坡-8
-  password: '3774827088566296576'
-  port: '443'
-  server: 52.77.206.160
-  sni: flying-tuna.treefrog761.one
-  type: trojan
-- alterId: '0'
-  cipher: auto
-  client-fingerprint: chrome
-  name: 中国-7
-  network: ws
-  port: '40396'
-  server: sd3.forlive.live
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 81e16736-5ede-4050-bc4c-3062a63c926d
-  ws-opts:
-    headers:
-      Host: tms.dingtalk.com
-    path: /
-- name: 香港-10
-  network: ws
-  password: Aimer
-  port: '444'
-  server: 103.30.76.210
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
 - client-fingerprint: firefox
   grpc-opts:
     grpc-service-name: vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl
@@ -1049,32 +895,84 @@ proxies:
   tls: true
   type: vless
   uuid: 253f59da-b708-4404-cebe-3854aad88880
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 新加坡-9
-  password: amazonskr05
-  port: '443'
-  server: 13.212.113.186
-  type: ss
-- name: 新加坡-10
+- alterId: '0'
+  cipher: auto
+  name: 新加坡-7
   network: ws
-  port: '6666'
-  server: 150.109.24.233
-  servername: ngedc.ambercc.filegear-sg.me
+  port: '33443'
+  server: tls.19.node-for-bigairport.win
+  servername: tls.19.node-for-bigairport.win
   skip-cert-verify: true
   tls: true
+  type: vmess
+  uuid: 3519dfc0-fa27-41cc-8c19-981818f9f6d5
+  ws-opts:
+    path: /
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: '@UCIRANIR@U@UCIRANIRCIRANIR@UCIRANIR'
+  name: 越南-1
+  network: grpc
+  port: '27773'
+  server: 103.149.87.86
+  skip-cert-verify: false
+  tls: false
   type: vless
-  udp: true
+  uuid: e6892923-ce95-447a-8973-f30e473cc96e
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 中国-13
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40254'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 3.link-hub.click
+  type: ssr
+- client-fingerprint: chrome
+  name: 韩国-32
+  network: ws
+  port: '12601'
+  server: 210.103.48.53
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
   uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 香港-11
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 美国-6
+  password: amazonskr05
+  port: '443'
+  server: 34.219.5.41
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 美国-7
+  password: amazonskr05
+  port: '443'
+  server: 34.217.145.61
+  type: ss
+- grpc-opts:
+    grpc-service-name: '@UCIRANIR@U@UCIRANIRCIRANIR@UCIRANIR'
+  name: 越南-2
+  network: grpc
+  port: '32319'
+  server: 103.240.6.21
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 9e321fdf-ea8a-4a3a-a81d-38961f40e39f
+- client-fingerprint: chrome
+  name: 韩国-33
   network: ws
   password: Aimer
-  port: '443'
-  server: 58.176.95.46
+  port: '50000'
+  server: 220.125.26.232
   skip-cert-verify: true
   sni: ngepo.ambercc.filegear-sg.me
   type: trojan
@@ -1083,263 +981,41 @@ proxies:
     headers:
       Host: ngepo.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 香港-12
-  network: ws
-  port: '8443'
-  server: 83.229.123.36
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 美国-8
+  password: amazonskr05
+  port: '443'
+  server: 34.218.228.243
+  type: ss
+- cipher: aes-256-cfb
+  name: 美国-9
+  password: amazonskr05
+  port: '443'
+  server: 35.94.149.165
+  type: ss
 - cipher: rc4-md5
   client-fingerprint: chrome
-  name: 中国-8
+  name: 中国-14
   obfs: plain
   obfs-param: cd2b692902.6602b8463464108506.microsoft.com
   password: ENZ52K
-  port: '40217'
+  port: '40207'
   protocol: auth_aes128_md5
   protocol-param: 92902:pFWGOQ
   server: 1.link-hub.blog
   type: ssr
-- alterId: '0'
-  cipher: auto
-  name: 中国-9
-  port: '50008'
-  server: 50008.baidu-cdn.top
-  tls: false
-  type: vmess
-  uuid: 722ee660-ca57-467f-9eda-5739859212f9
-- client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: JoinBadeChannel@antimeli
-  name: 荷兰-3
-  network: grpc
-  port: '8443'
-  reality-opts:
-    public-key: Paai0w6bHcKmaZzm8Sljt8uKydSYX5h1t3G_Y3T-Rm0
-    short-id: f74b9234
-  server: 188.227.84.54
-  servername: www.speedtest.net
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 79e1374d-7f94-4da6-97ad-5ce28a5d393e
-- name: 韩国-39
-  network: ws
-  port: '30030'
-  server: 114.30.225.88
-  servername: re.vs2024.us.kg
-  tls: true
-  type: vless
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      Host: re.vs2024.us.kg
-    path: /?ed=2560
-- name: 美国-11
-  network: ws
-  port: '80'
-  server: 104.24.181.248
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: faa47bdc-8581-4e47-a557-35caa72681bd
-  ws-opts:
-    headers:
-      Host: delicate-feather-dc36-ppal03.shah-beck.workers.dev
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 意大利-2
-  network: tcp
-  port: '37172'
-  server: 217.61.63.148
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 9564b172-744e-45bb-a720-c1b3115def9d
 - cipher: aes-256-cfb
   client-fingerprint: chrome
-  name: 新加坡-11
-  password: f8f7aCzcPKbsF8p3
-  port: '989'
-  server: 103.106.229.219
-  type: ss
-- name: 美国-12
-  network: ws
-  port: '443'
-  server: 172.82.16.99
-  servername: zz.bgm2024.us.kg
-  tls: true
-  type: vless
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: zz.bgm2024.us.kg
-    path: /?ed=2560
-- client-fingerprint: chrome
-  down: '1000'
-  name: 新加坡-12
-  password: 92dc14c5-e2b0-41bc-9827-1b687295c530
-  port: '2052'
-  server: xjp2.xiaofeixia.cyou
-  skip-cert-verify: true
-  sni: xjp2.xiaofeixia.cyou
-  type: hysteria2
-  up: '1000'
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 美国-13
-  password: amazonskr05
-  port: '443'
-  server: 34.221.94.162
-  type: ss
-- alpn:
-  - http/1.1
-  name: 德国-4
-  password: telegram-id-directvpn
-  port: '22222'
-  server: 18.157.239.29
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 阿联酋-1
-  network: tcp
-  port: '20560'
-  reality-opts:
-    public-key: SaRtY8DMfGdeL8Tn3-Eft_cD-JLq76qEXyFFJLSsQEU
-    short-id: 5175c4eab5
-  server: 31.58.143.111
-  servername: apple.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 0eb27e44-8e00-4bc4-a00c-43f92f01b4e8
-- client-fingerprint: chrome
-  name: 德国-5
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 63.177.194.108
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- cipher: rc4-md5
-  client-fingerprint: chrome
-  name: 中国-10
-  obfs: plain
-  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
-  password: ENZ52K
-  port: '40208'
-  protocol: auth_aes128_md5
-  protocol-param: 92902:pFWGOQ
-  server: 2.hublink.pro
-  type: ssr
-- cipher: aes-256-cfb
-  name: 美国-14
+  name: 美国-10
   password: amazonskr05
   port: '443'
   server: 35.89.15.28
   type: ss
-- auth: 462a8e99-f369-469d-bd5b-ffbb9c3e5c7e
-  client-fingerprint: chrome
-  down: '1000'
-  name: 美国-15
-  password: 462a8e99-f369-469d-bd5b-ffbb9c3e5c7e
-  port: '2052'
-  server: mg1.xiaofeixia.cyou
-  skip-cert-verify: true
-  sni: mg1.xiaofeixia.cyou
-  type: hysteria2
-  udp: true
-  up: '1000'
-- name: 德国-6
-  password: telegram-id-directvpn
-  port: '22222'
-  server: 3.74.116.116
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 中国-11
-  password: 88430607-f080-4816-b2e5-1a47e193a057
-  port: '563'
-  server: shcmzz1hk.upperlay.xyz
-  type: ss
-- name: 美国-16
-  network: ws
-  port: '80'
-  server: 104.24.149.17
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 9970aa48-37ce-4217-b525-579e61ab9cfa
-  ws-opts:
-    headers:
-      Host: holy-bush-cbc8-ppal03.rawej75976.workers.dev
-    path: /?ed=2560
 - client-fingerprint: chrome
-  name: 美国-17
+  name: 香港-9
   network: ws
-  port: '80'
-  server: 104.21.30.52
-  servername: a.mifeng.us.kg
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: a.mifeng.us.kg
-    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
-- alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  name: 法国-1
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 13.36.58.188
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- client-fingerprint: chrome
-  name: 美国-18
-  network: ws
-  port: '6667'
-  server: 154.21.93.44
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- alterId: '0'
-  cipher: auto
-  client-fingerprint: chrome
-  http-opts:
-    headers: {}
-    path:
-    - /
-  name: 美国-19
-  network: http
-  port: '8881'
-  server: 66.42.86.202
-  tls: false
-  type: vmess
-  uuid: db5afae4-ac23-41a6-8378-f307a9a47436
-- client-fingerprint: chrome
-  name: 美国-20
-  network: ws
-  port: '443'
-  server: 23.165.40.54
+  port: '2087'
+  server: 43.198.207.3
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
@@ -1349,191 +1025,7 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 韩国-40
-  network: ws
-  port: '30012'
-  server: 211.105.35.130
-  servername: re.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      Host: re.vs2024.us.kg
-    path: /?ed=2560&proxyip=211.105.35.130:30012
-- client-fingerprint: chrome
-  name: 美国-21
-  network: ws
-  port: '2052'
-  server: 104.21.22.88
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 8c129b7d-c87f-42d7-bdac-55dfbfe88534
-  ws-opts:
-    headers:
-      Host: MAHDI-HEctORR.viSoWE1371.wOrKERs.deV
-    path: /x3SBRjAmDvYTPEVW?ed=2560
-- name: 香港-13
-  network: ws
-  port: '587'
-  server: 101.36.112.49
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  name: 法国-2
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 13.39.37.172
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- name: 日本-4
-  network: ws
-  port: '46741'
-  server: 45.66.129.147
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 美国-22
-  password: amazonskr05
-  port: '443'
-  server: 54.185.251.195
-  type: ss
-- name: 美国-23
-  network: ws
-  port: '443'
-  server: 154.21.88.20
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-24
-  network: ws
-  port: '8080'
-  server: 104.21.22.88
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 8c129b7d-c87f-42d7-bdac-55dfbfe88534
-  ws-opts:
-    headers:
-      Host: maHdi-hEctOrR.viSoWe1371.WOrkERS.dEV
-    path: /2b2W5QkuhSICb3IE?ed=2560
-- alterId: '0'
-  cipher: auto
-  http-opts:
-    headers:
-      Host:
-      - moi.ir
-    path:
-    - /
-  name: 美国-25
-  network: http
-  port: '8881'
-  server: 66.42.90.216
-  tls: false
-  type: vmess
-  uuid: db5afae4-ac23-41a6-8378-f307a9a47436
-- client-fingerprint: chrome
-  name: 美国-26
-  network: ws
-  port: '8880'
-  server: 104.20.18.168
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 96494ca5-6dcf-4d33-b94f-5c3485586095
-  ws-opts:
-    headers:
-      Host: hamedan.hiven33959.workers.dev
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 美国-27
-  network: ws
-  port: '2086'
-  server: 104.21.22.88
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 8c129b7d-c87f-42d7-bdac-55dfbfe88534
-  ws-opts:
-    headers:
-      Host: Mahdi-heCTorr.vISOwE1371.woRKers.Dev
-    path: /FXlEIkZbsrYxD4i1?ed=2560
-- client-fingerprint: chrome
-  name: 美国-28
-  network: ws
-  port: '80'
-  server: 104.24.37.192
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 9a2680ff-c5d5-410a-9108-8d6b10e4ea1e
-  ws-opts:
-    headers:
-      Host: ppal03.dolobe7975.workers.dev
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-29
-  network: ws
-  port: '80'
-  server: 104.21.30.21
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: a.mifeng.us.kg
-    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
-- client-fingerprint: chrome
-  name: 新加坡-13
-  password: '3774827088566296576'
-  port: '443'
-  server: flying-tuna.treefrog761.one
-  skip-cert-verify: true
-  sni: flying-tuna.treefrog761.one
-  type: trojan
-- client-fingerprint: chrome
-  http-opts:
-    headers:
-      Host:
-      - playstation.com
-    path:
-    - /
-  name: 英国-1
-  network: http
-  port: '443'
-  server: 87.121.79.113
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 5eaf0943-2ba0-49ae-a3dc-2957429a85d5
-- name: 韩国-41
+  name: 韩国-34
   network: ws
   port: '30157'
   server: 182.226.53.214
@@ -1548,20 +1040,248 @@ proxies:
       Host: zz.bgm2024.us.kg
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 美国-30
+  name: 香港-10
   network: ws
-  port: '2082'
-  server: 172.67.190.221
-  skip-cert-verify: false
-  tls: false
+  port: '8443'
+  server: 83.229.123.36
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
   type: vless
-  uuid: 54b3cbba-e6ac-485a-9481-976a0873eab9
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
-      Host: bLaCk-trutH-63Bc.DoviF72324.WoRKeRs.dev
+      Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
+- client-fingerprint: randomized
+  grpc-opts:
+    grpc-service-name: vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl
+  name: 捷克-1
+  network: grpc
+  port: '443'
+  reality-opts:
+    public-key: DpSW8adQoMP_hcXxdAGD6PPdrHuwYbFomzJmBmtsqxM
+    short-id: e3f189ed
+  server: 194.182.84.53
+  servername: wordpress.org
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d73bb99c-0375-4840-ad56-f9850eef3ef1
 - client-fingerprint: chrome
-  name: 美国-31
+  name: 香港-11
+  network: ws
+  port: '2087'
+  server: 43.198.104.113
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 美国-11
+  password: amazonskr05
+  port: '443'
+  server: 54.212.56.86
+  type: ss
+- client-fingerprint: chrome
+  name: 香港-12
+  network: ws
+  password: Aimer
+  port: '444'
+  server: 103.30.76.210
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- name: 韩国-35
+  password: xjtZ2S5FgQ
+  port: '443'
+  server: 141.164.56.86
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+- cipher: aes-256-cfb
+  name: 美国-12
+  password: amazonskr05
+  port: '443'
+  server: 18.236.161.128
+  type: ss
+- alpn:
+  - h3
+  auth-str: dongtaiwang.com
+  auth_str: dongtaiwang.com
+  client-fingerprint: chrome
+  down: 55 Mbps
+  name: 美国-13
+  port: '38670'
+  ports: 10000-20000
+  server: 208.87.243.151
+  skip-cert-verify: true
+  sni: www.bing.com
+  type: hysteria
+  up: 11 Mbps
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 美国-14
+  password: amazonskr05
+  port: '443'
+  server: 54.185.251.195
+  type: ss
+- client-fingerprint: chrome
+  down: '1000'
+  name: 新加坡-8
+  password: 92dc14c5-e2b0-41bc-9827-1b687295c530
+  port: '2052'
+  server: xjp2.xiaofeixia.cyou
+  skip-cert-verify: true
+  sni: xjp2.xiaofeixia.cyou
+  type: hysteria2
+  up: '1000'
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 美国-15
+  password: amazonskr05
+  port: '443'
+  server: 34.221.94.162
+  type: ss
+- name: 香港-13
+  network: ws
+  port: '35500'
+  server: 61.239.234.5
+  servername: zz.bgm2024.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: zz.bgm2024.us.kg
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 韩国-36
+  password: amazonskr05
+  port: '443'
+  server: 43.203.203.14
+  type: ss
+- cipher: aes-256-cfb
+  name: 美国-16
+  password: amazonskr05
+  port: '443'
+  server: 35.91.132.50
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 美国-17
+  password: amazonskr05
+  port: '443'
+  server: 52.40.94.174
+  type: ss
+- cipher: rc4-md5
+  name: 中国-15
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40219'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 2.hublink.pro
+  type: ssr
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 美国-18
+  password: amazonskr05
+  port: '443'
+  server: 35.94.55.129
+  type: ss
+- cipher: aes-256-cfb
+  name: 美国-19
+  password: amazonskr05
+  port: '443'
+  server: 54.190.43.178
+  type: ss
+- client-fingerprint: chrome
+  name: 韩国-37
+  network: ws
+  port: '30030'
+  server: 114.30.225.88
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 中国-16
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40204'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 1.link-hub.blog
+  type: ssr
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 新加坡-9
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 103.106.229.219
+  type: ss
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 中国-17
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40217'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 1.link-hub.blog
+  type: ssr
+- client-fingerprint: chrome
+  down: '1'
+  name: 德国-2
+  obfs: salamander
+  obfs-password: M2UyNTc5OWUwYjkyM2Q2OQ==
+  password: 1cc59a3a-9625-40f7-b0e6-e233286ae82d
+  port: '31639'
+  server: 185.121.134.12
+  skip-cert-verify: true
+  type: hysteria2
+  up: '1'
+- alpn:
+  - http/1.1
+  name: 德国-3
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 63.176.39.244
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- client-fingerprint: chrome
+  name: 新加坡-10
+  password: '3774827088566296576'
+  port: '443'
+  server: flying-tuna.treefrog761.one
+  skip-cert-verify: true
+  sni: flying-tuna.treefrog761.one
+  type: trojan
+- client-fingerprint: chrome
+  name: 美国-20
   network: ws
   port: '80'
   server: 104.26.15.85
@@ -1573,24 +1293,466 @@ proxies:
     headers:
       Host: a.xn--i-sx6a60i.us.kg.
     path: /?ed=2560
-- name: 美国-32
+- client-fingerprint: chrome
+  name: 俄罗斯联邦-2
+  password: dongtaiwang.com
+  port: '50717'
+  server: 46.17.41.189
+  skip-cert-verify: true
+  sni: www.bing.com
+  tfo: false
+  type: hysteria2
+- name: 奥地利-1
   network: ws
-  port: '30029'
-  server: 185.183.84.94
-  servername: ngedc.ambercc.filegear-sg.me
+  port: '443'
+  server: 212.183.88.24
+  servername: zz.bgm2024.us.kg
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: zz.bgm2024.us.kg
+    path: /?ed=2560&proxyip=212.183.88.24:443
+- client-fingerprint: chrome
+  name: 香港-14
+  network: ws
+  port: '443'
+  server: 58.176.95.46
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
   uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 美国-33
+- name: 美国-21
   network: ws
   port: '443'
-  server: 91.149.239.238
+  server: 63.141.128.209
+  servername: zz.bgm2024.us.kg
+  tls: true
+  type: vless
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: zz.bgm2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-22
+  network: ws
+  port: '80'
+  server: 172.67.73.163
+  skip-cert-verify: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg.
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-23
+  network: ws
+  port: '80'
+  server: 104.26.14.85
+  skip-cert-verify: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg.
+    path: /?ed=2560
+- alterId: '64'
+  cipher: auto
+  client-fingerprint: chrome
+  name: 中国-18
+  port: '44614'
+  server: 120.198.71.219
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- name: 德国-4
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 3.125.23.39
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- client-fingerprint: chrome
+  name: 香港-15
+  port: '4000'
+  server: hk9.ftq.ink
+  sni: hk9.ftq.ink
+  tls: true
+  type: http
+- name: 巴西-1
+  network: ws
+  port: '443'
+  server: 185.133.35.30
+  servername: zz.bgm2024.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: zz.bgm2024.us.kg
+    path: /?ed=2560
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  name: 爱沙尼亚-1
+  network: ws
+  port: '443'
+  server: 45.80.108.253
+  servername: mmdserver.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
+  ws-opts:
+    headers:
+      Host: mmdserver.us.kg
+    path: /?ed=2048
+- cipher: aes-256-cfb
+  name: 韩国-38
+  password: amazonskr05
+  port: '443'
+  server: 13.125.94.61
+  type: ss
+- name: 俄罗斯联邦-3
+  network: ws
+  port: '443'
+  server: 45.67.215.118
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- cipher: aes-256-gcm
+  name: 中国-19
+  password: KPOQG1L4BS2PKML1
+  port: '15004'
+  server: ti3hyra4.slashdevslashnetslashtun.net
+  type: ss
+- alpn:
+  - http/1.1
+  name: 德国-5
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 3.79.78.214
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-256-cfb
+  name: 美国-24
+  password: amazonskr05
+  port: '443'
+  server: 44.246.37.239
+  type: ss
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  name: 爱沙尼亚-2
+  network: ws
+  port: '443'
+  server: 45.80.108.1
+  servername: mmdserver.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
+  ws-opts:
+    headers:
+      Host: mmdserver.us.kg
+    path: /?ed=2048
+- client-fingerprint: chrome
+  name: 美国-25
+  network: ws
+  port: '443'
+  server: 172.82.16.99
+  servername: zz.bgm2024.us.kg
+  tls: true
+  type: vless
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: zz.bgm2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: random
+  name: 哥斯达黎加-1
+  network: ws
+  port: '443'
+  server: 190.93.244.221
+  servername: gozargah.validbv7996.ir
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
+  ws-opts:
+    headers:
+      Host: gozargah.validbv7996.ir
+    path: /?ed=2560
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 中国-20
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40209'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 1.link-hub.blog
+  type: ssr
+- client-fingerprint: chrome
+  name: 美国-26
+  network: ws
+  port: '80'
+  server: 104.21.30.5
+  servername: a.mifeng.us.kg
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /?ed=2048
+- name: 巴西-2
+  network: ws
+  port: '443'
+  server: 185.133.35.99
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-27
+  network: ws
+  port: '80'
+  server: tgju.org
+  servername: a.xn--i-sx6a60i.us.kg.
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg.
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 美国-28
+  password: amazonskr05
+  port: '443'
+  server: 35.163.107.154
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 立陶宛-1
+  password: 4a2rfixophdjffa8KVA4Aa
+  port: '8080'
+  server: beesyar.org
+  type: ss
+- cipher: chacha20
+  client-fingerprint: chrome
+  name: 中国-21
+  password: v5aUUtme3jxs
+  port: '9003'
+  server: 14.18.253.178
+  type: ss
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 阿联酋-1
+  network: tcp
+  port: '20560'
+  reality-opts:
+    public-key: SaRtY8DMfGdeL8Tn3-Eft_cD-JLq76qEXyFFJLSsQEU
+    short-id: 5175c4eab5
+  server: 31.58.143.111
+  servername: apple.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 0eb27e44-8e00-4bc4-a00c-43f92f01b4e8
+- alpn:
+  - http/1.1
+  name: 法国-2
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 13.39.44.117
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- alpn:
+  - http/1.1
+  name: 法国-3
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 35.181.208.27
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- name: 英国-2
+  network: ws
+  port: '443'
+  server: 217.163.76.102
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- name: 新加坡-11
+  network: ws
+  port: '2087'
+  server: 206.238.237.92
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- name: 巴西-3
+  network: ws
+  port: '443'
+  server: 185.133.35.242
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-29
+  network: ws
+  port: '443'
+  server: 8.20.125.1
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- alpn:
+  - http/1.1
+  name: 英国-3
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 35.176.45.118
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 美国-30
+  password: amazonskr05
+  port: '443'
+  server: 54.214.157.34
+  type: ss
+- cipher: aes-256-cfb
+  name: 葡萄牙-1
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 185.231.233.112
+  type: ss
+- alpn:
+  - http/1.1
+  name: 法国-4
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 13.39.61.91
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 美国-31
+  password: amazonskr05
+  port: '443'
+  server: 34.211.228.158
+  type: ss
+- name: 新加坡-12
+  network: ws
+  port: '443'
+  server: 206.238.236.134
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- alpn:
+  - http/1.1
+  name: 英国-4
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 3.9.95.57
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- auth: 462a8e99-f369-469d-bd5b-ffbb9c3e5c7e
+  client-fingerprint: chrome
+  down: '1000'
+  name: 美国-32
+  password: 462a8e99-f369-469d-bd5b-ffbb9c3e5c7e
+  port: '2052'
+  server: mg1.xiaofeixia.cyou
+  skip-cert-verify: true
+  sni: mg1.xiaofeixia.cyou
+  type: hysteria2
+  udp: true
+  up: '1000'
+- client-fingerprint: chrome
+  name: 美国-33
+  network: ws
+  port: '443'
+  server: 107.174.79.149
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- name: 印度-2
+  network: tcp
+  port: '34602'
+  server: 103.180.236.42
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 348b83dd-b346-45c4-b4ed-5bb48ee5baa7
+- alpn:
+  - http/1.1
+  name: 瑞典-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 13.61.136.110
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- client-fingerprint: chrome
+  name: 日本-5
+  network: ws
+  port: '46741'
+  server: 45.66.129.147
   servername: ngedc.ambercc.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -1604,256 +1766,8 @@ proxies:
 - client-fingerprint: chrome
   name: 美国-34
   network: ws
-  port: '80'
-  server: 104.24.161.187
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 575d2e5e-e7a4-48b8-a55e-aa38e16a3106
-  ws-opts:
-    headers:
-      Host: flat-bird-3aa7-ppal03.hesiwap437.workers.dev
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-35
-  network: ws
-  port: '80'
-  server: tgju.org
-  servername: a.xn--i-sx6a60i.us.kg.
-  tls: false
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: a.xn--i-sx6a60i.us.kg.
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-36
-  network: ws
-  port: '80'
-  server: 104.24.148.115
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 9f0eae34-97c1-4c07-8a55-438379981334
-  ws-opts:
-    headers:
-      Host: snowy-bush-4df8-ppal03.toxebex651.workers.dev
-    path: /?ed=2560
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 美国-37
-  network: tcp
-  port: '7749'
-  reality-opts:
-    public-key: qEsXq3s9xWQDDSjzZTk91EZX6k-_4dMVl4O7-wtYe34
-    short-id: e095ee3b
-  server: hshk.gecs.dynu.net
-  servername: itunes.apple.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 0a3cd062-241a-43fc-9c50-eccacbbd5aae
-- client-fingerprint: chrome
-  name: 美国-38
-  network: ws
-  port: '80'
-  server: 104.24.186.156
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 6ff4726f-3650-4803-95eb-50b240f6ac75
-  ws-opts:
-    headers:
-      Host: red-math-7092-ppal03.mewoco2522.workers.dev
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-39
-  network: ws
-  port: '2096'
-  server: 162.159.44.78
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-40
-  network: ws
-  port: '80'
-  server: 188.114.96.223
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: eb201923-0e39-4425-bd0f-6244cd24ef2a
-  ws-opts:
-    headers:
-      Host: zaq11000d.b835a8094d.workers.dev
-    path: /?ed=2560
-- cipher: rc4-md5
-  client-fingerprint: chrome
-  name: 中国-12
-  obfs: plain
-  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
-  password: ENZ52K
-  port: '40255'
-  protocol: auth_aes128_md5
-  protocol-param: 92902:pFWGOQ
-  server: 3.link-hub.click
-  type: ssr
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-14
-  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
-  port: '49207'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
-- client-fingerprint: chrome
-  name: 美国-41
-  network: ws
-  port: '80'
-  server: 172.67.73.163
-  skip-cert-verify: false
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: a.xn--i-sx6a60i.us.kg.
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-42
-  network: ws
-  port: '80'
-  server: 104.24.47.130
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 7711fc80-c163-4f35-80c4-d5e61c69659d
-  ws-opts:
-    headers:
-      Host: icy-bar-399d-ppal03.pomoyes509.workers.dev
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 乌克兰-1
-  password: f8f7aCzcPKbsF8p3
-  port: '989'
-  server: 176.103.53.105
-  type: ss
-- client-fingerprint: chrome
-  name: 美国-43
-  network: ws
-  port: '30001'
-  server: 185.183.84.93
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 香港-15
-  port: '4000'
-  server: hk9.ftq.ink
-  sni: hk9.ftq.ink
-  tls: true
-  type: http
-- client-fingerprint: chrome
-  name: 美国-44
-  network: ws
-  port: '80'
-  server: 172.64.78.198
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 2370f4d8-6694-4e51-8c72-b2782ae96a59
-  ws-opts:
-    headers:
-      Host: withered-wave-ee0b-ppal03.faxip46069.workers.dev
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-45
-  network: ws
-  port: '80'
-  server: 104.21.30.5
-  servername: a.mifeng.us.kg
-  tls: false
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: a.mifeng.us.kg
-    path: /?ed=2048
-- name: 美国-46
-  network: ws
-  port: '2053'
-  server: 162.159.44.231
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 美国-47
-  password: amazonskr05
-  port: '443'
-  server: 54.214.157.34
-  type: ss
-- name: 美国-48
-  network: ws
-  port: '2096'
-  server: 162.159.38.101
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-49
-  network: ws
-  port: '443'
-  server: thaddeus.ns.cloudflare.com
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-16
-  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
-  port: '49224'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
-- client-fingerprint: chrome
-  name: 美国-50
-  network: ws
-  port: '2053'
-  server: 104.18.123.117
+  port: '8443'
+  server: 45.140.88.118
   servername: ngedc.ambercc.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -1866,301 +1780,25 @@ proxies:
     path: /?ed=2560
 - alpn:
   - http/1.1
-  client-fingerprint: chrome
-  name: 英国-2
-  password: telegram-id-privatevpns
+  name: 英国-5
+  password: telegram-id-directvpn
   port: '22222'
-  server: 18.135.14.252
+  server: 18.168.234.171
   sni: trojan.burgerip.co.uk
   type: trojan
-- cipher: rc4-md5
-  client-fingerprint: chrome
-  name: 中国-13
-  obfs: plain
-  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
-  password: ENZ52K
-  port: '40202'
-  protocol: auth_aes128_md5
-  protocol-param: 92902:pFWGOQ
-  server: 1.link-hub.blog
-  type: ssr
+- alpn:
+  - http/1.1
+  name: 爱尔兰-1
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 52.19.150.241
+  sni: trojan.burgerip.co.uk
+  type: trojan
 - client-fingerprint: chrome
-  name: 美国-51
-  network: ws
-  port: '80'
-  server: 104.26.14.85
-  skip-cert-verify: false
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: a.xn--i-sx6a60i.us.kg.
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-52
-  network: ws
-  port: '80'
-  server: 104.24.148.184
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 01cb18d1-2062-47e7-999b-ec08e8b2ec85
-  ws-opts:
-    headers:
-      Host: muddy-rain-0a28-ppal03.mitey24737.workers.dev
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 芬兰-1
-  password: f8f7aCzcPKbsF8p3
-  port: '989'
-  server: 37.143.129.230
-  type: ss
-- client-fingerprint: chrome
-  delay: '851'
-  name: 美国-53
-  network: ws
-  port: '80'
-  server: 104.18.27.94
-  servername: sedalat.tatexe3807.workers.dev
-  type: vless
-  uuid: 61ff8b60-2be0-40a6-94b5-92cca33f1fab
-  ws-opts:
-    headers:
-      Host: sedalat.tatexe3807.workers.dev
-    path: /
-- client-fingerprint: chrome
-  name: 美国-54
+  name: 俄罗斯联邦-4
   network: ws
   port: '443'
-  server: sage.ns.cloudflare.com
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-55
-  network: ws
-  port: '443'
-  server: ignacio.ns.cloudflare.com
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-56
-  network: ws
-  port: '8080'
-  server: 172.67.187.251
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: b6e97b8a-1b43-4fa9-ab1b-d0139df07f59
-  ws-opts:
-    headers:
-      Host: 11tg.w79kip11.workers.dev
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-57
-  network: ws
-  port: '80'
-  server: 104.24.248.204
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 2370f4d8-6694-4e51-8c72-b2782ae96a59
-  ws-opts:
-    headers:
-      Host: withered-wave-ee0b-ppal03.faxip46069.workers.dev
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-58
-  network: ws
-  port: '38978'
-  server: 154.9.241.153
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-59
-  network: ws
-  port: '2181'
-  server: 154.64.224.46
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 新加坡-14
-  network: ws
-  port: '2096'
-  server: 27.50.49.41
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: rc4-md5
-  client-fingerprint: chrome
-  name: 中国-14
-  obfs: plain
-  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
-  password: ENZ52K
-  port: '40211'
-  protocol: auth_aes128_md5
-  protocol-param: 92902:pFWGOQ
-  server: 2.hublink.pro
-  type: ssr
-- client-fingerprint: chrome
-  name: 美国-60
-  network: ws
-  port: '80'
-  server: 104.24.158.124
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: bf73e6e5-0336-40d5-995c-283de50646d2
-  ws-opts:
-    headers:
-      Host: divine-limit-e9df-ppal03.jorekon645.workers.dev
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 爱沙尼亚-1
-  password: f8f7aCzcPKbsF8p3
-  port: '989'
-  server: 185.193.49.88
-  type: ss
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-17
-  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
-  port: '49213'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
-- name: 美国-61
-  network: ws
-  port: '10000'
-  server: 154.19.241.230
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-62
-  network: ws
-  port: '2087'
-  server: 162.159.44.50
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-63
-  network: ws
-  port: '443'
-  server: 107.174.79.149
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: rc4-md5
-  client-fingerprint: chrome
-  name: 中国-15
-  obfs: plain
-  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
-  password: ENZ52K
-  port: '40236'
-  protocol: auth_aes128_md5
-  protocol-param: 92902:pFWGOQ
-  server: 3.link-hub.click
-  type: ssr
-- name: 新加坡-15
-  network: ws
-  port: '2053'
-  server: 27.50.49.37
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 波兰-1
-  password: BNmAXXxAHYpTRdzu
-  port: '9020'
-  server: 217.30.10.18
-  type: ss
-- client-fingerprint: chrome
-  name: 美国-64
-  network: ws
-  port: '80'
-  server: 104.24.138.64
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 5d8bc42a-d345-4bd3-a844-4b90afc44670
-  ws-opts:
-    headers:
-      Host: patient-shadow-baf1-ppal03.hohel98085.workers.dev
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-65
-  network: ws
-  port: '443'
-  server: 141.148.187.195
-  servername: mmdserver.us.kg
-  tls: true
-  type: vless
-  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
-  ws-opts:
-    headers:
-      Host: mmdserver.us.kg
-    path: /?ed=2048
-- name: 韩国-42
-  network: ws
-  port: '50025'
-  server: 114.30.225.88
+  server: 45.67.215.212
   servername: re.vs2024.us.kg
   tls: true
   type: vless
@@ -2168,45 +1806,12 @@ proxies:
   ws-opts:
     headers:
       Host: re.vs2024.us.kg
-    path: /uxs.vs2024.us.kg
+    path: /?ed=2560
 - client-fingerprint: chrome
-  delay: '1477'
-  name: 美国-66
+  name: 美国-35
   network: ws
-  port: '80'
-  server: 104.18.26.94
-  servername: sedalat.tatexe3807.workers.dev
-  type: vless
-  uuid: 61ff8b60-2be0-40a6-94b5-92cca33f1fab
-  ws-opts:
-    headers:
-      Host: sedalat.tatexe3807.workers.dev
-    path: /
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-18
-  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
-  port: '49201'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
-- client-fingerprint: chrome
-  name: 美国-67
-  network: ws
-  port: '80'
-  server: 104.21.86.235
-  skip-cert-verify: false
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  ws-opts:
-    headers:
-      Host: c.lkzb-0t0.workers.dev
-    path: /?ed=2048
-- client-fingerprint: chrome
-  name: 新加坡-16
-  network: ws
-  port: '8443'
-  server: 27.50.49.224
+  port: '443'
+  server: 154.21.88.20
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
@@ -2216,7 +1821,20 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 美国-68
+  name: 日本-6
+  network: ws
+  port: '443'
+  server: 141.147.147.180
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-36
   network: ws
   port: '50022'
   server: 185.183.84.96
@@ -2231,20 +1849,138 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 美国-69
+  name: 韩国-39
   network: ws
-  port: '443'
-  server: 129.146.46.164
-  servername: mmdserver.us.kg
+  port: '50025'
+  server: 114.30.225.88
+  servername: re.vs2024.us.kg
   tls: true
   type: vless
-  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
   ws-opts:
     headers:
-      Host: mmdserver.us.kg
-    path: /?ed=2048
+      Host: re.vs2024.us.kg
+    path: /uxs.vs2024.us.kg
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 立陶宛-2
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 185.237.185.160
+  type: ss
+- name: 法国-5
+  network: ws
+  port: '443'
+  server: 185.16.110.111
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-37
+  network: ws
+  port: '6667'
+  server: 154.21.93.44
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-16
+  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
+  port: '49207'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- cipher: 2022-blake3-aes-256-gcm
+  name: 印度-3
+  password: /brhukyiEqvWy4TzsuQtbi+yj1rCuBG0iLBa1g04Qvg=:SFVbRThXOf6mOTxymGzjqfCR6qNZ8EYAD4D9K07HNfk=
+  port: '20535'
+  server: 103.180.236.42
+  type: ss
+- client-fingerprint: chrome
+  name: 美国-38
+  network: ws
+  port: '30001'
+  server: 185.183.84.93
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-17
+  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
+  port: '49224'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- cipher: chacha20
+  client-fingerprint: chrome
+  name: 中国-22
+  password: GqbcCfh365aT
+  port: '8331'
+  server: 14.18.253.178
+  type: ss
+- client-fingerprint: chrome
+  name: 香港-18
+  network: ws
+  port: '587'
+  server: 91.217.139.169
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 美国-39
+  network: tcp
+  port: '32066'
+  reality-opts:
+    public-key: -LeP2n_qttyDuBpYQA8a7q4AOYeQGOkkaxnyLlb8vgo
+    short-id: 4f27
+  server: 137.175.84.77
+  servername: apple.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: f2fa2843-5614-4fa7-99fe-da22f7307ad8
 - client-fingerprint: chrome
   name: 香港-19
+  network: ws
+  port: '587'
+  server: 101.36.112.49
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 香港-20
   network: ws
   port: '8443'
   server: 156.255.90.175
@@ -2258,32 +1994,75 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-20
-  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
-  port: '49215'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
-- client-fingerprint: chrome
-  name: 美国-70
+- name: 香港-21
   network: ws
   port: '443'
-  server: pranab.ns.cloudflare.com
+  server: 219.76.13.177
   servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
   tls: true
   type: vless
+  udp: true
   uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-71
-  network: ws
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 巴林-1
+  password: Bog0ELmMM9DSxDdQ
   port: '443'
-  server: arvind.ns.cloudflare.com
+  server: series-a2-me.varzesh360.co
+  type: ss
+- client-fingerprint: safari
+  name: 新加坡-13
+  network: tcp
+  port: '33155'
+  reality-opts:
+    public-key: OstL8i2vDibAu1T4j1I9UnySmrG-wloKWBVC-MhPUDw
+    short-id: '42241206'
+  server: 134.185.82.64
+  servername: www.microsoft.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 4c0109f7-e002-410a-b37d-a56b391237a5
+- alpn:
+  - http/1.1
+  name: 爱尔兰-2
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 54.195.179.253
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- client-fingerprint: chrome
+  name: 新加坡-14
+  network: ws
+  port: '6666'
+  server: 150.109.24.233
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 乌克兰-1
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 176.103.53.105
+  type: ss
+- client-fingerprint: chrome
+  name: 美国-40
+  network: ws
+  port: '30029'
+  server: 185.183.84.94
   servername: ngedc.ambercc.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2295,22 +2074,53 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 新加坡-17
+  name: 美国-41
   network: ws
-  port: '443'
-  server: 27.50.48.21
+  port: '2053'
+  server: 104.18.123.117
   servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
   tls: true
   type: vless
+  udp: true
   uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 日本-5
+- name: 美国-42
   network: ws
   port: '443'
-  server: 141.147.147.180
+  server: 130.250.137.19
+  servername: zz.bgm2024.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: zz.bgm2024.us.kg
+    path: /?ed=2560
+- name: 美国-43
+  network: ws
+  port: '443'
+  server: 135.84.76.115
+  servername: zz.bgm2024.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: zz.bgm2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-44
+  network: ws
+  port: '2096'
+  server: 162.159.38.101
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
@@ -2320,22 +2130,32 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 美国-72
+  name: 美国-45
   network: ws
-  port: '80'
-  server: 104.24.9.204
-  skip-cert-verify: false
-  tls: false
+  port: '2053'
+  server: 162.159.44.231
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
   type: vless
-  uuid: ca68a029-971c-4ea4-8c1d-411cb7adc474
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
-      Host: patient-sunset-f000-ppal03.cijej53213.workers.dev
+      Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 新加坡-18
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 中国-23
+  password: hGkQ6915tD
+  port: '16088'
+  server: 120.232.81.50
+  type: ss
+- client-fingerprint: chrome
+  name: 香港-22
   network: ws
-  port: '8443'
-  server: 27.50.49.242
+  port: '443'
+  server: 43.155.30.252
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
@@ -2344,10 +2164,24 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 新加坡-19
+- client-fingerprint: chrome
+  name: 美国-46
+  network: ws
+  port: '443'
+  server: damien.ns.cloudflare.com
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-47
   network: ws
   port: '2087'
-  server: 27.50.49.209
+  server: 162.159.44.50
   servername: ngedc.ambercc.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2359,7 +2193,94 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 台湾-3
+  name: 新加坡-15
+  network: ws
+  port: '2096'
+  server: 27.50.49.41
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-48
+  network: ws
+  port: '8443'
+  server: 162.159.44.233
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-49
+  network: ws
+  port: '443'
+  server: 63.141.128.177
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 波兰-1
+  password: cp8pRSUAyLhTfVWH
+  port: '9064'
+  server: 217.30.10.18
+  type: ss
+- client-fingerprint: chrome
+  name: 美国-50
+  network: ws
+  port: '443'
+  server: 129.146.46.164
+  servername: mmdserver.us.kg
+  tls: true
+  type: vless
+  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
+  ws-opts:
+    headers:
+      Host: mmdserver.us.kg
+    path: /?ed=2048
+- client-fingerprint: chrome
+  name: 美国-51
+  network: ws
+  port: '443'
+  server: 91.149.239.238
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 波兰-2
+  password: TN2YqghxeFDKZfLU
+  port: '9037'
+  server: 217.30.10.18
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 波兰-3
+  password: BNmAXXxAHYpTRdzu
+  port: '9020'
+  server: 217.30.10.18
+  type: ss
+- client-fingerprint: chrome
+  name: 台湾-2
   network: ws
   port: '443'
   server: 188.253.6.210
@@ -2373,145 +2294,77 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 新加坡-20
+- client-fingerprint: chrome
+  name: 美国-52
+  network: ws
+  port: '443'
+  server: pranab.ns.cloudflare.com
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-53
+  network: ws
+  port: '443'
+  server: sage.ns.cloudflare.com
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-54
+  network: ws
+  port: '2083'
+  server: 162.159.38.105
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 新加坡-16
+  network: ws
+  port: '8443'
+  server: 27.50.49.224
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-55
   network: ws
   port: '2096'
-  server: 27.50.49.156
+  server: 162.159.44.78
   servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
   tls: true
   type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 美国-73
-  network: ws
-  port: '80'
-  server: 104.24.198.187
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 80d32ddd-c0ac-4eb6-8a2a-3b27b23f32b4
-  ws-opts:
-    headers:
-      Host: icy-cherry-b8af-ppal03.givay59005.workers.dev
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 香港-21
-  network: ws
-  port: '30001'
-  server: 38.22.91.158
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 韩国-43
-  password: amazonskr05
-  port: '443'
-  server: 43.203.203.14
-  type: ss
-- client-fingerprint: chrome
-  name: 德国-7
-  network: ws
-  port: '22222'
-  server: 3.126.56.126
-  servername: telegram-channel-vlessconfig.sohala.uk
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
-  ws-opts:
-    headers:
-      Host: telegram-channel-vlessconfig.sohala.uk
-    path: /telegram-channel-vlessconfig-ws
-- client-fingerprint: chrome
-  name: 美国-74
-  network: ws
-  port: '80'
-  server: 104.21.16.48
-  skip-cert-verify: false
-  type: vless
-  uuid: 7c18eeab-f38f-48a2-ae25-50c26cdfb0d9
-  ws-opts:
-    headers:
-      Host: anTiFiLTEr.dOXAs38496.wOrkErs.dEV
-    path: /6Fb9gZwPctjjwBVW?ed=2048
-- client-fingerprint: chrome
-  name: 美国-75
-  network: ws
-  port: '8880'
-  server: 172.67.2.238
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 96494ca5-6dcf-4d33-b94f-5c3485586095
-  ws-opts:
-    headers:
-      Host: hamedan.hiven33959.workers.dev
-    path: /?ed=2048
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-22
-  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
-  port: '49206'
-  server: south.sf0jm.xyz
-  type: ss
   udp: true
-- client-fingerprint: chrome
-  name: 美国-76
-  network: ws
-  port: '80'
-  server: 151.101.128.155
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: 60b10d02-a181-4f4a-8b3d-03bd0ba988a3
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
-      Host: vipfast_7.com
-    path: /@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7?ed=1024
-- client-fingerprint: chrome
-  name: 美国-77
-  network: ws
-  port: '80'
-  server: 104.24.177.129
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  uuid: eb19e160-51f8-40d3-966b-9fa5de336924
-  ws-opts:
-    headers:
-      Host: crimson-cell-5828-ppal03.febox45376.workers.dev
+      Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
+- client-fingerprint: chrome
   name: 香港-23
-  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
-  port: '49229'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
-- name: 香港-24
-  network: ws
-  port: '587'
-  server: 91.217.139.169
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 香港-25
   network: ws
   password: Aimer
   port: '8443'
@@ -2525,10 +2378,10 @@ proxies:
       Host: ngepo.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 美国-78
+  name: 美国-56
   network: ws
-  port: '8443'
-  server: 45.140.88.118
+  port: '443'
+  server: ignacio.ns.cloudflare.com
   servername: ngedc.ambercc.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2539,22 +2392,208 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
+- name: 德国-6
+  network: ws
+  port: '22222'
+  server: 3.74.53.224
+  servername: telegram-channel-vlessconfig.sohala.uk
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
+  ws-opts:
+    headers:
+      Host: telegram-channel-vlessconfig.sohala.uk
+    path: /telegram-channel-vlessconfig-ws
+- name: 美国-57
+  network: ws
+  port: '443'
+  server: 63.141.128.218
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-58
+  network: ws
+  port: '443'
+  server: thaddeus.ns.cloudflare.com
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 芬兰-1
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 37.143.129.230
+  type: ss
+- name: 德国-7
+  network: ws
+  port: '22222'
+  server: 18.198.167.72
+  servername: telegram-channel-vlessconfig.sohala.uk
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
+  ws-opts:
+    headers:
+      Host: telegram-channel-vlessconfig.sohala.uk
+    path: /telegram-channel-vlessconfig-ws
+- name: 美国-59
+  network: ws
+  port: '443'
+  server: 192.0.54.18
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
 - cipher: aes-128-gcm
   client-fingerprint: chrome
-  name: 香港-26
-  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
-  port: '49216'
+  name: 香港-24
+  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
+  port: '49229'
   server: south.sf0jm.xyz
   type: ss
   udp: true
 - client-fingerprint: chrome
-  name: 中国-16
+  name: 美国-60
+  network: ws
+  port: '2053'
+  server: 162.159.44.235
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 中国-24
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40236'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 3.link-hub.click
+  type: ssr
+- client-fingerprint: chrome
+  name: 中国-25
   password: 20a84ebf-9341-4f5f-8245-3975e2fdeee5
   port: '21019'
   server: 219.135.231.205
   skip-cert-verify: true
   type: trojan
   udp: true
+- client-fingerprint: chrome
+  name: 美国-61
+  network: ws
+  port: '443'
+  server: arvind.ns.cloudflare.com
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 波兰-4
+  password: BejrQvtu9sqUeNuZ
+  port: '9024'
+  server: 217.30.10.18
+  type: ss
+- client-fingerprint: chrome
+  name: 美国-62
+  network: ws
+  port: '443'
+  server: 141.148.187.195
+  servername: mmdserver.us.kg
+  tls: true
+  type: vless
+  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
+  ws-opts:
+    headers:
+      Host: mmdserver.us.kg
+    path: /?ed=2048
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-25
+  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
+  port: '49213'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 波兰-5
+  password: c3NtHJ5ujV2tGDfj
+  port: '9084'
+  server: 217.30.10.18
+  type: ss
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 中国-26
+  obfs: plain
+  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
+  password: ENZ52K
+  port: '40210'
+  protocol: auth_aes128_md5
+  protocol-param: 92902:pFWGOQ
+  server: 2.hublink.pro
+  type: ssr
+- client-fingerprint: chrome
+  name: 美国-63
+  network: ws
+  port: '2053'
+  server: 162.159.44.230
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-64
+  network: ws
+  port: '10000'
+  server: 154.19.241.230
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
 - client-fingerprint: chrome
   http-opts:
     headers:
@@ -2570,31 +2609,92 @@ proxies:
   tls: false
   type: vless
   uuid: 1c86a177-d7ff-4a5f-8255-cfeb4e051305
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-27
-  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
-  port: '49223'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
-- name: 美国-79
-  network: ws
-  port: '80'
-  server: 198.41.209.27
-  servername: a.mifeng.us.kg
+- client-fingerprint: random
+  flow: xtls-rprx-vision
+  name: 俄罗斯联邦-5
+  network: tcp
+  port: '443'
+  reality-opts:
+    public-key: n3NmzivS8eutbp8V2dcDqe-UyZynD1jszNy3l-2wzkw
+    short-id: afc6da8dd99e4b83
+  server: 103.71.22.3
+  servername: spb33.hipay.su
   skip-cert-verify: false
-  tls: false
+  tls: true
   type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  uuid: 009cccba-c0ec-4297-9898-5115898a7246
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 美国-65
+  network: tcp
+  port: '7749'
+  reality-opts:
+    public-key: qEsXq3s9xWQDDSjzZTk91EZX6k-_4dMVl4O7-wtYe34
+    short-id: e095ee3b
+  server: hshk.gecs.dynu.net
+  servername: itunes.apple.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 0a3cd062-241a-43fc-9c50-eccacbbd5aae
+- client-fingerprint: chrome
+  name: 新加坡-17
+  network: ws
+  port: '2096'
+  server: 27.50.49.156
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
-      Host: a.mifeng.us.kg
-    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
-- name: 美国-80
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-66
   network: ws
-  port: '2053'
-  server: 162.159.44.230
+  port: '443'
+  server: 160.79.104.98
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-67
+  network: ws
+  password: Aimer
+  port: '443'
+  server: 8.20.125.1
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 新加坡-18
+  network: ws
+  port: '2087'
+  server: 27.50.49.74
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 台湾-3
+  network: ws
+  port: '8080'
+  server: 141.11.86.109
   servername: ngedc.ambercc.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2605,50 +2705,145 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 波兰-2
-  password: FG5ddLsMPbV5CutE
-  port: '9050'
-  server: 217.30.10.18
-  type: ss
-- alpn:
-  - http/1.1
-  name: 美国-81
-  password: telegram-id-directvpn
-  port: '22222'
-  server: 3.148.56.233
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- client-fingerprint: chrome
+- alterId: '0'
+  cipher: auto
   name: 德国-9
-  network: tcp
-  port: '4810'
-  server: 5.75.140.123
+  network: ws
+  port: '20312'
+  server: 185.121.134.12
   skip-cert-verify: true
-  tfo: false
   tls: false
-  type: vless
-  uuid: acfb8db7-fbc4-4aac-814d-ef73bd6ce72c
-- name: 美国-82
+  type: vmess
+  uuid: e582112a-13e5-4123-8a6d-3b1682768d41
+  ws-opts:
+    path: /
+- name: 美国-68
   network: ws
   port: '443'
-  server: visa.cn
-  servername: mht.mhtadayon.ir
-  skip-cert-verify: true
-  tfo: false
+  server: 160.79.105.12
+  servername: re.vs2024.us.kg
   tls: true
   type: vless
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
   ws-opts:
     headers:
-      Host: mht.mhtadayon.ir
-    path: /?ed=2740
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
 - client-fingerprint: chrome
-  name: 法国-3
+  name: 新加坡-19
+  network: ws
+  port: '2087'
+  server: 27.50.49.209
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 新加坡-20
+  network: ws
+  port: '2053'
+  server: 27.50.49.37
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- name: 香港-26
+  network: ws
+  port: '443'
+  server: 149.104.29.121
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 新加坡-21
+  network: ws
+  port: '443'
+  server: 27.50.48.21
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-27
+  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
+  port: '49216'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  name: 新加坡-22
+  network: ws
+  port: '8443'
+  server: 27.50.49.242
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-28
+  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
+  port: '49228'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  name: 香港-29
+  network: ws
+  port: '8443'
+  server: 154.16.10.143
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-30
+  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
+  port: '49206'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-31
+  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
+  port: '49215'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- name: 法国-6
   network: ws
   port: '22222'
-  server: 35.180.160.22
+  server: 15.236.36.65
   servername: telegram-channel-vlessconfig.sohala.uk
   skip-cert-verify: false
   tls: true
@@ -2658,8 +2853,86 @@ proxies:
     headers:
       Host: telegram-channel-vlessconfig.sohala.uk
     path: /telegram-channel-vlessconfig-ws
+- cipher: aes-256-cfb
+  name: 美国-69
+  password: amazonskr05
+  port: '443'
+  server: 54.213.141.30
+  type: ss
 - client-fingerprint: chrome
-  name: 新加坡-21
+  name: 香港-32
+  network: ws
+  port: '30001'
+  server: 38.22.91.158
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-33
+  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
+  port: '49223'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 爱沙尼亚-3
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 188.214.36.155
+  type: ss
+- client-fingerprint: chrome
+  name: 香港-34
+  network: ws
+  password: Aimer
+  port: '443'
+  server: 58.176.95.46
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-35
+  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
+  port: '49225'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-36
+  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
+  port: '49201'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 中国-27
+  password: 5QCGV4AXFQAJE5KA
+  port: '18012'
+  server: ti3hyra4.slashdevslashnetslashtun.net
+  type: ss
+- client-fingerprint: chrome
+  name: 新加坡-23
+  password: '3774827088566296576'
+  port: '443'
+  server: exotic-bengal.treefrog761.one
+  skip-cert-verify: true
+  sni: exotic-bengal.treefrog761.one
+  type: trojan
+- client-fingerprint: chrome
+  name: 新加坡-24
   network: ws
   port: '2087'
   server: 27.50.48.115
@@ -2674,254 +2947,13 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 波兰-3
-  password: S7KwUu7yBy58S3Ga
-  port: '9042'
+  name: 波兰-6
+  password: U6qnYRhfyDmn8sgn
+  port: '9041'
   server: 217.30.10.18
   type: ss
 - client-fingerprint: chrome
-  name: 台湾-4
-  network: ws
-  port: '8080'
-  server: 141.11.86.109
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  name: 美国-83
-  password: telegram-id-directvpn
-  port: '22222'
-  server: 18.189.160.76
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 波兰-4
-  password: ZET59LF6DvCC8KVt
-  port: '9005'
-  server: 217.30.10.18
-  type: ss
-- client-fingerprint: chrome
-  name: 新加坡-22
-  network: ws
-  port: '2087'
-  server: 27.50.49.74
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: rc4-md5
-  client-fingerprint: chrome
-  name: 中国-17
-  obfs: plain
-  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
-  password: ENZ52K
-  port: '40254'
-  protocol: auth_aes128_md5
-  protocol-param: 92902:pFWGOQ
-  server: 3.link-hub.click
-  type: ssr
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 美国-84
-  password: amazonskr05
-  port: '443'
-  server: 54.212.56.86
-  type: ss
-- name: 美国-85
-  network: ws
-  port: '443'
-  server: damien.ns.cloudflare.com
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-86
-  network: ws
-  port: '2053'
-  server: 162.159.44.235
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-28
-  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
-  port: '49225'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
-- name: 意大利-3
-  password: '3774827088566296576'
-  port: '443'
-  server: destined-cub.treefrog761.one
-  skip-cert-verify: true
-  sni: destined-cub.treefrog761.one
-  type: trojan
-- cipher: aes-256-cfb
-  name: 立陶宛-1
-  password: f8f7aCzcPKbsF8p3
-  port: '989'
-  server: 185.237.185.160
-  type: ss
-- name: 香港-29
-  network: ws
-  port: '8443'
-  server: 154.16.10.143
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 荷兰-4
-  network: ws
-  port: '80'
-  server: 45.131.208.100
-  servername: 1224.j9q1xuv8.workers.dev
-  tls: false
-  type: vless
-  uuid: daf24a6d-2f78-4cab-867a-4da0f4c91cff
-  ws-opts:
-    headers:
-      Host: 1224.j9q1xuv8.workers.dev
-    path: /Telegram @WangCai2 /?ed=2048
-- client-fingerprint: random
-  name: 美国-87
-  network: ws
-  port: '443'
-  server: 104.16.252.47
-  servername: gozargah.validbv7996.ir
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 42f36835-730c-4ecc-9daf-20121ae7ba47
-  ws-opts:
-    headers:
-      Host: gozargah.validbv7996.ir
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 荷兰-5
-  password: '3774827088566296576'
-  port: '443'
-  server: inspired-cardinal.insect388.motorcycles
-  skip-cert-verify: true
-  sni: inspired-cardinal.insect388.motorcycles
-  type: trojan
-- name: 美国-88
-  network: ws
-  port: '443'
-  server: 8.20.125.1
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 香港-30
-  network: ws
-  port: '443'
-  server: 43.155.30.252
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 荷兰-6
-  password: '3774827088566296576'
-  port: '443'
-  server: sunny-jackal.insect388.motorcycles
-  skip-cert-verify: true
-  sni: sunny-jackal.insect388.motorcycles
-  type: trojan
-- client-fingerprint: chrome
-  name: 韩国-44
-  network: ws
-  port: '30012'
-  server: 211.218.223.130
-  servername: re.vs2024.us.kg
-  tls: true
-  type: vless
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      Host: re.vs2024.us.kg
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 美国-89
-  password: amazonskr05
-  port: '443'
-  server: 34.217.145.61
-  type: ss
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 波兰-5
-  password: c3NtHJ5ujV2tGDfj
-  port: '9084'
-  server: 217.30.10.18
-  type: ss
-- alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  name: 加拿大-1
-  password: telegram-id-directvpn
-  port: '22222'
-  server: 15.156.41.125
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- alpn:
-  - http/1.1
-  name: 爱尔兰-1
-  password: telegram-id-privatevpns
-  port: '22222'
-  server: 54.220.132.216
-  sni: trojan.burgerip.co.uk
-  type: trojan
-- cipher: rc4-md5
-  client-fingerprint: chrome
-  name: 中国-18
-  obfs: plain
-  obfs-param: cd2b692902.6602b8463464108506.microsoft.com
-  password: ENZ52K
-  port: '40204'
-  protocol: auth_aes128_md5
-  protocol-param: 92902:pFWGOQ
-  server: 1.link-hub.blog
-  type: ssr
-- client-fingerprint: chrome
-  name: 英国-3
+  name: 英国-6
   network: ws
   port: '8443'
   server: 132.145.53.55
@@ -2933,31 +2965,88 @@ proxies:
     headers:
       Host: re.vs2024.us.kg
     path: /?ed=2560
-- name: 荷兰-7
-  network: ws
-  password: Aimer
-  port: '8443'
-  server: 185.204.109.190
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
 - cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-31
-  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
-  port: '49228'
+  name: 香港-37
+  password: a31a02e2-5b58-4eca-ac9c-e1b27e1a2e48
+  port: '49210'
   server: south.sf0jm.xyz
   type: ss
   udp: true
-- name: 美国-90
+- client-fingerprint: chrome
+  name: 意大利-2
+  password: '3774827088566296576'
+  port: '443'
+  server: destined-cub.treefrog761.one
+  skip-cert-verify: true
+  sni: destined-cub.treefrog761.one
+  type: trojan
+- cipher: aes-256-cfb
+  name: 美国-70
+  password: amazonskr05
+  port: '443'
+  server: 44.243.30.0
+  type: ss
+- name: 奥地利-2
   network: ws
   port: '443'
-  server: 104.26.8.43
+  server: 212.183.88.246
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- cipher: aes-128-gcm
+  name: 香港-38
+  password: a31a02e2-5b58-4eca-ac9c-e1b27e1a2e48
+  port: '49104'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 秘鲁-1
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 185.47.252.251
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 瑞典-2
+  password: a0605527-28e4-449c-80ee-5642cc16a8af
+  port: '81'
+  server: 176.124.202.137
+  type: ss
+- client-fingerprint: chrome
+  name: 美国-71
+  network: ws
+  port: '443'
+  server: 129.159.84.71
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- name: 新加坡-25
+  password: installshield
+  port: '8443'
+  server: 38.180.249.177
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 立陶宛-3
+  password: QCXDxuDlTTMD7jtgHUjIoj
+  port: '8080'
+  server: 45.87.175.157
+  type: ss
+- name: 美国-72
+  network: ws
+  port: '443'
+  server: 104.26.1.67
   servername: a.xn--i-sx6a60i.us.kg
   skip-cert-verify: false
   tls: true
@@ -2967,23 +3056,30 @@ proxies:
     headers:
       Host: a.xn--i-sx6a60i.us.kg
     path: /?ed=2560
-- name: 荷兰-8
-  network: ws
-  password: Aimer
-  port: '2053'
-  server: 185.51.246.121
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
+- cipher: aes-128-gcm
+  name: 香港-39
+  password: a31a02e2-5b58-4eca-ac9c-e1b27e1a2e48
+  port: '49208'
+  server: south.sf0jm.xyz
+  type: ss
   udp: true
+- name: 斯洛文尼亚-1
+  network: ws
+  port: '443'
+  server: 92.60.74.100
+  servername: mmdserver.us.kg
+  tls: true
+  type: vless
+  uuid: 41abecd9-8096-4142-a75c-4e1d36d990bd
   ws-opts:
     headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 香港-32
+      Host: mmdserver.us.kg
+    path: /?ed=2048
+- client-fingerprint: chrome
+  name: 新加坡-26
   network: ws
-  port: '9007'
-  server: 47.238.149.120
+  port: '443'
+  server: 27.50.49.136
   servername: ngedc.ambercc.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -2993,6 +3089,53 @@ proxies:
   ws-opts:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- name: 美国-73
+  network: ws
+  port: '443'
+  server: 108.162.198.103
+  servername: tunnel.amclubsss.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 98caf934-d51f-47d3-89ec-09ea781839c2
+  ws-opts:
+    headers:
+      Host: tunnel.amclubsss.us.kg
+    path: /
+- cipher: chacha20
+  client-fingerprint: chrome
+  name: 中国-28
+  password: avpBqFFmsYBN
+  port: '8335'
+  server: 14.18.253.178
+  type: ss
+- alterId: '0'
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - varzesh3.com
+    path:
+    - /
+  name: 伊朗-1
+  network: http
+  port: '2053'
+  server: 85.198.8.166
+  tls: false
+  type: vmess
+  uuid: 042766e9-44fe-4129-a71c-ac12df575657
+- name: 美国-74
+  network: ws
+  port: '443'
+  server: 135.84.76.105
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
     path: /?ed=2560
 - client-fingerprint: chrome
   name: 瑞士-1
@@ -3007,101 +3150,41 @@ proxies:
     headers:
       Host: re.vs2024.us.kg
     path: /?ed=2560
-- client-fingerprint: chrome
-  name: 波兰-6
-  network: ws
-  port: '443'
-  server: 176.105.253.98
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-91
-  network: ws
-  port: '2083'
-  server: 162.159.38.105
-  servername: ngedc.ambercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
 - cipher: aes-128-gcm
   client-fingerprint: chrome
-  name: 香港-33
-  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
-  port: '49221'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
-- name: 荷兰-9
-  network: ws
-  password: Aimer
-  port: '2053'
-  server: 45.134.21.8
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-92
-  network: ws
-  port: '8443'
-  server: 162.159.44.233
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 香港-34
-  network: ws
-  port: '52001'
-  server: 45.87.103.154
-  servername: ngedc.ambercc.filegear-sg.me
-  tls: true
-  type: vless
-  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
-  ws-opts:
-    headers:
-      Host: ngedc.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-35
+  name: 香港-40
   password: 65e60639-a951-4dc7-84f2-fe9139ba772a
   port: '49219'
   server: south.sf0jm.xyz
   type: ss
   udp: true
+- name: 瑞典-3
+  network: ws
+  port: '22222'
+  server: 13.61.235.32
+  servername: telegram-channel-vlessconfig.sohala.uk
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
+  ws-opts:
+    headers:
+      Host: telegram-channel-vlessconfig.sohala.uk
+    path: /telegram-channel-vlessconfig-ws
 - cipher: aes-128-gcm
-  name: 香港-36
-  password: 37da7269-cf73-4459-a785-dc0df3b50f81
-  port: '49205'
+  client-fingerprint: chrome
+  name: 香港-41
+  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
+  port: '49221'
   server: south.sf0jm.xyz
   type: ss
   udp: true
-- name: 美国-93
+- client-fingerprint: chrome
+  name: 荷兰-2
   network: ws
   password: Aimer
-  port: '443'
-  server: 8.20.125.1
+  port: '2053'
+  server: 185.51.246.121
   skip-cert-verify: true
   sni: ngepo.ambercc.filegear-sg.me
   type: trojan
@@ -3110,10 +3193,55 @@ proxies:
     headers:
       Host: ngepo.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 美国-94
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-42
+  password: 37da7269-cf73-4459-a785-dc0df3b50f81
+  port: '49205'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- name: 瑞典-4
   network: ws
-  port: '443'
-  server: 129.159.84.71
+  port: '22222'
+  server: 13.53.241.252
+  servername: telegram-channel-vlessconfig.sohala.uk
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 05519058-d2ac-4f28-9e4a-2b2a1386749e
+  ws-opts:
+    headers:
+      Host: telegram-channel-vlessconfig.sohala.uk
+    path: /telegram-channel-vlessconfig-ws
+- client-fingerprint: chrome
+  name: 香港-43
+  network: ws
+  port: '9007'
+  server: 47.238.149.120
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-44
+  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
+  port: '49230'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  name: 法国-7
+  network: ws
+  port: '8443'
+  server: 141.145.205.115
   servername: re.vs2024.us.kg
   tls: true
   type: vless
@@ -3122,32 +3250,59 @@ proxies:
     headers:
       Host: re.vs2024.us.kg
     path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 波兰-7
-  password: TN2YqghxeFDKZfLU
-  port: '9037'
-  server: 217.30.10.18
-  type: ss
-- cipher: aes-128-gcm
-  name: 香港-37
-  password: 37da7269-cf73-4459-a785-dc0df3b50f81
-  port: '49204'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
-- cipher: aes-128-gcm
+- cipher: chacha20
   client-fingerprint: chrome
-  name: 香港-38
-  password: 65e60639-a951-4dc7-84f2-fe9139ba772a
-  port: '49230'
-  server: south.sf0jm.xyz
+  name: 中国-29
+  password: ADZmRQUGHTwX
+  port: '8339'
+  server: 14.18.253.178
   type: ss
-  udp: true
-- name: 美国-95
+- name: 西班牙-1
+  network: ws
+  port: '8080'
+  server: 94.250.246.200
+  servername: a.mifeng.us.kg
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.mifeng.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 新加坡-27
+  network: ws
+  port: '2083'
+  server: 27.50.48.61
+  servername: ngedc.ambercc.filegear-sg.me
+  tls: true
+  type: vless
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-75
+  network: ws
+  port: '443'
+  server: visa.cn
+  servername: mht.mhtadayon.ir
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: mht.mhtadayon.ir
+    path: /?ed=2740
+- client-fingerprint: chrome
+  name: 荷兰-3
   network: ws
   password: Aimer
-  port: '443'
-  server: 91.149.239.238
+  port: '8443'
+  server: 185.204.109.190
   skip-cert-verify: true
   sni: ngepo.ambercc.filegear-sg.me
   type: trojan
@@ -3156,6 +3311,27 @@ proxies:
     headers:
       Host: ngepo.ambercc.filegear-sg.me
     path: /?ed=2560
+- name: 美国-76
+  network: ws
+  port: '443'
+  server: 104.25.80.63
+  servername: a.xn--i-sx6a60i.us.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg
+    path: /?ed=2560
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-45
+  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
+  port: '49214'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
 - client-fingerprint: chrome
   name: 德国-10
   network: ws
@@ -3170,51 +3346,12 @@ proxies:
     headers:
       Host: mmdserver.us.kg
     path: /?ed=2048
-- client-fingerprint: random
-  flow: xtls-rprx-vision
-  name: 俄罗斯联邦-3
-  network: tcp
-  port: '443'
-  reality-opts:
-    public-key: n3NmzivS8eutbp8V2dcDqe-UyZynD1jszNy3l-2wzkw
-    short-id: afc6da8dd99e4b83
-  server: 103.71.22.3
-  servername: spb33.hipay.su
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 009cccba-c0ec-4297-9898-5115898a7246
-- cipher: aes-256-cfb
-  name: 爱沙尼亚-2
-  password: f8f7aCzcPKbsF8p3
-  port: '989'
-  server: 188.214.36.155
-  type: ss
-- cipher: aes-128-gcm
-  name: 香港-39
-  password: 37da7269-cf73-4459-a785-dc0df3b50f81
-  port: '49226'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
 - client-fingerprint: chrome
-  name: 法国-4
-  network: ws
-  port: '8443'
-  server: 141.145.205.115
-  servername: re.vs2024.us.kg
-  tls: true
-  type: vless
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      Host: re.vs2024.us.kg
-    path: /?ed=2560
-- name: 美国-96
+  name: 荷兰-4
   network: ws
   password: Aimer
-  port: '2087'
-  server: 162.159.44.50
+  port: '2053'
+  server: 45.134.21.8
   skip-cert-verify: true
   sni: ngepo.ambercc.filegear-sg.me
   type: trojan
@@ -3237,13 +3374,54 @@ proxies:
       Host: re.vs2024.us.kg
     path: /?ed=2560
 - cipher: aes-256-cfb
-  name: 塞浦路斯-1
+  name: 哥伦比亚-1
   password: f8f7aCzcPKbsF8p3
   port: '989'
-  server: 134.255.210.49
+  server: 181.119.30.20
+  type: ss
+- name: 美国-77
+  network: ws
+  port: '2083'
+  server: 172.66.207.17
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- name: 俄罗斯联邦-6
+  network: ws
+  port: '443'
+  server: 45.67.215.98
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- alpn:
+  - http/1.1
+  name: 爱尔兰-3
+  password: telegram-id-directvpn
+  port: '22222'
+  server: 34.241.239.181
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: chacha20
+  client-fingerprint: chrome
+  name: 中国-30
+  password: DvPfKa8vsV9K
+  port: '8334'
+  server: 14.18.253.178
   type: ss
 - client-fingerprint: chrome
-  name: 波兰-8
+  name: 波兰-7
   network: ws
   port: '443'
   server: 185.188.147.79
@@ -3255,19 +3433,17 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 香港-40
-  password: 10c725c8-b054-46b0-bff7-a40a32a3074d
-  port: '49214'
-  server: south.sf0jm.xyz
-  type: ss
-  udp: true
+- name: 爱尔兰-4
+  password: telegram-id-privatevpns
+  port: '22222'
+  server: 54.170.136.250
+  sni: trojan.burgerip.co.uk
+  type: trojan
 - client-fingerprint: chrome
-  name: 新加坡-23
+  name: 波兰-8
   network: ws
   port: '443'
-  server: 27.50.49.136
+  server: 176.105.253.98
   servername: ngedc.ambercc.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -3278,17 +3454,36 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- alterId: '64'
-  cipher: auto
-  name: 中国-19
-  port: '44614'
-  server: 120.198.71.219
+- client-fingerprint: chrome
+  name: 美国-78
+  network: ws
+  password: Aimer
+  port: '443'
+  server: 91.149.239.238
   skip-cert-verify: true
-  tls: false
-  type: vmess
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
   udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- name: 美国-97
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 厄瓜多尔-1
+  password: f8f7aCzcPKbsF8p3
+  port: '989'
+  server: 185.47.253.171
+  type: ss
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-46
+  password: 37da7269-cf73-4459-a785-dc0df3b50f81
+  port: '49226'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  name: 美国-79
   network: ws
   password: Aimer
   port: '2053'
@@ -3301,64 +3496,10 @@ proxies:
     headers:
       Host: ngepo.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 美国-98
-  network: tcp
-  port: '443'
-  server: 47.251.95.178
-  servername: 147135001195.sec22org.com
-  tls: true
-  type: vless
-  uuid: ea286109-d20f-415e-849e-4af20ab04b65
-- name: 美国-99
+- name: 美国-80
   network: ws
-  password: Aimer
-  port: '443'
-  server: thaddeus.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: chacha20
-  client-fingerprint: chrome
-  name: 中国-20
-  password: PTgFLLrT5pVg
-  port: '9002'
-  server: 14.18.253.178
-  type: ss
-- name: 瑞典-1
-  network: ws
-  port: '8443'
-  server: 129.151.198.3
-  servername: re.vs2024.us.kg
-  tls: true
-  type: vless
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      Host: re.vs2024.us.kg
-    path: /?ed=2560
-- name: 美国-100
-  network: ws
-  password: Aimer
-  port: '443'
-  server: sage.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- client-fingerprint: chrome
-  name: 波兰-9
-  network: ws
-  port: '25463'
-  server: 45.85.210.234
+  port: '2083'
+  server: 172.67.65.113
   servername: ngedc.ambercc.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -3370,57 +3511,20 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 荷兰-10
+  name: 英国-7
   network: ws
-  port: '443'
-  server: 152.70.57.182
+  port: '8443'
+  server: 141.147.92.143
   servername: re.vs2024.us.kg
-  skip-cert-verify: true
   tls: true
   type: vless
-  udp: true
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
-  ws-opts:
-    headers:
-      Host: re.vs2024.us.kg
-    path: /?ed=2560&proxyip=152.70.57.182:443
-- client-fingerprint: chrome
-  name: 瑞典-2
-  network: ws
-  port: '443'
-  server: 129.151.204.91
-  servername: re.vs2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
   uuid: 55520747-311e-4015-83ce-be46e2060ce3
   ws-opts:
     headers:
       Host: re.vs2024.us.kg
     path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 波兰-10
-  password: f63gg8EruDnUrmz4
-  port: '9010'
-  server: 217.30.10.18
-  type: ss
-- name: 瑞典-3
-  network: ws
-  port: '2053'
-  server: 129.151.198.3
-  servername: zz.bgm2024.us.kg
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: zz.bgm2024.us.kg
-    path: /?ed=2560
 - client-fingerprint: chrome
-  name: 波兰-11
+  name: 波兰-9
   network: ws
   port: '10913'
   server: 45.85.210.217
@@ -3434,78 +3538,83 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 美国-101
-  network: ws
-  password: Aimer
-  port: '443'
-  server: ignacio.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- cipher: chacha20
-  client-fingerprint: chrome
-  name: 中国-21
-  password: passLUsO2Ktuer77tu
-  port: '8321'
-  server: 14.18.253.178
-  type: ss
-- name: 美国-102
-  network: ws
-  password: Aimer
-  port: '443'
-  server: 162.159.39.181
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-103
-  network: ws
-  password: Aimer
-  port: '30029'
-  server: 185.183.84.94
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
 - cipher: rc4-md5
   client-fingerprint: chrome
-  name: 中国-22
+  name: 中国-31
   obfs: plain
   obfs-param: cd2b692902.6602b8463464108506.microsoft.com
   password: ENZ52K
-  port: '40210'
+  port: '40211'
   protocol: auth_aes128_md5
   protocol-param: 92902:pFWGOQ
   server: 2.hublink.pro
   type: ssr
-- name: 美国-104
-  network: ws
-  password: Aimer
-  port: '443'
-  server: pranab.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 香港-47
+  password: 37da7269-cf73-4459-a785-dc0df3b50f81
+  port: '49204'
+  server: south.sf0jm.xyz
+  type: ss
   udp: true
+- client-fingerprint: chrome
+  name: 瑞典-5
+  network: ws
+  port: '8443'
+  server: 129.151.198.3
+  servername: re.vs2024.us.kg
+  tls: true
+  type: vless
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
   ws-opts:
     headers:
-      Host: ngepo.ambercc.filegear-sg.me
+      Host: re.vs2024.us.kg
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 波兰-12
+  name: 瑞典-6
+  network: ws
+  port: '2053'
+  server: 129.151.198.3
+  servername: zz.bgm2024.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: zz.bgm2024.us.kg
+    path: /?ed=2560
+- alpn:
+  - http/1.1
+  name: 美国-81
+  network: ws
+  port: '443'
+  server: 173.245.58.85
+  servername: 7qb7ui.gamvpn.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 06df626b-5662-4339-8d5a-83f2f03bac5e
+  ws-opts:
+    headers:
+      Host: 7qb7ui.gamvpn.com
+    path: /wss
+- cipher: chacha20
+  name: 中国-32
+  password: nUthZ7z3VmyV
+  port: '9001'
+  server: 14.18.253.178
+  type: ss
+- cipher: aes-128-gcm
+  name: 香港-48
+  password: a31a02e2-5b58-4eca-ac9c-e1b27e1a2e48
+  port: '49220'
+  server: south.sf0jm.xyz
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  name: 波兰-10
   network: ws
   port: '18556'
   server: 185.144.245.62
@@ -3520,23 +3629,23 @@ proxies:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 美国-105
+  name: 美国-82
   network: ws
   port: '80'
-  server: 104.21.42.56
+  server: 151.101.128.155
   skip-cert-verify: false
   tls: false
   type: vless
-  uuid: baadfec3-75bd-4df0-ad6b-2ecdfdfe9d52
+  uuid: 60b10d02-a181-4f4a-8b3d-03bd0ba988a3
   ws-opts:
     headers:
-      Host: worker-super-shape-975b.1011da65bb0ac5.workers.Dev
-    path: /Telegram+channel+:+@pandavpntc
+      Host: vipfast_7.com
+    path: /@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7@V2RAYFAST_7?ed=1024
 - client-fingerprint: chrome
-  name: 新加坡-24
+  name: 香港-49
   network: ws
-  port: '2083'
-  server: 27.50.48.61
+  port: '52001'
+  server: 45.87.103.154
   servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
@@ -3545,36 +3654,41 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 美国-106
-  network: ws
-  password: Aimer
-  port: '2083'
-  server: 162.159.38.105
-  skip-cert-verify: true
-  sni: ngepo.ambercc.filegear-sg.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: ngepo.ambercc.filegear-sg.me
-    path: /?ed=2560
-- name: 俄罗斯联邦-4
+- client-fingerprint: chrome
+  name: 荷兰-5
   network: ws
   port: '443'
-  server: 45.67.215.212
+  server: 152.70.57.182
   servername: re.vs2024.us.kg
+  skip-cert-verify: true
   tls: true
   type: vless
+  udp: true
   uuid: 55520747-311e-4015-83ce-be46e2060ce3
   ws-opts:
     headers:
       Host: re.vs2024.us.kg
+    path: /?ed=2560&proxyip=152.70.57.182:443
+- name: 香港-50
+  network: ws
+  port: '12457'
+  server: 223.16.138.113
+  servername: zz.bgm2024.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      Host: zz.bgm2024.us.kg
     path: /?ed=2560
-- name: 美国-107
+- client-fingerprint: chrome
+  name: 美国-83
   network: ws
   password: Aimer
-  port: '2096'
-  server: 162.159.38.101
+  port: '2087'
+  server: 162.159.44.50
   skip-cert-verify: true
   sni: ngepo.ambercc.filegear-sg.me
   type: trojan
@@ -3585,26 +3699,49 @@ proxies:
     path: /?ed=2560
 - cipher: chacha20
   client-fingerprint: chrome
-  name: 中国-23
-  password: v5aUUtme3jxs
-  port: '9003'
+  name: 中国-33
+  password: 3fn3CH5Swh2N
+  port: '8337'
   server: 14.18.253.178
   type: ss
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 中国-24
-  password: hGkQ6915tD
-  port: '16088'
-  server: 120.232.81.50
-  type: ss
+- client-fingerprint: chrome
+  name: 瑞典-7
+  network: ws
+  port: '443'
+  server: 129.151.204.91
+  servername: re.vs2024.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: re.vs2024.us.kg
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-84
+  network: ws
+  password: Aimer
+  port: '30029'
+  server: 185.183.84.94
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
 - cipher: aes-128-gcm
-  name: 香港-41
-  password: 37da7269-cf73-4459-a785-dc0df3b50f81
-  port: '49211'
+  name: 香港-51
+  password: a31a02e2-5b58-4eca-ac9c-e1b27e1a2e48
+  port: '49218'
   server: south.sf0jm.xyz
   type: ss
   udp: true
-- name: 台湾-5
+- client-fingerprint: chrome
+  name: 台湾-4
   network: ws
   password: Aimer
   port: '443'
@@ -3617,18 +3754,27 @@ proxies:
     headers:
       Host: ngepo.ambercc.filegear-sg.me
     path: /?ed=2560
-- cipher: chacha20
-  client-fingerprint: chrome
-  name: 中国-25
-  password: s6Zau9ioic
-  port: '9004'
-  server: 14.18.253.178
-  type: ss
-- name: 美国-108
+- client-fingerprint: chrome
+  name: 波兰-11
+  network: ws
+  port: '25463'
+  server: 45.85.210.234
+  servername: ngedc.ambercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
+  ws-opts:
+    headers:
+      Host: ngedc.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-85
   network: ws
   password: Aimer
-  port: '10000'
-  server: 154.19.241.230
+  port: '443'
+  server: thaddeus.ns.cloudflare.com
   skip-cert-verify: true
   sni: ngepo.ambercc.filegear-sg.me
   type: trojan
@@ -3638,7 +3784,65 @@ proxies:
       Host: ngepo.ambercc.filegear-sg.me
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 波兰-13
+  name: 美国-86
+  network: ws
+  password: Aimer
+  port: '443'
+  server: 162.159.39.181
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-87
+  network: ws
+  password: Aimer
+  port: '2096'
+  server: 162.159.38.101
+  skip-cert-verify: true
+  sni: ngepo.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: ngepo.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 印度-4
+  network: tcp
+  port: '17032'
+  reality-opts:
+    public-key: YjE_o0vlkiLFojI-DKYehdKJLaiwDEv1oE6-LOiUrUo
+    short-id: 67ab243cad
+  server: 103.180.236.42
+  servername: zula.ir
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: e33636cd-86a9-475d-9c64-5acfb9ec97d5
+- name: 美国-88
+  network: tcp
+  port: '443'
+  server: 147.135.125.118
+  servername: 147135010103.sec19org.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 3b9bc773-05eb-4d5f-8c1f-57342c0c4f40
+- client-fingerprint: chrome
+  name: 印度-5
+  password: '3774827088566296576'
+  port: '443'
+  server: deciding-mantis.treefrog761.one
+  skip-cert-verify: true
+  sni: deciding-mantis.treefrog761.one
+  type: trojan
+- client-fingerprint: chrome
+  name: 波兰-12
   network: ws
   port: '443'
   server: 185.238.74.193
@@ -3652,92 +3856,76 @@ proxies:
     headers:
       Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- cipher: chacha20
-  client-fingerprint: chrome
-  name: 中国-26
-  password: sJMdcI7NPj
-  port: '9005'
-  server: 14.18.253.178
-  type: ss
-- name: 荷兰-11
-  network: ws
-  port: '80'
-  server: 45.131.6.133
-  servername: 1224.j9q1xuv8.workers.dev
-  tls: false
-  type: vless
-  uuid: daf24a6d-2f78-4cab-867a-4da0f4c91cff
-  ws-opts:
-    headers:
-      Host: 1224.j9q1xuv8.workers.dev
-    path: /Telegram @WangCai2 /?ed=2048
-- client-fingerprint: chrome
-  name: 英国-4
+- name: 新加坡-28
   network: ws
   port: '8443'
-  server: 141.147.92.143
-  servername: re.vs2024.us.kg
+  server: 206.238.237.118
+  servername: ngedc.ambercc.filegear-sg.me
   tls: true
   type: vless
-  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  uuid: cf3df05c-bb63-427a-b48a-d8b1d9ada2c4
   ws-opts:
     headers:
-      Host: re.vs2024.us.kg
+      Host: ngedc.ambercc.filegear-sg.me
     path: /?ed=2560
-- name: 荷兰-12
+- client-fingerprint: chrome
+  name: 美国-89
   network: ws
   port: '80'
-  server: 45.131.211.37
-  servername: 1224.j9q1xuv8.workers.dev
+  server: 198.41.209.27
+  servername: a.mifeng.us.kg
+  skip-cert-verify: false
   tls: false
   type: vless
-  uuid: daf24a6d-2f78-4cab-867a-4da0f4c91cff
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   ws-opts:
     headers:
-      Host: 1224.j9q1xuv8.workers.dev
-    path: /Telegram @WangCai2 /?ed=2048
-- client-fingerprint: chrome
-  name: 印度-1
-  password: '3774827088566296576'
-  port: '443'
-  server: deciding-mantis.treefrog761.one
-  skip-cert-verify: true
-  sni: deciding-mantis.treefrog761.one
-  type: trojan
+      Host: a.mifeng.us.kg
+    path: /telegram-_-_-_-_-__-free_shekan-_-_-_-/?ed=2048
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 319个'
-  - '自动选择(国内): 67个'
-  - '自动选择(国外): 252个'
-  - '手动选择: 319个'
-  - '日本分区: 5个'
-  - '中国分区: 26个'
-  - '新加坡分区: 24个'
-  - '香港分区: 41个'
-  - '台湾分区: 5个'
-  - '韩国分区: 44个'
-  - '俄罗斯联邦分区: 4个'
+  - '自动选择: 343个'
+  - '自动选择(国内): 84个'
+  - '自动选择(国外): 259个'
+  - '手动选择: 343个'
+  - '中国分区: 33个'
+  - '日本分区: 6个'
+  - '新加坡分区: 28个'
+  - '香港分区: 51个'
+  - '美国分区: 89个'
+  - '台湾分区: 4个'
+  - '荷兰分区: 5个'
+  - '印度分区: 5个'
+  - '韩国分区: 39个'
+  - '俄罗斯联邦分区: 6个'
   - '德国分区: 10个'
-  - '美国分区: 108个'
-  - '荷兰分区: 12个'
-  - '越南分区: 1个'
-  - '意大利分区: 3个'
+  - '英国分区: 7个'
+  - '法国分区: 7个'
+  - '意大利分区: 2个'
+  - '越南分区: 2个'
+  - '捷克分区: 1个'
+  - '奥地利分区: 2个'
+  - '巴西分区: 3个'
+  - '爱沙尼亚分区: 3个'
+  - '哥斯达黎加分区: 1个'
+  - '立陶宛分区: 3个'
   - '阿联酋分区: 1个'
-  - '法国分区: 4个'
-  - '英国分区: 4个'
+  - '葡萄牙分区: 1个'
+  - '瑞典分区: 7个'
+  - '爱尔兰分区: 4个'
+  - '巴林分区: 1个'
   - '乌克兰分区: 1个'
+  - '波兰分区: 12个'
   - '芬兰分区: 1个'
-  - '爱沙尼亚分区: 2个'
-  - '波兰分区: 13个'
-  - '立陶宛分区: 1个'
-  - '加拿大分区: 1个'
-  - '爱尔兰分区: 1个'
+  - '秘鲁分区: 1个'
+  - '斯洛文尼亚分区: 1个'
+  - '伊朗分区: 1个'
   - '瑞士分区: 2个'
-  - '塞浦路斯分区: 1个'
-  - '瑞典分区: 3个'
-  - '印度分区: 1个'
+  - '西班牙分区: 1个'
+  - '哥伦比亚分区: 1个'
+  - '厄瓜多尔分区: 1个'
   type: select
 - hidden: true
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Auto.png
@@ -3746,7 +3934,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 319个'
+  name: '自动选择: 343个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -3756,75 +3944,92 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 67个'
+  name: '自动选择(国内): 84个'
   proxies:
   - 中国-1
-  - 香港-1
-  - 香港-2
   - 中国-2
-  - 香港-3
   - 中国-3
   - 中国-4
+  - 香港-1
+  - 香港-2
+  - 香港-3
   - 香港-4
-  - 中国-5
   - 香港-5
-  - 香港-6
+  - 中国-5
   - 中国-6
-  - 香港-7
-  - 香港-8
-  - 香港-9
+  - 香港-6
   - 中国-7
+  - 中国-8
+  - 中国-9
+  - 香港-7
+  - 中国-10
+  - 香港-8
+  - 中国-11
+  - 中国-12
+  - 中国-13
+  - 中国-14
+  - 香港-9
   - 香港-10
   - 香港-11
   - 香港-12
-  - 中国-8
-  - 中国-9
-  - 中国-10
-  - 中国-11
   - 香港-13
-  - 中国-12
-  - 香港-14
-  - 香港-15
-  - 香港-16
-  - 中国-13
-  - 中国-14
-  - 香港-17
   - 中国-15
+  - 中国-16
+  - 中国-17
+  - 香港-14
+  - 中国-18
+  - 香港-15
+  - 中国-19
+  - 中国-20
+  - 中国-21
+  - 香港-16
+  - 香港-17
+  - 中国-22
   - 香港-18
   - 香港-19
   - 香港-20
   - 香港-21
+  - 中国-23
   - 香港-22
   - 香港-23
   - 香港-24
+  - 中国-24
+  - 中国-25
   - 香港-25
+  - 中国-26
   - 香港-26
-  - 中国-16
   - 香港-27
-  - 中国-17
   - 香港-28
   - 香港-29
   - 香港-30
-  - 中国-18
   - 香港-31
   - 香港-32
   - 香港-33
   - 香港-34
   - 香港-35
   - 香港-36
+  - 中国-27
   - 香港-37
   - 香港-38
   - 香港-39
+  - 中国-28
   - 香港-40
-  - 中国-19
-  - 中国-20
-  - 中国-21
-  - 中国-22
-  - 中国-23
-  - 中国-24
   - 香港-41
-  - 中国-25
-  - 中国-26
+  - 香港-42
+  - 香港-43
+  - 香港-44
+  - 中国-29
+  - 香港-45
+  - 中国-30
+  - 香港-46
+  - 中国-31
+  - 香港-47
+  - 中国-32
+  - 香港-48
+  - 香港-49
+  - 香港-50
+  - 中国-33
+  - 香港-51
   - COMPATIBLE
   timeout: 1500
   type: url-test
@@ -3835,38 +4040,48 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 252个'
+  name: '自动选择(国外): 259个'
   proxies:
   - 日本-1
   - 新加坡-1
   - 新加坡-2
-  - 台湾-1
   - 新加坡-3
-  - 台湾-2
-  - 韩国-1
+  - 新加坡-4
+  - 美国-1
   - 日本-2
+  - 台湾-1
+  - 美国-2
+  - 日本-3
+  - 美国-3
+  - 日本-4
+  - 荷兰-1
+  - 印度-1
+  - 韩国-1
+  - 新加坡-5
+  - 俄罗斯联邦-1
   - 韩国-2
+  - 德国-1
+  - 英国-1
   - 韩国-3
+  - 美国-4
   - 韩国-4
   - 韩国-5
   - 韩国-6
-  - 新加坡-4
   - 韩国-7
   - 韩国-8
   - 韩国-9
-  - 新加坡-5
-  - 新加坡-6
-  - 俄罗斯联邦-1
+  - 美国-5
   - 韩国-10
   - 韩国-11
   - 韩国-12
-  - 德国-1
   - 韩国-13
+  - 法国-1
   - 韩国-14
   - 韩国-15
   - 韩国-16
   - 韩国-17
   - 韩国-18
+  - 新加坡-6
   - 韩国-19
   - 韩国-20
   - 韩国-21
@@ -3875,243 +4090,225 @@ proxy-groups:
   - 韩国-24
   - 韩国-25
   - 韩国-26
-  - 美国-1
   - 韩国-27
-  - 美国-2
-  - 俄罗斯联邦-2
-  - 日本-3
-  - 德国-2
-  - 荷兰-1
   - 韩国-28
   - 韩国-29
   - 韩国-30
   - 韩国-31
-  - 韩国-32
-  - 韩国-33
+  - 意大利-1
   - 新加坡-7
-  - 荷兰-2
   - 越南-1
-  - 美国-3
-  - 美国-4
-  - 德国-3
-  - 韩国-34
-  - 美国-5
+  - 韩国-32
   - 美国-6
   - 美国-7
-  - 韩国-35
-  - 韩国-36
+  - 越南-2
+  - 韩国-33
   - 美国-8
   - 美国-9
-  - 韩国-37
-  - 韩国-38
   - 美国-10
-  - 新加坡-8
-  - 意大利-1
-  - 新加坡-9
-  - 新加坡-10
-  - 荷兰-3
-  - 韩国-39
+  - 韩国-34
+  - 捷克-1
   - 美国-11
-  - 意大利-2
-  - 新加坡-11
+  - 韩国-35
   - 美国-12
-  - 新加坡-12
   - 美国-13
-  - 德国-4
-  - 阿联酋-1
-  - 德国-5
   - 美国-14
+  - 新加坡-8
   - 美国-15
-  - 德国-6
+  - 韩国-36
   - 美国-16
   - 美国-17
-  - 法国-1
   - 美国-18
   - 美国-19
+  - 韩国-37
+  - 新加坡-9
+  - 德国-2
+  - 德国-3
+  - 新加坡-10
   - 美国-20
-  - 韩国-40
+  - 俄罗斯联邦-2
+  - 奥地利-1
   - 美国-21
-  - 法国-2
-  - 日本-4
   - 美国-22
   - 美国-23
+  - 德国-4
+  - 巴西-1
+  - 爱沙尼亚-1
+  - 韩国-38
+  - 俄罗斯联邦-3
+  - 德国-5
   - 美国-24
+  - 爱沙尼亚-2
   - 美国-25
+  - 哥斯达黎加-1
   - 美国-26
+  - 巴西-2
   - 美国-27
   - 美国-28
+  - 立陶宛-1
+  - 阿联酋-1
+  - 法国-2
+  - 法国-3
+  - 英国-2
+  - 新加坡-11
+  - 巴西-3
   - 美国-29
-  - 新加坡-13
-  - 英国-1
-  - 韩国-41
+  - 英国-3
   - 美国-30
+  - 葡萄牙-1
+  - 法国-4
   - 美国-31
+  - 新加坡-12
+  - 英国-4
   - 美国-32
   - 美国-33
+  - 印度-2
+  - 瑞典-1
+  - 日本-5
   - 美国-34
+  - 英国-5
+  - 爱尔兰-1
+  - 俄罗斯联邦-4
   - 美国-35
+  - 日本-6
   - 美国-36
+  - 韩国-39
+  - 立陶宛-2
+  - 法国-5
   - 美国-37
+  - 印度-3
   - 美国-38
   - 美国-39
+  - 巴林-1
+  - 新加坡-13
+  - 爱尔兰-2
+  - 新加坡-14
+  - 乌克兰-1
   - 美国-40
   - 美国-41
   - 美国-42
-  - 乌克兰-1
   - 美国-43
   - 美国-44
   - 美国-45
   - 美国-46
   - 美国-47
+  - 新加坡-15
   - 美国-48
   - 美国-49
+  - 波兰-1
   - 美国-50
-  - 英国-2
   - 美国-51
+  - 波兰-2
+  - 波兰-3
+  - 台湾-2
   - 美国-52
-  - 芬兰-1
   - 美国-53
   - 美国-54
+  - 新加坡-16
   - 美国-55
   - 美国-56
+  - 德国-6
   - 美国-57
   - 美国-58
+  - 芬兰-1
+  - 德国-7
   - 美国-59
-  - 新加坡-14
   - 美国-60
-  - 爱沙尼亚-1
   - 美国-61
+  - 波兰-4
   - 美国-62
+  - 波兰-5
   - 美国-63
-  - 新加坡-15
-  - 波兰-1
   - 美国-64
+  - 德国-8
+  - 俄罗斯联邦-5
   - 美国-65
-  - 韩国-42
+  - 新加坡-17
   - 美国-66
   - 美国-67
-  - 新加坡-16
-  - 美国-68
-  - 美国-69
-  - 美国-70
-  - 美国-71
-  - 新加坡-17
-  - 日本-5
-  - 美国-72
   - 新加坡-18
-  - 新加坡-19
   - 台湾-3
+  - 德国-9
+  - 美国-68
+  - 新加坡-19
   - 新加坡-20
+  - 新加坡-21
+  - 新加坡-22
+  - 法国-6
+  - 美国-69
+  - 爱沙尼亚-3
+  - 新加坡-23
+  - 新加坡-24
+  - 波兰-6
+  - 英国-6
+  - 意大利-2
+  - 美国-70
+  - 奥地利-2
+  - 秘鲁-1
+  - 瑞典-2
+  - 美国-71
+  - 新加坡-25
+  - 立陶宛-3
+  - 美国-72
+  - 斯洛文尼亚-1
+  - 新加坡-26
   - 美国-73
-  - 韩国-43
-  - 德国-7
+  - 伊朗-1
   - 美国-74
+  - 瑞士-1
+  - 瑞典-3
+  - 荷兰-2
+  - 瑞典-4
+  - 法国-7
+  - 西班牙-1
+  - 新加坡-27
   - 美国-75
+  - 荷兰-3
   - 美国-76
+  - 德国-10
+  - 荷兰-4
+  - 瑞士-2
+  - 哥伦比亚-1
   - 美国-77
+  - 俄罗斯联邦-6
+  - 爱尔兰-3
+  - 波兰-7
+  - 爱尔兰-4
+  - 波兰-8
   - 美国-78
-  - 德国-8
+  - 厄瓜多尔-1
   - 美国-79
   - 美国-80
-  - 波兰-2
+  - 英国-7
+  - 波兰-9
+  - 瑞典-5
+  - 瑞典-6
   - 美国-81
-  - 德国-9
+  - 波兰-10
   - 美国-82
-  - 法国-3
-  - 新加坡-21
-  - 波兰-3
-  - 台湾-4
+  - 荷兰-5
   - 美国-83
-  - 波兰-4
-  - 新加坡-22
+  - 瑞典-7
   - 美国-84
+  - 台湾-4
+  - 波兰-11
   - 美国-85
   - 美国-86
-  - 意大利-3
-  - 立陶宛-1
-  - 荷兰-4
   - 美国-87
-  - 荷兰-5
+  - 印度-4
   - 美国-88
-  - 荷兰-6
-  - 韩国-44
-  - 美国-89
-  - 波兰-5
-  - 加拿大-1
-  - 爱尔兰-1
-  - 英国-3
-  - 荷兰-7
-  - 美国-90
-  - 荷兰-8
-  - 瑞士-1
-  - 波兰-6
-  - 美国-91
-  - 荷兰-9
-  - 美国-92
-  - 美国-93
-  - 美国-94
-  - 波兰-7
-  - 美国-95
-  - 德国-10
-  - 俄罗斯联邦-3
-  - 爱沙尼亚-2
-  - 法国-4
-  - 美国-96
-  - 瑞士-2
-  - 塞浦路斯-1
-  - 波兰-8
-  - 新加坡-23
-  - 美国-97
-  - 美国-98
-  - 美国-99
-  - 瑞典-1
-  - 美国-100
-  - 波兰-9
-  - 荷兰-10
-  - 瑞典-2
-  - 波兰-10
-  - 瑞典-3
-  - 波兰-11
-  - 美国-101
-  - 美国-102
-  - 美国-103
-  - 美国-104
+  - 印度-5
   - 波兰-12
-  - 美国-105
-  - 新加坡-24
-  - 美国-106
-  - 俄罗斯联邦-4
-  - 美国-107
-  - 台湾-5
-  - 美国-108
-  - 波兰-13
-  - 荷兰-11
-  - 英国-4
-  - 荷兰-12
-  - 印度-1
+  - 新加坡-28
+  - 美国-89
   - COMPATIBLE
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 319个'
+  name: '手动选择: 343个'
   type: select
-- filter: (?i)日本|JP|jp
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '日本分区: 5个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
 - filter: (?i)中国|CN|cn
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cn.svg
@@ -4120,7 +4317,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 26个'
+  name: '中国分区: 33个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)日本|JP|jp
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/jp.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '日本分区: 6个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4135,7 +4347,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '新加坡分区: 24个'
+  name: '新加坡分区: 28个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4150,7 +4362,22 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '香港分区: 41个'
+  name: '香港分区: 51个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)美国|US|us
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '美国分区: 89个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4165,7 +4392,37 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '台湾分区: 5个'
+  name: '台湾分区: 4个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)荷兰|NL|nl
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/nl.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '荷兰分区: 5个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)印度|IN|in
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/in.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '印度分区: 5个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4180,7 +4437,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '韩国分区: 44个'
+  name: '韩国分区: 39个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4195,7 +4452,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '俄罗斯联邦分区: 4个'
+  name: '俄罗斯联邦分区: 6个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4217,45 +4474,30 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)美国|US|us
+- filter: (?i)英国|GB|gb
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '美国分区: 108个'
+  name: '英国分区: 7个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)荷兰|NL|nl
+- filter: (?i)法国|FR|fr
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/nl.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fr.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '荷兰分区: 12个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)越南|VN|vn
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/vn.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '越南分区: 1个'
+  name: '法国分区: 7个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4270,7 +4512,112 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '意大利分区: 3个'
+  name: '意大利分区: 2个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)越南|VN|vn
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/vn.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '越南分区: 2个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)捷克|CZ|cz
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cz.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '捷克分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)奥地利|AT|at
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/at.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '奥地利分区: 2个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)巴西|BR|br
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/br.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '巴西分区: 3个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)爱沙尼亚|EE|ee
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ee.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '爱沙尼亚分区: 3个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)哥斯达黎加|CR|cr
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cr.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '哥斯达黎加分区: 1个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)立陶宛|LT|lt
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lt.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '立陶宛分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4292,30 +4639,60 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)法国|FR|fr
+- filter: (?i)葡萄牙|PT|pt
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fr.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pt.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '法国分区: 4个'
+  name: '葡萄牙分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)英国|GB|gb
+- filter: (?i)瑞典|SE|se
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/gb.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/se.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '英国分区: 4个'
+  name: '瑞典分区: 7个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)爱尔兰|IE|ie
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ie.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '爱尔兰分区: 4个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
+- filter: (?i)巴林|BH|bh
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/bh.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '巴林分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4337,6 +4714,21 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
+- filter: (?i)波兰|PL|pl
+  hidden: false
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pl.svg
+  include-all-providers: false
+  include-all-proxies: true
+  interval: 300
+  lazy: true
+  max-failed-times: 3
+  name: '波兰分区: 12个'
+  proxies:
+  - COMPATIBLE
+  strategy: round-robin
+  timeout: 1500
+  type: load-balance
+  url: https://www.google.com/generate_204
 - filter: (?i)芬兰|FI|fi
   hidden: false
   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/fi.svg
@@ -4352,75 +4744,45 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)爱沙尼亚|EE|ee
+- filter: (?i)秘鲁|PE|pe
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ee.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pe.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '爱沙尼亚分区: 2个'
+  name: '秘鲁分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)波兰|PL|pl
+- filter: (?i)斯洛文尼亚|SI|si
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/pl.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/si.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '波兰分区: 13个'
+  name: '斯洛文尼亚分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)立陶宛|LT|lt
+- filter: (?i)伊朗|IR|ir
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/lt.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ir.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '立陶宛分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)加拿大|CA|ca
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ca.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '加拿大分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)爱尔兰|IE|ie
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ie.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '爱尔兰分区: 1个'
+  name: '伊朗分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -4442,45 +4804,45 @@ proxy-groups:
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)塞浦路斯|CY|cy
+- filter: (?i)西班牙|ES|es
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/cy.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/es.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '塞浦路斯分区: 1个'
+  name: '西班牙分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)瑞典|SE|se
+- filter: (?i)哥伦比亚|CO|co
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/se.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/co.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '瑞典分区: 3个'
+  name: '哥伦比亚分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
   timeout: 1500
   type: load-balance
   url: https://www.google.com/generate_204
-- filter: (?i)印度|IN|in
+- filter: (?i)厄瓜多尔|EC|ec
   hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/in.svg
+  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/ec.svg
   include-all-providers: false
   include-all-proxies: true
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '印度分区: 1个'
+  name: '厄瓜多尔分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
