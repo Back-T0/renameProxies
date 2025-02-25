@@ -165,14 +165,7 @@ proxies:
     headers:
       Host: zxjp-c.tkong.cc
     path: /
-- cipher: chacha20-ietf-poly1305
-  name: 英国-1
-  password: vcUpZCJzOuaVoN8OL2cYvK
-  port: 443
-  server: 78.129.140.11
-  type: ss
-  udp: true
-- name: 英国-2
+- name: 英国-1
   network: ws
   port: 443
   server: 31.22.116.38
@@ -186,22 +179,7 @@ proxies:
     headers:
       Host: usd.kobtty.me
     path: /bing
-- alterId: 0
-  cipher: auto
-  http-opts:
-    method: GET
-    path:
-    - /
-  name: 香港-1
-  network: http
-  port: 30704
-  server: 43.247.135.63
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 9bffecef-77db-4021-a02b-cc9915bcbb23
-- name: 香港-2
+- name: 香港-1
   network: ws
   port: 443
   server: 162.247.5.91
@@ -215,7 +193,7 @@ proxies:
     headers:
       Host: sga.costs.asia
     path: /bing
-- name: 香港-3
+- name: 香港-2
   network: ws
   port: 443
   server: 8.218.105.88
@@ -242,20 +220,6 @@ proxies:
   ws-opts:
     headers:
       Host: jpc.kddhs.asia
-    path: /bing
-- name: 日本-2
-  network: ws
-  port: 443
-  server: 47.245.37.123
-  servername: jpd.kddhs.asia
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: fd902d74-2266-4997-99ec-83d3937cbfcc
-  ws-opts:
-    headers:
-      Host: jpd.kddhs.asia
     path: /bing
 - name: 荷兰-1
   network: ws
@@ -371,19 +335,6 @@ proxies:
     headers:
       Host: pormang.webhost99.workers.dev
     path: /@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1
-- client-fingerprint: chrome
-  name: 荷兰-9
-  port: 47221
-  reality-opts:
-    public-key: iwsj4xiBztuBQ3I1YsrBBUhnlu7mhhPFozP7bkgaal0
-    short-id: 47ff9b6c
-  server: 95.179.153.250
-  servername: yahoo.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 3373fe14-47b8-42e5-8a18-7ab3e0dd02b3
 - name: 俄罗斯联邦-1
   network: ws
   port: 80
@@ -773,16 +724,16 @@ proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 50个'
-  - '自动选择(国内): 8个'
-  - '自动选择(国外): 42个'
-  - '手动选择: 50个'
+  - '自动选择: 46个'
+  - '自动选择(国内): 7个'
+  - '自动选择(国外): 39个'
+  - '手动选择: 46个'
   - '瑞士分区: 1个'
   - '中国分区: 5个'
-  - '英国分区: 2个'
-  - '香港分区: 3个'
-  - '日本分区: 2个'
-  - '荷兰分区: 9个'
+  - '英国分区: 1个'
+  - '香港分区: 2个'
+  - '日本分区: 1个'
+  - '荷兰分区: 8个'
   - '俄罗斯联邦分区: 3个'
   - '菲律宾分区: 3个'
   - '新加坡分区: 1个'
@@ -796,7 +747,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 50个'
+  name: '自动选择: 46个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -806,7 +757,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 8个'
+  name: '自动选择(国内): 7个'
   proxies:
   - 中国-1
   - 中国-2
@@ -815,7 +766,6 @@ proxy-groups:
   - 中国-5
   - 香港-1
   - 香港-2
-  - 香港-3
   - COMPATIBLE
   timeout: 1500
   type: url-test
@@ -826,13 +776,11 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 42个'
+  name: '自动选择(国外): 39个'
   proxies:
   - 瑞士-1
   - 英国-1
-  - 英国-2
   - 日本-1
-  - 日本-2
   - 荷兰-1
   - 荷兰-2
   - 荷兰-3
@@ -841,7 +789,6 @@ proxy-groups:
   - 荷兰-6
   - 荷兰-7
   - 荷兰-8
-  - 荷兰-9
   - 俄罗斯联邦-1
   - 俄罗斯联邦-2
   - 俄罗斯联邦-3
@@ -876,7 +823,7 @@ proxy-groups:
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 50个'
+  name: '手动选择: 46个'
   type: select
 - filter: (?i)瑞士|CH|ch
   hidden: false
@@ -916,7 +863,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '英国分区: 2个'
+  name: '英国分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -931,7 +878,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '香港分区: 3个'
+  name: '香港分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -946,7 +893,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '日本分区: 2个'
+  name: '日本分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -961,7 +908,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '荷兰分区: 9个'
+  name: '荷兰分区: 8个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
