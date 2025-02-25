@@ -92,36 +92,6 @@ proxies:
   cipher: auto
   name: 中国-1
   network: ws
-  port: 22641
-  server: tk.hzlt.tkddns.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 98e96c9f-4bb3-39d4-9a2c-fac04257f7c7
-  ws-opts:
-    headers:
-      Host: zxjp-a.tkong.cc
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 中国-2
-  network: ws
-  port: 22643
-  server: tk.hzlt.tkddns.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 98e96c9f-4bb3-39d4-9a2c-fac04257f7c7
-  ws-opts:
-    headers:
-      Host: zxjp-c.tkong.cc
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 中国-3
-  network: ws
   port: 22642
   server: tk.hzlt.tkddns.xyz
   skip-cert-verify: true
@@ -135,7 +105,7 @@ proxies:
     path: /
 - alterId: 2
   cipher: auto
-  name: 中国-4
+  name: 中国-2
   network: ws
   port: 22643
   server: tk.hzlt.tkddns.xyz
@@ -151,7 +121,7 @@ proxies:
     path: /
 - alterId: 2
   cipher: auto
-  name: 中国-5
+  name: 中国-3
   network: ws
   port: 22643
   server: tk.hzlt.tkddns.xyz
@@ -178,34 +148,6 @@ proxies:
   ws-opts:
     headers:
       Host: usd.kobtty.me
-    path: /bing
-- name: 香港-1
-  network: ws
-  port: 443
-  server: 162.247.5.91
-  servername: sga.costs.asia
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 8ca6df70-73af-4139-9f7e-685e71618c71
-  ws-opts:
-    headers:
-      Host: sga.costs.asia
-    path: /bing
-- name: 香港-2
-  network: ws
-  port: 443
-  server: 8.218.105.88
-  servername: vn.cazlelmhpn.group
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: e987e2aa-7cfe-4d19-8364-66552cc53d16
-  ws-opts:
-    headers:
-      Host: vn.cazlelmhpn.group
     path: /bing
 - name: 日本-1
   network: ws
@@ -419,20 +361,6 @@ proxies:
     headers:
       Host: redw.pooriam.ir
     path: /@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1?ed=2560
-- name: 新加坡-1
-  network: ws
-  port: 443
-  server: 8.219.202.145
-  servername: dob.fenmila.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 038562dc-6958-4ce7-eae2-887d8a1bee2a
-  ws-opts:
-    headers:
-      Host: dob.fenmila.me
-    path: /bing
 - cipher: aes-256-cfb
   name: 台湾-1
   password: f8f7aCzcPKbsF8p3
@@ -724,19 +652,17 @@ proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
-  - '自动选择: 46个'
-  - '自动选择(国内): 7个'
-  - '自动选择(国外): 39个'
-  - '手动选择: 46个'
+  - '自动选择: 41个'
+  - '自动选择(国内): 3个'
+  - '自动选择(国外): 38个'
+  - '手动选择: 41个'
   - '瑞士分区: 1个'
-  - '中国分区: 5个'
+  - '中国分区: 3个'
   - '英国分区: 1个'
-  - '香港分区: 2个'
   - '日本分区: 1个'
   - '荷兰分区: 8个'
   - '俄罗斯联邦分区: 3个'
   - '菲律宾分区: 3个'
-  - '新加坡分区: 1个'
   - '台湾分区: 1个'
   - '美国分区: 20个'
   type: select
@@ -747,7 +673,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择: 46个'
+  name: '自动选择: 41个'
   timeout: 1500
   type: url-test
   url: https://www.google.com/generate_204
@@ -757,15 +683,11 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国内): 7个'
+  name: '自动选择(国内): 3个'
   proxies:
   - 中国-1
   - 中国-2
   - 中国-3
-  - 中国-4
-  - 中国-5
-  - 香港-1
-  - 香港-2
   - COMPATIBLE
   timeout: 1500
   type: url-test
@@ -776,7 +698,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '自动选择(国外): 39个'
+  name: '自动选择(国外): 38个'
   proxies:
   - 瑞士-1
   - 英国-1
@@ -795,7 +717,6 @@ proxy-groups:
   - 菲律宾-1
   - 菲律宾-2
   - 菲律宾-3
-  - 新加坡-1
   - 台湾-1
   - 美国-1
   - 美国-2
@@ -823,7 +744,7 @@ proxy-groups:
   url: https://www.google.com/generate_204
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Available.png
   include-all-proxies: true
-  name: '手动选择: 46个'
+  name: '手动选择: 41个'
   type: select
 - filter: (?i)瑞士|CH|ch
   hidden: false
@@ -848,7 +769,7 @@ proxy-groups:
   interval: 300
   lazy: true
   max-failed-times: 3
-  name: '中国分区: 5个'
+  name: '中国分区: 3个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -864,21 +785,6 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '英国分区: 1个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)香港|HK|hk
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '香港分区: 2个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
@@ -939,21 +845,6 @@ proxy-groups:
   lazy: true
   max-failed-times: 3
   name: '菲律宾分区: 3个'
-  proxies:
-  - COMPATIBLE
-  strategy: round-robin
-  timeout: 1500
-  type: load-balance
-  url: https://www.google.com/generate_204
-- filter: (?i)新加坡|SG|sg
-  hidden: false
-  icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg
-  include-all-providers: false
-  include-all-proxies: true
-  interval: 300
-  lazy: true
-  max-failed-times: 3
-  name: '新加坡分区: 1个'
   proxies:
   - COMPATIBLE
   strategy: round-robin
