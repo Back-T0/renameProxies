@@ -179,6 +179,7 @@ def rename_proxies(proxies, nation_cache):
         {
             "type": "select",
             "name": "默认代理",
+            "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png",
             "proxies": [item["name"] for item in proxy_groups],
         },
     )
