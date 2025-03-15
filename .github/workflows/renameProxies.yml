@@ -32,11 +32,11 @@ jobs:
 
       - name: 下载 mmdbinspect
         run: |
-          wget https://github.com/maxmind/mmdbinspect/releases/download/v0.2.0/mmdbinspect_0.2.0_linux_amd64.deb
+          wget https://github.com/maxmind/mmdbinspect/releases/download/v2.0.0-beta.2/mmdbinspect_2.0.0-beta.2_linux_amd64.deb
 
       - name: 安装 mmdbinspect
         run: |
-          sudo dpkg -i mmdbinspect_0.2.0_linux_amd64.deb
+          sudo dpkg -i mmdbinspect_2.0.0-beta.2_linux_amd64.deb
       
       - name: 安装 PIL
         run: |
@@ -48,7 +48,7 @@ jobs:
 
       - name: 删除多余文件
         run: |
-          sudo rm -f mmdbinspect_0.2.0_linux_amd64.deb
+          sudo rm -f mmdbinspect_2.0.0-beta.2_linux_amd64.deb
           sudo rm -f Country.mmdb
 
       - name: 上传 finalConfig.yaml
