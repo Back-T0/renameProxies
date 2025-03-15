@@ -1,0 +1,386 @@
+# 混合端口
+mixed-port: 7890
+# 局域网访问控制(白名单/黑名单)
+allow-lan: true
+lan-allowed-ips: ["0.0.0.0/0", "::/0"]
+lan-disallowed-ips: []
+# 运行模式
+mode: rule
+# 日志级别
+log-level: info
+# 接受IPv6流量
+ipv6: true
+# 外部控制监听地址、访问密钥
+external-controller: 0.0.0.0:9090
+secret: ""
+# 延迟计算去除握手等额外延迟
+unified-delay: false
+# TCP并发
+tcp-concurrent: true
+# 全局客户端指纹(支持VLESS,VMess,Trojan)
+global-client-fingerprint: chrome
+# 下载外部资源(proxy-provider、rule-provider、GEO等)使用的UA
+global-ua: clash.meta
+
+# DNS配置
+domestic_nameservers: &domestic_nameservers
+  - https://dns.alidns.com/dns-query # 阿里云公共DNS
+  - https://doh.pub/dns-query # 腾讯DNSPod
+  - https://doh.360.cn/dns-query # 360安全DNS
+foreign_nameservers: &foreign_nameservers
+  - https://1.1.1.1/dns-query # Cloudflare(主)
+  - https://1.0.0.1/dns-query # Cloudflare(备)
+  - https://208.67.222.222/dns-query # OpenDNS(主)
+  - https://208.67.220.220/dns-query # OpenDNS(备)
+  - https://194.242.2.2/dns-query # Mullvad(主)
+  - https://194.242.2.3/dns-query # Mullvad(备)
+dns:
+  enable: true
+  ipv6: true
+  use-system-hosts: false
+  cache-algorithm: arc
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    [
+      "+.lan",
+      "+.local",
+      "+.msftconnecttest.com",
+      "+.msftncsi.com",
+      "localhost.ptlogin2.qq.com",
+      "localhost.sec.qq.com",
+      "localhost.work.weixin.qq.com",
+    ]
+  default-nameserver: ["223.5.5.5", "119.29.29.29", "1.1.1.1", "8.8.8.8"]
+  nameserver: *domestic_nameservers
+  proxy-server-nameserver: *domestic_nameservers
+  nameserver-policy:
+    "+.mirror.ghproxy.com": *foreign_nameservers
+    "geosite:private,cn,geolocation-cn": *domestic_nameservers
+    "geosite:google,youtube,telegram,gfw,geolocation-!cn": *foreign_nameservers
+
+# GEO自动更新、更新间隔(单位: 小时)、更新下载地址
+geo-auto-update: true
+geo-update-interval: 48
+geox-url:
+  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+  asn: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
+
+# 代理列表
+proxies: 
+  - {"type":"vless","name":"❓ 未知_1","server":"103.44.255.81","port":"443","uuid":"55520747-311e-4015-83ce-be46e2060ce3","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","ws-opts":{"path":"/vx1.vs2024.us.kg","headers":{"Host":"vx1.vs2024.us.kg"}},"servername":"vx1.vs2024.us.kg"}
+  - {"name":"🇮🇹 意大利","type":"vless","network":"grpc","server":"209.227.230.243","port":"443","uuid":"253f59da-b708-4404-cebe-3854aad88880","skip-cert-verify":false,"tls":true,"client-fingerprint":"firefox","reality-opts":{"public-key":"gH_h3-mo0stXouQX61J22W14N9-RlRjwo6BQgAcUay4","short-id":"c5508bd7"},"grpc-opts":{"grpc-service-name":"vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl"},"servername":"wordpress.org"}
+  - {"name":"❓ 未知_2","type":"vless","network":"ws","server":"172.67.204.84","port":"80","uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","skip-cert-verify":false,"tls":false,"client-fingerprint":"chrome","ws-opts":{"headers":{"Host":"a.xn--i-sx6a60i.us.kg."},"path":"/t.mevpnAndroid2/?ed=2560"}}
+  - {"name":"🇺🇸 美国_1","type":"vless","network":"ws","server":"104.18.21.69","port":"2095","uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","skip-cert-verify":false,"tls":false,"ws-opts":{"headers":{"Host":"fuckingxijinping.xijinpingbigsb.workers.dev"},"path":"/?ed=2560"},"client-fingerprint":"chrome"}
+  - {"name":"❓ 未知_3","type":"vless","network":"ws","server":"188.114.97.1","port":"8880","uuid":"91d9b8d8-2aab-4e1a-9573-0d59e9cd7f8e","tls":false,"ws-opts":{"headers":{"Host":"falcunargo-channel.be3374a836.workers.Dev"},"path":"/?ed=2048"},"client-fingerprint":"chrome","servername":"falcunargo-channel.be3374a836.workers.Dev"}
+  - {"name":"❓ 未知_4","type":"vless","network":"ws","server":"172.67.135.195","port":"2052","uuid":"0d710c53-876d-401f-97f0-6bd1a8db941a","skip-cert-verify":true,"udp":true,"xudp":true,"ws-opts":{"headers":{"Host":"sWEeT-DIsK-b69d.TUdTudtrUHtRU.wOrkERS.dev","User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36"},"path":"/J61hhknxUXEwJZLq/MTU5LjY5LjE1My4xMTQ=?ed=2560"},"client-fingerprint":"chrome"}
+  - {"name":"❓ 未知_5","type":"vless","network":"ws","server":"188.114.96.223","port":"80","uuid":"eb201923-0e39-4425-bd0f-6244cd24ef2a","skip-cert-verify":false,"tls":false,"client-fingerprint":"chrome","ws-opts":{"headers":{"Host":"zaq11000d.b835a8094d.workers.dev"},"path":"/?ed=2560"}}
+  - {"name":"❓ 未知_6","type":"vless","network":"ws","server":"104.16.178.238","port":"80","uuid":"d4eddaf9-a660-4905-b835-cad98677b380","tls":false,"ws-opts":{"headers":{"Host":"little-bird-a235-ppal03.fosawaw121.workers.dev"},"path":"/?ed=2560"},"client-fingerprint":"chrome","servername":"little-bird-a235-ppal03.fosawaw121.workers.dev"}
+  - {"name":"❓ 未知_7","type":"vless","network":"ws","server":"188.42.89.68","port":"8880","uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","skip-cert-verify":false,"tls":false,"ws-opts":{"headers":{"Host":"a.xn--i-sx6a60i.us.kg."},"path":"/Telegram"},"client-fingerprint":"chrome"}
+  - {"name":"🇩🇪 德国","type":"vless","network":"ws","server":"195.85.59.155","port":"8880","uuid":"f6bd2c47-99da-4bca-bf70-7186aa9e7e06","skip-cert-verify":false,"tls":false,"ws-opts":{"headers":{"Host":"photographipictureai.ir"},"path":"/Telegram"},"client-fingerprint":"chrome"}
+  - {"name":"❓ 未知_8","type":"vless","network":"ws","server":"172.67.168.60","port":"80","uuid":"5335d16e-7e42-4c9b-93a3-9e83bfd3073d","skip-cert-verify":false,"tls":false,"ws-opts":{"headers":{"Host":"workerr.johnstoner.workers.dev"},"path":"/?ed=2048"},"client-fingerprint":"chrome"}
+  - {"name":"❓ 未知_9","type":"vless","network":"ws","server":"104.24.248.85","port":"80","uuid":"7fea28c6-f9b0-45ce-b7c2-ed3a3991d1e8","skip-cert-verify":false,"tls":false,"ws-opts":{"headers":{"Host":"curly-waterfall-509e-ppal03.wimiba9167.workers.dev"},"path":"/?ed=2560"},"client-fingerprint":"chrome"}
+  - {"name":"🇺🇸 美国_2","type":"vless","network":"ws","server":"172.64.78.198","port":"80","uuid":"2370f4d8-6694-4e51-8c72-b2782ae96a59","skip-cert-verify":false,"tls":false,"client-fingerprint":"chrome","ws-opts":{"headers":{"Host":"withered-wave-ee0b-ppal03.faxip46069.workers.dev"},"path":"/?ed=2560"}}
+  - {"name":"❓ 未知_10","type":"vless","network":"ws","server":"104.26.15.85","port":"80","uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","skip-cert-verify":false,"tls":false,"client-fingerprint":"chrome","ws-opts":{"headers":{"Host":"a.xn--i-sx6a60i.us.kg."},"path":"/?ed=2560"}}
+  - {"name":"🇺🇸 美国_3","type":"vless","network":"ws","server":"104.24.248.204","port":"80","uuid":"2370f4d8-6694-4e51-8c72-b2782ae96a59","skip-cert-verify":false,"tls":false,"client-fingerprint":"chrome","ws-opts":{"headers":{"Host":"withered-wave-ee0b-ppal03.faxip46069.workers.dev"},"path":"/?ed=2560"}}
+  - {"name":"❓ 未知_11","type":"vless","network":"ws","server":"104.24.37.192","port":"80","uuid":"9a2680ff-c5d5-410a-9108-8d6b10e4ea1e","skip-cert-verify":false,"tls":false,"ws-opts":{"headers":{"Host":"ppal03.dolobe7975.workers.dev"},"path":"/?ed=2560"},"client-fingerprint":"chrome"}
+  - {"name":"🇺🇸 美国_4","type":"vless","network":"ws","server":"104.24.186.156","port":"80","uuid":"6ff4726f-3650-4803-95eb-50b240f6ac75","skip-cert-verify":false,"tls":false,"client-fingerprint":"chrome","ws-opts":{"headers":{"Host":"red-math-7092-ppal03.mewoco2522.workers.dev"},"path":"/?ed=2560"}}
+  - {"name":"🇭🇰 香港","type":"vless","network":"ws","server":"154.83.2.156","port":"8880","uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":false,"tls":false,"client-fingerprint":"chrome","ws-opts":{"headers":{"Host":"redw.pooriam.ir"},"path":"/"}}
+  - {"name":"❓ 未知_12","type":"vless","network":"ws","server":"104.24.147.64","port":"80","uuid":"03e4d6fe-f461-499f-b9c6-35c60f192e1a","tls":false,"ws-opts":{"headers":{"Host":"ppal03-ppal03.letiwe3303.workers.dev"},"path":"/?ed=2560"},"client-fingerprint":"chrome","servername":"ppal03-ppal03.letiwe3303.workers.dev"}
+  - {"name":"❓ 未知_13","type":"vless","network":"ws","server":"104.16.86.2","port":"80","uuid":"9f0eae34-97c1-4c07-8a55-438379981334","skip-cert-verify":false,"tls":false,"client-fingerprint":"chrome","ws-opts":{"headers":{"Host":"snowy-bush-4df8-ppal03.toxebex651.workers.dev"},"path":"/?ed=2560"}}
+  - {"name":"🇫🇷 法国","type":"vless","network":"ws","server":"212.183.88.84","port":"2086","uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":false,"ws-opts":{"headers":{"Host":"redw.pooriam.ir"},"path":"/TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET/?ed=2048"},"client-fingerprint":"chrome"}
+  - {"type":"trojan","name":"🇹🇼 台湾","server":"65.75.194.43","port":"10511","password":"Aimer","udp":true,"skip-cert-verify":true,"sni":"agepi.ambercc.filegear-sg.me","network":"ws","ws-opts":{"path":"/?ed=2560","headers":{"Host":"agepi.ambercc.filegear-sg.me"}}}
+  - {"name":"❓ 未知_14","type":"vless","network":"ws","server":"172.67.189.174","port":"80","uuid":"19b3cbba-e6ac-485a-9481-926a0415eab2","skip-cert-verify":false,"tls":false,"ws-opts":{"headers":{"Host":"sHrill-tErm-639b.TageLIT414.workeRs.dEv"},"path":"/"},"client-fingerprint":"chrome"}
+  - {"name":"❓ 未知_15","type":"vless","network":"ws","server":"104.26.14.85","port":"80","uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","skip-cert-verify":false,"client-fingerprint":"chrome","ws-opts":{"headers":{"Host":"a.xn--i-sx6a60i.us.kg."},"path":"/?ed=2560"}}
+  - {"name":"🇺🇸 美国_5","type":"vless","network":"ws","server":"104.16.188.41","port":"80","uuid":"89b3cbba-e6ac-485a-9481-976a0415eab9","skip-cert-verify":false,"tls":false,"ws-opts":{"headers":{"Host":"proud-queen-55500071.cexonoc962.workers.dev"},"path":"/?ed=2560"},"client-fingerprint":"chrome"}
+  - {"name":"🇺🇸 美国_6","type":"vless","network":"ws","server":"104.16.171.121","port":"80","uuid":"a3875c94-e968-404c-b62d-5a292d20e6d8","skip-cert-verify":false,"tls":false,"ws-opts":{"headers":{"Host":"polished-limit-deb9-ppal03.latopi8673.workers.dev"},"path":"/?ed=2560"},"client-fingerprint":"chrome"}
+  - {"name":"❓ 未知_16","type":"vless","network":"ws","server":"195.85.59.95","port":"2086","uuid":"a3f9d9b6-3ae4-4c47-9dbf-33b0a5c7f1a5","skip-cert-verify":false,"ws-opts":{"headers":{"Host":"0210.uous1wog.workers.dev"},"path":"/?ed=2560"},"client-fingerprint":"chrome"}
+  - {"name":"🇯🇵 日本","type":"ss","server":"ti3hyra4.slashdevslashnetslashtun.net","port":"18002","password":"84HMRAWILKB49QUZ","cipher":"aes-256-gcm"}
+  - {"name":"❓ 未知_17","type":"vless","network":"ws","server":"104.16.76.55","port":"80","uuid":"5d8bc42a-d345-4bd3-a844-4b90afc44670","skip-cert-verify":false,"tls":false,"ws-opts":{"headers":{"Host":"patient-shadow-baf1-ppal03.hohel98085.workers.dev"},"path":"/?ed=2560"},"client-fingerprint":"chrome"}
+  - {"name":"❓ 未知_18","type":"vless","network":"ws","server":"104.16.1.47","port":"80","uuid":"b550a101-63fe-4862-bfd3-8b87bb4168dd","tls":false,"client-fingerprint":"chrome","ws-opts":{"headers":{"Host":"flat-bread-ddb6-ppal03.joriy39169.workers.dev"},"path":"/?ed=2560"},"servername":"flat-bread-ddb6-ppal03.joriy39169.workers.dev"}
+
+# 代理组
+proxy-groups:
+  - name: 节点选择
+    type: select
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/adjust.svg
+    proxies: ["自动选择", "DIRECT", '意大利节点', '德国节点', '未知节点', '美国节点', '香港节点', '法国节点', '台湾节点', '日本节点']
+
+  - name: 自动选择
+    type: url-test
+    tolerance: 200
+    lazy: false
+    interval: 60
+    timeout: 2000
+    url: http://www.gstatic.com/generate_204
+    max-failed-times: 3
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/speed.svg
+    proxies: ['意大利节点', '德国节点', '未知节点', '美国节点', '香港节点', '法国节点', '台湾节点', '日本节点']
+
+  - name: 谷歌服务
+    type: select
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/google.svg
+    proxies: ["节点选择", "自动选择", "全局直连", '意大利节点', '德国节点', '未知节点', '美国节点', '香港节点', '法国节点', '台湾节点', '日本节点']
+
+  - name: 国外媒体
+    type: select
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/youtube.svg
+    proxies: ["节点选择", "自动选择", "全局直连", '意大利节点', '德国节点', '未知节点', '美国节点', '香港节点', '法国节点', '台湾节点', '日本节点']
+
+  - name: 电报消息
+    type: select
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/telegram.svg
+    proxies: ["节点选择", "自动选择", "全局直连", '意大利节点', '德国节点', '未知节点', '美国节点', '香港节点', '法国节点', '台湾节点', '日本节点']
+
+  - name: 微软服务
+    type: select
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/microsoft.svg
+    proxies: ["全局直连", "节点选择", "自动选择", '意大利节点', '德国节点', '未知节点', '美国节点', '香港节点', '法国节点', '台湾节点', '日本节点']
+
+  - name: 苹果服务
+    type: select
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/apple.svg
+    proxies: ["节点选择", "自动选择", "全局直连", '意大利节点', '德国节点', '未知节点', '美国节点', '香港节点', '法国节点', '台湾节点', '日本节点']
+
+  - name: 广告过滤
+    type: select
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/bug.svg
+    proxies: ["REJECT", "DIRECT"]
+
+  - name: 全局直连
+    type: select
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/link.svg
+    proxies: ["DIRECT", "节点选择", "自动选择", '意大利节点', '德国节点', '未知节点', '美国节点', '香港节点', '法国节点', '台湾节点', '日本节点']
+
+  - name: 全局拦截
+    type: select
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/block.svg
+    proxies: ["REJECT", "DIRECT"]
+
+  - name: 漏网之鱼
+    type: select
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/fish.svg
+    proxies: ["节点选择", "自动选择", "全局直连", '意大利节点', '德国节点', '未知节点', '美国节点', '香港节点', '法国节点', '台湾节点', '日本节点']
+
+  - name: 意大利节点
+    type: url-test
+    tolerance: 100
+    lazy: false
+    interval: 180
+    timeout: 2000
+    url: http://www.gstatic.com/generate_204
+    max-failed-times: 3
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/flags/it.svg
+    hidden: false
+    proxies: ['🇮🇹 意大利']
+
+  - name: 德国节点
+    type: url-test
+    tolerance: 100
+    lazy: false
+    interval: 180
+    timeout: 2000
+    url: http://www.gstatic.com/generate_204
+    max-failed-times: 3
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/flags/de.svg
+    hidden: false
+    proxies: ['🇩🇪 德国']
+
+  - name: 未知节点
+    type: url-test
+    tolerance: 100
+    lazy: false
+    interval: 180
+    timeout: 2000
+    url: http://www.gstatic.com/generate_204
+    max-failed-times: 3
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/unknown.svg
+    hidden: false
+    proxies: ['❓ 未知_1', '❓ 未知_2', '❓ 未知_3', '❓ 未知_4', '❓ 未知_5', '❓ 未知_6', '❓ 未知_7', '❓ 未知_8', '❓ 未知_9', '❓ 未知_10', '❓ 未知_11', '❓ 未知_12', '❓ 未知_13', '❓ 未知_14', '❓ 未知_15', '❓ 未知_16', '❓ 未知_17', '❓ 未知_18']
+
+  - name: 美国节点
+    type: url-test
+    tolerance: 100
+    lazy: false
+    interval: 180
+    timeout: 2000
+    url: http://www.gstatic.com/generate_204
+    max-failed-times: 3
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/flags/us.svg
+    hidden: false
+    proxies: ['🇺🇸 美国_1', '🇺🇸 美国_2', '🇺🇸 美国_3', '🇺🇸 美国_4', '🇺🇸 美国_5', '🇺🇸 美国_6']
+
+  - name: 香港节点
+    type: url-test
+    tolerance: 100
+    lazy: false
+    interval: 180
+    timeout: 2000
+    url: http://www.gstatic.com/generate_204
+    max-failed-times: 3
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/flags/hk.svg
+    hidden: false
+    proxies: ['🇭🇰 香港']
+
+  - name: 法国节点
+    type: url-test
+    tolerance: 100
+    lazy: false
+    interval: 180
+    timeout: 2000
+    url: http://www.gstatic.com/generate_204
+    max-failed-times: 3
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/flags/fr.svg
+    hidden: false
+    proxies: ['🇫🇷 法国']
+
+  - name: 台湾节点
+    type: url-test
+    tolerance: 100
+    lazy: false
+    interval: 180
+    timeout: 2000
+    url: http://www.gstatic.com/generate_204
+    max-failed-times: 3
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/flags/tw.svg
+    hidden: false
+    proxies: ['🇹🇼 台湾']
+
+  - name: 日本节点
+    type: url-test
+    tolerance: 100
+    lazy: false
+    interval: 180
+    timeout: 2000
+    url: http://www.gstatic.com/generate_204
+    max-failed-times: 3
+    icon: https://fastly.jsdelivr.net/gh/dongchengjie/metaST@main/metaST/Resources/icons/flags/jp.svg
+    hidden: false
+    proxies: ['🇯🇵 日本']
+
+
+# 规则
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt
+    path: ./ruleset/loyalsoldier/reject.yaml
+    interval: 86400
+  icloud:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt
+    path: ./ruleset/loyalsoldier/icloud.yaml
+    interval: 86400
+  apple:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt
+    path: ./ruleset/loyalsoldier/apple.yaml
+    interval: 86400
+  google:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt
+    path: ./ruleset/loyalsoldier/google.yaml
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt
+    path: ./ruleset/loyalsoldier/proxy.yaml
+    interval: 86400
+  direct:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt
+    path: ./ruleset/loyalsoldier/direct.yaml
+    interval: 86400
+  private:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt
+    path: ./ruleset/loyalsoldier/private.yaml
+    interval: 86400
+  gfw:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt
+    path: ./ruleset/loyalsoldier/gfw.yaml
+    interval: 86400
+  tld-not-cn:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt
+    path: ./ruleset/loyalsoldier/tld-not-cn.yaml
+    interval: 86400
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt
+    path: ./ruleset/loyalsoldier/telegramcidr.yaml
+    interval: 86400
+  cncidr:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt
+    path: ./ruleset/loyalsoldier/cncidr.yaml
+    interval: 86400
+  lancidr:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt
+    path: ./ruleset/loyalsoldier/lancidr.yaml
+    interval: 86400
+  applications:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt
+    path: ./ruleset/loyalsoldier/applications.yaml
+    interval: 86400
+
+rules:
+  # Google
+  - DOMAIN-SUFFIX,googleapis.cn,节点选择
+  - DOMAIN-SUFFIX,gstatic.com,节点选择
+  # Google Play
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
+  # Github Pages
+  - DOMAIN-SUFFIX,github.io,节点选择
+  # V2raySE
+  - DOMAIN,v2rayse.com,节点选择
+  # loyalsoldier 规则集
+  - RULE-SET,reject,广告过滤
+  - RULE-SET,icloud,微软服务
+  - RULE-SET,apple,苹果服务
+  - RULE-SET,google,谷歌服务
+  - RULE-SET,proxy,节点选择
+  - RULE-SET,gfw,节点选择
+  - RULE-SET,tld-not-cn,节点选择
+  - RULE-SET,applications,全局直连
+  - RULE-SET,private,全局直连
+  - RULE-SET,direct,全局直连
+  - RULE-SET,lancidr,全局直连,no-resolve
+  - RULE-SET,cncidr,全局直连,no-resolve
+  - RULE-SET,telegramcidr,电报消息,no-resolve
+  # 其他
+  - GEOIP,LAN,全局直连,no-resolve
+  - GEOIP,CN,全局直连,no-resolve
+  - MATCH,漏网之鱼
+

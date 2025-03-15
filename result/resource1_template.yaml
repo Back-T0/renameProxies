@@ -1,0 +1,560 @@
+allow-lan: false
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+  - '*'
+  - +.lan
+  - +.local
+  - +.market.xiaomi.com
+  ipv6: true
+  nameserver:
+  - https://120.53.53.53/dns-query
+  - https://223.5.5.5/dns-query
+  nameserver-policy:
+    geosite:cn,private:
+    - https://120.53.53.53/dns-query
+    - https://223.5.5.5/dns-query
+    geosite:geolocation-!cn:
+    - https://dns.cloudflare.com/dns-query
+    - https://dns.google/dns-query
+  proxy-server-nameserver:
+  - https://120.53.53.53/dns-query
+  - https://223.5.5.5/dns-query
+  respect-rules: true
+external-controller: 127.0.0.1:9097
+external-ui: ui
+external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+find-process-mode: strict
+geodata-mode: true
+geox-url:
+  asn: https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
+  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
+  geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+global-client-fingerprint: chrome
+ipv6: true
+log-level: info
+mixed-port: 7897
+mode: rule
+port: 7899
+profile:
+  store-fake-ip: true
+  store-selected: true
+proxies:
+- name: 中国-1
+  network: ws
+  port: '443'
+  server: 103.44.255.81
+  servername: vx1.vs2024.us.kg
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  ws-opts:
+    headers:
+      Host: vx1.vs2024.us.kg
+    path: /vx1.vs2024.us.kg
+- client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl
+  name: 意大利-1
+  network: grpc
+  port: '443'
+  reality-opts:
+    public-key: gH_h3-mo0stXouQX61J22W14N9-RlRjwo6BQgAcUay4
+    short-id: c5508bd7
+  server: 209.227.230.243
+  servername: wordpress.org
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 253f59da-b708-4404-cebe-3854aad88880
+- client-fingerprint: chrome
+  name: 美国-1
+  network: ws
+  port: '80'
+  server: 172.67.204.84
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg.
+    path: /t.mevpnAndroid2/?ed=2560
+- client-fingerprint: chrome
+  name: 美国-2
+  network: ws
+  port: '2095'
+  server: 104.18.21.69
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: fuckingxijinping.xijinpingbigsb.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-3
+  network: ws
+  port: '8880'
+  server: 188.114.97.1
+  servername: falcunargo-channel.be3374a836.workers.Dev
+  tls: false
+  type: vless
+  uuid: 91d9b8d8-2aab-4e1a-9573-0d59e9cd7f8e
+  ws-opts:
+    headers:
+      Host: falcunargo-channel.be3374a836.workers.Dev
+    path: /?ed=2048
+- client-fingerprint: chrome
+  name: 美国-4
+  network: ws
+  port: '2052'
+  server: 172.67.135.195
+  skip-cert-verify: true
+  type: vless
+  udp: true
+  uuid: 0d710c53-876d-401f-97f0-6bd1a8db941a
+  ws-opts:
+    headers:
+      Host: sWEeT-DIsK-b69d.TUdTudtrUHtRU.wOrkERS.dev
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/51.0.2704.63 Safari/537.36
+    path: /J61hhknxUXEwJZLq/MTU5LjY5LjE1My4xMTQ=?ed=2560
+  xudp: true
+- client-fingerprint: chrome
+  name: 美国-5
+  network: ws
+  port: '80'
+  server: 188.114.96.223
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: eb201923-0e39-4425-bd0f-6244cd24ef2a
+  ws-opts:
+    headers:
+      Host: zaq11000d.b835a8094d.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-6
+  network: ws
+  port: '80'
+  server: 104.16.178.238
+  servername: little-bird-a235-ppal03.fosawaw121.workers.dev
+  tls: false
+  type: vless
+  uuid: d4eddaf9-a660-4905-b835-cad98677b380
+  ws-opts:
+    headers:
+      Host: little-bird-a235-ppal03.fosawaw121.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 卢森堡-1
+  network: ws
+  port: '8880'
+  server: 188.42.89.68
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg.
+    path: /Telegram
+- client-fingerprint: chrome
+  name: 塞浦路斯-1
+  network: ws
+  port: '8880'
+  server: 195.85.59.155
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: f6bd2c47-99da-4bca-bf70-7186aa9e7e06
+  ws-opts:
+    headers:
+      Host: photographipictureai.ir
+    path: /Telegram
+- client-fingerprint: chrome
+  name: 美国-7
+  network: ws
+  port: '80'
+  server: 172.67.168.60
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 5335d16e-7e42-4c9b-93a3-9e83bfd3073d
+  ws-opts:
+    headers:
+      Host: workerr.johnstoner.workers.dev
+    path: /?ed=2048
+- client-fingerprint: chrome
+  name: 美国-8
+  network: ws
+  port: '80'
+  server: 104.24.248.85
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 7fea28c6-f9b0-45ce-b7c2-ed3a3991d1e8
+  ws-opts:
+    headers:
+      Host: curly-waterfall-509e-ppal03.wimiba9167.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-9
+  network: ws
+  port: '80'
+  server: 172.64.78.198
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 2370f4d8-6694-4e51-8c72-b2782ae96a59
+  ws-opts:
+    headers:
+      Host: withered-wave-ee0b-ppal03.faxip46069.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-10
+  network: ws
+  port: '80'
+  server: 104.26.15.85
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg.
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-11
+  network: ws
+  port: '80'
+  server: 104.24.248.204
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 2370f4d8-6694-4e51-8c72-b2782ae96a59
+  ws-opts:
+    headers:
+      Host: withered-wave-ee0b-ppal03.faxip46069.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-12
+  network: ws
+  port: '80'
+  server: 104.24.37.192
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 9a2680ff-c5d5-410a-9108-8d6b10e4ea1e
+  ws-opts:
+    headers:
+      Host: ppal03.dolobe7975.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-13
+  network: ws
+  port: '80'
+  server: 104.24.186.156
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 6ff4726f-3650-4803-95eb-50b240f6ac75
+  ws-opts:
+    headers:
+      Host: red-math-7092-ppal03.mewoco2522.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 菲律宾-1
+  network: ws
+  port: '8880'
+  server: 154.83.2.156
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 53fa8faf-ba4b-4322-9c69-a3e5b1555049
+  ws-opts:
+    headers:
+      Host: redw.pooriam.ir
+    path: /
+- client-fingerprint: chrome
+  name: 美国-14
+  network: ws
+  port: '80'
+  server: 104.24.147.64
+  servername: ppal03-ppal03.letiwe3303.workers.dev
+  tls: false
+  type: vless
+  uuid: 03e4d6fe-f461-499f-b9c6-35c60f192e1a
+  ws-opts:
+    headers:
+      Host: ppal03-ppal03.letiwe3303.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-15
+  network: ws
+  port: '80'
+  server: 104.16.86.2
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 9f0eae34-97c1-4c07-8a55-438379981334
+  ws-opts:
+    headers:
+      Host: snowy-bush-4df8-ppal03.toxebex651.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 奥地利-1
+  network: ws
+  port: '2086'
+  server: 212.183.88.84
+  skip-cert-verify: false
+  type: vless
+  uuid: 53fa8faf-ba4b-4322-9c69-a3e5b1555049
+  ws-opts:
+    headers:
+      Host: redw.pooriam.ir
+    path: /TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET, TABRIZ.NET/?ed=2048
+- name: 美国-16
+  network: ws
+  password: Aimer
+  port: '10511'
+  server: 65.75.194.43
+  skip-cert-verify: true
+  sni: agepi.ambercc.filegear-sg.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: agepi.ambercc.filegear-sg.me
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-17
+  network: ws
+  port: '80'
+  server: 172.67.189.174
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 19b3cbba-e6ac-485a-9481-926a0415eab2
+  ws-opts:
+    headers:
+      Host: sHrill-tErm-639b.TageLIT414.workeRs.dEv
+    path: /
+- client-fingerprint: chrome
+  name: 美国-18
+  network: ws
+  port: '80'
+  server: 104.26.14.85
+  skip-cert-verify: false
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  ws-opts:
+    headers:
+      Host: a.xn--i-sx6a60i.us.kg.
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-19
+  network: ws
+  port: '80'
+  server: 104.16.188.41
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  ws-opts:
+    headers:
+      Host: proud-queen-55500071.cexonoc962.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-20
+  network: ws
+  port: '80'
+  server: 104.16.171.121
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: a3875c94-e968-404c-b62d-5a292d20e6d8
+  ws-opts:
+    headers:
+      Host: polished-limit-deb9-ppal03.latopi8673.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 塞浦路斯-2
+  network: ws
+  port: '2086'
+  server: 195.85.59.95
+  skip-cert-verify: false
+  type: vless
+  uuid: a3f9d9b6-3ae4-4c47-9dbf-33b0a5c7f1a5
+  ws-opts:
+    headers:
+      Host: 0210.uous1wog.workers.dev
+    path: /?ed=2560
+- cipher: aes-256-gcm
+  name: 未知-1
+  password: 84HMRAWILKB49QUZ
+  port: '18002'
+  server: ti3hyra4.slashdevslashnetslashtun.net
+  type: ss
+- client-fingerprint: chrome
+  name: 美国-21
+  network: ws
+  port: '80'
+  server: 104.16.76.55
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  uuid: 5d8bc42a-d345-4bd3-a844-4b90afc44670
+  ws-opts:
+    headers:
+      Host: patient-shadow-baf1-ppal03.hohel98085.workers.dev
+    path: /?ed=2560
+- client-fingerprint: chrome
+  name: 美国-22
+  network: ws
+  port: '80'
+  server: 104.16.1.47
+  servername: flat-bread-ddb6-ppal03.joriy39169.workers.dev
+  tls: false
+  type: vless
+  uuid: b550a101-63fe-4862-bfd3-8b87bb4168dd
+  ws-opts:
+    headers:
+      Host: flat-bread-ddb6-ppal03.joriy39169.workers.dev
+    path: /?ed=2560
+proxy-groups:
+- name: 默认代理
+  proxies:
+  - 自动选择
+  - 手动选择
+  - 中国分区
+  - 意大利分区
+  - 美国分区
+  - 卢森堡分区
+  - 塞浦路斯分区
+  - 菲律宾分区
+  - 奥地利分区
+  - 未知分区
+  type: select
+- hidden: true
+  icon: data:image/png;base64,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
+  include-all-proxies: true
+  name: 自动选择
+  type: url-test
+- icon: data:image/png;base64,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
+  include-all-proxies: true
+  name: 手动选择
+  type: select
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
+  name: 中国分区
+  proxies:
+  - 中国-1
+  type: url-test
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
+  name: 意大利分区
+  proxies:
+  - 意大利-1
+  type: url-test
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAADyklEQVR4nO2cO0sjURiGk00gEESQkCAKIiJqEG+IYKWlMWJjEdsUChbiPxDBYEAQLMTCykrs/QcqEey0ULRQkSBqSHC8YKOT2UI4HGLMzjt75rLs+1Qz4Zx3vu+Zk2EyCfEbhuEj5vjldgH/EpQFQFkAlAVAWQCUBUBZAJQFQFkAlAVAWQCUBUBZAJQFQFkAlAVAWQCUBUBZAJQFQFkAlAVAWQCUBUBZAJQFQFkAlAVAWQCUBUBZAJQFQFkAlAUQdOAYl5eXJycnpVJJ07RwOByJRLq6ugYGBoLBvzq6TbG1MGzj5uZmYWEhGo1WPW5dXV06nT4/P/dIrBlskaXreiaTMXOGA4FANpstl8suxppHvayPj4+JiYmK6uvr6+PxeF9fX9UVMTc351YshHpZ6XRarnh8fPzw8PDz81MMOD09TaVSFY1tbW25EguhWNbe3p5c6/Ly8k8jV1ZW5JGRSOT5+dnhWBSVssrlcmdnpyg0lUrVHp9MJuXGNjY2nIy1gEpZ+/v7osRgMHh9fV17/PHxsdxVMpl0MtYCKmXNz8+LEsfGxsxMicViYkpLS4uTsRZQeQd/dHQkthOJhJkpHR0dYrtQKDgZawFlsgzDuLi4ELs9PT1mZoXDYbFd9QbKplhrKAsqFotyJ/F43Mysh4cHsd3Y2OhYrEVUvZ8toGlaIBAQlUxPT3s51lB7zULZ2dnRdV3sTk5OejnW53NvZb2+vjY3N4syotHo+/u7Z2O/cE3WzMyMfM42Nze9HPuFO7K2t7fllkZHR3Vd92yswAVZBwcHoVBItBSLxfL5vGdjZZyWdXZ21tDQIFoKhUK5XM6zsRU4Kuvq6qqpqUm05Pf7d3d3PRv7Hedk3d7etra2ytcUJc8DbIqtikOy8vl8W1ub3FImk/Fs7E84Ievu7q69vV1uaWlpybOxNbBd1v39vfwMwOfzLS4ueja2NvbKenx8rPjoq+Tk2xT7R2yUVSgUuru75ZZqPDt3PdYMdskqFou9vb1yS9ls1rOxJrFFVqlU6u/vl1taXV31bKx51Mt6enoaHByUW1pbW/NsLIRiWZqmDQ0NyS2tr697NhZFpayXl5fh4WG5JSU30zbFWsBvKPpntre3t0QikcvlxCtTU1Ozs7NQyPcvb2yKtYgq6yMjI3YUY1OsNZStLL/f//ch34uxKdYa/JkkgLKV9T/AlQVAWQCUBUBZAJQFQFkAlAVAWQCUBUBZAJQFQFkAlAVAWQCUBUBZAJQFQFkAlAVAWQCUBUBZAJQFQFkAlAVAWQCUBUBZAJQF8Bvy/hqI4yAVTgAAAABJRU5ErkJggg==
+  name: 美国分区
+  proxies:
+  - 美国-1
+  - 美国-2
+  - 美国-3
+  - 美国-4
+  - 美国-5
+  - 美国-6
+  - 美国-7
+  - 美国-8
+  - 美国-9
+  - 美国-10
+  - 美国-11
+  - 美国-12
+  - 美国-13
+  - 美国-14
+  - 美国-15
+  - 美国-16
+  - 美国-17
+  - 美国-18
+  - 美国-19
+  - 美国-20
+  - 美国-21
+  - 美国-22
+  type: url-test
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
+  name: 卢森堡分区
+  proxies:
+  - 卢森堡-1
+  type: url-test
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAADr0lEQVR4nO3bz0sicRzG8XETJIkgZCQ6VUQp0S+i6OahixldOnj2EnQK+gOiSBKCoEOnTp2iQ7f+gwyjbgUZdagQkUqUNLzVOHto+e4krTsP2/oZ4XmfZpbRnl4MYRPrMk1TY/b6IT2gmSIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFpBbesCnbm9vLy4uisViqVTyer0+ny8QCIyNjbndzthpOqCHh4elpSVd179c2NbWFovFrq+vpWeawliGYcTjcTs3TktLSyKRqFargmslsd7e3mZnZ2tQ2tvbg8HgyMjIlzfa4uKi4GBJrFgsZoWYmZk5OTl5f39XF1xeXkaj0Rqv3d1dqcFiWEdHR1aC9fX1P125sbFhvdLn85XL5UZOVclgVavVgYEB9f1Ho9H610ciEavXzs5OY3bWJIN1fHysvnO3231/f1//+vPzcytWJBJpzM6aZD6UHh4equPp6emenp76109OTvr9fnV6dXX1v5bVTQbr9PRUHYfDYTsv6e/vV8f5fP77N9lIAMs0zZubG3U6NDRk51Ver1cdS32gF/iqhULBChQMBu286unpSR13dnZ+/ywbCWDpun52dga9pFwup9NpdTo+Pv7do2zVHE8d9vf3DcNQp3NzcyIzXKbj/3NmpVIJBAK5XO7jVNf1TCbT2tra+CVNcGctLy8rKU3T1tbWRKQ0zRmPaOq0t7dnXRsKhQzDkBrjaKxkMunxeJSU3+/PZrOCe5yLlU6nOzo6lJTH40mlUrKTHIp1d3fX1dWlpFwu18HBgfQoR2JlMpnu7m7rjyqpxww1OQ4rm8329vZapeLxuPSoXzkLK5fL9fX1WaVWV1elR/3OQViPj4/WRwuapq2srEiP+pRTsJ6fn2t+o3bUPfWRI7Dy+fzg4KBVqs4jecHksQqFwvDwsFUqkUhIj/o6YaxisTg6OmqV2tzclJ1UJ0msl5eXmidTW1tbgnv+mhhWqVSamJiwSm1vb0uNsZkM1uvr69TUlAM/o9dP4OFfpVIJh8OpVEr9y/z8/MLCAvQmNv8m9L0JYIVCoWQy+Y9v0vjZmgiWy+X69zcRwWqCx8rOqQn+YOGceGcBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIW0E/dyjTANbnxwQAAAABJRU5ErkJggg==
+  name: 塞浦路斯分区
+  proxies:
+  - 塞浦路斯-1
+  - 塞浦路斯-2
+  type: url-test
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
+  name: 菲律宾分区
+  proxies:
+  - 菲律宾-1
+  type: url-test
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
+  name: 奥地利分区
+  proxies:
+  - 奥地利-1
+  type: url-test
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
+  name: 未知分区
+  proxies:
+  - 未知-1
+  type: url-test
+rules:
+- GEOIP,lan,DIRECT,no-resolve
+- GEOSITE,category-ads-all,REJECT
+- GEOSITE,github,默认代理
+- GEOSITE,category-ai-chat-!cn,默认代理
+- GEOSITE,bing,DIRECT
+- GEOSITE,microsoft@cn,DIRECT
+- GEOIP,google,默认代理
+- GEOIP,telegram,默认代理
+- GEOIP,twitter,默认代理
+- GEOIP,CN,DIRECT,no-resolve
+- MATCH,默认代理
+secret: ''
+sniffer:
+  enable: true
+  skip-domain:
+  - +.push.apple.com
+  sniff:
+    HTTP:
+      override-destination: true
+      ports:
+      - 80
+      - 8080-8880
+    QUIC:
+      ports:
+      - 443
+      - 8443
+    TLS:
+      ports:
+      - 443
+      - 8443
+socks-port: 7898
+tcp-concurrent: true
+tun:
+  auto-detect-interface: true
+  auto-redirect: true
+  auto-route: true
+  device: Meta
+  dns-hijack:
+  - any:53
+  enable: true
+  mtu: 1500
+  stack: mixed
+  strict-route: false
+unified-delay: false
