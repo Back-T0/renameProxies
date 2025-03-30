@@ -45,12 +45,12 @@ proxies:
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
   name: 未知-1
-  port: 31800
+  port: 10860
   reality-opts:
     public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY
-  server: agaungzhou01.bumbleshrimp.com
+  server: test123.zlqhdns.top
   servername: www.nvidia.com
-  skip-cert-verify: false
+  skip-cert-verify: true
   tls: true
   type: vless
   udp: true
@@ -69,8 +69,21 @@ proxies:
     headers:
       Host: in.youlingkais.filegear-sg.me
     path: /?ed=2560
-- cipher: aes-256-cfb
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
   name: 未知-2
+  port: 31800
+  reality-opts:
+    public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY
+  server: agaungzhou01.bumbleshrimp.com
+  servername: www.nvidia.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45
+- cipher: aes-256-cfb
+  name: 未知-3
   obfs: tls1.2_ticket_auth
   obfs-param: sg2-cdn-route.couldflare-cdn.com
   password: uiACqrIr
@@ -80,19 +93,6 @@ proxies:
   server: cm2.xcone.xyz
   type: ssr
   udp: true
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 未知-3
-  port: 10860
-  reality-opts:
-    public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY
-  server: test123.zlqhdns.top
-  servername: www.nvidia.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
   name: 未知-4
@@ -106,43 +106,9 @@ proxies:
   type: vless
   udp: true
   uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45
-- cipher: chacha20-ietf-poly1305
-  name: 中国-2
-  password: ee19fceb-cedc-4832-b460-fccf24fdc8be
-  port: 11003
-  server: 61.172.235.22
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 中国-3
-  password: ee19fceb-cedc-4832-b460-fccf24fdc8be
-  port: 12363
-  server: 183.240.255.75
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 中国-4
-  password: ee19fceb-cedc-4832-b460-fccf24fdc8be
-  port: 11004
-  server: 61.172.235.22
-  type: ss
-  udp: true
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
   name: 未知-5
-  port: 14659
-  reality-opts:
-    public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY
-  server: csuzhou01.1cooldns.com
-  servername: www.nvidia.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 未知-6
   port: 24318
   reality-opts:
     public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY
@@ -153,6 +119,33 @@ proxies:
   type: vless
   udp: true
   uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45
+- cipher: chacha20-ietf-poly1305
+  name: 中国-2
+  password: ee19fceb-cedc-4832-b460-fccf24fdc8be
+  port: 12363
+  server: 183.240.255.75
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 未知-6
+  port: 14659
+  reality-opts:
+    public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY
+  server: csuzhou01.1cooldns.com
+  servername: www.nvidia.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45
+- cipher: chacha20-ietf-poly1305
+  name: 中国-3
+  password: ee19fceb-cedc-4832-b460-fccf24fdc8be
+  port: 12366
+  server: 183.240.255.75
+  type: ss
+  udp: true
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
   name: 未知-7
@@ -167,41 +160,12 @@ proxies:
   udp: true
   uuid: 459b4a80-bd61-4ecd-a26b-e9c1809d9e45
 - cipher: chacha20-ietf-poly1305
-  name: 中国-5
+  name: 中国-4
   password: ee19fceb-cedc-4832-b460-fccf24fdc8be
-  port: 12366
-  server: 183.240.255.75
+  port: 11003
+  server: 61.172.235.22
   type: ss
   udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 中国-6
-  password: ee19fceb-cedc-4832-b460-fccf24fdc8be
-  port: 12353
-  server: 183.232.229.164
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 中国-7
-  password: ee19fceb-cedc-4832-b460-fccf24fdc8be
-  port: 12359
-  server: 183.232.229.164
-  type: ss
-  udp: true
-- name: 法国-1
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 185.16.110.107
-  servername: in.youlingkais.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: in.youlingkais.filegear-sg.me
-    path: /?ed=2560
 - client-fingerprint: chrome
   name: 瑞士-1
   port: 80
@@ -215,20 +179,6 @@ proxies:
   type: vless
   udp: true
   uuid: 98d8274c-3159-7718-4042-19544c9d2ff6
-- name: 法国-2
-  network: ws
-  port: 443
-  server: 217.163.76.102
-  servername: in.youlingkais.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: in.youlingkais.filegear-sg.me
-    path: /?ed=2560
 - name: 未知-8
   password: exaxgqkKkd0TAMrCxeonWg==
   port: 443
@@ -238,20 +188,6 @@ proxies:
   udp: true
   username: mrwdfNTD8M79LCukCieldrqZWqs=
 - name: 韩国-1
-  network: ws
-  port: 21291
-  server: 211.185.2.191
-  servername: edfgv.aimercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      Host: edfgv.aimercc.filegear-sg.me
-    path: /?ed=2560
-- name: 韩国-2
   network: ws
   port: 12361
   server: 222.119.17.97
@@ -265,10 +201,24 @@ proxies:
     headers:
       Host: edfgv.aimercc.filegear-sg.me
     path: /?ed=2560
+- name: 韩国-2
+  network: ws
+  port: 17774
+  server: 220.116.147.73
+  servername: edfgv.aimercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  ws-opts:
+    headers:
+      Host: edfgv.aimercc.filegear-sg.me
+    path: /?ed=2560
 - name: 韩国-3
   network: ws
-  port: 16049
-  server: 121.135.67.36
+  port: 21291
+  server: 211.185.2.191
   servername: edfgv.aimercc.filegear-sg.me
   skip-cert-verify: true
   tls: true
@@ -293,34 +243,6 @@ proxies:
   type: vless
   udp: true
   uuid: 30f85233-d41e-4297-97c1-cfac047a948b
-- name: 韩国-5
-  network: ws
-  port: 17774
-  server: 220.116.147.73
-  servername: edfgv.aimercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      Host: edfgv.aimercc.filegear-sg.me
-    path: /?ed=2560
-- name: 哈萨克斯坦-1
-  network: ws
-  port: 443
-  server: 194.76.18.83
-  servername: in.youlingkais.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: in.youlingkais.filegear-sg.me
-    path: /?ed=2560
 - name: 荷兰-1
   network: ws
   port: 80
@@ -337,20 +259,6 @@ proxies:
     path: /Telegram@WangCai2/?ed=2560
 - name: 荷兰-2
   network: ws
-  port: 8080
-  server: 45.131.4.33
-  servername: gozargah.validbv7996.ir
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: c5293efa-28f8-4a0f-8f34-541078970cee
-  ws-opts:
-    headers:
-      Host: gozargah.validbv7996.ir
-    path: /@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY
-- name: 荷兰-3
-  network: ws
   port: 80
   server: 45.131.4.162
   servername: gozargah.validbv7996.ir
@@ -363,7 +271,7 @@ proxies:
     headers:
       Host: gozargah.validbv7996.ir
     path: /Telegram@WangCai2
-- name: 荷兰-4
+- name: 荷兰-3
   network: ws
   port: 80
   server: 45.131.4.33
@@ -377,7 +285,7 @@ proxies:
     headers:
       Host: gozargah.validbv7996.ir
     path: /@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY
-- name: 荷兰-5
+- name: 荷兰-4
   network: ws
   port: 80
   server: 45.131.4.254
@@ -391,6 +299,20 @@ proxies:
     headers:
       Host: gozargah.validbv7996.ir
     path: /Telegram@WangCai2
+- name: 荷兰-5
+  network: ws
+  port: 8080
+  server: 45.131.4.33
+  servername: gozargah.validbv7996.ir
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: c5293efa-28f8-4a0f-8f34-541078970cee
+  ws-opts:
+    headers:
+      Host: gozargah.validbv7996.ir
+    path: /@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY----@ELiV2RAY
 - name: 新加坡-1
   network: ws
   port: 8443
@@ -419,78 +341,7 @@ proxies:
     headers:
       Host: edfgv.aimercc.filegear-sg.me
     path: /?ed=2560
-- name: 美国-1
-  network: ws
-  port: 443
-  server: 63.141.128.58
-  servername: il.ylkszy.eu.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: il.ylkszy.eu.org
-    path: /?ed=2560
 - name: 未知-9
-  network: ws
-  port: 443
-  server: pranab.ns.cloudflare.com
-  servername: edfgv.aimercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      Host: edfgv.aimercc.filegear-sg.me
-    path: /?ed=2560
-- name: 美国-2
-  network: ws
-  port: 443
-  server: 198.62.62.156
-  servername: il.ylkszy.eu.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: il.ylkszy.eu.org
-    path: /?ed=2560
-- name: 美国-3
-  network: ws
-  port: 443
-  server: 63.141.128.100
-  servername: il.ylkszy.eu.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: il.ylkszy.eu.org
-    path: /?ed=2560
-- name: 美国-4
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 63.141.128.177
-  servername: il.ylkszy.eu.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: il.ylkszy.eu.org
-    path: /?ed=2560
-- name: 未知-10
   network: ws
   port: 443
   server: thaddeus.ns.cloudflare.com
@@ -504,106 +355,7 @@ proxies:
     headers:
       Host: edfgv.aimercc.filegear-sg.me
     path: /?ed=2560
-- name: 美国-5
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 63.141.128.218
-  servername: in.youlingkais.filegear-sg.me
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: in.youlingkais.filegear-sg.me
-    path: /?ed=2560
-- name: 未知-11
-  network: ws
-  port: 443
-  server: theo.ns.cloudflare.com
-  servername: edfgv.aimercc.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      Host: edfgv.aimercc.filegear-sg.me
-    path: /?ed=2560
-- name: 未知-12
-  network: ws
-  port: 443
-  server: decker.ns.cloudflare.com
-  servername: in.youlingkais.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: in.youlingkais.filegear-sg.me
-    path: /?ed=2560
-- name: 未知-13
-  network: ws
-  port: 443
-  server: craig.ns.cloudflare.com
-  servername: in.youlingkais.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: in.youlingkais.filegear-sg.me
-    path: /?ed=2560
-- name: 未知-14
-  network: ws
-  port: 443
-  server: dnschecker.org
-  servername: il.ylkszy.eu.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: il.ylkszy.eu.org
-    path: /?ed=2560
-- name: 美国-6
-  network: ws
-  port: 443
-  server: 172.67.106.26
-  servername: in.youlingkais.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: in.youlingkais.filegear-sg.me
-    path: /?ed=2560
-- name: 未知-15
-  network: ws
-  port: 443
-  server: www.4chan.org
-  servername: il.ylkszy.eu.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      Host: il.ylkszy.eu.org
-    path: /?ed=2560
-- name: 未知-16
+- name: 未知-10
   network: ws
   port: 443
   server: arvind.ns.cloudflare.com
@@ -617,22 +369,35 @@ proxies:
     headers:
       Host: edfgv.aimercc.filegear-sg.me
     path: /?ed=2560
-- name: 美国-7
+- name: 未知-11
   network: ws
-  packet-encoding: xudp
   port: 443
-  server: 135.84.76.115
-  servername: in.youlingkais.filegear-sg.me
-  skip-cert-verify: false
+  server: pranab.ns.cloudflare.com
+  servername: edfgv.aimercc.filegear-sg.me
+  skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
   ws-opts:
     headers:
-      Host: in.youlingkais.filegear-sg.me
+      Host: edfgv.aimercc.filegear-sg.me
     path: /?ed=2560
-- name: 未知-17
+- name: 未知-12
+  network: ws
+  port: 443
+  server: theo.ns.cloudflare.com
+  servername: edfgv.aimercc.filegear-sg.me
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  ws-opts:
+    headers:
+      Host: edfgv.aimercc.filegear-sg.me
+    path: /?ed=2560
+- name: 未知-13
   network: ws
   port: 80
   server: support.zoom.us
@@ -654,24 +419,21 @@ proxy-groups:
   - 手动选择
   - 未知分区
   - 中国分区
-  - 法国分区
   - 瑞士分区
   - 韩国分区
-  - 哈萨克斯坦分区
   - 荷兰分区
   - 新加坡分区
-  - 美国分区
   type: select
 - hidden: true
-  icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAEh0lEQVR4nO2cPUhyYRTHUyMNNAKdUmopGxoiAgcbmsWcimgoqAgiaaohEiXShkQI3PoYg4po7GOKKLDRoFoi+iKISkEEUfLSve9gnNdXLO/xPvf2Xji/6T5w7/+c80vN62NpBEGoIcSh/e0G1ATJQkCyEJAsBCQLAclCQLIQkCwEJAsByUJAshCQLAQkCwHJQkCyEJAsBCQLAclCQLIQkCwEJAsByUJAshCQLAQkCwHJQkCyEJAsBCQLAclCQLIQkCwEJAsByUJAshCQLAS/I2tzc1NTRF9fX9nTNIxg1fYvyLq9vfV6vYqVU7GsfD4/NDSUyWQUq9jf388qqpZVkEjm5ubi8bjIk4+OjqoocXp6ury8XDjW6XShUKiKkPIICnJwcFD2SeF2u1mV4Hm+u7sbksfHx1klC4KgnKyXlxeLxVKYwWAwyCRrd3cXYvV6/dPTE6tkQRAUes3ieX54eDiZTBaWPp9Pjiqfn5+BQACWU1NTzc3NLAswFP8DS0tLUNFut398fBT3wOqRtb6+DplGo/H9/Z1JLKCErFgsVlv79ZtEp9PFYjHh37+uYiIrl8vZbDbIDAQC0jNLkF1WKpVqaWmBGXw+31dh1rIikQgEms3mdDotPbME2WUNDAzADA6HI5/PfxVmKiudTpvNZgiMRCKSGy+DvLJWV1dhgIaGhru7u7+Fmcry+/2QZrVac7mcxMCyyCjr+vq6vr4eZtja2vqnMDtZb29vRqMR0tbW1qQ1/i1yycpmsx0dHTDA2NhYaWF2sqanpyGqtbWV4zgpaT8gl6zJyUkYoL29PZPJlBZmJOvh4aGuru67xy9bZJG1t7cH3ev1+ouLizKFGckaGRmBnM7OTp7nq++7EuxlPT4+NjY2wgDRaLR8YRayrq6utNq/NyH7+/sSGq8MY1kcxzmdTuje4/F8W5iFLI/HAyE9PT3Vdi0WxrKKb/qsVmsymfy2sGRZ5+fnxSFnZ2cSGhcFS1nHx8fwpNBqtScnJz8Vliyrt7cXElwuV5VNY2AmK5FINDU1Qfd+v79CYWmyDg8P4XKNRhOPx6ttHAEbWTzPu91u6N7pdFZ8syNFFs/zXV1dcPng4KCE3hGwkbWyslLDjorltre34WSdTndzc8NkioqwkVX8tlBuWRzHtbW1wckTExNMRhADG1kMTVWUVXxzbjAYnp+fmYwgBja7O1Vsw7hcLjh2OByLi4tirsrlcsFgEJZer7f4Az/ZUezHUkJxD+Jf4GGPq6amxmQyJRIJWZssQU3fdUin0+FwGJYzMzOwXaQMapIVDodTqVTh2GKxzM7OKtyAamS9vr5Go1FYzs/Pm0wmhXtQjaxQKJTNZgvHNptNya+WAOqQdX9/v7GxAcuFhYWSPW1lUIesQCDAcVzh2G63j46O/kobKpB1eXm5s7MDy2AwCFu2CqMR6F9vikYFj6z/B5KFgGQhIFkISBYCkoWAZCEgWQhIFgKShYBkISBZCEgWApKFgGQhIFkISBYCkoWAZCEgWQhIFgKShYBkISBZCEgWApKFgGQhIFkI/gDDYg5mX8uudgAAAABJRU5ErkJggg==
+  icon: data:image/png;base64,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
   include-all-proxies: true
   name: 自动选择
   type: url-test
-- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAEh0lEQVR4nO2cPUhyYRTHUyMNNAKdUmopGxoiAgcbmsWcimgoqAgiaaohEiXShkQI3PoYg4po7GOKKLDRoFoi+iKISkEEUfLSve9gnNdXLO/xPvf2Xji/6T5w7/+c80vN62NpBEGoIcSh/e0G1ATJQkCyEJAsBCQLAclCQLIQkCwEJAsByUJAshCQLAQkCwHJQkCyEJAsBCQLAclCQLIQkCwEJAsByUJAshCQLAQkCwHJQkCyEJAsBCQLAclCQLIQkCwEJAsByUJAshCQLAS/I2tzc1NTRF9fX9nTNIxg1fYvyLq9vfV6vYqVU7GsfD4/NDSUyWQUq9jf388qqpZVkEjm5ubi8bjIk4+OjqoocXp6ury8XDjW6XShUKiKkPIICnJwcFD2SeF2u1mV4Hm+u7sbksfHx1klC4KgnKyXlxeLxVKYwWAwyCRrd3cXYvV6/dPTE6tkQRAUes3ieX54eDiZTBaWPp9Pjiqfn5+BQACWU1NTzc3NLAswFP8DS0tLUNFut398fBT3wOqRtb6+DplGo/H9/Z1JLKCErFgsVlv79ZtEp9PFYjHh37+uYiIrl8vZbDbIDAQC0jNLkF1WKpVqaWmBGXw+31dh1rIikQgEms3mdDotPbME2WUNDAzADA6HI5/PfxVmKiudTpvNZgiMRCKSGy+DvLJWV1dhgIaGhru7u7+Fmcry+/2QZrVac7mcxMCyyCjr+vq6vr4eZtja2vqnMDtZb29vRqMR0tbW1qQ1/i1yycpmsx0dHTDA2NhYaWF2sqanpyGqtbWV4zgpaT8gl6zJyUkYoL29PZPJlBZmJOvh4aGuru67xy9bZJG1t7cH3ev1+ouLizKFGckaGRmBnM7OTp7nq++7EuxlPT4+NjY2wgDRaLR8YRayrq6utNq/NyH7+/sSGq8MY1kcxzmdTuje4/F8W5iFLI/HAyE9PT3Vdi0WxrKKb/qsVmsymfy2sGRZ5+fnxSFnZ2cSGhcFS1nHx8fwpNBqtScnJz8Vliyrt7cXElwuV5VNY2AmK5FINDU1Qfd+v79CYWmyDg8P4XKNRhOPx6ttHAEbWTzPu91u6N7pdFZ8syNFFs/zXV1dcPng4KCE3hGwkbWyslLDjorltre34WSdTndzc8NkioqwkVX8tlBuWRzHtbW1wckTExNMRhADG1kMTVWUVXxzbjAYnp+fmYwgBja7O1Vsw7hcLjh2OByLi4tirsrlcsFgEJZer7f4Az/ZUezHUkJxD+Jf4GGPq6amxmQyJRIJWZssQU3fdUin0+FwGJYzMzOwXaQMapIVDodTqVTh2GKxzM7OKtyAamS9vr5Go1FYzs/Pm0wmhXtQjaxQKJTNZgvHNptNya+WAOqQdX9/v7GxAcuFhYWSPW1lUIesQCDAcVzh2G63j46O/kobKpB1eXm5s7MDy2AwCFu2CqMR6F9vikYFj6z/B5KFgGQhIFkISBYCkoWAZCEgWQhIFgKShYBkISBZCEgWApKFgGQhIFkISBYCkoWAZCEgWQhIFgKShYBkISBZCEgWApKFgGQhIFkI/gDDYg5mX8uudgAAAABJRU5ErkJggg==
+- icon: data:image/png;base64,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
   include-all-proxies: true
   name: 手动选择
   type: select
-- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAD0UlEQVR4nO3cv0t6XxzH8e63SIesQRsix7yNEU0R/QFpWwRNUW6JQ78IrtUVvEiKyy0aosghCKq1wNkhGotyiSAKIqSIkqKiTL/D/XKQAr+fd5xz+5x4PadzBs/79sBML5JSLpdr0J/1z09fgEwBixCwCAGLELAIAYsQsAgBixCwCAGLELAIAYsQsAgBixCwCAGLELAIAYsQsAgBixCwCAGLELAIAYsQsAgBixCwCAGLELAIAYsQsAgBixCwCAGLELAIAYuQfVgnJydjY2OqqjocDkVRFEXp7++v/hCFU7x+hDpeB1Xp9vZW07R0Ov0j34yWBuvj42NlZWVubu7h4UHooCoNDAzwOkog1v7+fjgcPjo6+vYJmUzmG4/KZrOJRMJa19bWGobx7Qv4XFlA+Xx+eHj46/O/u7u7chsIBLiPLpVKXV1dbEQwGOR4OH+svb29pqamT0wtLS0bGxulUkk01s7ODjvf4XBcXl5yPJw/VjQarRSpr6+fmZl5fHz8b55IrGKx2N7ezs4fHx/ne77YF3i/32+aps/nEzqFlU6nT09PrXVDQ0MkEuF7vigsn89nmqbf7xd0/tdeX19jsRjbTkxMNDc38x3B/01pY2NjIpHI5XJ2StXU1CwvL19dXVlrt9s9PT3Nfwbf3+r/rXI0x9esQqHgdrvZyalUitfJlf2Sz4apVOru7s5at7a2hsNhEVN+A9bNzY1pmmyr67rT6RQx6DdgGYbx9PRkrdva2oLBoKBB0mNdXFysrq6ybSwWq6sT9Sdeeixd19/e3qx1R0fH0NCQuFlyY+Vyuc3NTbaNx+Mcb8h8TW6sSCTCPm/29PQEAgGh4yTGOjg42N3dZduFhQXREyXG0jSNrfv6+np7e0VPlBUrk8lks1lrrShKPB63YaiUWOVyeXZ2lm0HBwc7OzttmCsl1vb29uHhobXmfOO4avJhFYtFXdfZdnR0VFVVe0bLh7W+vn52dmatnU7npxuzQpMM6+XlpfIOXygU8nq9tk2XDGtpaen6+tpau1yuyncPNiQTVqFQSCaTbDs5OenxeOy8AJmwksnk/f29tfZ4PFNTUzZfgDRY+Xx+cXGRbTVNc7lcNl+DNFiGYTw/P1trr9cbCoXsvwY5sM7Pz9fW1tg2Go0KunFcPTmw5ufn39/frbWqqiMjIz9yGRJgHR8fb21tsa3QG8fVU8r415t/nATPrL8nYBECFiFgEQIWIWARAhYhYBECFiFgEQIWIWARAhYhYBECFiFgEQIWIWARAhYhYBECFiFgEQIWIWARAhYhYBECFiFgEfoXeTTQDTUakusAAAAASUVORK5CYII=
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAFZElEQVR4nO2cXSi7XxzA7TdGhHktSUoW804KibIboVwoN2puvCSRt3JPibILRewKkUQuvBU3UkKNhbyzCyWkYWGy1Dznd7F/T6fx357vdvYz6/u5OmfO+X6/5+N5znO2iYgQ4oUI489PF/CbQFkAUBYAlAUAZQFAWQBQFgCUBQBlAUBZAFAWAJQFAGUBQFkAUBYAlAUAZQFAWQBQFgCUBQBlAUBZAFAWAJQFAGUBQFkAUBYAlAUAZQFAWQBQFgCUBQBlAUBZALx/ugAHMZvNBwcH5+fnBoPBaDQGBgaGhoampaWlpKT8+eOyK4D8Kw4PDxsaGmQymUQisaQuKytzIM7GxkZlZaW/v/+3ywkODm5qatLpdMzrJ4T8C1l6vb6mpkYkElktDCrr4eGhoqJCyBXg6+vb39/PfCGulWU2m4eGhqRS6bdLAsm6urqKiYmxiiCVSlNSUtLS0r5N0draynY5LpS1ubmZkZFh4/cvXNbT01NcXBw9t7KyUqPRcBxnGcBx3Pb2dnFxsVWKsbExhityiaz7+/vq6uqv911eXp5jsmpra/lZYrF4cnLy22Ecx3V0dNApIiMjTSYTq3Wxl7W8vBwcHGylKSoqamJiguM4B2Sdnp7S3lUqlY3BHMfl5+fTWRYWFhitjLB/yu7u7r68vPBdiUTS2dl5eXmpVCq/XmtCsNxKlnZ8fHxLS4uNwSKRqL29nX5lY2PDgaTf4tpzVmlp6cDAgEwmcybI4uIi31Yqld7edmq2urLu7u6cyU7jKlkymWxgYKC0tNTJOO/v7zqdju8WFBTYnRISEkJ3zWazkzXwsJcVFBTU19fX1tbGHz6d4fr6Wi6X893k5GS7UwwGA92Njo52vgwL7GVZbRlOkpiYeHx8DJqys7NDdwsLC1kV44FvpEdHR/l2VFRUWVkZq8ieJmt2dnZhYYHvqlQqJrvBf7A6gwiETu3YG2kbqNVqWk1zczPb+L9eltFoPDs7U6vVWVlZfGQfH5+enh7+zRArfuvnWRa+nnIDAwOrqqo6OjqcPNx9i6ftWW9vbycnJxqN5vPzk3lwT5NFCNnc3FQqlZmZmUdHR2yD/+7bcGVlxWQyvb6+6nQ6rVa7trbGn9ePjo5yc3OXlpYUCgWzfGy3QLvQqZk/DfV6fWNjI72RBQQEXFxcsIrvUbIsDA8P01mKiopYRfZAWYSQkpISOtHe3h6TsJ62wVuor6+nu6urq0zCuvUGr9Ppbm9vLe2wsLDU1FSBE3NycujuxcUFk3rcWtbU1FRXV5elnZ2dvbu7K3BiWFgY3TUajUzqcevbMCkpiW+fnp5afYRvA/pzbS8vr8jISCb1uLWs9PR0vv3+/r6+vi5wotVxNDY2lkk9bi0rISEhISGB7w4ODgqcOD09TXfLy8vZFMTkmSocOrWQo0N3dzc9ZWZmxu4UjUYjFov5KTk5OSwKJ8T9z1nPz88RERH8FIlEMj4+bmP81tZWeHg4P97Hx2d/f59Z8awCCc0HlEUImZqasrobFArF/Py80Wjkx3x+fmq12rq6OvqaEolEIyMjLItnGEtQPrgsQkhvb+/XDUQsFsfFxWVlZcnl8qCgIKuf+vn5/d+3/I4Xzzac/XwOySKEzM3N0feXbRQKxeXlJfvimUe0k89RWYQQg8GgUqnorxGtkEqlSqVya2vLRcWLyC/8b5KPj49arfbm5ub5+fnj40MqlYaHh6empsrlcsf+nEIgv1LWT+HWh1J3A2UBQFkAUBYAlAUAZQFAWQBQFgCUBQBlAUBZAFAWAJQFAGUBQFkAUBYAlAUAZQFAWQBQFgCUBQBlAUBZAFAWAJQFAGUBQFkAUBaAvyF1TYIz0+GVAAAAAElFTkSuQmCC
   name: 未知分区
   proxies:
   - 未知-1
@@ -687,46 +449,27 @@ proxy-groups:
   - 未知-11
   - 未知-12
   - 未知-13
-  - 未知-14
-  - 未知-15
-  - 未知-16
-  - 未知-17
   type: url-test
-- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAC9UlEQVR4nO3aP0gycRzHca97sohzkHPKG/u3RTQ6ODs4CQ5BSzhFg7QFRWsg7Vp7RXOIqw6OQejSIBENYS3Z0A3G3TM88e0PJn4eou9P+LwnF70PL276+bPCMIyw0ZrQHjBOEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAL688vPsyzrR35H5d7wWL5ZPyWONpZYuVxO5bnWL7/PtVrtP75Vr9cPDg7+fbZtu91uLy0t/eiu0QqNLwiC1dVVGbyxsaG1ZAywzs/PRWpqaur29lZrielYr6+vi4uLglUsFhXHmI51dHQkUo7jPDw8KI4xGsv3fc/zBGtvb093j9FYpVJJpFzX7fV6unvMxer1eq7rClapVNJeZDDW7u6uSCWTSd/3tReZitXtdh3HEaxKpaK9KAyNxdra2hKpubm5fr+vvSgMzcS6ubmJRqOCdXJyor3oLROx1tfXRWp5eTkIAu1FbxmH1Wq1Jibez0IuLi60F71nHFY2mxWpVCqlPedTZmE1m82PJyKNRkN70afMwkqn0yKVyWS053zNIKxqtSpSlmVdXl5qL/qaKVhBEKysrAhWPp/XXjQgU7BOT09Fyrbt6+tr7UUDMgKr3+/Pz88LVqFQ0F40OCOwyuWySE1PT9/d3WkvGpw+1svLy+zsrGBtb29rL/o2fSz5jysSicRiscfHR+1F36aM9fT0FI/HBWt/f193z/CUsXZ2dkQqkUg8Pz/r7hmeJtb9/f3MzIxgHR4eKo4ZJU2szc1NkfI8z4SD4+GpYXU6ncnJScE6Pj7WWjJ6alhra2sitbCwYMjB8fB0sK6urj6e8J2dnanMQPvtK0dj3VheZtOKWEDEAiIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIW0F9HTozehR9EZAAAAABJRU5ErkJggg==
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAC50lEQVR4nO3cIWgycRzG8XMqDgSL0bbgqslgso5zTXA7FBmYFgSTYBHBMAwDscxkcDDD1oY22xltJpNpxWAYiDc5F+7FOV/m6zPkfifv80n3H+gevt5gDpxrtVoptJ8T6QHHhLEAjAVgLABjARgLwFgAxgIwFoCxAIwFYCwAYwEYC8BYAMYCMBaAsQCMBWAsAGMBGAvAWADGAjAWgLEAjAVgLABjARgLwFgAxgIwFoCxAIwFYCyA02O1223XhkQiITjG0bHG4/Ht7a30ii/OjWUYxtXV1fv7u/SQL86NVSwWh8Oh9IpvHBqr2+3W63XpFducGOvt7S2bzVof/Tg9PZWe88VxsUzTTKfT0+nUOpZKJdk936wcplqtrreFw+HFYrG5VlVVwW3OiqXrusfjsbq43W5d11ffP4clG8tBP4az2UzTtOVyaR2LxWIsFpOdtE3whdqSTCbXq6LRqGEY1tc31/LOUhRFaTabz8/P1nUgEHh6evJ6vbKT/uaIWKPRqFAorI8PDw9nZ2eCe34iH2s+n6dSqfl8bh1vbm6ur69lJ/1EPlahUBiNRtb1+fl5o9GQ3bODcKyXl5dms2ld+3y+Tqfj9/tlJ+0gGWsymeRyufWxVqtFIhG5Of8mFmu5XGqaNpvNrOPl5WU+n5casyexWOVyeTAYWNehUKjVakkt2Z9MrH6/f3d392fBycnj42MwGBRZAhGINZ1OM5mMaZrWsVQqxeNx+2f8hs3vGEzTVFV1/d1jsdjHx8fuh2yu/b/+6nB/f3+8r7RrZe//ovH5fIZhHOrZbB5vdyyXy3XAZ7N5vMfOb6YoSq/XQx9ycXGxvo5Go5VK5aCLAHbfWb+weTOqqvr6+iq1RP6N9BFhLABjARgLwFgAxgIwFuAIfs9yDt5ZAMYCMBaAsQCMBWAsAGMBGAvAWADGAjAWgLEAjAVgLABjARgLwFgAxgIwFoCxAIwFYCwAYwEYC8BYAMYCMBaAsQCfqiKwB7VKcCAAAAAASUVORK5CYII=
   name: 中国分区
   proxies:
   - 中国-1
   - 中国-2
   - 中国-3
   - 中国-4
-  - 中国-5
-  - 中国-6
-  - 中国-7
-  type: url-test
-- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAADr0lEQVR4nO3bz0sicRzG8XETJIkgZCQ6VUQp0S+i6OahixldOnj2EnQK+gOiSBKCoEOnTp2iQ7f+gwyjbgUZdagQkUqUNLzVOHto+e4krTsP2/oZ4XmfZpbRnl4MYRPrMk1TY/b6IT2gmSIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFpBbesCnbm9vLy4uisViqVTyer0+ny8QCIyNjbndzthpOqCHh4elpSVd179c2NbWFovFrq+vpWeawliGYcTjcTs3TktLSyKRqFargmslsd7e3mZnZ2tQ2tvbg8HgyMjIlzfa4uKi4GBJrFgsZoWYmZk5OTl5f39XF1xeXkaj0Rqv3d1dqcFiWEdHR1aC9fX1P125sbFhvdLn85XL5UZOVclgVavVgYEB9f1Ho9H610ciEavXzs5OY3bWJIN1fHysvnO3231/f1//+vPzcytWJBJpzM6aZD6UHh4equPp6emenp76109OTvr9fnV6dXX1v5bVTQbr9PRUHYfDYTsv6e/vV8f5fP77N9lIAMs0zZubG3U6NDRk51Ver1cdS32gF/iqhULBChQMBu286unpSR13dnZ+/ywbCWDpun52dga9pFwup9NpdTo+Pv7do2zVHE8d9vf3DcNQp3NzcyIzXKbj/3NmpVIJBAK5XO7jVNf1TCbT2tra+CVNcGctLy8rKU3T1tbWRKQ0zRmPaOq0t7dnXRsKhQzDkBrjaKxkMunxeJSU3+/PZrOCe5yLlU6nOzo6lJTH40mlUrKTHIp1d3fX1dWlpFwu18HBgfQoR2JlMpnu7m7rjyqpxww1OQ4rm8329vZapeLxuPSoXzkLK5fL9fX1WaVWV1elR/3OQViPj4/WRwuapq2srEiP+pRTsJ6fn2t+o3bUPfWRI7Dy+fzg4KBVqs4jecHksQqFwvDwsFUqkUhIj/o6YaxisTg6OmqV2tzclJ1UJ0msl5eXmidTW1tbgnv+mhhWqVSamJiwSm1vb0uNsZkM1uvr69TUlAM/o9dP4OFfpVIJh8OpVEr9y/z8/MLCAvQmNv8m9L0JYIVCoWQy+Y9v0vjZmgiWy+X69zcRwWqCx8rOqQn+YOGceGcBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIW0E/dyjTANbnxwQAAAABJRU5ErkJggg==
-  name: 法国分区
-  proxies:
-  - 法国-1
-  - 法国-2
   type: url-test
 - icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
   name: 瑞士分区
   proxies:
   - 瑞士-1
   type: url-test
-- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAEKklEQVR4nO3bP0gyYRzA8fNQh8riNG3oD2SSRQ3lERS4SWTQWAQNDdHQGjWG0Njs3ho1ZFoN5RDWEsQVNFRDZNbQkmSnJNnVvYPvezzv9b56P6nnSfh9Jo/uwZ9fU+/OMqmqyiFjeNYDVBOMBYCxADAWAMYCwFgAGAsAYwFgLACMBYCxADAWAMYCwFgAGAsAYwFgLACMBYCxADAWAMYCwFgAGAsAYwFgLACMBYCxADAWAMYCwFgAGAsAYwFgLACMBYCxAJjF2traMlVqZ2eHyczMYt3e3rK664phLAAzqzsmY4XDYY/HY3ytKIpfP5ABzGKlUint9uTkpNPpZDWJcSZW/zQgCEImk+E4zmazybLMZAYoNu9ZsiwXS3Ec19HRwWSGCrCJlUwmtdsYqwzyDQtjlUF+FGKsMqo0FptDBzKW2+3mOO719XVzczMajZ6enj48PBQKBbvd7nQ6+/v7A4HA2NiY3W5nMupfVBZ8Pl/x3i0Wi6Io8Xi8paWlxJD19fWhUCiXyzGZVsMmlvZr4vF4EolETU2Nkee1r6/v/v6eycBFDA5Kc7mczWYr3m5tbc1kMtlsluM4l8s1Pj4+MDDgcDhkWb6+vt7e3pYkiVzb1tYmSVJjYyPlmX+j//ycn5/rZuB5PhQK5fP5zzvHYjHdmdDo6OjHxwf9sVUmL8NYLKYrtbGxUWL/i4sLh8NBLolGo9SmJTGIFQ6HyUe+vLxcdsna2hq5ZGhoiMKcnzGItbCwoD1sr9f79vZmZFVPTw/Z6+7u7rvn/IzBQenMzEz8j93dXbPZ0LHe9PQ0uZlIJL5nupLoPz+VOTo6IsdeXFykP0PVfLuju5SaTqfpz1A1sQRBIDe1y2E0VU0sRVHIzYaGBvoz0D6RTqVSIyMj2mYkEunu7jayUPe6a2pq+uLJDKAdq7m5OZlMFgqF4ubBwYHBWGdnZ+RmV1fX1w9XDu2Xodls9nq92qbuaL6E/f197bbJZAoGg188mRH0P4Dn5+e1e+d5/urqquySdDpdV1enrfL7/RTm/IxBrJOTE/LZCgQC7+/vpZdMTEyQSw4PD+mMqsPmoHR4eJh88LOzs/876VEUZW5ujtx5amqK8rQaNrEuLy91F/xEUYxEIuRVGlmW19fXe3t7yd38fv8/r+TQwex0Z29vz2q16t5ArVZrZ2enKIrt7e0Wi0X302Aw+PT0xGpglWEsVVWPj4/JT8YSamtrV1ZWWF3z0zA+kc7n86urq4ODgzz/74MYt9u9tLT0+PjIds4iZn8YopPNZiVJurm5eX5+fnl5EQTB5XL5fL7iF2U/xE+JVRWq5kT6J8BYABgLAGMBYCwAjAWAsQAwFgDGAsBYABgLAGMBYCwAjAWAsQAwFgDGAsBYABgLAGMBYCwAjAWAsQAwFgDGAsBYABgLAGMB/ALUAxK+sQfwlQAAAABJRU5ErkJggg==
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAC50lEQVR4nO3cIWgycRzG8XMqDgSL0bbgqslgso5zTXA7FBmYFgSTYBHBMAwDscxkcDDD1oY22xltJpNpxWAYiDc5F+7FOV/m6zPkfifv80n3H+gevt5gDpxrtVoptJ8T6QHHhLEAjAVgLABjARgLwFgAxgIwFoCxAIwFYCwAYwEYC8BYAMYCMBaAsQCMBWAsAGMBGAvAWADGAjAWgLEAjAVgLABjARgLwFgAxgIwFoCxAIwFYCyA02O1223XhkQiITjG0bHG4/Ht7a30ii/OjWUYxtXV1fv7u/SQL86NVSwWh8Oh9IpvHBqr2+3W63XpFducGOvt7S2bzVof/Tg9PZWe88VxsUzTTKfT0+nUOpZKJdk936wcplqtrreFw+HFYrG5VlVVwW3OiqXrusfjsbq43W5d11ffP4clG8tBP4az2UzTtOVyaR2LxWIsFpOdtE3whdqSTCbXq6LRqGEY1tc31/LOUhRFaTabz8/P1nUgEHh6evJ6vbKT/uaIWKPRqFAorI8PDw9nZ2eCe34iH2s+n6dSqfl8bh1vbm6ur69lJ/1EPlahUBiNRtb1+fl5o9GQ3bODcKyXl5dms2ld+3y+Tqfj9/tlJ+0gGWsymeRyufWxVqtFIhG5Of8mFmu5XGqaNpvNrOPl5WU+n5casyexWOVyeTAYWNehUKjVakkt2Z9MrH6/f3d392fBycnj42MwGBRZAhGINZ1OM5mMaZrWsVQqxeNx+2f8hs3vGEzTVFV1/d1jsdjHx8fuh2yu/b/+6nB/f3+8r7RrZe//ovH5fIZhHOrZbB5vdyyXy3XAZ7N5vMfOb6YoSq/XQx9ycXGxvo5Go5VK5aCLAHbfWb+weTOqqvr6+iq1RP6N9BFhLABjARgLwFgAxgIwFuAIfs9yDt5ZAMYCMBaAsQCMBWAsAGMBGAvAWADGAjAWgLEAjAVgLABjARgLwFgAxgIwFoCxAIwFYCwAYwEYC8BYAMYCMBaAsQCfqiKwB7VKcCAAAAAASUVORK5CYII=
   name: 韩国分区
   proxies:
   - 韩国-1
   - 韩国-2
   - 韩国-3
   - 韩国-4
-  - 韩国-5
-  type: url-test
-- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
-  name: 哈萨克斯坦分区
-  proxies:
-  - 哈萨克斯坦-1
   type: url-test
 - icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAEKklEQVR4nO3bP0gyYRzA8fNQh8riNG3oD2SSRQ3lERS4SWTQWAQNDdHQGjWG0Njs3ho1ZFoN5RDWEsQVNFRDZNbQkmSnJNnVvYPvezzv9b56P6nnSfh9Jo/uwZ9fU+/OMqmqyiFjeNYDVBOMBYCxADAWAMYCwFgAGAsAYwFgLACMBYCxADAWAMYCwFgAGAsAYwFgLACMBYCxADAWAMYCwFgAGAsAYwFgLACMBYCxADAWAMYCwFgAGAsAYwFgLACMBYCxAJjF2traMlVqZ2eHyczMYt3e3rK664phLAAzqzsmY4XDYY/HY3ytKIpfP5ABzGKlUint9uTkpNPpZDWJcSZW/zQgCEImk+E4zmazybLMZAYoNu9ZsiwXS3Ec19HRwWSGCrCJlUwmtdsYqwzyDQtjlUF+FGKsMqo0FptDBzKW2+3mOO719XVzczMajZ6enj48PBQKBbvd7nQ6+/v7A4HA2NiY3W5nMupfVBZ8Pl/x3i0Wi6Io8Xi8paWlxJD19fWhUCiXyzGZVsMmlvZr4vF4EolETU2Nkee1r6/v/v6eycBFDA5Kc7mczWYr3m5tbc1kMtlsluM4l8s1Pj4+MDDgcDhkWb6+vt7e3pYkiVzb1tYmSVJjYyPlmX+j//ycn5/rZuB5PhQK5fP5zzvHYjHdmdDo6OjHxwf9sVUmL8NYLKYrtbGxUWL/i4sLh8NBLolGo9SmJTGIFQ6HyUe+vLxcdsna2hq5ZGhoiMKcnzGItbCwoD1sr9f79vZmZFVPTw/Z6+7u7rvn/IzBQenMzEz8j93dXbPZ0LHe9PQ0uZlIJL5nupLoPz+VOTo6IsdeXFykP0PVfLuju5SaTqfpz1A1sQRBIDe1y2E0VU0sRVHIzYaGBvoz0D6RTqVSIyMj2mYkEunu7jayUPe6a2pq+uLJDKAdq7m5OZlMFgqF4ubBwYHBWGdnZ+RmV1fX1w9XDu2Xodls9nq92qbuaL6E/f197bbJZAoGg188mRH0P4Dn5+e1e+d5/urqquySdDpdV1enrfL7/RTm/IxBrJOTE/LZCgQC7+/vpZdMTEyQSw4PD+mMqsPmoHR4eJh88LOzs/876VEUZW5ujtx5amqK8rQaNrEuLy91F/xEUYxEIuRVGlmW19fXe3t7yd38fv8/r+TQwex0Z29vz2q16t5ArVZrZ2enKIrt7e0Wi0X302Aw+PT0xGpglWEsVVWPj4/JT8YSamtrV1ZWWF3z0zA+kc7n86urq4ODgzz/74MYt9u9tLT0+PjIds4iZn8YopPNZiVJurm5eX5+fnl5EQTB5XL5fL7iF2U/xE+JVRWq5kT6J8BYABgLAGMBYCwAjAWAsQAwFgDGAsBYABgLAGMBYCwAjAWAsQAwFgDGAsBYABgLAGMBYCwAjAWAsQAwFgDGAsBYABgLAGMB/ALUAxK+sQfwlQAAAABJRU5ErkJggg==
   name: 荷兰分区
@@ -742,17 +485,6 @@ proxy-groups:
   proxies:
   - 新加坡-1
   - 新加坡-2
-  type: url-test
-- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAC9UlEQVR4nO3aP0gycRzHca97sohzkHPKG/u3RTQ6ODs4CQ5BSzhFg7QFRWsg7Vp7RXOIqw6OQejSIBENYS3Z0A3G3TM88e0PJn4eou9P+LwnF70PL276+bPCMIyw0ZrQHjBOEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAL688vPsyzrR35H5d7wWL5ZPyWONpZYuVxO5bnWL7/PtVrtP75Vr9cPDg7+fbZtu91uLy0t/eiu0QqNLwiC1dVVGbyxsaG1ZAywzs/PRWpqaur29lZrielYr6+vi4uLglUsFhXHmI51dHQkUo7jPDw8KI4xGsv3fc/zBGtvb093j9FYpVJJpFzX7fV6unvMxer1eq7rClapVNJeZDDW7u6uSCWTSd/3tReZitXtdh3HEaxKpaK9KAyNxdra2hKpubm5fr+vvSgMzcS6ubmJRqOCdXJyor3oLROx1tfXRWp5eTkIAu1FbxmH1Wq1Jibez0IuLi60F71nHFY2mxWpVCqlPedTZmE1m82PJyKNRkN70afMwkqn0yKVyWS053zNIKxqtSpSlmVdXl5qL/qaKVhBEKysrAhWPp/XXjQgU7BOT09Fyrbt6+tr7UUDMgKr3+/Pz88LVqFQ0F40OCOwyuWySE1PT9/d3WkvGpw+1svLy+zsrGBtb29rL/o2fSz5jysSicRiscfHR+1F36aM9fT0FI/HBWt/f193z/CUsXZ2dkQqkUg8Pz/r7hmeJtb9/f3MzIxgHR4eKo4ZJU2szc1NkfI8z4SD4+GpYXU6ncnJScE6Pj7WWjJ6alhra2sitbCwYMjB8fB0sK6urj6e8J2dnanMQPvtK0dj3VheZtOKWEDEAiIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIW0F9HTozehR9EZAAAAABJRU5ErkJggg==
-  name: 美国分区
-  proxies:
-  - 美国-1
-  - 美国-2
-  - 美国-3
-  - 美国-4
-  - 美国-5
-  - 美国-6
-  - 美国-7
   type: url-test
 rules:
 - GEOIP,lan,DIRECT,no-resolve
