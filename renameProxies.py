@@ -149,7 +149,7 @@ def rename_proxies(proxies, nation_cache):
             {
                 "type": "url-test",
                 "name": f"{nation}分区",
-                "proxies": [f"{nation}-{i}" for i in range(1, count + 1)],
+                "proxies": [f"{nation} {i}" for i in range(1, count + 1)],
                 "icon": f"data:image/png;base64,{generate_number_image_base64(count)}",
             }
         )
