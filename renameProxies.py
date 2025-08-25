@@ -140,7 +140,7 @@ def rename_proxies(proxies, nation_cache):
         if server:
             nation, iso_code, _ = nation_cache.get(server, ("未知", "cn", 0))
             nation_counter[nation] += 1
-            proxy["name"] = f"{nation}-{nation_counter[nation]}"
+            proxy["name"] = f"{nation} {nation_counter[nation]}"
         new_proxies.append(proxy)
 
     for nation, count in nation_counter.items():
