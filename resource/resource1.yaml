@@ -1,37 +1,115 @@
+mixed-port: 7890
+ipv6: true
+allow-lan: true
+unified-delay: false
+tcp-concurrent: true
+external-controller: 127.0.0.1:9090
+geox-url:
+  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb
+  asn: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  use-system-hosts: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - +.lan
+    - +.local
+    - +.msftconnecttest.com
+    - +.msftncsi.com
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - 1.1.1.1
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - https://doh.360.cn/dns-query
+    - https://1.1.1.1/dns-query
+    - https://1.0.0.1/dns-query
+    - https://208.67.222.222/dns-query
+    - https://208.67.220.220/dns-query
+    - https://194.242.2.2/dns-query
+    - https://194.242.2.3/dns-query
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - https://doh.360.cn/dns-query
+    - https://1.1.1.1/dns-query
+    - https://1.0.0.1/dns-query
+    - https://208.67.222.222/dns-query
+    - https://208.67.220.220/dns-query
+    - https://194.242.2.2/dns-query
+    - https://194.242.2.3/dns-query
+  nameserver-policy:
+    geosite:private,cn,geolocation-cn:
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+      - https://doh.360.cn/dns-query
+    geosite:google,youtube,telegram,gfw,geolocation-!cn:
+      - https://1.1.1.1/dns-query
+      - https://1.0.0.1/dns-query
+      - https://208.67.222.222/dns-query
+      - https://208.67.220.220/dns-query
+      - https://194.242.2.2/dns-query
+      - https://194.242.2.3/dns-query
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🚑 故障转移
+      - ⚖️ 负载均衡
+      - DIRECT
+    include-all-proxies: true
+  - name: ♻️ 自动选择
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    include-all-proxies: true
+  - name: 🚑 故障转移
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    include-all-proxies: true
+  - name: ⚖️ 负载均衡
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    include-all-proxies: true
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🚑 故障转移
+      - ⚖️ 负载均衡
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🚑 故障转移
+      - ⚖️ 负载均衡
+      - DIRECT
+    include-all-proxies: true
 proxies:
-  - name: YouTube顺丰资源 美国200
-    type: vless
-    server: 139.64.235.253
-    port: 2096
-    uuid: f61a4285-7264-4d07-9408-7b9ba1922c26
-    tls: true
+  - skip-cert-verify: false
+    sni: joss.gpj1.web.id
     network: ws
     ws-opts:
-      path: /
+      path: /Free-VPN-CF-Geo-Project/45.159.251.8=81
       headers:
-        Host: gaosir.unfeeling.sbs
-    servername: gaosir.unfeeling.sbs
-  - type: hysteria2
-    name: "All-@V2ray_Alpha--4 #1"
-    server: xjp2.mangshe.xyz
-    port: 2060
-    password: 78c2bad7-f5f3-41f2-88cc-81de9d05040b
-    sni: xjp2.mangshe.xyz
-    skip-cert-verify: true
-    tfo: false
-  - type: vless
-    name: BG_speednode_0001
-    server: 178.239.123.216
-    port: 24443
-    uuid: aa7f42cc-616f-4550-9a87-4b85bb409121
-    tls: true
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      headers:
-        Host: vless3.datatestvless.click
-      path: /?ed
-    servername: vless3.datatestvless.click
+        Host: joss.gpj1.web.id
+    type: trojan
+    password: 6ead60c4-4321-45d5-81a9-ba4835f7c692
+    server: 45.159.251.8
+    port: 81
+    name: PT_speednode_0023
   - skip-cert-verify: false
     sni: joss.gpj1.web.id
     network: ws
@@ -44,19 +122,46 @@ proxies:
     server: 212.227.144.37
     port: 8443
     name: ES_speednode_0008
-  - name: 中国 034
-    type: vmess
+  - skip-cert-verify: false
+    sni: joss.gpj1.web.id
     network: ws
-    server: v39.heduian.link
-    port: 30839
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    skip-cert-verify: true
-    tls: false
-    udp: true
-    alterId: 2
-    cipher: auto
     ws-opts:
+      path: /Free-VPN-CF-Geo-Project/217.30.10.31=8443
       headers:
-        Host: baidu.com
-      path: /oooo
-    client-fingerprint: chrome
+        Host: joss.gpj1.web.id
+    type: trojan
+    password: 422d402c-58f1-4473-abeb-fe6e69dc97ed
+    server: 217.30.10.31
+    port: 8443
+    name: PL_speednode_0022
+  - name: 🇺🇸US-104.192.226.106-0187 | 43.327MB
+    server: 104.192.226.106
+    port: 989
+    type: ss
+    cipher: aes-256-cfb
+    password: f8f7aCzcPKbsF8p3
+  - type: ss
+    server: 103.186.154.32
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+    name: 🔒 SS-TCP-NA 🇻🇳 VN-103.186.154.32:38388-01
+rules:
+  - GEOIP,lan,🎯 全球直连,no-resolve
+  - GEOSITE,github,🚀 节点选择
+  - GEOSITE,twitter,🚀 节点选择
+  - GEOSITE,youtube,🚀 节点选择
+  - GEOSITE,google,🚀 节点选择
+  - GEOSITE,telegram,🚀 节点选择
+  - GEOSITE,netflix,🚀 节点选择
+  - GEOSITE,bilibili,🎯 全球直连
+  - GEOSITE,bahamut,🚀 节点选择
+  - GEOSITE,spotify,🚀 节点选择
+  - GEOSITE,CN,🎯 全球直连
+  - GEOSITE,geolocation-!cn,🐟 漏网之鱼
+  - GEOIP,google,🚀 节点选择
+  - GEOIP,netflix,🚀 节点选择
+  - GEOIP,telegram,🚀 节点选择
+  - GEOIP,twitter,🚀 节点选择
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
