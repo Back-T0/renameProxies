@@ -42,94 +42,103 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- cipher: aes-256-gcm
-  name: 日本 1
-  password: 0690659746980c46
-  port: 10081
-  server: 167.17.179.197
-  type: ss
-  udp: true
-- name: 未知 1
-  network: ws
-  port: 80
-  server: fs.ir-sub.fun
-  servername: zedd.global.ssl.fastly.net
-  skip-cert-verify: false
-  tls: false
-  type: vless
-  udp: true
-  uuid: 2e9177ce-d1cc-45cd-b27f-f16f8fbc117a
-  ws-opts:
-    headers:
-      Host: zedd.global.ssl.fastly.net
-    path: /ZEDMODEON-ZEDMODEON-bia-ZEDMODEON
-- alterId: 0
-  cipher: auto
-  name: 美国 1
-  port: 29431
-  server: 185.221.23.251
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 8b78363e-3c3a-44ab-f0d8-f13d950c8572
 - alterId: 2
   cipher: auto
-  name: 未知 2
+  name: 未知 1
   network: ws
   port: 80
-  server: 73d73acd-sv2sg0-t7bo2t-1psmw.hk3.p5pv.com
+  server: 6b961a0a-sv4n40-t83wtx-2rrb.hk3.p5pv.com
   servername: broadcastlv.chat.bilibili.com
   skip-cert-verify: true
   tls: false
   type: vmess
   udp: true
-  uuid: 42bb6d36-97c7-11ee-be7f-f23c9164ca5d
-- name: 韩国 1
-  port: 1090
-  server: 121.169.46.116
-  type: socks5
+  uuid: ba64cdc5-c79a-326d-8e63-6903be8183a1
+- name: 香港 1
+  password: 76d630f2af6619c4a5de0ef953df3c6a
+  port: 443
+  server: 58.152.110.82
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  type: trojan
   udp: true
+- client-fingerprint: chrome
+  name: 以色列 1
+  port: 24170
+  reality-opts:
+    public-key: VsmNi1ZMXVOwhCWpbCp51w-D_DzrxWX4jgfpcU0S9G4
+    short-id: 2fb2106a629b
+  server: 185.136.132.171
+  servername: speedtest.net
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: fe21e399-ec6f-4cb5-8441-e911178665b1
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
   name: 俄罗斯联邦 1
-  port: 2443
+  port: 4443
   reality-opts:
-    public-key: IgaNLuUg1JOIoUdX4CegMU_XBU35B5RAYRL_-KZfpSY
-    short-id: c84a28bb05989ff4
-  server: 158.160.175.98
-  servername: yandex.ru
+    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
+    short-id: aa7e96542880027a
+  server: 80.90.186.91
+  servername: github.com
   skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: 62b0e46b-d2a5-423d-8457-95bde707fc19
+  uuid: 3121850a-24aa-41f9-936d-dbdf10a3b31f
 - client-fingerprint: chrome
-  name: 美国 2
-  network: ws
-  port: 443
-  server: 69.84.182.13
-  servername: fr-1-fr-1.aiopen.sbs
+  name: 俄罗斯联邦 2
+  port: 52900
+  reality-opts:
+    public-key: AjYSCSFHfqOg-NbP_ngiRvJkKNKZXuHNDa1sJd4TRRQ
+    short-id: 1fbc
+  server: 62.113.42.65
+  servername: ozon.ru
   skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: 1347acec-0c12-46c0-9436-19603093d9ab
-  ws-opts:
-    headers:
-      Host: fr-1-fr-1.aiopen.sbs
-    path: /kbjc/fr1
+  uuid: 97e7c83c-9346-49b4-85a5-1e3bbf7488b9
+- client-fingerprint: chrome
+  name: 未知 2
+  port: 52900
+  reality-opts:
+    public-key: AjYSCSFHfqOg-NbP_ngiRvJkKNKZXuHNDa1sJd4TRRQ
+    short-id: 1fbc
+  server: wolfy.ufavpn.ru
+  servername: ozon.ru
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 97e7c83c-9346-49b4-85a5-1e3bbf7488b9
+- client-fingerprint: chrome
+  name: 哈萨克斯坦 1
+  port: 35728
+  reality-opts:
+    public-key: vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng
+    short-id: 69a2
+  server: 178.236.16.98
+  servername: yahoo.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: a00d89f6-ab7e-4e30-a5e5-54c701d62c93
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Dark/Final.png
   name: 默认代理
   proxies:
   - 自动选择
   - 手动选择
-  - 日本分区
   - 未知分区
-  - 美国分区
-  - 韩国分区
+  - 香港分区
+  - 以色列分区
   - 俄罗斯联邦分区
+  - 哈萨克斯坦分区
   type: select
 - hidden: true
   icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAC9UlEQVR4nO3aP0gycRzHca97sohzkHPKG/u3RTQ6ODs4CQ5BSzhFg7QFRWsg7Vp7RXOIqw6OQejSIBENYS3Z0A3G3TM88e0PJn4eou9P+LwnF70PL276+bPCMIyw0ZrQHjBOEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAL688vPsyzrR35H5d7wWL5ZPyWONpZYuVxO5bnWL7/PtVrtP75Vr9cPDg7+fbZtu91uLy0t/eiu0QqNLwiC1dVVGbyxsaG1ZAywzs/PRWpqaur29lZrielYr6+vi4uLglUsFhXHmI51dHQkUo7jPDw8KI4xGsv3fc/zBGtvb093j9FYpVJJpFzX7fV6unvMxer1eq7rClapVNJeZDDW7u6uSCWTSd/3tReZitXtdh3HEaxKpaK9KAyNxdra2hKpubm5fr+vvSgMzcS6ubmJRqOCdXJyor3oLROx1tfXRWp5eTkIAu1FbxmH1Wq1Jibez0IuLi60F71nHFY2mxWpVCqlPedTZmE1m82PJyKNRkN70afMwkqn0yKVyWS053zNIKxqtSpSlmVdXl5qL/qaKVhBEKysrAhWPp/XXjQgU7BOT09Fyrbt6+tr7UUDMgKr3+/Pz88LVqFQ0F40OCOwyuWySE1PT9/d3WkvGpw+1svLy+zsrGBtb29rL/o2fSz5jysSicRiscfHR+1F36aM9fT0FI/HBWt/f193z/CUsXZ2dkQqkUg8Pz/r7hmeJtb9/f3MzIxgHR4eKo4ZJU2szc1NkfI8z4SD4+GpYXU6ncnJScE6Pj7WWjJ6alhra2sitbCwYMjB8fB0sK6urj6e8J2dnanMQPvtK0dj3VheZtOKWEDEAiIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIW0F9HTozehR9EZAAAAABJRU5ErkJggg==
@@ -140,32 +149,32 @@ proxy-groups:
   include-all-proxies: true
   name: 手动选择
   type: select
-- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
-  name: 日本分区
-  proxies:
-  - 日本 1
-  type: url-test
 - icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAADr0lEQVR4nO3bz0sicRzG8XETJIkgZCQ6VUQp0S+i6OahixldOnj2EnQK+gOiSBKCoEOnTp2iQ7f+gwyjbgUZdagQkUqUNLzVOHto+e4krTsP2/oZ4XmfZpbRnl4MYRPrMk1TY/b6IT2gmSIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFpBbesCnbm9vLy4uisViqVTyer0+ny8QCIyNjbndzthpOqCHh4elpSVd179c2NbWFovFrq+vpWeawliGYcTjcTs3TktLSyKRqFargmslsd7e3mZnZ2tQ2tvbg8HgyMjIlzfa4uKi4GBJrFgsZoWYmZk5OTl5f39XF1xeXkaj0Rqv3d1dqcFiWEdHR1aC9fX1P125sbFhvdLn85XL5UZOVclgVavVgYEB9f1Ho9H610ciEavXzs5OY3bWJIN1fHysvnO3231/f1//+vPzcytWJBJpzM6aZD6UHh4equPp6emenp76109OTvr9fnV6dXX1v5bVTQbr9PRUHYfDYTsv6e/vV8f5fP77N9lIAMs0zZubG3U6NDRk51Ver1cdS32gF/iqhULBChQMBu286unpSR13dnZ+/ywbCWDpun52dga9pFwup9NpdTo+Pv7do2zVHE8d9vf3DcNQp3NzcyIzXKbj/3NmpVIJBAK5XO7jVNf1TCbT2tra+CVNcGctLy8rKU3T1tbWRKQ0zRmPaOq0t7dnXRsKhQzDkBrjaKxkMunxeJSU3+/PZrOCe5yLlU6nOzo6lJTH40mlUrKTHIp1d3fX1dWlpFwu18HBgfQoR2JlMpnu7m7rjyqpxww1OQ4rm8329vZapeLxuPSoXzkLK5fL9fX1WaVWV1elR/3OQViPj4/WRwuapq2srEiP+pRTsJ6fn2t+o3bUPfWRI7Dy+fzg4KBVqs4jecHksQqFwvDwsFUqkUhIj/o6YaxisTg6OmqV2tzclJ1UJ0msl5eXmidTW1tbgnv+mhhWqVSamJiwSm1vb0uNsZkM1uvr69TUlAM/o9dP4OFfpVIJh8OpVEr9y/z8/MLCAvQmNv8m9L0JYIVCoWQy+Y9v0vjZmgiWy+X69zcRwWqCx8rOqQn+YOGceGcBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIW0E/dyjTANbnxwQAAAABJRU5ErkJggg==
   name: 未知分区
   proxies:
   - 未知 1
   - 未知 2
   type: url-test
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
+  name: 香港分区
+  proxies:
+  - 香港 1
+  type: url-test
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
+  name: 以色列分区
+  proxies:
+  - 以色列 1
+  type: url-test
 - icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAADr0lEQVR4nO3bz0sicRzG8XETJIkgZCQ6VUQp0S+i6OahixldOnj2EnQK+gOiSBKCoEOnTp2iQ7f+gwyjbgUZdagQkUqUNLzVOHto+e4krTsP2/oZ4XmfZpbRnl4MYRPrMk1TY/b6IT2gmSIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFpBbesCnbm9vLy4uisViqVTyer0+ny8QCIyNjbndzthpOqCHh4elpSVd179c2NbWFovFrq+vpWeawliGYcTjcTs3TktLSyKRqFargmslsd7e3mZnZ2tQ2tvbg8HgyMjIlzfa4uKi4GBJrFgsZoWYmZk5OTl5f39XF1xeXkaj0Rqv3d1dqcFiWEdHR1aC9fX1P125sbFhvdLn85XL5UZOVclgVavVgYEB9f1Ho9H610ciEavXzs5OY3bWJIN1fHysvnO3231/f1//+vPzcytWJBJpzM6aZD6UHh4equPp6emenp76109OTvr9fnV6dXX1v5bVTQbr9PRUHYfDYTsv6e/vV8f5fP77N9lIAMs0zZubG3U6NDRk51Ver1cdS32gF/iqhULBChQMBu286unpSR13dnZ+/ywbCWDpun52dga9pFwup9NpdTo+Pv7do2zVHE8d9vf3DcNQp3NzcyIzXKbj/3NmpVIJBAK5XO7jVNf1TCbT2tra+CVNcGctLy8rKU3T1tbWRKQ0zRmPaOq0t7dnXRsKhQzDkBrjaKxkMunxeJSU3+/PZrOCe5yLlU6nOzo6lJTH40mlUrKTHIp1d3fX1dWlpFwu18HBgfQoR2JlMpnu7m7rjyqpxww1OQ4rm8329vZapeLxuPSoXzkLK5fL9fX1WaVWV1elR/3OQViPj4/WRwuapq2srEiP+pRTsJ6fn2t+o3bUPfWRI7Dy+fzg4KBVqs4jecHksQqFwvDwsFUqkUhIj/o6YaxisTg6OmqV2tzclJ1UJ0msl5eXmidTW1tbgnv+mhhWqVSamJiwSm1vb0uNsZkM1uvr69TUlAM/o9dP4OFfpVIJh8OpVEr9y/z8/MLCAvQmNv8m9L0JYIVCoWQy+Y9v0vjZmgiWy+X69zcRwWqCx8rOqQn+YOGceGcBEQuIWEDEAiIWELGAiAVELCBiARELiFhAxAIiFhCxgIgFRCwgYgERC4hYQMQCIhYQsYCIBUQsIGIBEQuIWEDEAiIW0E/dyjTANbnxwQAAAABJRU5ErkJggg==
-  name: 美国分区
-  proxies:
-  - 美国 1
-  - 美国 2
-  type: url-test
-- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
-  name: 韩国分区
-  proxies:
-  - 韩国 1
-  type: url-test
-- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
   name: 俄罗斯联邦分区
   proxies:
   - 俄罗斯联邦 1
+  - 俄罗斯联邦 2
+  type: url-test
+- icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAB0UlEQVR4nO3aMWrCUACH8ZdSdBGdPUC8g4MXiN7BWXAQN0F3x4xODp7BKzi5CHoJcdEDaLqVtlDbr8t7he+3JYt/PpIHQrKqqoJ+5yX2gP/EWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwEpxjoej6PRqNPp1Ov1LMuyLBsMBrFHhRDCa+wBn1wul9lstl6v0/yGOpVY9/t9tVrN5/Pr9Rp7y7eSiLXb7cbj8eFwiD3kB5HPrPP5PBwOe73el1LdbjfSoqeqeLbbbavV+rKn3W5vNpvH4/HxZr/fj7jzXczXcL/f326398tarTaZTBaLRaPRiLjqiSTOrBBCURRlWeZ5HnvIM/Fj5XlelmVRFLGH/CzmAd9sNpfL5el0+helQtwnazqdRvz1P0jx706yjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAswFmAswFiAsYCsSvKzsTT5ZAHGAowFGAswFmAswFiAsQBjAcYCjAUYCzAWYCzAWICxAGMBxgKMBRgLMBZgLMBYgLEAYwHGAowFGAt4A4cxRqdR1dA2AAAAAElFTkSuQmCC
+  name: 哈萨克斯坦分区
+  proxies:
+  - 哈萨克斯坦 1
   type: url-test
 rules:
 - GEOIP,lan,DIRECT,no-resolve
