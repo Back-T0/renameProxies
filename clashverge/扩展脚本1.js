@@ -55,6 +55,28 @@ const RULE_PROVIDERS = {
         format: 'text'
     }
 }
+const PROXY_PROVIDERS = {
+    'provider1': {
+        type: 'http',
+        path: './proxy_provider/p1.yaml',
+        url: '替换此处',
+        interval: 21600,
+        filter: `^(?!.*(?:${EXCLUDE_KEYWORDS.join('|')})).+$`,
+        override: {
+            'additional-suffix': ' | p1'
+        }
+    },
+    'provider2': {
+        type: 'http',
+        path: './proxy_provider/p2.yaml',
+        url: '替换此处',
+        interval: 21600,
+        filter: `^(?!.*(?:${EXCLUDE_KEYWORDS.join('|')})).+$`,
+        override: {
+            'additional-suffix': ' | p2'
+        }
+    }
+}
 function main(config, profileName) {
     // 错误处理：检查配置对象和代理列表
     if (!config || typeof config !== 'object') {
@@ -107,6 +129,7 @@ function main(config, profileName) {
             return null
         }
         const useUrlTest = names.length > 5
+        const isHidden = names.length < 30
         return {
             name: location,
             type: useUrlTest ? 'url-test' : 'load-balance',
@@ -115,24 +138,27 @@ function main(config, profileName) {
             proxies: names,
             url: 'https://www.gstatic.com/generate_204',
             lazy: true,
-            hidden: true
+            hidden: isHidden
         }
     }).filter(Boolean)
 
     // 创建特殊代理组
     const groupNames = Object.keys(renamedGroups)
-    const all = { name: '指定', type: 'select', proxies: [...allProxies, 'COMPATIBLE'] }
-    const proxy = { name: '默认', type: 'select', proxies: [...groupNames, '指定', 'COMPATIBLE'] }
-    const largeModel = { name: '大模型', type: 'select', proxies: [...groupNames, '指定', 'COMPATIBLE'] }
-    const match = { name: '其他', type: 'select', proxies: ['默认', '指定', 'DIRECT'] }
+    const all1 = { name: '指定1', type: 'select', proxies: [...allProxies, 'COMPATIBLE'], icon: 'https://www.clashverge.dev/assets/icons/adjust.svg' }
+    const all2 = { name: '指定2', type: 'select', proxies: [...allProxies, 'COMPATIBLE'], icon: 'https://www.clashverge.dev/assets/icons/adjust.svg' }
+    const all3 = { name: '指定3', type: 'select', proxies: ['COMPATIBLE'], 'include-all-providers': true, icon: 'https://www.clashverge.dev/assets/icons/adjust.svg' }
+    const proxy = { name: '默认', type: 'select', proxies: [...groupNames, '指定1', '指定2', '指定3', 'DIRECT'], icon: 'https://www.clashverge.dev/assets/icons/speed.svg' }
+    const largeModel = { name: '大模型', type: 'select', proxies: [...groupNames, '指定1', '指定2', '指定3', 'DIRECT'], icon: 'https://www.clashverge.dev/assets/icons/chatgpt.svg' }
+    const match = { name: '其他', type: 'select', proxies: ['默认', '指定1', '指定2', '指定3', 'DIRECT'], icon: 'https://www.clashverge.dev/assets/icons/fish.svg' }
 
     // 合并代理组，特殊组在前
-    const allGroups = [all, proxy, largeModel, match, ...proxyGroups]
+    const allGroups = [proxy, largeModel, match, all1, all2, all3, ...proxyGroups]
 
     // 配置规则和数据
     config['geodata-mode'] = true
     config['gepx-url'] = GEO_DATA_URLS
     config['rule-providers'] = RULE_PROVIDERS
+    config['proxy-providers'] = PROXY_PROVIDERS
     config['rules'] = RULES
     config['proxy-groups'] = allGroups
 
