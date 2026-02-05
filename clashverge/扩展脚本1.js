@@ -129,7 +129,7 @@ function main(config, profileName) {
             return null
         }
         const useUrlTest = names.length > 5
-        const isHidden = names.length < 30
+        const isHidden = names.length < 80
         return {
             name: location,
             type: useUrlTest ? 'url-test' : 'load-balance',
@@ -144,12 +144,12 @@ function main(config, profileName) {
 
     // 创建特殊代理组
     const groupNames = Object.keys(renamedGroups)
-    const all1 = { name: '指定1', type: 'select', proxies: [...allProxies, 'COMPATIBLE'], icon: 'https://www.clashverge.dev/assets/icons/adjust.svg' }
-    const all2 = { name: '指定2', type: 'select', proxies: [...allProxies, 'COMPATIBLE'], icon: 'https://www.clashverge.dev/assets/icons/adjust.svg' }
-    const all3 = { name: '指定3', type: 'select', proxies: ['COMPATIBLE'], 'include-all-providers': true, icon: 'https://www.clashverge.dev/assets/icons/adjust.svg' }
-    const proxy = { name: '默认', type: 'select', proxies: [...groupNames, '指定1', '指定2', '指定3', 'DIRECT'], icon: 'https://www.clashverge.dev/assets/icons/speed.svg' }
-    const largeModel = { name: '大模型', type: 'select', proxies: [...groupNames, '指定1', '指定2', '指定3', 'DIRECT'], icon: 'https://www.clashverge.dev/assets/icons/chatgpt.svg' }
-    const match = { name: '其他', type: 'select', proxies: ['默认', '指定1', '指定2', '指定3', 'DIRECT'], icon: 'https://www.clashverge.dev/assets/icons/fish.svg' }
+    const all1 = { name: '指定节点', type: 'select', proxies: [...allProxies, 'COMPATIBLE'], icon: 'https://www.clashverge.dev/assets/icons/adjust.svg' }
+    const all2 = { name: '指定分组', type: 'select', proxies: [...groupNames, 'COMPATIBLE'], icon: 'https://www.clashverge.dev/assets/icons/adjust.svg' }
+    const all3 = { name: '指定供应', type: 'select', proxies: ['COMPATIBLE'], 'include-all-providers': true, icon: 'https://www.clashverge.dev/assets/icons/adjust.svg' }
+    const proxy = { name: '默认', type: 'select', proxies: ['指定节点', '指定分组', '指定供应', 'DIRECT'], icon: 'https://www.clashverge.dev/assets/icons/speed.svg' }
+    const largeModel = { name: '大模型', type: 'select', proxies: ['指定节点', '指定分组', '指定供应', 'DIRECT'], icon: 'https://www.clashverge.dev/assets/icons/chatgpt.svg' }
+    const match = { name: '其他', type: 'select', proxies: ['默认', '指定节点', '指定分组', '指定供应', 'DIRECT'], icon: 'https://www.clashverge.dev/assets/icons/fish.svg' }
 
     // 合并代理组，特殊组在前
     const allGroups = [proxy, largeModel, match, all1, all2, all3, ...proxyGroups]
