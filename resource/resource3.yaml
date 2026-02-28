@@ -7097,14 +7097,14 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: eGeS7710Fq2DIru91s0gGe
     name: "\U0001F1F8\U0001F1EA _SE_瑞典 -558"
-  - name: "\U0001F1E8\U0001F1F3 直连（ipv4优先）"
+  - name: "\U0001F1E8\U0001F1F3 直连（IPv4优先）"
     type: direct
     ip-version: ipv4-prefer
-    udp: true
-  - name: "\U0001F1E8\U0001F1F3 直连（ipv6优先）"
+  - name: "\U0001F1E8\U0001F1F3 直连（IPv6优先）"
     type: direct
     ip-version: ipv6-prefer
-    udp: true
+  - name: "\U0001F1E8\U0001F1F3 直连（双栈）"
+    type: direct
 proxy-groups:
   - interval: 600
     timeout: 3000
@@ -7429,6 +7429,8 @@ proxy-groups:
     type: select
     proxies:
       - REJECT
+      - REJECT-DROP
+      - PASS
       - 直连
     icon: >-
       https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png
@@ -7454,8 +7456,9 @@ proxy-groups:
     name: 直连
     type: select
     proxies:
-      - "\U0001F1E8\U0001F1F3 直连（ipv4优先）"
-      - "\U0001F1E8\U0001F1F3 直连（ipv6优先）"
+      - "\U0001F1E8\U0001F1F3 直连（IPv4优先）"
+      - "\U0001F1E8\U0001F1F3 直连（IPv6优先）"
+      - "\U0001F1E8\U0001F1F3 直连（双栈）"
     icon: >-
       https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
   - interval: 600
