@@ -51,6 +51,8 @@ const EXCLUDE_KEYWORDS = [
   "到期",
   "訂閱",
   "新年",
+  "以下",
+  "客户端",
 ];
 const GEO_DATA_URLS = [
   {
