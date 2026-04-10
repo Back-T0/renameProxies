@@ -135,7 +135,6 @@ function main(config, profileName) {
         return null;
       }
       const useUrlTest = names.length > 20;
-      // const isHidden = names.length < 100
       const isHidden = true;
       return {
         name: location,
@@ -157,38 +156,38 @@ function main(config, profileName) {
     name: "指定节点",
     type: "select",
     proxies: [...allProxies, "COMPATIBLE"],
-    icon: "https://www.clashverge.dev/assets/icons/adjust.svg",
+    icon: "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png",
   };
   const all2 = {
     name: "指定分组",
     type: "select",
     proxies: [...groupNames, "COMPATIBLE"],
-    icon: "https://www.clashverge.dev/assets/icons/adjust.svg",
+    icon: "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png",
   };
   const all3 = {
     name: "指定供应",
     type: "select",
     proxies: ["COMPATIBLE"],
     "include-all-providers": true,
-    icon: "https://www.clashverge.dev/assets/icons/adjust.svg",
+    icon: "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png",
   };
   const proxy = {
     name: "默认",
     type: "select",
     proxies: ["指定节点", "指定分组", "指定供应", "DIRECT"],
-    icon: "https://www.clashverge.dev/assets/icons/speed.svg",
+    icon: "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/$tash.png",
   };
   const largeModel = {
     name: "大模型",
     type: "select",
     proxies: ["指定节点", "指定分组", "指定供应", "DIRECT"],
-    icon: "https://www.clashverge.dev/assets/icons/chatgpt.svg",
+    icon: "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/anthropic.png",
   };
   const match = {
     name: "其他",
     type: "select",
     proxies: ["默认", "指定节点", "指定分组", "指定供应", "DIRECT"],
-    icon: "https://www.clashverge.dev/assets/icons/fish.svg",
+    icon: "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/stashflight.png",
   };
 
   // 合并代理组，特殊组在前
