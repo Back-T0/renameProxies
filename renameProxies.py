@@ -194,7 +194,7 @@ def build_extension_proxy_groups(entries):
             "name": location_key,
             "type": "url-test" if use_url_test else "load-balance",
             "proxies": names,
-            "url": "https://www.google.com/generate_204",
+            "url": "http://www.gstatic.com/generate_204",
             "lazy": True,
             "hidden": True,
         }
