@@ -1,18 +1,35 @@
 import os
+import re
 import yaml
 import threading
 import requests
 import socket
 import subprocess
-from collections import defaultdict
-from PIL import Image, ImageDraw, ImageFont
 import base64
 import io
+from collections import defaultdict
+from PIL import Image, ImageDraw, ImageFont
 
 RESOURCE_FILE = "resource.yaml"
 RESOURCE_DIR = "resource"
 TEMPLATE_DIR = "template"
 RESULT_DIR = "result"
+
+# template2.yaml 仅由 renameProxies1.py 使用（扩展脚本代理组 + 合并模板）
+SKIP_TEMPLATES_FOR_NATION = frozenset({"template2.yaml"})
+
+EXCLUDE_KEYWORDS = [
+    "国内",
+    "官网",
+    "官網",
+    "邀请",
+    "剩余",
+    "到期",
+    "訂閱",
+    "新年",
+    "以下",
+    "客户端",
+]
 
 os.makedirs(RESOURCE_DIR, exist_ok=True)
 os.makedirs(RESULT_DIR, exist_ok=True)
@@ -64,7 +81,6 @@ def collect_servers(proxies):
 def get_nation_info(server, nation_cache):
     if server in nation_cache:
         return nation_cache[server]
-    # print(f"查询 {server} 的国家信息...")
     try:
         ip = server if socket.inet_aton(server) else socket.gethostbyname(server)
     except socket.error:
@@ -76,15 +92,18 @@ def get_nation_info(server, nation_cache):
         ["mmdbinspect", "-db", "Country.mmdb", ip], capture_output=True, text=True
     )
     output = yaml.safe_load(result.stdout)
+    if not output or "record" not in output:
+        nation_cache[server] = ("未知", "cn", 0)
+        print(f"无法确定 {server} 的归属国家.")
+        return nation_cache[server]
     record = output["record"]
-    if output and "record" in output:
-        country_info = record.get("country") or record.get("registered_country")
-        if country_info:
-            nation = country_info["names"].get("zh-CN", "未知")
-            iso_code = country_info.get("iso_code", "cn")
-            nation_cache[server] = (nation, iso_code, 0)
-            print(f"{server} 归属 {nation} ({iso_code})")
-            return nation_cache[server]
+    country_info = record.get("country") or record.get("registered_country")
+    if country_info:
+        nation = country_info["names"].get("zh-CN", "未知")
+        iso_code = country_info.get("iso_code", "cn")
+        nation_cache[server] = (nation, iso_code, 0)
+        print(f"{server} 归属 {nation} ({iso_code})")
+        return nation_cache[server]
 
     nation_cache[server] = ("未知", "cn", 0)
     print(f"无法确定 {server} 的归属国家.")
@@ -108,41 +127,138 @@ def fetch_all_nations(domains, ips):
 
 
 def generate_number_image_base64(number: int, image_size=(100, 100), font_size=50):
-    # 创建空白图像
     img = Image.new("RGB", image_size, "white")
     draw = ImageDraw.Draw(img)
     font = ImageFont.load_default(size=font_size)
-
-    # 计算文本位置，使其居中
     text = str(number)
-    text_size = draw.textbbox((0, 0), text, font=font)  # 获取文本尺寸
-    text_width, text_height = text_size[2] - text_size[0], text_size[3] - text_size[1]
+    text_size = draw.textbbox((0, 0), text, font=font)
+    text_width = text_size[2] - text_size[0]
+    text_height = text_size[3] - text_size[1]
     position = ((image_size[0] - text_width) // 2, (image_size[1] - text_height) // 3)
-
-    # 绘制文本
     draw.text(position, text, fill="black", font=font)
-
-    # 将图片保存到内存
     buffer = io.BytesIO()
     img.save(buffer, format="PNG")
     buffer.seek(0)
+    return base64.b64encode(buffer.getvalue()).decode()
 
-    # 转换为 Base64
-    base64_str = base64.b64encode(buffer.getvalue()).decode()
-    return base64_str
+
+def apply_nation_names(proxies, nation_cache):
+    """按 GeoIP 重命名节点，并生成扩展脚本分组所需的 entries。"""
+    nation_counter = defaultdict(int)
+    new_proxies = []
+    entries = []
+    for proxy in proxies:
+        orig = (proxy.get("name") or "").strip()
+        p = dict(proxy)
+        server = p.get("server")
+        if server:
+            nation, _, _ = nation_cache.get(server, ("未知", "cn", 0))
+            nation_counter[nation] += 1
+            p["name"] = f"{nation} {nation_counter[nation]}"
+        new_proxies.append(p)
+        entries.append({"name": (p.get("name") or "").strip(), "orig": orig})
+    return new_proxies, entries, nation_counter
+
+
+def build_extension_proxy_groups(entries):
+    """
+    与 clashverge/扩展脚本1.js 一致的代理组结构。
+    entries: 每项为 {"name": 当前节点名, "orig": 订阅原始名（用于排除关键词）}
+    """
+    exclude_pat = re.compile("|".join(re.escape(k) for k in EXCLUDE_KEYWORDS))
+    groups = defaultdict(list)
+    all_names = []
+    for e in entries:
+        name = (e.get("name") or "").strip()
+        orig = (e.get("orig") if e.get("orig") is not None else name).strip()
+        if not name:
+            continue
+        all_names.append(name)
+        if exclude_pat.search(orig):
+            continue
+        parts = re.split(r"[ _-]+", name)
+        loc = parts[0] if parts else None
+        if loc:
+            groups[loc].append(name)
+
+    sorted_items = sorted(groups.items(), key=lambda x: (-len(x[1]), x[0]))
+    renamed_groups = {}
+    for location, names in sorted_items:
+        renamed_groups[f"{len(names)} {location}"] = names
+
+    group_names = list(renamed_groups.keys())
+    location_groups = []
+    for location_key, names in renamed_groups.items():
+        use_url_test = len(names) > 20
+        g = {
+            "name": location_key,
+            "type": "url-test" if use_url_test else "load-balance",
+            "proxies": names,
+            "url": "https://www.google.com/generate_204",
+            "lazy": True,
+            "hidden": True,
+        }
+        if use_url_test:
+            g["interval"] = "180"
+            g["timeout"] = "300"
+        else:
+            g["strategy"] = "round-robin"
+            g["interval"] = "500"
+            g["timeout"] = "800"
+        location_groups.append(g)
+
+    specify_node = {
+        "name": "指定节点",
+        "type": "select",
+        "proxies": [*all_names, "COMPATIBLE"],
+        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png",
+    }
+    specify_group = {
+        "name": "指定分组",
+        "type": "select",
+        "proxies": [*group_names, "COMPATIBLE"],
+        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png",
+    }
+    specify_provider = {
+        "name": "指定供应",
+        "type": "select",
+        "proxies": ["COMPATIBLE"],
+        "include-all-providers": True,
+        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png",
+    }
+    default_sel = {
+        "name": "默认",
+        "type": "select",
+        "proxies": ["指定节点", "指定分组", "指定供应", "DIRECT"],
+        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/$tash.png",
+    }
+    large_model = {
+        "name": "大模型",
+        "type": "select",
+        "proxies": ["指定节点", "指定分组", "指定供应", "DIRECT"],
+        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/anthropic.png",
+    }
+    match = {
+        "name": "其他",
+        "type": "select",
+        "proxies": ["默认", "指定节点", "指定分组", "指定供应", "DIRECT"],
+        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/stashflight.png",
+    }
+    return [
+        default_sel,
+        large_model,
+        match,
+        specify_node,
+        specify_group,
+        specify_provider,
+        *location_groups,
+    ]
 
 
 def rename_proxies(proxies, nation_cache):
-    print("重命名代理并创建代理组...")
-    nation_counter, new_proxies, proxy_groups = defaultdict(int), [], []
-    for proxy in proxies:
-        server = proxy.get("server")
-        if server:
-            nation, iso_code, _ = nation_cache.get(server, ("未知", "cn", 0))
-            nation_counter[nation] += 1
-            proxy["name"] = f"{nation} {nation_counter[nation]}"
-        new_proxies.append(proxy)
-
+    print("重命名代理并创建代理组（经典分区 + 手动/自动选择）...")
+    new_proxies, _, nation_counter = apply_nation_names(proxies, nation_cache)
+    proxy_groups = []
     for nation, count in nation_counter.items():
         print(f"创建 {nation} 代理组, 共 {count} 个代理.")
         proxy_groups.append(
@@ -159,7 +275,7 @@ def rename_proxies(proxies, nation_cache):
         0,
         {
             "type": "select",
-            "name": f"手动选择",
+            "name": "手动选择",
             "include-all-proxies": True,
             "icon": f"data:image/png;base64,{generate_number_image_base64(len(all_proxy_names))}",
         },
@@ -168,7 +284,7 @@ def rename_proxies(proxies, nation_cache):
         0,
         {
             "type": "url-test",
-            "name": f"自动选择",
+            "name": "自动选择",
             "include-all-proxies": True,
             "icon": f"data:image/png;base64,{generate_number_image_base64(len(all_proxy_names))}",
             "hidden": True,
@@ -186,14 +302,18 @@ def rename_proxies(proxies, nation_cache):
     return new_proxies, proxy_groups
 
 
+def rename_proxies_with_extension_groups(proxies, nation_cache):
+    print("重命名代理并创建代理组（扩展脚本1.js 结构）...")
+    new_proxies, entries, _ = apply_nation_names(proxies, nation_cache)
+    return new_proxies, build_extension_proxy_groups(entries)
+
+
 def replace_yaml_sections(template_path, new_proxies, new_proxy_groups, output_path):
     print(f"处理模板: {template_path}...")
     with open(template_path, "r") as file:
         yaml_content = yaml.safe_load(file)
-    yaml_content["proxies"], yaml_content["proxy-groups"] = (
-        new_proxies,
-        new_proxy_groups,
-    )
+    yaml_content["proxies"] = new_proxies
+    yaml_content["proxy-groups"] = new_proxy_groups
     with open(output_path, "w") as file:
         yaml.dump(yaml_content, file, allow_unicode=True)
     print(f"生成成功: {output_path}")
@@ -205,7 +325,7 @@ def main():
     templates = [
         os.path.join(TEMPLATE_DIR, t)
         for t in os.listdir(TEMPLATE_DIR)
-        if t.endswith(".yaml")
+        if t.endswith(".yaml") and t not in SKIP_TEMPLATES_FOR_NATION
     ]
 
     for output_file, url in resource_config.items():
