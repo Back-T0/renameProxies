@@ -100,7 +100,7 @@ proxies:
   uuid: 443fd8ea-3cfd-4286-a4e2-91276e41fe51
 - alterId: 0
   cipher: auto
-  name: 未知 1
+  name: 法国 1
   network: ws
   port: 16622
   server: planb.mojcn.com
@@ -155,7 +155,7 @@ proxies:
     headers:
       Host: sni.111000.v6.navy
     path: /
-- name: 法国 1
+- name: 法国 2
   network: ws
   port: 8443
   server: 54.36.98.4
@@ -170,7 +170,7 @@ proxies:
       Host: sni.111000.v6.navy
     path: /?ed=2560
 - client-fingerprint: chrome
-  name: 法国 2
+  name: 法国 3
   network: ws
   port: 443
   server: 77.221.152.21
@@ -408,7 +408,7 @@ proxies:
     headers:
       Host: 2026.hhhhh.eu.org
     path: /222.167.202.23:7443
-- name: 未知 2
+- name: 韩国 1
   password: test.+
   port: 30446
   server: testkr3.ssv.vc
@@ -491,7 +491,7 @@ proxies:
     headers:
       Host: sni.111000.v6.navy
     path: /
-- name: 未知 3
+- name: 美国 4
   password: d6abdbda-fe9d-11ec-bb74-f23c9164ca5d
   port: 443
   server: a2cb60c5-t9zts0-td95qh-1isea.sj.oshuawei.com
@@ -499,7 +499,7 @@ proxies:
   type: http
   udp: true
   username: d6abdbda-fe9d-11ec-bb74-f23c9164ca5d
-- name: 美国 4
+- name: 美国 5
   network: ws
   password: trojan
   port: 50000
@@ -513,7 +513,7 @@ proxies:
       Host: jflsjlaf.pages.dev
     path: /
 - client-fingerprint: chrome
-  name: 美国 5
+  name: 美国 6
   port: 443
   reality-opts:
     public-key: H6i2nA8Pm4b5Wb9UxP3GOQ_1WAEdlqUg5WDCBDdxtFo
@@ -555,12 +555,12 @@ proxy-groups:
   proxies:
   - 澳大利亚 1
   - 德国 1
-  - 未知 1
+  - 法国 1
   - 塞浦路斯 1
   - 德国 2
   - 德国 3
-  - 法国 1
   - 法国 2
+  - 法国 3
   - 荷兰 1
   - 英国 1
   - 拉脱维亚 1
@@ -577,26 +577,25 @@ proxy-groups:
   - 香港 10
   - 香港 11
   - 香港 12
-  - 未知 2
+  - 韩国 1
   - 荷兰 2
   - 摩尔多瓦 1
   - 土耳其 1
   - 美国 1
   - 美国 2
   - 美国 3
-  - 未知 3
   - 美国 4
   - 美国 5
+  - 美国 6
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png
   name: 指定分组
   proxies:
   - 12 香港
-  - 5 美国
+  - 6 美国
   - 3 德国
-  - 3 未知
-  - 2 法国
+  - 3 法国
   - 2 荷兰
   - 1 土耳其
   - 1 塞浦路斯
@@ -605,6 +604,7 @@ proxy-groups:
   - 1 摩尔多瓦
   - 1 澳大利亚
   - 1 英国
+  - 1 韩国
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png
@@ -637,13 +637,14 @@ proxy-groups:
 - hidden: true
   interval: '500'
   lazy: true
-  name: 5 美国
+  name: 6 美国
   proxies:
   - 美国 1
   - 美国 2
   - 美国 3
   - 美国 4
   - 美国 5
+  - 美国 6
   strategy: round-robin
   timeout: '800'
   type: load-balance
@@ -663,22 +664,11 @@ proxy-groups:
 - hidden: true
   interval: '500'
   lazy: true
-  name: 3 未知
-  proxies:
-  - 未知 1
-  - 未知 2
-  - 未知 3
-  strategy: round-robin
-  timeout: '800'
-  type: load-balance
-  url: http://www.gstatic.com/generate_204
-- hidden: true
-  interval: '500'
-  lazy: true
-  name: 2 法国
+  name: 3 法国
   proxies:
   - 法国 1
   - 法国 2
+  - 法国 3
   strategy: round-robin
   timeout: '800'
   type: load-balance
@@ -760,6 +750,16 @@ proxy-groups:
   name: 1 英国
   proxies:
   - 英国 1
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: true
+  interval: '500'
+  lazy: true
+  name: 1 韩国
+  proxies:
+  - 韩国 1
   strategy: round-robin
   timeout: '800'
   type: load-balance

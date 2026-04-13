@@ -73,21 +73,21 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- name: 未知 1
+- name: 美国 1
   password: 7456253f-6d63-46a2-a1ed-9d37cae32811
   port: 24525
   server: youtube.com
   skip-cert-verify: false
   sni: txwl666.t.me
   type: anytls
-- name: 未知 2
+- name: 美国 2
   password: 7456253f-6d63-46a2-a1ed-9d37cae32811
   port: 24525
   server: github.com
   skip-cert-verify: false
   sni: txwl233.t.me
   type: anytls
-- name: 未知 3
+- name: 中国 1
   password: 7456253f-6d63-46a2-a1ed-9d37cae32811
   port: 24525
   server: baidu.com
@@ -123,15 +123,16 @@ proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
   name: 指定节点
   proxies:
-  - 未知 1
-  - 未知 2
-  - 未知 3
+  - 美国 1
+  - 美国 2
+  - 中国 1
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png
   name: 指定分组
   proxies:
-  - 3 未知
+  - 2 美国
+  - 1 中国
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png
@@ -143,11 +144,20 @@ proxy-groups:
 - hidden: true
   interval: '500'
   lazy: true
-  name: 3 未知
+  name: 2 美国
   proxies:
-  - 未知 1
-  - 未知 2
-  - 未知 3
+  - 美国 1
+  - 美国 2
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: true
+  interval: '500'
+  lazy: true
+  name: 1 中国
+  proxies:
+  - 中国 1
   strategy: round-robin
   timeout: '800'
   type: load-balance
