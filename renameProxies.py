@@ -211,7 +211,7 @@ def build_extension_proxy_groups(entries):
         "name": "指定节点",
         "type": "select",
         "proxies": [*all_names, "COMPATIBLE"],
-        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png",
+        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png",
     }
     specify_group = {
         "name": "指定分组",
@@ -230,7 +230,7 @@ def build_extension_proxy_groups(entries):
         "name": "默认",
         "type": "select",
         "proxies": ["指定节点", "指定分组", "指定供应", "DIRECT"],
-        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/$tash.png",
+        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png",
     }
     large_model = {
         "name": "大模型",
@@ -242,7 +242,7 @@ def build_extension_proxy_groups(entries):
         "name": "其他",
         "type": "select",
         "proxies": ["默认", "指定节点", "指定分组", "指定供应", "DIRECT"],
-        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/stashflight.png",
+        "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/loadbalance.png",
     }
     return [
         default_sel,
