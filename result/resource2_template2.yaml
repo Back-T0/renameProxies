@@ -765,14 +765,6 @@ proxy-groups:
   type: load-balance
   url: http://www.gstatic.com/generate_204
 proxy-providers: {}
-rule-providers:
-  AdRules:
-    behavior: domain
-    format: text
-    interval: 604800
-    proxy: 默认
-    type: http
-    url: https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt
 rules:
 - DOMAIN-SUFFIX,time.windows.com,DIRECT
 - GEOSITE,category-ads-all,REJECT
@@ -806,7 +798,6 @@ rules:
 - GEOSITE,geolocation-cn,DIRECT
 - GEOIP,lan,DIRECT,no-resolve
 - GEOIP,CN,DIRECT,no-resolve
-- GEOSITE,cn,DIRECT
 - MATCH,其他
 secret: ''
 sniffer:
