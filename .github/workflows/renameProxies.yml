@@ -4,43 +4,48 @@ on:
   # 允许手动触发工作流
   workflow_dispatch:
 
-  # 每隔四小时触发一次
+  # 每隔两小时触发一次
   schedule:
     - cron: '0 */2 * * *'
 
 permissions:
   contents: write
 
+concurrency:
+  group: rename-proxies
+  cancel-in-progress: true
+
 jobs:
   run-script:
     # 在最新的 Ubuntu 环境下运行
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Git配置
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: 安装 Python 依赖
         run: |
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "github-actions"
-          git pull
+          pip install --upgrade pip pillow
     
       - name: 下载 geoip 数据库
         run: |
-          wget https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
+          wget -q https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
 
-      - name: 下载 mmdbinspect
+      - name: 下载并安装 mmdbinspect
         run: |
-          wget https://github.com/maxmind/mmdbinspect/releases/download/v2.0.0/mmdbinspect_2.0.0_linux_amd64.deb
-
-      - name: 安装 mmdbinspect
-        run: |
-          sudo dpkg -i mmdbinspect_2.0.0_linux_amd64.deb
-      
-      - name: 安装 PIL
-        run: |
-          pip install pillow
+          wget -q https://github.com/maxmind/mmdbinspect/releases/download/v2.0.0/mmdbinspect_2.0.0_linux_amd64.deb
+          sudo apt-get update -y
+          sudo apt-get install -y ./mmdbinspect_2.0.0_linux_amd64.deb
 
       - name: 运行 renameProxies1.py
         run: |
@@ -48,10 +53,16 @@ jobs:
 
       - name: 删除多余文件
         run: |
-          sudo rm -f mmdbinspect_2.0.0_linux_amd64.deb
-          sudo rm -f Country.mmdb
+          rm -f mmdbinspect_2.0.0_linux_amd64.deb Country.mmdb
 
-      - name: 上传 finalConfig.yaml
+      - name: 提交并推送（仅有变更时）
         run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
           git add .
-          git commit -m "update by workflows" && git push --force
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "update by workflows"
+          git push
