@@ -41,7 +41,9 @@ def build_extension_proxy_groups(entries):
     visible_group_names = []
     for location_key, names in renamed_groups.items():
         use_url_test = len(names) > 20
-        location_name = location_key.split(" ", 1)[1] if " " in location_key else location_key
+        location_name = (
+            location_key.split(" ", 1)[1] if " " in location_key else location_key
+        )
         if location_name in VISIBLE_LOCATIONS:
             visible_node_names.extend(names)
             visible_group_names.append(location_key)

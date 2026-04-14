@@ -21,5 +21,7 @@ def run_pipeline(resource_config, templates, rename_func):
         output_name = os.path.basename(output_file).replace(".yaml", "")
         for template in templates:
             template_name = os.path.basename(template).replace(".yaml", "")
-            result_path = os.path.join(RESULT_DIR, f"{output_name}_{template_name}.yaml")
+            result_path = os.path.join(
+                RESULT_DIR, f"{output_name}_{template_name}.yaml"
+            )
             replace_yaml_sections(template, renamed_proxies, proxy_groups, result_path)

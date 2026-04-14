@@ -22,4 +22,4 @@ EXCLUDE_KEYWORDS = [
 VISIBLE_LOCATIONS = {"香港", "台湾", "日本", "新加坡", "韩国"}
 
 # True: “指定节点/指定分组”仅保留 VISIBLE_LOCATIONS；False: 保持全量。
-LIMIT_SPECIFY_TO_VISIBLE_LOCATIONS = False
+LIMIT_SPECIFY_TO_VISIBLE_LOCATIONS = True
