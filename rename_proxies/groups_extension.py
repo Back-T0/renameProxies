@@ -9,6 +9,11 @@ from .config import (
 from .naming import apply_nation_names
 
 
+def _extract_location(name):
+    parts = re.split(r"[ _-]+", (name or "").strip())
+    return parts[0] if parts else None
+
+
 def build_extension_proxy_groups(entries):
     """
     与 clashverge/扩展脚本1.js 一致的代理组结构。
@@ -25,8 +30,7 @@ def build_extension_proxy_groups(entries):
         all_names.append(name)
         if exclude_pat.search(orig):
             continue
-        parts = re.split(r"[ _-]+", name)
-        loc = parts[0] if parts else None
+        loc = _extract_location(name)
         if loc:
             groups[loc].append(name)
 
@@ -121,4 +125,13 @@ def build_extension_proxy_groups(entries):
 def rename_proxies_with_extension_groups(proxies, nation_cache):
     print("重命名代理并创建代理组（扩展脚本1.js 结构）...")
     new_proxies, entries, _ = apply_nation_names(proxies, nation_cache)
+    if LIMIT_SPECIFY_TO_VISIBLE_LOCATIONS:
+        filtered_proxies = []
+        filtered_entries = []
+        for proxy, entry in zip(new_proxies, entries):
+            if _extract_location(entry.get("name")) in VISIBLE_LOCATIONS:
+                filtered_proxies.append(proxy)
+                filtered_entries.append(entry)
+        new_proxies = filtered_proxies
+        entries = filtered_entries
     return new_proxies, build_extension_proxy_groups(entries)
