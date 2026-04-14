@@ -248,15 +248,17 @@ def build_extension_proxy_groups(entries):
 
     group_names = list(renamed_groups.keys())
     location_groups = []
+    visible_locations = {"香港", "台湾", "日本", "新加坡", "韩国"}
     for location_key, names in renamed_groups.items():
         use_url_test = len(names) > 20
+        location_name = location_key.split(" ", 1)[1] if " " in location_key else location_key
         g = {
             "name": location_key,
             "type": "url-test" if use_url_test else "load-balance",
             "proxies": names,
             "url": "http://www.gstatic.com/generate_204",
             "lazy": True,
-            "hidden": True,
+            "hidden": location_name not in visible_locations,
         }
         if use_url_test:
             g["interval"] = "180"
