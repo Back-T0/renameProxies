@@ -53,7 +53,7 @@ def build_extension_proxy_groups(entries):
             "proxies": names,
             "url": "http://www.gstatic.com/generate_204",
             "lazy": True,
-            "hidden": location_name not in VISIBLE_LOCATIONS,
+            "hidden": not LIMIT_SPECIFY_TO_VISIBLE_LOCATIONS,
         }
         if use_url_test:
             g["interval"] = "180"
