@@ -5,14 +5,19 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+permissions:
+  actions: write
+
 jobs:
   delete-workflow-runs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Delete workflow runs
-        uses: dongchengjie/workflow-runs-cleaner@v1
-        with:
-          repository: ${{ github.repository }}
-          token: ${{ secrets.GITHUBTOKEN }}
-          maintain-span: '3d'
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 删除旧工作流运行记录
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAINTAIN_SPAN: "3d"
+        run: python .github/scripts/cleanup_workflow_runs.py
