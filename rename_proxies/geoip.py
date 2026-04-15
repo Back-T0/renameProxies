@@ -3,6 +3,7 @@ import socket
 import subprocess
 import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 import yaml
 
@@ -75,14 +76,31 @@ def _country_from_record(record):
     return None
 
 
-def get_nation_info(server, nation_cache):
-    if server in nation_cache:
-        return nation_cache[server]
+def _cache_get(nation_cache, server, lock=None):
+    if lock is None:
+        return nation_cache.get(server)
+    with lock:
+        return nation_cache.get(server)
+
+
+def _cache_set(nation_cache, server, value, lock=None):
+    if lock is None:
+        nation_cache[server] = value
+        return value
+    with lock:
+        nation_cache[server] = value
+    return value
+
+
+def get_nation_info(server, nation_cache, lock=None):
+    cached = _cache_get(nation_cache, server, lock)
+    if cached is not None:
+        return cached
     ip = _resolve_server_to_ip(server)
     if not ip:
-        nation_cache[server] = ("未知", "cn", 0)
+        _cache_set(nation_cache, server, ("未知", "cn", 0), lock)
         print(f"无法解析 {server}, 设置为未知.")
-        return nation_cache[server]
+        return _cache_get(nation_cache, server, lock)
 
     result = subprocess.run(
         ["mmdbinspect", "-db", "Country.mmdb", ip],
@@ -94,33 +112,36 @@ def get_nation_info(server, nation_cache):
         err = (result.stderr or "").strip()
         if err:
             print(f"{server} mmdbinspect: {err[:300]}")
-        nation_cache[server] = ("未知", "cn", 0)
+        _cache_set(nation_cache, server, ("未知", "cn", 0), lock)
         print(f"无法确定 {server} 的归属国家.")
-        return nation_cache[server]
+        return _cache_get(nation_cache, server, lock)
     record = output["record"]
     pair = _country_from_record(record)
     if pair:
         nation, iso_code = pair
-        nation_cache[server] = (nation, iso_code, 0)
+        _cache_set(nation_cache, server, (nation, iso_code, 0), lock)
         print(f"{server} 归属 {nation} ({iso_code})")
-        return nation_cache[server]
+        return _cache_get(nation_cache, server, lock)
 
-    nation_cache[server] = ("未知", "cn", 0)
+    _cache_set(nation_cache, server, ("未知", "cn", 0), lock)
     print(f"无法确定 {server} 的归属国家.")
-    return nation_cache[server]
+    return _cache_get(nation_cache, server, lock)
 
 
 def fetch_all_nations(domains, ips):
     print("获取所有服务器的国家信息...")
-    nation_cache, threads = {}, []
+    nation_cache = {}
+    lock = threading.Lock()
 
     def thread_func(server):
-        get_nation_info(server, nation_cache)
+        with lock:
+            cached = nation_cache.get(server)
+        if cached is not None:
+            return cached
+        return get_nation_info(server, nation_cache, lock=lock)
 
-    for server in domains + ips:
-        t = threading.Thread(target=thread_func, args=(server,))
-        threads.append(t)
-        t.start()
-    for t in threads:
-        t.join()
+    servers = list(dict.fromkeys([*domains, *ips]))
+    max_workers = min(32, max(1, len(servers)))
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        list(executor.map(thread_func, servers))
     return nation_cache
