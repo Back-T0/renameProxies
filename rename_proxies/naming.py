@@ -1,10 +1,12 @@
 import base64
 import io
 from collections import defaultdict
+from functools import lru_cache
 
 from PIL import Image, ImageDraw, ImageFont
 
 
+@lru_cache(maxsize=256)
 def generate_number_image_base64(number: int, image_size=(100, 100), font_size=50):
     img = Image.new("RGB", image_size, "white")
     draw = ImageDraw.Draw(img)
