@@ -73,18 +73,8 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- alterId: 0
-  cipher: auto
-  name: 香港 1
-  port: 30812
-  server: v12.hdacd.com
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
 - cipher: none
-  name: 香港 2
+  name: 香港 1
   password: 3e96ef7d-8637-42c2-ac73-75182196e755
   plugin: v2ray-plugin
   plugin-opts:
@@ -97,7 +87,7 @@ proxies:
   server: 47.57.182.141
   type: ss
   udp: true
-- name: 香港 3
+- name: 香港 2
   network: ws
   port: 7443
   server: 222.167.202.2
@@ -156,14 +146,13 @@ proxy-groups:
   proxies:
   - 香港 1
   - 香港 2
-  - 香港 3
   - 新加坡 1
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png
   name: 指定分组
   proxies:
-  - 3 香港
+  - 2 香港
   - 1 新加坡
   - COMPATIBLE
   type: select
@@ -176,11 +165,10 @@ proxy-groups:
 - hidden: false
   interval: '500'
   lazy: true
-  name: 3 香港
+  name: 2 香港
   proxies:
   - 香港 1
   - 香港 2
-  - 香港 3
   strategy: round-robin
   timeout: '800'
   type: load-balance
