@@ -1,5 +1,6 @@
 import re
 from collections import defaultdict
+from functools import lru_cache
 
 from .config import (
     EXCLUDE_KEYWORDS,
@@ -14,12 +15,19 @@ def _extract_location(name):
     return parts[0] if parts else None
 
 
+@lru_cache(maxsize=1)
+def _get_exclude_pattern():
+    if not EXCLUDE_KEYWORDS:
+        return None
+    return re.compile("|".join(re.escape(k) for k in EXCLUDE_KEYWORDS))
+
+
 def build_extension_proxy_groups(entries):
     """
     与 clashverge/扩展脚本1.js 一致的代理组结构。
     entries: 每项为 {"name": 当前节点名, "orig": 订阅原始名（用于排除关键词）}
     """
-    exclude_pat = re.compile("|".join(re.escape(k) for k in EXCLUDE_KEYWORDS))
+    exclude_pat = _get_exclude_pattern()
     groups = defaultdict(list)
     all_names = []
     for e in entries:
@@ -28,7 +36,7 @@ def build_extension_proxy_groups(entries):
         if not name:
             continue
         all_names.append(name)
-        if exclude_pat.search(orig):
+        if exclude_pat and exclude_pat.search(orig):
             continue
         loc = _extract_location(name)
         if loc:
