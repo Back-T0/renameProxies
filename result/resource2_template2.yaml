@@ -73,21 +73,6 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- client-fingerprint: chrome
-  name: 新加坡 1
-  network: ws
-  port: 3389
-  server: 203.168.131.105
-  servername: q40ivxuck.danfeng.qzz.io
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  ws-opts:
-    headers:
-      Host: q40ivxuck.danfeng.qzz.io
-    path: /danfeng
 - cipher: none
   name: 香港 1
   password: 3e96ef7d-8637-42c2-ac73-75182196e755
@@ -102,18 +87,25 @@ proxies:
   server: 47.57.182.141
   type: ss
   udp: true
-- name: 韩国 1
-  port: 1090
-  server: 121.169.46.116
-  type: socks5
-  udp: true
-  username: T2clM0QlM0Q6
-- client-fingerprint: chrome
-  name: 新加坡 2
+- name: 香港 2
   network: ws
-  port: 443
-  server: 43.168.16.112
-  servername: q40ivxuck.danfeng.qzz.io
+  port: 7443
+  server: 222.167.202.2
+  servername: 2026.hhhhh.eu.org
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  ws-opts:
+    headers:
+      Host: 2026.hhhhh.eu.org
+    path: /222.167.202.2:7443
+- name: 新加坡 1
+  network: ws
+  port: 45137
+  server: 146.235.18.248
+  servername: snippet.danfeng.rr.kg
   skip-cert-verify: false
   tls: true
   type: vless
@@ -121,7 +113,7 @@ proxies:
   uuid: 26524cce-d514-4014-a426-365fb266a14d
   ws-opts:
     headers:
-      Host: q40ivxuck.danfeng.qzz.io
+      Host: snippet.danfeng.rr.kg
     path: /danfeng
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png
@@ -152,18 +144,16 @@ proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
   name: 指定节点
   proxies:
-  - 新加坡 1
-  - 新加坡 2
-  - 韩国 1
   - 香港 1
+  - 香港 2
+  - 新加坡 1
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png
   name: 指定分组
   proxies:
-  - 2 新加坡
-  - 1 韩国
-  - 1 香港
+  - 2 香港
+  - 1 新加坡
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png
@@ -175,30 +165,20 @@ proxy-groups:
 - hidden: false
   interval: '500'
   lazy: true
-  name: 2 新加坡
-  proxies:
-  - 新加坡 1
-  - 新加坡 2
-  strategy: round-robin
-  timeout: '800'
-  type: load-balance
-  url: http://www.gstatic.com/generate_204
-- hidden: false
-  interval: '500'
-  lazy: true
-  name: 1 韩国
-  proxies:
-  - 韩国 1
-  strategy: round-robin
-  timeout: '800'
-  type: load-balance
-  url: http://www.gstatic.com/generate_204
-- hidden: false
-  interval: '500'
-  lazy: true
-  name: 1 香港
+  name: 2 香港
   proxies:
   - 香港 1
+  - 香港 2
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: false
+  interval: '500'
+  lazy: true
+  name: 1 新加坡
+  proxies:
+  - 新加坡 1
   strategy: round-robin
   timeout: '800'
   type: load-balance
