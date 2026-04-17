@@ -41,7 +41,7 @@ def parse_yaml(yaml_content):
             continue
 
         reality_opts = proxy.get("reality-opts")
-        has_short_id = isinstance(reality_opts, dict) and "short-id" in reality_opts
+        has_short_id = isinstance(reality_opts, dict)
         if has_short_id:
             removed_proxy_names.append(proxy.get("name", "<unknown>"))
             continue
