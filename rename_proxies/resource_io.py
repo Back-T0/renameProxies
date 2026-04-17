@@ -31,4 +31,17 @@ def fetch_yaml(url, filename):
 
 def parse_yaml(yaml_content):
     print("解析 YAML 文件...")
-    return yaml_content.get("proxies", [])
+    proxies = yaml_content.get("proxies", [])
+    filtered_proxies = []
+    removed_names = []
+
+    for proxy in proxies:
+        if isinstance(proxy, dict) and "reality-opts" in proxy:
+            removed_names.append(proxy.get("name", "<unknown>"))
+            continue
+        filtered_proxies.append(proxy)
+
+    if removed_names:
+        print(f"过滤掉包含 reality-opts 的节点: {', '.join(removed_names)}")
+
+    return filtered_proxies
