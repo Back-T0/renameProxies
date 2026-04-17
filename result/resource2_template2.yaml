@@ -73,39 +73,27 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- cipher: none
-  name: 香港 1
-  password: 3e96ef7d-8637-42c2-ac73-75182196e755
-  plugin: v2ray-plugin
-  plugin-opts:
-    host: mfvpn.fuchen.indevs.in
-    mode: websocket
-    mux: false
-    path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed=2560
-    tls: true
-  port: 443
-  server: 47.57.182.141
-  type: ss
-  udp: true
-- name: 香港 2
-  network: ws
-  port: 7443
-  server: 222.167.202.2
-  servername: 2026.hhhhh.eu.org
-  skip-cert-verify: false
+- name: 韩国 1
+  password: test.+
+  port: 30446
+  server: testkr3.ssv.vc
+  skip-cert-verify: true
   tls: true
-  type: vless
+  type: http
   udp: true
-  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
-  ws-opts:
-    headers:
-      Host: 2026.hhhhh.eu.org
-    path: /222.167.202.2:7443
-- name: 新加坡 1
+  username: test
+- name: 韩国 2
+  port: 1090
+  server: 121.169.46.116
+  type: socks5
+  udp: true
+  username: T2clM0QlM0Q6
+- client-fingerprint: chrome
+  name: 韩国 3
   network: ws
-  port: 45137
-  server: 146.235.18.248
-  servername: snippet.danfeng.rr.kg
+  port: 18889
+  server: 218.144.49.230
+  servername: s3vz.user-service.chinav.indevs.in
   skip-cert-verify: false
   tls: true
   type: vless
@@ -113,8 +101,21 @@ proxies:
   uuid: 26524cce-d514-4014-a426-365fb266a14d
   ws-opts:
     headers:
-      Host: snippet.danfeng.rr.kg
+      Host: s3vz.user-service.chinav.indevs.in
     path: /danfeng
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 韩国 4
+  port: 50911
+  reality-opts:
+    public-key: RGQRcZVfFRt6ioLDvH7HOicOXJcwonHFVqOgbix2w3w
+  server: 144.24.74.102
+  servername: www.iij.ad.jp
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 820409af-997a-41c4-9e51-46f373951a39
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png
   name: 默认
@@ -144,16 +145,16 @@ proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
   name: 指定节点
   proxies:
-  - 香港 1
-  - 香港 2
-  - 新加坡 1
+  - 韩国 1
+  - 韩国 2
+  - 韩国 3
+  - 韩国 4
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png
   name: 指定分组
   proxies:
-  - 2 香港
-  - 1 新加坡
+  - 4 韩国
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png
@@ -165,20 +166,12 @@ proxy-groups:
 - hidden: false
   interval: '500'
   lazy: true
-  name: 2 香港
+  name: 4 韩国
   proxies:
-  - 香港 1
-  - 香港 2
-  strategy: round-robin
-  timeout: '800'
-  type: load-balance
-  url: http://www.gstatic.com/generate_204
-- hidden: false
-  interval: '500'
-  lazy: true
-  name: 1 新加坡
-  proxies:
-  - 新加坡 1
+  - 韩国 1
+  - 韩国 2
+  - 韩国 3
+  - 韩国 4
   strategy: round-robin
   timeout: '800'
   type: load-balance
@@ -211,7 +204,7 @@ rules:
 - GEOSITE,tencent,DIRECT
 - GEOSITE,baidu,DIRECT
 - GEOSITE,alibaba,DIRECT
-- GEOSITE,wps,DIRECT
+- GEOSITE,kingsoft,DIRECT
 - GEOSITE,zhihu,DIRECT
 - GEOSITE,jetbrains,默认
 - GEOSITE,docker,DIRECT
