@@ -103,19 +103,6 @@ proxies:
     headers:
       Host: s3vz.user-service.chinav.indevs.in
     path: /danfeng
-- client-fingerprint: firefox
-  flow: xtls-rprx-vision
-  name: 韩国 4
-  port: 50911
-  reality-opts:
-    public-key: RGQRcZVfFRt6ioLDvH7HOicOXJcwonHFVqOgbix2w3w
-  server: 144.24.74.102
-  servername: www.iij.ad.jp
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 820409af-997a-41c4-9e51-46f373951a39
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png
   name: 默认
@@ -148,13 +135,12 @@ proxy-groups:
   - 韩国 1
   - 韩国 2
   - 韩国 3
-  - 韩国 4
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png
   name: 指定分组
   proxies:
-  - 4 韩国
+  - 3 韩国
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png
@@ -166,12 +152,11 @@ proxy-groups:
 - hidden: false
   interval: '500'
   lazy: true
-  name: 4 韩国
+  name: 3 韩国
   proxies:
   - 韩国 1
   - 韩国 2
   - 韩国 3
-  - 韩国 4
   strategy: round-robin
   timeout: '800'
   type: load-balance
