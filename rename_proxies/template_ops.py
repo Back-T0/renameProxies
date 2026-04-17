@@ -1,44 +1,22 @@
 import yaml
 
 
-class _SingleQuotedStr(str):
-    """Marker type for YAML single-quoted scalar output."""
-
-
-class _SingleQuoteDumper(yaml.SafeDumper):
-    pass
-
-
-def _repr_single_quoted_str(dumper, data):
-    return dumper.represent_scalar("tag:yaml.org,2002:str", data, style="'")
-
-
-_SingleQuoteDumper.add_representer(_SingleQuotedStr, _repr_single_quoted_str)
-
-
-def _quote_short_id_values(obj):
-    if isinstance(obj, dict):
-        converted = {}
-        for k, v in obj.items():
-            if k == "short-id" and isinstance(v, str):
-                converted[k] = _SingleQuotedStr(v)
-            else:
-                converted[k] = _quote_short_id_values(v)
-        return converted
-    if isinstance(obj, list):
-        return [_quote_short_id_values(item) for item in obj]
-    return obj
+def _filter_proxies_without_short_id(proxies):
+    filtered = [
+        proxy for proxy in proxies if not (isinstance(proxy, dict) and "short-id" in proxy)
+    ]
+    removed_count = len(proxies) - len(filtered)
+    print(f"_filter_proxies_without_short_id: 移除了 {removed_count} 个包含 'short-id' 的代理，剩余 {len(filtered)} 个代理。")
+    print("过滤掉的节点名称：", [proxy.get("name", proxy) for proxy in filtered])
+    return filtered
 
 
 def replace_yaml_sections(template_path, new_proxies, new_proxy_groups, output_path):
     print(f"处理模板: {template_path}...")
     with open(template_path, "r") as file:
         yaml_content = yaml.safe_load(file)
-    yaml_content["proxies"] = new_proxies
+    yaml_content["proxies"] = _filter_proxies_without_short_id(new_proxies)
     yaml_content["proxy-groups"] = new_proxy_groups
-    yaml_content = _quote_short_id_values(yaml_content)
     with open(output_path, "w") as file:
-        yaml.dump(
-            yaml_content, file, Dumper=_SingleQuoteDumper, allow_unicode=True, sort_keys=False
-        )
+        yaml.dump(yaml_content, file, allow_unicode=True, sort_keys=False)
     print(f"生成成功: {output_path}")

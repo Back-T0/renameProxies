@@ -120,7 +120,7 @@ def get_nation_info(server, nation_cache, lock=None):
     if pair:
         nation, iso_code = pair
         _cache_set(nation_cache, server, (nation, iso_code, 0), lock)
-        print(f"{server} 归属 {nation} ({iso_code})")
+        # print(f"{server} 归属 {nation} ({iso_code})")
         return _cache_get(nation_cache, server, lock)
 
     _cache_set(nation_cache, server, ("未知", "cn", 0), lock)
