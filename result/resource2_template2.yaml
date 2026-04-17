@@ -1,35 +1,14 @@
-mode: rule
-mixed-port: 7897
-socks-port: 7898
-port: 7899
 allow-lan: false
-log-level: info
-ipv6: true
-external-controller: 127.0.0.1:9097
-secret: ''
-external-ui: ui
-find-process-mode: strict
-tcp-concurrent: true
-unified-delay: false
-geodata-mode: true
-geox-url:
-  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
-  geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
-  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
-  asn: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
-proxy-providers: {}
-external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
 dns:
+  default-nameserver:
+  - 223.5.5.5
+  - 1.2.4.8
+  direct-nameserver:
+  - https://223.5.5.5/dns-query
+  - https://doh.pub/dns-query
+  direct-nameserver-follow-policy: false
   enable: true
-  listen: 0.0.0.0:1053
   enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter-mode: blacklist
-  prefer-h3: false
-  respect-rules: true
-  use-hosts: false
-  use-system-hosts: false
-  ipv6: false
   fake-ip-filter:
   - +.lan
   - +.local
@@ -43,69 +22,180 @@ dns:
   - time.*.gov
   - pool.ntp.org
   - localhost.work.weixin.qq.com
-  default-nameserver:
-  - 223.5.5.5
-  - 1.2.4.8
-  nameserver:
-  - https://208.67.222.222/dns-query
-  - https://77.88.8.8/dns-query
-  - https://1.1.1.1/dns-query
-  - https://8.8.4.4/dns-query
-  direct-nameserver-follow-policy: false
+  fake-ip-filter-mode: blacklist
+  fake-ip-range: 198.18.0.1/16
+  fallback: []
   fallback-filter:
+    domain:
+    - +.google.com
+    - +.facebook.com
+    - +.youtube.com
     geoip: true
     geoip-code: CN
     ipcidr:
     - 240.0.0.0/4
     - 0.0.0.0/32
-    domain:
-    - +.google.com
-    - +.facebook.com
-    - +.youtube.com
-  fallback: []
-  proxy-server-nameserver:
-  - https://223.5.5.5/dns-query
-  - https://doh.pub/dns-query
-  direct-nameserver:
-  - https://223.5.5.5/dns-query
-  - https://doh.pub/dns-query
+  ipv6: false
+  listen: 0.0.0.0:1053
+  nameserver:
+  - https://208.67.222.222/dns-query
+  - https://77.88.8.8/dns-query
+  - https://1.1.1.1/dns-query
+  - https://8.8.4.4/dns-query
   nameserver-policy:
     geosite:private,cn:
     - https://223.5.5.5/dns-query
     - https://doh.pub/dns-query
+  prefer-h3: false
+  proxy-server-nameserver:
+  - https://223.5.5.5/dns-query
+  - https://doh.pub/dns-query
+  respect-rules: true
+  use-hosts: false
+  use-system-hosts: false
+external-controller: 127.0.0.1:9097
+external-ui: ui
+external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+find-process-mode: strict
+geodata-mode: true
+geox-url:
+  asn: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
+  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
+  geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
 global-client-fingerprint: chrome
+ipv6: true
+log-level: info
+mixed-port: 7897
+mode: rule
+port: 7899
 profile:
   store-fake-ip: true
   store-selected: true
-sniffer:
-  enable: true
-  skip-domain:
-  - +.push.apple.com
-  sniff:
-    HTTP:
-      override-destination: true
-      ports:
-      - 80
-      - 8080-8880
-    QUIC:
-      ports:
-      - 443
-      - 8443
-    TLS:
-      ports:
-      - 443
-      - 8443
-tun:
-  auto-detect-interface: true
-  auto-redirect: true
-  auto-route: true
-  dns-hijack:
-  - any:53
-  enable: true
-  stack: mixed
-  device: Meta
-  strict-route: false
-  mtu: 1500
+proxies:
+- alterId: 0
+  cipher: auto
+  name: 香港 1
+  port: 30812
+  server: v12.hdacd.com
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+- cipher: none
+  name: 香港 2
+  password: 3e96ef7d-8637-42c2-ac73-75182196e755
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: mfvpn.fuchen.indevs.in
+    mode: websocket
+    mux: false
+    path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed=2560
+    tls: true
+  port: 443
+  server: 47.57.182.141
+  type: ss
+  udp: true
+- name: 香港 3
+  network: ws
+  port: 7443
+  server: 222.167.202.2
+  servername: 2026.hhhhh.eu.org
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  ws-opts:
+    headers:
+      Host: 2026.hhhhh.eu.org
+    path: /222.167.202.2:7443
+- name: 新加坡 1
+  network: ws
+  port: 45137
+  server: 146.235.18.248
+  servername: snippet.danfeng.rr.kg
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  ws-opts:
+    headers:
+      Host: snippet.danfeng.rr.kg
+    path: /danfeng
+proxy-groups:
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png
+  name: 默认
+  proxies:
+  - 指定节点
+  - 指定分组
+  - 指定供应
+  - DIRECT
+  type: select
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/anthropic.png
+  name: 大模型
+  proxies:
+  - 指定节点
+  - 指定分组
+  - 指定供应
+  - DIRECT
+  type: select
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/loadbalance.png
+  name: 其他
+  proxies:
+  - 默认
+  - 指定节点
+  - 指定分组
+  - 指定供应
+  - DIRECT
+  type: select
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
+  name: 指定节点
+  proxies:
+  - 香港 1
+  - 香港 2
+  - 香港 3
+  - 新加坡 1
+  - COMPATIBLE
+  type: select
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png
+  name: 指定分组
+  proxies:
+  - 3 香港
+  - 1 新加坡
+  - COMPATIBLE
+  type: select
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png
+  include-all-providers: true
+  name: 指定供应
+  proxies:
+  - COMPATIBLE
+  type: select
+- hidden: false
+  interval: '500'
+  lazy: true
+  name: 3 香港
+  proxies:
+  - 香港 1
+  - 香港 2
+  - 香港 3
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: false
+  interval: '500'
+  lazy: true
+  name: 1 新加坡
+  proxies:
+  - 新加坡 1
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+proxy-providers: {}
 rules:
 - DOMAIN-SUFFIX,time.windows.com,DIRECT
 - GEOSITE,category-ads-all,REJECT
@@ -141,74 +231,36 @@ rules:
 - GEOIP,lan,DIRECT,no-resolve
 - GEOIP,CN,DIRECT,no-resolve
 - MATCH,其他
-proxies: []
-proxy-groups:
-- name: 默认
-  type: select
-  proxies:
-  - 指定节点
-  - 指定分组
-  - 指定供应
-  - DIRECT
-  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png
-- name: 大模型
-  type: select
-  proxies:
-  - 指定节点
-  - 指定分组
-  - 指定供应
-  - DIRECT
-  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/anthropic.png
-- name: 其他
-  type: select
-  proxies:
-  - 默认
-  - 指定节点
-  - 指定分组
-  - 指定供应
-  - DIRECT
-  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/loadbalance.png
-- name: 指定节点
-  type: select
-  proxies:
-  - 香港 1
-  - 香港 2
-  - 香港 3
-  - 新加坡 1
-  - COMPATIBLE
-  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
-- name: 指定分组
-  type: select
-  proxies:
-  - 3 香港
-  - 1 新加坡
-  - COMPATIBLE
-  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png
-- name: 指定供应
-  type: select
-  proxies:
-  - COMPATIBLE
-  include-all-providers: true
-  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png
-- name: 3 香港
-  type: load-balance
-  proxies:
-  - 香港 1
-  - 香港 2
-  - 香港 3
-  url: http://www.gstatic.com/generate_204
-  lazy: true
-  hidden: false
-  strategy: round-robin
-  interval: '500'
-  timeout: '800'
-- name: 1 新加坡
-  type: load-balance
-  proxies:
-  - 新加坡 1
-  url: http://www.gstatic.com/generate_204
-  lazy: true
-  hidden: false
-  strategy: round-robin
-  interval: '500'
-  timeout: '800'
+secret: ''
+sniffer:
+  enable: true
+  skip-domain:
+  - +.push.apple.com
+  sniff:
+    HTTP:
+      override-destination: true
+      ports:
+      - 80
+      - 8080-8880
+    QUIC:
+      ports:
+      - 443
+      - 8443
+    TLS:
+      ports:
+      - 443
+      - 8443
+socks-port: 7898
+tcp-concurrent: true
+tun:
+  auto-detect-interface: true
+  auto-redirect: true
+  auto-route: true
+  device: Meta
+  dns-hijack:
+  - any:53
+  enable: true
+  mtu: 1500
+  stack: mixed
+  strict-route: false
+unified-delay: false
