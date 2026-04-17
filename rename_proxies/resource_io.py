@@ -31,24 +31,4 @@ def fetch_yaml(url, filename):
 
 def parse_yaml(yaml_content):
     print("解析 YAML 文件...")
-    proxies = yaml_content.get("proxies", [])
-    filtered_proxies = []
-    removed_proxy_names = []
-
-    for proxy in proxies:
-        if not isinstance(proxy, dict):
-            filtered_proxies.append(proxy)
-            continue
-
-        reality_opts = proxy.get("reality-opts")
-        has_short_id = isinstance(reality_opts, dict)
-        if has_short_id:
-            removed_proxy_names.append(proxy.get("name", "<unknown>"))
-            continue
-
-        filtered_proxies.append(proxy)
-
-    if removed_proxy_names:
-        print(f"过滤 short-id 节点: {', '.join(removed_proxy_names)}")
-
-    return filtered_proxies
+    return yaml_content.get("proxies", [])
