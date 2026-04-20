@@ -72,26 +72,65 @@ profile:
   store-fake-ip: true
   store-selected: true
 proxies:
-- name: 韩国 1
-  password: test.+
-  port: 30446
-  server: testkr3.ssv.vc
-  skip-cert-verify: true
+- client-fingerprint: chrome
+  name: 香港 1
+  port: 443
+  reality-opts:
+    public-key: TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw
+  server: 47.242.64.181
+  servername: cms.suse.net
+  skip-cert-verify: false
   tls: true
-  type: http
+  type: vless
   udp: true
-  username: test
-- name: 韩国 2
+  uuid: 3e7f67de-648e-4871-b51a-a225214d41ee
+- client-fingerprint: chrome
+  name: 香港 2
+  port: 443
+  reality-opts:
+    public-key: TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw
+  server: 8.218.121.213
+  servername: siteintercept.qualtrics.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 3e7f67de-648e-4871-b51a-a225214d41ee
+- client-fingerprint: chrome
+  name: 香港 3
+  port: 443
+  reality-opts:
+    public-key: TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw
+  server: 8.217.49.16
+  servername: wwwimages2.adobe.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 3e7f67de-648e-4871-b51a-a225214d41ee
+- client-fingerprint: chrome
+  name: 日本 1
+  port: 443
+  reality-opts:
+    public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+    short-id: 2da72ce6
+  server: 176.97.73.155
+  servername: navi.bankrate.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 0b277abf-e0d6-44d8-85c6-f6c7afc0aec5
+- name: 韩国 1
   port: 1090
   server: 121.169.46.116
   type: socks5
   udp: true
-  username: T2clM0QlM0Q6
 - client-fingerprint: chrome
-  name: 韩国 3
+  name: 韩国 2
   network: ws
-  port: 18889
-  server: 218.144.49.230
+  port: 10000
+  server: 210.178.81.61
   servername: s3vz.user-service.chinav.indevs.in
   skip-cert-verify: false
   tls: true
@@ -102,19 +141,36 @@ proxies:
     headers:
       Host: s3vz.user-service.chinav.indevs.in
     path: /danfeng
-- client-fingerprint: firefox
-  flow: xtls-rprx-vision
-  name: 韩国 4
-  port: 50911
-  reality-opts:
-    public-key: RGQRcZVfFRt6ioLDvH7HOicOXJcwonHFVqOgbix2w3w
-  server: 144.24.74.102
-  servername: www.iij.ad.jp
+- client-fingerprint: chrome
+  name: 韩国 3
+  network: ws
+  port: 37810
+  server: 222.97.154.26
+  servername: s3vz.user-service.chinav.indevs.in
   skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: 820409af-997a-41c4-9e51-46f373951a39
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  ws-opts:
+    headers:
+      Host: s3vz.user-service.chinav.indevs.in
+    path: /danfeng
+- client-fingerprint: chrome
+  name: 韩国 4
+  network: ws
+  port: 12000
+  server: 59.11.151.238
+  servername: s3vz.user-service.chinav.indevs.in
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  ws-opts:
+    headers:
+      Host: s3vz.user-service.chinav.indevs.in
+    path: /danfeng
 proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png
   name: 默认
@@ -148,12 +204,18 @@ proxy-groups:
   - 韩国 2
   - 韩国 3
   - 韩国 4
+  - 香港 1
+  - 香港 2
+  - 香港 3
+  - 日本 1
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png
   name: 指定分组
   proxies:
   - 4 韩国
+  - 3 香港
+  - 1 日本
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png
@@ -171,6 +233,28 @@ proxy-groups:
   - 韩国 2
   - 韩国 3
   - 韩国 4
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: false
+  interval: '500'
+  lazy: true
+  name: 3 香港
+  proxies:
+  - 香港 1
+  - 香港 2
+  - 香港 3
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: false
+  interval: '500'
+  lazy: true
+  name: 1 日本
+  proxies:
+  - 日本 1
   strategy: round-robin
   timeout: '800'
   type: load-balance
