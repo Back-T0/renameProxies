@@ -9,7 +9,30 @@ from .config import RESOURCE_DIR, RESOURCE_FILE
 def load_resource_config():
     print("加载资源配置文件...")
     with open(RESOURCE_FILE, "r") as file:
-        return yaml.safe_load(file).get("resource", {})
+        raw_resources = (yaml.safe_load(file) or {}).get("resource", {})
+
+    resource_config = {}
+    for output_file, value in raw_resources.items():
+        if isinstance(value, str):
+            resource_config[output_file] = {
+                "url": value,
+                "limit_specify_to_visible_locations": None,
+                "visible_locations": None,
+            }
+            continue
+
+        if isinstance(value, dict):
+            resource_config[output_file] = {
+                "url": value.get("url", ""),
+                "limit_specify_to_visible_locations": value.get(
+                    "limit_specify_to_visible_locations"
+                ),
+                "visible_locations": value.get("visible_locations"),
+            }
+            continue
+
+        print(f"资源配置格式不正确: {output_file}, 已跳过。")
+    return resource_config
 
 
 def fetch_yaml(url, filename):

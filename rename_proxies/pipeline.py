@@ -11,12 +11,24 @@ def run_pipeline(resource_config, templates, rename_func):
     通用处理流程：
     拉取订阅 -> 解析节点 -> GeoIP 归属 -> 重命名/分组 -> 写入模板输出。
     """
-    for output_file, url in resource_config.items():
+    for output_file, resource_options in resource_config.items():
+        url = resource_options.get("url", "")
+        if not url:
+            print(f"资源 {output_file} 缺少 url，已跳过。")
+            continue
+
+        limit_visible = resource_options.get("limit_specify_to_visible_locations")
+        visible_locations = resource_options.get("visible_locations")
         yaml_content = fetch_yaml(url, output_file)
         proxies = parse_yaml(yaml_content)
         domains, ips = collect_servers(proxies)
         nation_cache = fetch_all_nations(domains, ips)
-        renamed_proxies, proxy_groups = rename_func(proxies, nation_cache)
+        renamed_proxies, proxy_groups = rename_func(
+            proxies,
+            nation_cache,
+            limit_specify_to_visible_locations=limit_visible,
+            visible_locations=visible_locations,
+        )
 
         output_name = os.path.basename(output_file).replace(".yaml", "")
         for template in templates:

@@ -22,12 +22,17 @@ def _get_exclude_pattern():
     return re.compile("|".join(re.escape(k) for k in EXCLUDE_KEYWORDS))
 
 
-def build_extension_proxy_groups(entries):
+def build_extension_proxy_groups(
+    entries, limit_specify_to_visible_locations=None, visible_locations=None
+):
     """
     与 clashverge/扩展脚本1.js 一致的代理组结构。
     entries: 每项为 {"name": 当前节点名, "orig": 订阅原始名（用于排除关键词）}
     """
     exclude_pat = _get_exclude_pattern()
+    visible_locations_set = (
+        set(visible_locations) if visible_locations is not None else VISIBLE_LOCATIONS
+    )
     groups = defaultdict(list)
     all_names = []
     for e in entries:
@@ -56,7 +61,7 @@ def build_extension_proxy_groups(entries):
         location_name = (
             location_key.split(" ", 1)[1] if " " in location_key else location_key
         )
-        if location_name in VISIBLE_LOCATIONS:
+        if location_name in visible_locations_set:
             visible_node_names.extend(names)
             visible_group_names.append(location_key)
         g = {
@@ -79,7 +84,10 @@ def build_extension_proxy_groups(entries):
 
     specify_node_proxies = [*all_names, "COMPATIBLE"]
     specify_group_proxies = [*group_names, "COMPATIBLE"]
-    if LIMIT_SPECIFY_TO_VISIBLE_LOCATIONS:
+    if limit_specify_to_visible_locations is None:
+        limit_specify_to_visible_locations = LIMIT_SPECIFY_TO_VISIBLE_LOCATIONS
+
+    if limit_specify_to_visible_locations:
         specify_node_proxies = [*visible_node_names, "COMPATIBLE"]
         specify_group_proxies = [*visible_group_names, "COMPATIBLE"]
 
@@ -131,16 +139,32 @@ def build_extension_proxy_groups(entries):
     ]
 
 
-def rename_proxies_with_extension_groups(proxies, nation_cache):
+def rename_proxies_with_extension_groups(
+    proxies,
+    nation_cache,
+    limit_specify_to_visible_locations=None,
+    visible_locations=None,
+):
     print("重命名代理并创建代理组（扩展脚本1.js 结构）...")
     new_proxies, entries, _ = apply_nation_names(proxies, nation_cache)
-    if LIMIT_SPECIFY_TO_VISIBLE_LOCATIONS:
+    if limit_specify_to_visible_locations is None:
+        limit_specify_to_visible_locations = LIMIT_SPECIFY_TO_VISIBLE_LOCATIONS
+
+    visible_locations_set = (
+        set(visible_locations) if visible_locations is not None else VISIBLE_LOCATIONS
+    )
+
+    if limit_specify_to_visible_locations:
         filtered_proxies = []
         filtered_entries = []
         for proxy, entry in zip(new_proxies, entries):
-            if _extract_location(entry.get("name")) in VISIBLE_LOCATIONS:
+            if _extract_location(entry.get("name")) in visible_locations_set:
                 filtered_proxies.append(proxy)
                 filtered_entries.append(entry)
         new_proxies = filtered_proxies
         entries = filtered_entries
-    return new_proxies, build_extension_proxy_groups(entries)
+    return new_proxies, build_extension_proxy_groups(
+        entries,
+        limit_specify_to_visible_locations=limit_specify_to_visible_locations,
+        visible_locations=visible_locations_set,
+    )

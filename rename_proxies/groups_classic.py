@@ -1,7 +1,12 @@
 from .naming import apply_nation_names, generate_number_image_base64
 
 
-def rename_proxies(proxies, nation_cache):
+def rename_proxies(
+    proxies,
+    nation_cache,
+    limit_specify_to_visible_locations=None,
+    visible_locations=None,
+):
     print("重命名代理并创建代理组（经典分区 + 手动/自动选择）...")
     new_proxies, _, nation_counter = apply_nation_names(proxies, nation_cache)
     proxy_groups = []
