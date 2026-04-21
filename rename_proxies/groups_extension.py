@@ -97,7 +97,7 @@ def build_extension_proxy_groups(entries):
     specify_provider = {
         "name": "指定供应",
         "type": "select",
-        "proxies": ["COMPATIBLE","DIRECT"],
+        "proxies": ["COMPATIBLE"],
         "include-all-providers": True,
         "icon": "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png",
     }
