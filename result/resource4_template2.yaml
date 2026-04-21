@@ -73,6 +73,118 @@ profile:
   store-selected: true
 proxies:
 - alterId: 0
+  cipher: auto
+  flow: ''
+  name: 德国 1
+  port: 180
+  server: 82.198.246.250
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+- alterId: 0
+  cipher: auto
+  flow: ''
+  name: 德国 2
+  port: 180
+  server: 82.198.246.46
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+- alterId: 0
+  cipher: ''
+  client-fingerprint: chrome
+  flow: ''
+  name: 荷兰 1
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: A1OvYDljz8ZJr7_1xe4j2H1AHsMuYEKifyjdWhdybzk
+    short-id: 11e2
+  server: 216.57.105.74
+  servername: yahoo.com
+  skip-cert-verify: true
+  sni: yahoo.com
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 73c0a723-c0ab-4ad8-8f25-799b9bd54e36
+- cipher: none
+  name: 美国 1
+  password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+  plugin: v2ray-plugin
+  plugin-opts:
+    headers: {}
+    host: ylnhh.us.ci
+    mode: websocket
+    mux: true
+    password: ''
+    path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+    skip-cert-verify: true
+    tls: true
+    version: 0
+  port: 443
+  server: 198.12.144.16
+  type: ss
+- alterId: 0
+  cipher: ''
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 德国 3
+  network: tcp
+  port: 9443
+  reality-opts:
+    public-key: wAYsJ6RJXFy94w_WaTIhp1ZfCePAPoZmP27RarvUqXg
+    short-id: 2344766a270a6298
+  server: 159.195.82.187
+  servername: yahoo.com
+  skip-cert-verify: true
+  sni: yahoo.com
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 4649d681-7f26-4959-a3f2-02eb8866230f
+- alterId: 0
+  cipher: ''
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 美国 2
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: -ZIDWF9CykNoZYNpO6Vi7BdDyZl_hJUYxuIRmPnuxBk
+    short-id: c6118398
+  server: 144.31.127.61
+  servername: gateway.icloud.com
+  skip-cert-verify: true
+  sni: gateway.icloud.com
+  tfo: false
+  tls: true
+  type: vless
+  uuid: d5f95f47-9399-49c6-a76b-aa6b289609ba
+- alpn:
+  - http%2F1.1
+  alterId: 0
+  cipher: ''
+  client-fingerprint: chrome
+  flow: ''
+  name: 美国 3
+  network: ws
+  port: 56047
+  server: 188.209.141.114
+  servername: snippet.gfw.qzz.io
+  skip-cert-verify: true
+  sni: snippet.gfw.qzz.io
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  ws-opts:
+    headers:
+      Host: snippet.gfw.qzz.io
+    path: /danfeng
+- alterId: 0
   cipher: ''
   client-fingerprint: chrome
   flow: ''
@@ -91,6 +203,50 @@ proxies:
     headers:
       Host: s3vz.user-service.chinav.indevs.in
     path: /danfeng
+- auth: dongtaiwang.com
+  name: 法国 1
+  password: dongtaiwang.com
+  port: 40022
+  server: 163.172.113.118
+  skip-cert-verify: true
+  sni: www.microsoft.com
+  type: hysteria2
+- alterId: 0
+  cipher: auto
+  name: 德国 4
+  port: 180
+  server: 82.198.246.233
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+- alterId: 0
+  cipher: auto
+  name: 德国 5
+  port: 180
+  server: 82.198.246.9
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+- alterId: 0
+  cipher: auto
+  name: 德国 6
+  port: 180
+  server: 82.198.246.214
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+- alterId: 0
+  cipher: auto
+  name: 德国 7
+  port: 180
+  server: 82.198.246.37
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
 - client-fingerprint: chrome
   name: 日本 1
   network: tcp
@@ -158,17 +314,33 @@ proxy-groups:
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
   name: 指定节点
   proxies:
+  - 德国 1
+  - 德国 2
+  - 荷兰 1
+  - 美国 1
+  - 德国 3
+  - 美国 2
+  - 美国 3
+  - 韩国 1
+  - 法国 1
+  - 德国 4
+  - 德国 5
+  - 德国 6
+  - 德国 7
   - 日本 1
   - 日本 2
-  - 韩国 1
   - 韩国 2
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/urltest.png
   name: 指定分组
   proxies:
+  - 6 德国
+  - 3 美国
   - 2 日本
   - 2 韩国
+  - 1 法国
+  - 1 荷兰
   - COMPATIBLE
   type: select
 - icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/fallback.png
@@ -177,6 +349,33 @@ proxy-groups:
   proxies:
   - COMPATIBLE
   type: select
+- hidden: true
+  interval: '500'
+  lazy: true
+  name: 6 德国
+  proxies:
+  - 德国 2
+  - 德国 3
+  - 德国 4
+  - 德国 5
+  - 德国 6
+  - 德国 7
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: true
+  interval: '500'
+  lazy: true
+  name: 3 美国
+  proxies:
+  - 美国 1
+  - 美国 2
+  - 美国 3
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
 - hidden: true
   interval: '500'
   lazy: true
@@ -195,6 +394,26 @@ proxy-groups:
   proxies:
   - 韩国 1
   - 韩国 2
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: true
+  interval: '500'
+  lazy: true
+  name: 1 法国
+  proxies:
+  - 法国 1
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: true
+  interval: '500'
+  lazy: true
+  name: 1 荷兰
+  proxies:
+  - 荷兰 1
   strategy: round-robin
   timeout: '800'
   type: load-balance
