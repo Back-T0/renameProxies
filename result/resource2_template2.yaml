@@ -333,7 +333,7 @@ proxies:
   uuid: d6cbf3e4-b7ca-a4b2-0b04-eacbdc28bc5a
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: 荷兰 4
+  name: 塞舌尔 1
   port: 443
   reality-opts:
     public-key: tB6tQr-pmLTdMM8DVOb9KsS27lDkAjjelbdu_Gp1SR0
@@ -347,7 +347,7 @@ proxies:
   uuid: c5bbdac7-6ff5-4762-87bf-870f55a03581
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: 荷兰 5
+  name: 塞舌尔 2
   port: 443
   reality-opts:
     public-key: tB6tQr-pmLTdMM8DVOb9KsS27lDkAjjelbdu_Gp1SR0
@@ -505,8 +505,8 @@ proxy-groups:
   - 荷兰 3
   - 瑞典 1
   - 土耳其 1
-  - 荷兰 4
-  - 荷兰 5
+  - 塞舌尔 1
+  - 塞舌尔 2
   - 美国 1
   - 美国 2
   - 美国 3
@@ -520,11 +520,12 @@ proxy-groups:
   name: 指定分组
   proxies:
   - 7 美国
-  - 5 荷兰
   - 4 韩国
   - 3 德国
+  - 3 荷兰
   - 3 香港
   - 2 俄罗斯联邦
+  - 2 塞舌尔
   - 1 土耳其
   - 1 意大利
   - 1 日本
@@ -557,20 +558,6 @@ proxy-groups:
 - hidden: true
   interval: '500'
   lazy: true
-  name: 5 荷兰
-  proxies:
-  - 荷兰 1
-  - 荷兰 2
-  - 荷兰 3
-  - 荷兰 4
-  - 荷兰 5
-  strategy: round-robin
-  timeout: '800'
-  type: load-balance
-  url: http://www.gstatic.com/generate_204
-- hidden: true
-  interval: '500'
-  lazy: true
   name: 4 韩国
   proxies:
   - 韩国 1
@@ -596,6 +583,18 @@ proxy-groups:
 - hidden: true
   interval: '500'
   lazy: true
+  name: 3 荷兰
+  proxies:
+  - 荷兰 1
+  - 荷兰 2
+  - 荷兰 3
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: true
+  interval: '500'
+  lazy: true
   name: 3 香港
   proxies:
   - 香港 1
@@ -612,6 +611,17 @@ proxy-groups:
   proxies:
   - 俄罗斯联邦 1
   - 俄罗斯联邦 2
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: true
+  interval: '500'
+  lazy: true
+  name: 2 塞舌尔
+  proxies:
+  - 塞舌尔 1
+  - 塞舌尔 2
   strategy: round-robin
   timeout: '800'
   type: load-balance
@@ -669,10 +679,17 @@ proxy-groups:
 proxy-providers: {}
 rules:
 - DOMAIN-SUFFIX,time.windows.com,DIRECT
+- DOMAIN-SUFFIX,cn,DIRECT
 - GEOSITE,category-ads-all,REJECT
 - GEOSITE,category-ai-!cn,大模型
 - GEOSITE,category-anticensorship,默认
 - GEOSITE,category-social-media-!cn,默认
+- GEOIP,telegram,默认,no-resolve
+- GEOIP,cloudflare,默认,no-resolve
+- GEOIP,facebook,默认,no-resolve
+- GEOIP,google,默认,no-resolve
+- GEOIP,netflix,默认,no-resolve
+- GEOIP,twitter,默认,no-resolve
 - GEOSITE,spotify,默认
 - GEOSITE,github,默认
 - GEOSITE,discord,默认
@@ -681,23 +698,17 @@ rules:
 - GEOSITE,google,默认
 - GEOSITE,wikimedia,默认
 - GEOSITE,linuxdo,默认
-- GEOIP,telegram,默认,no-resolve
-- GEOIP,cloudflare,默认,no-resolve
-- GEOIP,facebook,默认,no-resolve
-- GEOIP,google,默认,no-resolve
-- GEOIP,netflix,默认,no-resolve
-- GEOIP,twitter,默认,no-resolve
-- GEOSITE,category-dev-cn,DIRECT
+- GEOSITE,jetbrains,DIRECT
+- GEOSITE,docker,DIRECT
 - GEOSITE,bing,DIRECT
 - GEOSITE,microsoft@cn,DIRECT
-- GEOSITE,microsoft,DIRECT
+- GEOSITE,microsoft,默认
+- GEOSITE,category-dev-cn,DIRECT
 - GEOSITE,tencent,DIRECT
 - GEOSITE,baidu,DIRECT
 - GEOSITE,alibaba,DIRECT
 - GEOSITE,kingsoft,DIRECT
 - GEOSITE,zhihu,DIRECT
-- GEOSITE,jetbrains,默认
-- GEOSITE,docker,DIRECT
 - GEOSITE,geolocation-cn,DIRECT
 - GEOIP,lan,DIRECT,no-resolve
 - GEOIP,CN,DIRECT,no-resolve
