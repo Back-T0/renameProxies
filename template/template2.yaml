@@ -86,7 +86,6 @@ dns:
     geosite:private,cn:
       - "https://223.5.5.5/dns-query"
       - "https://doh.pub/dns-query"
-# global-client-fingerprint: chrome
 profile:
   store-fake-ip: true
   store-selected: true
@@ -120,13 +119,26 @@ tun:
   strict-route: false
   mtu: 1500
 rules:
+  # 时间校对
   - DOMAIN-SUFFIX,time.windows.com,DIRECT
+  # cn直连
+  - DOMAIN-SUFFIX,cn,DIRECT
 
+  # 国外服务
   - GEOSITE,category-ads-all,REJECT
   - GEOSITE,category-ai-!cn,大模型
   - GEOSITE,category-anticensorship,默认
   - GEOSITE,category-social-media-!cn,默认
 
+  # 国外IP
+  - GEOIP,telegram,默认,no-resolve
+  - GEOIP,cloudflare,默认,no-resolve
+  - GEOIP,facebook,默认,no-resolve
+  - GEOIP,google,默认,no-resolve
+  - GEOIP,netflix,默认,no-resolve
+  - GEOIP,twitter,默认,no-resolve
+
+  # 国外网址
   - GEOSITE,spotify,默认
   - GEOSITE,github,默认
   - GEOSITE,discord,默认
@@ -136,27 +148,28 @@ rules:
   - GEOSITE,wikimedia,默认
   - GEOSITE,linuxdo,默认
 
-  - GEOIP,telegram,默认,no-resolve
-  - GEOIP,cloudflare,默认,no-resolve
-  - GEOIP,facebook,默认,no-resolve
-  - GEOIP,google,默认,no-resolve
-  - GEOIP,netflix,默认,no-resolve
-  - GEOIP,twitter,默认,no-resolve
+  # 国外软件
+  - GEOSITE,jetbrains,DIRECT
+  - GEOSITE,docker,DIRECT
 
-  - GEOSITE,category-dev-cn,DIRECT
+  # Microsoft（优化）
   - GEOSITE,bing,DIRECT
   - GEOSITE,microsoft@cn,DIRECT
-  - GEOSITE,microsoft,DIRECT
+  - GEOSITE,microsoft,默认
+
+  # 国内服务
+  - GEOSITE,category-dev-cn,DIRECT
   - GEOSITE,tencent,DIRECT
   - GEOSITE,baidu,DIRECT
   - GEOSITE,alibaba,DIRECT
   - GEOSITE,kingsoft,DIRECT
   - GEOSITE,zhihu,DIRECT
-  - GEOSITE,jetbrains,默认
-  - GEOSITE,docker,DIRECT
   - GEOSITE,geolocation-cn,DIRECT
 
+  # 中国兜底
   - GEOIP,lan,DIRECT,no-resolve
   - GEOIP,CN,DIRECT,no-resolve
   # - GEOSITE,cn,DIRECT
+
+  # 最终兜底
   - MATCH,其他
