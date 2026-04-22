@@ -4,9 +4,12 @@ on:
   # 允许手动触发工作流
   workflow_dispatch:
 
-  # 每隔两小时触发一次
+  # 每隔两小时自动触发一次
   schedule:
     - cron: '0 */2 * * *'
+
+  # 每次有代码提交（push）到远端时触发
+  push:
 
 permissions:
   contents: write
