@@ -333,7 +333,7 @@ proxies:
   uuid: d6cbf3e4-b7ca-a4b2-0b04-eacbdc28bc5a
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: 塞舌尔 1
+  name: 荷兰 4
   port: 443
   reality-opts:
     public-key: tB6tQr-pmLTdMM8DVOb9KsS27lDkAjjelbdu_Gp1SR0
@@ -347,7 +347,7 @@ proxies:
   uuid: c5bbdac7-6ff5-4762-87bf-870f55a03581
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: 塞舌尔 2
+  name: 荷兰 5
   port: 443
   reality-opts:
     public-key: tB6tQr-pmLTdMM8DVOb9KsS27lDkAjjelbdu_Gp1SR0
@@ -505,8 +505,8 @@ proxy-groups:
   - 荷兰 3
   - 瑞典 1
   - 土耳其 1
-  - 塞舌尔 1
-  - 塞舌尔 2
+  - 荷兰 4
+  - 荷兰 5
   - 美国 1
   - 美国 2
   - 美国 3
@@ -520,12 +520,11 @@ proxy-groups:
   name: 指定分组
   proxies:
   - 7 美国
+  - 5 荷兰
   - 4 韩国
   - 3 德国
-  - 3 荷兰
   - 3 香港
   - 2 俄罗斯联邦
-  - 2 塞舌尔
   - 1 土耳其
   - 1 日本
   - 1 未知
@@ -558,6 +557,20 @@ proxy-groups:
 - hidden: true
   interval: '500'
   lazy: true
+  name: 5 荷兰
+  proxies:
+  - 荷兰 1
+  - 荷兰 2
+  - 荷兰 3
+  - 荷兰 4
+  - 荷兰 5
+  strategy: round-robin
+  timeout: '800'
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+- hidden: true
+  interval: '500'
+  lazy: true
   name: 4 韩国
   proxies:
   - 韩国 1
@@ -583,18 +596,6 @@ proxy-groups:
 - hidden: true
   interval: '500'
   lazy: true
-  name: 3 荷兰
-  proxies:
-  - 荷兰 1
-  - 荷兰 2
-  - 荷兰 3
-  strategy: round-robin
-  timeout: '800'
-  type: load-balance
-  url: http://www.gstatic.com/generate_204
-- hidden: true
-  interval: '500'
-  lazy: true
   name: 3 香港
   proxies:
   - 香港 1
@@ -611,17 +612,6 @@ proxy-groups:
   proxies:
   - 俄罗斯联邦 1
   - 俄罗斯联邦 2
-  strategy: round-robin
-  timeout: '800'
-  type: load-balance
-  url: http://www.gstatic.com/generate_204
-- hidden: true
-  interval: '500'
-  lazy: true
-  name: 2 塞舌尔
-  proxies:
-  - 塞舌尔 1
-  - 塞舌尔 2
   strategy: round-robin
   timeout: '800'
   type: load-balance
