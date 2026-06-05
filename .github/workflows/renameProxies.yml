@@ -1,0 +1,89 @@
+name: 安装 mmdbinspect 并运行脚本
+
+on:
+  # 允许手动触发工作流
+  workflow_dispatch:
+
+  # 每隔两小时自动触发一次
+  schedule:
+    - cron: '0 */2 * * *'
+
+  # 源代码或配置变更时触发（CI 推送的 result/ 变更不触发）
+  push:
+    paths:
+      - 'src/**'
+      - 'template/**'
+      - 'resource.yaml'
+      - 'pyproject.toml'
+      - '.github/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rename-proxies
+  cancel-in-progress: true
+
+jobs:
+  run-script:
+    # 在最新的 Ubuntu 环境下运行
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装 Python 依赖
+        run: |
+          pip install --upgrade pip
+          pip install requests pyyaml
+    
+      - name: 缓存 geoip 数据库和 mmdbinspect
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            Country.mmdb
+            /usr/local/bin/mmdbinspect
+          key: geoip-mmdbinspect-v1
+
+      - name: 下载 geoip 数据库
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          [ -f Country.mmdb ] || wget -q https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
+
+      - name: 下载并安装 mmdbinspect
+        run: |
+          if ! command -v mmdbinspect &> /dev/null; then
+            wget -q https://github.com/maxmind/mmdbinspect/releases/download/v2.0.0/mmdbinspect_2.0.0_linux_amd64.deb
+            sudo apt-get update -y
+            sudo apt-get install -y ./mmdbinspect_2.0.0_linux_amd64.deb
+            rm -f mmdbinspect_2.0.0_linux_amd64.deb
+          fi
+
+      - name: 运行 rename_proxies
+        run: |
+          PYTHONPATH=src python -m rename_proxies
+
+      - name: 提交并推送（仅有变更时）
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git fetch origin main || true
+          git checkout -B orphan-commit origin/main || git checkout --orphan orphan-commit
+          git reset
+          git add -f result/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit --amend -m "update by workflows" || git commit -m "update by workflows"
+          git push --force origin orphan-commit:main

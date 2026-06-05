@@ -1,0 +1,390 @@
+allow-lan: false
+dns:
+  default-nameserver:
+  - 223.5.5.5
+  - 1.2.4.8
+  direct-nameserver:
+  - https://223.5.5.5/dns-query
+  - https://doh.pub/dns-query
+  direct-nameserver-follow-policy: false
+  enable: true
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+  - +.lan
+  - +.local
+  - +.msftconnecttest.com
+  - +.msftncsi.com
+  - localhost.ptlogin2.qq.com
+  - localhost.sec.qq.com
+  - +.in-addr.arpa
+  - +.ip6.arpa
+  - time.*.com
+  - time.*.gov
+  - pool.ntp.org
+  - localhost.work.weixin.qq.com
+  fake-ip-filter-mode: blacklist
+  fake-ip-range: 198.18.0.1/16
+  fallback: []
+  fallback-filter:
+    domain:
+    - +.google.com
+    - +.facebook.com
+    - +.youtube.com
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+    - 240.0.0.0/4
+    - 0.0.0.0/32
+  ipv6: false
+  listen: 0.0.0.0:1053
+  nameserver:
+  - https://208.67.222.222/dns-query
+  - https://77.88.8.8/dns-query
+  - https://1.1.1.1/dns-query
+  - https://8.8.4.4/dns-query
+  nameserver-policy:
+    geosite:private,cn:
+    - https://223.5.5.5/dns-query
+    - https://doh.pub/dns-query
+  prefer-h3: false
+  proxy-server-nameserver:
+  - https://223.5.5.5/dns-query
+  - https://doh.pub/dns-query
+  respect-rules: true
+  use-hosts: false
+  use-system-hosts: false
+external-controller: 127.0.0.1:9097
+external-ui: ui
+external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+find-process-mode: strict
+geodata-mode: true
+geox-url:
+  asn: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
+  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
+  geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+ipv6: true
+log-level: info
+mixed-port: 7897
+mode: rule
+port: 7899
+profile:
+  store-fake-ip: true
+  store-selected: true
+proxies:
+- client-fingerprint: chrome
+  name: 美国 1
+  network: ws
+  port: 2083
+  server: 108.162.198.41
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 2
+  network: ws
+  port: 8443
+  server: 104.19.35.133
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 3
+  network: ws
+  port: 443
+  server: 198.41.209.49
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 4
+  network: ws
+  port: 2087
+  server: 104.17.148.105
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 5
+  network: ws
+  port: 2096
+  server: 104.16.150.228
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 6
+  network: ws
+  port: 443
+  server: 104.17.165.183
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 7
+  network: ws
+  port: 2087
+  server: 104.17.213.252
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 8
+  network: ws
+  port: 2083
+  server: 104.19.41.46
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 9
+  network: ws
+  port: 2096
+  server: 104.26.7.45
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 荷兰 1
+  network: ws
+  port: 443
+  server: 188.164.248.186
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 10
+  network: ws
+  port: 2096
+  server: 173.245.59.199
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 11
+  network: ws
+  port: 2053
+  server: 104.18.36.245
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+- client-fingerprint: chrome
+  name: 美国 12
+  network: ws
+  port: 2096
+  server: 162.159.40.168
+  servername: cfoo-n0d.pages.dev
+  skip-cert-verify: true
+  tfo: false
+  tls: true
+  type: vless
+  uuid: 0137ab09-0728-4c44-8dc4-f2ac1847bffd
+  ws-opts:
+    headers:
+      Host: cfoo-n0d.pages.dev
+    path: /proxyip=159.60.146.82,159.60.146.81
+proxy-groups:
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png
+  name: 默认
+  proxies:
+  - 指定节点
+  - 指定供应
+  - DIRECT
+  type: select
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/anthropic.png
+  name: 大模型
+  proxies:
+  - 指定节点
+  - 指定供应
+  - DIRECT
+  type: select
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/loadbalance.png
+  name: 其他
+  proxies:
+  - 指定节点
+  - 指定供应
+  - DIRECT
+  type: select
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/categoryproductivity.png
+  name: 指定节点
+  proxies:
+  - 美国 1
+  - 美国 2
+  - 美国 3
+  - 美国 4
+  - 美国 5
+  - 美国 6
+  - 美国 7
+  - 美国 8
+  - 美国 9
+  - 荷兰 1
+  - 美国 10
+  - 美国 11
+  - 美国 12
+  - COMPATIBLE
+  type: select
+- icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/cisco.png
+  include-all-providers: true
+  name: 指定供应
+  proxies:
+  - COMPATIBLE
+  type: select
+proxy-providers: {}
+rules:
+- DOMAIN-SUFFIX,time.windows.com,DIRECT
+- DOMAIN-SUFFIX,cn,DIRECT
+- GEOSITE,bing,DIRECT
+- GEOSITE,microsoft@cn,DIRECT
+- GEOSITE,category-ads-all,REJECT
+- GEOSITE,google-deepmind,大模型
+- GEOSITE,category-ai-!cn,大模型
+- GEOSITE,category-anticensorship,默认
+- GEOSITE,category-social-media-!cn,默认
+- GEOIP,telegram,默认,no-resolve
+- GEOIP,cloudflare,默认,no-resolve
+- GEOIP,facebook,默认,no-resolve
+- GEOIP,google,默认,no-resolve
+- GEOIP,netflix,默认,no-resolve
+- GEOIP,twitter,默认,no-resolve
+- GEOSITE,spotify,默认
+- GEOSITE,github,默认
+- GEOSITE,discord,默认
+- GEOSITE,telegram,默认
+- GEOSITE,twitter,默认
+- GEOSITE,google,默认
+- GEOSITE,wikimedia,默认
+- GEOSITE,linuxdo,默认
+- GEOSITE,tiktok,默认
+- GEOSITE,jetbrains,DIRECT
+- GEOSITE,docker,默认
+- GEOSITE,category-dev-cn,DIRECT
+- GEOSITE,tencent,DIRECT
+- GEOSITE,baidu,DIRECT
+- GEOSITE,alibaba,DIRECT
+- GEOSITE,bytedance,DIRECT
+- GEOSITE,kingsoft,DIRECT
+- GEOSITE,bilibili,DIRECT
+- GEOSITE,xiaomi,DIRECT
+- GEOSITE,category-social-media-cn,DIRECT
+- GEOSITE,category-entertainment-cn,DIRECT
+- GEOSITE,geolocation-cn,DIRECT
+- GEOIP,lan,DIRECT,no-resolve
+- GEOIP,CN,DIRECT,no-resolve
+- MATCH,其他
+secret: ''
+sniffer:
+  enable: true
+  skip-domain:
+  - +.push.apple.com
+  sniff:
+    HTTP:
+      override-destination: true
+      ports:
+      - 80
+      - 8080-8880
+    QUIC:
+      ports:
+      - 443
+      - 8443
+    TLS:
+      ports:
+      - 443
+      - 8443
+socks-port: 7898
+tcp-concurrent: true
+tun:
+  auto-detect-interface: true
+  auto-redirect: true
+  auto-route: true
+  device: Meta
+  dns-hijack:
+  - any:53
+  enable: true
+  mtu: 1500
+  stack: mixed
+  strict-route: false
+unified-delay: false
