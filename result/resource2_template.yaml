@@ -1,0 +1,1305 @@
+mode: rule
+mixed-port: 7897
+socks-port: 7898
+port: 7899
+allow-lan: false
+log-level: info
+ipv6: true
+external-controller: 127.0.0.1:9097
+secret: ''
+external-ui: ui
+find-process-mode: strict
+tcp-concurrent: true
+unified-delay: false
+geodata-mode: true
+geox-url:
+  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
+  geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+  asn: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
+proxy-providers: {}
+external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  prefer-h3: false
+  respect-rules: true
+  use-hosts: false
+  use-system-hosts: false
+  ipv6: false
+  fake-ip-filter:
+  - +.lan
+  - +.local
+  - +.msftconnecttest.com
+  - +.msftncsi.com
+  - localhost.ptlogin2.qq.com
+  - localhost.sec.qq.com
+  - +.in-addr.arpa
+  - +.ip6.arpa
+  - time.*.com
+  - time.*.gov
+  - pool.ntp.org
+  - localhost.work.weixin.qq.com
+  default-nameserver:
+  - 223.5.5.5
+  - 1.2.4.8
+  nameserver:
+  - https://208.67.222.222/dns-query
+  - https://77.88.8.8/dns-query
+  - https://1.1.1.1/dns-query
+  - https://8.8.4.4/dns-query
+  direct-nameserver-follow-policy: false
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+    - 240.0.0.0/4
+    - 0.0.0.0/32
+    domain:
+    - +.google.com
+    - +.facebook.com
+    - +.youtube.com
+  fallback: []
+  proxy-server-nameserver:
+  - https://223.5.5.5/dns-query
+  - https://doh.pub/dns-query
+  direct-nameserver:
+  - https://223.5.5.5/dns-query
+  - https://doh.pub/dns-query
+  nameserver-policy:
+    geosite:private,cn:
+    - https://223.5.5.5/dns-query
+    - https://doh.pub/dns-query
+profile:
+  store-fake-ip: true
+  store-selected: true
+sniffer:
+  enable: true
+  skip-domain:
+  - +.push.apple.com
+  sniff:
+    HTTP:
+      override-destination: true
+      ports:
+      - 80
+      - 8080-8880
+    QUIC:
+      ports:
+      - 443
+      - 8443
+    TLS:
+      ports:
+      - 443
+      - 8443
+tun:
+  auto-detect-interface: true
+  auto-redirect: true
+  auto-route: true
+  dns-hijack:
+  - any:53
+  enable: true
+  stack: mixed
+  device: Meta
+  strict-route: false
+  mtu: 1500
+rules:
+- DOMAIN-SUFFIX,time.windows.com,DIRECT
+- DOMAIN-SUFFIX,cn,DIRECT
+- GEOSITE,bing,DIRECT
+- GEOSITE,microsoft@cn,DIRECT
+- GEOSITE,steam@cn,DIRECT
+- GEOSITE,steam,默认
+- GEOSITE,category-ads-all,REJECT
+- GEOSITE,google-deepmind,大模型
+- GEOSITE,category-ai-!cn,大模型
+- GEOSITE,category-anticensorship,默认
+- GEOSITE,category-social-media-!cn,默认
+- GEOIP,telegram,默认,no-resolve
+- GEOIP,cloudflare,默认,no-resolve
+- GEOIP,facebook,默认,no-resolve
+- GEOIP,google,默认,no-resolve
+- GEOIP,netflix,默认,no-resolve
+- GEOIP,twitter,默认,no-resolve
+- GEOSITE,spotify,默认
+- GEOSITE,github,默认
+- GEOSITE,discord,默认
+- GEOSITE,telegram,默认
+- GEOSITE,twitter,默认
+- GEOSITE,google,默认
+- GEOSITE,wikimedia,默认
+- GEOSITE,linuxdo,默认
+- GEOSITE,tiktok,默认
+- GEOSITE,jetbrains,DIRECT
+- GEOSITE,docker,DIRECT
+- GEOSITE,category-dev-cn,DIRECT
+- GEOSITE,tencent,DIRECT
+- GEOSITE,baidu,DIRECT
+- GEOSITE,alibaba,DIRECT
+- GEOSITE,bytedance,DIRECT
+- GEOSITE,kingsoft,DIRECT
+- GEOSITE,bilibili,DIRECT
+- GEOSITE,xiaomi,DIRECT
+- GEOSITE,category-social-media-cn,DIRECT
+- GEOSITE,category-entertainment-cn,DIRECT
+- GEOSITE,geolocation-cn,DIRECT
+- GEOIP,lan,DIRECT,no-resolve
+- GEOIP,CN,DIRECT,no-resolve
+- MATCH,其他
+proxies:
+- name: 中国 1
+  server: 120.232.251.128
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 中国 2
+  server: 121.46.230.234
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 中国 3
+  server: 120.232.250.161
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 荷兰 7
+  server: 84.17.47.125
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰 3
+  server: 84.17.47.125
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰 2
+  server: 84.17.47.150
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰 5
+  server: 84.17.47.148
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰 4
+  server: 84.17.47.148
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰 1
+  server: 84.17.47.146
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰 6
+  server: 84.17.47.149
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 2
+  server: 84.239.49.218
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 6
+  server: 84.239.49.202
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 3
+  server: 84.239.49.59
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 5
+  server: 84.239.14.153
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 1
+  server: 84.239.49.181
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 4
+  server: 84.239.49.38
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 9
+  server: 84.239.49.181
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 7
+  server: 84.239.49.162
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 10
+  server: 84.239.14.148
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 8
+  server: 84.239.49.201
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 12
+  server: 84.239.49.244
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 11
+  server: 84.239.49.189
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 16
+  server: 84.239.49.155
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 15
+  server: 84.239.49.168
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 17
+  server: 84.239.49.235
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 13
+  server: 84.239.49.176
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 14
+  server: 84.239.49.43
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 19
+  server: 84.239.49.57
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 18
+  server: 84.239.14.157
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 20
+  server: 84.239.49.229
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 23
+  server: 84.239.49.203
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 24
+  server: 84.239.49.241
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 25
+  server: 84.239.49.209
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 21
+  server: 84.239.49.40
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 22
+  server: 84.239.49.155
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 26
+  server: 84.239.49.201
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 27
+  server: 84.239.14.147
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 32
+  server: 84.239.14.159
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 30
+  server: 84.239.14.156
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 34
+  server: 84.239.49.185
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 29
+  server: 193.176.84.33
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 28
+  server: 193.176.84.30
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 33
+  server: 84.239.49.199
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 31
+  server: 193.176.84.35
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 35
+  server: 193.176.84.17
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 38
+  server: 84.239.49.192
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 37
+  server: 84.239.49.225
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 39
+  server: 84.239.49.223
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 36
+  server: 84.239.49.233
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 41
+  server: 84.239.49.231
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 43
+  server: 84.239.49.58
+  port: 9002
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 42
+  server: 84.239.49.179
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 40
+  server: 84.239.49.245
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 44
+  server: 84.239.49.50
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 45
+  server: 84.239.49.161
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 46
+  server: 84.239.49.254
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 49
+  server: 84.239.49.200
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 48
+  server: 84.239.49.240
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 50
+  server: 84.239.49.217
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 47
+  server: 84.239.49.182
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 51
+  server: 84.239.49.197
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 52
+  server: 84.239.49.41
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 56
+  server: 84.239.49.62
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 54
+  server: 84.239.14.155
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 53
+  server: 84.239.49.252
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 55
+  server: 84.239.49.191
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 57
+  server: 84.239.49.170
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 58
+  server: 84.239.49.230
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 60
+  server: 84.239.49.208
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 59
+  server: 84.239.14.154
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 61
+  server: 84.239.49.194
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 63
+  server: 84.239.49.171
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 62
+  server: 84.239.49.214
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 65
+  server: 84.239.49.39
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 64
+  server: 84.239.49.204
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 67
+  server: 84.239.49.160
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 66
+  server: 84.239.49.165
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 68
+  server: 84.239.49.207
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 69
+  server: 84.239.14.153
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 73
+  server: 84.239.49.164
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 71
+  server: 84.239.49.238
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 70
+  server: 193.176.84.24
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 72
+  server: 193.176.84.25
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 75
+  server: 84.239.49.37
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 77
+  server: 84.239.49.234
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 76
+  server: 84.239.49.211
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 74
+  server: 193.176.84.20
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 78
+  server: 84.239.49.239
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 80
+  server: 84.239.49.187
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 82
+  server: 84.239.14.148
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 81
+  server: 84.239.49.215
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 79
+  server: 84.239.49.156
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 83
+  server: 84.239.49.242
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 84
+  server: 193.176.84.31
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 86
+  server: 84.239.49.186
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 87
+  server: 84.239.14.146
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 85
+  server: 193.176.84.23
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 88
+  server: 84.239.49.173
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 89
+  server: 84.239.14.147
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 90
+  server: 84.239.49.248
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 91
+  server: 84.239.49.213
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 92
+  server: 84.239.49.251
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 93
+  server: 84.239.49.235
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 94
+  server: 84.239.49.41
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 95
+  server: 84.239.49.198
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 96
+  server: 84.239.49.162
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 97
+  server: 84.239.14.158
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 98
+  server: 84.239.14.151
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 100
+  server: 84.239.49.39
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 99
+  server: 193.176.84.27
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 103
+  server: 84.239.14.155
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 102
+  server: 84.239.14.160
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 101
+  server: 84.239.49.175
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 104
+  server: 84.239.49.206
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 105
+  server: 84.239.49.49
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 106
+  server: 84.239.49.54
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 107
+  server: 84.239.49.230
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 108
+  server: 84.239.49.229
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 109
+  server: 84.239.49.249
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 111
+  server: 84.239.49.201
+  port: 9002
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 112
+  server: 84.239.14.157
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 110
+  server: 84.239.49.184
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 113
+  server: 84.239.49.182
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 114
+  server: 193.176.84.32
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 115
+  server: 84.239.49.227
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 116
+  server: 193.176.84.39
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 117
+  server: 84.239.49.180
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 罗马尼亚 118
+  server: 84.239.49.218
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 德国 1
+  server: 45.144.54.40
+  port: 1080
+  type: socks5
+  tls: false
+  udp: true
+- name: 美国 11
+  server: 38.244.4.1
+  port: 443
+  type: vless
+  uuid: 5905d91f-c3bc-4e80-bd66-4b17beb166cb
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 8BglmwULIVotYAbGXx3Vd1fXiGJbKSsWnZCGvm4Exl0
+    short-id: "aebdb601b1371778"
+  network: tcp
+  udp: true
+- name: 美国 1
+  server: 138.199.35.216
+  port: 9002
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 美国 4
+  server: 51.81.223.225
+  port: 11094
+  type: vless
+  uuid: f1fa0ad9-b122-4b7c-da82-4bea9edc48dd
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.yahoo.com
+  reality-opts:
+    public-key: 9dnXiXxP4xgvtTVRj9SBFdyO6mjGvVhWD8qVZZLCCCk
+    short-id: "a356addf"
+  network: tcp
+  udp: true
+- name: 美国 3
+  server: fan.365747.xyz
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 美国 7
+  server: voteshirleysew.club
+  port: 443
+  type: http
+  tls: true
+  udp: true
+- name: 美国 12
+  server: 89.117.123.243
+  port: 443
+  type: vless
+  uuid: b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: us.savesafe.cc
+  reality-opts:
+    public-key: zDeF_twyyT7a7zKiURF-Q8f6kkj95rx7zQ_jar09Hi4
+    short-id: "e4f6a3446ac34a23"
+  network: tcp
+  udp: true
+- name: 美国 9
+  server: 155.117.199.13
+  port: 29893
+  type: vless
+  uuid: f06c6039-a489-3d78-a676-ed43be6deca3
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: cdnjs.cloudflare.com
+  reality-opts:
+    public-key: JrWOojSFwFA93YjsiQkDydTItQzNAsXsHU24HuWGWjA
+    short-id: "bc8e3658db7d1323"
+  network: tcp
+  udp: true
+- name: 美国 8
+  server: 155.117.199.13
+  port: 39399
+  type: vless
+  uuid: f06c6039-a489-3d78-a676-ed43be6deca3
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: cdnjs.cloudflare.com
+  reality-opts:
+    public-key: JrWOojSFwFA93YjsiQkDydTItQzNAsXsHU24HuWGWjA
+    short-id: "bc8e3658db7d1323"
+  network: tcp
+  udp: true
+- name: PE 1
+  server: 107.151.250.68
+  port: 443
+  type: vless
+  uuid: 055dce30-0ee3-44c3-b680-be1c95b8d6e7
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  servername: www.bing.com
+  reality-opts:
+    public-key: g5UW6bf2soPSDNx7j0wanW_uLAtvTgQ8_lfztTJaP0k
+    short-id: "7025c954ff913b4c"
+  network: tcp
+  udp: true
+- name: BR 1
+  server: wr28-6njjgu.linenheath.site
+  port: 443
+  type: vless
+  uuid: 9638a83e-f1f7-4cc8-a602-924965d9534f
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: E6Y9lNizCXo8tJ6EXwLYQIjyIwmxIs4foyRlY2MgkjA
+    short-id: "59ccabb0a1483c4b"
+  network: tcp
+  udp: true
+- name: 美国 5
+  server: purposebydesig.club
+  port: 443
+  type: http
+  password: None
+  tls: true
+  udp: true
+- name: 美国 6
+  server: 38.28.193.188
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 美国 10
+  server: 155.117.199.13
+  port: 39211
+  type: vless
+  uuid: f06c6039-a489-3d78-a676-ed43be6deca3
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: cdnjs.cloudflare.com
+  reality-opts:
+    public-key: JrWOojSFwFA93YjsiQkDydTItQzNAsXsHU24HuWGWjA
+    short-id: "bc8e3658db7d1323"
+  network: tcp
+  udp: true
+- name: 美国 2
+  server: 138.199.35.198
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 印度 1
+  server: nsuc-znkbig.avonex.top
+  port: 443
+  type: vless
+  uuid: ec31f6d7-c71a-413d-93aa-24296805a594
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: www.bing.com
+  reality-opts:
+    public-key: FL9zvOg48NhHk_YWJMcDXNOseisuzeBW7d8KitUaAQM
+    short-id: "dc941fb0778384e2"
+  network: tcp
+  udp: true
+proxy-groups:
+- name: 默认
+  type: select
+  proxies:
+  - 指定节点
+  - 指定供应
+  - DIRECT
+  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png
+  hidden: false
+- name: 大模型
+  type: select
+  proxies:
+  - 指定节点
+  - 指定供应
+  - DIRECT
+  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/anthropic.png
+  hidden: false
+- name: 其他
+  type: select
+  proxies:
+  - 指定节点
+  - 指定供应
+  - DIRECT
+  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/loadbalance.png
+  hidden: false
+- name: 指定节点
+  type: select
+  include-all-proxies: true
+  proxies:
+  - COMPATIBLE
+  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/categoryproductivity.png
+  hidden: false
+- name: 指定供应
+  type: select
+  proxies:
+  - COMPATIBLE
+  include-all-providers: true
+  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/cisco.png
+  hidden: false

@@ -1,0 +1,24 @@
+resource:
+  resource1.yaml:
+    url: https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml
+  resource2.yaml:
+    url: https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml
+  resource3.yaml:
+    url: https://rss.zyfx6.xyz/clash/
+  resource4.yaml:
+    url: https://github.com/Jsnzkpg/Jsnzkpg/raw/refs/heads/Jsnzkpg/Jsnzkpg
+
+mihomo:
+  binary: mihomo
+  concurrency: 20
+  timeout: 3
+  retries: 1
+  retry_backoff: 0.3
+  startup_timeout: 10
+  probe_urls:
+    - https://api64.ipify.org?format=json
+    - https://api.ipify.org?format=json
+
+location:
+  timeout: 5
+  providers: [ipapi, ipinfo]
