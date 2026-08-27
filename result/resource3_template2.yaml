@@ -1,0 +1,202 @@
+port: 7890
+socks-port: 7891
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  prefer-h3: false
+  respect-rules: true
+  use-system-hosts: false
+  cache-algorithm: arc
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - +.lan
+  - +.local
+  - +.msftconnecttest.com
+  - +.msftncsi.com
+  - localhost.ptlogin2.qq.com
+  - localhost.sec.qq.com
+  - +.in-addr.arpa
+  - +.ip6.arpa
+  - time.*.com
+  - time.*.gov
+  - pool.ntp.org
+  - localhost.work.weixin.qq.com
+  default-nameserver:
+  - 223.5.5.5
+  - 1.2.4.8
+  nameserver:
+  - https://208.67.222.222/dns-query
+  - https://77.88.8.8/dns-query
+  - https://1.1.1.1/dns-query
+  - https://8.8.4.4/dns-query
+  proxy-server-nameserver:
+  - https://223.5.5.5/dns-query
+  - https://doh.pub/dns-query
+  direct-nameserver:
+  - https://223.5.5.5/dns-query
+  - https://doh.pub/dns-query
+  nameserver-policy:
+    geosite:private,cn:
+    - https://223.5.5.5/dns-query
+    - https://doh.pub/dns-query
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+      override-destination: true
+    TLS:
+      ports:
+      - 443
+      - 8443
+    QUIC:
+      ports:
+      - 443
+rules:
+- DST-PORT,3478,REJECT-DROP
+- DST-PORT,5349,REJECT-DROP
+- DST-PORT,19302,REJECT-DROP
+- DST-PORT,19303,REJECT-DROP
+- DST-PORT,19304,REJECT-DROP
+- DST-PORT,19305,REJECT-DROP
+- DST-PORT,19306,REJECT-DROP
+- DST-PORT,19307,REJECT-DROP
+- DST-PORT,19308,REJECT-DROP
+- DST-PORT,19309,REJECT-DROP
+- DOMAIN-KEYWORD,stun,REJECT-DROP
+- DOMAIN-SUFFIX,time.windows.com,DIRECT
+- DOMAIN-SUFFIX,cn,DIRECT
+- GEOSITE,bing,DIRECT
+- GEOSITE,microsoft@cn,DIRECT
+- GEOSITE,steam@cn,DIRECT
+- GEOSITE,steam,默认
+- GEOSITE,category-ads-all,REJECT
+- GEOSITE,google-deepmind,大模型
+- GEOSITE,category-ai-!cn,大模型
+- GEOSITE,category-anticensorship,默认
+- GEOSITE,category-social-media-!cn,默认
+- GEOIP,telegram,默认,no-resolve
+- GEOIP,cloudflare,默认,no-resolve
+- GEOIP,facebook,默认,no-resolve
+- GEOIP,google,默认,no-resolve
+- GEOIP,netflix,默认,no-resolve
+- GEOIP,twitter,默认,no-resolve
+- GEOSITE,spotify,默认
+- GEOSITE,github,默认
+- GEOSITE,discord,默认
+- GEOSITE,telegram,默认
+- GEOSITE,twitter,默认
+- GEOSITE,google,默认
+- GEOSITE,wikimedia,默认
+- GEOSITE,linuxdo,默认
+- GEOSITE,tiktok,默认
+- GEOSITE,jetbrains,DIRECT
+- GEOSITE,docker,DIRECT
+- GEOSITE,category-dev-cn,DIRECT
+- GEOSITE,tencent,DIRECT
+- GEOSITE,baidu,DIRECT
+- GEOSITE,alibaba,DIRECT
+- GEOSITE,bytedance,DIRECT
+- GEOSITE,kingsoft,DIRECT
+- GEOSITE,bilibili,DIRECT
+- GEOSITE,xiaomi,DIRECT
+- GEOSITE,category-social-media-cn,DIRECT
+- GEOSITE,category-entertainment-cn,DIRECT
+- GEOSITE,geolocation-cn,DIRECT
+- GEOIP,lan,DIRECT,no-resolve
+- GEOIP,CN,DIRECT,no-resolve
+- MATCH,其他
+proxy-groups:
+- name: 默认
+  type: select
+  proxies:
+  - 指定节点
+  - 指定供应
+  - DIRECT
+  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png
+  hidden: false
+- name: 大模型
+  type: select
+  proxies:
+  - 指定节点
+  - 指定供应
+  - DIRECT
+  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/anthropic.png
+  hidden: false
+- name: 其他
+  type: select
+  proxies:
+  - 指定节点
+  - 指定供应
+  - DIRECT
+  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/loadbalance.png
+  hidden: false
+- name: 指定节点
+  type: select
+  include-all-proxies: true
+  proxies:
+  - COMPATIBLE
+  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/categoryproductivity.png
+  hidden: false
+- name: 指定供应
+  type: select
+  proxies:
+  - COMPATIBLE
+  include-all-providers: true
+  icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/cisco.png
+  hidden: false
+proxy-providers:
+  airport-1:
+    type: http
+    url: https://airport-1.com/api/v1/client/subscribe?token=xxxx
+    path: ./proxy_providers/airport-1.yaml
+    interval: 86400
+    filter: ^(?!.*(官网|套餐|流量|异常|剩余)).*$
+    healthCheck:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 300
+proxies:
+- name: 中国 1
+  type: anytls
+  server: baidu.com
+  port: 80
+  password: 2f3a2a4d-ca46-4012-a472-b559d379ad0a
+  client-fingerprint: chrome
+  sni: free.nl1.laodavip.com
+  udp: true
+- name: 美国 1
+  type: anytls
+  server: 360.com
+  port: 80
+  password: 2f3a2a4d-ca46-4012-a472-b559d379ad0a
+  client-fingerprint: chrome
+  sni: free.nl1.laodavip.com
+  udp: true
+- name: 中国 2
+  type: anytls
+  server: 4399.com
+  port: 80
+  password: 2f3a2a4d-ca46-4012-a472-b559d379ad0a
+  client-fingerprint: chrome
+  sni: free.nl1.laodavip.com
+  udp: true
+- name: 中国 3
+  type: anytls
+  server: 4399.com
+  port: 80
+  password: 2f3a2a4d-ca46-4012-a472-b559d379ad0a
+  client-fingerprint: chrome
+  sni: free.nl1.laodavip.com
+  udp: true
