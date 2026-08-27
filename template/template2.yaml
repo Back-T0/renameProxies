@@ -1,0 +1,166 @@
+port: 7890
+socks-port: 7891
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  prefer-h3: false
+  respect-rules: true
+  use-system-hosts: false
+  cache-algorithm: arc
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - +.lan
+    - +.local
+    - +.msftconnecttest.com
+    - +.msftncsi.com
+    - localhost.ptlogin2.qq.com
+    - localhost.sec.qq.com
+    - +.in-addr.arpa
+    - +.ip6.arpa
+    - time.*.com
+    - time.*.gov
+    - pool.ntp.org
+    - localhost.work.weixin.qq.com
+  default-nameserver:
+    - 223.5.5.5
+    - 1.2.4.8
+  nameserver:
+    - https://208.67.222.222/dns-query
+    - https://77.88.8.8/dns-query
+    - https://1.1.1.1/dns-query
+    - https://8.8.4.4/dns-query
+  proxy-server-nameserver:
+    - https://223.5.5.5/dns-query
+    - https://doh.pub/dns-query
+  direct-nameserver:
+    - https://223.5.5.5/dns-query
+    - https://doh.pub/dns-query
+  nameserver-policy:
+    geosite:private,cn:
+      - https://223.5.5.5/dns-query
+      - https://doh.pub/dns-query
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  sniff:
+    HTTP:
+      ports:
+        - 80
+        - 8080-8880
+      override-destination: true
+    TLS:
+      ports:
+        - 443
+        - 8443
+    QUIC:
+      ports:
+        - 443
+rules:
+  #禁用 WebRTC
+  - DST-PORT,3478,REJECT-DROP
+  - DST-PORT,5349,REJECT-DROP
+  - DST-PORT,19302,REJECT-DROP
+  - DST-PORT,19303,REJECT-DROP
+  - DST-PORT,19304,REJECT-DROP
+  - DST-PORT,19305,REJECT-DROP
+  - DST-PORT,19306,REJECT-DROP
+  - DST-PORT,19307,REJECT-DROP
+  - DST-PORT,19308,REJECT-DROP
+  - DST-PORT,19309,REJECT-DROP
+  - DOMAIN-KEYWORD,stun,REJECT-DROP
+  # 时间校对
+  - DOMAIN-SUFFIX,time.windows.com,DIRECT
+  # cn直连
+  - DOMAIN-SUFFIX,cn,DIRECT
+  # Microsoft（优化）
+  - GEOSITE,bing,DIRECT
+  - GEOSITE,microsoft@cn,DIRECT
+  # - GEOSITE,microsoft,默认
+  # Steam（优化）
+  - GEOSITE,steam@cn,DIRECT
+  - GEOSITE,steam,默认
+  # 国外服务
+  - GEOSITE,category-ads-all,REJECT
+  - GEOSITE,google-deepmind,大模型
+  - GEOSITE,category-ai-!cn,大模型
+  - GEOSITE,category-anticensorship,默认
+  - GEOSITE,category-social-media-!cn,默认
+  # 国外IP
+  - GEOIP,telegram,默认,no-resolve
+  - GEOIP,cloudflare,默认,no-resolve
+  - GEOIP,facebook,默认,no-resolve
+  - GEOIP,google,默认,no-resolve
+  - GEOIP,netflix,默认,no-resolve
+  - GEOIP,twitter,默认,no-resolve
+  # 国外网址
+  - GEOSITE,spotify,默认
+  - GEOSITE,github,默认
+  - GEOSITE,discord,默认
+  - GEOSITE,telegram,默认
+  - GEOSITE,twitter,默认
+  - GEOSITE,google,默认
+  - GEOSITE,wikimedia,默认
+  - GEOSITE,linuxdo,默认
+  - GEOSITE,tiktok,默认
+  # 国外软件
+  - GEOSITE,jetbrains,DIRECT
+  - GEOSITE,docker,DIRECT
+  # 国内服务
+  - GEOSITE,category-dev-cn,DIRECT
+  - GEOSITE,tencent,DIRECT
+  - GEOSITE,baidu,DIRECT
+  - GEOSITE,alibaba,DIRECT
+  - GEOSITE,bytedance,DIRECT
+  - GEOSITE,kingsoft,DIRECT
+  - GEOSITE,bilibili,DIRECT
+  - GEOSITE,xiaomi,DIRECT
+  - GEOSITE,category-social-media-cn,DIRECT
+  - GEOSITE,category-entertainment-cn,DIRECT
+  - GEOSITE,geolocation-cn,DIRECT
+  # 中国兜底
+  - GEOIP,lan,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
+  # - GEOSITE,cn,DIRECT
+  # 最终兜底
+  - MATCH,其他
+proxy-groups:
+  - name: 默认
+    type: select
+    proxies:
+      - DIRECT
+    include-all-providers: true
+    icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/relay.png
+    hidden: false
+  - name: 大模型
+    type: select
+    proxies:
+      - REJECT
+    include-all-providers: true
+    icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/anthropic.png
+    hidden: false
+  - name: 其他
+    type: select
+    proxies:
+      - DIRECT
+    include-all-providers: true
+    icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/loadbalance.png
+    hidden: false
+proxy-providers:
+  airport-1:
+    type: http
+    url: "https://airport-1.com/api/v1/client/subscribe?token=xxxx"  # 👈 【第 1 个机场订阅链接】粘贴在此
+    path: ./proxy_providers/airport-1.yaml
+    interval: 86400  # 自动更新间隔时间（单位：秒，86400 即 24 小时）
+    filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"  # 自动过滤官网公告、剩余流量等非节点提示
+    healthCheck:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 300
