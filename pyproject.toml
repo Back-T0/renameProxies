@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta:__legacy__"
+
+[project]
+name = "rename-proxies"
+version = "2.0.0"
+description = "基于 Mihomo 真实出网测试的 Clash 节点重命名工具"
+requires-python = ">=3.11"
+dependencies = [
+    "requests",
+    "pyyaml",
+]
+
+[project.scripts]
+rename-proxies = "rename_proxies.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
